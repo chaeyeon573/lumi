@@ -41,7 +41,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "We are dedicated to promoting chess in the Northwestern community by providing a comfortable chess-playing environment. We also present students with the opportunity to play in over-the-board tournaments, Chess.com intercollegiate matches, and host events throughout the school year. We welcome members of all levels: we range from internationally titled players to beginners!",
   "gallery": [],
@@ -435,9 +435,9 @@
    "emoji": "A",
    "hue": 163
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "AIESEC's mission statement is to contribute to the development of our countries and their people with an overriding commitment to international understanding and cooperation. AIESEC's vision is peace and the fulfillment of humankind's potential. Apply here: https://aiesecusa.typeform.com/to/d6WPTvHI?typeform-source=www.aiesecus.org",
   "gallery": [],
@@ -529,10 +529,10 @@
  },
  {
   "id": "oc_northwestern_cg35470",
-  "name": "Alianza–The Latinx Student Alliance",
+  "name": "Alianza: The Latinx Student Alliance",
   "logo": {
    "emoji": "AL",
-   "hue": 24
+   "hue": 64
   },
   "type": "club",
   "schoolId": "s_northwestern",
@@ -1031,7 +1031,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "1. To tell a long-form story and push the boundaries of what is expected of student filmmaking. 2. To foster inclusiveness on Northwestern's campus by exposing the filmmaking process to students of all disciplines. 3. To change and affect the community in a positive way through art.",
   "gallery": [],
@@ -1090,14 +1090,14 @@
  },
  {
   "id": "oc_northwestern_cg36690",
-  "name": "Arab and Middle Eastern Journalists’ Association",
+  "name": "Arab and Middle Eastern Journalists' Association",
   "logo": {
    "emoji": "AM",
    "hue": 232
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Arab and Middle Eastern Journalists’ Association at Northwestern will: Strengthen the presence and development of MENA journalists in U.S. media through mentorship and community. Provide a welcoming, inclusive space for student journalists to connect, collaborate, and grow. Increase the visibility of journalism students and professionals of MENA heritage on campus while connecting them with academic and professional opportunities. Create a clear student-to-professional pipeline through mentoring, networking, and chapter programming. Promote principles of press freedom, equity, inclusion, a",
   "gallery": [],
@@ -1163,7 +1163,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Mentorship",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "To connect students to alumni on campus, online, and even globally, through social, educational, and professional programming.",
   "gallery": [],
@@ -1229,7 +1229,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Arco supports Northwestern’s mission by creating an inclusive space where Queer Latinos can connect, grow, and develop leadership. We foster diversity, belonging, and community engagement to strengthen the university’s commitment to an inclusive and vibrant campus. Arco creates an intentional and welcoming environment for queer Latine students to feel accepted and understood. It will also provide non-Latine, and non-queer students with a space to explore this intersection and engage with the rich culture and educational opportunities presented by this community.",
   "gallery": [],
@@ -1658,7 +1658,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The AWSM Northwestern chapter will work to create opportunities for the personal and professional development of its members, enhance practical skills, and promote females in the sports media field.",
   "gallery": [],
@@ -1691,7 +1691,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "To strengthen the Kenyan community on campus and to provide an inclusive space for Kenyan students to celebrate their culture",
   "gallery": [],
@@ -1724,7 +1724,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "To create opportunities, add value, and build relationships for its members and its business partners while expanding Latino Leadership among students attending Northwestern University.",
   "gallery": [],
@@ -1790,7 +1790,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Mentorship",
   "verified": false,
   "description": "NUATS is a community for Northwestern students interested in transportation in all its forms, including aviation, rail, public transit, logistics, transportation technology, and urban mobility. We bring students together to explore transportation through educational events, excursions, speakers, hands-on experiences, and transportation-based games inspired by Jet Lag: The Game. We aim to make transportation accessible, engaging, and exciting for students of all backgrounds and levels of experience.",
   "gallery": [],
@@ -1804,6 +1804,39 @@
    {
     "label": "Directory",
     "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35503"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36709",
+  "name": "Aviation Club",
+  "logo": {
+   "emoji": "A",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Barrier-Free",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36709"
    }
   ],
   "recruitment": {
@@ -2087,7 +2120,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Mission Statement: We provide individuals interested in fantasy and medieval culture with lessons, practice spaces, and equipment that will allow them to safely engage in medieval inspired “combat” within a safe, controlled environment. We also encourage participation in other Belegarth events held across the nation. In alignment with the university's mission, we provide the excellent teachings necessary to flourish in one's personal endeavors in the recreational sport of Belegarth.",
   "gallery": [],
@@ -2134,6 +2167,10 @@
    {
     "label": "Directory",
     "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35512"
+   },
+   {
+    "label": "Website",
+    "url": "https://listserv.it.northwestern.edu/cgi-bin/wa.exe?SUBED1=BILLIARDS_CLUB&A=1"
    }
   ],
   "recruitment": {
@@ -2318,7 +2355,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Identity-Based",
   "verified": false,
   "description": "To provide a formal event for ALL Black-identifying Northwestern undergraduate students.",
   "gallery": [],
@@ -2384,7 +2421,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The mission of Black Mentorship Program is to improve and transform the undergraduate experience of Black students at Northwestern through mentorship, community building, racial identity development, and engagement with community resources.",
   "gallery": [],
@@ -2417,7 +2454,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The purpose of BlackBoard Magazine is to provide a space for Black creatives to publish their work concerning Black experiences on Northwestern's campus, in the United States and internationally. Additionally, BlackBoard Magazine aims to fill a void within journalism and other student-led publications on Northwestern's campus by celebrating Blackness and viewing Black stories as valuable and newsworthy. In this way, both Black folks and Black art are each viewed as important and, therefore, given their own personal space.",
   "gallery": [],
@@ -2582,7 +2619,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Identity-Based",
   "verified": false,
   "description": "BRASA NU exists to bring together the Brazilian community at Northwestern University by fostering meaningful connections among students who share ties to Brazil, whether through heritage, culture, or interest. The organization seeks to celebrate Brazilian identity, promote cultural exchange, and provide opportunities for social, academic, and professional growth. Established to serve as a “home away from home”, BRASA NU strives to strengthen the presence of Brazilians on campus and highlight the richness and diversity of Brazilian culture within the broader Northwestern body",
   "gallery": [],
@@ -2813,7 +2850,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "CaribNation will provide support for Caribbean and Caribbean-American students at Northwestern University by establishing programming that helps to preserve, publicize and celebrate the cultures of the Caribbean islands. CaribNation acts as a strong, collective voice for the needs and concerns of these students. CaribNation will provide the entire Northwestern community as well as the Evanston and greater Chicagoland communities with a deeper understanding of the roots and histories of the Caribbean cultures, an increased awareness of the current socioeconomic and political status of the Carib",
   "gallery": [],
@@ -3044,7 +3081,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our mission is to promote Central Asian culture and identity at Northwestern by building community, encouraging cross-cultural dialogue, and providing a welcoming space for all students.",
   "gallery": [],
@@ -3209,7 +3246,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "China Care is dedicated to supporting orphans in China while sharing Chinese culture with children of Chinese descent across the Chicagoland area. We are an independent, student-run organization at Northwestern University, recognized as an official chapter of the China Care Foundation, Inc., and a partner of the Half the Sky Foundation. Our broader mission is to fund education, surgeries, and medical care for orphans in China. Locally, we focus on building a strong and supportive community through playgroups and a mentorship program for Chinese American children. Through these initiatives, Nor",
   "gallery": [],
@@ -3242,7 +3279,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Health & Wellness",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Chinatown Clinic is a community health clinic in Cermak Chinatown that provides free primary healthcare (health education, medical interpretation) to the indigent public. Most of the clinic patients are elderly Chinese immigrants who lack the means to afford healthcare and who are thus reliant on the clinic as their sole source of medical services and medications. Many of the clinic patients have also been diagnosed with chronic conditions such as gout, hypertension, diabetes, and Hepatitis B. We work with this clinic (in addition to others) to improve access to healthcare via interpreting",
   "gallery": [],
@@ -3275,7 +3312,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Identity-Based",
   "verified": false,
   "description": "To promote Asian American awareness throughout the campus of Northwestern through a plethora of cultural events and social gatherings.",
   "gallery": [],
@@ -3407,9 +3444,9 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Sports Clubs",
+  "parent": "Barrier-Free",
   "verified": false,
-  "description": "Northwestern Club Softball is a competitive, collegiate fastpitch softball team. We play teams generally located in the Midwest region. 2019 was our 1st appearance at the national tourney. We practice year round and play tournaments in fall and spring quarter. Follow our instagram! https://www.instagram.com/nuclubsoftball?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== Join our groupme! https://groupme.com/join_group/110462679/iTBnsUtH Join our IMLeagues https://www.imleagues.com/spa/team/d7afdaafca504a53b3b459dba29209dd/home",
+  "description": "Northwestern Club Softball is a competitive, collegiate fastpitch softball team. We play teams generally located in the Midwest region. 2019 was our 1st appearance at the national tourney. We practice year round and play tournaments in fall and spring quarter. Connect us via email to get added to our groupchat Follow our instagram! https://www.instagram.com/nuclubsoftball?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== Join our IMLeagues https://www.imleagues.com/spa/team/d7afdaafca504a53b3b459dba29209dd/home",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -3425,6 +3462,10 @@
    {
     "label": "Website",
     "url": "https://www.imleagues.com/spa/team/d7afdaafca504a53b3b459dba29209dd/home"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nuclubsoftball"
    },
    {
     "label": "Instagram",
@@ -4009,7 +4050,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "COCF aims to engage members in Bible study, discussions, and traditions to deepen their spiritual understanding, share the unique cultural heritage of the Coptic faith, provide opportunities for service to the local community through acts of love and charity, and welcome newcomers to explore and learn about the Coptic experience.",
   "gallery": [],
@@ -4240,7 +4281,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "CRUSH Magazine, Northwestern's queer-interest publication, is dedicated to creating an inclusive space where all LGBTQ+ identifying students can share their creative voices and visions. By uplifting a variety of intersectional perspectives on campus, we strive to publish what tends to not be treated as mainstream. Love and care for the queer community is at the center of what we do, and we hope to push the boundaries for what campus media can look like.",
   "gallery": [],
@@ -4306,7 +4347,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "We aim to teach Northwestern students how to solve the world-famous Rubik’s Cube and other twisty puzzles. At club meetings, members will learn new solution methods, improve their solving speed, and complete challenges such as one-handed and blindfolded solving. Additionally, we plan to organize cubing competitions which will be officially sanctioned by the World Cube Association. Join our GroupMe for meeting details and club updates! https://groupme.com/join_group/105905026/JQWJprvO",
   "gallery": [],
@@ -4595,6 +4636,39 @@
   }
  },
  {
+  "id": "oc_northwestern_cg36710",
+  "name": "Design for America",
+  "logo": {
+   "emoji": "DA",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Barrier-Free",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36710"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_northwestern_cg35592",
   "name": "Destino",
   "logo": {
@@ -4603,7 +4677,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The overarching purpose of Destino is to cultivate a safe space for Latinx students to continue exploring or to initiate a relationship with Jesus Christ through Bible study and fellowship. Our intended impact is for Latinx Northwestern students to explore their ethnic identity in the context of Christianity and grow. We are a welcoming and loving community to whoever seeks to join us on a spiritual walk. Having an allocated time to spend time with God’s word and fellow Christians cultivates friendships and encourages the enhancement of resources that impact their experience and life at Northw",
   "gallery": [],
@@ -4735,7 +4809,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our Mission is to provide unprivileged children with the financial means to access the basic necessities for health, medical, housing, education, nourishment, and supplemental income in the developing or stricken countries, facilitated through donations and fundraising initiatives worldwide.",
   "gallery": [],
@@ -4900,7 +4974,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Dance",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The ELEL Dance Team is dedicated to promoting cultural awareness of Ethiopian and Eritrean traditions through the art of dance. We aim to educate and inspire our community by sharing the rich cultural heritage of these nations through performances, workshops, and community engagements.",
   "gallery": [],
@@ -4966,7 +5040,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Volunteer-Focused",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our mission is to bridge the gap between Northwestern University and the Rogers Park community through sustained community engagement and service. Engage Rogers Park (Engage RP) is a student-run, volunteer-based organization dedicated to providing childcare and mentorship to children of unhoused and low-income families residing in the Rogers Park area.",
   "gallery": [],
@@ -5098,7 +5172,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The purpose of Esports Club is to provide a friendly forum for members of the Northwestern community to discuss, practice, and compete in various esports.",
   "gallery": [],
@@ -5263,7 +5337,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Religious & Spiritual",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our mission is to witness the gospel of Jesus Christ. To achieve this, we create a supportive environment for Chinese-speaking Christian students and staff at Northwestern University to grow spiritually, mentally, and academically, and to strengthen their relationships with God and fellow members. We also connect and share our joy and love in Jesus Christ with our fellow non-Christian Chinese-speaking students and guests from outside of Northwestern University.",
   "gallery": [],
@@ -5362,7 +5436,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Northwestern Hillel is the foundation for Jewish life on campus. Our mission is to inspire every Jewish student to make a meaningful and enduring commitment to Jewish life.",
   "gallery": [],
@@ -5692,7 +5766,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Pre-Professional",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Game Makers Society is committed to making game development accessible to all students, recognizing the complexity of creating games and the continuous growth required to succeed. We aim to build a supportive community that thrives on collaboration and improvement, helping each member progress at their own pace. The club is aimed at 3 types of people: Those who are new to game development and looking to build their skills by contributing to a project (freshmen, people who haven’t touched game dev classes, no track record of specific skills) Those who have a skill they want to use to contri",
   "gallery": [],
@@ -6350,7 +6424,7 @@
    "emoji": "GP",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_northwestern",
   "parent": "Barrier-Free",
   "verified": false,
@@ -6418,7 +6492,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Hawaii Club is established for the purpose of promoting Hawaiian and Pacific-Islander culture to the Northwestern University community through our annual lu’au, relevant speaker panels, and community-bonding activities.",
   "gallery": [],
@@ -6946,7 +7020,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "International Student Association strives to build a cohesive community of international and domestic students through engagement in global and cultural issues both on campus and beyond.",
   "gallery": [],
@@ -7870,7 +7944,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Identity-Based",
   "verified": false,
   "description": "We aim to be a welcoming community to Koreans, Korean Americans, and all students interested in the Korean culture at Northwestern University. We aim to provide a culturally fun yet empowering environment. Ultimately, we aim to be the voice of Koreans, Korean Americans, and all students interested in the Korean culture on campus. We want Northwestern to be known not only for its academic prestige but also its many successful and thriving cultural organizations.",
   "gallery": [],
@@ -8233,7 +8307,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Mentorship",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Founded in January 2021 in response to the educational inequities exacerbated by COVID-19, Lumi Tutors works to help bridge systemic gaps in Chicago Public School education. We provide high-quality, personalized support to high school juniors and seniors for the ACT/SAT and college applications.",
   "gallery": [],
@@ -8544,6 +8618,10 @@
    {
     "label": "Directory",
     "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35711"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.dilloday.com/"
    }
   ],
   "recruitment": {
@@ -8629,7 +8707,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "We are dedicated to fostering an inclusive community around the interest in mechanical keyboards.",
   "gallery": [],
@@ -9520,7 +9598,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our mission is to mitigate social isolation and improve emotional well-being in older adults with Alzheimer’s and dementia. Thus, we will work to serve all older adults regardless of gender, age, race, ethnicity, national origin, sexual orientation, identity, disability, education, or any other bias. In response to these overwhelming circumstances, National Alzheimer’s Buddies seeks to alleviate the often-overlooked emotional and social challenges that stem from Alzheimer’s by building friendships between college students and Alzheimer’s residents that bring out the beauty of the person still ",
   "gallery": [],
@@ -9850,7 +9928,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Volunteer-Focused",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The purpose of our organization is to expand access to neuroscience education for underserved middle and high school students in the Chicago area who may not have the resources or exposure to this field. We aim to partner with schools to increase student awareness and understanding of neuroscience through engaging, accessible, and thoughtfully designed programming. Our club will create educational materials and lead interactive lessons that cover both the fundamentals of neuroscience and exciting developments in current research. We also plan to bring in guest speakers—including Northwestern p",
   "gallery": [],
@@ -9949,7 +10027,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "NSO was established to enrich the greater Northwestern community with Nigerian culture and to create a community meant for Nigerian students and those interested alike. Through the use of campus resources and the guidance of the following objectives, NSO is qualified to positively contribute to the Nigerian and adjacent student bodies.",
   "gallery": [],
@@ -10378,7 +10456,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Environmental",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "NESC is dedicated to empowering students to drive positive change in the energy and sustainability sectors.",
   "gallery": [],
@@ -10675,7 +10753,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Northwestern Quest Scholars Network (Quest+) aims to create an engaged and supportive community for low-income and first-generation students as well as their allies in addition to ensuring equal opportunities for all low-income and first-generation students on Northwestern's campus.",
   "gallery": [],
@@ -10873,7 +10951,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Sports Clubs",
   "verified": false,
   "description": "To facilitate a welcoming environment for people of all abilities and backgrounds to engage and practice Taekwondo, to be a supportive community, to encourage physical activity and well-being, and to pursue athletic professionalism.",
   "gallery": [],
@@ -10906,7 +10984,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Health & Wellness",
   "verified": false,
   "description": "Northwestern Triathlon seeks to welcome and encourage students regardless of experience when it comes to swimming, biking, and running. Whether you want to learn how to swim and ride a bike or compete on a national level, this club is a good fit. We foster an environment in which all members feel comfortable and supported at practices, competitions, social events, and beyond. We are a tri family!",
   "gallery": [],
@@ -11038,7 +11116,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Philanthropic",
   "verified": false,
   "description": "Northwestern University Dance Marathon’s (NUDM) mission is to unite the Northwestern, Evanston, and Greater Chicagoland community through awareness, service, education, and philanthropic fundraising. A year-long effort culminating in a dance marathon, NUDM strives to create an inclusive and enriching environment for the NUDM student body, our rotating primary beneficiary, and the Evanston Community Foundation.",
   "gallery": [],
@@ -11302,7 +11380,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The mission of Special Olympics is to provide year-round sports training and athletic competition in a variety of Olympic-type sports for all children and adults with developmental disabilities, giving them continued opportunities to develop physical fitness, demonstrate courage, experience joy and participate in a sharing of gifts, skills and friendship with their families, other Special Olympics athletes and the community. Special Olympics emphasizes people’s abilities, not their disabilities, focusing on achievements, rather than limitations.",
   "gallery": [],
@@ -11335,7 +11413,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "To foster a welcoming community, improving skills through structured training, and promoting physical health through inclusive play for all skill levels.",
   "gallery": [],
@@ -11368,7 +11446,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "NUWFA seeks to unify, educate, and promote women, trans, and non-binary filmmakers not only within the Northwestern community, but also beyond the educational sphere. We accomplish these goals by encouraging womxn's involvement as leaders in the Radio/Television/Film community at Northwestern and promoting the development of visual media created by womxn filmmakers. NUWFA also advocates for dynamic representations of women, trans, and non-binary characters on the screen.",
   "gallery": [],
@@ -11432,7 +11510,7 @@
    "emoji": "NW",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_northwestern",
   "parent": "Health & Wellness",
   "verified": false,
@@ -11533,7 +11611,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Identity-Based",
   "verified": false,
   "description": "NU Asian Magazine is Northwestern’s Asian-interest publication, and its mission is to serve as a voice for all of the members of Northwestern’s Asian and Asian American community. By encouraging people of all perspectives to participate in civic engagement, we hope to foster pride in heritage, culture and personal identity as well as promote diversity, multiculturalism and the identification of common experiences across different cultures. We aim for our dialogue to engage community members interested in local, national and international issues that affect a diverse Asian American community wh",
   "gallery": [],
@@ -11665,7 +11743,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Religious & Spiritual",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The mission of Orthodox Christian Fellowship (OCF) is to provide students a method for staying connected with their Orthodox Christian faith during their time in college.",
   "gallery": [],
@@ -12259,7 +12337,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Registered Student Organization (RSO)",
+  "parent": "Advocacy",
   "verified": false,
   "description": "PCR’s mission is to promote humanitarian awareness and community engagement by educating students about Palestine, its history, culture, and people while highlighting the broader humanitarian needs of children and families in the region. As a chapter, PCR seeks to provide students with opportunities to learn about global health and humanitarian medicine through educational events, speaker panels, cultural programming, and community-building initiatives. The organization aims to create an inclusive, supportive, and non-political space where students from all backgrounds can engage with these is",
   "gallery": [],
@@ -12358,7 +12436,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Through cultural events, educational resources, and opportunities to explore Iranian history, culture, and language, PSO will bring Iranian undergraduates together and introduce our beautiful heritage to anyone interested. By doing so, the organization will strengthen each student's cultural identity and foster a vibrant, supportive community on campus.",
   "gallery": [],
@@ -12787,7 +12865,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Environmental",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "We aim to protect, restore, and expand the natural/naturalized areas on and around Northwestern's Evanston campus. We also strive to get people interested in restoration and to inspire people to think critically about local ecosystems.",
   "gallery": [],
@@ -12820,7 +12898,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Mentorship",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Northwestern Pre-Dental Society (NUPDS) strives to unite NU pre-dental students and serves as a resource as students explore careers in oral healthcare or prepare to enter dental school.",
   "gallery": [],
@@ -13175,6 +13253,39 @@
   }
  },
  {
+  "id": "oc_northwestern_cg35856",
+  "name": "RAISO",
+  "logo": {
+   "emoji": "R",
+   "hue": 239
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Academic: STEM",
+  "verified": false,
+  "description": "The purpose of RAISO is to build a diverse community at Northwestern University that actively discusses and promotes the ethical development and use of artificial intelligence (AI), and to develop cutting-edge AI systems that exemplify ethical AI best practices and benefit the social good.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35856"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_northwestern_cg35857",
   "name": "Red Cross Club at Northwestern University",
   "logo": {
@@ -13183,7 +13294,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The American Red Cross, a humanitarian organization led by volunteers and guided by its Congressional Charter and the Fundamental Principles of the International Red Cross Movement, provides relief to victims of disaster and helps people prevent, prepare for and respond to emergencies. As a university chapter, we strive to raise awareness for all of those in need and to provide support to the American Red Cross.",
   "gallery": [],
@@ -13216,7 +13327,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "It shall be the aims of Red Dot:a) To cultivate a diverse academic community by promoting Singapore's rich and diverse culture to all students at Northwestern, mirroring the diverse societal fabric of Singapore.b) To ensure every student, regardless of their background, finds a conducive environment to thrive, reflecting Northwestern's commitment to inclusivity and the shared goal of the Singapore Student Association.c) To foster a sense of community among students interested in Singaporean culture, aligning with Northwestern's dedication to enhancing the student experience.d) To provide suppo",
   "gallery": [],
@@ -13249,7 +13360,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Media & Journalism",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Reel8 aims to build stronger connections and understanding among the Northwestern community through producing unscripted video content and cultivating a creative platform for media enthusiasts of all backgrounds.",
   "gallery": [],
@@ -13381,7 +13492,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The purpose of Relay For Life is to fundraise for the American Cancer Society to support the fight against cancer. As a student group, the Relay For Life organization hosts the annual Northwestern University Relay For Life event every May. All group programs and activities throughout the year work towards promoting cancer prevention, education, and fundraising. Relay For Life brings the Northwestern and Evanston communities together to celebrate survivors, remember those we have lost to cancer, and fight back against the disease. We encourage the participation of campus, faculty and community ",
   "gallery": [],
@@ -13571,39 +13682,6 @@
   }
  },
  {
-  "id": "oc_northwestern_cg35856",
-  "name": "Responsible AI Student Organization (RAISO)",
-  "logo": {
-   "emoji": "RA",
-   "hue": 72
-  },
-  "type": "club",
-  "schoolId": "s_northwestern",
-  "parent": "Academic: STEM",
-  "verified": false,
-  "description": "The purpose of RAISO is to build a diverse community at Northwestern University that actively discusses and promotes the ethical development and use of artificial intelligence (AI), and to develop cutting-edge AI systems that exemplify ethical AI best practices and benefit the social good.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35856"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_northwestern_cg35867",
   "name": "Ritmo de Mis Ancestros: Ballet Folklórico",
   "logo": {
@@ -13612,7 +13690,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Barrier-Free",
+  "parent": "Dance",
   "verified": false,
   "description": "The purpose of this organization is to critically preserve Latin American culture by showcasing folklórico at Northwestern and the surrounding communities and to raise awareness of Latin American ancestry while also serving as a catalyst for others to take pride in their own backgrounds!",
   "gallery": [],
@@ -13968,14 +14046,14 @@
  },
  {
   "id": "oc_northwestern_cg36635",
-  "name": "Sexual Health & Assualt Peer Educators",
+  "name": "Sexual Health & Assault Peer Educators",
   "logo": {
    "emoji": "SH",
    "hue": 248
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Health & Wellness",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "SHAPE is a Northwestern student organization affiliated with NU's Center for Student Advocacy and Wellness (CSAW) that combats rape culture and works to create a culture of healthy sexuality through education, public events, and an open dialogue on sexual health, sex positivity, and sexual assault. SHAPE's mission is to increase students’ comfort about sexuality and encourage them to learn more about how to approach sex in a safe and pleasurable way. For membership inquiries or any questions please DM us on Instagram @nushape or email shape@u.northwestern.edu",
   "gallery": [],
@@ -14470,7 +14548,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Recreation",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Snapshot! strives to promote a community for photographers of all levels. From camera tips to large social events, Snapshot! hopes to make on campus photography into something greater than a hobby.",
   "gallery": [],
@@ -14501,7 +14579,7 @@
    "emoji": "SP",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_northwestern",
   "parent": "Barrier-Free",
   "verified": false,
@@ -14668,7 +14746,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "STANS stands for Society of Trans and Non-binary Students. We exist to create community spaces for trans and non-binary individuals. We work towards creating a more inclusive and trans-aware campus through hosting events and community experiences!",
   "gallery": [],
@@ -14719,6 +14797,14 @@
    {
     "label": "Website",
     "url": "https://nu-swe.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/swe.northwestern/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/NorthwesternSWE"
    }
   ],
   "recruitment": {
@@ -14961,39 +15047,6 @@
   }
  },
  {
-  "id": "oc_northwestern_cg35909",
-  "name": "Spoon University",
-  "logo": {
-   "emoji": "SU",
-   "hue": 352
-  },
-  "type": "club",
-  "schoolId": "s_northwestern",
-  "parent": "Academic",
-  "verified": false,
-  "description": "Through culinary knowledge and delicious content, our mission is to open students' eyes to the world of food. Cooking doesn't have to be scary, but an opportunity to explore. It's a way to bring people together, share stories and tap into our roots from different parts of the world. Whether you're a writer, photographer, designer or marketing guru, Spoon celebrates everything you bring to the table. We're here to help students gain confidence in the kitchen, experiment with flavor, forge connections and always seek out more. No matter your skill level, there is a place for you at Spoon to lear",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35909"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_northwestern_cg35910",
   "name": "Sport Management Club",
   "logo": {
@@ -15167,7 +15220,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Sports Clubs",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "To compete at a national level while building a strong, supportive squash community at Northwestern.",
   "gallery": [],
@@ -15299,7 +15352,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Philanthropic",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Streetside Health’s mission is to help provide unhoused populations with equitable access to health resources in order to improve the overall well-being of those residing in the Evanston and Chicago area. We aim to build trusting relationships with the community, reduce stigmatization, and aid the delivery of health and hygiene services directly to the patients in non-traditional clinical settings. Additionally, we hope to increase undergraduate students’ consciousness of the clinical and structural barriers that unhoused populations face such that those who hope to pursue a future career in h",
   "gallery": [],
@@ -15412,39 +15465,6 @@
    {
     "label": "Directory",
     "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35922"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_northwestern_cg36701",
-  "name": "Student Organ Donation Advocates",
-  "logo": {
-   "emoji": "SO",
-   "hue": 264
-  },
-  "type": "club",
-  "schoolId": "s_northwestern",
-  "parent": "Registered Student Organization (RSO)",
-  "verified": false,
-  "description": "empower high school and college students to increase organ, eye, and tissue donation registration through peer-to-peer education, advocacy, and on-campus events; mission is to bridge the donation gap by reducing registration barriers and inspiring young people to become lifelong donors and advocates",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36701"
    }
   ],
   "recruitment": {
@@ -15827,7 +15847,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Help Northwestern students find and participate in roleplaying games, help them grow as roleplaying hobbyists, and provide an inclusive environment in which new players can engage with tabletop roleplaying.",
   "gallery": [],
@@ -15992,7 +16012,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Health & Wellness",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our mission is to combat drug overdose among young adults using research-based education and accessible harm-reduction supplies like fentanyl test strips.",
   "gallery": [],
@@ -16091,7 +16111,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Thai Student Association aims to foster a welcoming community for Thai students and those interested in Thai Culture at Northwestern University. The The organization strives to celebrate and share Thai culture through social and educational programming to support student connection and cross-cultural understanding.",
   "gallery": [],
@@ -16421,7 +16441,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Film Festival's purpose is to unify Northwestern undergraduate filmmaking within the Northwestern community, to raise awareness about Northwestern undergraduate films among Evanston, Chicago, and beyond, and to facilitate the transfer and appreciation of cinema between Northwestern and the rest of the artistic world. The Film Festival hosts two events annually: One inward-out Showcase each spring where The Film Festival promotes a week of end-of-the-year student screenings, such as Studio 22, Multicultural Filmmakers Collective, Applause for a Cause, Media Arts Grant, Senior Directing, Sit",
   "gallery": [],
@@ -16454,7 +16474,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Entertainment",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "We here at The Northwestern Flipside strive to provide the Northwestern community with the finest and wittiest satire. Whether it be online, in print, or in video form, our goal is to satirize some of the biggest topics on campus and the world at large. We aim to provide members with a creative writing outlet that focuses on argumentative satire, similar to The Onion.",
   "gallery": [],
@@ -16520,7 +16540,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The Impact Movement is a campus ministry organization engaging the church, the campus, and the community. Through our work, college students become disciples of Jesus Christ who successfully graduate from higher education with a consciousness towards improving the lives of those who are marginalized and on the fringes.",
   "gallery": [],
@@ -17081,7 +17101,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Sports Clubs",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Our mission is to have fun and run fast! We meet outside of SPAC every weekday at 5:30 for practice and compete at 4 meets per quarter on the weekends",
   "gallery": [],
@@ -17147,7 +17167,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The purpose of the Transfer Student Organization is to support and strengthen the transfer community through social events, peer-mentorship, and information sharing.",
   "gallery": [],
@@ -17246,7 +17266,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Dance",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "Tufaan Entertainment is Northwestern's premier Bollywood-fusion dance competition aiming to raise awareness of South Asian culture in the US and promote education through the arts abroad.",
   "gallery": [],
@@ -17312,7 +17332,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "TSA is a student group aiming to bring the Turkish Students in Northwestern together, increase public awareness about Turkey in NU, and add to the diversity on campus. The Turkish Student Association (TSA) aims to gather Turkish students under one umbrella and create a supportive environment while introducing Turkish culture to Northwestern, thus creating a more diverse environment. Some of the events that TSA organizes are (but are not limited to): watching Turkish national team games (i.e., football [soccer], basketball), dinner organizations, national holiday celebrations, and many more. Al",
   "gallery": [],
@@ -17477,7 +17497,7 @@
   },
   "type": "council",
   "schoolId": "s_northwestern",
-  "parent": "Identity-Based",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "The International Student Advancement Council's mission is to empower international students at Northwestern University by integrating resources, fostering cultural interconnection, and addressing unique academic and administrative challenges. We are committed to building a supportive and inclusive community that celebrates diversity, advocates for equitable policies, and enhances the overall experience of international students on our campus.",
   "gallery": [],
@@ -18335,7 +18355,7 @@
   },
   "type": "club",
   "schoolId": "s_northwestern",
-  "parent": "Media & Journalism",
+  "parent": "Barrier-Free",
   "verified": false,
   "description": "WNUR Sports is the flagship radio station for the Northwestern women’s basketball team. We also broadcast every football game and home men’s basketball game. WNUR Sports is the only place you can hear the Northwestern Wildcats compete in women’s lacrosse, men’s soccer, women’s soccer, baseball, softball and volleyball. Through live game broadcasts, weekly sports talk programming, and original digital content, we connect Wildcats fans to their teams with timely, in-depth storytelling across radio, web, and social platforms. We provide students with hands-on experience in play-by-play broadcasti",
   "gallery": [],
@@ -18514,6 +18534,567 @@
    {
     "label": "Directory",
     "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36012"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36013",
+  "name": "Women in Science and Engineering Research",
+  "logo": {
+   "emoji": "WS",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "TGS-Sponsored",
+  "verified": false,
+  "description": "Women in Science and Engineering Research (WISER) is a graduate student organization at Northwestern University. We work towards building community among graduate women in science, technology, engineering and mathematics (STEM) fields, promoting & advancing women's leadership in STEM, and sponsoring workshops & seminars focused on professional skills development for early-career women in the sciences.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36013"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36014",
+  "name": "Women's Club Lacrosse",
+  "logo": {
+   "emoji": "WS",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Sports Clubs",
+  "verified": false,
+  "description": "GOAL: Establish a Women’s Club Lacrosse team to enhance our athletic ability in order to compete with other teams at a competitive level. OBJECTIVE: In obtaining a competitive level, we seek to employ the highest standard of other sportsmanship, leadership, teamwork, and commitment.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36014"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36015",
+  "name": "Women's Club Soccer",
+  "logo": {
+   "emoji": "WS",
+   "hue": 320
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Sports Clubs",
+  "verified": false,
+  "description": "To provide an opportunity for non-varsity members to play competitive intercollegiate soccer and build a strong womxn-identifying athlete and soccer community at Northwestern.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36015"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36016",
+  "name": "Women's Club Volleyball",
+  "logo": {
+   "emoji": "WS",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Recreation",
+  "verified": false,
+  "description": "At the Northwestern University Women's Competitive Club Volleyball team, our mission is to cultivate a culture of camaraderie and personal growth through the sport of volleyball. We are dedicated to fostering a dynamic and empowering environment where athletes compete at a high level and build lifelong friendships and skills that extend far beyond the court.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36016"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36654",
+  "name": "Women’s Residential College/Hobart House",
+  "logo": {
+   "emoji": "WS",
+   "hue": 104
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Residential College",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36654"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36017",
+  "name": "Women's Rugby Football Club",
+  "logo": {
+   "emoji": "WS",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Sports Clubs",
+  "verified": false,
+  "description": "The mission of the Women’s Rugby Club is to raise the standard of what a sports club does, with team values rooted in accessibility, inclusivity and community. We want to increase appreciation and awareness of the sport amongst the Northwestern student body.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36017"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36018",
+  "name": "Women's Ultimate Frisbee",
+  "logo": {
+   "emoji": "WS",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Barrier-Free",
+  "verified": false,
+  "description": "Claw is the Northwestern women’s club that is open to women, non-binary, and genderqueer players. Claw is a ultimate frisbee team that participates in intercollegiate tournaments nationwide. We are a motivated group of people with a passion for playing the game, having fun, and working with teamwork and spirit. Most importantly, we are looking for new people to join our team in what is sure to be another great season!If you’ve never played Ultimate before, don’t worry! Plenty of us had never played before, either. Just show up with enthusiasm and we’ll take care of the rest. In the fall, we we",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36018"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36696",
+  "name": "Women's Wrestling Club",
+  "logo": {
+   "emoji": "WS",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Sports Clubs",
+  "verified": false,
+  "description": "The purpose of the club is to allow women the opportunity to train and compete in the sport of women’s wrestling. As the nation’s fastest growing sport, women’s wrestling at Northwestern will allow female wrestlers to obtain access to high caliber athletics and academics, not currently offered anywhere else in the world.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36696"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36019",
+  "name": "Womxn In Economics",
+  "logo": {
+   "emoji": "WE",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Academic: Business/Finance/Economics",
+  "verified": false,
+  "description": "Womxn in Economics (WiE) is a group of undergraduate students interested in and/or pursuing a degree in economics. WiE seeks to encourage female- and non-binary-identifying members of the community to pursue their interests in economics through a variety of events and programming that not only connect womxn with similar passions but also offer valuable mentorship opportunities. We aim to offer insight into the many unique ways economics can be applied in various fields and to provide an empowering environment for womxn at Northwestern within an often male-dominated field. Our hope is that all ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36019"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36020",
+  "name": "Womxn in Law",
+  "logo": {
+   "emoji": "WL",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Academic: Legal",
+  "verified": false,
+  "description": "Womxn in Law is Northwestern's only pre-law organization founded to meet the needs of women and female-identifying students on campus and assist them in the pursuit of a meaningful career in law. Its main objectives are to create a support system on campus, provide the tools necessary to thrive in the field, and address some of the most prominent issues women face. Women in Law aims to create a network of ambitious students who are passionate about their career aspirations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36020"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg35591",
+  "name": "World Studios",
+  "logo": {
+   "emoji": "WS",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Academic",
+  "verified": false,
+  "description": "World Studios (formerly known as Design for America) at Northwestern University is a student-led organization dedicated to harnessing the power of human-centered design to address real social challenges in the local and broader community. Through hands-on studio projects, workshops, and professional programming, DFA cultivates a diverse community of students from engineers and artists to social scientists and journalists who learn to apply design thinking as both a professional skill and a flexible problem-solving lens. Whether students go on to careers in user experience, product design, or s",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35591"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36022",
+  "name": "X-Factors",
+  "logo": {
+   "emoji": "XF",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Arts/Performance",
+  "verified": false,
+  "description": "The X-Factors seek to create entertaining music and shows as well as an encouraging, creative environment for their members.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36022"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36023",
+  "name": "Young Americans for Freedom",
+  "logo": {
+   "emoji": "YA",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Barrier-Free",
+  "verified": false,
+  "description": "To defend free markets, traditional values, and Western Civilization at Northwestern by organizing public and virtual forums and lectures to highlight heterodox perspectives on issues of public controversy.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36023"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36024",
+  "name": "Young Life",
+  "logo": {
+   "emoji": "YL",
+   "hue": 203
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Barrier-Free",
+  "verified": false,
+  "description": "Young Life is a non-denominational Christian ministry that began in 1941 and is now present in thousands of communities in the U.S. as well as 60 other countries worldwide. Our mission is to introduce adolescents to Jesus Christ and help them grow in their faith. We do this by showing up where kids are, being present in their lives, and, through genuine friendship, earning the privilege of talking to them about God and His love for them. We enter their world with no expectation of who kids should be, but with every hope for who they can become. WyldLife is the junior high component of Young Li",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36024"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_northwestern_cg36025",
+  "name": "Zen Club",
+  "logo": {
+   "emoji": "Z",
+   "hue": 250
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Barrier-Free",
+  "verified": false,
+  "description": "We strive to offer you a community in which to meditate, talk about life, make friends, de-stress, feel welcomed, and be present! Each meeting begins with meditation, followed by tea, conversation, and the occasional guest speaker. Anyone is welcome, regardless of experience—we have lots of first-timers. We meet Thursdays at 7:30PM in the Parkes Hall Multi-Belief Space (Room 204). Visit our friendly and open circle! :) ||",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36025"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_northwestern_cg36026",
+  "name": "Zeta Beta Tau",
+  "logo": {
+   "emoji": "ZB",
+   "hue": 96
+  },
+  "type": "greek",
+  "schoolId": "s_northwestern",
+  "parent": "Fraternity/Sorority: IFC/MGC/NPHC/PHA",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36026"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_northwestern_cg36027",
+  "name": "Zeta Phi Beta Sorority, Incorporated",
+  "logo": {
+   "emoji": "ZP",
+   "hue": 176
+  },
+  "type": "greek",
+  "schoolId": "s_northwestern",
+  "parent": "Fraternity/Sorority: IFC/MGC/NPHC/PHA",
+  "verified": false,
+  "description": "Nu Sigma of Northwestern University strives to incorporate the four principles - Scholarship, Service, Sisterhood, and Finer Womanhood - into every aspect of our lives. Our goal is not only to serve the Evanston and Chicagoland area, but to build long-lasting relationships around the world.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36027"
    }
   ],
   "recruitment": {

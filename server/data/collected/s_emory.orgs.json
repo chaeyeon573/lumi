@@ -1878,6 +1878,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/emory_astronomy"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/emory_astronomy/"
    }
   ],
   "recruitment": {
@@ -3594,7 +3598,7 @@
   "schoolId": "s_emory",
   "parent": "Affinity",
   "verified": false,
-  "description": "The purpose of the Candler International Student Association (CISA) is to help provide a space for both domestic and International Students’ experiences to be unique and enjoyable in a way that they create a community of presence and mutual support in the midst of divergencies.",
+  "description": "The purpose of the Candler International Student Association (CISA) is to hold space for both domestic and international students, where a community of mutual support can be created.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -5227,7 +5231,7 @@
   "schoolId": "s_emory",
   "parent": "Recreation & Leisure",
   "verified": false,
-  "description": "Emory Club Women's Lacrosse team is a founding member of SWLL, the Southeastern Women's Lacrosse League. Being a part of the Emory Club Lacrosse team is a wonderful way to maintain your lacrosse skills, while getting involved on campus and making new friends. We welcome all prospective students and players whether you have experience or not. Practices Mondays & Wednesdays 8:30-10:00pm. Play games on weekends against other club teams of the Southeast. If interested, contact Brianna Chi or Aviva Wright.",
+  "description": "Emory Club Women's Lacrosse team is a founding member of SWLL, the Southeastern Women's Lacrosse League. Being a part of the Emory Club Lacrosse team is a wonderful way to maintain your lacrosse skills while getting involved on campus and making new friends. We welcome all prospective students and players, whether or not you have experience. Practices Mondays & Wednesdays 8:30-10:00pm. Play games on weekends against other club teams of the Southeast. If interested, contact Lola Geoghan, Hannah Kieval, or Scarlett Siegel.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -7817,7 +7821,7 @@
    "emoji": "ED",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_emory",
   "parent": "Academic/Pre-professional",
   "verified": false,
@@ -9153,6 +9157,10 @@
    {
     "label": "Directory",
     "url": "https://thehub.emory.edu/student_community?club_id=35805"
+   },
+   {
+    "label": "Website",
+    "url": "https://emoryphr.wixsite.com/gahumanrights"
    }
   ],
   "recruitment": {
@@ -9273,7 +9281,7 @@
   "schoolId": "s_emory",
   "parent": "Political/Ideology",
   "verified": false,
-  "description": "The Emory Political Forum is a student organization at Emory University dedicated to fostering civil discourse and political engagement on campus. We provide a platform for students of all political backgrounds to come together, discuss important issues, and promote a culture of respectful dialogue.",
+  "description": "The Emory Political Forum* is a student organization at Emory University dedicated to fostering civil discourse and political engagement on campus. We provide a platform for students of all political backgrounds to come together, discuss important issues, and promote a culture of respectful dialogue. *We are still officially known as Independents at Emory. While our values remain the same, we are in the process of developing a new image, and our name change has not been officially processed yet.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -13360,7 +13368,7 @@
    "emoji": "GB",
    "hue": 208
   },
-  "type": "council",
+  "type": "club",
   "schoolId": "s_emory",
   "parent": "Divisional Council",
   "verified": false,
@@ -20756,7 +20764,7 @@
    "emoji": "OC",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_emory",
   "parent": "Wellness",
   "verified": false,
@@ -21713,7 +21721,7 @@
    "emoji": "OM",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_emory",
   "parent": "Academic/Pre-professional",
   "verified": false,
@@ -21878,7 +21886,7 @@
    "emoji": "OO",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_emory",
   "parent": "Religious & Spiritual",
   "verified": false,
@@ -22406,7 +22414,7 @@
    "emoji": "OS",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_emory",
   "parent": "Affinity",
   "verified": false,
@@ -25190,7 +25198,7 @@
    "emoji": "RE",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_emory",
   "parent": "Recreation & Leisure",
   "verified": false,
@@ -25668,6 +25676,10 @@
    {
     "label": "Directory",
     "url": "https://thehub.emory.edu/student_community?club_id=36225"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/emorysalsaclub/"
    }
   ],
   "recruitment": {
@@ -27277,7 +27289,7 @@
    "emoji": "SB",
    "hue": 296
   },
-  "type": "council",
+  "type": "club",
   "schoolId": "s_emory",
   "parent": "Divisional Council",
   "verified": false,

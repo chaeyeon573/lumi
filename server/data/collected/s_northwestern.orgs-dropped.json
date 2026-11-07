@@ -1,0 +1,70 @@
+[
+ {
+  "id": "oc_northwestern_cg35909",
+  "name": "Spoon University",
+  "logo": {
+   "emoji": "SU",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Academic",
+  "verified": false,
+  "description": "Through culinary knowledge and delicious content, our mission is to open students' eyes to the world of food. Cooking doesn't have to be scary, but an opportunity to explore. It's a way to bring people together, share stories and tap into our roots from different parts of the world. Whether you're a writer, photographer, designer or marketing guru, Spoon celebrates everything you bring to the table. We're here to help students gain confidence in the kitchen, experiment with flavor, forge connections and always seek out more. No matter your skill level, there is a place for you at Spoon to lear",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=35909"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  },
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_northwestern_cg36701",
+  "name": "Student Organ Donation Advocates",
+  "logo": {
+   "emoji": "SO",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_northwestern",
+  "parent": "Registered Student Organization (RSO)",
+  "verified": false,
+  "description": "empower high school and college students to increase organ, eye, and tissue donation registration through peer-to-peer education, advocacy, and on-campus events; mission is to bridge the donation gap by reducing registration barriers and inspiring young people to become lifelong donors and advocates",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://catsoncampus.northwestern.edu/student_community?club_id=36701"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  },
+  "droppedAt": "2026-11-07"
+ }
+]

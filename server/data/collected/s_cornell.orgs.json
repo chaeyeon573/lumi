@@ -183,7 +183,7 @@
    "emoji": "AB",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -322,6 +322,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/cuabsolute/"
+   },
+   {
+    "label": "Website",
+    "url": "https://cornellabsolute.com/"
    }
   ],
   "recruitment": {
@@ -475,7 +479,7 @@
    "emoji": "AC",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -1585,7 +1589,7 @@
    "emoji": "AA",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -1827,6 +1831,43 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/aifcornellchapter"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/aifcornellchapter"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg74512",
+  "name": "American Indian and Indigenous Student Empowerment",
+  "logo": {
+   "emoji": "AI",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Department",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=74512"
    }
   ],
   "recruitment": {
@@ -1844,7 +1885,7 @@
    "emoji": "AI",
    "hue": 160
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -3017,7 +3058,7 @@
    "emoji": "AA",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -3495,7 +3536,7 @@
    "emoji": "AC",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -5188,6 +5229,39 @@
   }
  },
  {
+  "id": "oc_cornell_cg74511",
+  "name": "Big Red Nights",
+  "logo": {
+   "emoji": "BR",
+   "hue": 8
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Department",
+  "verified": false,
+  "description": "Big Red Nights (BRN) is an initiative within Student & Campus Life to offer late night on-campus social programming for students. BRN programming is generally 8pm-1am on Thursday, Friday, and Saturday events.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=74511"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_cornell_cg26646",
   "name": "Big Red Pep Band at Cornell University",
   "logo": {
@@ -6514,6 +6588,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=26631"
+   },
+   {
+    "label": "Website",
+    "url": "https://tinyurl.com/Officer-Transition-Doc"
    }
   ],
   "recruitment": {
@@ -6584,6 +6662,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=32555"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.tohoku.ac.jp/en/research/research_highlights/research_highlight_22.html"
    }
   ]
  },
@@ -7234,7 +7316,7 @@
    "emoji": "CI",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -7287,6 +7369,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=74205"
+   },
+   {
+    "label": "Website",
+    "url": "https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
    }
   ],
   "recruitment": {
@@ -7682,6 +7768,80 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=47178"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg74137",
+  "name": "Center for Advanced Computing",
+  "logo": {
+   "emoji": "CA",
+   "hue": 240
+  },
+  "type": "department",
+  "schoolId": "s_cornell",
+  "parent": "Department",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=74137"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.cac.cornell.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg74289",
+  "name": "Center for Applied Mathematics",
+  "logo": {
+   "emoji": "CA",
+   "hue": 104
+  },
+  "type": "department",
+  "schoolId": "s_cornell",
+  "parent": "Department",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=74289"
+   },
+   {
+    "label": "Website",
+    "url": "https://cam.cornell.edu/"
    }
   ],
   "recruitment": {
@@ -9588,6 +9748,43 @@
   }
  },
  {
+  "id": "oc_cornell_cg74513",
+  "name": "College of Arts & Sciences",
+  "logo": {
+   "emoji": "CA",
+   "hue": 304
+  },
+  "type": "department",
+  "schoolId": "s_cornell",
+  "parent": "Department",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=74513"
+   },
+   {
+    "label": "Website",
+    "url": "https://as.cornell.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_cornell_cg74072",
   "name": "College of Veterinary Medicine Office of the Dean",
   "logo": {
@@ -9816,7 +10013,7 @@
    "emoji": "CR",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -10120,6 +10317,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=26728"
+   },
+   {
+    "label": "Website",
+    "url": "https://tinyurl.com/Officer-Responsibilites"
    }
   ],
   "recruitment": {
@@ -10170,7 +10371,7 @@
    "emoji": "CL",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -10236,7 +10437,7 @@
    "emoji": "CW",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -10499,7 +10700,7 @@
    "emoji": "CE",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -11660,7 +11861,7 @@
    "emoji": "CC",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -11771,7 +11972,7 @@
    "emoji": "CC",
    "hue": 56
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -12680,7 +12881,7 @@
    "emoji": "CD",
    "hue": 352
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -12713,7 +12914,7 @@
    "emoji": "CD",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -13371,7 +13572,7 @@
    "emoji": "CH",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -13560,7 +13761,7 @@
    "emoji": "CI",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -13671,7 +13872,7 @@
    "emoji": "CI",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -13741,7 +13942,7 @@
    "emoji": "CI",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -14725,7 +14926,7 @@
    "emoji": "CP",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -15544,7 +15745,7 @@
    "emoji": "CT",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -17086,6 +17287,14 @@
    {
     "label": "Website",
     "url": "https://cunooz.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/cu_nooz/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/cunoozzz"
    }
   ],
   "recruitment": {
@@ -17344,220 +17553,6 @@
    "period": "",
    "open": true,
    "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg26952",
-  "name": "DanceSport at Cornell",
-  "logo": {
-   "emoji": "DC",
-   "hue": 96
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Active/Recreational: Competitive",
-  "verified": false,
-  "description": "The purpose of Cornell DanceSport is to teach and promote competitive ballroom dancing within the Cornell community. We aim to help each other improve in our dancing by providing space and lessons on campus, and push ourselves to succeed in competition by traveling to intercollegiate competitions throughout the northeast.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=26952"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74434",
-  "name": "Data for Good in Policy at Cornell",
-  "logo": {
-   "emoji": "DG",
-   "hue": 232
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "PROF: Business and Management",
-  "verified": false,
-  "description": "Our mission is to equip Cornell students with data analytics skills for real-world impact through hands-on workshops, consulting projects for public-interest clients, and guest speakers.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74434"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg47355",
-  "name": "Data Journal at Cornell",
-  "logo": {
-   "emoji": "DJ",
-   "hue": 312
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Publication/Media",
-  "verified": false,
-  "description": "Our mission is to provide Cornell undergraduate students the opportunity to explore the fields of data science, data visualization, and data journalism.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=47355"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.cornelldatajournal.org/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/cornelldatajournal/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg26718",
-  "name": "Data Science Club at Cornell",
-  "logo": {
-   "emoji": "DS",
-   "hue": 104
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "AFFILIATION: Project Team",
-  "verified": false,
-  "description": "Current initiatives range from devising a scalable mapping system for better natural disaster response to developing a tool that can summarize Amazon reviews for a better user experience. Our team of 70+ students is a great place to meet people with diverse interests, gain experience at the intersection of theory and application, and contribute to the greater community initiatives.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=26718"
-   },
-   {
-    "label": "Website",
-    "url": "https://cornelldata.science/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/cornelldatascience/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74371",
-  "name": "Deixa Sambar",
-  "logo": {
-   "emoji": "DS",
-   "hue": 104
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "International/Multicultural",
-  "verified": false,
-  "description": "Deixa Sambar is a musical ensemble comitted to playing, teaching, and sharing various genres of Brazilian music on Cornell's campus and in the greater Ithaca area.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74371"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "og_cornell_cg25332",
-  "name": "Delta Chi",
-  "logo": {
-   "emoji": "DC",
-   "hue": 85
-  },
-  "type": "greek",
-  "schoolId": "s_cornell",
-  "parent": "AFFILIATION: SFL",
-  "verified": false,
-  "description": "Delta Chi was founded as a law fraternity on October 13th, 1890 at Cornell University. In 1922, a collective body of members decided to register Delta Chi as a general fraternity, thereby opening membership to men of any academic discipline. In 1929, Delta Chi became the first fraternity to abolish the hazing practices associated with \"hell week.\" Since that time, Delta Chi has evolved into an international organization, now including 120 chapters and colonies, and over 90,000 members worldwide.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=25332"
-   }
-  ],
-  "recruitment": {
-   "title": "Not taking new members",
-   "period": "",
-   "open": false,
-   "mode": "closed",
    "source": "campusgroups"
   }
  },
@@ -19037,7 +19032,7 @@
    "emoji": "DO",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -19053,6 +19048,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=67104"
+   },
+   {
+    "label": "Website",
+    "url": "https://diversity.cornell.edu/"
    }
   ],
   "recruitment": {
@@ -20728,7 +20727,7 @@
    "emoji": "EM",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -21510,7 +21509,7 @@
    "emoji": "FG",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -21831,7 +21830,7 @@
    "emoji": "FL",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -22181,7 +22180,7 @@
    "emoji": "GE",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -22816,6 +22815,109 @@
   }
  },
  {
+  "id": "oc_cornell_cg32514",
+  "name": "Grad Student Improv Club",
+  "logo": {
+   "emoji": "GS",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "The club's mission is to provide a space for graduate students to perform improvisational theater. We want to support graduate students in balancing academic and personal lives by providing a space where they can relax their minds and expand and reevaluate their mindset towards life's circumstances. This organization is a registered student organization of Cornell University.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=32514"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg27058",
+  "name": "Graduate and Professional Student Assembly",
+  "logo": {
+   "emoji": "GP",
+   "hue": 48
+  },
+  "type": "council",
+  "schoolId": "s_cornell",
+  "parent": "AY27",
+  "verified": false,
+  "description": "The Cornell University Graduate and Professional Student Assembly serves as an official voice for the the nearly 7,000 graduate and professional students at Cornell. In addition to representing the students in matters of university governance, the GPSA has the responsibility for setting and administering the Student Activity Fee for graduate and professional students. The GPSA is a valuable component of graduate or professional education for those who hope to be affiliated with a university in the future. The GPSA regularly meets with the President and Provost, and it sends representatives to ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=27058"
+   },
+   {
+    "label": "Website",
+    "url": "https://assembly.cornell.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg27855",
+  "name": "Graduate and Professional Student Assembly Finance Commission",
+  "logo": {
+   "emoji": "GP",
+   "hue": 120
+  },
+  "type": "council",
+  "schoolId": "s_cornell",
+  "parent": "AY27",
+  "verified": false,
+  "description": "The Graduate and Professional Student Assembly Finance Committee (GPSAFC) is the funding arm of the Graduate and Professional Student Assembly (GPSA).",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=27855"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_cornell_cg27059",
   "name": "Graduate and Professional Students Programming Board",
   "logo": {
@@ -23349,10 +23451,6 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=74257"
-   },
-   {
-    "label": "Website",
-    "url": "https://lpcpropulsion.org/"
    }
   ],
   "recruitment": {
@@ -23938,7 +24036,7 @@
    "emoji": "HP",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -24111,7 +24209,7 @@
    "emoji": "HF",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -24676,7 +24774,7 @@
    "emoji": "HP",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -24812,7 +24910,7 @@
    "emoji": "HO",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -25022,7 +25120,7 @@
    "emoji": "HC",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -25088,7 +25186,7 @@
    "emoji": "HS",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -25137,6 +25235,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=27104"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.humoruscomedy.com/"
    }
   ],
   "recruitment": {
@@ -25463,7 +25565,7 @@
    "emoji": "IO",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -25496,7 +25598,7 @@
    "emoji": "IO",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -26767,7 +26869,7 @@
    "emoji": "J2",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -27175,7 +27277,7 @@
    "emoji": "JC",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -27307,7 +27409,7 @@
    "emoji": "JE",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -27340,7 +27442,7 @@
    "emoji": "JE",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -27373,7 +27475,7 @@
    "emoji": "JE",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -28078,7 +28180,7 @@
    "emoji": "JJ",
    "hue": 72
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -28676,11 +28778,11 @@
    "emoji": "JJ",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
-  "description": "This is the Student Services/Student Activities & Special Events Office for the SC Johnson Graduate School of Management in the Cornell SC Johnson College of Business.",
+  "description": "This is the Student Services Office for the Samuel Curtis Johnson Graduate School of Management in the Cornell SC Johnson College of Business.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -28907,7 +29009,7 @@
    "emoji": "JL",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -28940,7 +29042,7 @@
    "emoji": "JM",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -28973,7 +29075,7 @@
    "emoji": "JM",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29039,7 +29141,7 @@
    "emoji": "JM",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29072,7 +29174,7 @@
    "emoji": "JM",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29105,7 +29207,7 @@
    "emoji": "JM",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29138,7 +29240,7 @@
    "emoji": "JO",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29204,7 +29306,7 @@
    "emoji": "JP",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29402,7 +29504,7 @@
    "emoji": "JA",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -29923,113 +30025,6 @@
   }
  },
  {
-  "id": "oc_cornell_cg27194",
-  "name": "Kedma",
-  "logo": {
-   "emoji": "K",
-   "hue": 279
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Spiritual/Religious",
-  "verified": false,
-  "description": "Kedma is the Orthodox organization at Cornell that provides for the religious and social needs of Orthodox Jews. Kedma is dedicated to upholding Orthodox values and maintaining a comfortable atmosphere for Orthodox students. By working with other student organizations, Kedma provides focused, well resourced programs and events for Orthodox students, as well as for the Cornell community at large. Kedma oversees the Orthodox prayer services held three times a day on campus. Kedma also maintains the Eruv at Cornell, which allows Jewish students on campus to carry on the Sabbath.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27194"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27475",
-  "name": "Kehilat Shevach: Cornell's Traditional Egalitarian Community",
-  "logo": {
-   "emoji": "KS",
-   "hue": 208
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Spiritual/Religious",
-  "verified": false,
-  "description": "Shevach is Cornell's Traditional-Egalitarian (Conservative) minyan. We provide a community for students seeking a traditional Jewish prayer space that allows for egalitarian participation. We meet for traditional Shabbat services every Friday evening. We also hold periodic Shabbat morning services, programming for major Jewish holidays, and social events.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27475"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg26782",
-  "name": "Kendo Club at Cornell University",
-  "logo": {
-   "emoji": "KC",
-   "hue": 8
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Active/Recreational: Competitive",
-  "verified": false,
-  "description": "The purpose of the Kendo Club at Cornell University shall be to provide a space and environment for students interested in the Japanese martial art of Kendo, and to practice, compete, and improve together.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=26782"
-   },
-   {
-    "label": "Website",
-    "url": "https://cornellkendoclub.github.io/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/cornell_kendo/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_cornell_cg74087",
   "name": "Kessler Scholars",
   "logo": {
@@ -30059,121 +30054,6 @@
    "period": "",
    "open": false,
    "mode": "closed",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27196",
-  "name": "Key Elements",
-  "logo": {
-   "emoji": "KE",
-   "hue": 216
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Performing Arts",
-  "verified": false,
-  "description": "The Key Elements take a cappella to new heights at Cornell University by bringing their unique energy and excitement to every performance. As a co-ed a cappella group, we perform innovative arrangements of songs from the classic rock genre along with other contemporary popular music that cannot be mimicked. We strive to not only provide Cornell with awe-inspiring music and concerts, but to also offer an opportunity for students of any background to pursue their musical passions, while creating lifelong friendships along the way.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27196"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.keyelementscornell.com/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/thekeyelements/"
-   },
-   {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/thekeyelements"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74441",
-  "name": "Khiladi at Cornell",
-  "logo": {
-   "emoji": "KC",
-   "hue": 16
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Active/Recreational: Competitive",
-  "verified": false,
-  "description": "The purpose of Khiladi at Cornell shall be to foster cultural expression, creativity, and community through South Asian fusion dance. The organization shall promote diversity and cultural appreciation within the Cornell community and beyond by engaging in performances, competitions, and events that integrate Indian and Western dance styles.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74441"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27193",
-  "name": "Kidney Disease Screening and Awareness Program",
-  "logo": {
-   "emoji": "KD",
-   "hue": 192
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Community Service",
-  "verified": false,
-  "description": "The Kidney Disease Screening and Awareness Program (KDSAP) is a student-run organization that provides free kidney health screenings and health education to underserved communities. Students are working under the supervision of Adult expertise providing supervision of students who will provide educational materials We provide programs geared towards improving the health of underserved populations.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27193"
-   },
-   {
-    "label": "Website",
-    "url": "http://cornellkdsap.weebly.com/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
    "source": "campusgroups"
   }
  },
@@ -30530,7 +30410,7 @@
    "emoji": "LL",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -30769,7 +30649,7 @@
    "emoji": "LR",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -32672,7 +32552,7 @@
    "emoji": "LS",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -32816,7 +32696,7 @@
    "emoji": "LR",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -33594,7 +33474,7 @@
    "emoji": "ME",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -33647,245 +33527,6 @@
    {
     "label": "Website",
     "url": "https://marsrover.engineering.cornell.edu/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg56816",
-  "name": "Materials Science and Engineering",
-  "logo": {
-   "emoji": "MS",
-   "hue": 304
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "AFFILIATION: Departmental",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=56816"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74207",
-  "name": "Materials Science and Engineering Graduate Student Association at Cornell",
-  "logo": {
-   "emoji": "MS",
-   "hue": 200
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "PROF: Science/Healthcare",
-  "verified": false,
-  "description": "The purpose of LATTICE shall be to foster the growth of graduate students by promoting interaction, collaboration, and professional development. Through community-building, education, and advocacy, we aim to cultivate a culture of integrity, excellence, and mutual support that ensures the success of our members and the advancement of materials science research.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74207"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg26807",
-  "name": "Materials Society at Cornell",
-  "logo": {
-   "emoji": "MS",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "PROF: Engineering",
-  "verified": false,
-  "description": "The Materials Society at Cornell represents the university's undergraduate chapter of The Materials Research Society (MRS), The Materials Information Society (ASM), The Minerals, Metals, and Materials Society (TMS), and American Ceramics Society (ACerS). We partner with Materials Advantage to bring students to professional organizations (ACeRS, TMS, ASM, and AIST) at an affordable price. CMS is a student-run organization devoted to unity of MS&E majors and others interested in the fields of nanotechnology, biomedical engineering, semiconductors, polymers, ceramics, glasses, and metals.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=26807"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74014",
-  "name": "Mechanical & Aerospace Engineering",
-  "logo": {
-   "emoji": "MA",
-   "hue": 312
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "AFFILIATION: Departmental",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74014"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74048",
-  "name": "Med-In Black Association",
-  "logo": {
-   "emoji": "MB",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Health/Wellbeing",
-  "verified": false,
-  "description": "We, the aspiring Black pre-health students, in our pursuit of academic excellence and a future in healthcare, do hereby establish the Black Pre-Health Alliance. In recognition of our shared aspirations, unique experiences, and the challenges we face on our journey toward careers in health and medicine, we unite under this banner to forge a community of support, empowerment, and advocacy. We acknowledge the historic underrepresentation of Black individuals across health professions and the urgent need to address disparities in healthcare. We pledge to uphold these principles and to work collabo",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74048"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg26801",
-  "name": "Media & Entertainment at Cornell",
-  "logo": {
-   "emoji": "ME",
-   "hue": 264
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Publication/Media",
-  "verified": false,
-  "description": "To educate students who are interested in media about professional skills. To facilitate intercultural communication through hosting entertainment events.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=26801"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/cornellcme/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27256",
-  "name": "Media Guild, Inc",
-  "logo": {
-   "emoji": "MG",
-   "hue": 120
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Publication/Media",
-  "verified": false,
-  "description": "The Cornell Media Guild, Inc. provides students with the opportunity to gain comprehensive media training/experience based on the operation of WVBR 93.5 FM, CornellRadio.net, and Electric Buffalo Records.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27256"
-   },
-   {
-    "label": "Website",
-    "url": "http://www.cornellmediaguild.org/"
    }
   ],
   "recruitment": {
@@ -35113,6 +34754,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=28250"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.google.com/cornell.edu/cornell-moot-court/home?authuser=0"
    },
    {
     "label": "Website",
@@ -36675,7 +36320,7 @@
    "emoji": "NF",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: HRL/WCHS",
   "verified": false,
@@ -38142,7 +37787,7 @@
    "emoji": "PC",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Johnson School",
   "verified": false,
@@ -38253,7 +37898,7 @@
    "emoji": "PR",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -39445,7 +39090,7 @@
    "emoji": "PC",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -39782,7 +39427,7 @@
    "emoji": "PH",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -40514,6 +40159,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=27389"
+   },
+   {
+    "label": "Website",
+    "url": "https://acf-quizbowl.com/"
    }
   ],
   "recruitment": {
@@ -41029,7 +40678,7 @@
    "emoji": "RL",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -41922,7 +41571,7 @@
    "emoji": "SJ",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -41955,7 +41604,7 @@
    "emoji": "SJ",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -42399,7 +42048,7 @@
    "emoji": "SC",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -43130,39 +42779,6 @@
   }
  },
  {
-  "id": "oc_cornell_cg74377",
-  "name": "Sloan Student Association",
-  "logo": {
-   "emoji": "SS",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "AFFILIATION: Brooks School",
-  "verified": false,
-  "description": "The Sloan Student Association facilitates networking opportunities with prospective employers, professional development programs, community service involvement, and formal and informal social activities. Our activities center around the goals of furthering our “Sloan Family” and addressing MHA students’ needs.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74377"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_cornell_cg27451",
   "name": "Slope Day Programming Board",
   "logo": {
@@ -43192,183 +42808,6 @@
    "period": "",
    "open": false,
    "mode": "closed",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27488",
-  "name": "Slope Media Group",
-  "logo": {
-   "emoji": "SM",
-   "hue": 336
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Publication/Media",
-  "verified": false,
-  "description": "As Cornell's multimedia powerhouse, Slope Media Group is a leader in Cornell-related media and entertainment, delivering a creative, student perspective on everything that matters to the Big Red community. Slope is for students, by students.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27488"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.slopemediagroup.com/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg72896",
-  "name": "Smith Family Business Initiative",
-  "logo": {
-   "emoji": "SF",
-   "hue": 296
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "AFFILIATION: Departmental",
-  "verified": false,
-  "description": "The Smith Family Business Initiative at Cornell is dedicated to supporting and strengthening the network of businesses that are family and privately owned.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=72896"
-   },
-   {
-    "label": "Website",
-    "url": "http://www.johnson.cornell.edu/familybusiness"
-   }
-  ],
-  "recruitment": {
-   "title": "Not taking new members",
-   "period": "",
-   "open": false,
-   "mode": "closed",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg74383",
-  "name": "Snail Mail Club at Cornell",
-  "logo": {
-   "emoji": "SM",
-   "hue": 96
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Health/Wellbeing",
-  "verified": false,
-  "description": "The purpose of Snail Mail Club at Cornell shall be to create an environment and provide the supplies for traditional postal mail, centralized as an expression of creativity, care and friendship.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=74383"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27467",
-  "name": "Snee Graduate Organization",
-  "logo": {
-   "emoji": "SG",
-   "hue": 272
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "PROF: Science/Healthcare",
-  "verified": false,
-  "description": "The mission of the Snee Graduate Organization is to enhance the professional and social interaction between graduate students in the fields of Geological and Atmospheric Sciences. The organization also serves as a medium for communication between the graduate student body and the faculty of the Earth and Atmospheric Sciences at Cornell University.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27467"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_cornell_cg27491",
-  "name": "Snodgrass and Wigglesworth - Cornell Undergraduate Entomology Club",
-  "logo": {
-   "emoji": "SW",
-   "hue": 200
-  },
-  "type": "club",
-  "schoolId": "s_cornell",
-  "parent": "Animals/Wildlife",
-  "verified": false,
-  "description": "The purpose of Snodgrass and Wigglesworth shall be to, in affiliation with the Cornell Department of Entomology, promote the study and appreciation of arthropods. The goals of Snodgrass and Wigglesworth are: 1. To foster a cohesive community among the Cornell undergraduates interested in arthropods, with a focus on insects. 2. To spread awareness and appreciation of entomology throughout the Cornell campus and Ithaca area. 3. To be a resource for peer mentorship, informal outreach events, and education for the Cornell campus community and Ithaca area. 4. To locate and describe the larvae of Me",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://cornell.campusgroups.com/student_community?club_id=27491"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/snodwiggs.cornell/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
    "source": "campusgroups"
   }
  },
@@ -44263,7 +43702,7 @@
    "emoji": "SA",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -44884,7 +44323,7 @@
    "emoji": "SL",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -45020,7 +44459,7 @@
    "emoji": "SA",
    "hue": 32
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -45053,7 +44492,7 @@
    "emoji": "SB",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -46263,7 +45702,7 @@
    "emoji": "TC",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -46691,7 +46130,7 @@
    "emoji": "CS",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -47020,7 +46459,7 @@
    "emoji": "DH",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -47411,7 +46850,7 @@
    "emoji": "NS",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -48374,7 +47813,7 @@
    "emoji": "TD",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -48848,7 +48287,7 @@
    "emoji": "UR",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -49251,7 +48690,7 @@
    "emoji": "UD",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,
@@ -50341,6 +49780,109 @@
   }
  },
  {
+  "id": "oc_cornell_cg26964",
+  "name": "VET - Sports Medicine Club",
+  "logo": {
+   "emoji": "VS",
+   "hue": 0
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Animals/Wildlife",
+  "verified": false,
+  "description": "To provide education and information in various aspects of prevention, recognition, care and rehabilitation of injuries within equine and canine sports medicine and to promote the human-animal bond through activities that get people outside and working with their dogs. These activities may include agility, hiking, herding, tracking, Canine Good Citizen training and testing, and others as chosen by members. All breeds, mutts, sizes, ages, and fitness levels are welcome! Activities will be scheduled to provide students with a variety of dog-friendly options for relaxation and exercise. Lectures ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=26964"
+   },
+   {
+    "label": "Website",
+    "url": "https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg27584",
+  "name": "VET - Student American Veterinary Medical Association at Cornell",
+  "logo": {
+   "emoji": "VS",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Community Service",
+  "verified": false,
+  "description": "The objectives of the Cornell University SAVMA shall be as follow: a. To foster a united school spirit and to provide support of issues for the benefit of students within the college; b. To provide opportunities for members to gain additional professional knowledge and an understanding of professional ethics; c. To provide the students the benefits offered by the American Veterinary Medical Association to its student chapters and the advantages of belonging to a professional organization; d. To support, facilitate, and encourage student, faculty, and administration involvement in activities of",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=27584"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg48551",
+  "name": "VET - Student Chapter of the National Association for Black Veterinarians at Cornell",
+  "logo": {
+   "emoji": "VS",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Advocacy/Social Justice/Action",
+  "verified": false,
+  "description": "The mission of NABV is to \"advocate, provide support, and cultivate an inclusive community for Blacks in veterinary medicine at every level of the profession through the organization, members and leadership.\" The purpose of the chapter is to provide support and community to Black students at CUCVM, to maintain strong relationships with Black alumni, and to offer opportunities for Black and minority pre-veterinary students to better understand the field.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=48551"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_cornell_cg27518",
   "name": "VET - Student Veterinary Emergency and Critical Care Society",
   "logo": {
@@ -50881,6 +50423,105 @@
   }
  },
  {
+  "id": "oc_cornell_cg24839",
+  "name": "VET Student Services",
+  "logo": {
+   "emoji": "VS",
+   "hue": 280
+  },
+  "type": "department",
+  "schoolId": "s_cornell",
+  "parent": "AFFILIATION: Departmental",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=24839"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg72174",
+  "name": "VET- Dawghouse FC",
+  "logo": {
+   "emoji": "VD",
+   "hue": 336
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Active/Recreational: Competitive",
+  "verified": false,
+  "description": "As students of the College of Veterinary Medicine (CVM), we know first hand that there is a lot of work and pressure constantly being pushed onto us. We want to create a space where we can relieve some of that stress through soccer! Soccer is a fantastic way to run off steam, have fun exercising, engage in healthy competition, and meet new people. Our intent for developing this club is not only to provide an outlet from school work, but to also help develop soccer skills, teamwork, and confidence in a fun and safe environment. The club is open to all who want to play soccer, both undergraduate",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=72174"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_cornell_cg62942",
+  "name": "Veteran's Social Club",
+  "logo": {
+   "emoji": "VS",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_cornell",
+  "parent": "Student Groups for Student Services",
+  "verified": false,
+  "description": "The Mission of the Veterans Social Club is to offer a stress-free environment for veterans and their supporters; to congregate and socialize without politics, religion, or other issues that cause emotional stress.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://cornell.campusgroups.com/student_community?club_id=62942"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_cornell_cg74275",
   "name": "Vice President and Chief Human Resources Officer",
   "logo": {
@@ -50940,6 +50581,10 @@
    {
     "label": "Directory",
     "url": "https://cornell.campusgroups.com/student_community?club_id=26936"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/cornellvsa?ltsid=99a43a4f-11d0-4527-8d41-bcd522cb335b"
    },
    {
     "label": "Website",
@@ -52281,7 +51926,7 @@
    "emoji": "WS",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cornell",
   "parent": "AFFILIATION: Departmental",
   "verified": false,

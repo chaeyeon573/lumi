@@ -198,15 +198,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35450",
+  "id": "oc_columbia_cg35450",
   "name": "Alpha Chi Omega",
   "logo": {
    "emoji": "AC",
    "hue": 80
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -231,15 +231,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35461",
+  "id": "oc_columbia_cg35461",
   "name": "Alpha Delta Phi",
   "logo": {
    "emoji": "AD",
    "hue": 312
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -264,15 +264,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35462",
+  "id": "oc_columbia_cg35462",
   "name": "Alpha Epsilon Pi",
   "logo": {
    "emoji": "AE",
    "hue": 112
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -330,15 +330,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35465",
+  "id": "oc_columbia_cg35465",
   "name": "Alpha Omicron Pi",
   "logo": {
    "emoji": "AO",
    "hue": 32
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -363,15 +363,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35466",
+  "id": "oc_columbia_cg35466",
   "name": "Alpha Phi Alpha",
   "logo": {
    "emoji": "AP",
    "hue": 352
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -1874,6 +1874,10 @@
    {
     "label": "Website",
     "url": "https://www.columbiaballetcollaborative.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/columbia.ballet.collaborative/"
    }
   ],
   "recruitment": {
@@ -2489,7 +2493,7 @@
    "emoji": "CE",
    "hue": 96
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_columbia",
   "parent": "Governing Board",
   "verified": false,
@@ -6276,15 +6280,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35693",
+  "id": "oc_columbia_cg35693",
   "name": "Delta Gamma",
   "logo": {
    "emoji": "DG",
    "hue": 120
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -6342,15 +6346,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35696",
+  "id": "oc_columbia_cg35696",
   "name": "Delta Sigma Theta",
   "logo": {
    "emoji": "DS",
    "hue": 0
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -7930,15 +7934,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35946",
+  "id": "oc_columbia_cg35946",
   "name": "Kappa Alpha Psi",
   "logo": {
    "emoji": "KA",
    "hue": 64
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "The Columbia University Chapter, the Omicron of Kappa Alpha Psi Fraternity, Inc. is the 15th chapter of this esteemed Fraternity, and was Chartered on February 27th, 1921 as the first Ivy League chapter. Kappa Alpha Psi Fraternity, Inc. (ΚΑΨ) is a collegiate Greek-letter fraternity, founded on January 5, 1911 at Indiana University Bloomington. The fraternity has over 150,000 members with 700 undergraduate and alumni chapters in every state of the United States, and international chapters in the United Kingdom, Germany, Korea, Japan, the Caribbean, Saint Thomas, Saint Croix, U.S. Virgin Islan",
   "gallery": [],
@@ -7963,15 +7967,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35756",
+  "id": "oc_columbia_cg35756",
   "name": "Kappa Alpha Theta",
   "logo": {
    "emoji": "KA",
    "hue": 88
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -7996,15 +8000,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35758",
+  "id": "oc_columbia_cg35758",
   "name": "Kappa Phi Lambda",
   "logo": {
    "emoji": "KP",
    "hue": 112
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -8194,15 +8198,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35764",
+  "id": "oc_columbia_cg35764",
   "name": "Lambda Phi Epsilon",
   "logo": {
    "emoji": "LP",
    "hue": 272
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -8235,7 +8239,7 @@
   },
   "type": "greek",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -8695,7 +8699,7 @@
    "emoji": "MA",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_columbia",
   "parent": "Cultural",
   "verified": false,
@@ -8734,7 +8738,7 @@
   },
   "type": "council",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -9130,15 +9134,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35794",
+  "id": "oc_columbia_cg35794",
   "name": "Order of Omega",
   "logo": {
    "emoji": "OO",
    "hue": 200
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -9237,7 +9241,7 @@
   },
   "type": "council",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -9262,15 +9266,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35800",
+  "id": "oc_columbia_cg35800",
   "name": "Phi Gamma Delta",
   "logo": {
    "emoji": "PG",
    "hue": 328
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -9295,15 +9299,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35801",
+  "id": "oc_columbia_cg35801",
   "name": "Phi Iota Alpha",
   "logo": {
    "emoji": "PI",
    "hue": 88
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -9903,7 +9907,7 @@
    "emoji": "RH",
    "hue": 16
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_columbia",
   "parent": "Governing Board",
   "verified": false,
@@ -9969,7 +9973,7 @@
    "emoji": "RL",
    "hue": 168
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_columbia",
   "parent": "Student Organization",
   "verified": false,
@@ -10293,15 +10297,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35835",
+  "id": "oc_columbia_cg35835",
   "name": "Sigma Delta Tau",
   "logo": {
    "emoji": "SD",
    "hue": 200
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -10359,15 +10363,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35838",
+  "id": "oc_columbia_cg35838",
   "name": "Sigma Nu",
   "logo": {
    "emoji": "SN",
    "hue": 161
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -10392,15 +10396,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35839",
+  "id": "oc_columbia_cg35839",
   "name": "Sigma Phi Epsilon",
   "logo": {
    "emoji": "SP",
    "hue": 216
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -11868,15 +11872,15 @@
   }
  },
  {
-  "id": "og_columbia_cg35900",
+  "id": "oc_columbia_cg35900",
   "name": "Zeta Phi Beta",
   "logo": {
    "emoji": "ZP",
    "hue": 328
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_columbia",
-  "parent": "Fraternity & Sorority Life",
+  "parent": "IGC",
   "verified": false,
   "description": "",
   "gallery": [],

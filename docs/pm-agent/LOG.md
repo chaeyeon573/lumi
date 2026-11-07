@@ -2484,3 +2484,10 @@
 - Wisconsin short list explained: the page header now says "(719)", and the CampusGroups reader stopped at that total + 60 although later pages still returned groups (range=1150 had 21). Reader changed: past the total it keeps paging until 6 pages in a row add nothing (fetch-orgs.ts). Re-collected: 719 groups, matching the site's own count; the other 509 from the old list are no longer public (their pages redirect away; checked 3) and went to s_wisc.orgs-dropped.json - kept, not deleted. Social step on the new list found 141 more Instagram/Facebook links.
 - Spot check clubs: MSU Supply Chain Management Association, UMass Student Union Art Gallery, Yale Mixed Company fine; GWU The GW Vibes domain no longer resolves (weekly dead-link check). UT "GRADUATE COORDINATOR NETWORK" is a staff network, typed `department`.
 - Spot check courses: 5 random Caltech Winter 2027 classes (Ch 001B Sec 02, ChE/ESE/ME/MS 111, Bi/BE 024, En/VC 117, ME/CS/EE 133B) match the Caltech schedule.
+
+## 2026-11-07 11:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: MSU For Michigan, Purdue Salt and Light, NYU Fusion Film Festival fine; UMD Maryland Student Legislature (msl.org) no longer resolves. Tulane "Newcomb Alumnae Association" is the school's alumnae association, typed `department`.
+- Spot check courses: 5 random CMU Fall 2026 classes (53-610 N, 57-758, 98-244, 54-472 G, 02-261) match the CMU schedule.
+- Weekly re-collect group 5 (CampusGroups schools, with the paging fix): Cornell, Columbia, Emory, JHU, Duke, Northwestern. Groups held or grew (Northwestern 561→578, JHU 859→864; Cornell 1,483→1,472 with 25 delisted kept in orgs-dropped; Columbia 18 kept). Directory affiliation "Departmental" now marks more Cornell offices: departments 72→152 (sample read: Atkinson Center, Cornell Housing, Residential Life, Johnson School student services … all offices/programs). Cornell classes 9,509.
+  - Duke's class-schedule probe got an HTML page instead of data (DukeHub, probably weekend maintenance); nothing stored, Duke's class file unchanged. Columbia's catalog probe read 0 (rejected, no change).
