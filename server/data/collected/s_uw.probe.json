@@ -1,10 +1,10 @@
 {
- "checkedAt": "2026-11-05T05:45:53.806Z",
+ "checkedAt": "2026-11-07T21:52:51.282Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:uw",
- "sampled": 7895,
- "withTimes": 7895,
+ "sampled": 7893,
+ "withTimes": 7893,
  "terms": [
   "Fall 2026",
   "Winter 2027"
@@ -14,8 +14,8 @@
   "LSJ 346 · Disability Global · Fall 2026 · M 10:30-12:20 W 10:30-12:20",
   "CEWA 570 · Hydrodynamics · Fall 2026 · W 10:00-11:50 F 10:00-11:50",
   "SOC W 515 · Clinical Sw: Cyf (Sec C) · Fall 2026 · R 08:30-11:20",
-  "LING 575 · Comput Ling Topics (Sec F) · Winter 2027 · T 15:30-17:50",
-  "E E 205 · Intro Signal Cond · Winter 2027 · M 09:30-10:20 W 09:30-10:20 F 09:30-10:20"
+  "LING 575 · Comput Ling Topics (Sec C) · Winter 2027 · R 15:30-17:50",
+  "E E 233 · Circuit Theory · Winter 2027 · M 11:30-12:20 W 11:30-12:20 F 11:30-12:20"
  ],
  "spotCheck": {
   "matched": 6,

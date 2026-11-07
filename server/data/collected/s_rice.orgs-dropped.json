@@ -1,0 +1,74 @@
+[
+ {
+  "id": "oc_rice_asemrice",
+  "name": "American Society for Engineering Management Rice University Chapter",
+  "logo": {
+   "emoji": "AS",
+   "hue": 160,
+   "url": "https://se-images.campuslabs.com/clink/images/5d663fe8-5566-46ba-b339-eeb8604a250c6201b10a-f592-4925-88ae-6a305392c48f.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_rice",
+  "parent": "Academic & Research",
+  "verified": false,
+  "description": "We will equip our members with the skills and knowledge necessary for success in this field through professional development opportunities, including networking events, workshops, industry events, and participation in ASEM conferences and competitions. W",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://rice.campuslabs.com/engage/organization/asemrice"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.asemrice.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/asemrice/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "http://linkedin.com/company/asem-rice/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_rice__",
+  "name": "Rice Ethiopian and Eritrean Student Association",
+  "logo": {
+   "emoji": "RE",
+   "hue": 200,
+   "url": "https://se-images.campuslabs.com/clink/images/8cec7692-9da1-48e0-b76f-abcb35de22b438d56261-05e9-4efc-8bed-5ef62870221a.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_rice",
+  "parent": "Cultural & Identity",
+  "verified": false,
+  "description": "Rice Ethiopian & Eritrean Student Association creates space for Ethiopian and Eritrean students to celebrate shared and unique traditions while sharing their rich culture with the Rice community. Open to all students interested in learning and engaging.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://rice.campuslabs.com/engage/organization/-"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_eesa"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

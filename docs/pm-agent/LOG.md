@@ -2549,3 +2549,9 @@
 - **WashU departments dropped 49→0 in the re-collect**: those 49 office types came from an earlier one-off relabel pass, not from the reader or org-type-overrides.csv, so a fresh collect lost them. Restored, and wrote all 49 into org-type-overrides.csv so they survive every collect. Checked every school against the state before this week's re-collect: no other school lost departments.
 - Spot check clubs: Penn State Coaly Society, Purdue Aviation Day fine; UMN Coptic Orthodox site behind a bot check (202); MSU Curlfriends weebly site 404 (weekly dead-link check). UT "Recreational Sports" is the school's rec department, typed `department`.
 - Spot check courses: 5 random UMD Spring 2027 classes (KNES 464, DANC 200 Sec 0301, CMSC 454, BUDT 705, PHYS 313) match Testudo.
+
+## 2026-11-07 21:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Weekly re-collect: Rice 485→484 (first try cut by my 280 s limit after the group step, re-ran to completion; 4,156 classes), CMU 337→329 (9 delisted kept; 6,761 classes), UW 1,086→1,177 groups with the paging fix (links 1,887→2,055; 7,895 classes).
+- Spot check clubs: Clemson Women's Club Lacrosse, UMN EEB Club, MSU APGH, Tulane Global Humanities Center (403 to bots, title matched) fine; USC Couture Fashion Collective domain no longer resolves (weekly dead-link check).
+- Spot check courses: 5 random CMU Spring 2027 classes match. 80-210 Logic and Proofs "(A)" meets only Friday; checked CMU's own schedule: the course lists only sections A and B, both Friday, no separate lecture - data is right.

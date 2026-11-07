@@ -400,13 +400,13 @@
   ]
  },
  {
-  "id": "og_cmu_cg68012",
+  "id": "oc_cmu_cg68012",
   "name": "Alpha Phi Omega",
   "logo": {
    "emoji": "AP",
    "hue": 352
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_cmu",
   "parent": "Social",
   "verified": false,
@@ -2052,10 +2052,6 @@
    {
     "label": "Directory",
     "url": "https://tartanconnect.cmu.edu/student_community?club_id=68050"
-   },
-   {
-    "label": "Website",
-    "url": "http://www.centralchurchpitt.com/college"
    }
   ]
  },
@@ -2112,36 +2108,6 @@
    {
     "label": "Directory",
     "url": "https://tartanconnect.cmu.edu/student_community?club_id=68055"
-   }
-  ]
- },
- {
-  "id": "oc_cmu_cg68048",
-  "name": "Chinese Bible Study Fellowship",
-  "logo": {
-   "emoji": "CB",
-   "hue": 160
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "Religious/Spiritual",
-  "verified": false,
-  "description": "To make a lasting impact for God’s kingdom by helping students, faculty, and people from across the world come to know Jesus Christ. Our meetings are conducted in Chinese, but all are welcome.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=68048"
-   },
-   {
-    "label": "Website",
-    "url": "https://cmu-cbsf.wixsite.com/home"
    }
   ]
  },
@@ -2424,32 +2390,6 @@
    {
     "label": "Website",
     "url": "http://www.cmubhangra.org/"
-   }
-  ]
- },
- {
-  "id": "oc_cmu_cg71320",
-  "name": "CMU Blackjack Society",
-  "logo": {
-   "emoji": "CB",
-   "hue": 112
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "Educational",
-  "verified": false,
-  "description": "To provide a venue for people to practice Blackjack strategy and related card counting skills.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=71320"
    }
   ]
  },
@@ -2965,32 +2905,6 @@
   ]
  },
  {
-  "id": "oc_cmu_cg71383",
-  "name": "CMU Italian Society",
-  "logo": {
-   "emoji": "CI",
-   "hue": 168
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "Student Government Recognized Organizations",
-  "verified": false,
-  "description": "The CMU Italian Society aims to promote Italian culture, foster a community for Italian and Italian-interested students, and provide academic, professional, and social opportunities through various events and initiatives.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=71383"
-   }
-  ]
- },
- {
   "id": "oc_cmu_cg68155",
   "name": "CMU Jiya",
   "logo": {
@@ -3013,32 +2927,6 @@
    {
     "label": "Directory",
     "url": "https://tartanconnect.cmu.edu/student_community?club_id=68155"
-   }
-  ]
- },
- {
-  "id": "oc_cmu_cg69611",
-  "name": "CMU Marathon Club",
-  "logo": {
-   "emoji": "CM",
-   "hue": 8
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "Club Sports/Recreation",
-  "verified": false,
-  "description": "Our mission is to build a community of long-distance road runners who support each other on our marathon journeys. We will engage with our runners and national community to provide our members the best training and race opportunities possible.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=69611"
    }
   ]
  },
@@ -3427,32 +3315,6 @@
    {
     "label": "Directory",
     "url": "https://tartanconnect.cmu.edu/student_community?club_id=69825"
-   }
-  ]
- },
- {
-  "id": "oc_cmu_cg68259",
-  "name": "CMU Skateclub",
-  "logo": {
-   "emoji": "CS",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "Club Sports/Recreation",
-  "verified": false,
-  "description": "Skate club creates a safe space for skaters of all ages and skill levels/abilities to skate together, hangout, and express themselves through the sport. We help promote and legitimize skating as a sport as well as have it taken more seriously as a form of exercise. We host fundraising events, lessons, and other skating related activities to connect members.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=68259"
    }
   ]
  },
@@ -3866,7 +3728,7 @@
    "emoji": "CI",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cmu",
   "parent": "Diversity",
   "verified": false,
@@ -4105,32 +3967,6 @@
    {
     "label": "Website",
     "url": "http://pghcru.com/"
-   }
-  ]
- },
- {
-  "id": "og_cmu_cg68346",
-  "name": "Delta Sigma Theta Sorority Inc.",
-  "logo": {
-   "emoji": "DS",
-   "hue": 152
-  },
-  "type": "greek",
-  "schoolId": "s_cmu",
-  "parent": "Fraternity & Sorority Chapters",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=68346"
    }
   ]
  },
@@ -6774,7 +6610,7 @@
    "emoji": "PC",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cmu",
   "parent": "Educational",
   "verified": false,
@@ -7232,6 +7068,10 @@
    {
     "label": "Website",
     "url": "http://rccgpittsburgh.com/young-adults/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/rccgpittsburgh"
    }
   ]
  },
@@ -7266,32 +7106,6 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/cmu_reflexion/"
-   }
-  ]
- },
- {
-  "id": "oc_cmu_cg71306",
-  "name": "Rhythm Game Club @CMU",
-  "logo": {
-   "emoji": "RG",
-   "hue": 232
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "Social",
-  "verified": false,
-  "description": "Our mission is to have a place for students to gather around our common love for rhythm games and to spread awareness of these games to the broader student population. As opposed to the current CMU Esports club, our club is a lot more focused on students who may not be interested in shooters and fighting games, giving a chance for both casual gamers and hardcore gamers to come together with a more relaxing genre of game that combines music and unique gameplay.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=71306"
    }
   ]
  },
@@ -7800,6 +7614,10 @@
    {
     "label": "Directory",
     "url": "https://tartanconnect.cmu.edu/student_community?club_id=71371"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.skycampushappiness.org/about"
    }
   ]
  },
@@ -8984,32 +8802,6 @@
   ]
  },
  {
-  "id": "oc_cmu_cg71321",
-  "name": "The Thrifty Mellon",
-  "logo": {
-   "emoji": "TM",
-   "hue": 32
-  },
-  "type": "club",
-  "schoolId": "s_cmu",
-  "parent": "General Interest",
-  "verified": false,
-  "description": "We want to create CMU's first on-campus, student run thrift store where students can donate and find clothing, dorm supplies, electronics, etc.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://tartanconnect.cmu.edu/student_community?club_id=71321"
-   }
-  ]
- },
- {
   "id": "oc_cmu_cg68306",
   "name": "The Treblemakers",
   "logo": {
@@ -9519,7 +9311,7 @@
    "emoji": "WE",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cmu",
   "parent": "Technology",
   "verified": false,

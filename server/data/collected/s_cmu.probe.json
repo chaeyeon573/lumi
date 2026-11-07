@@ -1,10 +1,10 @@
 {
- "checkedAt": "2026-11-03T12:36:26.862Z",
+ "checkedAt": "2026-11-07T21:39:45.586Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:cmu",
- "sampled": 6756,
- "withTimes": 6756,
+ "sampled": 6761,
+ "withTimes": 6761,
  "terms": [
   "Fall 2026",
   "Spring 2027"
@@ -15,7 +15,7 @@
   "95-722 · Digital Transformation (A2) · Fall 2026 · T 11:00-12:20 R 11:00-12:20",
   "98-008 · Student Taught Courses (StuCo): Intro to Rust Lang · Fall 2026 · R 19:00-19:50",
   "54-394 · Production Prep SOM: Hansel und Gretel : Directing (A) · Spring 2027 · M 17:00-22:30 T 17:00-22:30 W 17:00-22:30 R 17:00-22:30 F 17:00-22:30 S 11:00-15:00",
-  "95-702 · Distributed Systems for Information Systems Management (B) · Spring 2027 · M 14:00-15:20 W 14:00-15:20"
+  "95-451 · Making Products Count: Data Science for Product Managers · Spring 2027 · M 17:00-18:20 W 17:00-18:20 F 11:00-12:20"
  ],
  "spotCheck": {
   "matched": 6,

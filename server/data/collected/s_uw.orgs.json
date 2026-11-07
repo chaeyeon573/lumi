@@ -2159,6 +2159,10 @@
    },
    {
     "label": "Website",
+    "url": "https://sites.google.com/view/aicheuw/home"
+   },
+   {
+    "label": "Website",
     "url": "https://aicheuw.netlify.app/"
    }
   ],
@@ -2670,10 +2674,10 @@
  },
  {
   "id": "oc_uw_cg35498",
-  "name": "Amnesty International UW",
+  "name": "Amnesty International at UW",
   "logo": {
    "emoji": "AI",
-   "hue": 280
+   "hue": 344
   },
   "type": "club",
   "schoolId": "s_uw",
@@ -2707,10 +2711,10 @@
  },
  {
   "id": "oc_uw_cg36163",
-  "name": "AnakbayanUW",
+  "name": "Anakbayan at UW",
   "logo": {
-   "emoji": "A",
-   "hue": 232
+   "emoji": "AU",
+   "hue": 152
   },
   "type": "club",
   "schoolId": "s_uw",
@@ -3947,7 +3951,7 @@
   "schoolId": "s_uw",
   "parent": "Academic",
   "verified": false,
-  "description": "The Associated Students at the College of Education act on behalf of the student body of the College of Education (COE) in three chief ways. First, we aim to create a positive culture and atmosphere in the COE for all student",
+  "description": "The Associated Students of the College of Education (ASCE) serve to support, connect, and advocate for the students of the College of Education at the University of Washington’s Seattle Campus. We seek to build a positive culture in the College of Education by building community across programs, with faculty and staff, and between students within the College of Education. We aim to offer students professional development and networking opportunities, and help students build meaningful relationships that lead to greater personal, academic, and professional success. We advocate on behalf of the ",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -10531,6 +10535,14 @@
    {
     "label": "Website",
     "url": "https://www.deltachi.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/deltachihq/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/deltachifraternity"
    }
   ],
   "recruitment": {
@@ -12183,6 +12195,10 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=35639"
+   },
+   {
+    "label": "Group chat",
+    "url": "https://join.slack.com/t/engineeringho54z1116/sharedinvite/zt3s1r4zqvk3WAunouGkf24LJaEpUwH2w"
    }
   ],
   "recruitment": {
@@ -13713,6 +13729,10 @@
    {
     "label": "Website",
     "url": "http://uwformula.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uwformula/"
    }
   ],
   "recruitment": {
@@ -18795,6 +18815,14 @@
    {
     "label": "Website",
     "url": "http://www.huskytriathlon.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/huskytriathlon/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/HuskyTriathlonClub"
    }
   ],
   "recruitment": {
@@ -18972,6 +19000,18 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=36330"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.uwhuskywrestling.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/huskywrestlingclub/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/huskywrestlingclub"
    },
    {
     "label": "Website",
@@ -24730,6 +24770,10 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=36399"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.uwmgc.com/"
    }
   ],
   "recruitment": {
@@ -27878,6 +27922,14 @@
    {
     "label": "Website",
     "url": "http://uwphikaps.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uwpks/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/UWPKS"
    }
   ],
   "recruitment": {
@@ -28462,6 +28514,10 @@
    {
     "label": "Website",
     "url": "https://plantfuturesinitiative.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/plantfuturesofficial/"
    }
   ],
   "recruitment": {
@@ -28915,6 +28971,10 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=36453"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/uwppsc"
    },
    {
     "label": "Website",
@@ -31626,6 +31686,43 @@
   }
  },
  {
+  "id": "oc_uw_cg36741",
+  "name": "Seattle REPRESENT",
+  "logo": {
+   "emoji": "SR",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Religious/Spiritual",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36741"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.seattlerepresent.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_uw_cg35951",
   "name": "Seattle Sitaara",
   "logo": {
@@ -33832,10 +33929,10 @@
  },
  {
   "id": "oc_uw_cg35989",
-  "name": "STEM Book Club",
+  "name": "STEM Outreach Club",
   "logo": {
-   "emoji": "SB",
-   "hue": 288
+   "emoji": "SO",
+   "hue": 312
   },
   "type": "club",
   "schoolId": "s_uw",
@@ -34015,8 +34112,8 @@
   "id": "oc_uw_cg36510",
   "name": "Strawberries & Sudoku at UW",
   "logo": {
-   "emoji": "SA",
-   "hue": 160
+   "emoji": "SS",
+   "hue": 72
   },
   "type": "club",
   "schoolId": "s_uw",
@@ -35252,6 +35349,10 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=36009"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sumo.uw/"
    }
   ],
   "recruitment": {
@@ -35902,6 +36003,10 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=36525"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.tbp.org/recruit/recruitHome.cfm"
    }
   ],
   "recruitment": {
@@ -36005,6 +36110,10 @@
    {
     "label": "Directory",
     "url": "https://huskylink.washington.edu/student_community?club_id=36025"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/teaclubuw/"
    }
   ],
   "recruitment": {
@@ -39031,6 +39140,3208 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/udstreetmed/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36076",
+  "name": "Unleashed! A Cappella",
+  "logo": {
+   "emoji": "UA",
+   "hue": 320
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "Unleashed! A Cappella is the only nonaudition a cappella choir at the University of Washington. Since 2000, we have been a family of performers who love to sing and laugh together. Come join us, no experience required!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36076"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36560",
+  "name": "Unplugged",
+  "logo": {
+   "emoji": "U",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "Unplugged is a fusion band at the University of Washington (Seattle) that performs South Asian and Western inspired pieces.\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36560"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36077",
+  "name": "Urban Accessibility Group",
+  "logo": {
+   "emoji": "UA",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "A coalition of students at UW working to catalogue accessibility challenges present in pedestrian infrastructure around Seattle via community walk audits and data analytics.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36077"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.uw.edu/uag/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36561",
+  "name": "Urology Interest Group",
+  "logo": {
+   "emoji": "UI",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "The Urology Interest Group (UIG) at the University of Washington School of Medicine is a studentled organization dedicated to fostering interest, knowledge, and mentorship in the field of urology.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36561"
+   },
+   {
+    "label": "Website",
+    "url": "https://uwuwib.wixsite.com/uofwa"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36562",
+  "name": "UTEST",
+  "logo": {
+   "emoji": "U",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "UTEST is a medical studentrun organization that provides free and anonymous HIV testing to the Seattle community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36562"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.utesthiv.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg35443",
+  "name": "UW Recreation",
+  "logo": {
+   "emoji": "UR",
+   "hue": 56
+  },
+  "type": "department",
+  "schoolId": "s_uw",
+  "parent": "Campus Department",
+  "verified": false,
+  "description": "University of Washington Recreation provides safe, accessible, and dynamic recreation experiences to engage students in growth and wellbeing.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=35443"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.washington.edu/ima/"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36078",
+  "name": "UX @ UW",
+  "logo": {
+   "emoji": "UU",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "UX @ UW is a student community dedicated to promoting professional development and broadening the industry knowledge of students of all levels and backgrounds interested in UX/UI Design and UX Research.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36078"
+   },
+   {
+    "label": "Website",
+    "url": "https://uxuw.framer.website/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uxuw.club/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36079",
+  "name": "UX Health",
+  "logo": {
+   "emoji": "UH",
+   "hue": 210
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Academic",
+  "verified": false,
+  "description": "UX Health is a studentled organization dedicated to exploring and advancing the role of User Experience (UX) in healthcare. We aim to foster a community that promotes usercentered innovation by connecting students, professionals, and faculty.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36079"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36563",
+  "name": "Vascular Surgery Interest Group",
+  "logo": {
+   "emoji": "VS",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "The Vascular Surgery Interest Group (VSIG), affiliated with the UW School of Medicine, builds student interest in vascular surgery through education, research, mentorship, and handson experiences.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36563"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36564",
+  "name": "Vault Sounds",
+  "logo": {
+   "emoji": "VS",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "A place to listen to all the underappreciated bops from around the world! Vault Sounds is a music appreciation club, with an emphasis on \"underappreciated\" music.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36564"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36565",
+  "name": "VAW Global Health Alliances Dental Chapter at University of Washington",
+  "logo": {
+   "emoji": "VG",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "By affiliation with VAW Global Health Alliances, the purpose of our organization is to provide students with an opportunity to attend an outreach trip, where they will learn about healthcare in a global context by shadowing local dentists.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36565"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36080",
+  "name": "Venture Capital Club",
+  "logo": {
+   "emoji": "VC",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Business",
+  "verified": false,
+  "description": "We are bringing students interested in venture capital and startups together.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36080"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.uwvcclub.co/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36081",
+  "name": "Veterans Law Society",
+  "logo": {
+   "emoji": "VL",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Law",
+  "verified": false,
+  "description": "The mission of the Veterans Law Society (VLS) is to connect students who are Veterans, Active Duty, Reserve, or National Guard. As a unit, the VLS will help its members network and connect with local veterans and resources in the Seattle legal community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36081"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36082",
+  "name": "Viable Veganism at UW",
+  "logo": {
+   "emoji": "VV",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "Animal Advocacy at UW as a goal of creating a strong community of students passionate about reducing animal cruelty. We welcome everyone.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36082"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36083",
+  "name": "Vietnam Health Clinic",
+  "logo": {
+   "emoji": "VH",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "Vietnam Health Clinic is a studentled, notforprofit organization dedicated to improving health care access and services to underresourced populations of Vietnam, while promoting proactive learning and firsthand primary care experience.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36083"
+   },
+   {
+    "label": "Website",
+    "url": "http://vnhealthclinic.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/vietnamhealthclinic/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/VietnamHealthClinic"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36084",
+  "name": "Vietnamese International Student Association at the University of Washington",
+  "logo": {
+   "emoji": "VI",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "VISA is dedicated to providing a platform where Vietnamese international students can connect, share experiences, and support one another in navigating the challenges of studying and living abroad.\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36084"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36085",
+  "name": "Vietnamese Student Association",
+  "logo": {
+   "emoji": "VS",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "The Vietnamese Student Association serves to promote and preserve the Vietnamese culture at the University of Washington and its surrounding communities through cultural, social, and educational events.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36085"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.vsauw.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36086",
+  "name": "Virtual Bedside Concerts",
+  "logo": {
+   "emoji": "VB",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "VBC aims to develop a sustainable structure that allows medical and undergraduate students to perform virtual concerts for patients experiencing isolation or stress while they are in the hospital.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36086"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.virtualbedsideconcerts.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36087",
+  "name": "VisionEyes PreOptometry Club",
+  "logo": {
+   "emoji": "VP",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "VisionEyes PreOptometry seeks to provide community for preoptometry students and works toward equipping UW's future optometrists with resources to support their goals and aspirations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36087"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36566",
+  "name": "Visual Arts Society at University of Washington",
+  "logo": {
+   "emoji": "VA",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Business",
+  "verified": false,
+  "description": "VAS is open to all majors and all backgrounds. We create a resource hub for individuals, student organizations, and local businesses to collaborate with our members' expertise. We also provide a safe community for all visual arts enthusiasts to learn.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36566"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36567",
+  "name": "Vital Signs",
+  "logo": {
+   "emoji": "VS",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Health Sciences",
+  "verified": false,
+  "description": "Vital Signs is a studentrun, undergraduate journal, made by and for all PreHealth students. We publish articles, essays, opeds, and even creative works about medicine, health, and the students trying to find their place within it.\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36567"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36088",
+  "name": "Vocal Jazz at UW",
+  "logo": {
+   "emoji": "VJ",
+   "hue": 104
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "Vocal Jazz aims to unite and encourage the participation of jazz musicians in the UW community. Our RSO centers around creating a fun community where everyone feels welcomed and valued, while challenging each other to grow as musicians!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36088"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36089",
+  "name": "Voyage",
+  "logo": {
+   "emoji": "V",
+   "hue": 206
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "Voyage is a studentled interdisciplinary magazine that highlights student exploration across the world to promote geographic and cultural awareness and inspire adventure through written and visual storytelling.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36089"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36568",
+  "name": "Washington Aerial Robotics",
+  "logo": {
+   "emoji": "WA",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "In Washington Aerial Robotics members design, build, test, and compete with quadcopter drones.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36568"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36569",
+  "name": "Washington Disciples For Christ",
+  "logo": {
+   "emoji": "WD",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Religious/Spiritual",
+  "verified": false,
+  "description": "WDFC (Washington Disciples For Christ) is an evangelical, international student mission organization dedicated to continuous witnessing for Christ, building them up, and sending them to all nations to fulfill the Great Commission",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36569"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36090",
+  "name": "Washington Gaming Association Fighting Game Club",
+  "logo": {
+   "emoji": "WG",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Gaming/Esports",
+  "verified": false,
+  "description": "The Fighting Game Club @ UW is a place for people interested in Fighting Games to meet likeminded folks! Come to our weekly meets on Fridays at the Seattle campus! If you cannot make it, we also have a Discord server where you can play with us online!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36090"
+   },
+   {
+    "label": "Discord",
+    "url": "https://discord.gg/6RqsuxRVx3"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36570",
+  "name": "Washington Gaming Association: Valorant",
+  "logo": {
+   "emoji": "WG",
+   "hue": 296
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Gaming/Esports",
+  "verified": false,
+  "description": "A community of UW students who play Valorant, for casual and experienced players alike.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36570"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36571",
+  "name": "Washington Husky STUNT",
+  "logo": {
+   "emoji": "WH",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "We are a collegiate stunt team that competes against other college teams in a sport rooted in cheerleading, gymnastics, acrobatics, and tumbling.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36571"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36572",
+  "name": "Washington Hyperloop",
+  "logo": {
+   "emoji": "WH",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "The Washington Hyperloop team designs and builds a Tunnel Boring Machine prototype as part of The Boring Companysponsored NotaBoring Competition.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36572"
+   },
+   {
+    "label": "Website",
+    "url": "http://notahyperloop.club/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36091",
+  "name": "Washington iGEM",
+  "logo": {
+   "emoji": "WI",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "International Genetically Engineering Machine (iGEM) is the premier international synthetic biology student research competition. Started at MIT in 2004, it now includes over 300 student teams from all over the world.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36091"
+   },
+   {
+    "label": "Website",
+    "url": "http://students.washington.edu/uwigem/#/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/washington_igem/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/WashingtoniGEM"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36092",
+  "name": "Washington Journal of Law, Technology, and the Arts",
+  "logo": {
+   "emoji": "WJ",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Law",
+  "verified": false,
+  "description": "The Washington Journal of Law, Technology & Arts strives to publish quality legal scholarship at the intersection of law, technology, and the arts.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36092"
+   },
+   {
+    "label": "Website",
+    "url": "https://wjlta.com/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/pages/Washington-Journal-of-Law-Technology-Arts/215712051790319"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36786",
+  "name": "Washington Men's Gymnastics",
+  "logo": {
+   "emoji": "WM",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36786"
+   },
+   {
+    "label": "Website",
+    "url": "http://wmgf.us/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/washingtonmensgymnastics/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/washingtonmgymnastics"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36573",
+  "name": "Washington Men's Ultimate Frisbee",
+  "logo": {
+   "emoji": "WM",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "To promote the sport of Ultimate Frisbee among the UW community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36573"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.washingtonultimate.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36093",
+  "name": "Washington Public Interest Research Group",
+  "logo": {
+   "emoji": "WP",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "WashPIRG is a a nonpartisan, studentrun organization dedicated to making a difference on issues students care about. We give students the skills and opportunities to mobilize and advocate for social change. \\r\\n\\r\\nGet involved at washpirgstudents.org!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36093"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.washpirgstudents.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36574",
+  "name": "Washington State Pharmacy Association Student Chapter",
+  "logo": {
+   "emoji": "WS",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "The Washington State Pharmacy Association exists to advocate on behalf of its members to ensure pharmacy professionals are engaged and valued as essential to the healthcare team to optimize patient outcomes.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36574"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.wsparx.org/default.asp?"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36575",
+  "name": "Washington Student Association UW Chapter",
+  "logo": {
+   "emoji": "WS",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "The Washington Student Association advocates for students in Washington state to the state legislature in Olympia. Some historic victories include the creation of the Washington College Grant, large expansions of voting rights, and tuition freezes.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36575"
+   },
+   {
+    "label": "Website",
+    "url": "http://wastudents.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wastudents/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36094",
+  "name": "Washington Superbike",
+  "logo": {
+   "emoji": "WS",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "Washington Superbike is an engineering RSO with the ultimate goal to compete in the MotoStudent competition. We offer opportunities in engineering design, research, manufacturing, business, marketing and personal growth in students.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36094"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36095",
+  "name": "Washington Wave",
+  "logo": {
+   "emoji": "WW",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "Washington Wave is an organization dedicated to the education and professional development of its members in the renewable energy sector of the Blue Economy within a safe, inclusive and fun environment.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36095"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36096",
+  "name": "Washington Women's Lacrosse Club",
+  "logo": {
+   "emoji": "WW",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "To participate in the WCLA as a part of NWWLL at a competitive level, while instilling values of good sportsmanship and athleticism and growing the sport of women's lacrosse at UW.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36096"
+   },
+   {
+    "label": "Website",
+    "url": "http://washingtonwomenslax.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36097",
+  "name": "Washington Women's Ultimate Frisbee",
+  "logo": {
+   "emoji": "WW",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "The Washington Women's Ultimate Frisbee team consists of a diverse group of athletes who compete regionally as well as nationally, and compete against local/national teams.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36097"
+   },
+   {
+    "label": "Website",
+    "url": "https://elementultimate.mypixieset.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36576",
+  "name": "Washington Yacht Club",
+  "logo": {
+   "emoji": "WY",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "Our purpose is to teach and promote sailing among students, staff and alumni of the University of Washington.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36576"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.washingtonyachtclub.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/washingtonyachtclub/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/WashingtonYachtClub"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36577",
+  "name": "Wasian Culture Club",
+  "logo": {
+   "emoji": "WC",
+   "hue": 336
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "Our club's main goal is to discuss and explore contemporary Wasian identity in the postmodernist cultural landscape of America. Anyone, regardless of race, is welcome to join.\\r\\n\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36577"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36098",
+  "name": "Water and Infrastructure Professionals",
+  "logo": {
+   "emoji": "WI",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Environmental",
+  "verified": false,
+  "description": "Water and Infrastructure Professionals (WIPs) is affiliated with local professional organizations related to drinking water, wastewater, & infrastructure. Connect with WIPs to network, learn, and have fun.\\r\\n\\r\\n\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36098"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36099",
+  "name": "Wealth Management Association",
+  "logo": {
+   "emoji": "WM",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Business",
+  "verified": false,
+  "description": "The Wealth Management Association is a student organization dedicated to supporting students interested in careers in the wealth management industry. We focus on financial advisory, tax planning, and estate planning, providing members with opportunities.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36099"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36578",
+  "name": "Web Impact at University of Washington",
+  "logo": {
+   "emoji": "WI",
+   "hue": 120
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "Web Impact is a web development RSO that creates websites for local organizations. We provide web development workshops and connect members to local website projects.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36578"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.webimpactuw.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36579",
+  "name": "WEGET Magazine",
+  "logo": {
+   "emoji": "WM",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "WEGET Magazine is a studentrun media company initiated to share interpretations of arts, culture, and lifestyle through paper magazines.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36579"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.wegetmagazine.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36580",
+  "name": "Wellness and Resilience at the University of Washington",
+  "logo": {
+   "emoji": "WR",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "Applying concepts from the EDUC Wellness and Social and Emotional Learning courses, WandR seeks to cultivate an inclusive community of students looking to continue the practice of mental health/wellbeing through a preventative, skillbased lens.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36580"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36100",
+  "name": "Wellness with Latinas",
+  "logo": {
+   "emoji": "WW",
+   "hue": 120
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "promote and bring wellness to the University of Washington Latina community campus. At the same time, bringing awareness to the struggles of mental health and being faced with generational trauma.\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36100"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36101",
+  "name": "Wesley Club",
+  "logo": {
+   "emoji": "W",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Religious/Spiritual",
+  "verified": false,
+  "description": "Wesley Club is an open, inclusive LGBTQ+ affirming Methodist campus ministry. We provide a space where everyone is welcome to come connect and be in community, explore faith in their own way, and pursue justice. Come join our table; you are welcome here!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36101"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36102",
+  "name": "West African Student Association",
+  "logo": {
+   "emoji": "WA",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "Our purpose is to promote the development of leadership skills, provide key resources and campus support for academics, professional development and internship opportunities, and most important of all build a community within the West African Community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36102"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36581",
+  "name": "West Africans @UW",
+  "logo": {
+   "emoji": "WA",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "WA@UW is the home for West African culture at the University of Washington. We celebrate our roots through music, food, fashion, and community. Whether you're West African or just vibing with the culture—come join the movement. We bring the WOW to UW.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36581"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36103",
+  "name": "WGA Magic: The Gathering",
+  "logo": {
+   "emoji": "WM",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Gaming/Esports",
+  "verified": false,
+  "description": "Our purpose is to build a community of Magic: The Gathering players at UW and to run weekly events encompassing a variety of different formats. Join the discord to learn more about how to get involved here https://discord.gg/Mfmg84f",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36103"
+   },
+   {
+    "label": "Discord",
+    "url": "https://discord.gg/6jJc2S7"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36582",
+  "name": "WGA Overwatch",
+  "logo": {
+   "emoji": "WO",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Gaming/Esports",
+  "verified": false,
+  "description": "To provide a competitive and recreational home for fans of the video game Overwatch by Blizzard Entertainment.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36582"
+   },
+   {
+    "label": "Discord",
+    "url": "https://discord.gg/dxd4S3T"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36583",
+  "name": "WiCyS UW Chapter",
+  "logo": {
+   "emoji": "WU",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "Women in Cybersecurity (WiCyS) is a national organization consisting of student chapters, professional committees, and an annual conference all working towards promoting the recruitment, retention, and advancement of women in cybersecurity.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36583"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.wicys.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wicysorg/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/wicys"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36104",
+  "name": "WiUX: Women in User Experience",
+  "logo": {
+   "emoji": "WW",
+   "hue": 96
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Academic",
+  "verified": false,
+  "description": "Our mission is to empower and connect women at the University of Washington and aid their endeavors in User Experience and related fields through communitybased events.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36104"
+   },
+   {
+    "label": "Website",
+    "url": "https://womeninux.framer.website/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/womeninux_uw/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36105",
+  "name": "Women Empowerment through Collaborations, Awareness, and Resources for Education",
+  "logo": {
+   "emoji": "WE",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "WECARE works to empower women globally through expanding resources for health, education, and more. We aim to create an environment where students from all backgrounds and identities can gain a sense of community together between shared values. Through workshops, outreach, and collaborations with community partners, we aim to close knowledge gaps and reduce stigma surrounding topics that are often overlooked in traditional education. We understand that education is empowerment. WECARE is one of the founding RSOs of the Pregnancy Test Access Project, bringing free pregnancy tests to UW's campus",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36105"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wecareuw/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36106",
+  "name": "Women in Chemical Engineering at the University of Washington",
+  "logo": {
+   "emoji": "WC",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "The primary purpose of this organization is to educate, empower, and advocate for women in chemical engineering, and their supporters, by providing an open space for dialogue, mentorship, collaboration, camaraderie, and skill building.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36106"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.wcheuw.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36584",
+  "name": "Women in Computing",
+  "logo": {
+   "emoji": "WC",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "Women in Computing (WiC) at the University of Washington is a group of students in the Paul G. Allen School (of all genders and orientations) dedicated to cultivating a strong supportive community of women in the Allen School.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36584"
+   },
+   {
+    "label": "Website",
+    "url": "https://wic.cs.washington.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36585",
+  "name": "Women in Consulting at Washington",
+  "logo": {
+   "emoji": "WC",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Business",
+  "verified": false,
+  "description": "Women in Consulting at Washington (WICW) is the premier consulting organization for undergraduate women at UW. Founded in 2025, WICW provides a space for women to explore consulting, develop professional skills, and connect with mentors.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36585"
+   },
+   {
+    "label": "Website",
+    "url": "http://wicw.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36107",
+  "name": "Women in Informatics",
+  "logo": {
+   "emoji": "WI",
+   "hue": 104
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Academic",
+  "verified": false,
+  "description": "WINFO is dedicated to uplifting women and underrepresented voices in technology. We believe that diversity drives innovation, and that every student deserves the tools, community, and confidence to shape the future of technology. We welcome all majors, genders, and identities united by a shared passion for creating a more equitable tech industry.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36107"
+   },
+   {
+    "label": "Website",
+    "url": "http://winfo.ischool.uw.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36108",
+  "name": "Women in Law Society",
+  "logo": {
+   "emoji": "WL",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Law",
+  "verified": false,
+  "description": "The Women in Law Society at the University of Washington aims to empower prelaw female/femaleidentifying undergraduate students with support and social mobility as they advance in the legal profession.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36108"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36586",
+  "name": "Women in Orthopaedics Interest Group",
+  "logo": {
+   "emoji": "WO",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Medical/Dental/Nursing/Pharmacy",
+  "verified": false,
+  "description": "Women in Orthopaedics Interest Group is a medical studentrun organization that is focused on promoting professional development of University of Washington medical students identifying as female of all backgrounds to succeed in orthopaedic surgery.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36586"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36109",
+  "name": "Women of Aerospace",
+  "logo": {
+   "emoji": "WA",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "Women in Aerospace is a group devoted to promoting women and minority workplace rights, helping engineering students succeed, and participating in aero outreach to encourage young women and other underrepresented groups to consider engineering careers.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36109"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36588",
+  "name": "Women's Club Baseball at The University of Washington",
+  "logo": {
+   "emoji": "WS",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "The Women's Club Baseball team at the University of Washington is committed to creating more opportunities for women to play baseball at a higher level. We are working with the Baseball For All Foundation to create a more inclusive future of baseball.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36588"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36110",
+  "name": "Women's Club Soccer at UW",
+  "logo": {
+   "emoji": "WS",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "We play competitive soccer against club teams from other colleges on the west coast (Washington, Oregon, Idaho, California). We have 2 practices a week, a fall league, and 2+ tournaments a year.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36110"
+   },
+   {
+    "label": "Website",
+    "url": "http://students.washington.edu/scrdawgs"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36111",
+  "name": "Women's Club Volleyball at UW",
+  "logo": {
+   "emoji": "WS",
+   "hue": 24
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "The club's purpose is to come together and play volleyball at a more competitive level than Intramural sports.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36111"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/uwwcvb"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36589",
+  "name": "Women's Field Hockey at the University of Washington",
+  "logo": {
+   "emoji": "WS",
+   "hue": 320
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "Women's Field Hockey at the University of Washington aims to provide a relaxed and collaborative environment in which women can hone their athletic field hockey skills, create friendships, and build character in and out of practice.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36589"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36112",
+  "name": "Women's Health Advocacy Team at UW",
+  "logo": {
+   "emoji": "WS",
+   "hue": 296
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Health Sciences",
+  "verified": false,
+  "description": "Women’s Health Advocacy Team at UW is dedicated to empowering individuals through education, awareness, and support regarding health issues that primarily affect women.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36112"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36113",
+  "name": "Women's Ice Hockey Club UW Chapter",
+  "logo": {
+   "emoji": "WS",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "Our purpose is to provide a competitive and fun environment for women who wish to play the sport of ice hockey.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36113"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36590",
+  "name": "Women's Law Caucus",
+  "logo": {
+   "emoji": "WS",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Law",
+  "verified": false,
+  "description": "The Women's Law Caucus is a feminist organization committed to facilitating the interaction of women in the law school for mutual enjoyment, support, and encouragement, both among themselves and with women who are practicing law in the community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36590"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/uwwlc"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36114",
+  "name": "Women's Rugby at UW",
+  "logo": {
+   "emoji": "WS",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "It shall be the purpose of this organization to play and promote the game of rugby.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36114"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36591",
+  "name": "Women's Run Club @UW",
+  "logo": {
+   "emoji": "WS",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "The Women's Run Club @UW empowers women of all backgrounds and abilities to connect through running. We foster a welcoming, supportive community that encourages fitness, friendship, and personal growth.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36591"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36115",
+  "name": "Women's Water Polo Club at University of Washington",
+  "logo": {
+   "emoji": "WS",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "Organize a team of women interested in learning, playing and competing in water polo.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36115"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36587",
+  "name": "Womens Basketball Club",
+  "logo": {
+   "emoji": "WB",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Sports/Recreation",
+  "verified": false,
+  "description": "The Women's basketball club is a safe space that provides students for the opportunity to play basketball recreationally with others who share the same love for the sport.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36587"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36116",
+  "name": "Woof3D",
+  "logo": {
+   "emoji": "W",
+   "hue": 87
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Engineering",
+  "verified": false,
+  "description": "As the 3D printing club at UW, we provide a hub for anyone interested in 3D printing. Whether you're a beginner or an expert, we have something for everyone. Experience is not required, and neither is any time commitment. During Fall Quarter, we hold weekly workshops mostly aimed towards beginners. These will teach the basics of 3D modeling in OnShape, as well as how to print using the club printers. We also provide members with the opportunity to work on a larger scale 3D printing project with other members throughout the year. Joining a team is not required, but it is a good way to get hands",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36116"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.woof3d.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36117",
+  "name": "Writers in Progress",
+  "logo": {
+   "emoji": "WP",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "Interested in creative writing? We create a positive, casual space where people interested in a variety of forms of creative writing can meet and provide each other with support and feedback. Bring something to share or just come to chat! :)",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36117"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36592",
+  "name": "xpress Dance Crew",
+  "logo": {
+   "emoji": "XD",
+   "hue": 304
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "Tightknit dance community for dancers of all levels to learn and improve in dance through unique opportunities to choreograph, perform, and simply jam out!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36592"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36118",
+  "name": "Yarn It at UW",
+  "logo": {
+   "emoji": "YI",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "Yarn It is a group dedicated to teaching other UW students how to relax through the art of crochet! From beginner to expert we meet weekly to share our love of yarn.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36118"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36119",
+  "name": "Yarn With a Purpose at UW",
+  "logo": {
+   "emoji": "YW",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Special Interest",
+  "verified": false,
+  "description": "We are a student run organization that knit/crochet for those in need. We donate everything created by our members to homeless shelters, womens shelters, hospitals, and more! No experience is necessary and all patterns used are beginner friendly.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36119"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36120",
+  "name": "Young Americans for Liberty at UW",
+  "logo": {
+   "emoji": "YA",
+   "hue": 336
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "We are Young Americans for Liberty (YAL) at the University of Washington. Our group is dedicated to advancing individual liberties, freedom from government oppression, peace, and free markets. YAL at UW seeks to educate the youth about the philosophy of liberty, property, capitalism, economics, and the dangers of war. Get involved with us today!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36120"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.yalatuw.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36121",
+  "name": "Young Democratic Socialists of America at UW",
+  "logo": {
+   "emoji": "YD",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "We are the Young Democratic Socialists of America chapter at the University of Washington, Seattle. We are a leftist student group seeking to spread the tenets of democratic socialism on campus through activism, education and campus outreach.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36121"
+   },
+   {
+    "label": "Discord",
+    "url": "https://discord.gg/5XgwmE2n"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36122",
+  "name": "Young Democrats at UW",
+  "logo": {
+   "emoji": "YD",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "Young Democrats is the leftofcenter umbrella group for students on the UW campus seeking to promote youth involvement in progressive politics! We volunteer at the national, state, and local levels with campaigns and on advocacy issues locally :)",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36122"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36123",
+  "name": "Young Life College",
+  "logo": {
+   "emoji": "YL",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Religious/Spiritual",
+  "verified": false,
+  "description": "Our purpose is to provide a place where students can come and enjoy fellowship in a safe welcoming community while learning what it means to live out our faith while enjoying college.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36123"
+   },
+   {
+    "label": "Website",
+    "url": "https://northseattle.younglife.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/northseattleyl/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/NorthSeattleYL"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36593",
+  "name": "Young Professionals International Network",
+  "logo": {
+   "emoji": "YP",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Political/Social Action",
+  "verified": false,
+  "description": "The World Affairs Council's YPIN unites young professionals in UW with a passion for global issues. Through diverse events focused on international themes, YPIN fosters networking, collaboration, and cultural understanding, connecting emerging leade",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36593"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36124",
+  "name": "Yushan Chinese Literature Club",
+  "logo": {
+   "emoji": "YC",
+   "hue": 304
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "We are the Yushan Chinese Literature Club, a group of idealists rooted in Seattle who are passionate about Chinese literature.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36124"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36125",
+  "name": "YUVAraga",
+  "logo": {
+   "emoji": "Y",
+   "hue": 143
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Performing Arts",
+  "verified": false,
+  "description": "Raising awareness for & exploring the Indian Classical arts through different mediums",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36125"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uw_cg36594",
+  "name": "Zaytoon at the University of Washington",
+  "logo": {
+   "emoji": "ZU",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_uw",
+  "parent": "Cultural/International",
+  "verified": false,
+  "description": "Zaytoon is a student lead Palestinianled organization that is dedicated to fostering a strong community for Palestinian students and allies at UW. In this space we aim to form meaningful relationships and enrich our cultural heritage.\\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36594"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_uw_cg36126",
+  "name": "Zeta Phi Beta Sorority, Incorporated Kappa Nu Chapter",
+  "logo": {
+   "emoji": "ZP",
+   "hue": 48
+  },
+  "type": "greek",
+  "schoolId": "s_uw",
+  "parent": "National Pan-Hellenic Council",
+  "verified": false,
+  "description": "To foster the ideals of service, charity, scholarship, civic and cultural endeavors, sisterhood, and finer womanhood. \\r\\n",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36126"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_uw_cg36127",
+  "name": "Zeta Psi",
+  "logo": {
+   "emoji": "ZP",
+   "hue": 293
+  },
+  "type": "greek",
+  "schoolId": "s_uw",
+  "parent": "IFC/Panhellenic Association Greeks",
+  "verified": false,
+  "description": "Zeta Psi exists to develop gentlemen, foster excellence, and provide its members with the tools, relationships, and knowledge that allow us to succeed.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36127"
+   },
+   {
+    "label": "Website",
+    "url": "https://zetapsiuw.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uwzetapsi/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_uw_cg36128",
+  "name": "Zeta Tau Alpha",
+  "logo": {
+   "emoji": "ZT",
+   "hue": 88
+  },
+  "type": "greek",
+  "schoolId": "s_uw",
+  "parent": "IFC/Panhellenic Association Greeks",
+  "verified": false,
+  "description": "We are an organization that strives to promote community service, sisterhood, and education. These things allow us to create well rounded members that can positively affect the UW community at large and their various other communities.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://huskylink.washington.edu/student_community?club_id=36128"
+   },
+   {
+    "label": "Website",
+    "url": "http://washington.zetataualpha.org/"
    }
   ],
   "recruitment": {

@@ -36,7 +36,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/180DC.Rice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "media.rice@180dc.org",
+   "source": "https://rice.campuslabs.com/engage/organization/180dc-rice"
+  }
  },
  {
   "id": "oc_rice_aceatrice",
@@ -75,7 +79,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/aceatrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aceatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/aceatrice"
+  }
  },
  {
   "id": "oc_rice_accessibilitybuddies",
@@ -106,7 +114,11 @@
     "label": "Website",
     "url": "https://sites.google.com/rice.edu/accessibility-buddies/home"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gv21@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/accessibilitybuddies"
+  }
  },
  {
   "id": "oc_rice_aceing_autism",
@@ -145,7 +157,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/aceingautismhoustonrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "houston-riceuniversity@aceingautism.org",
+   "source": "https://rice.campuslabs.com/engage/organization/aceing-autism"
+  }
  },
  {
   "id": "oc_rice_acrossallborders",
@@ -176,7 +192,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.aab/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aab@mailman.rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/acrossallborders"
+  }
  },
  {
   "id": "oc_rice_akoma",
@@ -206,8 +226,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/riceakoma"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/riceakoma"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/riceakoma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceakoma@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/akoma"
+  }
  },
  {
   "id": "oc_rice_eeps_rice_edu_aapg_rice_student_chapter",
@@ -246,7 +278,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/aapg-rice-university/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jg256@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/eeps-rice-edu-aapg-rice-student-chapter"
+  }
  },
  {
   "id": "oc_rice_wwwcancer",
@@ -273,7 +309,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/wwwcancer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kala.boswell@cancer.org",
+   "source": "https://rice.campuslabs.com/engage/organization/wwwcancer"
+  }
  },
  {
   "id": "oc_rice_aiaa",
@@ -312,7 +352,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aiaa.rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aiaaricechapter@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/aiaa"
+  }
  },
  {
   "id": "oc_rice_apsa",
@@ -338,45 +382,6 @@
    {
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/apsa"
-   }
-  ]
- },
- {
-  "id": "oc_rice_asemrice",
-  "name": "American Society for Engineering Management Rice University Chapter",
-  "logo": {
-   "emoji": "AS",
-   "hue": 160,
-   "url": "https://se-images.campuslabs.com/clink/images/5d663fe8-5566-46ba-b339-eeb8604a250c6201b10a-f592-4925-88ae-6a305392c48f.png?preset=small-sq"
-  },
-  "type": "club",
-  "schoolId": "s_rice",
-  "parent": "Academic & Research",
-  "verified": false,
-  "description": "We will equip our members with the skills and knowledge necessary for success in this field through professional development opportunities, including networking events, workshops, industry events, and participation in ASEM conferences and competitions. W",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://rice.campuslabs.com/engage/organization/asemrice"
-   },
-   {
-    "label": "Website",
-    "url": "http://www.asemrice.org/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/asemrice/"
-   },
-   {
-    "label": "LinkedIn",
-    "url": "http://linkedin.com/company/asem-rice/"
    }
   ]
  },
@@ -448,7 +453,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/9176276/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceuasce@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/asce"
+  }
  },
  {
   "id": "oc_rice_rice_asa",
@@ -506,7 +515,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/act-rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "actriceuniversity@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/act-rice"
+  }
  },
  {
   "id": "oc_rice_apgsa",
@@ -564,7 +577,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/agsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dk78@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/agsa"
+  }
  },
  {
   "id": "oc_rice_ascend",
@@ -630,7 +647,11 @@
     "label": "Website",
     "url": "https://eeps.rice.edu/eeps-awg-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceawg@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/awg"
+  }
  },
  {
   "id": "oc_rice_alpfaatrice",
@@ -692,7 +713,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-ar-vr/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricearvr@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricearvr"
+  }
  },
  {
   "id": "oc_rice_aws_student_builder_group_at_rice_university",
@@ -727,7 +752,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sbgrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mz83@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/aws-student-builder-group-at-rice-university"
+  }
  },
  {
   "id": "oc_rice_baker",
@@ -762,7 +791,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/bakercollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "baker.college@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/baker"
+  }
  },
  {
   "id": "oc_rice_ricebisf",
@@ -801,7 +834,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/ricebisf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bisf@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebisf"
+  }
  },
  {
   "id": "oc_rice_basmatibeats",
@@ -840,7 +877,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCWvTwkv6B7BM0pqxhY9m6pw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "basmatibeats@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/basmatibeats"
+  }
  },
  {
   "id": "oc_rice_basykrice",
@@ -879,7 +920,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BASYK.RICE/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubbasyk@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/basykrice"
+  }
  },
  {
   "id": "oc_rice_bcm_pdi",
@@ -914,7 +959,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcm.pdi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcm.pdi@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/bcm-pdi"
+  }
  },
  {
   "id": "oc_rice_bedsidenarratives",
@@ -941,7 +990,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/bedsidenarratives"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hj56@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bedsidenarratives"
+  }
  },
  {
   "id": "oc_rice_bestbuddies",
@@ -976,7 +1029,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceBestBuddies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "em105@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bestbuddies"
+  }
  },
  {
   "id": "oc_rice_bcbgsa",
@@ -1003,7 +1060,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/bcbgsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "or6@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bcbgsa"
+  }
  },
  {
   "id": "oc_rice_bioegsa",
@@ -1045,7 +1106,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ricebioe/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bioegsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bioegsa"
+  }
  },
  {
   "id": "oc_rice_bgsa",
@@ -1123,7 +1188,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@ricebsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bsa"
+  }
  },
  {
   "id": "oc_rice_blacksmithingatrice",
@@ -1158,7 +1227,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bs.at.rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blacksmithingatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/blacksmithingatrice"
+  }
  },
  {
   "id": "oc_rice_brasa",
@@ -1228,7 +1301,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricebridgethegap/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "an107@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bridgethegap"
+  }
  },
  {
   "id": "oc_rice_brown",
@@ -1266,7 +1343,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/brown_college/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brownpresident@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/brown"
+  }
  },
  {
   "id": "oc_rice_butterflybooks",
@@ -1305,7 +1386,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/butterfly-books-nonprofit/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "butterflybooksnonprofit@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/butterflybooks"
+  }
  },
  {
   "id": "oc_rice_campkesemrice",
@@ -1348,7 +1433,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCYzsA6esKaQSprEQB9IQy5Q/videos?view=0&sort=dd&shelf_id=0"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice@kesem.org",
+   "source": "https://rice.campuslabs.com/engage/organization/campkesemrice"
+  }
  },
  {
   "id": "oc_rice_ds",
@@ -1378,7 +1467,11 @@
     "label": "Website",
     "url": "https://delivery.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umf@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ds"
+  }
  },
  {
   "id": "oc_rice_campusevents",
@@ -1441,7 +1534,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceStudentWellbeing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wellbeing@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/caregiving"
+  }
  },
  {
   "id": "oc_rice_caribbeanstudentsociety",
@@ -1476,7 +1573,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricecss"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cssriceu@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/caribbeanstudentsociety"
+  }
  },
  {
   "id": "oc_rice_capc",
@@ -1515,7 +1616,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/RiceCAPC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "capc@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/capc"
+  }
  },
  {
   "id": "oc_rice_ccd",
@@ -1562,7 +1667,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCyaeh6I4iM3nP_fUgzDBCCw?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccd@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ccd"
+  }
  },
  {
   "id": "oc_rice_ccl",
@@ -1601,7 +1710,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/CCLRiceU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccl@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ccl"
+  }
  },
  {
   "id": "oc_rice_cercl",
@@ -1640,7 +1753,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/CERCLRice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cercl@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/cercl"
+  }
  },
  {
   "id": "oc_rice_ce3",
@@ -1670,7 +1787,11 @@
     "label": "Website",
     "url": "https://engineering.rice.edu/equitycenter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chf1@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ce3"
+  }
  },
  {
   "id": "oc_rice_clic",
@@ -1704,7 +1825,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/clicrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clic@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/clic"
+  }
  },
  {
   "id": "oc_rice_cte",
@@ -1735,7 +1860,11 @@
     "label": "Website",
     "url": "https://cte.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cte@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/cte"
+  }
  },
  {
   "id": "oc_rice_cswgs",
@@ -1769,7 +1898,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/CSWGS/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cswgs@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/cswgs"
+  }
  },
  {
   "id": "oc_rice_d2k",
@@ -1808,7 +1941,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/riced2klab"
    }
-  ]
+  ],
+  "contact": {
+   "email": "d2k@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/d2k"
+  }
  },
  {
   "id": "oc_rice_cas",
@@ -1835,7 +1972,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/cas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricecentralasiansociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/cas"
+  }
  },
  {
   "id": "oc_rice_chabad",
@@ -1878,7 +2019,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCCdItp9GpxdAKoY12aFf1OQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rabbi@jewishriceu.com",
+   "source": "https://rice.campuslabs.com/engage/organization/chabad"
+  }
  },
  {
   "id": "oc_rice_ricechaarg",
@@ -1932,7 +2077,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/chao"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ew75@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/chao"
+  }
  },
  {
   "id": "oc_rice_chbe_gsa",
@@ -1963,7 +2112,11 @@
     "label": "Website",
     "url": "http://chbegsa.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chbegsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/chbe-gsa"
+  }
  },
  {
   "id": "oc_rice_cgsa",
@@ -2002,7 +2155,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1510199709010424/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cgsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/cgsa"
+  }
  },
  {
   "id": "oc_rice_chiepsilon",
@@ -2033,7 +2190,11 @@
     "label": "Website",
     "url": "https://ceve.rice.edu/undergraduate-awards-honors"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rs123@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/chiepsilon"
+  }
  },
  {
   "id": "oc_rice_childrenatrisk",
@@ -2060,7 +2221,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/childrenatrisk"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricechildrenatrisk@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/childrenatrisk"
+  }
  },
  {
   "id": "oc_rice_christiansoncampus",
@@ -2099,7 +2264,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCzepYqFAjqxEN1cTvQvqL0w/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "christiansatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/christiansoncampus"
+  }
  },
  {
   "id": "oc_rice_riceldssa",
@@ -2177,7 +2346,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/civicdutyrice/?ref=bookmarks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "civicdutyrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/civicdutyrice"
+  }
  },
  {
   "id": "oc_rice_ceve",
@@ -2211,7 +2384,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceCEE"
    }
-  ]
+  ],
+  "contact": {
+   "email": "erica.harris@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ceve"
+  }
  },
  {
   "id": "oc_rice_claudebuilderclub",
@@ -2268,7 +2445,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/riceultimate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jg168@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceultimate"
+  }
  },
  {
   "id": "oc_rice_colombianowls",
@@ -2295,7 +2476,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/colombianowls"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cc222@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/colombianowls"
+  }
  },
  {
   "id": "oc_rice_comsciclub",
@@ -2326,7 +2511,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/comsciconhou/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "houston@comscicon.org",
+   "source": "https://rice.campuslabs.com/engage/organization/comsciclub"
+  }
  },
  {
   "id": "oc_rice_connectrice",
@@ -2387,7 +2576,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ccf.hcc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccf@hcchome.org",
+   "source": "https://rice.campuslabs.com/engage/organization/ccf"
+  }
  },
  {
   "id": "oc_rice_cruatrice",
@@ -2422,7 +2615,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cruatrice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adam.mcfarland@cru.org",
+   "source": "https://rice.campuslabs.com/engage/organization/cruatrice"
+  }
  },
  {
   "id": "oc_rice_csters",
@@ -2465,7 +2662,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/csters/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csters.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/csters"
+  }
  },
  {
   "id": "oc_rice_cnc",
@@ -2496,7 +2697,11 @@
     "label": "Website",
     "url": "http://cni25.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cniatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/cnc"
+  }
  },
  {
   "id": "oc_rice_hart",
@@ -2535,7 +2740,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/hartriceuniv"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arthist@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/hart"
+  }
  },
  {
   "id": "oc_rice_bioe",
@@ -2578,7 +2787,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/3889650/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bioeng@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bioe"
+  }
  },
  {
   "id": "oc_rice_bios",
@@ -2611,7 +2824,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/biosciencesatrice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bios@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bios"
+  }
  },
  {
   "id": "oc_rice_mcllc",
@@ -2648,8 +2865,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/cultures.rice.edu"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/cultures.rice.edu"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/cultures.rice.edu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cultures@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/mcllc"
+  }
  },
  {
   "id": "oc_rice_dmc",
@@ -2687,7 +2916,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/fondrenlibrary/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dmc-info@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/dmc"
+  }
  },
  {
   "id": "oc_rice_dfs",
@@ -2717,7 +2950,11 @@
     "label": "Website",
     "url": "https://oma.rice.edu/diversity-facilitators"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clack@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/dfs"
+  }
  },
  {
   "id": "oc_rice_duncan",
@@ -2756,7 +2993,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/201995963184811"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cam18@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/duncan"
+  }
  },
  {
   "id": "oc_rice_eeps",
@@ -2795,7 +3036,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceEarthScience"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rj33@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/eeps"
+  }
  },
  {
   "id": "oc_rice_eeri_ru",
@@ -2822,7 +3067,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/eeri-ru"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jainish.patel@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/eeri-ru"
+  }
  },
  {
   "id": "oc_rice_eeb_gsa",
@@ -2853,7 +3102,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/eeb.gsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "at160@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/eeb_gsa"
+  }
  },
  {
   "id": "oc_rice_ece",
@@ -2887,7 +3140,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/RiceECE"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ece@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ece"
+  }
  },
  {
   "id": "oc_rice_ecegsa",
@@ -2917,8 +3174,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.ece.gsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice.ece.gsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice.ece.gsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kvyas@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ecegsa"
+  }
  },
  {
   "id": "oc_rice_epmp",
@@ -2956,7 +3225,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/epmp.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rsm@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/epmp"
+  }
  },
  {
   "id": "oc_rice_rice_ewb",
@@ -3069,7 +3342,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/episcochurchrice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "missioner@churchatrice.org",
+   "source": "https://rice.campuslabs.com/engage/organization/episcochurchrice"
+  }
  },
  {
   "id": "oc_rice_fastwarp",
@@ -3103,7 +3380,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1489391761339125/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gm65@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/fastwarp"
+  }
  },
  {
   "id": "oc_rice_fondren",
@@ -3142,7 +3423,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricefondren/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fondrenux@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/fondren"
+  }
  },
  {
   "id": "oc_rice_frenchclub",
@@ -3173,7 +3458,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/frenchclub.rice/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fcg1@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/frenchclub"
+  }
  },
  {
   "id": "oc_rice_friends_of_msf_rice",
@@ -3242,7 +3531,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/ricegradschool"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradadmissions@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/fulbrightrice"
+  }
  },
  {
   "id": "oc_rice_forensicssociety",
@@ -3279,7 +3572,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricehumanities/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dworth@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/forensicssociety"
+  }
  },
  {
   "id": "oc_rice_georgerbrownschoolofengineering",
@@ -3309,7 +3606,11 @@
     "label": "Website",
     "url": "https://engineering.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dhreserv@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/georgerbrownschoolofengineering"
+  }
  },
  {
   "id": "oc_rice_geounion",
@@ -3340,7 +3641,11 @@
     "label": "Website",
     "url": "https://eeps.rice.edu/geounion"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sanskruti@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/geounion"
+  }
  },
  {
   "id": "oc_rice_giftoflife",
@@ -3409,6 +3714,10 @@
    {
     "label": "Website",
     "url": "https://www.girlsintovc.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/girlsintovc/"
    }
   ]
  },
@@ -3449,7 +3758,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/507461543052732/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rt66@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gmma"
+  }
  },
  {
   "id": "oc_rice_gpih",
@@ -3476,7 +3789,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/gpih"
    }
-  ]
+  ],
+  "contact": {
+   "email": "man15@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gpih"
+  }
  },
  {
   "id": "oc_rice_riceglobalshapers",
@@ -3515,7 +3832,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@ShapingTheWay_ShapersHouston"
    }
-  ]
+  ],
+  "contact": {
+   "email": "globalshapershouston@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceglobalshapers"
+  }
  },
  {
   "id": "oc_rice_gradgames",
@@ -3546,7 +3867,11 @@
     "label": "Website",
     "url": "https://mailman.rice.edu/mailman/listinfo/gradgames"
    }
-  ]
+  ],
+  "contact": {
+   "email": "graduatestudentgaming@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/gradgames"
+  }
  },
  {
   "id": "oc_rice_gps",
@@ -3584,7 +3909,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceGradStudies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "graduate@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gps"
+  }
  },
  {
   "id": "oc_rice_gmsa",
@@ -3609,7 +3938,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/gmsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zh55@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gmsa"
+  }
  },
  {
   "id": "oc_rice_gsa",
@@ -3652,7 +3985,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-university-graduate-student-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gsa"
+  }
  },
  {
   "id": "oc_rice_ricegradstrive",
@@ -3679,7 +4016,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricegradstrive"
    }
-  ]
+  ],
+  "contact": {
+   "email": "strivegradliaisons@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricegradstrive"
+  }
  },
  {
   "id": "oc_rice_gso",
@@ -3706,7 +4047,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/gso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gso@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gso"
+  }
  },
  {
   "id": "oc_rice_handcraftedhope",
@@ -3736,8 +4081,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ricehandcraftedhope"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricehandcraftedhope"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricehandcraftedhope"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricehandcraftedhope@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/handcraftedhope"
+  }
  },
  {
   "id": "oc_rice_hanszen",
@@ -3776,7 +4133,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/hanszencollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hans@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/hanszen"
+  }
  },
  {
   "id": "oc_rice_healar",
@@ -3811,7 +4172,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricehealar/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "healthsciencesmajors@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/healar"
+  }
  },
  {
   "id": "oc_rice_hinduyuva",
@@ -3841,6 +4206,14 @@
    {
     "label": "Website",
     "url": "https://hinduyuva.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/hinduyuvarice/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/hinduyuvarice/"
    },
    {
     "label": "Instagram",
@@ -3885,7 +4258,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=61579125123384"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricehacer@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/hacer"
+  }
  },
  {
   "id": "oc_rice_hootandwhisper",
@@ -3911,7 +4288,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/hootandwhisper"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hoot.whisper@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/hootandwhisper"
+  }
  },
  {
   "id": "oc_rice_houstoninstitute",
@@ -3942,7 +4323,11 @@
     "label": "Website",
     "url": "https://houstoninstitute.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vsaenz@houstoninstitute.org",
+   "source": "https://rice.campuslabs.com/engage/organization/houstoninstitute"
+  }
  },
  {
   "id": "oc_rice_hr",
@@ -3972,7 +4357,11 @@
     "label": "Website",
     "url": "https://people.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "people@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/hr"
+  }
  },
  {
   "id": "oc_rice_herogiving",
@@ -4002,7 +4391,11 @@
     "label": "Website",
     "url": "https://www.herogiving.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "br72@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/herogiving"
+  }
  },
  {
   "id": "oc_rice_hgsa",
@@ -4040,7 +4433,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceUniversityHGSA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hgsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/hgsa"
+  }
  },
  {
   "id": "oc_rice_hrc",
@@ -4066,7 +4463,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/hrc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hrc@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/hrc"
+  }
  },
  {
   "id": "oc_rice_isar",
@@ -4109,7 +4510,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/indian-students-at-rice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isar@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/isar"
+  }
  },
  {
   "id": "oc_rice_iso",
@@ -4139,7 +4544,11 @@
     "label": "Website",
     "url": "https://iso.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "security@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/iso"
+  }
  },
  {
   "id": "oc_rice_riceintervarsity",
@@ -4178,7 +4587,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/riceintervarsity"
    }
-  ]
+  ],
+  "contact": {
+   "email": "xl150@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceintervarsity"
+  }
  },
  {
   "id": "oc_rice_inthread",
@@ -4209,7 +4622,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/inthread_/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "inthreadatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/inthread"
+  }
  },
  {
   "id": "oc_rice_japanesestudentassociation",
@@ -4282,8 +4699,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceJSSA/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricejewishstudies"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricejewishstudies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jewishstudies@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/jssa"
+  }
  },
  {
   "id": "oc_rice_jones",
@@ -4318,7 +4747,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/365967593417249/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jonespresident@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/jones"
+  }
  },
  {
   "id": "oc_rice_kast",
@@ -4353,7 +4786,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/kast_rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oea6@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/kast"
+  }
  },
  {
   "id": "oc_rice_kinesiology",
@@ -4392,7 +4829,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/school/rice-university-department-of-kinesiology/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kinesiologydept@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/kinesiology"
+  }
  },
  {
   "id": "oc_rice_kisa",
@@ -4423,7 +4864,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_kisa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eys3@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/kisa"
+  }
  },
  {
   "id": "oc_rice_ksa",
@@ -4458,7 +4903,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/RiceKSA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceksaboard@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ksa"
+  }
  },
  {
   "id": "oc_rice_ktru",
@@ -4540,7 +4989,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/LAGSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceunivlagsa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/lagsa"
+  }
  },
  {
   "id": "oc_rice_lmsaplus",
@@ -4575,7 +5028,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/latino-student-medical-association/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lmsa.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/lmsaplus"
+  }
  },
  {
   "id": "oc_rice_latinxgradsrice",
@@ -4606,7 +5063,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/latinxgrads_at_rice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latingrads@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/latinxgradsrice"
+  }
  },
  {
   "id": "oc_rice_lifelonglearningwithfriends_at_rice",
@@ -4645,7 +5106,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/LifelongLearningwithFriends"
    }
-  ]
+  ],
+  "contact": {
+   "email": "llwf.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/lifelonglearningwithfriends_at_rice"
+  }
  },
  {
   "id": "oc_rice_lilie",
@@ -4692,7 +5157,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCXLuz4IwNpfRXPzAEDURzsw/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lilie@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/lilie"
+  }
  },
  {
   "id": "oc_rice_longdsquad",
@@ -4727,7 +5196,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/longdsquad.htx/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "km105@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/longdsquad"
+  }
  },
  {
   "id": "oc_rice_losbuhosdelnorte",
@@ -4758,7 +5231,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/losbuhosdelnorte/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "losbuhosdelnorte@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/losbuhosdelnorte"
+  }
  },
  {
   "id": "oc_rice_lovett",
@@ -4797,7 +5274,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/lovettcollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lovettpresident@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/lovett"
+  }
  },
  {
   "id": "oc_rice_ml_at_rice",
@@ -4827,6 +5308,14 @@
    {
     "label": "Website",
     "url": "http://linktr.ee/ricemlclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricemachinelearning"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricemachinelearning"
    },
    {
     "label": "Instagram",
@@ -4875,7 +5364,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ricemob/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bands@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/mob"
+  }
  },
  {
   "id": "oc_rice_mariachilunallena",
@@ -4922,7 +5415,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@mariachilunallena"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mariachilunallena@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/mariachilunallena"
+  }
  },
  {
   "id": "oc_rice_martel",
@@ -4961,7 +5458,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/martelcollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ath8@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/martel"
+  }
  },
  {
   "id": "oc_rice_msne",
@@ -4999,7 +5500,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceMSNE"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msne@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/msne"
+  }
  },
  {
   "id": "oc_rice_msne_gsa",
@@ -5060,7 +5565,11 @@
     "label": "Website",
     "url": "http://mcmurtry.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "morgan.a.gage@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/mcmurtry"
+  }
  },
  {
   "id": "oc_rice_mechgsa",
@@ -5087,7 +5596,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/mechgsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kb151@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/mechgsa"
+  }
  },
  {
   "id": "oc_rice_medicoutpost",
@@ -5114,7 +5627,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/medicoutpost"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemedicoutpost@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/medicoutpost"
+  }
  },
  {
   "id": "oc_rice_medicalartscollaborative",
@@ -5145,7 +5662,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/medicalartscollaborativeatrice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ej18@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/medicalartscollaborative"
+  }
  },
  {
   "id": "oc_rice_ricemdforkids",
@@ -5184,7 +5705,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/medicalschoolforkids"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemdforkids@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemdforkids"
+  }
  },
  {
   "id": "oc_rice_ricemedlife",
@@ -5223,7 +5748,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TheMEDLIFEMovement"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ns122@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemedlife"
+  }
  },
  {
   "id": "oc_rice_moodycenterforthearts",
@@ -5261,7 +5790,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/MoodyCenterfortheArts/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "erin.rolfs@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/moodycenterforthearts"
+  }
  },
  {
   "id": "oc_rice_moodystudentcollaborative",
@@ -5300,7 +5833,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/MoodyStudentCollaborative/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nc102@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/moodystudentcollaborative"
+  }
  },
  {
   "id": "oc_rice_movemountains",
@@ -5327,7 +5864,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/movemountains"
    }
-  ]
+  ],
+  "contact": {
+   "email": "movemountainshtx@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/movemountains"
+  }
  },
  {
   "id": "oc_rice_oma",
@@ -5366,7 +5907,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/rice.oma/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mino@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/oma"
+  }
  },
  {
   "id": "oc_rice_nomasrice",
@@ -5401,7 +5946,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nomasrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nomas@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/nomasrice"
+  }
  },
  {
   "id": "oc_rice_nsbe",
@@ -5448,7 +5997,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCFsENGPSTSItD9wG04t6pQQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricensbepresident@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/nsbe"
+  }
  },
  {
   "id": "oc_rice_neosjazz",
@@ -5479,7 +6032,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/neos_jazz/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yz179@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/neosjazz"
+  }
  },
  {
   "id": "oc_rice_rice_neurotech",
@@ -5518,7 +6075,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NeurotechRice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "neurotech.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice_neurotech"
+  }
  },
  {
   "id": "oc_rice_nocturnal",
@@ -5561,7 +6122,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/ricenocturnal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricenocturnal@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/nocturnal"
+  }
  },
  {
   "id": "oc_rice_oaa",
@@ -5599,7 +6164,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceAcademicAdvising/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aadv@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/oaa"
+  }
  },
  {
   "id": "oc_rice_oasus",
@@ -5634,7 +6203,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/rice.oasus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oasus@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/oasus"
+  }
  },
  {
   "id": "oc_rice_aie",
@@ -5665,7 +6238,11 @@
     "label": "Website",
     "url": "https://aie.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aie@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/aie"
+  }
  },
  {
   "id": "oc_rice_admissions",
@@ -5703,7 +6280,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceUnivAdmission/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "admission@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/admissions"
+  }
  },
  {
   "id": "oc_rice_ara",
@@ -5742,7 +6323,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricealumni/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alumni@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ara"
+  }
  },
  {
   "id": "oc_rice_oit",
@@ -5773,7 +6358,11 @@
     "label": "Website",
     "url": "https://oit.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "helpdesk@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/oit"
+  }
  },
  {
   "id": "oc_rice_oiss",
@@ -5812,7 +6401,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/oiss_rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oiss@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/oiss"
+  }
  },
  {
   "id": "oc_rice_rsec",
@@ -5842,7 +6435,11 @@
     "label": "Website",
     "url": "https://research.rice.edu/research-security"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rsec@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rsec"
+  }
  },
  {
   "id": "oc_rice_studentmedia",
@@ -5873,7 +6470,11 @@
     "label": "Website",
     "url": "http://studentmedia.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentmedia@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/studentmedia"
+  }
  },
  {
   "id": "oc_rice_abroad",
@@ -5912,7 +6513,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/RiceStudyAbroad/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "abroad@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/abroad"
+  }
  },
  {
   "id": "oc_rice_sustainability",
@@ -5950,7 +6555,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SustainabilityAtRice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sustainability@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sustainability"
+  }
  },
  {
   "id": "oc_rice_dou",
@@ -5981,7 +6590,11 @@
     "label": "Website",
     "url": "https://dou.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ugdean@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/dou"
+  }
  },
  {
   "id": "oc_rice_ouri",
@@ -6020,7 +6633,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/RiceOURI/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ouri@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ouri"
+  }
  },
  {
   "id": "oc_rice_omegaxrice",
@@ -6085,7 +6702,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/OEDKatRice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oedk@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/oedk"
+  }
  },
  {
   "id": "oc_rice_outandallied",
@@ -6122,7 +6743,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BusinessRice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "husein.lokhandwala@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/outandallied"
+  }
  },
  {
   "id": "oc_rice_owlchemy",
@@ -6165,7 +6790,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@RiceOwlchemyClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "owlchemy.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/owlchemy"
+  }
  },
  {
   "id": "oc_rice_osec",
@@ -6200,7 +6829,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/RiceOwlNest"
    }
-  ]
+  ],
+  "contact": {
+   "email": "owlnest@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/osec"
+  }
  },
  {
   "id": "oc_rice_owlreach",
@@ -6227,7 +6860,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/owlreach"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceowlreach@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/owlreach"
+  }
  },
  {
   "id": "oc_rice_pih_engage",
@@ -6292,7 +6929,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceAcademicAdvising/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "paa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/paas"
+  }
  },
  {
   "id": "oc_rice_pcas",
@@ -6331,7 +6972,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceCCD"
    }
-  ]
+  ],
+  "contact": {
+   "email": "peercareeradvisors@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/pcas"
+  }
  },
  {
   "id": "oc_rice_periodrice",
@@ -6370,7 +7015,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/PERIOD.RiceBCM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "period.ricebcm@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/periodrice"
+  }
  },
  {
   "id": "oc_rice_phibetakappa",
@@ -6400,7 +7049,11 @@
     "label": "Website",
     "url": "https://pbk.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jb112@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/phibetakappa"
+  }
  },
  {
   "id": "oc_rice_pagsa",
@@ -6434,8 +7087,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ricepagsa/profilecard/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricepagsa/profilecard/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricepagsa/profilecard/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pagsa-officers@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/pagsa"
+  }
  },
  {
   "id": "oc_rice_pi_sigma_alpha",
@@ -6493,7 +7158,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ppgenrice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ppgen.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ppgen"
+  }
  },
  {
   "id": "oc_rice_politicalscience",
@@ -6528,7 +7197,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1809487729314857"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poli@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/politicalscience"
+  }
  },
  {
   "id": "oc_rice_psgsa",
@@ -6598,7 +7271,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/Professional.Science.Masters"
    }
-  ]
+  ],
+  "contact": {
+   "email": "profms@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/psm"
+  }
  },
  {
   "id": "oc_rice_enst",
@@ -6628,7 +7305,11 @@
     "label": "Website",
     "url": "https://enst.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "judge@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/enst"
+  }
  },
  {
   "id": "oc_rice_projectowl",
@@ -6681,7 +7362,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/project_sunshine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceuni@projectsunshine.org",
+   "source": "https://rice.campuslabs.com/engage/organization/project_sunshine"
+  }
  },
  {
   "id": "oc_rice_psyc",
@@ -6712,7 +7397,11 @@
     "label": "Website",
     "url": "https://psychology.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psyc@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/psyc"
+  }
  },
  {
   "id": "oc_rice_psycgsa",
@@ -6773,7 +7462,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceqgsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceqgsa@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/qgsa"
+  }
  },
  {
   "id": "oc_rice_rawphotography",
@@ -6808,7 +7501,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricerawphotography/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice.raw.photography@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rawphotography"
+  }
  },
  {
   "id": "oc_rice_rplp",
@@ -6842,7 +7539,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/religionandpubliclifeprogram/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rplp@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rplp"
+  }
  },
  {
   "id": "oc_rice_ragsa",
@@ -6873,7 +7574,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ragsa_rice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oa22@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ragsa"
+  }
  },
  {
   "id": "oc_rice_rasa",
@@ -6920,7 +7625,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCznA5TnpW5cEgk31yZRrWcg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceafricansapresident@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rasa"
+  }
  },
  {
   "id": "oc_rice_rice_aguavida",
@@ -6951,7 +7660,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.aguavida/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice.aguavida@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice_aguavida"
+  }
  },
  {
   "id": "oc_rice_riceaialignment",
@@ -6986,7 +7699,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceaialignment/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceaialignment@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceaialignment"
+  }
  },
  {
   "id": "oc_rice_ramha",
@@ -7046,7 +7763,11 @@
     "label": "Website",
     "url": "https://alliance.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alliance@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/alliancericeedu"
+  }
  },
  {
   "id": "oc_rice_radr",
@@ -7073,7 +7794,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/radr"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceadrclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/radr"
+  }
  },
  {
   "id": "oc_rice_raic",
@@ -7100,7 +7825,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/raic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricealtinvestmentsclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/raic"
+  }
  },
  {
   "id": "oc_rice_asme",
@@ -7139,7 +7868,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/riceasme/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceasme@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/asme"
+  }
  },
  {
   "id": "oc_rice_ricearchitecturesociety",
@@ -7174,7 +7907,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/architecturesocietyatrice/?eid=ARCEvmcbPc41PYN-DXIVUyY74AeGOU6aoURju8QO9O-xgrgKsb8BjgQMD_326R9O1t4Nn4qFGS369n2Z"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricearchsociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricearchitecturesociety"
+  }
  },
  {
   "id": "oc_rice_raw",
@@ -7205,7 +7942,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricearmwrestling/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mireles@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/raw"
+  }
  },
  {
   "id": "oc_rice_rice_apamsa",
@@ -7231,6 +7972,14 @@
    {
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rice_apamsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice.apamsa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice.apamsa/"
    },
    {
     "label": "Instagram",
@@ -7267,7 +8016,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_astronomy_club/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ss531@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/astro"
+  }
  },
  {
   "id": "oc_rice_raif",
@@ -7298,7 +8051,11 @@
     "label": "LinkedIn",
     "url": "https://linkedin.com/company/rice-athletes-in-finance/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cpk3@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/raif"
+  }
  },
  {
   "id": "oc_rice_riceathletics",
@@ -7341,7 +8098,11 @@
     "label": "YouTube",
     "url": "http://youtube.com/riceathletics1912"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceathletics@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceathletics"
+  }
  },
  {
   "id": "oc_rice_riceautoimmune",
@@ -7368,7 +8129,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/riceautoimmune"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceautoimmune@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceautoimmune"
+  }
  },
  {
   "id": "oc_rice_ricebadminton",
@@ -7399,7 +8164,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricebadminton/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice.rbc@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebadminton"
+  }
  },
  {
   "id": "oc_rice_riceballroomdanceteam",
@@ -7442,7 +8211,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCZP_xhgM263ukjfOorTVL8Q"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceballroomteam@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceballroomdanceteam"
+  }
  },
  {
   "id": "oc_rice_riceowlbsm",
@@ -7481,7 +8254,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceBSM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amd1@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceowlbsm"
+  }
  },
  {
   "id": "oc_rice_ricebhakti",
@@ -7512,7 +8289,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_bhakticlub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricebhaktiyoga@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebhakti"
+  }
  },
  {
   "id": "oc_rice_ricebhangra",
@@ -7551,7 +8332,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC5MHAuJb4g1LgEZlXF6NLnw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricebhangra@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebhangra"
+  }
  },
  {
   "id": "oc_rice_ricebikes",
@@ -7590,7 +8375,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceBikes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricebikes@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebikes"
+  }
  },
  {
   "id": "oc_rice_ricebioethicsclub",
@@ -7656,7 +8445,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/biokindanalytics/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice@biokind.org",
+   "source": "https://rice.campuslabs.com/engage/organization/biokindanalytics"
+  }
  },
  {
   "id": "oc_rice_bmes",
@@ -7691,7 +8484,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/bmesrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bmesrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/bmes"
+  }
  },
  {
   "id": "oc_rice_rbma",
@@ -7726,7 +8523,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100091765303872"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zo6@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rbma"
+  }
  },
  {
   "id": "oc_rice_rbwa",
@@ -7784,7 +8585,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bluesolesteppers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricebluesolesteppers@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/bluesolesteppers"
+  }
  },
  {
   "id": "oc_rice_ricebusinessevents",
@@ -7822,7 +8627,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BusinessRice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oaa4@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebusinessevents"
+  }
  },
  {
   "id": "oc_rice_ricebusinesssociety",
@@ -7861,7 +8670,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-business-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricebusinesssociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricebusinesssociety"
+  }
  },
  {
   "id": "oc_rice_campanile",
@@ -7896,7 +8709,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricecampanile/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ab282@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/campanile"
+  }
  },
  {
   "id": "oc_rice_catalyst",
@@ -7935,7 +8752,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceCatalyst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricecatalyst@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/catalyst"
+  }
  },
  {
   "id": "oc_rice_csa",
@@ -8021,7 +8842,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@ricecenterforengineeringle5772"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rcel@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rcel"
+  }
  },
  {
   "id": "oc_rice_rcs3",
@@ -8075,7 +8900,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rccf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "td62@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rccf"
+  }
  },
  {
   "id": "oc_rice_ricecsa",
@@ -8110,7 +8939,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceCSA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricecsaboard@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricecsa"
+  }
  },
  {
   "id": "oc_rice_rcssa",
@@ -8149,7 +8982,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceRCSSA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rcssa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rcssa"
+  }
  },
  {
   "id": "oc_rice_rctc",
@@ -8180,7 +9017,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricechinesetheatre/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rctc.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rctc"
+  }
  },
  {
   "id": "oc_rice_ricechristianstudentleaders",
@@ -8207,7 +9048,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricechristianstudentleaders"
    }
-  ]
+  ],
+  "contact": {
+   "email": "starlight.riceu@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricechristianstudentleaders"
+  }
  },
  {
   "id": "oc_rice_ricechristianstudyhouse",
@@ -8249,8 +9094,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ricechristianstudycenter/"
+   },
+   {
+    "label": "Website",
+    "url": "https://ricestudycenter.org/"
+   },
+   {
+    "label": "Website",
+    "url": "https://ricestudycenter.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "info@ricestudycenter.org",
+   "source": "https://rice.campuslabs.com/engage/organization/ricechristianstudyhouse"
+  }
  },
  {
   "id": "oc_rice_cinema",
@@ -8281,7 +9138,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricecinemaclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scb10@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/cinema"
+  }
  },
  {
   "id": "oc_rice_riceclimbingclub",
@@ -8312,7 +9173,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.climbingclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ps152@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceclimbingclub"
+  }
  },
  {
   "id": "oc_rice_riceclubsailingteam",
@@ -8347,7 +9212,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricesailing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "howdy@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceclubsailingteam"
+  }
  },
  {
   "id": "oc_rice_coalitionrice",
@@ -8390,7 +9259,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/coalition-rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "coalitionrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/coalitionrice"
+  }
  },
  {
   "id": "oc_rice_coffeehouse",
@@ -8429,7 +9302,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceCoffeehouse/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricecoffeehouse@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/coffeehouse"
+  }
  },
  {
   "id": "oc_rice_ricechamps",
@@ -8520,7 +9397,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/search/top?q=rice%20composers%20collective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asherlurie@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/composersclub"
+  }
  },
  {
   "id": "oc_rice_ricecgclub",
@@ -8546,7 +9427,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricecgclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jl561@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricecgclub"
+  }
  },
  {
   "id": "oc_rice_ricecsclub",
@@ -8589,7 +9474,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-computer-science-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceucsclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricecsclub"
+  }
  },
  {
   "id": "oc_rice_riceconsulting",
@@ -8632,7 +9521,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-consulting-ug"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceconsulting.ug@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceconsulting"
+  }
  },
  {
   "id": "oc_rice_ricecoookingclub",
@@ -8663,7 +9556,11 @@
     "label": "Group chat",
     "url": "https://groupme.com/join_group/112466501/yK8RBnhD"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ag357@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricecoookingclub"
+  }
  },
  {
   "id": "oc_rice_ricecorporatelawsociety",
@@ -8733,7 +9630,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCCA40EDH_aFeoIQbCafA_QA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricedancetheatre0@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricedancetheatre"
+  }
  },
  {
   "id": "oc_rice_ricedatasci",
@@ -8772,7 +9673,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricedatasci"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricedatasciclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricedatasci"
+  }
  },
  {
   "id": "oc_rice_ricedesign",
@@ -8815,7 +9720,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/riceudesign"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceu.design@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricedesign"
+  }
  },
  {
   "id": "oc_rice_riceeclipse",
@@ -8862,7 +9771,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC4DvA1nefLM2HoRcduH9lng"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eclipse@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceeclipse"
+  }
  },
  {
   "id": "oc_rice_rice_economic_forum",
@@ -8901,7 +9814,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-economic-forum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceeconomicforum@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice_economic_forum"
+  }
  },
  {
   "id": "oc_rice_educ",
@@ -8939,7 +9856,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricecontinuingstudies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "meredith.austin@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/educ"
+  }
  },
  {
   "id": "oc_rice_education",
@@ -8966,7 +9887,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/education"
    }
-  ]
+  ],
+  "contact": {
+   "email": "education@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/education"
+  }
  },
  {
   "id": "oc_rice_riceelectricvehicle",
@@ -9005,7 +9930,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-electric-vehicle/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricerev@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceelectricvehicle"
+  }
  },
  {
   "id": "oc_rice_riceenvironmentalhealthinitiative",
@@ -9031,7 +9960,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/riceenvironmentalhealthinitiative"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rm167@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceenvironmentalhealthinitiative"
+  }
  },
  {
   "id": "oc_rice_rice_equestrian",
@@ -9101,7 +10034,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceEscape/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceescapeclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceescape"
+  }
  },
  {
   "id": "oc_rice_esports",
@@ -9140,10 +10077,14 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/Rice-Esports-109762981851747"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceowlsesports@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/esports"
+  }
  },
  {
-  "id": "oc_rice__",
+  "id": "oc_rice__rice_ethiopian_and_eritrean_student_association_",
   "name": "Rice Ethiopian and Eritrean Student Association",
   "logo": {
    "emoji": "RE",
@@ -9170,8 +10111,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_eesa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_eesa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "reesa@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/-"
+  }
  },
  {
   "id": "oc_rice_ricefedsoc",
@@ -9232,7 +10181,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceFencingClub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rfc@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rfc"
+  }
  },
  {
   "id": "oc_rice_riceforbloodcancerunited",
@@ -9263,7 +10216,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceforbloodcancerunited/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lls@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceforbloodcancerunited"
+  }
  },
  {
   "id": "oc_rice_riceformulasae",
@@ -9302,7 +10259,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/riceracing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceracing@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceformulasae"
+  }
  },
  {
   "id": "oc_rice_riceglobal",
@@ -9336,7 +10297,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceuglobal/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "globalowls@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceglobal"
+  }
  },
  {
   "id": "oc_rice_riceglutenfreeandfriends",
@@ -9363,7 +10328,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/riceglutenfreeandfriends"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice.glutenfree.and.friends@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceglutenfreeandfriends"
+  }
  },
  {
   "id": "oc_rice_riceintervarsity_dot_org",
@@ -9397,8 +10366,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/6259995492/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ricegradintervarsity"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ricegradintervarsity"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rcgf-info@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceintervarsity_dot_org"
+  }
  },
  {
   "id": "oc_rice_ricehawaiiclub",
@@ -9424,7 +10405,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricehawaiiclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sw151@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricehawaiiclub"
+  }
  },
  {
   "id": "oc_rice_ricehealthadvisors",
@@ -9463,7 +10448,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceHealthAdvisors/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "em43@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricehealthadvisors"
+  }
  },
  {
   "id": "oc_rice_herd",
@@ -9489,7 +10478,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/herd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceherd@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/herd"
+  }
  },
  {
   "id": "oc_rice_rhc",
@@ -9524,7 +10517,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ricehc/posts/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cv38@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rhc"
+  }
  },
  {
   "id": "oc_rice_riceheartclub",
@@ -9616,8 +10613,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/2331836860/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ricehillel"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ricehillel"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ksweiss@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/hillel"
+  }
  },
  {
   "id": "oc_rice_ricehockey",
@@ -9648,7 +10657,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricehockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricehockeyclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricehockey"
+  }
  },
  {
   "id": "oc_rice_ricehksa",
@@ -9678,8 +10691,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_hksa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_hksa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_hksa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hksa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricehksa"
+  }
  },
  {
   "id": "oc_rice_ricehosa",
@@ -9718,7 +10743,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/hosafhp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricehosafhp@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricehosa"
+  }
  },
  {
   "id": "oc_rice_rice_ignite",
@@ -9748,8 +10777,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/igniteatrice"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/igniteatrice"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/igniteatrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "igniteatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice-ignite"
+  }
  },
  {
   "id": "oc_rice_risagroup",
@@ -9810,7 +10851,11 @@
     "label": "Website",
     "url": "http://impact.blogs.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jcm27@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceimpact"
+  }
  },
  {
   "id": "oc_rice_informs",
@@ -9849,7 +10894,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/14347063/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sgp5@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/informs"
+  }
  },
  {
   "id": "oc_rice_ieee",
@@ -9888,7 +10937,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/254761121219104/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rjceieee@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ieee"
+  }
  },
  {
   "id": "oc_rice_risa",
@@ -9923,7 +10976,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-international-student-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "risa@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/risa"
+  }
  },
  {
   "id": "oc_rice_tba",
@@ -9950,7 +11007,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/tba"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yn25@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/tba"
+  }
  },
  {
   "id": "oc_rice_ricejusticeproject",
@@ -9976,6 +11037,14 @@
    {
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricejusticeproject"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricejusticeproject"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricejusticeproject"
    },
    {
     "label": "Instagram",
@@ -10012,7 +11081,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricekasama/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zas5@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricekasama"
+  }
  },
  {
   "id": "oc_rice_rlsa",
@@ -10043,7 +11116,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/ricelingsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rlsa@mailman.rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rlsa"
+  }
  },
  {
   "id": "oc_rice_ricelions",
@@ -10078,7 +11155,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UClQEvnJKSvoprhm-62jPhhg?disable_polymer=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceulions@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricelions"
+  }
  },
  {
   "id": "oc_rice_madrigals",
@@ -10109,7 +11190,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricemadrigals"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sj155@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/madrigals"
+  }
  },
  {
   "id": "oc_rice_ricemedicalbridges",
@@ -10210,7 +11295,11 @@
     "label": "Website",
     "url": "https://ricemedicaldevices.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemedicaldesign@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemedicaldesign"
+  }
  },
  {
   "id": "oc_rice_rmfi",
@@ -10237,7 +11326,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rmfi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "is50@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rmfi"
+  }
  },
  {
   "id": "oc_rice_ricemedicalhumanities",
@@ -10276,7 +11369,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceMedicalHumanities/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "man15@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemedicalhumanities"
+  }
  },
  {
   "id": "oc_rice_ricemenslacrosse",
@@ -10311,7 +11408,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceowlslax/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tg51@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemenslacrosse"
+  }
  },
  {
   "id": "oc_rice_ricelads",
@@ -10346,7 +11447,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceLads/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricelads@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricelads"
+  }
  },
  {
   "id": "oc_rice_mesa",
@@ -10376,8 +11481,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_mena/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_mena/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_mena/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "se53@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/mesa"
+  }
  },
  {
   "id": "oc_rice_ricemaps",
@@ -10408,7 +11525,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricedawaofficial/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemapspresident@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemaps"
+  }
  },
  {
   "id": "oc_rice_mmaclub",
@@ -10443,7 +11564,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricemmaclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemmaclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/mmaclub"
+  }
  },
  {
   "id": "oc_rice_ricemun",
@@ -10516,7 +11641,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-motorsports-team"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemotorsportsteam@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemotorsportsteam"
+  }
  },
  {
   "id": "oc_rice_ricemusicmds",
@@ -10555,7 +11684,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Rice-University-Music-MDs-107531903927106/?notif_id=1565155947308774&notif_t=page_fan"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemusicmds@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemusicmds"
+  }
  },
  {
   "id": "oc_rice_riceneurotransmitter",
@@ -10590,7 +11723,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceneurotransmitter/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ly58@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceneurotransmitter"
+  }
  },
  {
   "id": "oc_rice_riceneurosciencesociety",
@@ -10629,7 +11766,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/riceneuro/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceneurosciencesociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceneurosciencesociety"
+  }
  },
  {
   "id": "oc_rice_rnef",
@@ -10664,7 +11805,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricenewenergy/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rnef@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rnef"
+  }
  },
  {
   "id": "oc_rice_rstem",
@@ -10703,7 +11848,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceSTEM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stem@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rstem"
+  }
  },
  {
   "id": "oc_rice_rice_omega_psi",
@@ -10738,7 +11887,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Rice-Omega-Psi-107340873966096/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bart4@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rice_omega_psi"
+  }
  },
  {
   "id": "oc_rice_rol",
@@ -10772,7 +11925,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceUOnline/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceonline@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rol"
+  }
  },
  {
   "id": "oc_rice_rope",
@@ -10811,7 +11968,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ROPEoutdoors/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rope@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rope"
+  }
  },
  {
   "id": "oc_rice_rpsa",
@@ -10846,7 +12007,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/728272130713763/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psa.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rpsa"
+  }
  },
  {
   "id": "oc_rice_pancakesforparkinsons",
@@ -10885,7 +12050,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricepancakesforparkinsons/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricep4pchairs@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/pancakesforparkinsons"
+  }
  },
  {
   "id": "oc_rice_pair",
@@ -10924,7 +12093,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricepairchapter/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pair.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/pair"
+  }
  },
  {
   "id": "oc_rice_ricepickleball",
@@ -10955,7 +12128,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricepickleball/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jp231@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricepickleball"
+  }
  },
  {
   "id": "oc_rice_postdocassoc",
@@ -10989,7 +12166,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/company/RicePostdoc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "postdocassoc@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/postdocassoc"
+  }
  },
  {
   "id": "oc_rice_ricepowerliftingteam",
@@ -11020,7 +12201,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricepowerlifting/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricepowerliftingteam@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricepowerliftingteam"
+  }
  },
  {
   "id": "oc_rice_rpds",
@@ -11102,7 +12287,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-pre-med-society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rpms@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rpms"
+  }
  },
  {
   "id": "oc_rice_rpvs",
@@ -11133,7 +12322,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceprevet/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ay57@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rpvs"
+  }
  },
  {
   "id": "oc_rice_rice_pride",
@@ -11172,7 +12365,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/riceqrc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceprideeboard@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rice-pride"
+  }
  },
  {
   "id": "oc_rice_riceprogramcouncil",
@@ -11215,7 +12412,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/rice-program-council/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rpc@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceprogramcouncil"
+  }
  },
  {
   "id": "oc_rice_ricepsychstudentjournal",
@@ -11306,7 +12507,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricequestbridgechapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice.chapter@questbridge.org",
+   "source": "https://rice.campuslabs.com/engage/organization/riceqsnchapter"
+  }
  },
  {
   "id": "oc_rice_ricerallyclub",
@@ -11337,7 +12542,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricerallyclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceurallyclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricerallyclub"
+  }
  },
  {
   "id": "oc_rice_ricerangilas",
@@ -11399,7 +12608,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricerapclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricerapclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rapclub"
+  }
  },
  {
   "id": "oc_rice_ricerasikas",
@@ -11434,7 +12647,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceRasikas/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricerasikas@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricerasikas"
+  }
  },
  {
   "id": "oc_rice_riceregen",
@@ -11500,7 +12717,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_red_cross/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceredcrossclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceredcross"
+  }
  },
  {
   "id": "oc_rice_riceruf",
@@ -11539,7 +12760,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/riceRUF"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jb251@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceruf"
+  }
  },
  {
   "id": "oc_rice_ricereuse",
@@ -11597,7 +12822,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rice-rhythmgame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice.rhythmgames@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice-rhythmgame"
+  }
  },
  {
   "id": "oc_rice_riceriyaaz",
@@ -11636,7 +12865,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCSBNKDfxeVNe7vALVmj_zbQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceriyaaz@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceriyaaz"
+  }
  },
  {
   "id": "oc_rice_rice_robotics_club",
@@ -11675,7 +12908,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-robotics-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceroboticsclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice-robotics-club"
+  }
  },
  {
   "id": "oc_rice_ricerugby",
@@ -11710,7 +12947,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceUniversityRugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lms21@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricerugby"
+  }
  },
  {
   "id": "oc_rice_ricesalseros",
@@ -11741,7 +12982,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_salseros/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pt51@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricesalseros"
+  }
  },
  {
   "id": "oc_rice_owlsat",
@@ -11794,7 +13039,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricesciencepolicynetwork"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rm167@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricesciencepolicynetwork"
+  }
  },
  {
   "id": "oc_rice_www_ricesecurities_org",
@@ -11820,7 +13069,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/www-ricesecurities-org"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sbk8@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/www-ricesecurities-org"
+  }
  },
  {
   "id": "oc_rice_rss",
@@ -11847,7 +13100,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rss"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oml2@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rss"
+  }
  },
  {
   "id": "oc_rice_ricesiam",
@@ -11878,7 +13135,11 @@
     "label": "Website",
     "url": "http://siam.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ug6@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricesiam"
+  }
  },
  {
   "id": "oc_rice_ricesase",
@@ -11905,7 +13166,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricesase"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tn62@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricesase"
+  }
  },
  {
   "id": "oc_rice_rsms",
@@ -11936,7 +13201,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricesmgtsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricesmgtsociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rsms"
+  }
  },
  {
   "id": "oc_rice_ricestroke",
@@ -11967,7 +13236,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/ricestroke"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricestroke@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricestroke"
+  }
  },
  {
   "id": "oc_rice_birding",
@@ -12002,7 +13275,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/ricebirding"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricebirding@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/birding"
+  }
  },
  {
   "id": "oc_rice_rsrj",
@@ -12055,7 +13332,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ssdp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mie1@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ssdp"
+  }
  },
  {
   "id": "oc_rice_ricespaid",
@@ -12117,7 +13398,11 @@
     "label": "Website",
     "url": "http://riceswimclub.blogs.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceswimclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/swim"
+  }
  },
  {
   "id": "oc_rice_ricesynergy",
@@ -12152,7 +13437,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.synergy/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricesynergyofficial@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricesynergy"
+  }
  },
  {
   "id": "oc_rice_ricetabletennisclub",
@@ -12179,7 +13468,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricetabletennisclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lx25@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricetabletennisclub"
+  }
  },
  {
   "id": "oc_rice_rta",
@@ -12244,8 +13537,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/RiceTGSA/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_tgsa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice_tgsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ec75@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rtgsa"
+  }
  },
  {
   "id": "oc_rice_ricetangobuhos",
@@ -12306,7 +13611,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceturkishsa?igsi=YjhjbmhuaTB5Y3d6"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceturkishstudents@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rturkishsa"
+  }
  },
  {
   "id": "oc_rice_ruas",
@@ -12333,7 +13642,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ruas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceundergradarchaeology@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ruas"
+  }
  },
  {
   "id": "oc_rice_rubs",
@@ -12359,7 +13672,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rubs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceubiosciencesociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rubs"
+  }
  },
  {
   "id": "oc_rice_financegroup",
@@ -12398,7 +13715,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-undergraduate-investment-fund/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricefinancegroup@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/financegroup"
+  }
  },
  {
   "id": "oc_rice_rugs",
@@ -12433,7 +13754,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/eeps.rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rugeosciencessociety@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rugs"
+  }
  },
  {
   "id": "oc_rice_ricelawreview",
@@ -12501,8 +13826,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/AmericanMarketing"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricemarketing"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricemarketing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemarketingassociation@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ruma"
+  }
  },
  {
   "id": "oc_rice_msneundergradsociety",
@@ -12564,7 +13901,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-undergraduate-real-estate-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kp76@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rures"
+  }
  },
  {
   "id": "oc_rice_ruses",
@@ -12630,7 +13971,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/adaptiveskating"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adaptiveskatinghtx@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/adaptiveskating"
+  }
  },
  {
   "id": "oc_rice_bands",
@@ -12664,7 +14009,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceUBands"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bands@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/bands"
+  }
  },
  {
   "id": "oc_rice_rec",
@@ -12703,7 +14052,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricerec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "as571@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rec"
+  }
  },
  {
   "id": "oc_rice_ricebilliardsclub",
@@ -12787,7 +14140,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/chess.at.rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceuniversitychessclub@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rucc"
+  }
  },
  {
   "id": "oc_rice_club_baseball",
@@ -12822,7 +14179,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Watch-Rice-Club-Baseball-954289081405084/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceowlsclubbaseball@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/club-baseball"
+  }
  },
  {
   "id": "oc_rice_clubsports",
@@ -12861,7 +14222,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricerec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubsports@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/clubsports"
+  }
  },
  {
   "id": "oc_rice_rice_cricket",
@@ -12896,7 +14261,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceucricket/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ap233@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rice_cricket"
+  }
  },
  {
   "id": "oc_rice_ruct",
@@ -12935,7 +14304,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceCyclingandTriathlon/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ruct@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ruct"
+  }
  },
  {
   "id": "oc_rice_rufsc",
@@ -12966,7 +14339,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceskating/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricefigureskating@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rufsc"
+  }
  },
  {
   "id": "oc_rice_gsa_soccer_club",
@@ -12997,7 +14374,11 @@
     "label": "Website",
     "url": "https://mailman.rice.edu/mailman/listinfo/gsa-soccer-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rs278@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gsa-soccer-club"
+  }
  },
  {
   "id": "oc_rice_honor",
@@ -13028,7 +14409,11 @@
     "label": "Website",
     "url": "http://honor.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "honor@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/honor"
+  }
  },
  {
   "id": "oc_rice_rice_hfes",
@@ -13063,7 +14448,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricehfes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricehfes@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice-hfes"
+  }
  },
  {
   "id": "oc_rice_r_iceskating",
@@ -13133,7 +14522,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/ricekgsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jk163@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricekgsa"
+  }
  },
  {
   "id": "oc_rice_ricemocktrial",
@@ -13168,7 +14561,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_mock"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceumocktrial@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricemocktrial"
+  }
  },
  {
   "id": "oc_rice_rmsa",
@@ -13207,7 +14604,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricemsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricemsa@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rmsa"
+  }
  },
  {
   "id": "oc_rice_rupls",
@@ -13242,7 +14643,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.prelawsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prelawsociety@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rupls"
+  }
  },
  {
   "id": "oc_rice_psi_chi",
@@ -13273,7 +14678,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/PsychatRice/?view_public_for=171747766709150"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricepsichi@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/psi_chi"
+  }
  },
  {
   "id": "oc_rice_ricecrew",
@@ -13312,7 +14721,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricerowing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricerowing@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricecrew"
+  }
  },
  {
   "id": "oc_rice_rusb",
@@ -13347,7 +14760,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricesciencebowl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "avr10@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rusb"
+  }
  },
  {
   "id": "oc_rice_squash",
@@ -13425,7 +14842,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCh_LwLfWP_gQElflGOjeVIg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sapres@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/thericestudents"
+  }
  },
  {
   "id": "oc_rice_riceawm",
@@ -13460,7 +14881,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_awm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sn72@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceawm"
+  }
  },
  {
   "id": "oc_rice_ricedems",
@@ -13495,7 +14920,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/ricedems"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceyoungdems@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricedems"
+  }
  },
  {
   "id": "oc_rice_hru_zen",
@@ -13521,6 +14950,14 @@
    {
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/hru_zen"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/riceuniversityzenbuddhismclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/riceuniversityzenbuddhismclub"
    },
    {
     "label": "Instagram",
@@ -13556,8 +14993,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/riceurbanagriculture"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/riceurbanagriculture"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/riceurbanagriculture"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jrj10@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/riceurbanag"
+  }
  },
  {
   "id": "oc_rice_ricevegansociety",
@@ -13587,7 +15036,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricevegansociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vegan@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricevegansociety"
+  }
  },
  {
   "id": "oc_rice_rwcc",
@@ -13618,7 +15071,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricewildlifeconservation/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nw53@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rwcc"
+  }
  },
  {
   "id": "oc_rice_ricewindenergy",
@@ -13657,7 +15114,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ricewindenergy/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jd183@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewindenergy"
+  }
  },
  {
   "id": "oc_rice_ricewomeninbusiness",
@@ -13700,7 +15161,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ricewomeninbusiness"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewib@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewomeninbusiness"
+  }
  },
  {
   "id": "oc_rice_ricewomeninentrepreneurship",
@@ -13735,7 +15200,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-women-in-entrepreneurship/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewomeninentrepreneurship@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewomeninentrepreneurship"
+  }
  },
  {
   "id": "oc_rice_ricewomeninphysics",
@@ -13761,7 +15230,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricewomeninphysics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewomeninphysics@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewomeninphysics"
+  }
  },
  {
   "id": "oc_rice_ricewomeninstem",
@@ -13796,7 +15269,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice_womeninstem/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewis1@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewomeninstem"
+  }
  },
  {
   "id": "oc_rice_ricewob",
@@ -13857,7 +15334,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricewomenslax/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewomenslacrosse@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewomenslacrosse"
+  }
  },
  {
   "id": "oc_rice_wclubsoccer",
@@ -13896,7 +15377,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/ricewcs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ib27@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/wclubsoccer"
+  }
  },
  {
   "id": "oc_rice_womensclubvball",
@@ -13931,7 +15416,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@ricewomensclubvolleyball?si=WocY6OA3mQvq3LMg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceuniversity.clubvb@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/womensclubvball"
+  }
  },
  {
   "id": "oc_rice_womenswaterpolo",
@@ -13962,7 +15451,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricewaterpolo/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ns80@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/womenswaterpolo"
+  }
  },
  {
   "id": "oc_rice_rwrc",
@@ -13997,7 +15490,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/ricewrc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewrc@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rwrc"
+  }
  },
  {
   "id": "oc_rice_ricewrugby",
@@ -14028,7 +15525,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/ricewomensrugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceuwomensrugby@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewrugby"
+  }
  },
  {
   "id": "oc_rice_riceyl",
@@ -14059,7 +15560,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.ylc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "berelaurafloreen@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceyl"
+  }
  },
  {
   "id": "oc_rice_ricezinefest",
@@ -14090,7 +15595,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricezinefest/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lh65@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricezinefest"
+  }
  },
  {
   "id": "oc_rice_brazilian_zouk",
@@ -14121,7 +15630,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.zoukinis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "add8@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/brazilian_zouk"
+  }
  },
  {
   "id": "oc_rice_riceapps",
@@ -14156,7 +15669,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/riceapps/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "team.riceapps@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceapps"
+  }
  },
  {
   "id": "oc_rice_rise_latam",
@@ -14183,7 +15700,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/rise_latam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lmd10@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/rise_latam"
+  }
  },
  {
   "id": "oc_rice_rsa",
@@ -14214,7 +15735,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.rsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "russianspeakersatrice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rsa"
+  }
  },
  {
   "id": "oc_rice_humanities",
@@ -14260,7 +15785,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@RiceHumanitiesandArts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "humanities@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/humanities"
+  }
  },
  {
   "id": "oc_rice_gatewayprogram",
@@ -14298,7 +15827,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceSocSci/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agodley@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gatewayprogram"
+  }
  },
  {
   "id": "oc_rice_stsminor",
@@ -14358,7 +15891,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/741473132642305/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricesoaa@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/rice_science_olympiad"
+  }
  },
  {
   "id": "oc_rice_serenadeseraphim",
@@ -14392,6 +15929,14 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/serenade-seraphim/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/serenadeseraphim?igsi=NTc4MTIwNjQ2YQ%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/serenadeseraphim?igsi=NTc4MTIwNjQ2YQ%3D%3D"
    }
   ]
  },
@@ -14428,7 +15973,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sidrichardsoncollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sid@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sidrichardson"
+  }
  },
  {
   "id": "oc_rice_ssa",
@@ -14454,7 +16003,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ssa.riceu@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ssa"
+  }
  },
  {
   "id": "oc_rice_sscar",
@@ -14480,7 +16033,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/sscar"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rf62@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sscar"
+  }
  },
  {
   "id": "oc_rice_skycampusatrice",
@@ -14554,7 +16111,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCmRE-QdGVtTV0YSNXdJyQAQ/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sleepycyborggallery@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/sleepycyborg"
+  }
  },
  {
   "id": "oc_rice_shpe_rice",
@@ -14593,7 +16154,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/shpe-rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shpe.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/shpe-rice"
+  }
  },
  {
   "id": "oc_rice_spas",
@@ -14624,7 +16189,11 @@
     "label": "Website",
     "url": "https://spas.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spas@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/spas"
+  }
  },
  {
   "id": "oc_rice_sostlc",
@@ -14651,7 +16220,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/sostlc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lw122@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sostlc"
+  }
  },
  {
   "id": "oc_rice_swe",
@@ -14693,8 +16266,20 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rice-swe"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice.swe"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rice.swe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swe.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/swe"
+  }
  },
  {
   "id": "oc_rice_swug",
@@ -14720,7 +16305,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/swug"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceswug@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/swug"
+  }
  },
  {
   "id": "oc_rice_sas",
@@ -14755,7 +16344,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricesas/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vp25@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sas"
+  }
  },
  {
   "id": "oc_rice_splas",
@@ -14785,7 +16378,11 @@
     "label": "Website",
     "url": "https://spanishandportuguese.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spanish@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/splas"
+  }
  },
  {
   "id": "oc_rice_spoco",
@@ -14828,7 +16425,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/SpoCoRice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spocorice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/spoco"
+  }
  },
  {
   "id": "oc_rice_smgt",
@@ -14866,7 +16467,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceSMGT/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "smgt@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/smgt"
+  }
  },
  {
   "id": "oc_rice_stem_sotr",
@@ -14900,7 +16505,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/stemstudentsontherise/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ah158@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/stem-sotr"
+  }
  },
  {
   "id": "oc_rice_stockthenest",
@@ -14931,7 +16540,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricestockthenest/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stockthenest@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/stockthenest"
+  }
  },
  {
   "id": "oc_rice_campusfellowshipsojh",
@@ -14960,8 +16573,20 @@
    {
     "label": "Website",
     "url": "https://streamsofjoyhouston.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/streamsofjoyhouston/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/StreamsofJoyHouston"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ug6@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/campusfellowshipsojh"
+  }
  },
  {
   "id": "oc_rice_sapp",
@@ -14992,7 +16617,11 @@
     "label": "Website",
     "url": "https://studentcenter.rice.edu/sapp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sapp@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sapp"
+  }
  },
  {
   "id": "oc_rice_studentcenter",
@@ -15031,7 +16660,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceStudentCent/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentcenter@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/studentcenter"
+  }
  },
  {
   "id": "oc_rice_infodesk",
@@ -15062,7 +16695,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricestucent"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rmcinfodesk@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/infodesk"
+  }
  },
  {
   "id": "oc_rice_clubsponsors",
@@ -15101,7 +16738,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceStudentCent/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sactclubs@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/clubsponsors"
+  }
  },
  {
   "id": "oc_rice_ssi",
@@ -15139,7 +16780,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceSSI"
    }
-  ]
+  ],
+  "contact": {
+   "email": "success@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ssi"
+  }
  },
  {
   "id": "oc_rice_swo",
@@ -15178,7 +16823,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceStudentWellbeing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wellbeing@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/swo"
+  }
  },
  {
   "id": "oc_rice_sarcomere",
@@ -15217,7 +16866,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceUniversityKinesiologyDepartment"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricesarcomere@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/sarcomere"
+  }
  },
  {
   "id": "oc_rice_strive",
@@ -15255,8 +16908,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/strivecoalition"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ricestrive"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ricestrive"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricestrive@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/strive"
+  }
  },
  {
   "id": "oc_rice_sunriserice",
@@ -15283,7 +16948,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/sunriserice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sunrisericeuniversity@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/sunriserice"
+  }
  },
  {
   "id": "oc_rice_gscs",
@@ -15321,7 +16990,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricecontinuingstudies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gscs@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/gscs"
+  }
  },
  {
   "id": "oc_rice_sspbgsa",
@@ -15356,7 +17029,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricesspb"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ms278@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/sspbgsa"
+  }
  },
  {
   "id": "oc_rice_teamenoughrice",
@@ -15390,6 +17067,14 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/teamenoughrice"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/teamenoughrice"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/teamenoughrice"
    }
   ]
  },
@@ -15418,7 +17103,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/teamingfortransplants"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ak288@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/teamingfortransplants"
+  }
  },
  {
   "id": "oc_rice_testc",
@@ -15447,7 +17136,11 @@
     "label": "Website",
     "url": "https://studentcenter.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pangel@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/testc"
+  }
  },
  {
   "id": "oc_rice_terra",
@@ -15482,7 +17175,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/t.e.r.r.a.rice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ak308@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/terra"
+  }
  },
  {
   "id": "oc_rice_thaistudentassociation",
@@ -15570,7 +17267,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/alexanderhamiltonsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mm318@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/alexanderhamiltonsociety"
+  }
  },
  {
   "id": "oc_rice_theboomclub",
@@ -15625,6 +17326,14 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ricecrochet"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricecrochet"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ricecrochet"
    }
   ]
  },
@@ -15664,7 +17373,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nrotcrice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kml11@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricenrotc"
+  }
  },
  {
   "id": "oc_rice_dinl",
@@ -15711,7 +17424,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCfxeqRdXMKbmI3QM9EjeolQ?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "leadership@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/dinl"
+  }
  },
  {
   "id": "oc_rice_moodyexperience",
@@ -15741,7 +17458,11 @@
     "label": "Website",
     "url": "https://moodyexperience.rice.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ao71@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/moodyexperience"
+  }
  },
  {
   "id": "oc_rice_riceapollos",
@@ -15779,8 +17500,20 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCZzriWg5s2TFQTTSgr8IdQQ"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/p/Co_eOJQg2XA/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/p/Co_eOJQg2XA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thericeapollos@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/riceapollos"
+  }
  },
  {
   "id": "oc_rice_thericephilharmonics",
@@ -15823,7 +17556,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCll_Ooikv1HcUUJTFfC6peA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricephilharmonics@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/thericephilharmonics"
+  }
  },
  {
   "id": "oc_rice_ricethresher",
@@ -15862,7 +17599,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TheRiceThresher/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thresher@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ricethresher"
+  }
  },
  {
   "id": "oc_rice_alzbuddies",
@@ -15897,7 +17638,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ricealzbuddies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rice@alzbuddies.org",
+   "source": "https://rice.campuslabs.com/engage/organization/alzbuddies"
+  }
  },
  {
   "id": "oc_rice_tsa",
@@ -15928,7 +17673,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricetransfers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sk333@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/tsa"
+  }
  },
  {
   "id": "oc_rice_safe",
@@ -15963,7 +17712,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ricesafeoffice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "safesupport@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/safe"
+  }
  },
  {
   "id": "oc_rice_theshepherdschoolofmusic",
@@ -16001,7 +17754,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ShepherdSchool/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "musi@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/theshepherdschoolofmusic"
+  }
  },
  {
   "id": "oc_rice_thea",
@@ -16038,7 +17795,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceTheatre"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theatre@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/thea"
+  }
  },
  {
   "id": "oc_rice_torque",
@@ -16073,7 +17834,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/torqueultimate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewomensfrisbee@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/torque"
+  }
  },
  {
   "id": "oc_rice_transnationalasianstudies",
@@ -16116,7 +17881,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/RiceChaoCenter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asian.studies@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/transnationalasianstudies"
+  }
  },
  {
   "id": "oc_rice_usvh",
@@ -16146,8 +17915,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/usvhrice/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/usvhrice/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/usvhrice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "et80@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/usvh"
+  }
  },
  {
   "id": "oc_rice_ucourt",
@@ -16178,14 +17959,18 @@
     "label": "Website",
     "url": "https://sjp.rice.edu/university-court"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucourt@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/ucourt"
+  }
  },
  {
   "id": "oc_rice_vawglobal",
-  "name": "VAW Global Health Alliances",
+  "name": "VAW Global Health Alliances: Medical Chapter",
   "logo": {
    "emoji": "VG",
-   "hue": 352,
+   "hue": 344,
    "url": "https://se-images.campuslabs.com/clink/images/8d84da0f-d008-432a-9fd5-d423843226512d2dfb5f-8b93-424c-b1dc-4c40c00babeb.png?preset=small-sq"
   },
   "type": "club",
@@ -16213,7 +17998,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rice.vawglobal/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riceuniversitymedical@vawgha.org",
+   "source": "https://rice.campuslabs.com/engage/organization/vawglobal"
+  }
  },
  {
   "id": "oc_rice_vsa",
@@ -16256,7 +18045,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/ricevsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricevsa@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/vsa"
+  }
  },
  {
   "id": "oc_rice_vada",
@@ -16299,7 +18092,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Rice-University-Department-of-Visual-and-Dramatic-Arts-127149077323943"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arts@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/vada"
+  }
  },
  {
   "id": "oc_rice_docs_google_com",
@@ -16325,7 +18122,11 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/docs-google-com"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mk233@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/docs-google-com"
+  }
  },
  {
   "id": "oc_rice_wow",
@@ -16391,7 +18192,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/teamwiess/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jt87@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/wiess"
+  }
  },
  {
   "id": "oc_rice_wiessschoolofnaturalsciences",
@@ -16425,7 +18230,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RiceNatSci"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsci@rice.edu",
+   "source": "https://rice.campuslabs.com/engage/organization/wiessschoolofnaturalsciences"
+  }
  },
  {
   "id": "oc_rice_willrice",
@@ -16460,7 +18269,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/365957593418249/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wrcpres@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/willrice"
+  }
  },
  {
   "id": "oc_rice_wicysrice",
@@ -16495,7 +18308,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wicys.rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wicys.rice@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/wicysrice"
+  }
  },
  {
   "id": "oc_rice_wifirice",
@@ -16526,7 +18343,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wifi_rice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womeninfinanceandinvesting@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/wifirice"
+  }
  },
  {
   "id": "oc_rice_ricewpla",
@@ -16553,6 +18374,10 @@
     "label": "Directory",
     "url": "https://rice.campuslabs.com/engage/organization/ricewpla"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ricewpla@gmail.com",
+   "source": "https://rice.campuslabs.com/engage/organization/ricewpla"
+  }
  }
 ]
