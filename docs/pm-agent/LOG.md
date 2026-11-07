@@ -2450,3 +2450,10 @@
 - Looked for other school portals behind club "Website" links (hosts used 15+ times per school). Found two retired directory addresses that now redirect to a generic page (checked 4 links each): Penn State clubs.psu.edu → "Student Organizations | Penn State Student Affairs" (36 links), Michigan ross.campusgroups.com → the vendor's sales page (28 links). New RETIRED_RE in cleanCollectedOrgs sets them aside (test added); 64 links moved to deadlinks. The other frequent hosts are ordinary school-hosted club sites (sites.psu.edu, sites.duke.edu, students.washington.edu …).
 - Spot check clubs: NC State IEEE, Penn EDAB, Tulane TIERA, Wisconsin If You're Reading This fine; Clemson "Adobe Digital Studio" is a library facility, typed `department`.
 - Spot check courses: 5 random UW Winter 2027 classes (EDLPS 575, A A 528, HSERV 542, TKISH 202, ASL 102 Sec D) match the UW time schedule.
+
+## 2026-11-07 06:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UChicago Splash!, UNC Carolina Adventures (Campus Rec program page), UVA Shotokan Karate, Georgia Tech Alpha Delta Pi fine; NC State Roundabout Magazine answered 503.
+- Spot check courses: 5 random W&M Fall 2026 classes (PSYC 314 Sec 02, HIST 319, CSCI 301 Sec 02, GOVT 391 Sec 06, NSCI 465) match the W&M schedule.
+- Weekly re-collect started early, in small groups: Lehigh, Caltech, Rochester, Wake Forest, GWU. Groups and links kept or grew (links: Lehigh 747→753, WFU 961→994, GWU 1,809→1,852); hand-typed departments (WFU offices) held; Website links set aside earlier stayed out (the deadlinks guard). Classes: Lehigh 2,701, Caltech 832, Rochester 4,356, GWU 5,210 (a few cancellations moved to courses-dropped).
+  - Rochester's "Activity Registration Test Group" left the directory and dropped out of the file. New rule in collect: groups no longer listed go to `<id>.orgs-dropped.json` with droppedAt (only when the new list is at least half the old one, so a broken fetch cannot move everything). The Rochester group was saved there by hand.

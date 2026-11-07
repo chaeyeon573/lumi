@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-04T12:43:17.055Z",
+ "checkedAt": "2026-11-07T06:50:16.899Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:gwu",
- "sampled": 5211,
- "withTimes": 5211,
+ "sampled": 5210,
+ "withTimes": 5210,
  "terms": [
   "Spring 2027",
   "Fall 2026"
  ],
  "sample": [
   "ACCY 2001 · Introduction to Financial Accounting (Sec 10) · Spring 2027 · T 11:10-12:25 R 11:10-12:25",
-  "EXNS 2119 · Introduction to Nutrition Science · Spring 2027 · T 16:45-18:00 R 16:45-18:00",
+  "EXNS 1114 · Community Nutrition · Spring 2027 · R 12:45-15:15",
   "PHIL 3100 · Heidegger's Being and Time (Sec 81) · Spring 2027 · M 15:45-17:00 W 15:45-17:00",
-  "ACCY 6521 · Data Analytics for Accounting · Fall 2026 · T 19:10-21:40",
-  "ENGL 3980W · Transnational Queer Film · Fall 2026 · M 15:45-17:00 W 15:45-17:00",
-  "MAE 6291 · Large Language Vision Models (Sec 13) · Fall 2026 · M 12:45-14:00 W 12:45-14:00"
+  "ACCY 6601 · Business Law: Contracts, Torts, and Property · Fall 2026 · W 12:45-15:15",
+  "ENGL 4220 · Creative Writing Senior Thesis · Fall 2026 · W 17:10-19:00",
+  "MLS 2007W · Microbes and Society · Fall 2026 · R 16:10-18:00"
  ],
  "spotCheck": {
   "matched": 0,

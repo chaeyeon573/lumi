@@ -1,38 +1,5 @@
 [
  {
-  "id": "oc_rochester_cg59877",
-  "name": "1 Activity Registration Test Group",
-  "logo": {
-   "emoji": "1A",
-   "hue": 112
-  },
-  "type": "club",
-  "schoolId": "s_rochester",
-  "parent": "Residential Life Groups",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://ccc.rochester.edu/student_community?club_id=59877"
-   }
-  ],
-  "recruitment": {
-   "title": "Not taking new members",
-   "period": "",
-   "open": false,
-   "mode": "closed",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_rochester_cg25421",
   "name": "1st Gen Society",
   "logo": {

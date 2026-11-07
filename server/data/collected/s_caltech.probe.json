@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-05T03:36:11.045Z",
+ "checkedAt": "2026-11-07T06:38:07.400Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:caltech",
- "sampled": 835,
- "withTimes": 835,
+ "sampled": 832,
+ "withTimes": 832,
  "terms": [
   "Fall 2026",
   "Winter 2027"
  ],
  "sample": [
   "Ae/APh/CE/ME 101A · Fluid Mechanics (Sec 01) · Fall 2026 · M 10:00-10:55 W 10:00-10:55 F 10:00-10:55",
-  "CMS/CS/IDS 150A · Probability and Algorithms (Sec 01) · Fall 2026 · T 10:30-11:55 R 10:30-11:55",
-  "Ma 002 · Differential Equations (Sec 08) · Fall 2026 · M 10:00-10:55 W 10:00-10:55 F 10:00-10:55 R 19:00-19:55",
-  "ME/Ge/Ae 266A · Fracture and Frictional Faulting (Sec 01) · Winter 2027 · M 14:30-15:55 W 14:30-15:55",
-  "EE/CS 010A · Introduction to Digital Logic and Embedded Systems (Sec 01) · Winter 2027 · T 15:00-15:55 F 15:00-15:55",
-  "L 173B · Advanced Chinese - Contemporary China · Winter 2027 · T 10:30-11:25"
+  "CS/EE/IDS 143 · Networks: Algorithms & Architecture (Sec 01) · Fall 2026 · T 10:30-11:55 R 10:30-11:55",
+  "Ma 002 · Differential Equations (Sec 06) · Fall 2026 · M 10:00-10:55 W 10:00-10:55 F 10:00-10:55 R 19:30-20:25",
+  "Ae 121B · Space Propulsion · Winter 2027 · T 13:00-14:25 R 13:00-14:25",
+  "CS 004 · Fundamentals of Computer Programming · Winter 2027 · M 15:00-15:55 W 15:00-15:55 F 15:00-15:55",
+  "L 170B · Introduction to Chinese · Winter 2027 · T 09:00-10:25 R 09:00-10:25"
  ],
  "spotCheck": {
   "matched": 6,

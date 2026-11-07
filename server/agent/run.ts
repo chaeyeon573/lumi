@@ -253,6 +253,16 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
       kept += add.length; return add.length ? { ...o, links: [...(o.links ?? []), ...add] } : o;
     });
     if (kept) { writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`); console.log(`  ${row.id}: kept ${kept} earlier links`); }
+    // 디렉터리에서 빠진 단체는 지우지 않고 <id>.orgs-dropped.json 에 옮겨 둔다 (수업의 courses-dropped 와 같은 규칙, 2026-11-07)
+    const now = new Set(list.map((o) => o.id));
+    const gone = prevOrgs.filter((o) => !now.has(o.id));
+    if (gone.length && list.length >= prevOrgs.length * 0.5) {
+      const dFile = path.join(COLLECTED_DIR, `${row.id}.orgs-dropped.json`);
+      const old = existsSync(dFile) ? (JSON.parse(readFileSync(dFile, 'utf8')) as (Organization & { droppedAt: string })[]) : [];
+      const stamp = new Date().toISOString().slice(0, 10);
+      writeFileSync(dFile, `${JSON.stringify([...old.filter((x) => !gone.some((g) => g.id === x.id)), ...gone.map((o) => ({ ...o, droppedAt: stamp }))], null, 1)}\n`);
+      console.log(`  ${row.id}: ${gone.length} groups no longer listed → orgs-dropped`);
+    }
   }
   // 손으로 확인한 종류 고침(server/data/org-type-overrides.csv: 학교 디렉터리에 섞인 교직원·행정 모임 등) — 다시 모아도 유지
   const ovFile = path.join(DATA_DIR, 'org-type-overrides.csv');

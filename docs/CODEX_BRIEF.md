@@ -119,6 +119,7 @@ Rules for both sides are in `AGENTS.md`. Running requests go in `docs/HANDOFF.md
 These exist so nothing collected is ever deleted. Do not read them for screens.
 - `<id>.deadlinks.json`: dead club websites.
 - `<id>.courses-dropped.json`: cancelled or removed classes.
+- `<id>.orgs-dropped.json`: groups that left the school directory.
 - `*.probe.json`, `*.courses-progress.json`: Claude's work files.
 
 ## 2. API

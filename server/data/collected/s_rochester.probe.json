@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-04T05:38:00.290Z",
+ "checkedAt": "2026-11-07T06:41:13.968Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:rochester",
- "sampled": 4360,
- "withTimes": 4360,
+ "sampled": 4356,
+ "withTimes": 4356,
  "terms": [
   "Spring 2027",
   "Fall 2026"
  ],
  "sample": [
   "AHST 100 · Introduction to Visual and Cultural Studies · Spring 2027 · T 14:00-15:15 R 14:00-15:15",
-  "GRMN 261 · Weimar Film & Film Theory · Spring 2027 · M 12:30-13:45 W 12:30-13:45",
-  "THTR 153 · Acting with Objects: Puppetry · Spring 2027 · F 14:00-16:40",
-  "ASLA 101 · Beginning Amer Sign Lang I (Sec 01) · Fall 2026 · M 14:00-14:50 W 14:00-14:50 F 14:00-14:50",
-  "GRMN 426 · Modern Anti-Semitism in Germany · Fall 2026 · W 10:25-11:40 F 10:25-11:40",
-  "NAVS 094 · Ship Systems I · Fall 2026 · M 07:30-08:50 W 07:30-08:50"
+  "GSWS 209 · Psychology of Human Sexuality · Spring 2027 · T 09:40-10:55 R 09:40-10:55",
+  "ACC 201 · Financial Accounting (Sec 01) · Spring 2027 · T 09:40-10:55 R 09:40-10:55",
+  "ASLA 101 · Beginning Amer Sign Lang I (Sec 05) · Fall 2026 · M 10:25-11:15 W 10:25-11:15 F 10:25-11:15",
+  "GSWS 188 · Wives, Witches and Wenches: Women in American History · Fall 2026 · M 14:00-15:15 W 14:00-15:15",
+  "THTR 121 · Technical Theater · Fall 2026 · M 10:25-11:40 W 10:25-11:40"
  ],
  "spotCheck": {
   "matched": 0,

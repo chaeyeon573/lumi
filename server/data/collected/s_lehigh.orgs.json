@@ -1906,6 +1906,14 @@
    {
     "label": "Website",
     "url": "http://chabadlehigh.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/chabadlehigh/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/ChabadLehigh.org"
    }
   ],
   "recruitment": {
@@ -2211,6 +2219,10 @@
    {
     "label": "Directory",
     "url": "https://lehigh.campusgroups.com/student_community?club_id=35496"
+   },
+   {
+    "label": "Website",
+    "url": "https://cas.lehigh.edu/content/cas-academic-advising-center"
    }
   ],
   "recruitment": {
@@ -3545,7 +3557,7 @@
   "schoolId": "s_lehigh",
   "parent": "Department Office/Department Initiative",
   "verified": false,
-  "description": "The Lehigh University Greek Community is an integral part of campus life at Lehigh University. The Office of Student Involvement supports the 22 chapters recognized at Lehigh University.",
+  "description": "Fraternity and Sorority Life at Lehigh University exists to advance fraternalism by cultivating a vibrant, safe, and inclusive community where students are empowered to lead lives of integrity, purpose, and connection. We champion a values-driven culture rooted in accountability, service, and excellence. As advocates, educators, and partners, we support students in developing values-based leadership, fostering inclusive communities, and upholding accountability to themselves and others. We strive to nurture an environment where students overcome challenges, build lifelong bonds and memories, a",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -5151,6 +5163,10 @@
    {
     "label": "Directory",
     "url": "https://lehigh.campusgroups.com/student_community?club_id=35576"
+   },
+   {
+    "label": "Website",
+    "url": "http://www3.lehigh.edu/studentlife/housing/default.asp"
    }
   ],
   "recruitment": {
@@ -12290,6 +12306,10 @@
    {
     "label": "Website",
     "url": "https://sustainability.lehigh.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/lehighsustainability/"
    }
   ],
   "recruitment": {
@@ -12585,13 +12605,13 @@
   }
  },
  {
-  "id": "og_lehigh_cg35767",
+  "id": "oc_lehigh_cg35767",
   "name": "Phi Alpha Delta Pre Law Professional Fraternity",
   "logo": {
    "emoji": "PA",
    "hue": 288
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_lehigh",
   "parent": "Professional",
   "verified": false,
@@ -12659,13 +12679,13 @@
   }
  },
  {
-  "id": "og_lehigh_cg35770",
+  "id": "oc_lehigh_cg35770",
   "name": "Phi Sigma Pi National Honor Fraternity",
   "logo": {
    "emoji": "PS",
    "hue": 352
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_lehigh",
   "parent": "Professional",
   "verified": false,
@@ -13412,13 +13432,13 @@
   }
  },
  {
-  "id": "og_lehigh_cg35786",
+  "id": "oc_lehigh_cg35786",
   "name": "Sigma Phi Delta",
   "logo": {
    "emoji": "SP",
    "hue": 152
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_lehigh",
   "parent": "Fraternities and Sororities",
   "verified": false,
@@ -15146,7 +15166,7 @@
   "schoolId": "s_lehigh",
   "parent": "Special Interest",
   "verified": false,
-  "description": "The Smash Ultimate Club is an organization that strives to bring together the Lehigh community and promote socialization through Smash Bros. Additionally, the club strives to teach play about the game of Smash Ultimate, mainly through game play.",
+  "description": "The Smash and Fighting Games Club is an organization that strives to bring together the Lehigh community and promote socialization through Smash Bros. and fighting games. Additionally, the club strives to teach play about the game of Smash Ultimate and other fighting games, mainly through game play.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -15318,6 +15338,10 @@
    {
     "label": "Directory",
     "url": "https://lehigh.campusgroups.com/student_community?club_id=35835"
+   },
+   {
+    "label": "Website",
+    "url": "https://cglink.me/277/s8"
    }
   ],
   "recruitment": {
