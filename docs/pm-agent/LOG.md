@@ -2555,3 +2555,11 @@
 - Weekly re-collect: Rice 485→484 (first try cut by my 280 s limit after the group step, re-ran to completion; 4,156 classes), CMU 337→329 (9 delisted kept; 6,761 classes), UW 1,086→1,177 groups with the paging fix (links 1,887→2,055; 7,895 classes).
 - Spot check clubs: Clemson Women's Club Lacrosse, UMN EEB Club, MSU APGH, Tulane Global Humanities Center (403 to bots, title matched) fine; USC Couture Fashion Collective domain no longer resolves (weekly dead-link check).
 - Spot check courses: 5 random CMU Spring 2027 classes match. 80-210 Logic and Proofs "(A)" meets only Friday; checked CMU's own schedule: the course lists only sections A and B, both Friday, no separate lecture - data is right.
+
+## 2026-11-07 22:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Weekly re-collect finished: Stanford 733 (no change), UCLA 1,451→1,478 (29 delisted kept in orgs-dropped; 4 faculty/staff/research-center groups had lost their department type - fixed and added to org-type-overrides.csv), MIT 427→423 (13 delisted kept; 17 dead sites set aside; 1,962 Fall classes), Penn 514→516 (1 delisted kept). Harvard skipped: clubs still blocked here (engage refused), classes done 11-06.
+- Club site scan of new links: 269 tried, 1 taken over (Michigan Alpha Theta Delta → gambling site), set aside.
+- SF State classes refreshed in three parts with SFSU_SUBJECTS (122 subjects, ~14 min total): 6,954→6,958, 15 new sections, 30 time changes, 11 gone kept in courses-dropped.
+- Spot check clubs: UCI Anteater Mock Trial, Indiana CORe, UMich Pre-SOMA, Cornell CUAir fine; Rice Sleepy Cyborg Gallery host matchbox.rice.edu no longer resolves - set aside in deadlinks.
+- Spot check courses: 5 random Cornell Spring 2027 classes match the live class roster.
