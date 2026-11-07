@@ -2425,3 +2425,9 @@
 - Spot check clubs: WFU Outdoor Pursuits (Campus Rec program page, left as is), W&M Agape, Penn State LimitlesS, BU Marketing Club fine. Duke "Art of a Scientist" website now shows "Domain Registered at Safenames": the domain expired and is parked.
   - New `isParkedPage` (registrar/for-sale titles; test added) used by the weekly website step and by scan-club-sites; this link moved to s_duke.deadlinks.json. The scan after the weekly re-collect will catch other parked domains.
 - Spot check courses: 5 random Rice Fall 2026 classes (EDUC 566, UNIV 194 Sec 005, SPAN 141 Sec 001, PHYS 100 Sec 003, EDUC 463) match. Note: Rice publishes short ALL-CAPS titles, title-casing turns acronyms like CTIS into "Ctis" (cosmetic, not fixed).
+
+## 2026-11-07 02:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: WFU Alpha Phi Omega fine; UNC "City and Regional Planning" is the academic department (description defines the field), typed `department`; UChicago OLAS domain no longer resolves and Vanderbilt VPB page failed to load (both left for the weekly dead-link check); UGA GREP answered 503.
+- Spot check courses: 5 random Cornell Spring 2027 classes (GOVT 1101 Sem 101, VTMED 6571, PE 1640 Lec 008, LATIN 5229, NBAY 5400) match the Cornell roster.
+- Full scan-club-sites pass again with the new parked-domain check (progress reset; 16,297 sites tried, 13,150 opened): 5 parked domains, all Duke clubs whose sites now show "Domain Registered at Safenames" (BSA, Badminton, Defining Movement, Devils en Pointe, Small Town Records). Links set aside in s_duke.deadlinks.json. No new takeovers.
