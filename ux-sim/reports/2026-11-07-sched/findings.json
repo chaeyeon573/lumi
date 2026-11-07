@@ -1,0 +1,1585 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-07T19:18:57.289Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "sched-20261107-1915-aisha-first-open-decide",
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "first-open-decide",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 33,
+      "actions": 33,
+      "frictionCount": 10,
+      "maxSeverity": 3,
+      "mode": "local",
+      "auth": "none",
+      "commit": "7192afc82e1b",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "The small coffee-after-class meetups appeal to me, but club pages were thin (no how-to-join), searches for public health and first-gen found nothing, and my first 'For you' item was a career fair — if the next visit feels like résumé stuff I'd drift away.",
+        "basis": [
+          7,
+          11,
+          21,
+          53
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/run.json",
+      "report": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/report.md"
+    },
+    {
+      "runId": "sched-20261107-1915-jordan-first-open-decide",
+      "persona": "jordan-sophomore-impatient",
+      "scenario": "first-open-decide",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 6,
+      "frictionCount": 6,
+      "maxSeverity": 4,
+      "mode": "local",
+      "auth": "none",
+      "commit": "7192afc82e1b",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Guest preview showed a bulletin board (emeriti talks, A-Z Greek list, empty club sheet) and sign-up announced 6 screens of setup; nothing gave Jordan a reason to push through",
+        "basis": [
+          5,
+          10,
+          14
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/run.json",
+      "report": "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/report.md"
+    },
+    {
+      "runId": "sched-20261107-1915-minji-first-open-decide",
+      "persona": "minji-freshman-17",
+      "scenario": "first-open-decide",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 25,
+      "actions": 25,
+      "frictionCount": 7,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "none",
+      "commit": "7192afc82e1b",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Signed up because the social preview promised lunch plans, but every real screen so far (guest explore, home) was English event lists; if Social is empty she won't come back.",
+        "basis": [
+          3,
+          5,
+          10,
+          36
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/run.json",
+      "report": "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/report.md"
+    },
+    {
+      "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+      "persona": "seoyeon-exchange-korean",
+      "scenario": "first-open-decide",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 27,
+      "actions": 27,
+      "frictionCount": 4,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "none",
+      "commit": "7192afc82e1b",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Korean UI and KSA kept me, but I never saw anything about rides/travel, and the guest preview and club sheet showed no people — if 모임 has no SFO plans I may go back to KakaoTalk groups",
+        "basis": [
+          5,
+          11,
+          18,
+          41
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/run.json",
+      "report": "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/report.md"
+    }
+  ],
+  "totals": {
+    "runs": 4,
+    "findings": 21,
+    "frictionEvents": 27,
+    "environmentLimitedEvents": 0,
+    "maxSeverity": 4,
+    "bySeverity": {
+      "1": 9,
+      "2": 15,
+      "3": 2,
+      "4": 1
+    },
+    "multiPersonaFindings": 5,
+    "singletonFindings": 15
+  },
+  "findings": [
+    {
+      "fingerprint": "e5e1110b21e7",
+      "title": "Onboarding friction on /start/goals — “Continue”",
+      "screen": "/start/goals",
+      "frictionType": "onboarding",
+      "keyElement": "continue",
+      "keyElementLabel": "Continue",
+      "personas": [
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide",
+        "sched-20261107-1915-jordan-first-open-decide"
+      ],
+      "occurrences": 2,
+      "severityMax": 4,
+      "maxSeverity": 4,
+      "severityMedian": 2.5,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 23,
+          "severity": 1,
+          "quote": "Oh, 6 steps before I even make the account? That's a lot, but 'You can change this later' makes me feel okay picking. Clubs and meeting people — that's exactly me.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/023-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/023-click-som.jpg"
+          ],
+          "url": "/start/goals",
+          "wish": "tell me upfront what the 6 steps are and that nothing is public yet"
+        },
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "first-open-decide",
+          "step": 13,
+          "severity": 4,
+          "quote": "1 of 6?? i tapped join, not take a survey. six screens before i even see a person. nope",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/013-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/013-click-som.jpg"
+          ],
+          "url": "/start/goals",
+          "wish": "email first, one screen, ask goals later or never"
+        }
+      ],
+      "wishes": [
+        "tell me upfront what the 6 steps are and that nothing is public yet",
+        "email first, one screen, ask goals later or never"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start/goals); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “tell me upfront what the 6 steps are and that nothing is public yet”; “email first, one screen, ask goals later or never”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "80e5f387dd6f",
+      "title": "Missing / empty content on /guest/explore/clubs — “Follow”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "content_gap",
+      "keyElement": "follow",
+      "keyElementLabel": "Follow",
+      "personas": [
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide",
+        "sched-20261107-1915-jordan-first-open-decide"
+      ],
+      "occurrences": 2,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 11,
+          "severity": 3,
+          "quote": "That's it? Same sentence again. It doesn't tell me if I have to apply or if it's open, or when they meet. And 'Follow' — wait, does following mean they see me, or that I'm signing up for the fraternity? I don't want to accidentally look like I'm rushing.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/011-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/011-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=health",
+          "wish": "tell me how to join (open vs. application), when they meet, and what Follow does / who sees it"
+        },
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "first-open-decide",
+          "step": 9,
+          "severity": 3,
+          "quote": "that's it? same sentence again. no people, no next hackathon date, nothing. ok and?",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/009-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/009-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=hack",
+          "wish": "show upcoming events, how many people from Lumi follow it, people looking for teammates"
+        }
+      ],
+      "wishes": [
+        "tell me how to join (open vs. application), when they meet, and what Follow does / who sees it",
+        "show upcoming events, how many people from Lumi follow it, people looking for teammates"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /guest/explore/clubs is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “tell me how to join (open vs. application), when they meet, and what Follow does / who sees it”; “show upcoming events, how many people from Lumi follow it, people looking for teammates”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "fd5df2b461e7",
+      "title": "No reason to stay on /guest/explore/events — “Campus event Today · 11 AM UC Berkeley E”",
+      "screen": "/guest/explore/events",
+      "frictionType": "motivation",
+      "keyElement": "campus event today am uc",
+      "keyElementLabel": "Campus event Today · 11 AM UC Berkeley E",
+      "personas": [
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide",
+        "sched-20261107-1915-jordan-first-open-decide"
+      ],
+      "occurrences": 2,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 1.5,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 2,
+          "severity": 1,
+          "quote": "Wait, it's mostly faculty speaker series and seminars on top. Retirement Center talk first? That's not really for me. I came for clubs.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/002-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/002-click-som.jpg"
+          ],
+          "url": "/guest/explore/events",
+          "wish": "show student-friendly social stuff first for a new student"
+        },
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "first-open-decide",
+          "step": 2,
+          "severity": 2,
+          "quote": "list of event cards with 'view source' links. this is giving bulletin board. where are the people",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/002-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/002-click-som.jpg"
+          ],
+          "url": "/guest/explore/events",
+          "wish": "show who's going / something social, not a calendar dump"
+        }
+      ],
+      "wishes": [
+        "show student-friendly social stuff first for a new student",
+        "show who's going / something social, not a calendar dump"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /guest/explore/events: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show student-friendly social stuff first for a new student”; “show who's going / something social, not a calendar dump”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "9c2019fa59ce",
+      "title": "Confusing UI on /guest/explore/clubs — “Sort: Recommended”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "ux_confusion",
+      "keyElement": "sort recommended",
+      "keyElementLabel": "Sort: Recommended",
+      "personas": [
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide",
+        "sched-20261107-1915-jordan-first-open-decide"
+      ],
+      "occurrences": 2,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 5,
+          "severity": 2,
+          "quote": "It says 'Recommended' but it's just sororities and frats A to Z? Wait, do I have to rush to join anything here? I don't really know how Greek life works and this is kind of intimidating as the first thing.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/005-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/005-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs",
+          "wish": "if it's 'Recommended', show me something that fits a new student, not the alphabet starting with Greek letters"
+        },
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "first-open-decide",
+          "step": 5,
+          "severity": 2,
+          "quote": "lol 'recommended' is just A to Z. four sororities in a row. not what i'm here for",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/005-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/005-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs",
+          "wish": "actually recommend stuff, or say it's A-Z"
+        }
+      ],
+      "wishes": [
+        "if it's 'Recommended', show me something that fits a new student, not the alphabet starting with Greek letters",
+        "actually recommend stuff, or say it's A-Z"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Sort: Recommended” on /guest/explore/clubs does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “if it's 'Recommended', show me something that fits a new student, not the alphabet starting with Greek letters”; “actually recommend stuff, or say it's A-Z”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "88c73a7bb2af",
+      "title": "Hard to find on /welcome — “한국어”",
+      "screen": "/welcome",
+      "frictionType": "discoverability",
+      "keyElement": "한국어",
+      "keyElementLabel": "한국어",
+      "personas": [
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide",
+        "sched-20261107-1915-seoyeon-first-open-decide"
+      ],
+      "occurrences": 2,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 1,
+          "severity": 1,
+          "quote": "오 바로 한국어 됐다! 좋아. 근데 tiny 'English' 글씨라 거의 못 볼 뻔",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/001-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/001-click-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": "bigger language toggle, like 🌐 icon"
+        },
+        {
+          "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "first-open-decide",
+          "step": 1,
+          "severity": 1,
+          "quote": "와 한국어! 바로 바뀌네. 리스트는 안 나왔지만 더 좋아요. 근데 버튼이 너무 작아서 잘 안 보였어요.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/001-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/001-click-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": "make the language toggle bigger, like a 🌐 icon"
+        }
+      ],
+      "wishes": [
+        "bigger language toggle, like 🌐 icon",
+        "make the language toggle bigger, like a 🌐 icon"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“한국어”) where they looked (/welcome); label icon-only controls. Personas said they wanted: “bigger language toggle, like 🌐 icon”; “make the language toggle bigger, like a 🌐 icon”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "9630cf170545",
+      "title": "Missing / empty content on /guest/explore/clubs — “Search clubs”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "content_gap",
+      "keyElement": "search clubs",
+      "keyElementLabel": "Search clubs",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide"
+      ],
+      "occurrences": 2,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 1.5,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 7,
+          "severity": 2,
+          "quote": "Nothing for public health? At Berkeley? That's literally my major. Maybe I typed it wrong… let me try just 'health'.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/007-type.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/007-type-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=public+health",
+          "wish": "find related clubs (pre-health, health, community service) even if the exact phrase doesn't match"
+        },
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 21,
+          "severity": 1,
+          "quote": "Okay, no first-gen group. Not shocking, but a little sad. Still, the board game nights and the community clubs looked friendly. The bottom keeps saying people and meetups are only for students who join — that's the part I actually want, finding people to go with.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/021-type.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/021-type-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=first-gen",
+          "wish": "a first-gen / transfer support group, or suggest the closest matches"
+        }
+      ],
+      "wishes": [
+        "find related clubs (pre-health, health, community service) even if the exact phrase doesn't match",
+        "a first-gen / transfer support group, or suggest the closest matches"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /guest/explore/clubs is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “find related clubs (pre-health, health, community service) even if the exact phrase doesn't match”; “a first-gen / transfer support group, or suggest the closest matches”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "045610ef15b3",
+      "title": "Trust / privacy worry on /start/what — “Social”",
+      "screen": "/start/what",
+      "frictionType": "trust_privacy",
+      "keyElement": "social",
+      "keyElementLabel": "Social",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 29,
+          "severity": 2,
+          "quote": "Oh, 'coffee after class' with people from my classes — that's small and not scary. That's honestly what I want. I still don't know who can see me or message me though.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/029-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/029-click-som.jpg"
+          ],
+          "url": "/start/what?p=social",
+          "wish": "one line here: who can see my profile and who can message me"
+        }
+      ],
+      "wishes": [
+        "one line here: who can see my profile and who can message me"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “Social” on /start/what before asking for it. Personas said they wanted: “one line here: who can see my profile and who can message me”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b3c7023ed06b",
+      "title": "Onboarding friction on /start/communities — “Add your own”",
+      "screen": "/start/communities",
+      "frictionType": "onboarding",
+      "keyElement": "add your own",
+      "keyElementLabel": "Add your own",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 43,
+          "severity": 2,
+          "quote": "Still no e-mail — this is a long sign-up. 'Membership is verified separately'… I don't belong to anything yet and I don't want to look like I'm claiming to be in a club. I'll skip this one.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/043-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/043-click-som.jpg"
+          ],
+          "url": "/start/communities",
+          "wish": "fewer steps before the account, and make clear that picking here is just 'interested', not claiming membership"
+        }
+      ],
+      "wishes": [
+        "fewer steps before the account, and make clear that picking here is just 'interested', not claiming membership"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start/communities); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “fewer steps before the account, and make clear that picking here is just 'interested', not claiming membership”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b72bcf16403c",
+      "title": "No reason to stay on / — “Campus event Berkeley Career Engagement ”",
+      "screen": "/",
+      "frictionType": "motivation",
+      "keyElement": "campus event berkeley career engagement",
+      "keyElementLabel": "Campus event Berkeley Career Engagement ",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 53,
+          "severity": 2,
+          "quote": "I'm in! But the first 'For you' thing is career fairs — I picked clubs and meeting people, not résumé stuff. Hopefully the Clubs and Meetups tiles are where my people are.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/053-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/053-click-som.jpg"
+          ],
+          "url": "/",
+          "wish": "'For you' should start with the communities/social things I picked during sign-up"
+        }
+      ],
+      "wishes": [
+        "'For you' should start with the communities/social things I picked during sign-up"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “'For you' should start with the communities/social things I picked during sign-up”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "2008ea54a771",
+      "title": "No reason to stay on /guest/explore/events — “학교 행사 오늘 · 오전 11시 UC Berkeley Emeriti As”",
+      "screen": "/guest/explore/events",
+      "frictionType": "motivation",
+      "keyElement": "학교 행사 오늘 오전 시",
+      "keyElementLabel": "학교 행사 오늘 · 오전 11시 UC Berkeley Emeriti As",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 3,
+          "severity": 2,
+          "quote": "음… 그냥 학교 행사 리스트네. 첫번째가 은퇴 교수 강연ㅋㅋ 나랑 상관없음. 사람은 가입해야 보인대",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/003-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/003-click-som.jpg"
+          ],
+          "url": "/guest/explore/events",
+          "wish": "show me a peek of plans/people like lunch groups, even blurred"
+        }
+      ],
+      "wishes": [
+        "show me a peek of plans/people like lunch groups, even blurred"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /guest/explore/events: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show me a peek of plans/people like lunch groups, even blurred”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "5c97e2699a4f",
+      "title": "No reason to stay on /guest/explore/clubs — “Alpha Chi Omega ΑΧΩ · Panhellenic sorori”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "motivation",
+      "keyElement": "alpha chi omega αχω panhellenic",
+      "keyElementLabel": "Alpha Chi Omega ΑΧΩ · Panhellenic sorori",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 5,
+          "severity": 2,
+          "quote": "헐 frat sorority만… 이건 내 스타일 아님. '추천'이라면서 그냥 알파벳순?",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/005-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/005-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs",
+          "wish": "recommend clubs for freshmen / international students first"
+        }
+      ],
+      "wishes": [
+        "recommend clubs for freshmen / international students first"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /guest/explore/clubs: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “recommend clubs for freshmen / international students first”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "23685972f161",
+      "title": "Missing / empty content on /guest/explore/clubs — “팔로우”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "content_gap",
+      "keyElement": "팔로우",
+      "keyElementLabel": "팔로우",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 9,
+          "severity": 2,
+          "quote": "이게 다야? 아까 본 거랑 똑같은 한 줄. 몇 명 있는지라도 알려주지",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/009-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/009-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=Korean",
+          "wish": "show how many students / freshmen follow it or upcoming KSA events"
+        }
+      ],
+      "wishes": [
+        "show how many students / freshmen follow it or upcoming KSA events"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /guest/explore/clubs is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show how many students / freshmen follow it or upcoming KSA events”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7f81788d3988",
+      "title": "Onboarding friction on /start/goals — “계속”",
+      "screen": "/start/goals",
+      "frictionType": "onboarding",
+      "keyElement": "계속",
+      "keyElementLabel": "계속",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 13,
+          "severity": 2,
+          "quote": "1/6?? 6단계나… 아 귀찮아. 그래도 목표 고르는 건 쉬우니까",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/013-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/013-click-som.jpg"
+          ],
+          "url": "/start/goals",
+          "wish": "tell me upfront how long, or email first"
+        }
+      ],
+      "wishes": [
+        "tell me upfront how long, or email first"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start/goals); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “tell me upfront how long, or email first”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "2049e44e7166",
+      "title": "Confusing UI on /start/communities — “기숙사”",
+      "screen": "/start/communities",
+      "frictionType": "ux_confusion",
+      "keyElement": "기숙사",
+      "keyElementLabel": "기숙사",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 26,
+          "severity": 2,
+          "quote": "뭐지? 그냥 '기숙사' 체크만 됨. 내 기숙사는 어디서 고르는 거야?",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/026-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/026-click-som.jpg"
+          ],
+          "url": "/start/communities",
+          "wish": "after tapping 기숙사, show the dorm list so I pick mine"
+        }
+      ],
+      "wishes": [
+        "after tapping 기숙사, show the dorm list so I pick mine"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “기숙사” on /start/communities does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “after tapping 기숙사, show the dorm list so I pick mine”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "934acb5cdeb3",
+      "title": "No reason to stay on / — “소셜”",
+      "screen": "/",
+      "frictionType": "motivation",
+      "keyElement": "소셜",
+      "keyElementLabel": "소셜",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-minji-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "persona": "minji-freshman-17",
+          "scenario": "first-open-decide",
+          "step": 36,
+          "severity": 2,
+          "quote": "가입은 됐는데… '새 사람 만나기' 골랐는데 또 행사 리스트네. 점심 모임은 소셜 탭 가야 하나 봐",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/036-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-minji-first-open-decide/shots/036-click-som.jpg"
+          ],
+          "url": "/",
+          "wish": "since I picked 'meet new people', open on lunch plans / people in my year"
+        }
+      ],
+      "wishes": [
+        "since I picked 'meet new people', open on lunch plans / people in my year"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “since I picked 'meet new people', open on lunch plans / people in my year”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "54170e674d7d",
+      "title": "Confusing UI on /guest/explore/events — “행사 검색”",
+      "screen": "/guest/explore/events",
+      "frictionType": "ux_confusion",
+      "keyElement": "행사 검색",
+      "keyElementLabel": "행사 검색",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-seoyeon-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "first-open-decide",
+          "step": 5,
+          "severity": 2,
+          "quote": "어... SFO 검색했는데 요가? 왜 이게 나오지? 공항이랑 상관없는데.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/005-type.jpg",
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/005-type-som.jpg"
+          ],
+          "url": "/guest/explore/events?q=SFO",
+          "wish": "if nothing matches, say 'no results' instead of random events"
+        }
+      ],
+      "wishes": [
+        "if nothing matches, say 'no results' instead of random events"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “행사 검색” on /guest/explore/events does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “if nothing matches, say 'no results' instead of random events”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b29e1c7c6485",
+      "title": "No reason to stay on /guest/explore/clubs — “팔로우”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "motivation",
+      "keyElement": "팔로우",
+      "keyElementLabel": "팔로우",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-seoyeon-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "first-open-decide",
+          "step": 11,
+          "severity": 2,
+          "quote": "설명 한 줄이랑 팔로우 버튼만... 사람이 있는지, 공항 가는 사람이 있는지 모르겠어요. 아무것도 안 보여서 가입해야 알 수 있나봐요.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/011-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/011-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=Korean",
+          "wish": "show a peek of what's inside (how many students, recent plans) so I know it's worth signing up"
+        }
+      ],
+      "wishes": [
+        "show a peek of what's inside (how many students, recent plans) so I know it's worth signing up"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /guest/explore/clubs: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show a peek of what's inside (how many students, recent plans) so I know it's worth signing up”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "c1d73ff77b3c",
+      "title": "Confusing UI on /guest/explore/clubs — “No results”",
+      "screen": "/guest/explore/clubs",
+      "frictionType": "ux_confusion",
+      "keyElement": "no results",
+      "keyElementLabel": "No results",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-aisha-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "first-open-decide",
+          "step": 16,
+          "severity": 1,
+          "quote": "No results?? Oh — probably because 'health' is still in the search box. It would help if it said that. I'll close this and clear the search.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/016-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/016-click-som.jpg"
+          ],
+          "url": "/guest/explore/clubs?q=health",
+          "wish": "say 'No results for \"health\" in Student Clubs — clear search?'"
+        }
+      ],
+      "wishes": [
+        "say 'No results for \"health\" in Student Clubs — clear search?'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “No results” on /guest/explore/clubs does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say 'No results for \"health\" in Student Clubs — clear search?'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b275c9c6f849",
+      "title": "No reason to stay on /welcome",
+      "screen": "/welcome",
+      "frictionType": "motivation",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-jordan-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "first-open-decide",
+          "step": 0,
+          "severity": 1,
+          "quote": "'your college life all in one place'. every app says that. ok and? not signing up blind",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/000-start.jpg",
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/000-start-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": "show me something real happening on campus right on the first screen"
+        }
+      ],
+      "wishes": [
+        "show me something real happening on campus right on the first screen"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /welcome: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show me something real happening on campus right on the first screen”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "5eec1dd9082d",
+      "title": "Confusing UI on /guest/explore/events — “Campus event Today · 11 AM UC Berkeley E”",
+      "screen": "/guest/explore/events",
+      "frictionType": "ux_confusion",
+      "keyElement": "campus event today am uc",
+      "keyElementLabel": "Campus event Today · 11 AM UC Berkeley E",
+      "personas": [
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-jordan-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "first-open-decide",
+          "step": 2,
+          "severity": 1,
+          "quote": "ok it's a feed. first thing 'recommended' to me is a retired professors speaker series?? lol. game night is kinda fun tho",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/002-click.jpg",
+            "ux-sim/runs/sched-20261107-1915-jordan-first-open-decide/shots/002-click-som.jpg"
+          ],
+          "url": "/guest/explore/events",
+          "wish": "recommended should be stuff for students, not emeriti talks"
+        }
+      ],
+      "wishes": [
+        "recommended should be stuff for students, not emeriti talks"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Campus event Today · 11 AM UC Berkeley E” on /guest/explore/events does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “recommended should be stuff for students, not emeriti talks”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7e179d753fdd",
+      "title": "Unclear wording on /start/university — “학부생”",
+      "screen": "/start/university",
+      "frictionType": "copy",
+      "keyElement": "학부생",
+      "keyElementLabel": "학부생",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261107-1915-seoyeon-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "first-open-decide",
+          "step": 25,
+          "severity": 1,
+          "quote": "저는 교환학생인데 '교환학생' 선택이 없네요. 그냥 학부생 할게요. 학년은 선택이라 건너뛰어요.",
+          "evidence": [
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/025-observe.jpg",
+            "ux-sim/runs/sched-20261107-1915-seoyeon-first-open-decide/shots/025-observe-som.jpg"
+          ],
+          "url": "/start/university",
+          "wish": "an 'exchange / visiting student' option"
+        }
+      ],
+      "wishes": [
+        "an 'exchange / visiting student' option"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “학부생” on /start/university in plain language (and check the Korean UI). Personas said they wanted: “an 'exchange / visiting student' option”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/start/communities",
+      "device": "phone",
+      "smallTapTargetsMax": 13,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 178,
+          "name": "Skip",
+          "w": 54,
+          "h": 40
+        },
+        {
+          "id": 143,
+          "name": "Student Clubs",
+          "w": 123,
+          "h": 36
+        },
+        {
+          "id": 144,
+          "name": "Greek Life",
+          "w": 98,
+          "h": 36
+        },
+        {
+          "id": 145,
+          "name": "Research Labs",
+          "w": 125,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/043-click.jpg"
+    },
+    {
+      "route": "/guest/explore/events",
+      "device": "phone",
+      "smallTapTargetsMax": 9,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 11,
+          "name": "Search events",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 12,
+          "name": "Filters",
+          "w": 87,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Sort: Recommended",
+          "w": 118,
+          "h": 36
+        },
+        {
+          "id": 15,
+          "name": "View source",
+          "w": 90,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/002-click.jpg"
+    },
+    {
+      "route": "/start/university",
+      "device": "phone",
+      "smallTapTargetsMax": 9,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 168,
+          "name": "Search universities",
+          "w": 287,
+          "h": 23
+        },
+        {
+          "id": 169,
+          "name": "Undergraduate",
+          "w": 130,
+          "h": 36
+        },
+        {
+          "id": 170,
+          "name": "Graduate",
+          "w": 94,
+          "h": 36
+        },
+        {
+          "id": 171,
+          "name": "Alumni",
+          "w": 77,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/031-click.jpg"
+    },
+    {
+      "route": "/guest/explore/clubs",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 106,
+          "name": "Search clubs",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 12,
+          "name": "Filters",
+          "w": 87,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Sort: Recommended",
+          "w": 118,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/005-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 206,
+          "name": "Search",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 207,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 208,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 215,
+          "name": "See all",
+          "w": 55,
+          "h": 20
+        },
+        {
+          "id": 16,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/053-click.jpg"
+    },
+    {
+      "route": "/welcome",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 1,
+          "name": "English",
+          "w": 44,
+          "h": 20
+        },
+        {
+          "id": 3,
+          "name": "Sign In",
+          "w": 80,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Look around first",
+          "w": 136,
+          "h": 36
+        },
+        {
+          "id": 5,
+          "name": "Terms",
+          "w": 34,
+          "h": 15
+        },
+        {
+          "id": 6,
+          "name": "Privacy",
+          "w": 41,
+          "h": 15
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/000-start.jpg"
+    },
+    {
+      "route": "/start/what",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/027-click.jpg"
+    },
+    {
+      "route": "/start/about",
+      "device": "phone",
+      "smallTapTargetsMax": 4,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 199,
+          "name": "Use your student ID",
+          "w": 121,
+          "h": 18
+        },
+        {
+          "id": 5,
+          "name": "Terms",
+          "w": 33,
+          "h": 15
+        },
+        {
+          "id": 200,
+          "name": "Privacy Policy",
+          "w": 77,
+          "h": 15
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/045-click.jpg"
+    },
+    {
+      "route": "/start/discover",
+      "device": "phone",
+      "smallTapTargetsMax": 2,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 178,
+          "name": "Skip",
+          "w": 54,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/038-click.jpg"
+    },
+    {
+      "route": "/start/goals",
+      "device": "phone",
+      "smallTapTargetsMax": 1,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261107-1915-aisha-first-open-decide/shots/023-click.jpg"
+    }
+  ]
+}

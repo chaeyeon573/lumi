@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T19:18:23.342Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-07-sched/findings.json",
+    "runs": [
+      "sched-20261107-1915-aisha-first-open-decide",
+      "sched-20261107-1915-jordan-first-open-decide",
+      "sched-20261107-1915-minji-first-open-decide",
+      "sched-20261107-1915-seoyeon-first-open-decide"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "7192afc82e1b"
+    ]
+  },
+  "problems": [
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "signup-asks-too-much-too-early",
+      "title": "\"Join Lumi\" opens a \"1 of 6\" goals quiz instead of an e-mail field",
+      "summary": "All four first-open personas remarked on the 6-step setup; Jordan quit on its first screen. Aisha and Minji pushed through but used most of their patience; the communities step confused two of them (dorm chip has no dorm picker; \"Membership is verified separately\").",
+      "rootCauseHypothesis": "Profiling before the account; \"1 of 6\" makes the length explicit right after the student chose to join.",
+      "severity": 4,
+      "frictionTypes": [
+        "onboarding"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "aisha-firstgen-anxious",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "step": 13,
+          "quote": "1 of 6?? i tapped join, not take a survey. six screens before i even see a person. nope"
+        },
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "step": 13,
+          "quote": "1/6?? 6단계나… 아 귀찮아."
+        },
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "step": 43,
+          "quote": "Still no e-mail — this is a long sign-up. 'Membership is verified separately'… I don't be"
+        },
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "step": 26,
+          "quote": "뭐지? 그냥 '기숙사' 체크만 됨. 내 기숙사는 어디서 고르는 거야?"
+        }
+      ],
+      "suggestedFix": "Account (school e-mail) first, then at most one goals screen; make the rest optional after entering the app.",
+      "fingerprints": [
+        "e5e1110b21e7",
+        "7f81788d3988",
+        "b3c7023ed06b",
+        "2049e44e7166"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "club-page-looks-empty",
+      "title": "Guest club sheet repeats the one-line description and offers only \"Follow\"",
+      "summary": "All four personas opened a club in the new guest preview and found only the list description again plus Follow — no meeting time, open/apply status, members or events. Aisha worried Follow would look like rushing a fraternity.",
+      "rootCauseHypothesis": "Guest club sheet shows only list fields; imported clubs carry little more.",
+      "severity": 3,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "aisha-firstgen-anxious",
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "step": 9,
+          "quote": "that's it? same sentence again. no people, no next hackathon date, nothing."
+        },
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "step": 11,
+          "quote": "It doesn't tell me if I have to apply or if it's open"
+        },
+        {
+          "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+          "step": 11,
+          "quote": "설명 한 줄이랑 팔로우 버튼만... 사람이 있는지 모르겠어요."
+        }
+      ],
+      "suggestedFix": "Show meeting time, \"open to all / application\", official link and a member count; say Follow is private.",
+      "file": true,
+      "fingerprints": [
+        "80e5f387dd6f",
+        "23685972f161",
+        "b29e1c7c6485"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "club-list-starts-with-greek-life",
+      "title": "Club list \"Recommended\" is A–Z, opening on sororities and fraternities",
+      "summary": "Three personas noticed in the guest preview today (six personas this week).",
+      "rootCauseHypothesis": "\"Recommended\" has no signal for guests and falls back to alphabetical.",
+      "severity": 2,
+      "frictionTypes": [
+        "ux_confusion",
+        "motivation"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-jordan-first-open-decide",
+          "step": 5,
+          "quote": "lol 'recommended' is just A to Z. four sororities in a row."
+        },
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "step": 5,
+          "quote": "'추천'이라면서 그냥 알파벳순?"
+        }
+      ],
+      "suggestedFix": "For guests, sort by popularity or category variety; label the sort honestly (\"A–Z\").",
+      "file": true,
+      "fingerprints": [
+        "9c2019fa59ce",
+        "5c97e2699a4f"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Live events snapshot (real). Home gym/dining tiles were empty only because of the local stack.",
+      "key": "teasers-and-for-you-skew-grad-careers",
+      "title": "Guest Explore and first \"For you\" items are faculty talks and career fairs, not student life",
+      "summary": "First guest event was an emeriti speaker series for three personas; after sign-up Aisha and Minji (picked meet people/clubs) got career fairs and law events first.",
+      "rootCauseHypothesis": "Ranking ignores role and picked goals; live events are faculty/career-heavy.",
+      "severity": 2,
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17",
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "step": 3,
+          "quote": "첫번째가 은퇴 교수 강연ㅋㅋ 나랑 상관없음."
+        },
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "step": 53,
+          "quote": "the first 'For you' thing is career fairs — I picked clubs and meeting people"
+        },
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "step": 36,
+          "quote": "'새 사람 만나기' 골랐는데 또 행사 리스트네."
+        }
+      ],
+      "suggestedFix": "Hide faculty/emeriti series from undergrad defaults; boost goals picked in onboarding.",
+      "fingerprints": [
+        "fd5df2b461e7",
+        "2008ea54a771",
+        "b72bcf16403c",
+        "934acb5cdeb3",
+        "b275c9c6f849",
+        "5eec1dd9082d"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "club-and-event-search-misses",
+      "title": "Search misses: \"public health\"/\"first-gen\" find no clubs, \"SFO\" returns yoga and a talk",
+      "summary": "Aisha found no clubs for her major or first-gen; Seoyeon's \"SFO\" event search returned unrelated items instead of \"no results\"; a filter silently kept the old query.",
+      "rootCauseHypothesis": "Fuzzy search with loose matching; no tag/major index; no \"showing results for\" hint.",
+      "severity": 2,
+      "frictionTypes": [
+        "content_gap",
+        "ux_confusion"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "step": 7,
+          "quote": "Nothing for public health? At Berkeley? That's literally my major."
+        },
+        {
+          "runId": "sched-20261107-1915-seoyeon-first-open-decide",
+          "step": 5,
+          "quote": "SFO 검색했는데 요가? 왜 이게 나오지?"
+        }
+      ],
+      "suggestedFix": "Exact-match first with an honest \"no results\"; index club categories/majors; show the active query on filters.",
+      "file": false,
+      "fingerprints": [
+        "9630cf170545",
+        "54170e674d7d",
+        "c1d73ff77b3c"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "korean-hard-to-find-and-partial",
+      "title": "Language toggle is a tiny \"English\" label (44×20) — easy to miss, but switching works",
+      "summary": "Both Korean personas found it and loved the instant switch, but nearly missed it.",
+      "rootCauseHypothesis": "Small text button.",
+      "severity": 1,
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-minji-first-open-decide",
+          "step": 1,
+          "quote": "오 바로 한국어 됐다! 좋아. 근데 tiny 'English' 글씨라 거의 못 볼 뻔"
+        }
+      ],
+      "suggestedFix": "Larger pill with 🌐 and both language names.",
+      "file": false,
+      "fingerprints": [
+        "88c73a7bb2af"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "privacy-unclear-in-social-preview",
+      "title": "The Social preview in sign-up never says who can see your profile or message you",
+      "summary": "Aisha liked the small-plan preview but could not tell who sees her; privacy lines on the last step are what convinced her.",
+      "rootCauseHypothesis": "Privacy copy only appears on the final form.",
+      "severity": 2,
+      "frictionTypes": [
+        "trust_privacy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261107-1915-aisha-first-open-decide",
+          "step": 29,
+          "quote": "'coffee after class' with people from my classes — that's small and not scary."
+        }
+      ],
+      "suggestedFix": "One line under the Social preview: \"Only Berkeley students see you; only friends can message\".",
+      "file": false,
+      "fingerprints": [
+        "045610ef15b3"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "7e179d753fdd"
+      ],
+      "reason": "Single sev-1: no \"exchange student\" status (also seen 2026-11-03); Undergraduate worked. Keep as a backlog note."
+    }
+  ],
+  "harnessIssues": []
+}
