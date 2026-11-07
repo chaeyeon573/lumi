@@ -2431,3 +2431,10 @@
 - Spot check clubs: WFU Alpha Phi Omega fine; UNC "City and Regional Planning" is the academic department (description defines the field), typed `department`; UChicago OLAS domain no longer resolves and Vanderbilt VPB page failed to load (both left for the weekly dead-link check); UGA GREP answered 503.
 - Spot check courses: 5 random Cornell Spring 2027 classes (GOVT 1101 Sem 101, VTMED 6571, PE 1640 Lec 008, LATIN 5229, NBAY 5400) match the Cornell roster.
 - Full scan-club-sites pass again with the new parked-domain check (progress reset; 16,297 sites tried, 13,150 opened): 5 parked domains, all Duke clubs whose sites now show "Domain Registered at Safenames" (BSA, Badminton, Defining Movement, Devils en Pointe, Small Town Records). Links set aside in s_duke.deadlinks.json. No new takeovers.
+
+## 2026-11-07 03:33 UTC (daily refresh)
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events refreshed for all 65 schools (now including Santa Clara and Rutgers-Newark): 16,405 upcoming, no errors; no HTML entities left in titles (decodeHtmlText works in the real collect).
+- Jobs refreshed: 1,273 postings from 183/183 boards (Target answered again): internships 859, new grad 362, PhD 176, master's 80, postdoc 13.
+- Spot check clubs: MIT Chorallaries, MSU AMSA, Rice Red Cross, Lehigh Global Union, Michigan Wolverine Sports Analytics fine (5/5).
+- Spot check courses: 5 random Tulane Fall 2026 classes (ANTH 6500, KINE 3120, MGSC 7340, BEMH 6002, INTU 2020-02) match the live Tulane schedule.
