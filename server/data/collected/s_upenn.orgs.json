@@ -240,6 +240,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/upennacmsiggraph/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/upenn.siggraph"
    }
   ],
   "recruitment": {
@@ -1572,6 +1576,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/aspiringeducatorsatpenn/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/aspiringeducatorsatpenn?ltsid=fe85284f-4f54-457a-910b-a9b6af0af32b"
    }
   ],
   "recruitment": {
@@ -2053,6 +2061,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/pennbangla/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/pennbangla?ltsid=d104236d-0f96-4223-a98d-0bc2bb3b19da"
    }
   ],
   "recruitment": {
@@ -2217,6 +2229,10 @@
    {
     "label": "Penn Clubs",
     "url": "https://pennclubs.com/club/penn-bioethics-society"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/pennbioethicsociety?igsi=ZDNlZDc0MzIxNw%3D%3D"
    },
    {
     "label": "Instagram",
@@ -2753,6 +2769,10 @@
    {
     "label": "Website",
     "url": "https://bodyempowerment.net/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bodyempowermentproject_penn"
    },
    {
     "label": "Instagram",
@@ -4098,6 +4118,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/cogwellatpenn"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/listenup.cogwell_penn"
    }
   ],
   "recruitment": {
@@ -4144,6 +4168,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/CollectiveSuccessUPenn/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/collectivesuccessatpenn"
    }
   ],
   "recruitment": {
@@ -4972,6 +5000,14 @@
    },
    {
     "label": "Instagram",
+    "url": "https://instagram.com/drone_club_at_penn/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://linkedin.com/company/penndroneclub/"
+   },
+   {
+    "label": "Instagram",
     "url": "https://instagram.com/penndrones/"
    }
   ],
@@ -5619,6 +5655,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/fglipodcast"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/fglipodcast"
    }
   ],
   "recruitment": {
@@ -5703,6 +5743,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/fad.upenn"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/fad.upenn"
    }
   ],
   "recruitment": {
@@ -5753,6 +5797,10 @@
    {
     "label": "LinkedIn",
     "url": "https://linkedin.com/company/firstgenerationinvestors"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.firstgenerationinvestors.com/"
    }
   ],
   "recruitment": {
@@ -7794,6 +7842,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/upennintervarsity"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/upennintervarsity"
    }
   ],
   "recruitment": {
@@ -8058,6 +8110,10 @@
    {
     "label": "LinkedIn",
     "url": "https://linkedin.com/company/jewish-undergraduate-business-association/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/pennjuba"
    }
   ],
   "recruitment": {
@@ -8150,6 +8206,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/penn.jms"
+   },
+   {
+    "label": "Website",
+    "url": "https://jmsupenn.wixsite.com/prelaw"
    }
   ],
   "recruitment": {
@@ -10374,7 +10434,7 @@
   }
  },
  {
-  "id": "oc_upenn_pc_upenn_namla",
+  "id": "oc_upenn_pc_penn_namla",
   "name": "National Association of Minority Landscape Architects Students Chapter at the University of Pennsylvania",
   "logo": {
    "emoji": "NA",
@@ -10385,7 +10445,7 @@
   "schoolId": "s_upenn",
   "parent": "Design",
   "verified": false,
-  "description": "NAMLA at Penn",
+  "description": "The National Association of Minority Landscape Architects (NAMLA) Student Chapter at the University of Pennsylvania is here to grow minority representation in landscape architecture at every level. As the first NAMLA chapter at an Ivy League school, we see this as a real step toward equity and inclusion in our field. We connect students with minority-owned firms through networking and community events, and help each other get professional experience with résumé and portfolio workshops, mock interviews, and mentorship. We share job opportunities, internships, and apprenticeships on our website ",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -10396,7 +10456,7 @@
   "links": [
    {
     "label": "Penn Clubs",
-    "url": "https://pennclubs.com/club/upenn-namla"
+    "url": "https://pennclubs.com/club/penn-namla"
    }
   ],
   "recruitment": {
@@ -11130,6 +11190,38 @@
   }
  },
  {
+  "id": "oc_upenn_pc_oral_hope",
+  "name": "Oral HOPE",
+  "logo": {
+   "emoji": "OH",
+   "hue": 167
+  },
+  "type": "club",
+  "schoolId": "s_upenn",
+  "verified": false,
+  "description": "Oral HOPE is a Penn Dental Medicine club comprised of dental students who are working to raise awareness of the importance of oral health, promote oral health equity, and increase access to oral healthcare, especially with historically vulnerable populations or individuals experiencing homelessness. Through monthly volunteer sessions, students are able to provide oral hygiene education and materials, as well as referral services to people visiting meal service sites.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Penn Clubs",
+    "url": "https://pennclubs.com/club/oral-hope"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "pennclubs"
+  }
+ },
+ {
   "id": "oc_upenn_pc_penn_outdoors",
   "name": "Outdoors Club at Penn",
   "logo": {
@@ -11413,6 +11505,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/penngenderequity"
+   },
+   {
+    "label": "Website",
+    "url": "https://penngenderequity.my.canva.site/page"
    }
   ],
   "recruitment": {
@@ -11623,7 +11719,7 @@
   "schoolId": "s_upenn",
   "parent": "Social",
   "verified": false,
-  "description": "The mission of Penn Carey Law Veterans is to promote military veteran recruiting, retention of military veteran admitted students, and advancement of veteran interests at Penn Carey Law. The group will also provide opportunities for veteran fellowship and advancement, organize veteran recruitment events, and provide a single voice to the staff and faculty for veteran specific issues.",
+  "description": "The mission of the Penn Carey Law Veterans Club is to promote military veteran recruiting, retention of military veteran admitted students, and advancement of veteran interests at Penn Carey Law. The group will also provide opportunities for veteran fellowship and advancement, organize veteran recruitment events, and provide a single voice to the staff and faculty for veteran specific issues.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -11635,6 +11731,10 @@
    {
     "label": "Penn Clubs",
     "url": "https://pennclubs.com/club/penn-carey-law-veterans-club"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.pennlawveterans.org/"
    }
   ],
   "recruitment": {
@@ -11915,52 +12015,6 @@
    "open": false,
    "mode": "cycle",
    "how": "Application",
-   "source": "pennclubs"
-  }
- },
- {
-  "id": "oc_upenn_pc_penn_undergraduates_for_refugee_empowerment",
-  "name": "Penn for Refugee Empowerment",
-  "logo": {
-   "emoji": "RE",
-   "hue": 8,
-   "url": "https://s3.amazonaws.com/penn.clubs/clubs_small/92000e73c3dd4cdea6e39fdded53f0a7.png"
-  },
-  "type": "club",
-  "schoolId": "s_upenn",
-  "parent": "Civic engagement",
-  "verified": false,
-  "description": "Penn for Refugee Empowerment (PRE) is a student organization at the University of Pennsylvania. PRE's mission is to empower refugees through education assistance and to foster a welcoming community for refugees to build their own success in Philadelphia. PRE members engage directly with refugees and support their educational pursuits through tutoring. Volunteer tutors, who have all completed cultural training, offer their services in ESL and a variety of subjects virtually to refugees in Philadelphia and around the world. Working closely with resettlement centers in Philadelphia, cultural grou",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Penn Clubs",
-    "url": "https://pennclubs.com/club/penn-undergraduates-for-refugee-empowerment"
-   },
-   {
-    "label": "Website",
-    "url": "https://penn-empowers.weebly.com/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://instagram.com/upennforrefugees"
-   },
-   {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/pennempowers"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
    "source": "pennclubs"
   }
  },
@@ -12996,6 +13050,10 @@
    {
     "label": "YouTube",
     "url": "https://youtube.com/channel/UCMitX_Xdaq6-jhMHTYcLQYA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/pennsixacapella"
    }
   ],
   "recruitment": {
@@ -13878,6 +13936,52 @@
   }
  },
  {
+  "id": "oc_upenn_pc_summit_for_scientific_proposals_at_penn_sp2",
+  "name": "Project Lucid",
+  "logo": {
+   "emoji": "PL",
+   "hue": 48,
+   "url": "https://s3.amazonaws.com/penn.clubs/clubs_small/summit-for-scientific-proposals-at-penn-sp2.png"
+  },
+  "type": "club",
+  "schoolId": "s_upenn",
+  "parent": "Social Science",
+  "verified": false,
+  "description": "Project Lucid is a student-run group at Penn that organizes the National Research Conference at Penn (NRCP) , an undergraduate research conference hosted at Penn for students across the world. NRCP is an annual event designed to provide a multidisciplinary platform for undergraduate researchers to showcase research findings and gain insights from more senior scholars. By featuring renowned keynote speakers and well-accomplished researchers, we look to connect today's leaders with tomorrow's scholars in the immersion of cutting-edge research. The conference will be a two-day event (during Fall ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Penn Clubs",
+    "url": "https://pennclubs.com/club/summit-for-scientific-proposals-at-penn-sp2"
+   },
+   {
+    "label": "Website",
+    "url": "https://upennnrc.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/upennnrc/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://linkedin.com/company/project-lucid/"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "pennclubs"
+  }
+ },
+ {
   "id": "oc_upenn_pc_qblack",
   "name": "QBlack",
   "logo": {
@@ -14563,6 +14667,10 @@
    {
     "label": "YouTube",
     "url": "https://youtube.com/www.youtube.com/@firstlovephiladelphia/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/flc_philly"
    }
   ],
   "recruitment": {
@@ -14601,6 +14709,52 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/PennAmericanRedCross/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "pennclubs"
+  }
+ },
+ {
+  "id": "oc_upenn_pc_penn_undergraduates_for_refugee_empowerment",
+  "name": "Refugee Empowerment at Penn",
+  "logo": {
+   "emoji": "RE",
+   "hue": 200,
+   "url": "https://s3.amazonaws.com/penn.clubs/clubs_small/92000e73c3dd4cdea6e39fdded53f0a7.png"
+  },
+  "type": "club",
+  "schoolId": "s_upenn",
+  "parent": "Civic engagement",
+  "verified": false,
+  "description": "Refugee Empowerment at Penn (REP) is a student organization at the University of Pennsylvania. REP's mission is to empower refugees through education assistance and to foster a welcoming community for refugees to build their own success in Philadelphia. REP members engage directly with refugees and support their educational pursuits through tutoring. Volunteer tutors, who have all completed cultural training, offer their services in ESL and a variety of subjects virtually to refugees in Philadelphia and around the world. Working closely with resettlement centers in Philadelphia, cultural group",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Penn Clubs",
+    "url": "https://pennclubs.com/club/penn-undergraduates-for-refugee-empowerment"
+   },
+   {
+    "label": "Website",
+    "url": "https://penn-empowers.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/upennforrefugees"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/pennempowers"
    }
   ],
   "recruitment": {
@@ -15789,6 +15943,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/groups/1531040943621673/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/penn.saws"
    }
   ],
   "recruitment": {
@@ -17686,6 +17844,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/ivycriminologycollective?obrf=MXAzY3o1aTQ5ZzFhNg%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ivycriminologycollective?obrf=MXAzY3o1aTQ5ZzFhNg%3D%3D"
    }
   ],
   "recruitment": {
@@ -19219,6 +19381,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/WeCanSwim/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/wecanswimupenn"
    }
   ],
   "recruitment": {
@@ -19609,6 +19775,10 @@
    {
     "label": "Penn Clubs",
     "url": "https://pennclubs.com/club/wharton-africa-students-association-wasa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/wharton_africa"
    },
    {
     "label": "Instagram",
@@ -21244,6 +21414,10 @@
    {
     "label": "Facebook",
     "url": "https://facebook.com/Undergraduate-Statistics-Society-at-the-University-of-Pennsylvania-USS-728921120515359"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/penn_uss"
    }
   ],
   "recruitment": {
@@ -21935,6 +22109,10 @@
    {
     "label": "Penn Clubs",
     "url": "https://pennclubs.com/club/pwrfc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/upennrugby"
    },
    {
     "label": "Instagram",

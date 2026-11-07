@@ -1,0 +1,37 @@
+[
+ {
+  "id": "oc_upenn_pc_upenn_namla",
+  "name": "National Association of Minority Landscape Architects Students Chapter at the University of Pennsylvania",
+  "logo": {
+   "emoji": "NA",
+   "hue": 168,
+   "url": "https://s3.amazonaws.com/penn.clubs/clubs_small/upenn-namla.png"
+  },
+  "type": "club",
+  "schoolId": "s_upenn",
+  "parent": "Design",
+  "verified": false,
+  "description": "NAMLA at Penn",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Penn Clubs",
+    "url": "https://pennclubs.com/club/upenn-namla"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "pennclubs"
+  },
+  "droppedAt": "2026-11-07"
+ }
+]
