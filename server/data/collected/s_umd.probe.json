@@ -1,10 +1,10 @@
 {
- "checkedAt": "2026-11-05T11:45:07.220Z",
+ "checkedAt": "2026-11-07T20:47:25.141Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:umd",
- "sampled": 13008,
- "withTimes": 13008,
+ "sampled": 13009,
+ "withTimes": 13009,
  "terms": [
   "Fall 2026",
   "Spring 2027"
@@ -14,12 +14,12 @@
   "DATA400 · Applied Probability and Statistics I (Sec 0222) · Fall 2026 · M 13:00-13:50 W 13:00-13:50 F 13:00-13:50",
   "HNUH359T · U.S. Intelligence and Policymaking · Fall 2026 · R 18:00-21:00",
   "THET475 · History of Art, Architecture, and Decor for the Theatre · Fall 2026 · R 09:30-12:20",
-  "COMM130 · Professional Communication and Writing (Sec 0201) · Spring 2027 · F 12:00-12:50",
-  "INAG110 · Oral Communication (Sec 3001) · Spring 2027 · T 11:00-12:15 R 11:00-12:15"
+  "COMM200 · Critical Thinking and Speaking (Sec 0401) · Spring 2027 · M 10:00-10:50 W 10:00-10:50 F 10:00-10:50",
+  "INAG110 · Oral Communication (Sec 3301) · Spring 2027 · T 12:30-13:45 R 12:30-13:45"
  ],
  "spotCheck": {
-  "matched": 3,
+  "matched": 6,
   "mismatched": [],
-  "unavailable": 3
+  "unavailable": 0
  }
 }

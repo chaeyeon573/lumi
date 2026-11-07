@@ -2096,6 +2096,14 @@
    {
     "label": "Website",
     "url": "https://buddyupforlife.org/chapter/st-louis-mo/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/buddyupforlife/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/buddyupforlife"
    }
   ]
  },
@@ -9638,6 +9646,14 @@
    {
     "label": "Website",
     "url": "https://www.psychsign.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/psychsign/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/psychsign"
    }
   ]
  },
@@ -12408,7 +12424,7 @@
    "emoji": "SU",
    "hue": 216
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_wustl",
   "parent": "Student Union Entity",
   "verified": false,

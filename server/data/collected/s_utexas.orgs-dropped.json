@@ -1,0 +1,126 @@
+[
+ {
+  "id": "oc_utexas_american_stats_assoc",
+  "name": "American Statistical Association at the University of Texas at Austin",
+  "logo": {
+   "emoji": "AS",
+   "hue": 40,
+   "url": "https://se-images.campuslabs.com/clink/images/33fe197c-801b-4a63-813d-517bac4140126884e344-8e87-43e5-9177-dd7f2e530233.jpeg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_utexas",
+  "parent": "Academic",
+  "verified": false,
+  "description": "ASA fosters a community of students curious to learn more about statistics and data science through fun social gatherings, workshops, and events or travel.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://utexas.campuslabs.com/engage/organization/american-stats-assoc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/texastats/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_utexas_texasifc",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/6c27bd47-f7cd-4f47-a5f9-fb81b3c0c74e5df08e67-c127-4e50-b400-07e4817aef56.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_utexas",
+  "parent": "Sororities and Fraternities",
+  "verified": false,
+  "description": "The purpose of the Interfraternity Council (IFC) is to act as the governing body for all IFC member fraternities. In conjunction with this purpose, the IFC also operates as the liaison between the fraternities and university administration.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://utexas.campuslabs.com/engage/organization/texasifc"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.texasifc.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/texasifc"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/TexasIFC"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/texas-interfraternity-council"
+   },
+   {
+    "label": "X",
+    "url": "http://www.twitter.com/TexasIFC"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_utexas_universitypanhelleniccouncil",
+  "name": "University Panhellenic Council",
+  "logo": {
+   "emoji": "UP",
+   "hue": 200,
+   "url": "https://se-images.campuslabs.com/clink/images/bf4db7ad-050d-4524-937b-d9b0ae67257e13c3cd79-6520-4c7f-9935-e57789538678.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_utexas",
+  "parent": "Sororities and Fraternities",
+  "verified": false,
+  "description": "The University Panhellenic Council at UT Austin governs the 13 National Panhellenic sororities. Our mission is to foster a vibrant and inclusive Greek community dedicated to empowering women through scholarship, service, and sisterhood.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://utexas.campuslabs.com/engage/organization/universitypanhelleniccouncil"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.texaspanhellenic.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/texaspanhellenic/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/texaspanhellenic?ref=br_tf"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/txpanhellenic"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

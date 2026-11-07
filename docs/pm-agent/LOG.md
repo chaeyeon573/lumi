@@ -2542,3 +2542,10 @@
 - Weekly re-collect, one school at a time: Rutgers-Newark 231 (login-portal links stayed out), Dartmouth 406→438 groups (paging fix), Notre Dame 540→541 (1 delisted kept), Penn State 1,302→1,309 (links 3,477→3,642; retired clubs.psu.edu links stayed out).
 - Spot check clubs: MSU Kesem, Tufts WIA, Michigan SAFE Project, Vanderbilt Thomistic Institute fine; Indiana Fighting Pretty site behind a bot check (202).
 - Spot check courses: 5 random W&M Spring 2027 classes (PHYS 772, FMST 330 Sec 02, FREN 210, CAMS 210, CLCV 431) match the W&M schedule.
+
+## 2026-11-07 20:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Weekly re-collect: UT Austin 1,222→1,225 (links 3,821→3,946), WashU 640 (3,770 classes), UMD 1,062→1,067 (13,009 classes, 8 delisted kept).
+- **WashU departments dropped 49→0 in the re-collect**: those 49 office types came from an earlier one-off relabel pass, not from the reader or org-type-overrides.csv, so a fresh collect lost them. Restored, and wrote all 49 into org-type-overrides.csv so they survive every collect. Checked every school against the state before this week's re-collect: no other school lost departments.
+- Spot check clubs: Penn State Coaly Society, Purdue Aviation Day fine; UMN Coptic Orthodox site behind a bot check (202); MSU Curlfriends weebly site 404 (weekly dead-link check). UT "Recreational Sports" is the school's rec department, typed `department`.
+- Spot check courses: 5 random UMD Spring 2027 classes (KNES 464, DANC 200 Sec 0301, CMSC 454, BUDT 705, PHYS 313) match Testudo.
