@@ -1,0 +1,70 @@
+[
+ {
+  "id": "og_tulane_interfraternity_council",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/2a368415-5d96-4054-9f10-f465d8ba72ad2ddcd249-30e7-4dd0-b9ba-7254141dc149.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_tulane",
+  "parent": "IFC",
+  "verified": false,
+  "description": "The Tulane Interfraternity Council (IFC) is the governing body of the social fraternities on campus and is comprised of representatives from each of its member organizations. The council has the power to formulate policy and regulate member organization.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://tulane.campuslabs.com/engage/organization/interfraternity-council"
+   },
+   {
+    "label": "Website",
+    "url": "https://greek.tulane.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://instagram.com/tulane_ifc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_tulane_panhellenic_council",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/ef48f7d9-3ad1-48d0-a6af-0df045e007a35f9495ce-4429-4195-b025-adbbfc247de5.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_tulane",
+  "parent": "Panhellenic",
+  "verified": false,
+  "description": "The Tulane Panhellenic Council is the unifying, governing and coordinating body comprised of the nine NPC member groups at Tulane. The member groups on our campus are: Alpha Delta Pi, Alpha Epsilon Phi, Chi Omega, Kappa Alpha Theta, Kappa Kappa Gamma,..",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://tulane.campuslabs.com/engage/organization/panhellenic-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tulanepanhel/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

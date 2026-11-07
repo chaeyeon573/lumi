@@ -1,0 +1,146 @@
+[
+ {
+  "id": "og_miami_association_of_greek_letter_organizations",
+  "name": "Association of Greek Letter Organizations",
+  "logo": {
+   "emoji": "AG",
+   "hue": 208,
+   "url": "https://se-images.campuslabs.com/clink/images/100fe4ab-af2d-47f8-9945-95926d6de5dc5bacc1e5-8f41-483e-a6fe-70cf5bc34de5.jpeg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_miami",
+  "parent": "Fraternity & Sorority Life",
+  "verified": false,
+  "description": "The Association of Greek Letter Organizations (AGLO) unites Greek Life at UM, promoting inclusivity, unity, leadership, and service. AGLO works with IFC, MGC, NPHC, and Panhellenic to foster collaboration, Greek unity, and a positive image on campus.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://miami.campuslabs.com/engage/organization/association-of-greek-letter-organizations"
+   },
+   {
+    "label": "Website",
+    "url": "https://doso.studentaffairs.miami.edu/greek-life/index.html"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umgreeklife/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_miami_interfraternity_council",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/b2800caf-f507-4c11-8751-e1b5c1ae7be7f8fd0559-1c6c-49f6-9553-9acbede07cb9.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_miami",
+  "parent": "Fraternity & Sorority Life",
+  "verified": false,
+  "description": "The IFC consists of 13 Fraternities: Alpha Epsilon Pi, Alpha Sigma Phi, Beta Theta Pi, Delta Epsilon Psi, Lambda Chi Alpha, Phi Delta Theta, Pi Kappa Alpha, Pi Kappa Phi, Sigma Alpha Epsilon, Sigma Chi, Tau Kappa Epsilon, Theta Chi, and Zeta Beta Tau",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://miami.campuslabs.com/engage/organization/interfraternity-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/umiami_ifc/p/BuAD340FgF_/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_miami_multicultural_greek_council",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/498e1f36-33e6-4a76-ae4a-7a29dc409d8cbe0cb508-4d37-46ba-91e1-41d8382564b8.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_miami",
+  "parent": "Fraternity & Sorority Life",
+  "verified": false,
+  "description": "MGC is the governing body and umbrella organization for multicultural fraternities and sororities at the University of Miami. The council is currently composed of 2 fraternities and 1 sorority.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://miami.campuslabs.com/engage/organization/multicultural-greek-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiami_mgc/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_miami_panhellenic_association",
+  "name": "Panhellenic Association",
+  "logo": {
+   "emoji": "PA",
+   "hue": 264,
+   "url": "https://se-images.campuslabs.com/clink/images/a9c272ed-6a9c-4818-8385-eed8a44ce6823fed954e-0d7f-4f14-bc8e-84f687e30d07.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_miami",
+  "parent": "Fraternity & Sorority Life",
+  "verified": false,
+  "description": "The University of Miami Panhellenic Association is the umbrella governing council of the eight panhellenic sororities: Alpha Delta Pi, Chi Omega, Delta Delta Delta, Delta Gamma, Delta Phi Epsilon, Pi Beta Phi, Sigma Delta Tau, and Zeta Tau Alpha.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://miami.campuslabs.com/engage/organization/panhellenic-association"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.umiamipanhellenic.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umpanhellenic/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/MiamiPanhellenic/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/panhellenic-association-university-of-miami/?viewAsMember=true"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

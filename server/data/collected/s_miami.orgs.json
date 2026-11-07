@@ -28,7 +28,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiami_100strong/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami100strong@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/100strong"
+  }
  },
  {
   "id": "oc_miami_abovethebar",
@@ -63,7 +67,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/atbmiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "abovethebar.umiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/abovethebar"
+  }
  },
  {
   "id": "oc_miami_adgroup",
@@ -98,7 +106,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiadgroup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesadgroup@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/adgroup"
+  }
  },
  {
   "id": "oc_miami_aslc",
@@ -152,8 +164,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/aesopumiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/aesopumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sxk2001@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/afghaneducationstudentoutreachproject"
+  }
  },
  {
   "id": "oc_miami_african_students_union",
@@ -188,7 +208,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/asuumiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asu@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/african-students-union"
+  }
  },
  {
   "id": "oc_miami_aibusinessassociation",
@@ -222,7 +246,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aibusinessassociation/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cjs499@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/aibusinessassociation"
+  }
  },
  {
   "id": "oc_miami_alas",
@@ -265,7 +293,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/alliance-of-latin-american-students"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alas@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/alas"
+  }
  },
  {
   "id": "oc_miami_alpha_delta_pi",
@@ -291,7 +323,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/alpha-delta-pi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umadpipresident@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/alpha-delta-pi"
+  }
  },
  {
   "id": "oc_miami_alpha_epsilon_delta",
@@ -329,8 +365,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/UMiamiAED"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/alphaepsilondeltaum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aem335@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/alpha-epsilon-delta"
+  }
  },
  {
   "id": "oc_miami_alpha_epsilon_pi",
@@ -354,6 +398,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/alpha-epsilon-pi"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rockathonmiami"
    },
    {
     "label": "Instagram",
@@ -385,7 +433,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/aemb"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aemb.umiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/aemb"
+  }
  },
  {
   "id": "oc_miami_aka",
@@ -422,6 +474,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/akasorority1908"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiami.akas"
    }
   ]
  },
@@ -454,7 +510,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umakpsi/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "akpsi@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/alpha-kappa-psi"
+  }
  },
  {
   "id": "oc_miami_alpha_lambda_delta",
@@ -516,7 +576,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umalphamu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ixf239@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/alpha-mu-music-therapy-club"
+  }
  },
  {
   "id": "oc_miami_alpha_phi_alpha",
@@ -554,7 +618,11 @@
     "label": "X",
     "url": "http://twitter.com/umiamialphas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamialphas@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/alpha-phi-alpha"
+  }
  },
  {
   "id": "oc_miami_alphapimu",
@@ -605,7 +673,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/alpha-sigma-phi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ajm5621@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/alpha-sigma-phi"
+  }
  },
  {
   "id": "oc_miami_alternative_breaks",
@@ -644,7 +716,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/umaltbreaks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umab.contact@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/alternative-breaks"
+  }
  },
  {
   "id": "oc_miami_aig",
@@ -675,7 +751,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/universiy-of-miami-alternative-investment-group/about/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "donovanmoore@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/aig"
+  }
  },
  {
   "id": "oc_miami_amazonrainforestcollective",
@@ -702,7 +782,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/amazonrainforestcollective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mbp736@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/amazonrainforestcollective"
+  }
  },
  {
   "id": "oc_miami_aaees",
@@ -745,7 +829,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AAEESdotORG"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiaaees@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/aaees"
+  }
  },
  {
   "id": "oc_miami_american_institute_of_aeronautics_and_astronautics",
@@ -792,7 +880,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/@UMiamiRocketCanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cab6701@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/american-institute-of-aeronautics-and-astronautics"
+  }
  },
  {
   "id": "oc_miami_american_institute_of_architecture_students",
@@ -827,7 +919,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umsoaaias"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami@aias.org",
+   "source": "https://miami.campuslabs.com/engage/organization/american-institute-of-architecture-students"
+  }
  },
  {
   "id": "oc_miami_american_marketing_association",
@@ -870,7 +966,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com//UMiamiAMA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umama.communication@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/american-marketing-association"
+  }
  },
  {
   "id": "oc_miami_american_medical_student_association",
@@ -909,7 +1009,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/american-medical-student-association-at-the-university-of-miami/home/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamiamsa@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/american-medical-student-association"
+  }
  },
  {
   "id": "oc_miami_american_meteorological_society",
@@ -944,7 +1048,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiams/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiams@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/american-meteorological-society"
+  }
  },
  {
   "id": "oc_miami_arc",
@@ -979,7 +1087,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umredcross/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiredcross@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/arc"
+  }
  },
  {
   "id": "oc_miami_american_sign_language_club",
@@ -1010,7 +1122,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aslcanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfp44@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/american-sign-language-club"
+  }
  },
  {
   "id": "oc_miami_ascefes",
@@ -1045,7 +1161,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/university-of-miami-asce-fes-50517a192/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasce@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ascefes"
+  }
  },
  {
   "id": "oc_miami_asme",
@@ -1080,7 +1200,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/UMASME"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasme@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/asme"
+  }
  },
  {
   "id": "oc_miami_american_society_of_pre_dental_students",
@@ -1115,7 +1239,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1687643751452688/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umpredental@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/american-society-of-pre-dental-students"
+  }
  },
  {
   "id": "oc_miami_amino",
@@ -1150,7 +1278,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/amino-health-group/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axc3098@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/amino"
+  }
  },
  {
   "id": "oc_miami_anthropology_club",
@@ -1180,8 +1312,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamianthro"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamianthro"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamianthro@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/anthropology-club"
+  }
  },
  {
   "id": "oc_miami_umaquarium_club",
@@ -1212,7 +1352,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umaquariumclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umaquariumclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/umaquarium-club"
+  }
  },
  {
   "id": "oc_miami_arab_students_union",
@@ -1243,7 +1387,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiabsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mxq164@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/arab-students-union"
+  }
  },
  {
   "id": "oc_miami_aei",
@@ -1270,7 +1418,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/aei"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gcf48@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/aei"
+  }
  },
  {
   "id": "oc_miami_argentinian_students_association",
@@ -1299,8 +1451,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/asaumiamii"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/asaumiamii"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lxc1465@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/argentinian-students-association"
+  }
  },
  {
   "id": "oc_miami_armenianstudentsassociation",
@@ -1325,6 +1485,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/armenianstudentsassociation"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamiasa/"
    },
    {
     "label": "Instagram",
@@ -1365,7 +1529,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/pages/Art-of-Healing/516802135084543"
    }
-  ]
+  ],
+  "contact": {
+   "email": "las514@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/art-of-healing"
+  }
  },
  {
   "id": "oc_miami_artsinaction",
@@ -1395,7 +1563,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aia_umiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amc1016@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/artsinaction"
+  }
  },
  {
   "id": "oc_miami_ashraeum",
@@ -1421,7 +1593,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/ashraeum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eao95@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ashraeum"
+  }
  },
  {
   "id": "oc_miami_asian_american_students_assocation",
@@ -1456,7 +1632,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/aasaum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aasasecretary@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/asian-american-students-assocation"
+  }
  },
  {
   "id": "oc_miami_acm",
@@ -1486,7 +1666,11 @@
     "label": "Website",
     "url": "https://rabbit.eng.miami.edu/acm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "s.murrell@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/acm"
+  }
  },
  {
   "id": "oc_miami_association_of_commuter_students_acs",
@@ -1529,10 +1713,14 @@
     "label": "X",
     "url": "http://twitter.com/ACSatUM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acssecretary@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/association-of-commuter-students-acs"
+  }
  },
  {
-  "id": "og_miami_association_of_greek_letter_organizations",
+  "id": "oc_miami_association_of_greek_letter_organizations",
   "name": "Association of Greek Letter Organizations",
   "logo": {
    "emoji": "AG",
@@ -1603,7 +1791,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/alpfa-at-the-university-of-miami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alpfa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/alpfa"
+  }
  },
  {
   "id": "oc_miami_astronomicalsociety",
@@ -1633,7 +1825,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umastrosociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "astro-society@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/astronomicalsociety"
+  }
  },
  {
   "id": "oc_miami_audio_engineering_society",
@@ -1667,8 +1863,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umaesociety/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/UMIAMIAES"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jxs7684@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/audio-engineering-society"
+  }
  },
  {
   "id": "oc_miami_badminton_club",
@@ -1699,7 +1903,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiami_badminton/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamibadm1nton@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/badminton-club"
+  }
  },
  {
   "id": "oc_miami_bcm",
@@ -1734,7 +1942,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/miami_bcm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soflobcm@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/bcm"
+  }
  },
  {
   "id": "oc_miami_beskinsmart",
@@ -1763,6 +1975,10 @@
    {
     "label": "Website",
     "url": "https://impactmelanoma.org/be-skin-smart/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/beskinsmartumiami"
    },
    {
     "label": "Instagram",
@@ -1799,7 +2015,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canesbeachvball/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sjs547@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canesbeachvb"
+  }
  },
  {
   "id": "oc_miami_best_buddies",
@@ -1838,7 +2058,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bestbuddies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bestbuddiesumiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/best-buddies"
+  }
  },
  {
   "id": "oc_miami_bap",
@@ -1868,8 +2092,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umiamibap"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamibap"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bap@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/bap"
+  }
  },
  {
   "id": "oc_miami_beta_beta_beta_biological_honor_society",
@@ -1908,7 +2140,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TriBetaBBB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lnz8@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/beta-beta-beta-biological-honor-society"
+  }
  },
  {
   "id": "oc_miami_beta_theta_pi",
@@ -1946,7 +2182,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/betathetapi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scf90@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/beta-theta-pi"
+  }
  },
  {
   "id": "oc_miami_beurself",
@@ -2028,7 +2268,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCLF6EPlKVDwMQX5ElKKMC9Q/videos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bbbspresident@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/bbbs"
+  }
  },
  {
   "id": "oc_miami_biochemistry_club",
@@ -2059,7 +2303,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bmbumiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxf226@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/biochemistry-club"
+  }
  },
  {
   "id": "oc_miami_bgso",
@@ -2090,7 +2338,11 @@
     "label": "Website",
     "url": "https://www.bio.miami.edu/bgso/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "linamaragonb@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/bgso"
+  }
  },
  {
   "id": "oc_miami_biomedical_engineering_society",
@@ -2121,7 +2373,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamibmes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxv824@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/biomedical-engineering-society"
+  }
  },
  {
   "id": "oc_miami_bgsg",
@@ -2160,7 +2416,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BGSGmiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bgsg@med.miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/bgsg"
+  }
  },
  {
   "id": "oc_miami_biscaydence",
@@ -2207,7 +2467,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCMwuVe9kq-b7dxD448fo82Q"
    }
-  ]
+  ],
+  "contact": {
+   "email": "biscaydence@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/biscaydence"
+  }
  },
  {
   "id": "oc_miami_black_awareness_month",
@@ -2234,7 +2498,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/black-awareness-month"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asa464@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/black-awareness-month"
+  }
  },
  {
   "id": "oc_miami_blackbeyondborders",
@@ -2299,7 +2567,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/black-creatives-collective/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blackcreativescollective@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/blackcreativescollective"
+  }
  },
  {
   "id": "oc_miami_bgsa",
@@ -2328,8 +2600,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamibgsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamibgsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bgsa.studorg@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/bgsa"
+  }
  },
  {
   "id": "oc_miami_blq",
@@ -2360,7 +2640,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/blqumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tfb47@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/blq"
+  }
  },
  {
   "id": "oc_miami_bmc",
@@ -2425,7 +2709,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canesboxing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesboxing@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/the-boxing-club"
+  }
  },
  {
   "id": "oc_miami_naacp",
@@ -2460,7 +2748,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiaminaacp/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiaminaacp@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/naacp"
+  }
  },
  {
   "id": "oc_miami_brazilian_jiu_jitsu_club",
@@ -2491,7 +2783,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umbjj/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cav153@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/brazilian-jiu-jitsu-club"
+  }
  },
  {
   "id": "oc_miami_brazilian_students_association",
@@ -2534,7 +2830,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/brasa-at-um"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lxl1311@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/brazilian-students-association"
+  }
  },
  {
   "id": "oc_miami_brothers_overcoming_negativity_and_destruction",
@@ -2565,7 +2865,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bondumiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axc2892@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/brothers-overcoming-negativity-and-destruction"
+  }
  },
  {
   "id": "oc_miami_bpls",
@@ -2595,7 +2899,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bpls_umiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sap291@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/bpls"
+  }
  },
  {
   "id": "oc_miami_canesanimationclub",
@@ -2624,8 +2932,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/canes_animation_club/#"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/canes_animation_club/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adg1029@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canesanimationclub"
+  }
  },
  {
   "id": "oc_miami_canes_crossfit_club",
@@ -2656,7 +2972,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canescrossfit/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canescrossfitclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/canes-crossfit-club"
+  }
  },
  {
   "id": "oc_miami_canesfightcancer",
@@ -2687,7 +3007,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canesfightcancer_um/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jmh582@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canesfightcancer"
+  }
  },
  {
   "id": "oc_miami_canesfinanceassociation",
@@ -2722,7 +3046,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/canes-finance-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesfinanceassociation@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/canesfinanceassociation"
+  }
  },
  {
   "id": "oc_miami_canesforcanines",
@@ -2752,7 +3080,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canesforcaninesum/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesforcaninesum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/canesforcanines"
+  }
  },
  {
   "id": "oc_miami_cfc",
@@ -2787,7 +3119,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/canes-for-change/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesforchange.miami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/cfc"
+  }
  },
  {
   "id": "oc_miami_cgh",
@@ -2822,7 +3158,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umcgh/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rxa1153@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/cgh"
+  }
  },
  {
   "id": "oc_miami_canesforpalestine",
@@ -2848,7 +3188,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/canesforpalestine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wvc9@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canesforpalestine"
+  }
  },
  {
   "id": "oc_miami_sedsumiami",
@@ -2877,8 +3221,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sedsumiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sedsumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dxr1309@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/sedsumiami"
+  }
  },
  {
   "id": "oc_miami_canespadel",
@@ -2913,7 +3265,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canespadel/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jdp225@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canespadel"
+  }
  },
  {
   "id": "oc_miami_canespickeball",
@@ -2944,7 +3300,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canes_pickleball/?ref=dpnac7bxpko"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kxa937@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canespickeball"
+  }
  },
  {
   "id": "oc_miami_csb",
@@ -2974,8 +3334,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/canessciencebowl/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/canessciencebowl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canessciencebowl@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/csb"
+  }
  },
  {
   "id": "oc_miami_canestage_theatre_company",
@@ -3010,7 +3378,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/canestage"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cpc126@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/canestage-theatre-company"
+  }
  },
  {
   "id": "oc_miami_caribbean_students_association",
@@ -3045,7 +3417,11 @@
     "label": "X",
     "url": "http://twitter.com/UMiamiCSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamicsa24@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/caribbean-students-association"
+  }
  },
  {
   "id": "oc_miami_caribico",
@@ -3101,7 +3477,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/um_cws/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "carnochanwoodwindsocietyum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/carnochanwoodwindsociety"
+  }
  },
  {
   "id": "oc_miami_ccgsa",
@@ -3132,7 +3512,11 @@
     "label": "Website",
     "url": "https://chemistry.as.miami.edu/graduate/current-student-information/gsa/index.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "catalyst.chemgsa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ccgsa"
+  }
  },
  {
   "id": "oc_miami_catholic_campus_ministry",
@@ -3171,7 +3555,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umiamicatholic/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "trish@ucatholic.org",
+   "source": "https://miami.campuslabs.com/engage/organization/catholic-campus-ministry"
+  }
  },
  {
   "id": "oc_miami_casa",
@@ -3200,6 +3588,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/casacanes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/casaumiami"
    },
    {
     "label": "Instagram",
@@ -3283,7 +3675,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChabad-Undergrad-103767364301613"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rabbishmuellipskier@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/chabad"
+  }
  },
  {
   "id": "oc_miami_chemistry_club",
@@ -3349,7 +3745,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/caneschess/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axm8396@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/chess-club"
+  }
  },
  {
   "id": "oc_miami_chi_epsilon_national_civil_eng_honor_society",
@@ -3376,7 +3776,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/chi-epsilon-national-civil-eng-honor-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dchin@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/chi-epsilon-national-civil-eng-honor-society"
+  }
  },
  {
   "id": "oc_miami_chi_omega",
@@ -3440,7 +3844,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamifieldhockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiclubfieldhockey@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/club_field_hockey"
+  }
  },
  {
   "id": "oc_miami_club_running",
@@ -3475,7 +3883,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umclubrunning/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umrunningclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/club-running"
+  }
  },
  {
   "id": "oc_miami_swimming_and_aquatics_club",
@@ -3505,8 +3917,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umiamiclubswimming"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamiclubswimming"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiclubswimming@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/swimming-and-aquatics-club"
+  }
  },
  {
   "id": "oc_miami_tennis_club",
@@ -3541,7 +3961,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/MiamiClubTennis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umtennisclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/tennis-club"
+  }
  },
  {
   "id": "oc_miami_collegiatelawjournal",
@@ -3576,7 +4000,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/collegiate-law-journal-at-the-university-of-miami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "undergradlawreviewum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/collegiatelawjournal"
+  }
  },
  {
   "id": "oc_miami_colorstack",
@@ -3610,7 +4038,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/colorstackum/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umcolorstack@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/colorstack"
+  }
  },
  {
   "id": "oc_miami_committee_on_student_organizations_coso",
@@ -3653,7 +4085,11 @@
     "label": "X",
     "url": "http://twitter.com/UM_COSO"
    }
-  ]
+  ],
+  "contact": {
+   "email": "coso_chair@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/committee-on-student-organizations-coso"
+  }
  },
  {
   "id": "oc_miami_community_garden",
@@ -3684,7 +4120,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamicommunitygarden/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamicommunitygarden@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/community-garden"
+  }
  },
  {
   "id": "oc_miami_coiso",
@@ -3731,7 +4171,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCbtk9o6a9z1gk552F2ICYfQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "coiso@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/coiso"
+  }
  },
  {
   "id": "oc_miami_debate_team",
@@ -3769,8 +4213,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/umiamidebate"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/UMDebate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "waldinger@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/debate-team"
+  }
  },
  {
   "id": "oc_miami_delta_delta_delta",
@@ -3838,7 +4290,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/DEPsiNu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "depsinuchapter.president@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/delta-epsilon-psi"
+  }
  },
  {
   "id": "oc_miami_delta_gamma",
@@ -3910,7 +4366,11 @@
     "label": "X",
     "url": "http://twitter.com/umiamidka"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president@umiami.dka.org",
+   "source": "https://miami.campuslabs.com/engage/organization/delta-kappa-alpha"
+  }
  },
  {
   "id": "oc_miami_do",
@@ -3941,7 +4401,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiami_deltaomega/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "deltaomega@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/do"
+  }
  },
  {
   "id": "oc_miami_delta_phi_epsilon",
@@ -4013,7 +4477,11 @@
     "label": "X",
     "url": "http://twitter.com/DSPBetaOmega"
    }
-  ]
+  ],
+  "contact": {
+   "email": "deltasigmapi@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/deltsigmapi"
+  }
  },
  {
   "id": "oc_miami_delta_sigma_theta",
@@ -4047,7 +4515,11 @@
     "label": "X",
     "url": "http://twitter.com/@umiamideltas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "presidenttaurho@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/delta-sigma-theta"
+  }
  },
  {
   "id": "oc_miami_disabilityambassadors",
@@ -4077,8 +4549,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/disabilityambassadorsum/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/disabilityambassadorsum/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agm257@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/disabilityambassadors"
+  }
  },
  {
   "id": "oc_miami_distractionmagazine",
@@ -4117,7 +4597,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/DistractionMagazine/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "distraction305@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/distractionmagazine"
+  }
  },
  {
   "id": "oc_miami_economics_club",
@@ -4155,8 +4639,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/um-economics-club/posts/?feedView=all"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/um_economics_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oxv104@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/economics-club"
+  }
  },
  {
   "id": "oc_miami_esghonorsociety",
@@ -4190,7 +4682,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/in/empowerment-sustainability-and-growth-honor-society-at-the-university-of-miami-15bbba333"
    }
-  ]
+  ],
+  "contact": {
+   "email": "esghonorsociety@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/esghonorsociety"
+  }
  },
  {
   "id": "oc_miami_enpointeballetclub",
@@ -4224,7 +4720,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/um-en-pointe-ballet-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aeb346@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/enpointeballetclub"
+  }
  },
  {
   "id": "oc_miami_engineering_student_council",
@@ -4263,7 +4763,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCWhgu1WvSn25y3xd09SNxsw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "esc.umiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/engineering-student-council"
+  }
  },
  {
   "id": "oc_miami_engineers_without_borders",
@@ -4302,7 +4806,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/UMiami_EWB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiewb@outlook.com",
+   "source": "https://miami.campuslabs.com/engage/organization/engineers-without-borders"
+  }
  },
  {
   "id": "oc_miami_eq_collective",
@@ -4337,7 +4845,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/eqcollectiveumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slt159@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/eq-collective"
+  }
  },
  {
   "id": "oc_miami_equestrian_club",
@@ -4368,7 +4880,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umequestrian/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiequestrian@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/equestrian-club"
+  }
  },
  {
   "id": "oc_miami_etakappanu",
@@ -4406,8 +4922,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/iee-hkn-epsilon-kappa-university-of-miami/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamihkn"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami.hkn@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/etakappanu"
+  }
  },
  {
   "id": "oc_miami_eta_sigma_phi",
@@ -4465,7 +4989,11 @@
     "label": "Website",
     "url": "https://ethics.miami.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxc617@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ethics-society"
+  }
  },
  {
   "id": "oc_miami_umiamieesa",
@@ -4525,8 +5053,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/epso_umiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/epso_umiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acr255@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/exercise-physiology-students-organization"
+  }
  },
  {
   "id": "oc_miami_federacion_de_estudiantes_cubanos",
@@ -4561,7 +5097,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/FECyeah/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amv247@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/federacion-de-estudiantes-cubanos"
+  }
  },
  {
   "id": "oc_miami_federation_of_club_sports",
@@ -4603,8 +5143,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/umiamiwellness"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiami_clubsports"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubsports@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/federation-of-club-sports"
+  }
  },
  {
   "id": "oc_miami_filipino_student_association",
@@ -4643,7 +5191,11 @@
     "label": "X",
     "url": "http://twitter.com/umiamifsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamifsa@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/filipino-student-association"
+  }
  },
  {
   "id": "oc_miami_fgc",
@@ -4673,8 +5225,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/firstgencanes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/firstgencanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umfirstgencanes@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/fgc"
+  }
  },
  {
   "id": "oc_miami_float",
@@ -4705,7 +5265,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/miamifloat"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesfloat@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/float"
+  }
  },
  {
   "id": "oc_miami_freedivingclub",
@@ -4767,7 +5331,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamifsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxw154@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/fsa"
+  }
  },
  {
   "id": "oc_miami_frostacda",
@@ -4802,7 +5370,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100089284642191"
    }
-  ]
+  ],
+  "contact": {
+   "email": "frostacda@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/frostacda"
+  }
  },
  {
   "id": "oc_miami_funday",
@@ -4859,7 +5431,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/UMiamiFutureEducators"
    }
-  ]
+  ],
+  "contact": {
+   "email": "feaumiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/future-educators-association"
+  }
  },
  {
   "id": "oc_miami_gamma_sigma_alpha",
@@ -4922,7 +5498,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/GammaThetaUpsilonInternational"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gtu.alphadelta@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/gamma-theta-upsilon"
+  }
  },
  {
   "id": "oc_miami_climate_reality_project",
@@ -4956,8 +5536,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/gencleo_um"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gencleo_um"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gencleoum@cleoinstitute.org",
+   "source": "https://miami.campuslabs.com/engage/organization/climate-reality-project"
+  }
  },
  {
   "id": "oc_miami_get_out_the_vote",
@@ -5000,7 +5588,11 @@
     "label": "X",
     "url": "http://twitter.com/umgotv"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vote@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/get-out-the-vote"
+  }
  },
  {
   "id": "oc_miami_giftoflife",
@@ -5056,8 +5648,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umgirlgains/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umgirlgains/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "girlgains.um@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/girlgains"
+  }
  },
  {
   "id": "oc_miami_gdb",
@@ -5087,7 +5687,11 @@
     "label": "Website",
     "url": "https://square.link/u/QLl01LRK"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umglobaldentalbrigades@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/gdb"
+  }
  },
  {
   "id": "oc_miami_goldenvoices",
@@ -5125,7 +5729,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@GoldenVoicesChorus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jed254@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/goldenvoices"
+  }
  },
  {
   "id": "oc_miami_club_golf",
@@ -5160,7 +5768,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canes_golfclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "canesgolfclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/club_golf"
+  }
  },
  {
   "id": "oc_miami_developerstudentclub",
@@ -5207,7 +5819,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@dscumiami6213/videos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dscumiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/developerstudentclub"
+  }
  },
  {
   "id": "oc_miami_go",
@@ -5238,7 +5854,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gradout/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sxn573@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/go"
+  }
  },
  {
   "id": "oc_miami_gafac",
@@ -5267,7 +5887,11 @@
     "label": "Website",
     "url": "https://www.miami.edu/gafac"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gafac@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/gafac"
+  }
  },
  {
   "id": "oc_miami_gbsa",
@@ -5294,7 +5918,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/gbsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gbsa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/gbsa"
+  }
  },
  {
   "id": "oc_miami_gsabranch",
@@ -5336,7 +5964,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/um-gsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/gsabranch"
+  }
  },
  {
   "id": "og_miami_greek_ally_unity_gamma_alpha_upsilon",
@@ -5418,7 +6050,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/greengradgroupum/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "millierogers@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ggg"
+  }
  },
  {
   "id": "oc_miami_greenstreet",
@@ -5456,8 +6092,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umiami-greenstreet-capital/?viewAsMember=true"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/greenstreetcapitalum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "greenstreetcapitalmiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/greenstreet"
+  }
  },
  {
   "id": "oc_miami_habitat_for_humanity_um_campus_chapter",
@@ -5492,7 +6136,11 @@
     "label": "X",
     "url": "http://twitter.com/umhabitat"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sac6310@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/habitat-for-humanity-um-campus-chapter"
+  }
  },
  {
   "id": "oc_miami_hablamosmedicina",
@@ -5526,7 +6174,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umhablamosmedicina/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hablamosmedicina@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/hablamosmedicina"
+  }
  },
  {
   "id": "oc_miami_hairology",
@@ -5561,7 +6213,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiami.hairology/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hairology@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/hairology"
+  }
  },
  {
   "id": "oc_miami_hammerandcanes",
@@ -5587,7 +6243,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/hammerandcanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hammerandcanes@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/hammerandcanes"
+  }
  },
  {
   "id": "oc_miami_the_hammond_butler_gospel_choir",
@@ -5622,7 +6282,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCbreVowo4XgzN4BHt-xajRw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cjb385@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/the-hammond-butler-gospel-choir"
+  }
  },
  {
   "id": "oc_miami_healing_across_borders",
@@ -5656,8 +6320,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/hab_umiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/hab_umiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxk309@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/healing-across-borders"
+  }
  },
  {
   "id": "oc_miami_health_studies_student_association",
@@ -5687,8 +6359,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamihssa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamihssa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamihssa@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/health-studies-student-association"
+  }
  },
  {
   "id": "oc_miami_hho",
@@ -5713,6 +6393,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/hho"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamihho/profilecard/"
    },
    {
     "label": "Instagram",
@@ -5748,7 +6432,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/h4hmiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mnp91@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/heartsforhomeless"
+  }
  },
  {
   "id": "oc_miami_hellenic_society",
@@ -5778,6 +6466,36 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umhellenic/"
+   }
+  ],
+  "contact": {
+   "email": "sxe638@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/hellenic_society"
+  }
+ },
+ {
+  "id": "oc_miami_hesa",
+  "name": "Higher Education Student Association (HESA) (Graduate Org)",
+  "logo": {
+   "emoji": "HE",
+   "hue": 24,
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/82/436520/eacb6cff-a072-452e-89de-51e7ef39f595.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_miami",
+  "verified": false,
+  "description": "Higher Education Student Association",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://miami.campuslabs.com/engage/organization/hesa"
    }
   ]
  },
@@ -5814,7 +6532,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/um.hsc.1/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamihindustudents@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/hindu-students-council"
+  }
  },
  {
   "id": "oc_miami_hhsa",
@@ -5848,8 +6570,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umhhsa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umhhsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umhhsa@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/hhsa"
+  }
  },
  {
   "id": "oc_miami_hispanic_heritage_month_committee",
@@ -5919,7 +6649,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/historyclub_um/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcm535@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/history-club"
+  }
  },
  {
   "id": "oc_miami_homecoming_executive_committee",
@@ -5949,8 +6683,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umiamihomecoming"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamihomecoming"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umhomecoming@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/homecoming-executive-committee"
+  }
  },
  {
   "id": "oc_miami_hurricane_bhangra",
@@ -5985,7 +6727,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCl8kHD3EZ948n39jm9UsCgg?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hurricanebhangra@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/hurricane-bhangra"
+  }
  },
  {
   "id": "oc_miami_hurricane_productions",
@@ -6028,7 +6774,11 @@
     "label": "X",
     "url": "http://twitter.com/HPMiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hurricaneproductions@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/hurricane-productions"
+  }
  },
  {
   "id": "oc_miami_hurricanes_on_ice_um_figure_skating_club",
@@ -6059,7 +6809,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamifigureskating/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hurricanesonice.umfigureskating@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/hurricanes-on-ice-um-figure-skating-club"
+  }
  },
  {
   "id": "oc_miami_hyperion_council",
@@ -6098,7 +6852,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/hyperion-council/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hyperioncouncil@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/hyperion-council"
+  }
  },
  {
   "id": "oc_miami_ibis_yearbook",
@@ -6141,7 +6899,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ibis-yearbook/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "editor@ibisyearbook.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ibis-yearbook"
+  }
  },
  {
   "id": "oc_miami_ignite",
@@ -6179,8 +6941,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/IGNITEnational"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/ignite_umiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ignite.umiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ignite"
+  }
  },
  {
   "id": "oc_miami_indian_students_association",
@@ -6211,7 +6981,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiisa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami.isa@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/indian-students-association"
+  }
  },
  {
   "id": "oc_miami_inspire_u_academy",
@@ -6242,7 +7016,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/inspireuacademy/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "inspireu@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/inspire-u-academy"
+  }
  },
  {
   "id": "oc_miami_institute_of_industrial_engineers",
@@ -6280,11 +7058,19 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/iise-university-of-miami-chapter/?viewAsMember=true"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiami_iise"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami.iie@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/institute-of-industrial-engineers"
+  }
  },
  {
-  "id": "og_miami_interfraternity_council",
+  "id": "oc_miami_interfraternity_council",
   "name": "Interfraternity Council",
   "logo": {
    "emoji": "IC",
@@ -6312,7 +7098,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umiami_ifc/p/BuAD340FgF_/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "josh.sackett@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/interfraternity-council"
+  }
  },
  {
   "id": "oc_miami_intervarsitychristianfelllowship",
@@ -6347,7 +7137,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/intervarsityumiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "intervarsityumiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/intervarsitychristianfelllowship"
+  }
  },
  {
   "id": "og_miami_iotaphithetafraternity",
@@ -6372,6 +7166,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/iotaphithetafraternity"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiami.iotas"
    },
    {
     "label": "Instagram",
@@ -6403,7 +7201,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/ironarrow"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ironarrow@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ironarrow"
+  }
  },
  {
   "id": "oc_miami_italianassociation",
@@ -6438,7 +7240,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uitalianassociation/?img_index=1"
    }
-  ]
+  ],
+  "contact": {
+   "email": "taz24@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/italianassociation"
+  }
  },
  {
   "id": "oc_miami_jamsa",
@@ -6465,7 +7271,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/jamsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jamsa.umiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/jamsa"
+  }
  },
  {
   "id": "oc_miami_kaos",
@@ -6500,7 +7310,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@kaosdance?si=28gKhn6AdCdfDeZY"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kaosumiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/kaos"
+  }
  },
  {
   "id": "oc_miami_kappa_alpha_psi",
@@ -6568,8 +7382,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/umiamikgd"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/umkgd?ltsid=eff95796-9c26-4088-9a18-c03cebcab7e6"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamikgd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umkgdpresident@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/umkgd"
+  }
  },
  {
   "id": "oc_miami_kappa_sigma",
@@ -6626,7 +7452,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ktp.umiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ktp@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ktp"
+  }
  },
  {
   "id": "oc_miami_kesem",
@@ -6677,7 +7507,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@kesemattheuniversityofmiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miami@kesem.org",
+   "source": "https://miami.campuslabs.com/engage/organization/kesem"
+  }
  },
  {
   "id": "oc_miami_kids_culture",
@@ -6712,7 +7546,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/kidsandculture_um/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tgs83@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/kids-culture"
+  }
  },
  {
   "id": "oc_miami_kiteboarding_club",
@@ -6743,7 +7581,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umiamikiteboarding"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamikiteboardingclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/kiteboarding-club"
+  }
  },
  {
   "id": "oc_miami_kgsa",
@@ -6773,7 +7615,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umkgsa_/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamikgsa@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/kgsa"
+  }
  },
  {
   "id": "oc_miami_kosa",
@@ -6837,7 +7683,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Lambdasdotcom"
    }
-  ]
+  ],
+  "contact": {
+   "email": "daniel.guillermo@lambdas.com",
+   "source": "https://miami.campuslabs.com/engage/organization/lau"
+  }
  },
  {
   "id": "oc_miami_lambda_chi_alpha",
@@ -6875,7 +7725,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/LambdaChi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chapter@lxamiami.org",
+   "source": "https://miami.campuslabs.com/engage/organization/lambda-chi-alpha"
+  }
  },
  {
   "id": "oc_miami_lambda_theta_alpha",
@@ -6917,7 +7771,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=wa7Wm86Joqc&t=4s"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lta.bs.crra@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/lambda-theta-alpha"
+  }
  },
  {
   "id": "oc_miami_lgbtq_student_center",
@@ -6963,7 +7821,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCdnoEOBK-kt4ZOGVdwjjZdQ?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lgbtq@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/lgbtq-student-center"
+  }
  },
  {
   "id": "oc_miami_liftingourvoicesum",
@@ -7001,8 +7863,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/LiftingOurVoice"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/liftingourvoices.um"
    }
-  ]
+  ],
+  "contact": {
+   "email": "liftingourvoices.um@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/liftingourvoicesum"
+  }
  },
  {
   "id": "oc_miami_locked_dance_team",
@@ -7041,7 +7911,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCwac1iaUAFxSDp0guasoiJQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "um.lockedt@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/locked-dance-team"
+  }
  },
  {
   "id": "oc_miami_lux",
@@ -7076,7 +7950,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/luxury-and-fashion-club-lux/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nkh32@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/lux"
+  }
  },
  {
   "id": "oc_miami_mangrove_journal",
@@ -7111,7 +7989,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mangrovejournal/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mangrovejournal@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/mangrove-journal"
+  }
  },
  {
   "id": "oc_miami_marine_mammal_rescue_team",
@@ -7154,7 +8036,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCZz7Bmt3dFTFix8nP3AmvKw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmrtcanes@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/marine-mammal-rescue-team"
+  }
  },
  {
   "id": "oc_miami_mathunion",
@@ -7205,7 +8091,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/mcknightfellows"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mev97@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mcknightfellows"
+  }
  },
  {
   "id": "oc_miami_mebiz",
@@ -7231,7 +8121,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/mebiz"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mebiz@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mebiz"
+  }
  },
  {
   "id": "oc_miami_medicalethicsdilemmasociety",
@@ -7262,7 +8156,11 @@
     "label": "Website",
     "url": "https://meds.renderforestsites.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mxm194254@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/medicalethicsdilemmasociety"
+  }
  },
  {
   "id": "oc_miami_mps",
@@ -7289,7 +8187,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/mps"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rms319@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mps"
+  }
  },
  {
   "id": "oc_miami_medlife",
@@ -7328,7 +8230,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMMedlife/?ref=bookmarks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamimedlife@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/medlife"
+  }
  },
  {
   "id": "oc_miami_mensbasketball_club",
@@ -7359,7 +8265,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/canesclubhoops/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miaclubhoops@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/mensbasketball-club"
+  }
  },
  {
   "id": "oc_miami_ultimate_frisbee_club",
@@ -7394,7 +8304,11 @@
     "label": "X",
     "url": "http://twitter.com/UMiamiUltimate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiultimate@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ultimate-frisbee-club"
+  }
  },
  {
   "id": "oc_miami_men_s_volleyball_team",
@@ -7433,7 +8347,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UMClubVB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nal147@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/men-s-volleyball-team"
+  }
  },
  {
   "id": "oc_miami_mens_ice_hockey",
@@ -7475,7 +8393,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UMiamiClubHockey/streams?sub_confirmation=1&feature=subscribe-embed-click"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcc2397@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mens_ice_hockey"
+  }
  },
  {
   "id": "oc_miami_men_s_lacrosse_team",
@@ -7512,8 +8434,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/9154152/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/p/CnfFZfsLmZn/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamilax@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/men-s-lacrosse-team"
+  }
  },
  {
   "id": "oc_miami_rugby_football_club",
@@ -7556,7 +8486,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umiamirugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umrugbypresident10@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/rugby-football-club"
+  }
  },
  {
   "id": "oc_miami_mexicanes",
@@ -7599,7 +8533,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12117931"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mexicanes@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mexicanes"
+  }
  },
  {
   "id": "oc_miami_mha",
@@ -7630,7 +8568,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamimhasa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ixa603@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mha"
+  }
  },
  {
   "id": "oc_miami_miami_day_of_service",
@@ -7661,7 +8603,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/miamidayofservice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "leadandserve@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/miami-day-of-service"
+  }
  },
  {
   "id": "oc_miami_miamihrleaders",
@@ -7722,7 +8668,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/miami-international-relations-association/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lim45@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/miami-international-relations-association"
+  }
  },
  {
   "id": "oc_miami_miami_motion",
@@ -7753,7 +8703,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamimotion/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamimotiondance@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/miami-motion"
+  }
  },
  {
   "id": "oc_miami_ujhoom",
@@ -7792,7 +8746,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ujhoom/?ref=aymt_homepage_panel&eid=ARCRVvXsVrImUjfRQPpyXpKetTBljWCtR8jU0kwG4HcMmXD5kSL9LeBc6G-tcNSRg0QMoYyydjqN9ZUS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ujhoom@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ujhoom"
+  }
  },
  {
   "id": "oc_miami_consulting",
@@ -7818,7 +8776,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/consulting"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamiconsultingclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/consulting"
+  }
  },
  {
   "id": "oc_miami_model_united_nations",
@@ -7857,7 +8819,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/miami-model-united-nations"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamimodelun@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/model-united-nations"
+  }
  },
  {
   "id": "oc_miami_mllgsa",
@@ -7883,7 +8849,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/mllgsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rimelbelkacemi@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mllgsa"
+  }
  },
  {
   "id": "oc_miami_musigmalambda",
@@ -7912,7 +8882,7 @@
   ]
  },
  {
-  "id": "og_miami_multicultural_greek_council",
+  "id": "oc_miami_multicultural_greek_council",
   "name": "Multicultural Greek Council",
   "logo": {
    "emoji": "MG",
@@ -7975,7 +8945,11 @@
     "label": "X",
     "url": "http://twitter.com/ummnsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "azc23@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/multicultural-nursing-student-association"
+  }
  },
  {
   "id": "oc_miami_multicultural_student_affairs",
@@ -8021,7 +8995,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC5d6oxHbRuYPA1UqQpex4-g"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/multicultural-student-affairs"
+  }
  },
  {
   "id": "oc_miami_music_industry_association",
@@ -8056,7 +9034,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/um-mia"
    }
-  ]
+  ],
+  "contact": {
+   "email": "srd545@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/music-industry-association"
+  }
  },
  {
   "id": "oc_miami_muslim_students_of_the_university_of_miami",
@@ -8095,7 +9077,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/msumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msummuslimstudents@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/muslim-students-of-the-university-of-miami"
+  }
  },
  {
   "id": "oc_miami_nami",
@@ -8129,8 +9115,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/namiumiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/namiumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxk309@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/nami"
+  }
  },
  {
   "id": "oc_miami_national_association_for_music_education",
@@ -8173,7 +9167,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/UMMusicEducator"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umfcnafme@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/national-association-for-music-education"
+  }
  },
  {
   "id": "oc_miami_national_association_of_black_accountants",
@@ -8219,8 +9217,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/onenaba"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiaminaba"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agg207@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/national-association-of-black-accountants"
+  }
  },
  {
   "id": "oc_miami_national_council_of_negro_women",
@@ -8254,8 +9260,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umiamincnw"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamincnw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aai47@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/national-council-of-negro-women"
+  }
  },
  {
   "id": "oc_miami_nationaldefensesociety",
@@ -8320,7 +9334,11 @@
     "label": "X",
     "url": "http://twitter.com/nowatum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nowatum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/national-organization-for-women"
+  }
  },
  {
   "id": "oc_miami_umiaminomas",
@@ -8386,7 +9404,11 @@
     "label": "Instagram",
     "url": "http://www,instagram.com/umiaminphc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axs8482@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/national-pan-hellenic-council-inc"
+  }
  },
  {
   "id": "oc_miami_national_society_of_black_engineers",
@@ -8429,7 +9451,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/in/um-nsbe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umnsbe@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/national-society-of-black-engineers"
+  }
  },
  {
   "id": "oc_miami_networkofenlightenedwomen",
@@ -8466,8 +9492,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/EnlightenedWomen"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/newatmiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mvy7@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/networkofenlightenedwomen"
+  }
  },
  {
   "id": "oc_miami_nu_rho_psi",
@@ -8502,7 +9536,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/NuRhoPsiMiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nu.rho.psi.umiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/nu-rho-psi"
+  }
  },
  {
   "id": "oc_miami_nasa",
@@ -8565,8 +9603,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/930610230782098"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umnsna/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umnsna@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/nursing-student-association"
+  }
  },
  {
   "id": "oc_miami_oleku",
@@ -8597,7 +9643,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamioleku/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamioleku@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/oleku"
+  }
  },
  {
   "id": "oc_miami_omega_psi_phi",
@@ -8662,7 +9712,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ODKumiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "odk@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/omicron-delta-kappa"
+  }
  },
  {
   "id": "oc_miami_onceuponaroom",
@@ -8691,8 +9745,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/onceuponaroommiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/onceuponaroommiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmg392@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/onceuponaroom"
+  }
  },
  {
   "id": "oc_miami_operation_smile",
@@ -8725,8 +9787,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umiami-operation-smile/?viewAsMember=true"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamios?stkn=ZDNlZDc0MzIxNw%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "smm623@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/operation-smile"
+  }
  },
  {
   "id": "oc_miami_optom_eyes",
@@ -8755,8 +9825,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/optomeyesum"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/optomeyesum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "optomeyesum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/optom-eyes"
+  }
  },
  {
   "id": "oc_miami_order_of_omega",
@@ -8820,7 +9898,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMOCSI/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "orientation@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/orientation"
+  }
  },
  {
   "id": "oc_miami_ostem",
@@ -8859,7 +9941,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMoSTEM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami.ostem@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ostem"
+  }
  },
  {
   "id": "oc_miami_pakistani_students_association",
@@ -8890,10 +9976,14 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/psa.umiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hxs1101@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/pakistani-students-association"
+  }
  },
  {
-  "id": "og_miami_panhellenic_association",
+  "id": "oc_miami_panhellenic_association",
   "name": "Panhellenic Association",
   "logo": {
    "emoji": "PA",
@@ -8933,7 +10023,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/panhellenic-association-university-of-miami/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umpanhellpres@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/panhellenic-association"
+  }
  },
  {
   "id": "oc_miami_partners_in_health_engage_miami",
@@ -8972,7 +10066,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/partnersinhealthengagemiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pihengagemiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/partners-in-health-engage-miami"
+  }
  },
  {
   "id": "oc_miami_perfectpair",
@@ -8998,7 +10096,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/perfectpair"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sxm2810@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/perfectpair"
+  }
  },
  {
   "id": "oc_miami_period_umiami",
@@ -9029,7 +10131,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/period.umiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "period.umiami1@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/period_umiami"
+  }
  },
  {
   "id": "og_miami_phi_alpha_delta_pre_law_fraternity",
@@ -9060,7 +10166,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umpadprelaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prelawmiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/phi-alpha-delta-pre-law-fraternity"
+  }
  },
  {
   "id": "og_miami_phibetasigmafraternity",
@@ -9159,7 +10269,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umphide/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umphide@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/phi-delta-epsilon"
+  }
  },
  {
   "id": "oc_miami_phi_delta_theta",
@@ -9185,7 +10299,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/phi-delta-theta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umphideltapresidents@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/phi-delta-theta"
+  }
  },
  {
   "id": "oc_miami_phi_iota_alpha",
@@ -9245,7 +10363,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@pma-betatau"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pma.betatau@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/phi-mu-alpha-sinfonia"
+  }
  },
  {
   "id": "oc_miami_philosophy_club",
@@ -9271,6 +10393,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/philosophy_club"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umphilosophyclub"
    },
    {
     "label": "Instagram",
@@ -9311,7 +10437,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umphoenyx/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phoenyxum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/phoenyx"
+  }
  },
  {
   "id": "oc_miami_physical_therapy_students_association",
@@ -9341,8 +10471,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/um_ptsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/um_ptsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sam52592@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/physical-therapy-students-association"
+  }
  },
  {
   "id": "oc_miami_pi_beta_pi",
@@ -9460,8 +10598,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umpolhonorsociety?igsi=MWw4eXlnc2dzMm9ybg%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umpolhonorsociety?igsi=MWw4eXlnc2dzMm9ybg%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tdc74@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/pisigmaalpha"
+  }
  },
  {
   "id": "oc_miami_pi_tau_sigma",
@@ -9531,7 +10677,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCuYvx_NXZFjW8DXRJZBcYJg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umplanetkreyol@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/planet-kreyol-haitian-student-organization"
+  }
  },
  {
   "id": "oc_miami_plannedparenthoodgenerationactionum",
@@ -9556,6 +10706,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/plannedparenthoodgenerationactionum"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/genactionum"
    },
    {
     "label": "Instagram",
@@ -9592,7 +10746,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/plantbasedcanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "akl88@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/plant-based-canes"
+  }
  },
  {
   "id": "oc_miami_polisciassociation",
@@ -9660,7 +10818,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/pre-anesthesia-society-umiami/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pasumsecretary@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/pre-anesthesiasociety"
+  }
  },
  {
   "id": "oc_miami_umpre_physician_associate_club",
@@ -9691,7 +10853,11 @@
     "label": "Mailing list",
     "url": "https://campuslabs.us22.list-manage.com/subscribe?u=3cf104a42a1aa2b3c0dab6207&id=2ea41536d7"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nff20@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/umpre-physician-associate-club"
+  }
  },
  {
   "id": "oc_miami_pre_veterinary_society",
@@ -9722,7 +10888,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiprevetsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiprevets@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/pre-veterinary-society"
+  }
  },
  {
   "id": "oc_miami_projectpublichealth",
@@ -9756,8 +10926,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/projectpublichealth_um/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/umiamipph"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamiprojectpublichealth@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/projectpublichealth"
+  }
  },
  {
   "id": "oc_miami_project_sunshine",
@@ -9787,8 +10965,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/psumiamichapter"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/psumiamichapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami@projectsunshine.org",
+   "source": "https://miami.campuslabs.com/engage/organization/project-sunshine"
+  }
  },
  {
   "id": "oc_miami_psi_chi",
@@ -9823,7 +11009,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMpsichi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamipsichi@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/psi-chi"
+  }
  },
  {
   "id": "oc_miami_pgso",
@@ -9854,7 +11044,11 @@
     "label": "Website",
     "url": "https://www.psy.miami.edu/people/grad-students/pgso/index.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "g.woodard@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/pgso"
+  }
  },
  {
   "id": "oc_miami_phsa",
@@ -9885,7 +11079,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiphsa/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiphsa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/phsa"
+  }
  },
  {
   "id": "oc_miami_public_relations_student_society_of_america",
@@ -9928,7 +11126,11 @@
     "label": "X",
     "url": "http://twitter.com/Twitter.com/UMPRSSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prssaum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/public-relations-student-society-of-america"
+  }
  },
  {
   "id": "oc_miami_puertoricanes",
@@ -9958,8 +11160,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/um_puertoricanes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/um_puertoricanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axa3050@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/puertoricanes"
+  }
  },
  {
   "id": "oc_miami_rathskeller",
@@ -10030,8 +11240,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ror.umiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ror.umiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mxn906@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/reachoutandread"
+  }
  },
  {
   "id": "oc_miami_real_estate_finance_association",
@@ -10066,7 +11284,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/real-estate-and-finance-association-um"
    }
-  ]
+  ],
+  "contact": {
+   "email": "refa@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/real-estate-finance-association"
+  }
  },
  {
   "id": "oc_miami_relay_for_life",
@@ -10101,7 +11323,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umrelayforlife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamirelay@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/relay-for-life"
+  }
  },
  {
   "id": "oc_miami_rho_lambda",
@@ -10158,7 +11384,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rhorhorhomiami/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rhorhorhomiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/rho-rho-rho"
+  }
  },
  {
   "id": "oc_miami_rock_climbing_club",
@@ -10219,8 +11449,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/um_rise"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/um_rise"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kld138@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/rise"
+  }
  },
  {
   "id": "oc_miami_sailing_hurricanes",
@@ -10263,7 +11501,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/university-of-miami-sailing-178312292/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sailingcanes@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/sailing-hurricanes"
+  }
  },
  {
   "id": "oc_miami_salsacraze",
@@ -10302,7 +11544,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/salsacraze/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "salsacraze@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/salsacraze"
+  }
  },
  {
   "id": "oc_miami_scholarsoffinance",
@@ -10341,7 +11587,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/scholars-of-finance-umiami-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami@scholarsoffinance.org",
+   "source": "https://miami.campuslabs.com/engage/organization/scholarsoffinance"
+  }
  },
  {
   "id": "oc_miami_science_olympiad",
@@ -10411,7 +11661,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCOuxWPXFxwxv1jCLFzVRIZQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scientificaeditor@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/scientifica-magazine"
+  }
  },
  {
   "id": "oc_miami_scuba_club",
@@ -10450,7 +11704,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/umscuba"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umscuba@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/scuba-club"
+  }
  },
  {
   "id": "oc_miami_shebytes",
@@ -10480,7 +11738,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/shebytes.umiami/?next=%2F"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shebytes@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/shebytes"
+  }
  },
  {
   "id": "oc_miami_sigma_alpha_epsilon",
@@ -10540,7 +11802,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMiamiSAM/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nxm702@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/sigma-alpha-mu"
+  }
  },
  {
   "id": "oc_miami_sigma_chi",
@@ -10591,7 +11857,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/sigma-delta-tau"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mxl1502@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/sigma-delta-tau"
+  }
  },
  {
   "id": "oc_miami_sigma_gamma_epsilon",
@@ -10622,7 +11892,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umiamisge"
    }
-  ]
+  ],
+  "contact": {
+   "email": "irb48@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/sigma-gamma-epsilon"
+  }
  },
  {
   "id": "oc_miami_sigma_gamma_rho",
@@ -10659,6 +11933,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/sgrhoupdates"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamisgrhos"
    }
   ]
  },
@@ -10703,7 +11981,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sigmaiotarhohonor"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ljp124@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/sigma-iota-rho"
+  }
  },
  {
   "id": "oc_miami_sigma_lambda_gamma",
@@ -10737,7 +12019,11 @@
     "label": "X",
     "url": "http://twitter.com/UMiamiGammas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphagammaum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/sigma-lambda-gamma"
+  }
  },
  {
   "id": "oc_miami_sigma_tau_delta",
@@ -10776,7 +12062,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/groups/639473162848120"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umsigtd@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/sigma-tau-delta"
+  }
  },
  {
   "id": "oc_miami_skintoskin",
@@ -10807,7 +12097,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/skintoskin_umiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "taz24@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/skintoskin"
+  }
  },
  {
   "id": "oc_miami_slaviccultureclub",
@@ -10838,7 +12132,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umslaviccultureclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slaviccultureclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/slaviccultureclub"
+  }
  },
  {
   "id": "oc_miami_society_of_asian_scientists_and_engineers",
@@ -10877,7 +12175,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/um-sase-society-of-asian-scientists-and-engineers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamisase@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/society-of-asian-scientists-and-engineers"
+  }
  },
  {
   "id": "oc_miami_society_of_composers_inc",
@@ -10916,7 +12218,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@universityofmiamisci"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umsocietyofcomposers@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/society-of-composers-inc"
+  }
  },
  {
   "id": "oc_miami_society_of_hispanic_professional_engineers",
@@ -10959,7 +12265,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/shpe-university-of-miami/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "um.shpe@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/society-of-hispanic-professional-engineers"
+  }
  },
  {
   "id": "oc_miami_society_of_professional_journalists",
@@ -10993,8 +12303,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/UM_SPJ"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/spj_umiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ang226@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/society-of-professional-journalists"
+  }
  },
  {
   "id": "oc_miami_society_of_women_engineers",
@@ -11041,7 +12359,11 @@
     "label": "X",
     "url": "http://twitter.com/umswe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umswengineers@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/society-of-women-engineers"
+  }
  },
  {
   "id": "oc_miami_sociology_and_criminology_club",
@@ -11076,7 +12398,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/116065108427441"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soc.crim.club@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/sociology-and-criminology-club"
+  }
  },
  {
   "id": "oc_miami_special_olympics",
@@ -11107,7 +12433,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/specialolympicsum/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jak443@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/special-olympics"
+  }
  },
  {
   "id": "oc_miami_spectrum",
@@ -11146,7 +12476,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/MiamiSpectrUM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spectrum.studorg@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/spectrum"
+  }
  },
  {
   "id": "oc_miami_st_bede_episcopal_church_center",
@@ -11207,7 +12541,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/stridesforstrokesumiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "das549@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/stridesforstrokes"
+  }
  },
  {
   "id": "oc_miami_safac",
@@ -11241,8 +12579,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umsafac"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umsafac"
    }
-  ]
+  ],
+  "contact": {
+   "email": "safac@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/safac"
+  }
  },
  {
   "id": "oc_miami_studentaffairsinformationsystems",
@@ -11351,7 +12697,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCJPTG4lKtvkvxFgBhyfaS1g?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sccreservations@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/student-center-complex"
+  }
  },
  {
   "id": "oc_miami_student_center_complex_advisory_council",
@@ -11495,7 +12845,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamisave/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nbb60@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/save_sandyhookpromise"
+  }
  },
  {
   "id": "oc_miami_students_for_classical_architecture",
@@ -11526,7 +12880,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/scaumiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rob33@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/students-for-classical-architecture"
+  }
  },
  {
   "id": "oc_miami_students_for_life_miami",
@@ -11561,7 +12919,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/studentsforlifemiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jxi214@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/students-for-life-miami"
+  }
  },
  {
   "id": "oc_miami_studentsforthenewurbanism",
@@ -11587,7 +12949,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/studentsforthenewurbanism"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asf180@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/studentsforthenewurbanism"
+  }
  },
  {
   "id": "oc_miami_squaregrad",
@@ -11655,8 +13021,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/EmetIsraelUM"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ssi_umiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gee34@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/students-supporting-israel"
+  }
  },
  {
   "id": "oc_miami_studentscare",
@@ -11694,8 +13068,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/StudentsCareOrg"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/studentscareorg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami@students-care.org",
+   "source": "https://miami.campuslabs.com/engage/organization/studentscare"
+  }
  },
  {
   "id": "oc_miami_surfrider_club_at_the_university_of_miami",
@@ -11730,7 +13112,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/5000978206/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adw194@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/surfrider-club-at-the-university-of-miami"
+  }
  },
  {
   "id": "oc_miami_synapseum",
@@ -11795,7 +13181,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/univmiamitkd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "univmiamitkd@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/taekwondo-club"
+  }
  },
  {
   "id": "oc_miami_tamid_israel_investment_group",
@@ -11838,7 +13228,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tamidmiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miami@tamidgroup.org",
+   "source": "https://miami.campuslabs.com/engage/organization/tamid-israel-investment-group"
+  }
  },
  {
   "id": "oc_miami_targetcanes",
@@ -11865,7 +13259,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/targetcanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fredterezi@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/targetcanes"
+  }
  },
  {
   "id": "oc_miami_tau_beta_pi_at_the_university_of_miami",
@@ -11900,7 +13298,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/tau-beta-pi-florida-beta-b45025349/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "taubetapi.um@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/tau-beta-pi-at-the-university-of-miami"
+  }
  },
  {
   "id": "oc_miami_tau_beta_sigma",
@@ -11939,7 +13341,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TBSGammaEpsilon"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president@tbs-ge.net",
+   "source": "https://miami.campuslabs.com/engage/organization/tau-beta-sigma"
+  }
  },
  {
   "id": "oc_miami_txa",
@@ -11965,7 +13371,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/txa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kjh160@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/txa"
+  }
  },
  {
   "id": "oc_miami_tau_kappa_epsilon",
@@ -12021,7 +13431,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umtransfers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tausigma@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/tau-sigma-national-honor-society"
+  }
  },
  {
   "id": "oc_miami_umiamitechconnect",
@@ -12050,8 +13464,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamitechconnect/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamitechconnect/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "als557@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/umiamitechconnect"
+  }
  },
  {
   "id": "oc_miami_the_agamedes_chapter_of_alpha_rho_chi",
@@ -12086,7 +13508,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/apx_agamedes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "apx.agamedes@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/the-agamedes-chapter-of-alpha-rho-chi"
+  }
  },
  {
   "id": "oc_miami_the_fishing_club",
@@ -12117,7 +13543,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/hurricanes_fishing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hurricanesfishing@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/the-fishing-club"
+  }
  },
  {
   "id": "oc_miami_thegraduateschool",
@@ -12193,7 +13623,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/@TheMiamiHurricane"
    }
-  ]
+  ],
+  "contact": {
+   "email": "editor@themiamihurricane.com",
+   "source": "https://miami.campuslabs.com/engage/organization/the-miami-hurricane"
+  }
  },
  {
   "id": "oc_miami_gum",
@@ -12220,7 +13654,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/gum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "srs365@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/gum"
+  }
  },
  {
   "id": "oc_miami_theatre_action_group",
@@ -12255,7 +13693,11 @@
     "label": "X",
     "url": "http://twitter.com/thegreenroomum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamitheatreactiongroup@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/theatre-action-group"
+  }
  },
  {
   "id": "oc_miami_themedentertainmentassociation",
@@ -12263,7 +13705,7 @@
   "logo": {
    "emoji": "TE",
    "hue": 112,
-   "url": "https://se-images.campuslabs.com/clink/images/organizations/82/435921/ea351ed5-896f-40a4-92c6-09569b4f2305.jpg?preset=small-sq"
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/82/435921/48bb999d-faf1-4110-9799-7e4d516607a3.jpg?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_miami",
@@ -12281,7 +13723,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/themedentertainmentassociation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pjc162@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/themedentertainmentassociation"
+  }
  },
  {
   "id": "oc_miami_thetachi",
@@ -12350,7 +13796,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ThomisticInstitute"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ajc594@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/thomisticinstitute"
+  }
  },
  {
   "id": "oc_miami_tcgc",
@@ -12383,8 +13833,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umtcgclub/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umtcgclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsg102@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/tcgc"
+  }
  },
  {
   "id": "oc_miami_transcendence",
@@ -12419,7 +13877,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100091928832254"
    }
-  ]
+  ],
+  "contact": {
+   "email": "transcendence@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/transcendence"
+  }
  },
  {
   "id": "oc_miami_tso",
@@ -12485,7 +13947,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umtricanes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umtricanes@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/triathlon-club-team-tricanes"
+  }
  },
  {
   "id": "oc_miami_trinidadandtobagocanes",
@@ -12515,8 +13981,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ttcanes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ttcanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "svg50@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/trinidadandtobagocanes"
+  }
  },
  {
   "id": "oc_miami_truskcapitalandcrypto",
@@ -12549,6 +14023,10 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/106818768/admin/dashboard/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/um_tcc"
    }
   ]
  },
@@ -12592,8 +14070,16 @@
    {
     "label": "YouTube",
     "url": "https://youtube.com/@umiamitufaan?feature=shared"
+   },
+   {
+    "label": "Website",
+    "url": "https://umiamitufaan.wixsite.com/umiamitufaan"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami.tufaan@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/tufaan"
+  }
  },
  {
   "id": "oc_miami_turkish_student_association",
@@ -12657,6 +14143,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/tpusa_umiami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tpusa_umiami"
    }
   ]
  },
@@ -12683,6 +14173,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/twostepcanes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/twostepcanes"
    },
    {
     "label": "Instagram",
@@ -12719,7 +14213,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umiamiironsports"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uweightliftingteam@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/weightlifting-team"
+  }
  },
  {
   "id": "oc_miami_ubook",
@@ -12750,7 +14248,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ubook_miami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lxv515@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ubook"
+  }
  },
  {
   "id": "oc_miami_uconnect",
@@ -12784,8 +14286,16 @@
    {
     "label": "Instagram",
     "url": "http://instagram.com/umiamiuconnect"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/umiamiuconnect?ltsid=7d5d7826-35e7-4d36-b7de-9ff6678d24af"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rst94@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/uconnect"
+  }
  },
  {
   "id": "oc_miami_university_of_miami_young_and_college_democrats",
@@ -12828,7 +14338,11 @@
     "label": "X",
     "url": "http://twitter.com/UMiamiDems"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamidemocrats@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/university-of-miami-young-and-college-democrats"
+  }
  },
  {
   "id": "oc_miami_udesign",
@@ -12863,7 +14377,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/udesignmiami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "udesignteammiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/udesign"
+  }
  },
  {
   "id": "oc_miami_ufly",
@@ -12889,7 +14407,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/ufly"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sar475@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/ufly"
+  }
  },
  {
   "id": "oc_miami_ufuerza_latino_dance_team",
@@ -12919,8 +14441,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umufuerzadanceteam"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umufuerzadanceteam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ufuerzadanceteam@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ufuerza-latino-dance-team"
+  }
  },
  {
   "id": "oc_miami_ulmanu",
@@ -12976,7 +14506,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/um-civic-scholars"
    }
-  ]
+  ],
+  "contact": {
+   "email": "civicscholars@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/um-civic-scholars"
+  }
  },
  {
   "id": "oc_miami_um_college_republicans",
@@ -13019,7 +14553,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umiami-college-republicans/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ljc1453@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/um-college-republicans"
+  }
  },
  {
   "id": "oc_miami_university_of_miami_hillel",
@@ -13066,7 +14604,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/umiamihillel"
    }
-  ]
+  ],
+  "contact": {
+   "email": "info@miamihillel.org",
+   "source": "https://miami.campuslabs.com/engage/organization/university-of-miami-hillel"
+  }
  },
  {
   "id": "oc_miami_um_mock_trial",
@@ -13097,7 +14639,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/UMOCKTRIAL/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umocktrial@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/um-mock-trial"
+  }
  },
  {
   "id": "oc_miami_umaker",
@@ -13132,7 +14678,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/miamiumakers"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umaker.miami1@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/umaker"
+  }
  },
  {
   "id": "oc_miami_umtv",
@@ -13167,7 +14717,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/um_tv/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bezzy@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/umtv"
+  }
  },
  {
   "id": "oc_miami_unaturalist",
@@ -13197,7 +14751,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/unaturalist_miami/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "unaturalistmiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/unaturalist"
+  }
  },
  {
   "id": "oc_miami_undergraduate_healthcare_club",
@@ -13228,7 +14786,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/umiamiuhc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adexter@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/undergraduate-healthcare-club"
+  }
  },
  {
   "id": "oc_miami_undergraduate_honor_council",
@@ -13266,7 +14828,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiami_honorcouncil/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "honorcouncil@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/undergraduate-honor-council"
+  }
  },
  {
   "id": "oc_miami_unicef",
@@ -13297,7 +14863,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiami.unicef/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiami.unicef@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/unicef"
+  }
  },
  {
   "id": "oc_miami_univen",
@@ -13340,7 +14910,11 @@
     "label": "X",
     "url": "http://twitter.com/univenum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "univen10@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/univen"
+  }
  },
  {
   "id": "oc_miami_united_black_students",
@@ -13379,7 +14953,11 @@
     "label": "X",
     "url": "http://twitter.com/UmiamiUBS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "unitedblackstudents@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/united-black-students"
+  }
  },
  {
   "id": "oc_miami_wesley",
@@ -13422,7 +15000,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCpUPt3syDNHZgGc-qrWyIpg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gxl732@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/wesley"
+  }
  },
  {
   "id": "oc_miami_unity_roundtable_consortium",
@@ -13492,7 +15074,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/UCFMiami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "j.lortie88@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/university-christian-fellowship"
+  }
  },
  {
   "id": "oc_miami_ats",
@@ -13518,6 +15104,10 @@
    {
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/ats"
+   },
+   {
+    "label": "Website",
+    "url": "https://urldefense.com/v3/__https://www.instagram.com/canes.msat"
    },
    {
     "label": "Website",
@@ -13557,8 +15147,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/canesclubball"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/canesclubball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dae74@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/university-of-miami-club-baseball"
+  }
  },
  {
   "id": "oc_miami_mensclubsoccer",
@@ -13593,7 +15191,11 @@
     "label": "Facebook",
     "url": "https://facebook.com/UMMensSoccer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "san125@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/mensclubsoccer"
+  }
  },
  {
   "id": "oc_miami_microbiology_immunology_club",
@@ -13632,7 +15234,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/UMMICROCLUB/?ref=share"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cmv171@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/microbiology-immunology-club"
+  }
  },
  {
   "id": "oc_miami_university_of_miami_women_s_lacrosse_club",
@@ -13698,7 +15304,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/miamiupup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamiupup@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/upup"
+  }
  },
  {
   "id": "oc_miami_upurr",
@@ -13733,7 +15343,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/upurr_miami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "upurrmiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/upurr"
+  }
  },
  {
   "id": "oc_miami_urecovery_a_collegiate_recovery_community",
@@ -13760,7 +15374,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/urecovery-a-collegiate-recovery-community"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nln28@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/urecovery-a-collegiate-recovery-community"
+  }
  },
  {
   "id": "oc_miami_us_green_building_council_students",
@@ -13799,7 +15417,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/usgbcs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mxy505@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/us-green-building-council-students"
+  }
  },
  {
   "id": "oc_miami_ushred",
@@ -13833,7 +15455,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ushr3d/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ushr3d@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ushred"
+  }
  },
  {
   "id": "oc_miami_usport",
@@ -13876,7 +15502,11 @@
     "label": "X",
     "url": "http://twitter.com/umiami_usport"
    }
-  ]
+  ],
+  "contact": {
+   "email": "miamiusport@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/usport"
+  }
  },
  {
   "id": "oc_miami_ustart",
@@ -13911,7 +15541,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ustart-um/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ustartmiami@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/ustart"
+  }
  },
  {
   "id": "oc_miami_utalks",
@@ -13984,7 +15618,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMUThrift/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uthrift.contact@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/uthrift"
+  }
  },
  {
   "id": "oc_miami_vcpe",
@@ -14010,7 +15648,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/vcpe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tvalenziano@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/vcpe"
+  }
  },
  {
   "id": "oc_miami_veteran_students_organization",
@@ -14049,7 +15691,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-miami-veterans-resource-center"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vetscenter@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/veteran-students-organization"
+  }
  },
  {
   "id": "oc_miami_video_games_club",
@@ -14092,7 +15738,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/channel/UCGfid-o0-c4UM1BeZ9TsxBg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axm8396@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/video-games-club"
+  }
  },
  {
   "id": "oc_miami_vietnamesestudentassociation",
@@ -14118,7 +15768,11 @@
     "label": "Directory",
     "url": "https://miami.campuslabs.com/engage/organization/vietnamesestudentassociation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "katiewang@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/vietnamesestudentassociation"
+  }
  },
  {
   "id": "oc_miami_wakeboard_club",
@@ -14149,7 +15803,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umwake/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ajg3004@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/wakeboard-club"
+  }
  },
  {
   "id": "oc_miami_water_polo_club",
@@ -14180,7 +15838,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiwaterpolo/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umwaterpoloclub@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/water-polo-club"
+  }
  },
  {
   "id": "oc_miami_wearemovingtheneedle",
@@ -14222,7 +15884,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/wearemovingtheneedle"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umwamtn@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/wearemovingtheneedle"
+  }
  },
  {
   "id": "oc_miami_william_r_butler_center_for_volunteer_service_and_leadership_development",
@@ -14262,9 +15928,17 @@
    },
    {
     "label": "X",
+    "url": "https://twitter.com/umbutlercenter"
+   },
+   {
+    "label": "X",
     "url": "http://twitter.com/umbutlercenter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "leadandserve@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/william-r-butler-center-for-volunteer-service-and-leadership-development"
+  }
  },
  {
   "id": "oc_miami_women_in_architecture",
@@ -14294,6 +15968,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/wia_miami"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiami_wia"
    },
    {
     "label": "Instagram",
@@ -14338,7 +16016,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umiami-women-in-business"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womeninbusinessum@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/women-in-business"
+  }
  },
  {
   "id": "oc_miami_women_s_basketball_club",
@@ -14373,7 +16055,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-miami-women-s-club-basketball/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiwcb@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/women-s-basketball-club"
+  }
  },
  {
   "id": "oc_miami_wh",
@@ -14404,7 +16090,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/miamiwhockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiwomensclubhockey@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/wh"
+  }
  },
  {
   "id": "oc_miami_womensclubsoftball",
@@ -14434,7 +16124,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiwcs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmb481@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/womensclubsoftball"
+  }
  },
  {
   "id": "oc_miami_womens_rugby_club",
@@ -14465,7 +16159,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umwomensrugby/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiwrfc@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/womens-rugby-club"
+  }
  },
  {
   "id": "oc_miami_womens_soccer_club",
@@ -14499,8 +16197,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umiamiwclubsoccer"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umiamiwclubsoccer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umiamiwclubsoccer@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/womens-soccer-club"
+  }
  },
  {
   "id": "oc_miami_w_ultimate_frisbee",
@@ -14531,7 +16237,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamiwomensultimate/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umwultimate@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/w-ultimate-frisbee"
+  }
  },
  {
   "id": "oc_miami_women_s_volleyball_club",
@@ -14566,7 +16276,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/umiamiclubvolleyball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umwomensclubvb@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/women-s-volleyball-club"
+  }
  },
  {
   "id": "oc_miami_writteninmysoulpoetryclub",
@@ -14595,8 +16309,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umiamipoetryclub?igsi=d2Zhd3FrM3Vsb2cy"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umiamipoetryclub?igsi=d2Zhd3FrM3Vsb2cy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vxm764@miami.edu",
+   "source": "https://miami.campuslabs.com/engage/organization/writteninmysoulpoetryclub"
+  }
  },
  {
   "id": "oc_miami_wvum_fm",
@@ -14635,7 +16357,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/wvum905"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gm@wvum.org",
+   "source": "https://miami.campuslabs.com/engage/organization/wvum-fm"
+  }
  },
  {
   "id": "oc_miami_yellow_rose_society",
@@ -14674,7 +16400,11 @@
     "label": "X",
     "url": "http://twitter.com/YRScanes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yrscanes@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/yellow-rose-society"
+  }
  },
  {
   "id": "oc_miami_zeta_beta_tau",
@@ -14738,7 +16468,11 @@
     "label": "X",
     "url": "http://twitter.com/umiamizetas1920"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sigmadelta.zphib@gmail.com",
+   "source": "https://miami.campuslabs.com/engage/organization/zeta-phi-beta"
+  }
  },
  {
   "id": "oc_miami_zeta_tau_alpha",

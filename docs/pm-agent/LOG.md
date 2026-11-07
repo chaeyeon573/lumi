@@ -2457,3 +2457,9 @@
 - Spot check courses: 5 random W&M Fall 2026 classes (PSYC 314 Sec 02, HIST 319, CSCI 301 Sec 02, GOVT 391 Sec 06, NSCI 465) match the W&M schedule.
 - Weekly re-collect started early, in small groups: Lehigh, Caltech, Rochester, Wake Forest, GWU. Groups and links kept or grew (links: Lehigh 747→753, WFU 961→994, GWU 1,809→1,852); hand-typed departments (WFU offices) held; Website links set aside earlier stayed out (the deadlinks guard). Classes: Lehigh 2,701, Caltech 832, Rochester 4,356, GWU 5,210 (a few cancellations moved to courses-dropped).
   - Rochester's "Activity Registration Test Group" left the directory and dropped out of the file. New rule in collect: groups no longer listed go to `<id>.orgs-dropped.json` with droppedAt (only when the new list is at least half the old one, so a broken fetch cannot move everything). The Rochester group was saved there by hand.
+
+## 2026-11-07 07:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Penn State AFSP, UGA Dawgs for Diabetes, Illinois AKA Improv, Penn Undergraduate Geography Club fine. USC "Viterbi Career Connections" is the engineering school's career office (site: "USC Viterbi | Career Services", SECC), typed `department`.
+- Spot check courses: 5 random UMD Fall 2026 classes (COMM 107 Sec 9922, NFSC 624, ENPM 667, INAG 110 Sec 3101, LACS 250) match Testudo.
+- Weekly re-collect group 2: Tulane, Syracuse, Miami, Clemson, UMass, UConn. Groups held or grew (UConn 855→863), links grew at every school (e.g. UConn 2,395→2,514), hand-typed departments held. The new keep rule worked: 24 groups no longer listed went to <id>.orgs-dropped.json (Tulane 2, Syracuse 6, Miami 4, Clemson 4, UMass 5, UConn 3) instead of disappearing.

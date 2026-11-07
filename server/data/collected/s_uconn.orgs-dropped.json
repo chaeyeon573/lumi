@@ -1,0 +1,98 @@
+[
+ {
+  "id": "oc_uconn_financial_literacy",
+  "name": "Financial Literacy, UConn",
+  "logo": {
+   "emoji": "FL",
+   "hue": 184,
+   "url": "https://se-images.campuslabs.com/clink/images/8034b306-1335-47de-bda3-c718a727983152efbba4-9230-4951-acbf-b42291c39656.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_uconn",
+  "parent": "Activism & Advocacy",
+  "verified": false,
+  "description": "The UConn Financial Literacy Club empowers students and staff with practical money skills—budgeting, credit, investing, and loan strategies—via workshops, peer mentoring, guest speakers, and campus campaigns. Open to all.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://uconntact.uconn.edu/organization/financial_literacy"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/financial_literacy_uconn/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_uconn_uconnssa",
+  "name": "Sikh Student Association, UConn",
+  "logo": {
+   "emoji": "SS",
+   "hue": 88,
+   "url": "https://se-images.campuslabs.com/clink/images/68a78728-171d-4859-9d4a-b46ab908320632f2af40-05e1-412b-81d9-86675c92528c.jpeg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_uconn",
+  "parent": "Religion & Spirituality",
+  "verified": false,
+  "description": "UConn SSA strives to raise awareness of the Sikh religion and way of life. We aim to reach others through the Sikh value of seva (selfless service) in the hopes of making our campus and community a better and more connected place.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://uconntact.uconn.edu/organization/uconnssa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ucsikhs/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/UConnSSA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_uconn__",
+  "name": "Tax Law Society",
+  "logo": {
+   "emoji": "TL",
+   "hue": 200,
+   "url": "https://se-images.campuslabs.com/clink/images/04a1bf99-5518-4803-b942-ebf95068fe04d983295a-e51a-4b77-8594-0283bca12811.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_uconn",
+  "parent": "Academic",
+  "verified": false,
+  "description": "The Tax Law Society is a student-run organization that focuses on introducing law students to tax law and giving them an opportunity to connect with others interested in the field of taxation.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://uconntact.uconn.edu/organization/---"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

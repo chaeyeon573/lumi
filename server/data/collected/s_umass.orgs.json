@@ -40,7 +40,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/180-degrees-consulting-umass-amherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass@180dc.org",
+   "source": "https://umass.campuslabs.com/engage/organization/180consulting"
+  }
  },
  {
   "id": "oc_umass_3dprinting",
@@ -98,7 +102,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassAccountingAssociation/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "accountingassociation.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassaccountingassociation"
+  }
  },
  {
   "id": "oc_umass_aceingautism",
@@ -176,7 +184,11 @@
     "label": "X",
     "url": "http://twitter.com/amindsumass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassactiveminds@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/activeminds"
+  }
  },
  {
   "id": "oc_umass_asap",
@@ -207,7 +219,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/asap_umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asapumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/asap"
+  }
  },
  {
   "id": "oc_umass_advancementdiversitybusiness",
@@ -238,7 +254,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/adbisenberg/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenbergdiversity@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/advancementdiversitybusiness"
+  }
  },
  {
   "id": "oc_umass_aisp",
@@ -375,7 +395,11 @@
     "label": "X",
     "url": "http://www.twitter.com/ASA_IsTheFuture"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/africanstudentassociation"
+  }
  },
  {
   "id": "oc_umass_aasgc",
@@ -402,7 +426,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/aasgc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afroamgradcouncil@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/aasgc"
+  }
  },
  {
   "id": "oc_umass_awd",
@@ -437,7 +465,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/alivewithdance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alivewithdance.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/awd"
+  }
  },
  {
   "id": "oc_umass_allianceforwomeninaccounting",
@@ -497,8 +529,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/alphachiumass/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/axo.dm.prandmarketing?ltsid=91b58756-9070-41a6-a0b6-b270866d1fd0"
    }
-  ]
+  ],
+  "contact": {
+   "email": "axo.dm.president@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphachiomega"
+  }
  },
  {
   "id": "og_umass_alphachirho",
@@ -537,7 +577,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Alpha-Chi-Rho-University-of-Massachusetts-Amherst-1709228489325054/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphachirhoumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphachirho"
+  }
  },
  {
   "id": "og_umass_alphaepsilonphi",
@@ -572,7 +616,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/aephiumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aephibetabetapres@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphaepsilonphi"
+  }
  },
  {
   "id": "og_umass_aepi",
@@ -642,7 +690,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/rhokappa_1908"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aka.rhokappa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphakappaalpha"
+  }
  },
  {
   "id": "og_umass_rubi",
@@ -677,7 +729,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umass.rubi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.rubi@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/rubi"
+  }
  },
  {
   "id": "oc_umass_alphaomegaministry",
@@ -716,7 +772,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@PioneerValleyChurchofChrist"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aoministry-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/alphaomegaministry"
+  }
  },
  {
   "id": "og_umass_alphaphialpha",
@@ -759,7 +819,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/AlphaKappa1906"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alpha.kappa1906@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphaphialpha"
+  }
  },
  {
   "id": "og_umass_alphaphiomega",
@@ -798,7 +862,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=tIvKWXF6jYM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "presidentapoko1@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphaphiomega"
+  }
  },
  {
   "id": "og_umass_ask",
@@ -824,7 +892,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/ask"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ask-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ask"
+  }
  },
  {
   "id": "og_umass_alphataugamma",
@@ -863,7 +935,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/alphataugamma/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphataugamma@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alphataugamma"
+  }
  },
  {
   "id": "oc_umass_alpineskiteam",
@@ -906,7 +982,11 @@
     "label": "X",
     "url": "https://twitter.com/UMass_Ski_Team"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vmartin@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/alpineskiteam"
+  }
  },
  {
   "id": "oc_umass_altitude",
@@ -949,7 +1029,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCkhIrl6j6_ZyiZkwGSI-NTQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassaltitude@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/altitude"
+  }
  },
  {
   "id": "oc_umass_acs",
@@ -984,7 +1068,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umassacs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "speriyasamy@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/acs"
+  }
  },
  {
   "id": "oc_umass_ahla",
@@ -1026,8 +1114,16 @@
    {
     "label": "X",
     "url": "https://twitter.com/AHLA_UM_Amherst"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ahla_umassamherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ahla.umassamherst@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/ahla"
+  }
  },
  {
   "id": "oc_umass_aiasumass",
@@ -1058,7 +1154,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aiasumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassamherst@aias.org",
+   "source": "https://umass.campuslabs.com/engage/organization/aiasumass"
+  }
  },
  {
   "id": "oc_umass_amsa",
@@ -1093,7 +1193,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassamsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amsa.umass@gmai.com",
+   "source": "https://umass.campuslabs.com/engage/organization/amsa"
+  }
  },
  {
   "id": "oc_umass_umassredcrossclub",
@@ -1120,7 +1224,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/umassredcrossclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassredcrossclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassredcrossclub"
+  }
  },
  {
   "id": "oc_umass_aslclub",
@@ -1134,7 +1242,7 @@
   "schoolId": "s_umass",
   "parent": "☆ Registered Student Organizations",
   "verified": false,
-  "description": "ASL Club",
+  "description": "American Sign Language (ASL) Club",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -1147,7 +1255,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/aslclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asl-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/aslclub"
+  }
  },
  {
   "id": "oc_umass_asemstudentchapter",
@@ -1257,7 +1369,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/2200840519/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.anime@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/animemangaclub"
+  }
  },
  {
   "id": "oc_umass_agsc",
@@ -1284,7 +1400,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/agsc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "honora@anthro.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/agsc"
+  }
  },
  {
   "id": "oc_umass_aca",
@@ -1315,7 +1435,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassaca/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassaca@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/aca"
+  }
  },
  {
   "id": "oc_umass_archeryclub",
@@ -1346,7 +1470,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassarchery/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "archeryclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/archeryclub"
+  }
  },
  {
   "id": "oc_umass_armenianstudentsassociation",
@@ -1376,8 +1504,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/asa.umass"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/asa.umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "armenian-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/armenianstudentsassociation"
+  }
  },
  {
   "id": "oc_umass_aas",
@@ -1415,8 +1551,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/ArnoldAirSociety.SilverWings"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/allan_b_bunce_aas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buncesqcc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/aas"
+  }
  },
  {
   "id": "oc_umass_artclub",
@@ -1538,7 +1682,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umass.aasa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aasa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/asianamericanstudentassociation"
+  }
  },
  {
   "id": "oc_umass_associationofdiversityinsport",
@@ -1589,7 +1737,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/UMassADS?feature=CAgQwRs%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adsumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/associationofdiversityinsport"
+  }
  },
  {
   "id": "oc_umass_indiasdevelopment",
@@ -1620,7 +1772,11 @@
     "label": "Website",
     "url": "http://aidamherst.org/Home.php"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aidamherst@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/indiasdevelopment"
+  }
  },
  {
   "id": "oc_umass_alacs",
@@ -1651,7 +1807,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1523016404610461/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alacsandfriends@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alacs"
+  }
  },
  {
   "id": "oc_umass_alpfa",
@@ -1694,7 +1854,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/alpfa-umass-amherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alpfaisenberg@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/alpfa"
+  }
  },
  {
   "id": "oc_umass_umassawis",
@@ -1725,7 +1889,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/awisumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awis@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassawis"
+  }
  },
  {
   "id": "oc_umass_astronomy_club",
@@ -1756,7 +1924,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/five_colleges_astronomy_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "astronomyclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/astronomy_club"
+  }
  },
  {
   "id": "oc_umass_ags",
@@ -1813,7 +1985,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/autismacceptance_umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "autismacceptance-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/autismacceptanceu"
+  }
  },
  {
   "id": "oc_umass_bhaum",
@@ -1917,7 +2093,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bahaiorg/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassbahaiclub19@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/bahaicluboftheuniversityofmassachusetts"
+  }
  },
  {
   "id": "oc_umass_bahai",
@@ -1985,7 +2165,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC3G0tulbzCjgu3m-fKmgr9w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umbdtcaptains@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/ballroomdance"
+  }
  },
  {
   "id": "oc_umass_baseballclubm",
@@ -2011,7 +2195,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/baseballclubm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "baseballclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/baseballclubm"
+  }
  },
  {
   "id": "oc_umass_bethematch",
@@ -2068,7 +2256,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.beekeeping.club/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "beekeeping-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/bee-club"
+  }
  },
  {
   "id": "oc_umass_bellydanceclub",
@@ -2107,7 +2299,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=qEwxG5GaNYs&list=PL_DeDxN-u9h1ppE76soSeYI3r_VJk_ec3&index=7"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bellydance-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/bellydanceclub"
+  }
  },
  {
   "id": "oc_umass_bengalistudentsassoc",
@@ -2142,7 +2338,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.bsa/?img_index=1"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.bsa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/bengalistudentsassoc"
+  }
  },
  {
   "id": "oc_umass_bestbuddies",
@@ -2176,8 +2376,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umassamherstbestbuddies"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassamherstbestbuddies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bestbuddies-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/bestbuddies"
+  }
  },
  {
   "id": "oc_umass_bikecoop",
@@ -2212,7 +2420,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassbikecoop/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassbikecoop@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/bikecoop"
+  }
  },
  {
   "id": "oc_umass_bio_business",
@@ -2273,7 +2485,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassbmbclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassbiochemistryclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/biochemistryclub"
+  }
  },
  {
   "id": "oc_umass_begs",
@@ -2327,7 +2543,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/biomedicalengineeringsociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bmes.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/biomedicalengineeringsociety"
+  }
  },
  {
   "id": "oc_umass_blackbusinessstudents",
@@ -2388,7 +2608,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@BMCPPodcast"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bmcp-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/bmcp"
+  }
  },
  {
   "id": "oc_umass_bpgoad",
@@ -2426,8 +2650,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bpgoad/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bpgoad"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bpgoad-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/bpgoad"
+  }
  },
  {
   "id": "oc_umass_bsacc",
@@ -2458,7 +2690,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BlackSouthAmericanAndCaribbeanCouncil/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blacksouthamericanandcaribbean@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/bsacc"
+  }
  },
  {
   "id": "oc_umass_blackstudentunion",
@@ -2497,7 +2733,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/UMASSBSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bsu-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/blackstudentunion"
+  }
  },
  {
   "id": "oc_umass_blackwomeninmedicineinc",
@@ -2528,7 +2768,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bwm_amherst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bwmumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/blackwomeninmedicineinc"
+  }
  },
  {
   "id": "oc_umass_boardgameclub",
@@ -2563,7 +2807,11 @@
     "label": "X",
     "url": "http://twitter.com/umassghl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boardgameclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/boardgameclub"
+  }
  },
  {
   "id": "oc_umass_boardofstudentbusinesses",
@@ -2594,7 +2842,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/stubizumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dhachey@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/boardofstudentbusinesses"
+  }
  },
  {
   "id": "oc_umass_boltwoodproject",
@@ -2625,7 +2877,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/theboltwoodproject/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boltwoodproject-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/boltwoodproject"
+  }
  },
  {
   "id": "oc_umass_boxingclub",
@@ -2668,7 +2924,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UMassBoxing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boxing@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/boxingclub"
+  }
  },
  {
   "id": "oc_umass_bbro",
@@ -2734,6 +2994,36 @@
     "label": "X",
     "url": "http://twitter.com/#!/UMass_Jiu_Jitsu"
    }
+  ],
+  "contact": {
+   "email": "jiujitsu@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/jiujitsu"
+  }
+ },
+ {
+  "id": "oc_umass_bridge_club",
+  "name": "Bridge Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_umass",
+  "parent": "☆☆ Graduate Student Organizations",
+  "verified": false,
+  "description": "GSO, bridge club",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umass.campuslabs.com/engage/organization/bridge-club"
+   }
   ]
  },
  {
@@ -2765,7 +3055,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_basic/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umbasic@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/brothersandsistersinchrist"
+  }
  },
  {
   "id": "oc_umass_build",
@@ -2804,7 +3098,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/buildumass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "build.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/build"
+  }
  },
  {
   "id": "oc_umass_bridge",
@@ -2874,7 +3172,11 @@
     "label": "X",
     "url": "http://twitter.com/umasscrc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cannabis@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasscrc"
+  }
  },
  {
   "id": "oc_umass_cantoneseclub",
@@ -2952,7 +3254,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/UmassCVSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cvsa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/capeverdeanstudentalliance"
+  }
  },
  {
   "id": "oc_umass_umasscgc",
@@ -2991,7 +3297,11 @@
     "label": "Facebook",
     "url": "https://facebook.com/groups/UMASSCGC/?fref=mentions&__xts__%5B0%5D=68.ARCnGhw-4K5U0eZoNCk8MLcJ_qw0WPLns5YiAJay_VgFzAGgC4f-sWbMYYMkuHQ5A2gwVjm9dtoq--ffpcYCh4OYUemROhMVzCS7qWe6B_LE8fe5q4yaZRDAZcggyGNi-Om17UmWVbE0wBx2_OG1GTIVPnDILFKfyxmSCCAnzhgRikU69-fPRKShONBCBl4F9rNcz3-KrPp5goh1AN9krcPSGQ4&__tn__=K-R"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cardgameclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasscgc"
+  }
  },
  {
   "id": "oc_umass_centerforeducationpolicyadvocacy",
@@ -3038,7 +3348,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/cepaumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cepa@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/centerforeducationpolicyadvocacy"
+  }
  },
  {
   "id": "oc_umass_chp",
@@ -3095,7 +3409,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/centerforstudentbusinesses"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cmwalters@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/centerforstudentbusinesses"
+  }
  },
  {
   "id": "oc_umass_cwc",
@@ -3125,7 +3443,11 @@
     "label": "Website",
     "url": "http://www.umass.edu/cwc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cwc@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/cwc"
+  }
  },
  {
   "id": "oc_umass_chaarg",
@@ -3163,8 +3485,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/CHAARG"
+   },
+   {
+    "label": "Website",
+    "url": "https://chaarg.com/join-the-movement/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_inchaarg/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasschaarginfo@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/chaarg"
+  }
  },
  {
   "id": "oc_umass_challahforhunger",
@@ -3238,7 +3572,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassChegs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rmshah@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/chegs"
+  }
  },
  {
   "id": "oc_umass_chessclub",
@@ -3273,7 +3611,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasschessclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasschessclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/chessclub"
+  }
  },
  {
   "id": "og_umass_chiomega",
@@ -3316,7 +3658,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassChiO"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rlinn@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/chiomega"
+  }
  },
  {
   "id": "oc_umass_chinesestudy",
@@ -3342,7 +3688,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/chinesestudy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yingc@econs.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/chinesestudy"
+  }
  },
  {
   "id": "oc_umass_chinaafricaentrepreneur",
@@ -3441,7 +3791,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=hInhx8ZmVVc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umaccash@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/chinesemusic"
+  }
  },
  {
   "id": "oc_umass_cssa",
@@ -3472,7 +3826,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/amherstcssa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassamherst.cssa.edu@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/cssa"
+  }
  },
  {
   "id": "oc_umass_choraldilemma",
@@ -3511,7 +3869,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC8__o5kfzx1wNTBTySz6Qeg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasschoraldilemma@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/choraldilemma"
+  }
  },
  {
   "id": "oc_umass_cicsoft",
@@ -3542,7 +3904,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cicsoft/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cicsoft@cs.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/cicsoft"
+  }
  },
  {
   "id": "oc_umass_circlekinternationalclub",
@@ -3573,7 +3939,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasscki/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasscki@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/circlekinternationalclub"
+  }
  },
  {
   "id": "oc_umass_ceegs",
@@ -3599,6 +3969,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/ceegs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/cee_grad_students_umass"
    },
    {
     "label": "Instagram",
@@ -3647,7 +4021,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/umass-cmaa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cmaa.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/cmaa"
+  }
  },
  {
   "id": "oc_umass_clubppa",
@@ -3682,7 +4060,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1445096522197446/?ref=bookmarks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubppa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/clubppa"
+  }
  },
  {
   "id": "oc_umass_csc",
@@ -3709,7 +4091,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/csc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubsports@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/csc"
+  }
  },
  {
   "id": "oc_umass_umcs",
@@ -3748,7 +4134,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/UMass-Club-Swimming/175537645820995"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swimclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umcs"
+  }
  },
  {
   "id": "oc_umass_waterpoloclub",
@@ -3778,7 +4168,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasswaterpolo/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "waterpolo@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/waterpoloclub"
+  }
  },
  {
   "id": "oc_umass_coffeeclub",
@@ -3895,7 +4289,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/umasssketch22"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasscomedy1985@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/comedyleague"
+  }
  },
  {
   "id": "oc_umass_cgsa",
@@ -3933,8 +4331,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/337475137057936/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/cgsa_umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tba@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/cgsa"
+  }
  },
  {
   "id": "oc_umass_collegesagainstcancer",
@@ -3969,7 +4375,11 @@
     "label": "X",
     "url": "http://www.twitter.com/5collegerelay"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cac-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/collegesagainstcancer"
+  }
  },
  {
   "id": "oc_umass_communitybuildinggroup",
@@ -3995,6 +4405,14 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/communitybuildinggroup"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/cbg.umass"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/cbg.sustcomm?igsi=ZDNlZDc0MzIxNw%3D%3D"
    },
    {
     "label": "Website",
@@ -4088,7 +4506,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasscontagio/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "contagiolatino-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/contagiolatino"
+  }
  },
  {
   "id": "oc_umass_copticorthodoxchristianstudentorganization",
@@ -4118,8 +4540,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umacopts"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umacopts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afahim@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/copticorthodoxchristianstudentorganization"
+  }
  },
  {
   "id": "oc_umass_ccc",
@@ -4154,7 +4584,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_cosplay_club/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cosplay-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ccc"
+  }
  },
  {
   "id": "oc_umass_craftcenter",
@@ -4189,7 +4623,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sucraftcenter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "craftctr@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/craftcenter"
+  }
  },
  {
   "id": "oc_umass_creativewriting",
@@ -4288,7 +4726,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC9Zi9q9-25DNsDgA7fGwNIw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rowingmen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/crewclubm"
+  }
  },
  {
   "id": "oc_umass_criticaleducation",
@@ -4314,7 +4756,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/criticaleducation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "demorale@educ.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/criticaleducation"
+  }
  },
  {
   "id": "oc_umass_cru",
@@ -4361,7 +4807,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/UMassCru"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cru-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/cru"
+  }
  },
  {
   "id": "oc_umass_cultural",
@@ -4418,7 +4868,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cscumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scash@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/cyclingsustainabiltyclb"
+  }
  },
  {
   "id": "oc_umass_dancecompany",
@@ -4457,7 +4911,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCox9161_MVCWO76SyNMkC6w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dancecompany-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/dancecompany"
+  }
  },
  {
   "id": "oc_umass_danceteam",
@@ -4500,7 +4958,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCh3BYOYIdK48CYBW8dXqbkg?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danceteam@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/danceteam"
+  }
  },
  {
   "id": "oc_umass_dacss",
@@ -4562,7 +5024,11 @@
     "label": "X",
     "url": "https://twitter.com/umassdeltachi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassdeltachi@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/deltachifraternity"
+  }
  },
  {
   "id": "og_umass_deltakappadelta",
@@ -4601,7 +5067,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/dkdamherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassdkdpresident@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/deltakappadelta"
+  }
  },
  {
   "id": "og_umass_deltasigmapi",
@@ -4640,7 +5110,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassdsp/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dsp.pirho@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/deltasigmapi"
+  }
  },
  {
   "id": "og_umass_deltasigmatheta",
@@ -4675,7 +5149,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/PiIotaDST?sk=wall"
    }
-  ]
+  ],
+  "contact": {
+   "email": "piiotadeltasigmatheta@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/deltasigmatheta"
+  }
  },
  {
   "id": "og_umass_deltaxiphimulticituralsorority",
@@ -4714,7 +5192,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umass.deltaxiphi/timeline"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iotadxp@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/deltaxiphimulticituralsorority"
+  }
  },
  {
   "id": "oc_umass_dhadak",
@@ -4722,7 +5204,7 @@
   "logo": {
    "emoji": "DF",
    "hue": 184,
-   "url": "https://se-images.campuslabs.com/clink/images/19e950dd-ac8b-4d18-b024-b41782fcb822fad93b9a-ff2c-4557-a38c-62348e8bfb3e.jpg?preset=small-sq"
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/33/19343/3cb32fb7-188d-4588-9ca7-c02337fe7c04.png?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_umass",
@@ -4753,7 +5235,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/UMassDhadak"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassdhadak@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/dhadak"
+  }
  },
  {
   "id": "oc_umass_dcc",
@@ -4784,7 +5270,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassdcc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dcc-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/dcc"
+  }
  },
  {
   "id": "oc_umass_diversityeducation",
@@ -4892,7 +5382,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassDooWopShop"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassdoowopshop@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/doowopshop"
+  }
  },
  {
   "id": "oc_umass_umassdressage",
@@ -4930,7 +5424,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassdressageteam22/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dressage@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassdressage"
+  }
  },
  {
   "id": "oc_umass_duboisgso",
@@ -4995,7 +5493,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCV6tWpxO8-uUatszI1z7Rdg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dulynoted-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/dulynoted"
+  }
  },
  {
   "id": "oc_umass_dynamics",
@@ -5026,7 +5528,11 @@
     "label": "Website",
     "url": "http://dynamicsacappella.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "abusa@student.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/dynamics"
+  }
  },
  {
   "id": "oc_umass_umassdynamics",
@@ -5069,7 +5575,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/dynamicsacappella"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dynamics-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassdynamics"
+  }
  },
  {
   "id": "oc_umass_e_nable",
@@ -5133,8 +5643,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/EarthfoodsCafe"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/earthfoods"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/earthfoods/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "earthfds@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/earthfoodscafe"
+  }
  },
  {
   "id": "oc_umass_economicsgso",
@@ -5165,7 +5687,11 @@
     "label": "Website",
     "url": "http://egsoumass.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "egso-l@econs.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/economicsgso"
+  }
  },
  {
   "id": "oc_umass_ecsagrant",
@@ -5190,7 +5716,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/ecsagrant"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ecsagrant@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ecsagrant"
+  }
  },
  {
   "id": "oc_umass_edge",
@@ -5247,7 +5777,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasseducclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "educationclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/educclub"
+  }
  },
  {
   "id": "oc_umass_ecegsc",
@@ -5312,7 +5846,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/umassems"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassemsed@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/emergencymedicalservices"
+  }
  },
  {
   "id": "oc_umass_engineerswithoutborders",
@@ -5347,7 +5885,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ewb.umass?stkn=MWh4ZG14djllZGR1aw=="
    }
-  ]
+  ],
+  "contact": {
+   "email": "engineerswb-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/engineerswithoutborders"
+  }
  },
  {
   "id": "oc_umass_ego",
@@ -5408,7 +5950,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umassentreclub/posts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "entreclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/entrepreneurship"
+  }
  },
  {
   "id": "oc_umass_environgrad",
@@ -5482,7 +6028,11 @@
     "label": "X",
     "url": "https://twitter.com/UmassEPIC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "epicmovementumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/epicmovementatumass"
+  }
  },
  {
   "id": "oc_umass_umassesd",
@@ -5513,7 +6063,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/272092559637869/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "esd.umassamherst@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassesd"
+  }
  },
  {
   "id": "oc_umass_fencingclub",
@@ -5547,7 +6101,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassfencing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fencing@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/fencingclub"
+  }
  },
  {
   "id": "oc_umass_fernaldentomology",
@@ -5608,7 +6166,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMass-Synchronized-Skating-176132839083122/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "figureskating@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/synchronizedskatingclub"
+  }
  },
  {
   "id": "oc_umass_filipinostudentassociation",
@@ -5647,7 +6209,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/202364551977622"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fsa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/filipinostudentassociation"
+  }
  },
  {
   "id": "oc_umass_filmdiscussion",
@@ -5682,7 +6248,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umassfilmdisc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassfilmdisc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/filmdiscussion"
+  }
  },
  {
   "id": "oc_umass_independentfilmproductionclub",
@@ -5713,7 +6283,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassamherstfilmcollective/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassfilmproduction@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/independentfilmproductionclub"
+  }
  },
  {
   "id": "oc_umass_financecommittee",
@@ -5751,7 +6325,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasssga"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sgafinancecommit@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/financecommittee"
+  }
  },
  {
   "id": "oc_umass_umassfinancesociety",
@@ -5790,7 +6368,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umass-finance-society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "financesociety-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassfinancesociety"
+  }
  },
  {
   "id": "oc_umass_fyipassport",
@@ -5816,7 +6398,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/fyipassport"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fyipassport@stuaf.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/fyipassport"
+  }
  },
  {
   "id": "oc_umass_flagfootballclubwomens",
@@ -5871,6 +6457,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/afrotc_det370"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/afrotc_det370"
    }
   ]
  },
@@ -5911,7 +6501,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/umassfrn"
    }
-  ]
+  ],
+  "contact": {
+   "email": "frnumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/foodrecoverynetwork"
+  }
  },
  {
   "id": "oc_umass_fsc",
@@ -5950,7 +6544,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umass-food-science"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassfoodsci@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/fsc"
+  }
  },
  {
   "id": "oc_umass_foodsciencegso",
@@ -5993,7 +6591,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/90054/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "foodscience-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/foodsciencegso"
+  }
  },
  {
   "id": "oc_umass_footvolleyclub",
@@ -6024,7 +6626,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.footvolley/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ldworkin@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/footvolleyclub"
+  }
  },
  {
   "id": "oc_umass_forcccl",
@@ -6058,8 +6664,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umass4cccl"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass4cccl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass4cccl-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/forcccl"
+  }
  },
  {
   "id": "oc_umass_formulaoneclub",
@@ -6151,7 +6765,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/friendsofmsf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassfriendsofmsf@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/friendsofmsf"
+  }
  },
  {
   "id": "og_umass_gis",
@@ -6194,7 +6812,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/gamma-iota-sigma/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.gis@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/gis"
+  }
  },
  {
   "id": "oc_umass_gardenshare",
@@ -6225,7 +6847,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_gardenshare/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gardenshare-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gardenshare"
+  }
  },
  {
   "id": "oc_umass_geneticsclub",
@@ -6256,7 +6882,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassgenetics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rjosh@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/geneticsclub"
+  }
  },
  {
   "id": "oc_umass_thegeographyclub",
@@ -6318,7 +6948,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassgeoclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "geoscience-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/geoscienceclub"
+  }
  },
  {
   "id": "oc_umass_geosciencegrad",
@@ -6349,7 +6983,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.ggso/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.ggso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/geosciencegrad"
+  }
  },
  {
   "id": "oc_umass_geosciencegso",
@@ -6379,7 +7017,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassgeo/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lecture@geo.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/geosciencegso"
+  }
  },
  {
   "id": "oc_umass_gsso",
@@ -6436,7 +7078,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/girlupumassamherst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "girlup-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/girlup"
+  }
  },
  {
   "id": "oc_umass_globalvetfund",
@@ -6496,7 +7142,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassgolfteam/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mlpierre@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/golfclub"
+  }
  },
  {
   "id": "oc_umass_googledeveloperclub",
@@ -6531,7 +7181,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gdsc.umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gdgumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/googledeveloperclub"
+  }
  },
  {
   "id": "oc_umass_graduatearts",
@@ -6592,7 +7246,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Association-for-Professional-Development-in-Chemistry-104016211297688"
    }
-  ]
+  ],
+  "contact": {
+   "email": "researchfest@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/graddevelopmentchemistry"
+  }
  },
  {
   "id": "oc_umass_europeanists",
@@ -6623,7 +7281,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/726208710816304/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassgae@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/europeanists"
+  }
  },
  {
   "id": "oc_umass_gba",
@@ -6662,7 +7324,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/13002300/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmalinowski@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gba"
+  }
  },
  {
   "id": "oc_umass_graduatecricketclub",
@@ -6731,7 +7397,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/GEOUAW"
    }
-  ]
+  ],
+  "contact": {
+   "email": "geo@external.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/geo"
+  }
  },
  {
   "id": "oc_umass_gha",
@@ -6766,7 +7436,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/pages/UMass-Graduate-History-Association/164877403573936"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ghapage@history.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gha"
+  }
  },
  {
   "id": "oc_umass_glsa",
@@ -6827,7 +7501,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=61565664179711&mibextid=LQQJ4d"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gmsa-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gmsa"
+  }
  },
  {
   "id": "oc_umass_gradnatlsocblackengineers",
@@ -6933,7 +7611,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/poetsandwriters"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mfagradstudentorg@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/poetsandwriters"
+  }
  },
  {
   "id": "oc_umass_gradqueersandallies",
@@ -6959,7 +7641,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/gradqueersandallies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "graduatequeersumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/gradqueersandallies"
+  }
  },
  {
   "id": "oc_umass_grid",
@@ -7098,7 +7784,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/societyofmycologyatUMass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "societyofmycologyatumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/mycology"
+  }
  },
  {
   "id": "oc_umass_gradsepi",
@@ -7167,7 +7857,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/company/umass-amherst-graduate-student-government/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsginfo@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassgsg"
+  }
  },
  {
   "id": "oc_umass_gsoha",
@@ -7250,7 +7944,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umass.sgst?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tgsa@grad.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gst"
+  }
  },
  {
   "id": "oc_umass_gsca",
@@ -7285,7 +7983,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gsca_umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsca-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gsca"
+  }
  },
  {
   "id": "oc_umass_gsdse",
@@ -7316,7 +8018,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/GSDSE"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsdse.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/gsdse"
+  }
  },
  {
   "id": "oc_umass_gts",
@@ -7395,7 +8101,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/gradwomencompsci"
    }
-  ]
+  ],
+  "contact": {
+   "email": "grad_cswomenchairs@cs.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gradwomencompsci"
+  }
  },
  {
   "id": "oc_umass_gwis",
@@ -7433,10 +8143,14 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/stemfemmes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gwis@grad.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gwis"
+  }
  },
  {
-  "id": "og_umass_gac",
+  "id": "oc_umass_gac",
   "name": "Greek Affiliated Council",
   "logo": {
    "emoji": "GA",
@@ -7461,7 +8175,7 @@
   ]
  },
  {
-  "id": "og_umass_ggsa",
+  "id": "oc_umass_ggsa",
   "name": "Greek Graduate Student Association",
   "logo": {
    "emoji": "GG",
@@ -7484,7 +8198,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/ggsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agounalakis@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ggsa"
+  }
  },
  {
   "id": "oc_umass_greenosubshop",
@@ -7527,7 +8245,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@greenosubshop2983"
    }
-  ]
+  ],
+  "contact": {
+   "email": "greenosn@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/greenosubshop"
+  }
  },
  {
   "id": "oc_umass_gujuratistudentassoc",
@@ -7554,7 +8276,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/gujuratistudentassoc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gujarati-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gujuratistudentassoc"
+  }
  },
  {
   "id": "oc_umass_habitatforhumanity",
@@ -7593,7 +8319,11 @@
     "label": "X",
     "url": "http://twitter.com/#!/UMASSHFH"
    }
-  ]
+  ],
+  "contact": {
+   "email": "habitat-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/habitatforhumanity"
+  }
  },
  {
   "id": "oc_umass_haitianamericanstudentassociation",
@@ -7624,7 +8354,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMASSHASA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasshasa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/haitianamericanstudentassociation"
+  }
  },
  {
   "id": "oc_umass_hercampusumass",
@@ -7667,7 +8401,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCrRL76jPSIO3fOmEH_tNQ8A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hc.umassamherst@hercampus.com",
+   "source": "https://umass.campuslabs.com/engage/organization/hercampusumass"
+  }
  },
  {
   "id": "oc_umass_heritagelanguagegroup",
@@ -7694,7 +8432,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/heritagelanguagegroup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ejnorman@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/heritagelanguagegroup"
+  }
  },
  {
   "id": "oc_umass_gsha",
@@ -7756,7 +8498,11 @@
     "label": "Website",
     "url": "http://www.hinduyuva.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hinduyuvaumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/hinduyuva"
+  }
  },
  {
   "id": "oc_umass_historyclub",
@@ -7795,7 +8541,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasshistoryclub/?ref=aymt_homepage_panel"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasshistoryclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/historyclub"
+  }
  },
  {
   "id": "oc_umass_umasshosa",
@@ -7834,7 +8584,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/hosafhp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasshosa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasshosa"
+  }
  },
  {
   "id": "oc_umass_hotgirlsread",
@@ -7860,6 +8614,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/hotgirlsread"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/hgrumass"
    },
    {
     "label": "Instagram",
@@ -7930,8 +8688,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/HFAStudentLeaders/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umass_hfa_slg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hfastudentleadership@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/hfaslb"
+  }
  },
  {
   "id": "oc_umass_mensclubhockey",
@@ -7966,7 +8732,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.acha.hockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zconway@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/mensclubhockey"
+  }
  },
  {
   "id": "oc_umass_icehockeyclubw",
@@ -8001,7 +8771,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasswomenshockey"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kbalerna@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/icehockeyclubw"
+  }
  },
  {
   "id": "oc_umass_instiches",
@@ -8079,7 +8853,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/isaumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassisa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/isa"
+  }
  },
  {
   "id": "oc_umass_indianstudentsunion",
@@ -8109,8 +8887,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umassisu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassisu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isu-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/indianstudentsunion"
+  }
  },
  {
   "id": "oc_umass_indonesianstudentassociation",
@@ -8141,7 +8927,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/isa.umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "indonesiansa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/indonesianstudentassociation"
+  }
  },
  {
   "id": "oc_umass_innov8",
@@ -8206,7 +8996,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/insanely.prestigious?ref=tn_tnmn"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ipst-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/insanelyprestigiousstepteam"
+  }
  },
  {
   "id": "oc_umass_iise",
@@ -8245,7 +9039,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassmie/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassiie@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/iise"
+  }
  },
  {
   "id": "oc_umass_ite",
@@ -8272,7 +9070,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/ite"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasstransportation@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/ite"
+  }
  },
  {
   "id": "oc_umass_insurgentink",
@@ -8328,7 +9130,7 @@
   ]
  },
  {
-  "id": "og_umass_interfraternitycouncil",
+  "id": "oc_umass_interfraternitycouncil",
   "name": "Interfraternity Council",
   "logo": {
    "emoji": "IC",
@@ -8364,7 +9166,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/umassifc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "demarroquin@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/interfraternitycouncil"
+  }
  },
  {
   "id": "oc_umass_icma",
@@ -8473,7 +9279,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassIV"
    }
-  ]
+  ],
+  "contact": {
+   "email": "intervarsity-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/intervarsity"
+  }
  },
  {
   "id": "og_umass_iotagammaupsilon",
@@ -8503,8 +9313,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/iotagammaupsilon"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/iotagammaupsilon"
    }
-  ]
+  ],
+  "contact": {
+   "email": "igu-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/iotagammaupsilon"
+  }
  },
  {
   "id": "oc_umass_igsa",
@@ -8538,8 +9356,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/IGSAUMassAmherst/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_igsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shadayeghpar@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/igsa"
+  }
  },
  {
   "id": "oc_umass_irishdancing",
@@ -8574,7 +9400,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassirishdancing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassirishdancing@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/irishdancing"
+  }
  },
  {
   "id": "oc_umass_isenbergdoctoralgso",
@@ -8601,7 +9431,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/isenbergdoctoralgso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amenier@som.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/isenbergdoctoralgso"
+  }
  },
  {
   "id": "oc_umass_isenbergglobalcitizens",
@@ -8671,7 +9505,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/in/isenberghonorscouncil"
    }
-  ]
+  ],
+  "contact": {
+   "email": "somhonors@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/isenberghonorscouncil"
+  }
  },
  {
   "id": "oc_umass_isenberginvestmentclub",
@@ -8702,7 +9540,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umass-investment-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.investment@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/isenberginvestmentclub"
+  }
  },
  {
   "id": "oc_umass_ima",
@@ -8745,7 +9587,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/imaisenberg/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ima.isenberg@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/ima"
+  }
  },
  {
   "id": "oc_umass_isenbergmarketingclub",
@@ -8788,7 +9634,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/40969159"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenbergmarketingclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/isenbergmarketingclub"
+  }
  },
  {
   "id": "oc_umass_mbainvestment",
@@ -8857,7 +9707,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/55041972/admin/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenberg.opsinfo@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/oim-club"
+  }
  },
  {
   "id": "oc_umass_isenbergsalesclub",
@@ -8892,7 +9746,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/isenberg-sales-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenbergsales@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/isenbergsalesclub"
+  }
  },
  {
   "id": "oc_umass_isenbergsustainability",
@@ -8961,8 +9819,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-isenberg-consulting-group/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/iucg.umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenbergucg@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/iucg"
+  }
  },
  {
   "id": "oc_umass_wib",
@@ -9005,7 +9871,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/isenberg-women-in-business/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenbergwib@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/wib"
+  }
  },
  {
   "id": "oc_umass_italian",
@@ -9040,7 +9910,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassITSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rrausch@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/italian"
+  }
  },
  {
   "id": "oc_umass_jstreetumass",
@@ -9071,7 +9945,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/jstreetumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jstreetumass24@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/jstreetumass"
+  }
  },
  {
   "id": "oc_umass_jsa",
@@ -9114,7 +9992,11 @@
     "label": "X",
     "url": "http://www.twitter.com/umassjcc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "japanesesa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/jsa"
+  }
  },
  {
   "id": "oc_umass_jatrabengalistudents",
@@ -9171,7 +10053,11 @@
     "label": "Website",
     "url": "https://www.facebook.com/home.php?sk=group_129387840443347"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jatra.bsa.umass@groups.facebook.com",
+   "source": "https://umass.campuslabs.com/engage/organization/jatrabsa"
+  }
  },
  {
   "id": "oc_umass_jazbabollywoodbhangra",
@@ -9206,7 +10092,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCAm6mbLeV3d5pBp3Zfs7GUA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jazba-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/jazbabollywoodbhangra"
+  }
  },
  {
   "id": "oc_umass_jewishleadersinbusiness",
@@ -9241,7 +10131,11 @@
     "label": "X",
     "url": "https://twitter.com/JLB_UMASS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jewishleadersinbusiness@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/jewishleadersinbusiness"
+  }
  },
  {
   "id": "oc_umass_jewishstudentunion",
@@ -9314,7 +10208,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/JosephineWhiteEagleCulturalCenterUMassAmherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jwecc@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/jwecc"
+  }
  },
  {
   "id": "oc_umass_kpopdanceclub",
@@ -9353,7 +10251,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@KDCAmherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kdcamherst-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/kpopdanceclub"
+  }
  },
  {
   "id": "oc_umass_kannada",
@@ -9415,7 +10317,11 @@
     "label": "Website",
     "url": "https://www.kapiumass.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kapi-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/kappaalphapi"
+  }
  },
  {
   "id": "og_umass_kappaalphapsi",
@@ -9450,7 +10356,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/NuTauNupes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hremfort@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/kappaalphapsi"
+  }
  },
  {
   "id": "og_umass_kappakappagamma",
@@ -9489,7 +10399,11 @@
     "label": "X",
     "url": "https://twitter.com/UmassKKG"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ahentz@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/kappakappagamma"
+  }
  },
  {
   "id": "og_umass_kkpsi",
@@ -9555,7 +10469,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umass.kappas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.kpl.president@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/kappaphilambda"
+  }
  },
  {
   "id": "oc_umass_kashmirsolidaritynetwork",
@@ -9616,7 +10534,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasskinesiology/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasskinclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/kinesiologyclub"
+  }
  },
  {
   "id": "oc_umass_kinesiology",
@@ -9738,7 +10660,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/123384061073912/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kgsa@acad.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/kgsa"
+  }
  },
  {
   "id": "oc_umass_kisa",
@@ -9769,7 +10695,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/584267211586416/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jasykim@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/kisa"
+  }
  },
  {
   "id": "oc_umass_koreanstudentsassociation",
@@ -9808,7 +10738,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCql71mqbz5L00H_CNIB4TqA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ksa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/koreanstudentsassociation"
+  }
  },
  {
   "id": "oc_umass_lacrosseclubm",
@@ -9835,7 +10769,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/lacrosseclubm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "laxclubmen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/lacrosseclubm"
+  }
  },
  {
   "id": "oc_umass_lacrosseclubw",
@@ -9865,8 +10803,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umasswclublax"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umasswclublax"
    }
-  ]
+  ],
+  "contact": {
+   "email": "laxclubwomen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/lacrosseclubw"
+  }
  },
  {
   "id": "og_umass_lambdaphiepsilon",
@@ -9909,7 +10855,11 @@
     "label": "X",
     "url": "https://twitter.com/UMass_Lambdas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasslambdas.president@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/lambdaphiepsilon"
+  }
  },
  {
   "id": "og_umass_lambdapiupsilonsorority",
@@ -9951,7 +10901,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/lpiudivas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphabeta@lambdapiupsilon.org",
+   "source": "https://umass.campuslabs.com/engage/organization/lambdapiupsilonsorority"
+  }
  },
  {
   "id": "og_umass_lambdasigmaupsilon",
@@ -9986,7 +10940,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.lsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kavari@lsu79.org",
+   "source": "https://umass.campuslabs.com/engage/organization/lambdasigmaupsilon"
+  }
  },
  {
   "id": "oc_umass_lcsa",
@@ -10052,7 +11010,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UmassAmherst.LACC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lacc@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/latinamericanculturalcenter"
+  }
  },
  {
   "id": "oc_umass_latinosunidos",
@@ -10099,7 +11061,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/UMassLU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latinosunidos-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/latinosunidos"
+  }
  },
  {
   "id": "oc_umass_leadingwomenoftomorrow",
@@ -10138,7 +11104,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/leadingwomenoftomorrow"
    }
-  ]
+  ],
+  "contact": {
+   "email": "leadingwomen-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/leadingwomenoftomorrow"
+  }
  },
  {
   "id": "oc_umass_legalstudies",
@@ -10222,7 +11192,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_lettuceclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lettuce-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/lettuceclub"
+  }
  },
  {
   "id": "oc_umass_lsgrc",
@@ -10283,7 +11257,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umass-lsgrc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.lsgrc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/lifesciencesgso"
+  }
  },
  {
   "id": "oc_umass_linguisticsclub",
@@ -10314,7 +11292,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasslingclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "njgabriel@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/linguisticsclub"
+  }
  },
  {
   "id": "oc_umass_livelit",
@@ -10378,8 +11360,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/massriwish"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass.makeawish"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassmakeawish@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/make-a-wish"
+  }
  },
  {
   "id": "oc_umass_malcolmxculturalcenter",
@@ -10410,7 +11400,11 @@
     "label": "Website",
     "url": "http://www.umass.edu/cmass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mxcc@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/malcolmxculturalcenter"
+  }
  },
  {
   "id": "oc_umass_mccormackleadersclub",
@@ -10441,7 +11435,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/McCormackLeaders?fref=ts&ref=br_tf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sportmanagementclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/mccormackleadersclub"
+  }
  },
  {
   "id": "oc_umass_mass_mirchi",
@@ -10472,7 +11470,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/massmirchi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mirchi-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/mass-mirchi"
+  }
  },
  {
   "id": "oc_umass_masspirg",
@@ -10510,8 +11512,16 @@
    {
     "label": "X",
     "url": "https://twitter.com/MASSPIRGUMassAm"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umamasspirg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "srkumar@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/masspirg"
+  }
  },
  {
   "id": "oc_umass_mrs",
@@ -10563,7 +11573,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/msltgso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cchamp@educ.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/msltgso"
+  }
  },
  {
   "id": "oc_umass_advancedsportstatistics",
@@ -10606,7 +11620,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/mccormack-sport-analytics-club-umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/advancedsportstatistics"
+  }
  },
  {
   "id": "oc_umass_medconnect",
@@ -10640,6 +11658,10 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/medconnectinc/about/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/medconnect.umass"
    }
   ]
  },
@@ -10679,8 +11701,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/UMASS-Medlife/340430972785195?ref=br_tf"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass.medlife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.medlife@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/medlifemovement"
+  }
  },
  {
   "id": "oc_umass_meditation",
@@ -10741,7 +11771,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCDS55JrGMhBCH63X02tJByw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "volleyballmen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/mensclubvolleyball"
+  }
  },
  {
   "id": "oc_umass_mcu",
@@ -10766,6 +11800,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/mcu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umass.microbiology"
    },
    {
     "label": "Instagram",
@@ -10798,7 +11836,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/map"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jungminohn@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/map"
+  }
  },
  {
   "id": "oc_umass_manrrs",
@@ -10829,7 +11871,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassmanrrs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.amherst@manrrs.org",
+   "source": "https://umass.campuslabs.com/engage/organization/manrrs"
+  }
  },
  {
   "id": "oc_umass_minute_music",
@@ -10893,7 +11939,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCkFQXVd8v56KRYPiGHFVOgQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "minutemendancers.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/minutemendancers"
+  }
  },
  {
   "id": "oc_umass_minutemeninterntlequity",
@@ -10967,7 +12017,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/umassmock"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassmock@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/mock-trial"
+  }
  },
  {
   "id": "oc_umass_mun",
@@ -11010,7 +12064,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassIRC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "modelun-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/mun"
+  }
  },
  {
   "id": "oc_umass_motorsportsclub",
@@ -11049,7 +12107,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/home.php?sk=group_223705194312483"
    }
-  ]
+  ],
+  "contact": {
+   "email": "motorsports-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/motorsportsclub"
+  }
  },
  {
   "id": "og_umass_muepsilondelta",
@@ -11084,10 +12146,14 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/medumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/muepsilondelta"
+  }
  },
  {
-  "id": "og_umass_umassmgc",
+  "id": "oc_umass_umassmgc",
   "name": "Multicultural Greek Council",
   "logo": {
    "emoji": "MG",
@@ -11119,7 +12185,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassamherstmgc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassmgc2@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassmgc"
+  }
  },
  {
   "id": "oc_umass_multidisciplinarypsychedelicclub",
@@ -11150,7 +12220,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/multipsychclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassmpc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/multidisciplinarypsychedelicclub"
+  }
  },
  {
   "id": "oc_umass_muslimstudentsassociation",
@@ -11197,7 +12271,11 @@
     "label": "X",
     "url": "http://twitter.com/#!/Umass_MSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "muslim@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/muslimstudentsassociation"
+  }
  },
  {
   "id": "oc_umass_myanmarstudentassociation",
@@ -11228,7 +12306,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.msa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "myanmarsa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/myanmarstudentassociation"
+  }
  },
  {
   "id": "oc_umass_nationalalzheimersbuddies",
@@ -11290,7 +12372,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassnaacp/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "naacp-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/naacp"
+  }
  },
  {
   "id": "oc_umass_gradwomenmba",
@@ -11409,7 +12495,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umass.nphc?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nphc-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassnphc"
+  }
  },
  {
   "id": "oc_umass_nationalresidencehallhonorarynrhh",
@@ -11452,7 +12542,11 @@
     "label": "X",
     "url": "http://twitter.com/umassNRHH"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nrhh@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/nationalresidencehallhonorarynrhh"
+  }
  },
  {
   "id": "oc_umass_nationalsocietyofblackengineers",
@@ -11486,8 +12580,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/nsbe-at-umass-amherst-b64921250/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassnsbe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsbeumassamherst@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/nationalsocietyofblackengineers"
+  }
  },
  {
   "id": "oc_umass_nationalsocietyofcollegiatescholars",
@@ -11522,7 +12624,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/nscs.umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nscs@nscs.org",
+   "source": "https://umass.campuslabs.com/engage/organization/nationalsocietyofcollegiatescholars"
+  }
  },
  {
   "id": "oc_umass_nationalsocietyofminoritiesinhospitality",
@@ -11565,7 +12671,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nsmh1989"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsmhclubumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/nationalsocietyofminoritiesinhospitality"
+  }
  },
  {
   "id": "oc_umass_nsslha",
@@ -11604,7 +12714,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassAmherstNsslha/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsslhaumassamherst@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/nsslha"
+  }
  },
  {
   "id": "oc_umass_nativeamericanstudentassociation",
@@ -11643,7 +12757,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/453621424713021/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nasa@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/nativeamericanstudentassociation"
+  }
  },
  {
   "id": "oc_umass_naturalhistorycollections",
@@ -11678,7 +12796,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassCollectionsClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.nhcc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/naturalhistorycollections"
+  }
  },
  {
   "id": "oc_umass_navigators",
@@ -11717,7 +12839,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/navsumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nate.daman@navigators.org",
+   "source": "https://umass.campuslabs.com/engage/organization/navigators"
+  }
  },
  {
   "id": "oc_umass_mbawi",
@@ -11744,7 +12870,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/mbawi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassnawmba@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/mbawi"
+  }
  },
  {
   "id": "oc_umass_nepalistudents",
@@ -11809,7 +12939,11 @@
     "label": "X",
     "url": "https://twitter.com/NetImpactUMass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cgriswold@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/netimpactumassamherst"
+  }
  },
  {
   "id": "oc_umass_networkforscholarsofsouthasiaandindianocean",
@@ -11866,7 +13000,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassneuroart/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "neuroart-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/neuroart"
+  }
  },
  {
   "id": "oc_umass_umassneuro",
@@ -11901,7 +13039,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/company/umass-neuroscience-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "neurosci-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassneuro"
+  }
  },
  {
   "id": "oc_umass_nso",
@@ -11947,7 +13089,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/FallNSO/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "newstudent@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/nso"
+  }
  },
  {
   "id": "oc_umass_newmanstudentassociation",
@@ -11990,7 +13136,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassNSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass.nsa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/newmanstudentassociation"
+  }
  },
  {
   "id": "oc_umass_nightwalking",
@@ -12016,7 +13166,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/nightwalking"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nightwalking-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/nightwalking"
+  }
  },
  {
   "id": "oc_umass_umasskolot",
@@ -12051,7 +13205,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassnoteorious/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "noteorious-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasskolot"
+  }
  },
  {
   "id": "oc_umass_umassnutritionassociation",
@@ -12082,7 +13240,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_nutrition_association/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umnutritionassociation@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassnutritionassociation"
+  }
  },
  {
   "id": "oc_umass_offcampuslife",
@@ -12116,7 +13278,11 @@
     "label": "X",
     "url": "http://www.twitter.com/umocss"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ocsc@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/offcampuslife"
+  }
  },
  {
   "id": "oc_umass_religiousandspirituallife",
@@ -12151,7 +13317,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_orsl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "orsl@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/religiousandspirituallife"
+  }
  },
  {
   "id": "og_umass_orderofomega",
@@ -12185,7 +13355,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1414241531998185/?fb_dtsg_ag=AdzQyjZSPTC6QrcqWAKRuYkK8kvQjy_YVd13Oz4HHyEpCw%3AAdzQDmLocEnz7ubhHUcbMwM9ursP-GDlubyq1MlJj6Wb_w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "crmckenzie@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/orderofomega"
+  }
  },
  {
   "id": "oc_umass_oebgc",
@@ -12273,7 +13447,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassocf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fivecolleges@ocf.net",
+   "source": "https://umass.campuslabs.com/engage/organization/orthodox-christian-fellowship"
+  }
  },
  {
   "id": "oc_umass_ostem",
@@ -12308,7 +13486,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umassostem"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ostem-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ostem"
+  }
  },
  {
   "id": "oc_umass_umoc",
@@ -12347,7 +13529,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/pages/UMass-Outing-Club/162160992931"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ckmills@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umoc"
+  }
  },
  {
   "id": "oc_umass_ovariancancerclub",
@@ -12376,8 +13562,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umassoca"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassoca"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassoca-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ovariancancerclub"
+  }
  },
  {
   "id": "oc_umass_paintball",
@@ -12415,7 +13609,11 @@
     "label": "X",
     "url": "https://twitter.com/umasspaint"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasspaintball@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/paintball"
+  }
  },
  {
   "id": "oc_umass_pakistani",
@@ -12450,7 +13648,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasspso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pakistani.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/pakistani"
+  }
  },
  {
   "id": "oc_umass_palenques",
@@ -12479,7 +13681,7 @@
   ]
  },
  {
-  "id": "og_umass_panhelleniccouncil",
+  "id": "oc_umass_panhelleniccouncil",
   "name": "Panhellenic Council",
   "logo": {
    "emoji": "PC",
@@ -12511,7 +13713,11 @@
     "label": "X",
     "url": "https://twitter.com/UmassPanhell"
    }
-  ]
+  ],
+  "contact": {
+   "email": "panhel@stuaf.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/panhelleniccouncil"
+  }
  },
  {
   "id": "oc_umass_paperbarkmag",
@@ -12550,7 +13756,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/PaperbarkMag/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hello@paperbarkmag.org",
+   "source": "https://umass.campuslabs.com/engage/organization/paperbarkmag"
+  }
  },
  {
   "id": "oc_umass_parentsinstem",
@@ -12645,7 +13855,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umassparlidebate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassparlidebate@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassamherstdebate"
+  }
  },
  {
   "id": "oc_umass_peoplesmarket",
@@ -12676,7 +13890,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/peoplesmarket73/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "peoplesmarket@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/peoplesmarket"
+  }
  },
  {
   "id": "oc_umass_performacestudiesgso",
@@ -12742,7 +13960,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/periodmovement"
    }
-  ]
+  ],
+  "contact": {
+   "email": "periodumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/period"
+  }
  },
  {
   "id": "oc_umass_persiangso",
@@ -12803,7 +14025,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/PersianStudentsAssociation/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "persian-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/psa"
+  }
  },
  {
   "id": "oc_umass_phenom",
@@ -12838,7 +14064,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umassaphenom"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phenom-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/phenom"
+  }
  },
  {
   "id": "oc_umass_sinfonia",
@@ -12898,7 +14128,11 @@
     "label": "X",
     "url": "http://twitter.com/phisigmakappa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phisigmakappaalpha@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/phisigmakappa"
+  }
  },
  {
   "id": "oc_umass_phisigmapi",
@@ -12937,7 +14171,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/167999491333322"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pspumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/phisigmapi"
+  }
  },
  {
   "id": "oc_umass_philosophyandopenthought",
@@ -12968,7 +14206,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassamherstphilosophy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "potc-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/philosophyandopenthought"
+  }
  },
  {
   "id": "oc_umass_physicsgso",
@@ -13030,7 +14272,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassPikes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adamfrye@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/pi_kappa_alpha"
+  }
  },
  {
   "id": "og_umass_pikappaphi",
@@ -13073,7 +14319,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pikappaphi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jramsey@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/pikappaphi"
+  }
  },
  {
   "id": "oc_umass_pioneermag",
@@ -13104,7 +14354,11 @@
     "label": "Website",
     "url": "http://www.pioneerwired.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "editor@pioneerwired.org",
+   "source": "https://umass.campuslabs.com/engage/organization/pioneermag"
+  }
  },
  {
   "id": "oc_umass_trumpetguild",
@@ -13135,7 +14389,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/PioneerValleyTrumpetGuild/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pioneervalleytrumpetguild@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/trumpetguild"
+  }
  },
  {
   "id": "oc_umass_planningstudents",
@@ -13170,7 +14428,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassamherstpso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassplanners@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/planningstudents"
+  }
  },
  {
   "id": "oc_umass_plantfutures",
@@ -13240,7 +14502,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasspitch/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pitchrso@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/pitch"
+  }
  },
  {
   "id": "oc_umass_poetryatclub",
@@ -13271,7 +14537,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/poetryclubumass/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poetry-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/poetryatclub"
+  }
  },
  {
   "id": "oc_umass_polishcultureclub",
@@ -13302,7 +14572,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.pcc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassamherstpcc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/polishcultureclub"
+  }
  },
  {
   "id": "oc_umass_psgsa",
@@ -13367,7 +14641,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/UMass-Polo/243636385803425"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poloclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/poloclub"
+  }
  },
  {
   "id": "oc_umass_pse",
@@ -13397,8 +14675,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/pseclub_umass?stkn=MXhzZXE1eXVhN3VoNA%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/pseclub_umass?stkn=MXhzZXE1eXVhN3VoNA%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasspseclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/pse"
+  }
  },
  {
   "id": "oc_umass_predentalsociety",
@@ -13436,8 +14722,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/381323948561082/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umasspredental"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasspds-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/predentalsociety"
+  }
  },
  {
   "id": "oc_umass_prelaw",
@@ -13472,7 +14766,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.prelawclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prelaw-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/prelaw"
+  }
  },
  {
   "id": "oc_umass_premed",
@@ -13503,7 +14801,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassPreMed"
    }
-  ]
+  ],
+  "contact": {
+   "email": "premedsociety-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/premed"
+  }
  },
  {
   "id": "oc_umass_pre_optometry",
@@ -13608,7 +14910,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasspride"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swillems@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/pridealliance"
+  }
  },
  {
   "id": "oc_umass_uballet",
@@ -13682,7 +14988,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/protect-our-breasts/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "taylorhill@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassprotectourbreasts"
+  }
  },
  {
   "id": "oc_umass_psychgraddiversitycommittee",
@@ -13713,7 +15023,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/DivComm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pbsdivcomm@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/psychgraddiversitycommittee"
+  }
  },
  {
   "id": "oc_umass_umasspublichealthclub",
@@ -13744,7 +15058,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_phc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "publichealthclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasspublichealthclub"
+  }
  },
  {
   "id": "oc_umass_publicpolicystudentassoc",
@@ -13771,7 +15089,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/publicpolicystudentassoc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassppsa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/publicpolicystudentassoc"
+  }
  },
  {
   "id": "oc_umass_pulsedancecompany",
@@ -13806,7 +15128,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCpcIPzEQdnamGimmUW-oeEg?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pulsedanceco-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/pulsedancecompany"
+  }
  },
  {
   "id": "oc_umass_quidditchclub",
@@ -13844,8 +15170,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/26124599568/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umassquadball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassquidditch@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/quidditchclub"
+  }
  },
  {
   "id": "oc_umass_rang",
@@ -13888,7 +15222,11 @@
     "label": "YouTube",
     "url": "http://youtube.com/umassrang"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassrang@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/rang"
+  }
  },
  {
   "id": "oc_umass_continentalphilosophy",
@@ -13923,7 +15261,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasscontphil/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasscontphil@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/continentalphilosophy"
+  }
  },
  {
   "id": "oc_umass_recreationcouncil",
@@ -13975,6 +15317,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/recreationalmathclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_rmc"
    },
    {
     "label": "Instagram",
@@ -14050,7 +15396,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCh-Bu3sMGxYW53LalZufHew"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasscollegerepublicans@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/republicanclub"
+  }
  },
  {
   "id": "oc_umass_residencehallassociationrha",
@@ -14081,7 +15431,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassAmherstRHA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rha@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/residencehallassociationrha"
+  }
  },
  {
   "id": "oc_umass_resourceeconomicsgraduatecouncil",
@@ -14177,7 +15531,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/UMRollerHockey"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rollerhockey@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/rollerhockeyclubm"
+  }
  },
  {
   "id": "oc_umass_rugbyclubm",
@@ -14215,7 +15573,11 @@
     "label": "X",
     "url": "https://twitter.com/UmassRugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umrugbypresident@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/rugbyclubm"
+  }
  },
  {
   "id": "oc_umass_rugbyclubw",
@@ -14257,7 +15619,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassWRFC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rugbywomen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/rugbyclubw"
+  }
  },
  {
   "id": "oc_umass_rumi",
@@ -14284,7 +15650,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/rumi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rumi@resgs.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/rumi"
+  }
  },
  {
   "id": "oc_umass_runningclub",
@@ -14318,7 +15688,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassclubrunning/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "running@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/runningclub"
+  }
  },
  {
   "id": "oc_umass_russianspeaking",
@@ -14353,7 +15727,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/61579244295425/about/?_rdr"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rsoa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/russianspeaking"
+  }
  },
  {
   "id": "oc_umass_sharpattitude",
@@ -14396,7 +15774,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/101attitudes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sharpattitude-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sharpattitude"
+  }
  },
  {
   "id": "oc_umass_saclfinance",
@@ -14465,7 +15847,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasssailing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sailing@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sailingteam"
+  }
  },
  {
   "id": "oc_umass_saudiasa",
@@ -14522,7 +15908,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/UMassAmherstSCC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scc@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/scholarofcolorincommunication"
+  }
  },
  {
   "id": "oc_umass_umasca",
@@ -14587,8 +15977,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/spp-graduate-student-council-gso-219b49386/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/spp_gsc_umass/profilecard/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sppgsc-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/pagc"
+  }
  },
  {
   "id": "oc_umass_umsfs",
@@ -14627,7 +16025,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UmassSFS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ezzhou@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umsfs"
+  }
  },
  {
   "id": "oc_umass_thescienceoutreachclub",
@@ -14666,7 +16068,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/umassscienceoutreach"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassscienceoutreach@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/thescienceoutreachclub"
+  }
  },
  {
   "id": "oc_umass_organismicandevolutionary",
@@ -14757,7 +16163,11 @@
     "label": "X",
     "url": "https://twitter.com/LeadUMass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bshear@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sel"
+  }
  },
  {
   "id": "oc_umass_sheisgoals",
@@ -14783,8 +16193,16 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/sheisgoals"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_sheisgoals?psln=MXN5czg3NDMwODZ0eQ%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sheisgoals-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sheisgoals"
+  }
  },
  {
   "id": "oc_umass_shotokankarateclub",
@@ -14815,7 +16233,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/UmassShotokan/community/?ref=page_internal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shotokan@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/shotokankarateclub"
+  }
  },
  {
   "id": "og_umass_sai_lambdaphi",
@@ -14858,7 +16280,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCYhwQLUGLMt65nLvBmjQKiA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.sai.lambdaphi@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/sai-lambdaphi"
+  }
  },
  {
   "id": "og_umass_sigmachi",
@@ -14889,7 +16315,11 @@
     "label": "Website",
     "url": "https://www.sigmachiumass.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sigmachiumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/sigmachi"
+  }
  },
  {
   "id": "og_umass_sigmadeltatau",
@@ -14936,7 +16366,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/watch?v=277Q-RnHQOk"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sdouangsavan@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sigmadeltatau"
+  }
  },
  {
   "id": "og_umass_sigmakappa",
@@ -14975,7 +16409,11 @@
     "label": "X",
     "url": "http://twitter.com/#!/SigmaKappaUMass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "betaetapresident19@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/sigmakappa"
+  }
  },
  {
   "id": "og_umass_sigep",
@@ -15018,7 +16456,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/SigepMAalpha"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sigepmassalpha@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/sigep"
+  }
  },
  {
   "id": "og_umass_sigmapsizetasororityinc",
@@ -15061,7 +16503,11 @@
     "label": "X",
     "url": "https://twitter.com/syztheta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sigmapsizeta@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sigmapsizetasororityinc"
+  }
  },
  {
   "id": "og_umass_sigmasigmasigma",
@@ -15092,7 +16538,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umass.trisigma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "presgammaiota@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/sigmasigmasigma"
+  }
  },
  {
   "id": "oc_umass_sikhstudentassociation",
@@ -15123,7 +16573,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_ssa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ssa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sikhstudentassociation"
+  }
  },
  {
   "id": "oc_umass_sistersontherunway",
@@ -15166,7 +16620,11 @@
     "label": "X",
     "url": "http://www.twitter.com/sotr_umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sistersontherunway.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/sistersontherunway"
+  }
  },
  {
   "id": "oc_umass_slamherst",
@@ -15197,7 +16655,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.slamherst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slamherst-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/slamherst"
+  }
  },
  {
   "id": "oc_umass_smartwomansecurities",
@@ -15236,7 +16698,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/sws-umass-amherst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sws-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/smartwomansecurities"
+  }
  },
  {
   "id": "oc_umass_mensclubsoccer",
@@ -15271,7 +16737,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/UMassClubSoccer/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soccerclubmen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/mensclubsoccer"
+  }
  },
  {
   "id": "oc_umass_womensclubsoccer",
@@ -15301,8 +16771,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umasswclubsoc_a"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umasswclubsoc_a"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soccerclubwomen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/womensclubsoccer"
+  }
  },
  {
   "id": "oc_umass_saf",
@@ -15341,7 +16819,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassForestry"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassforesters@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/saf"
+  }
  },
  {
   "id": "oc_umass_sase",
@@ -15376,7 +16858,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/saseumassapileadership/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sase-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sase"
+  }
  },
  {
   "id": "oc_umass_societyofhispanicprofessionalengineers",
@@ -15415,7 +16901,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/in/umass-shpe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shpe-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/societyofhispanicprofessionalengineers"
+  }
  },
  {
   "id": "oc_umass_sps",
@@ -15450,7 +16940,11 @@
     "label": "X",
     "url": "http://twitter.com/UMassSPS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hherath@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sps"
+  }
  },
  {
   "id": "oc_umass_societyofwomenengineers",
@@ -15489,7 +16983,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/130935536921829/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swe-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/societyofwomenengineers"
+  }
  },
  {
   "id": "oc_umass_sociologyclub",
@@ -15520,7 +17018,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/366746626677573/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "advising@soc.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sociologyclub"
+  }
  },
  {
   "id": "oc_umass_sgsa",
@@ -15592,7 +17094,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassClubSB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "softballclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/clubsoftball"
+  }
  },
  {
   "id": "oc_umass_somsc",
@@ -15631,7 +17137,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassINFORMS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassinf@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/somsc"
+  }
  },
  {
   "id": "og_umass_officeoffraternitiesandsororities",
@@ -15669,8 +17179,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassSFL/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassgreek?stkn=MTBsdDVrOTVjNno4bw%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "greek@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/officeoffraternitiesandsororities"
+  }
  },
  {
   "id": "oc_umass_soultv",
@@ -15705,7 +17223,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/pages/SOUL-TV/134284569955241"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasssoultv@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/soultv"
+  }
  },
  {
   "id": "oc_umass_sasa",
@@ -15744,7 +17266,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassSASA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sasa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sasa"
+  }
  },
  {
   "id": "oc_umass_spanishandportuguese",
@@ -15770,6 +17296,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/spanishandportuguese"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/spugsoumass"
    },
    {
     "label": "Instagram",
@@ -15831,8 +17361,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umassspecialolympics"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umassspecialolympics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassspecialolympics@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/soumass"
+  }
  },
  {
   "id": "oc_umass_umassspikeballclub",
@@ -15863,7 +17401,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassroundnet/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spikeball@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassspikeballclub"
+  }
  },
  {
   "id": "oc_umass_stagecrewdance",
@@ -15906,7 +17448,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/stagecrewdance12"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stagecrewdance12@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/stagecrewdance"
+  }
  },
  {
   "id": "oc_umass_standwithkashmir",
@@ -16029,7 +17575,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/#!/groups/2214371983/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stonewall@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/stonewallcenter"
+  }
  },
  {
   "id": "oc_umass_strokesupport",
@@ -16056,7 +17606,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/strokesupport"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ejackson@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/strokesupport"
+  }
  },
  {
   "id": "oc_umass_academyofaudiology",
@@ -16112,7 +17666,11 @@
     "label": "Website",
     "url": "https://www.umass.edu/studentlife/get-involved/sai"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sai-scheduling@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/saischeduling"
+  }
  },
  {
   "id": "oc_umass_llcsac",
@@ -16203,7 +17761,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/safi.umass?ref=hl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "safi.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/studentallianceforisrael"
+  }
  },
  {
   "id": "oc_umass_studentalumniassociation",
@@ -16250,7 +17812,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC4SyedNTfZmCuA7YIn9YKtQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "saa@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentalumniassociation"
+  }
  },
  {
   "id": "oc_umass_saga",
@@ -16281,7 +17847,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/saga.umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "saga.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/saga"
+  }
  },
  {
   "id": "oc_umass_studentbridges",
@@ -16320,7 +17890,11 @@
     "label": "X",
     "url": "https://twitter.com/#!/Student_Bridges"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentbridges@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentbridges"
+  }
  },
  {
   "id": "oc_umass_scnavta",
@@ -16350,6 +17924,10 @@
    {
     "label": "Website",
     "url": "https://navta.net/students/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_scnavta"
    },
    {
     "label": "Instagram",
@@ -16393,7 +17971,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassSAI"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sel@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentengagementleadership"
+  }
  },
  {
   "id": "oc_umass_sga",
@@ -16440,7 +18022,11 @@
     "label": "X",
     "url": "http://twitter.com/#!/UMassSGA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sgaspeaker@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sga"
+  }
  },
  {
   "id": "oc_umass_studentlegalservicesoffice",
@@ -16475,7 +18061,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/slso_umassamherst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentlegalservicesoffice"
+  }
  },
  {
   "id": "oc_umass_snma",
@@ -16553,7 +18143,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/265539800130407/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassstudentnurses@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/studentnurses"
+  }
  },
  {
   "id": "oc_umass_studentorgandonationadvocates",
@@ -16623,7 +18217,11 @@
     "label": "X",
     "url": "https://twitter.com/UMasstheSORC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sorc@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/resourceroom"
+  }
  },
  {
   "id": "oc_umass_studentunionartgallery",
@@ -16658,7 +18256,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/suag.umass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "suagdirector@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentunionartgallery"
+  }
  },
  {
   "id": "oc_umass_studentveteransassociation",
@@ -16701,7 +18303,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@StudentveteransOrg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jgokey@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentveteransassociation"
+  }
  },
  {
   "id": "oc_umass_studentsforafreetibet",
@@ -16736,7 +18342,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMass-Amherst-Students-for-a-Free-Tibet-356357921195618/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sft@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentsforafreetibet"
+  }
  },
  {
   "id": "oc_umass_salt",
@@ -16767,7 +18377,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.salt/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "saltmusic.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/salt"
+  }
  },
  {
   "id": "oc_umass_studentsforsustainablefashionandart",
@@ -16798,7 +18412,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_ssfa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ssfa-eso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentsforsustainablefashionandart"
+  }
  },
  {
   "id": "oc_umass_ngo",
@@ -16868,7 +18486,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassSoca"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soca-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/soca"
+  }
  },
  {
   "id": "oc_umass_studentofficialsassociation",
@@ -16907,7 +18529,11 @@
     "label": "X",
     "url": "https://twitter.com/UMassRegional"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nkabangu@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/studentofficialsassociation"
+  }
  },
  {
   "id": "oc_umass_sead",
@@ -16942,7 +18568,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umaSEAD/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sead-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sead"
+  }
  },
  {
   "id": "oc_umass_uma_study_bible_club",
@@ -16969,7 +18599,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/uma_study_bible_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassstudybible@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/uma_study_bible_club"
+  }
  },
  {
   "id": "oc_umass_sundaysunset",
@@ -17000,7 +18634,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasssundaysunsets/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wspellman@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sundaysunset"
+  }
  },
  {
   "id": "oc_umass_sunriseumass",
@@ -17066,7 +18704,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCn6srrDGzDplyoY30Y_DB8g/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "smashuma-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/smashbrosclub"
+  }
  },
  {
   "id": "oc_umass_surfclub",
@@ -17101,7 +18743,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umasssurfclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasssurfclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/surfclub"
+  }
  },
  {
   "id": "oc_umass_sweetsandmore",
@@ -17144,7 +18790,11 @@
     "label": "X",
     "url": "https://twitter.com/SweetsN_More"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sweets@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sweetsandmore"
+  }
  },
  {
   "id": "oc_umass_sylvansnackbar",
@@ -17178,8 +18828,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sylvansnackbar"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/SylvanSnackBar"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sylvansnackbar@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sylvansnackbar"
+  }
  },
  {
   "id": "oc_umass_synapse",
@@ -17204,6 +18862,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/synapse"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/synapseumass"
    },
    {
     "label": "Instagram",
@@ -17244,7 +18906,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/umasstabletennis/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tabletennis@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tabletennisclub"
+  }
  },
  {
   "id": "oc_umass_tabletop",
@@ -17279,7 +18945,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_tabletop/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassrpg@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/tabletop"
+  }
  },
  {
   "id": "oc_umass_tcsa",
@@ -17314,7 +18984,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/tcsa.umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tcsa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tcsa"
+  }
  },
  {
   "id": "oc_umass_tctl",
@@ -17379,7 +19053,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCDKsQGUvf697_Pdg3MO9HQg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasstasc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/tasc"
+  }
  },
  {
   "id": "og_umass_tbskkpsi",
@@ -17418,7 +19096,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/kkytbsHQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rlmartin@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tbskkpsi"
+  }
  },
  {
   "id": "og_umass_tke",
@@ -17453,7 +19135,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMassTke"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mjgraham@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tke"
+  }
  },
  {
   "id": "oc_umass_llcgso",
@@ -17519,13 +19205,13 @@
   "logo": {
    "emoji": "T",
    "hue": 256,
-   "url": "https://se-images.campuslabs.com/clink/images/e41a675d-e40e-463a-bcb7-9dc691b84cb648a722ca-1154-4f3f-bff7-c57bcfaeecb1.jpg?preset=small-sq"
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/33/18412/e2571e3e-67c9-49cd-9b56-0549e70bc014.jpg?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_umass",
   "parent": "☆☆☆☆ Club Sport Council ",
   "verified": false,
-  "description": "An open group for all who want to play tennis in a fun, inclusive, supportive environment. There are opportunities for competitive intercollegiate play and for low-key playing with players of all skill levels! Open to anyone!",
+  "description": "A club for all who want competitive intercollegiate play or for low-key weekly practice. Tryouts are held at the beginning of the Fall semester.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -17546,7 +19232,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/45702024512/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tennisclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tennisclub"
+  }
  },
  {
   "id": "oc_umass_thaistudent",
@@ -17581,7 +19271,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umass-thaisa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thai-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/thaistudent"
+  }
  },
  {
   "id": "oc_umass_thatslifescience",
@@ -17651,7 +19345,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/alana_umassnursing/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alana-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/alana"
+  }
  },
  {
   "id": "oc_umass_diabeteslink",
@@ -17694,7 +19392,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/thediabeteslink"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umass@thediabeteslink.org",
+   "source": "https://umass.campuslabs.com/engage/organization/diabeteslink"
+  }
  },
  {
   "id": "oc_umass_impactmovement",
@@ -17733,7 +19435,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@impactumass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "impactmovement-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/impactmovement"
+  }
  },
  {
   "id": "oc_umass_themassachusettsdailycollegian",
@@ -17772,7 +19478,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/MassachusettsDailyCollegian/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "managingeditor@dailycollegian.com",
+   "source": "https://umass.campuslabs.com/engage/organization/themassachusettsdailycollegian"
+  }
  },
  {
   "id": "oc_umass_themilitia",
@@ -17815,7 +19525,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCtzr-T_mVMCJJ_2VaERpfxA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "unitethemilitia@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/themilitia"
+  }
  },
  {
   "id": "oc_umass_nsboutreach",
@@ -17845,7 +19559,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/NSBOutreach"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsboutreach@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/nsboutreach"
+  }
  },
  {
   "id": "oc_umass_sacnasumassamherst",
@@ -17872,7 +19590,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/sacnasumassamherst"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sacnas-umass@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/sacnasumassamherst"
+  }
  },
  {
   "id": "oc_umass_womensnetwork",
@@ -17915,7 +19637,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/thewomensnetwork"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thewomensnetwork.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/womensnetwork"
+  }
  },
  {
   "id": "og_umass_thetatau",
@@ -18001,8 +19727,16 @@
    {
     "label": "X",
     "url": "https://twitter.com/UMassTriathlon"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umass_amherst_tri"
    }
-  ]
+  ],
+  "contact": {
+   "email": "triathlon@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasstriathlon"
+  }
  },
  {
   "id": "oc_umass_turfclub",
@@ -18036,8 +19770,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umassamherst_turfclub_/#"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassamherst_turfclub_/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassturfclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/turfclub"
+  }
  },
  {
   "id": "oc_umass_tsa",
@@ -18068,7 +19810,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasstsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tsa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tsa"
+  }
  },
  {
   "id": "oc_umass_ladyzooultimate",
@@ -18099,7 +19845,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/zoola.ultimate/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ultimatewomen@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ladyzooultimate"
+  }
  },
  {
   "id": "oc_umass_zoodiscultimatefrisbeeteam",
@@ -18126,7 +19876,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/zoodiscultimatefrisbeeteam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassultimate@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/zoodiscultimatefrisbeeteam"
+  }
  },
  {
   "id": "oc_umass_acspmsepoly",
@@ -18152,7 +19906,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/acspmsepoly"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pmsepoly-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/acspmsepoly"
+  }
  },
  {
   "id": "oc_umass_arc",
@@ -18182,8 +19940,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umassarc/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassarc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassarc-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/arc"
+  }
  },
  {
   "id": "oc_umass_alternativeproteinproject",
@@ -18218,7 +19984,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/umass-alt-protein-project/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassapp-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/alternativeproteinproject"
+  }
  },
  {
   "id": "oc_umass_animalprotection",
@@ -18249,7 +20019,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/asap_umass_amherst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alliedscholars-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/animalprotection"
+  }
  },
  {
   "id": "oc_umass_umassprssaclub",
@@ -18350,7 +20124,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@umassicas9296"
    }
-  ]
+  ],
+  "contact": {
+   "email": "icas-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/icas"
+  }
  },
  {
   "id": "oc_umass_umald",
@@ -18385,7 +20163,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCvEQkd5xDw4mkE_zRlEKRKw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amherstliondance-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umald"
+  }
  },
  {
   "id": "oc_umass_mensclubbasketball",
@@ -18410,6 +20192,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/mensclubbasketball"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassclubbasketball"
    },
    {
     "label": "Instagram",
@@ -18446,7 +20232,11 @@
     "label": "Website",
     "url": "https://umaso.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umaso-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassscienceolympiad"
+  }
  },
  {
   "id": "oc_umass_wildlifesociety",
@@ -18477,7 +20267,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasswildlife/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wildlife-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/wildlifesociety"
+  }
  },
  {
   "id": "oc_umass_wts",
@@ -18543,7 +20337,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassydsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ydsa-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/yds"
+  }
  },
  {
   "id": "oc_umass_animationcollective",
@@ -18600,7 +20398,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassbadminton/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "badminton-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassbadmintonclub"
+  }
  },
  {
   "id": "oc_umass_balletcompany",
@@ -18631,7 +20433,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/umassballetcompany"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassballetco@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/balletcompany"
+  }
  },
  {
   "id": "oc_umass_biologyclub",
@@ -18657,6 +20463,10 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/biologyclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassbiologyclub/"
    },
    {
     "label": "Instagram",
@@ -18785,7 +20595,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassbrotherlyunion/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassbrotherlyunion@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/brotherlyunion"
+  }
  },
  {
   "id": "oc_umass_chemclub",
@@ -18812,7 +20626,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/chemclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chemistry-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/chemclub"
+  }
  },
  {
   "id": "oc_umass_umclimbing",
@@ -18851,7 +20669,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/281341932659815/?hc_ref=ARTZ6N1MnPlc-EtTb400c-ut4g97VGhl4Oc-qo8mTUdN4RWVPQeJ2PF_RjYEpL5K5SY&fref=gs&dti=281341932659815&hc_location=group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "climbing@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umclimbing"
+  }
  },
  {
   "id": "oc_umass_fieldhockeyclubw",
@@ -18881,7 +20703,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassclubfh/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fieldhockeyclub@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/fieldhockeyclubw"
+  }
  },
  {
   "id": "oc_umass_umassgymnastics",
@@ -18911,7 +20737,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassgymnastics/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gymnastics@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassgymnastics"
+  }
  },
  {
   "id": "oc_umass_umasscookingclub",
@@ -19011,7 +20841,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/724680391509043"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasscriminologyclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umasscriminologyclub"
+  }
  },
  {
   "id": "oc_umass_cybersecurity_competition",
@@ -19080,7 +20914,11 @@
     "label": "X",
     "url": "https://twitter.com/UMBRC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cycling@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umass_cycling_club"
+  }
  },
  {
   "id": "oc_umass_danceclub",
@@ -19115,7 +20953,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCs3uhpM_R7OSE78gRZ57L2A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danceclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/danceclub"
+  }
  },
  {
   "id": "oc_umass_umassmiracles",
@@ -19158,7 +21000,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/umass-ftk-23b065176"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassdmpres@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassmiracles"
+  }
  },
  {
   "id": "oc_umass_degel",
@@ -19189,7 +21035,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassdegel/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "degel@umasshillel.org",
+   "source": "https://umass.campuslabs.com/engage/organization/degel"
+  }
  },
  {
   "id": "oc_umass_umassdesign",
@@ -19228,7 +21078,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umassdesign/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassux@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassdesign"
+  }
  },
  {
   "id": "oc_umass_uet",
@@ -19265,8 +21119,20 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/search/top/?q=umass%20equestrian%20team"
+   },
+   {
+    "label": "Website",
+    "url": "https://trout-lynx-l5km.squarespace.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umasseq/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "equestrianteam@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/uet"
+  }
  },
  {
   "id": "oc_umass_equitationscience",
@@ -19296,8 +21162,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.esc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass.esc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uesc-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/equitationscience"
+  }
  },
  {
   "id": "oc_umass_eventing_team",
@@ -19362,7 +21236,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@umassfashionorg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fashionorg-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ufo"
+  }
  },
  {
   "id": "oc_umass_flip",
@@ -19393,7 +21271,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.flip/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassflip@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/flip"
+  }
  },
  {
   "id": "oc_umass_parkrats",
@@ -19420,7 +21302,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/parkrats"
    }
-  ]
+  ],
+  "contact": {
+   "email": "parkratsofamherst@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/parkrats"
+  }
  },
  {
   "id": "oc_umass_ufa",
@@ -19454,8 +21340,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/585756455490104/?ref=share"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_fulbright_association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fulbright-gso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/ufa"
+  }
  },
  {
   "id": "oc_umass_gaelicfootball",
@@ -19486,7 +21380,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassgaa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gaelicfootball-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/gaelicfootball"
+  }
  },
  {
   "id": "oc_umass_esportsclub",
@@ -19517,7 +21415,11 @@
     "label": "Discord",
     "url": "https://discord.gg/AjSzfkRpA6"
    }
-  ]
+  ],
+  "contact": {
+   "email": "esportsclub-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/esportsclub"
+  }
  },
  {
   "id": "oc_umass_go_karting",
@@ -19551,8 +21453,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umass_gokarting/?hl=en"
+   },
+   {
+    "label": "Group chat",
+    "url": "https://groupme.com/join_group/110248469/pIFrEse2"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassgokarting@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/go-karting"
+  }
  },
  {
   "id": "oc_umass_umassgospelchoir",
@@ -19595,7 +21505,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@umassgospelchoir"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gospelchoir-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassgospelchoir"
+  }
  },
  {
   "id": "oc_umass_guildofcarillonneurs",
@@ -19691,7 +21605,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassiceskatingclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iceskating-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassiceskating"
+  }
  },
  {
   "id": "oc_umass_illusionsdanceteam",
@@ -19783,6 +21701,10 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/umass-amherst-ieee-63477326b/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassamherstieee/"
    }
   ]
  },
@@ -19811,7 +21733,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/umassinternationalrelationsclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassamherstirclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassinternationalrelationsclub"
+  }
  },
  {
   "id": "oc_umass_internationalsocietypharmaceuticalengineering",
@@ -19899,7 +21825,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umassibgroup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isenbergibclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/investmentbankingclub"
+  }
  },
  {
   "id": "oc_umass_is_a_drag",
@@ -19955,7 +21885,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mannmukti.umass/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mannmukti-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassmannmukti"
+  }
  },
  {
   "id": "oc_umass_mobiledevelopmentclub",
@@ -20068,8 +22002,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umassphoto"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umassphoto"
    }
-  ]
+  ],
+  "contact": {
+   "email": "photo-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassphotoclub"
+  }
  },
  {
   "id": "oc_umass_pickleball",
@@ -20135,7 +22077,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasspowerlifting/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umasspowerlifting@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umpl"
+  }
  },
  {
   "id": "oc_umass_queerkehilah",
@@ -20205,7 +22151,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/isenberg-real-estate-association-umass-amherst/mycompany/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassrealestate@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/realestateclub"
+  }
  },
  {
   "id": "oc_umass_umassrevival",
@@ -20270,8 +22220,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/umassrobotics/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass.robotics.club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassroboticsclub@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/roboticsclub"
+  }
  },
  {
   "id": "oc_umass_gradschoolpsychology",
@@ -20362,7 +22320,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umsbc1969/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umsbc1969@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/skiboardclub"
+  }
  },
  {
   "id": "oc_umass_songwritingandproductionclub",
@@ -20397,7 +22359,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassspc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassspc@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/songwritingandproductionclub"
+  }
  },
  {
   "id": "oc_umass_umassstudentsforlife",
@@ -20428,7 +22394,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasssfl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cgrinarml@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassstudentsforlife"
+  }
  },
  {
   "id": "oc_umass_usrj",
@@ -20459,7 +22429,11 @@
     "label": "X",
     "url": "https://twitter.com/voxumass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "usrjumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/usrj"
+  }
  },
  {
   "id": "oc_umass_suicidepreventionclub",
@@ -20513,7 +22487,11 @@
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/umasstamilstudent"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tamil-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasstamilstudent"
+  }
  },
  {
   "id": "oc_umass_tapteam",
@@ -20544,7 +22522,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umasstapcompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tap-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/tapteam"
+  }
  },
  {
   "id": "oc_umass_umasstheatreguild",
@@ -20591,7 +22573,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@umtheatreguild?si=aHWD5XUOS64rC6rm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umtheatreguild@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umasstheatreguild"
+  }
  },
  {
   "id": "oc_umass_umassukrainians",
@@ -20708,8 +22694,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/@UMassWushu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umasswushu?igsi=ZDNlZDc0MzIxNw%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wushu-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umasswushu"
+  }
  },
  {
   "id": "oc_umass_umassyoungsocialists",
@@ -20740,7 +22734,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/UMassYS/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umys-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/umassyoungsocialists"
+  }
  },
  {
   "id": "oc_umass_umassivearms",
@@ -20775,7 +22773,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umassivearms/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassivearms@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/umassivearms"
+  }
  },
  {
   "id": "oc_umass_ugrid",
@@ -20814,7 +22816,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/8583903"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassugrid@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/ugrid"
+  }
  },
  {
   "id": "oc_umass_unicef",
@@ -20853,7 +22859,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/umassunicef/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "unicefumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/unicef"
+  }
  },
  {
   "id": "oc_umass_ugcals",
@@ -20917,8 +22927,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/UNAUSA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/una.umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "una-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/unitednationsassociationumass"
+  }
  },
  {
   "id": "oc_umass_udems",
@@ -20969,7 +22987,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/UMassDemocrats"
    }
-  ]
+  ],
+  "contact": {
+   "email": "democrats.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/udems"
+  }
  },
  {
   "id": "oc_umass_cornholeclub",
@@ -21002,8 +23024,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/umassclubcornhole/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassclubcornhole/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassclubcornhole@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/cornholeclub"
+  }
  },
  {
   "id": "oc_umass_umhsa",
@@ -21081,7 +23111,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/umassupc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "upc@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/universityprogrammingcouncil"
+  }
  },
  {
   "id": "oc_umass_usexploring",
@@ -21154,7 +23188,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/uvctv19"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uvctv19@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/uvctv19"
+  }
  },
  {
   "id": "oc_umass_venakey",
@@ -21224,7 +23262,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@umavietnamesedancemovement?si=6I6qQt6XvJVIPdSO"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vdm-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/vietnamesedancemovement"
+  }
  },
  {
   "id": "oc_umass_vietnamesestudentassociation",
@@ -21267,7 +23309,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCSdfN3d37HG79P0b-Q_lnDw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umavsa@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/vietnamesestudentassociation"
+  }
  },
  {
   "id": "oc_umass_thevocalsuspects",
@@ -21314,7 +23360,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/thevocalsuspects"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassvocalsuspects@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/thevocalsuspects"
+  }
  },
  {
   "id": "oc_umass_volleyballclubw",
@@ -21344,8 +23394,16 @@
    {
     "label": "Instagram",
     "url": "http://www.instagram.com/umasswvolleyball"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/umasswvolleyball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clabbe@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/volleyballclubw"
+  }
  },
  {
   "id": "oc_umass_votersoftomorrow",
@@ -21436,7 +23494,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100087430346175"
    }
-  ]
+  ],
+  "contact": {
+   "email": "westequestrian@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/westernridingteam"
+  }
  },
  {
   "id": "oc_umass_wickedpitch",
@@ -21483,7 +23545,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/wickedpitch"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wickedpitch-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/wickedpitch"
+  }
  },
  {
   "id": "oc_umass_wmuaradiostation",
@@ -21530,7 +23596,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@wmua7107"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wmuamanager@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/wmuaradiostation"
+  }
  },
  {
   "id": "oc_umass_wmp",
@@ -21621,7 +23691,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wicysumass/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wicysumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/womenincybersecurity"
+  }
  },
  {
   "id": "oc_umass_womenininfocompsci",
@@ -21656,7 +23730,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wicsumass/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wics-rso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/womenininfocompsci"
+  }
  },
  {
   "id": "oc_umass_womeninmedicine",
@@ -21687,7 +23765,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/umass.wim/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wimumass25@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/womeninmedicine"
+  }
  },
  {
   "id": "oc_umass_womeninmma",
@@ -21756,7 +23838,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/in/wism-umass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wismumass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/wism"
+  }
  },
  {
   "id": "oc_umass_womenofcolorleadershipnetwork",
@@ -21782,12 +23868,12 @@
    {
     "label": "Directory",
     "url": "https://umass.campuslabs.com/engage/organization/womenofcolorleadershipnetwork"
-   },
-   {
-    "label": "Website",
-    "url": "http://www.umass.edu/wocln/index.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wocln@stuaf.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/womenofcolorleadershipnetwork"
+  }
  },
  {
   "id": "oc_umass_clubbasketball",
@@ -21816,8 +23902,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/umasswcbball"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umasswcbball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womensclubbasketball@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/clubbasketball"
+  }
  },
  {
   "id": "oc_umass_worldlibrarians",
@@ -21852,7 +23946,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uma.worldlibrarians/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "worldlibrariansrso@umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/worldlibrarians"
+  }
  },
  {
   "id": "oc_umass_wrestlingclub",
@@ -21882,7 +23980,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/345895515433440/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wrestling.umass@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/wrestlingclub"
+  }
  },
  {
   "id": "oc_umass_yogaandmeditation",
@@ -21921,7 +24023,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMass-Amherst-Yoga-and-Meditation-club-391411401442362/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umassyogameditation@gmail.com",
+   "source": "https://umass.campuslabs.com/engage/organization/yogaandmeditation"
+  }
  },
  {
   "id": "oc_umass_yurikochiyamaculturalcenter",
@@ -21960,7 +24066,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UMASSYKCC/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ykcc@sacl.umass.edu",
+   "source": "https://umass.campuslabs.com/engage/organization/yurikochiyamaculturalcenter"
+  }
  },
  {
   "id": "og_umass_zetabetatau",

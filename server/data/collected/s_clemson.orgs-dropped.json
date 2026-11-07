@@ -1,0 +1,154 @@
+[
+ {
+  "id": "og_clemson_clemsonpanhellenic",
+  "name": "College Panhellenic Association",
+  "logo": {
+   "emoji": "CP",
+   "hue": 256,
+   "url": "https://se-images.campuslabs.com/clink/images/0e916bae-2268-4349-9445-70fc720a9486dce964fa-8d6a-4a47-b6a9-02c22da8b376.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_clemson",
+  "parent": "Undergraduate",
+  "verified": false,
+  "description": "The College Panhellenic Association serves as the governing body for 13 National Panhellenic Conference chapters on campus. As an association, we advocate the advancement of the sorority experience for each of the 3,000+ Panhellenic women at Clemson.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://clemson.campuslabs.com/engage/organization/clemsonpanhellenic"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.clemsonpanhellenic.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/clemsonpanhellenic/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/CPAatClemsonUniversity/"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/user/ClemsonGreekLife/featured"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_clemson_ifc",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/e9d7bc6d-909f-41f3-92ab-bef09c02a2abe6165f1c-7f59-4636-9c1c-e403c837aca3.PNG?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_clemson",
+  "parent": "Undergraduate",
+  "verified": false,
+  "description": "The Interfraternity Council (IFC) governs all of Clemson's male social fraternities and is committed to building a strong Greek community. IFC provides opportunities for its members to become leaders and effect positive change at Clemson.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://clemson.campuslabs.com/engage/organization/ifc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/clemsonifc/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_clemson_mgc",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/bd25a537-f195-4022-849c-f197b26c0cebcf0c95c9-2b21-471e-aadd-96f46678ed27.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_clemson",
+  "parent": "Undergraduate",
+  "verified": false,
+  "description": "The Multicultural Greek Council contains four culturally-based greek organizations on the Clemson University campus. This council not only encourages brotherhood and sisterhood, but also works to promote cultural diversity via greek unity.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://clemson.campuslabs.com/engage/organization/mgc"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.clemsonmgc.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/clemsonmgc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/ClemsonMGC/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_clemson__",
+  "name": "Tiger Snuggles",
+  "logo": {
+   "emoji": "TS",
+   "hue": 352,
+   "url": "https://se-images.campuslabs.com/clink/images/3e23c35b-ab35-4f87-8f71-bfb941bdc9b131b3a080-29d5-4767-8e78-f5dc42df71fe.PNG?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_clemson",
+  "parent": "Undergraduate",
+  "verified": false,
+  "description": "Organize stuffed animal drives for children in need.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://clemson.campuslabs.com/engage/organization/-"
+   },
+   {
+    "label": "Website",
+    "url": "http://jrholli.wixsite.com/tiger-snuggles"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tiger.snuggles"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

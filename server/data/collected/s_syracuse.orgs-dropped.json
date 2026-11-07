@@ -1,0 +1,189 @@
+[
+ {
+  "id": "og_syracuse_greekcouncil",
+  "name": "Greek Council",
+  "logo": {
+   "emoji": "GC",
+   "hue": 8,
+   "url": "https://se-images.campuslabs.com/clink/images/f4855724-ca3b-4f2d-9a94-35e5c5c32eb10b72b20c-b3ad-44ab-9e0b-8bbf0e46313c.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_syracuse",
+  "verified": false,
+  "description": "Programming Council for the SU fraternity/sorority community",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://syracuse.campuslabs.com/engage/organization/greekcouncil"
+   },
+   {
+    "label": "Website",
+    "url": "https://experience.syracuse.edu/student-engagement/greek-life/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sugreekcouncil/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_syracuse_interfraternity_council",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/60bf0740-10f8-4db0-8af3-24384d80087a8b4a0872-dde5-403c-8618-e5f74d6b5d7a.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_syracuse",
+  "verified": false,
+  "description": "Interfraternity Council at Syracuse University. The governing body of all 17 IFC chapters at Syracuse University.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://syracuse.campuslabs.com/engage/organization/interfraternity-council"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_syracuse_multicultural_greek_council",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/96b024b1-a241-40c2-ab6e-2a2314d64437ba278bce-2b7f-4270-8207-a9f757979b36.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_syracuse",
+  "verified": false,
+  "description": "The Multicultural Greek Council (MGC) is an umbrella council for a coalition of Multicultural Greek-letter organizations. The purpose of MGC is to provide a forum that allows for the free exchange of ideas, programs, and services between its constituen...",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://syracuse.campuslabs.com/engage/organization/multicultural-greek-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/mgc_cuse/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_syracuse_panhellenic_council",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/d05c6ab9-a7af-4b7f-b336-9679926b96f21d33ed0d-37c4-45bb-9b68-dd7f2aa923b2.jpeg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_syracuse",
+  "verified": false,
+  "description": "The Syracuse University Panhellenic Council is the overarching governing body of the thirteen National Panhellenic Conference affiliated sororities on campus. It's mission is to promote interfraternal relations amongst the chapters, as well as relations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://syracuse.campuslabs.com/engage/organization/panhellenic-council"
+   },
+   {
+    "label": "Website",
+    "url": "https://experience.syracuse.edu/student-engagement/greek-life/councils-and-chapters/panhellenic-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/syracusepanhel/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_syracuse_professional_fraternity_council",
+  "name": "Professional Fraternity Council",
+  "logo": {
+   "emoji": "PF",
+   "hue": 48,
+   "url": "https://se-images.campuslabs.com/clink/images/0d15e202-e8d4-41f5-8ad7-c7c93d5e70892920cc70-0fad-471f-8100-56ef94ee08f8.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_syracuse",
+  "verified": false,
+  "description": "The mission of the Professional Fraternity Council is to promote professional, academic, and community service involvement at Syracuse University Campus through events that showcase the excellence and intellectual diversity of the Syracuse University p...",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://syracuse.campuslabs.com/engage/organization/professional-fraternity-council"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_syracuse__",
+  "name": "The Association of Latino Professionals For America at Syracuse University",
+  "logo": {
+   "emoji": "AL",
+   "hue": 256,
+   "url": "https://se-images.campuslabs.com/clink/images/e84d5dc3-03d6-46e4-bcce-d323a5892011f420ee15-4d42-4eb0-b2d0-a2be3ccdfc04.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_syracuse",
+  "parent": "Academic Department",
+  "verified": false,
+  "description": "The Association of Latino Professionals for America at Syracuse University aims to provide professional workshops, mentoring and networking opportunities that enhance career readiness for undergraduate students.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://syracuse.campuslabs.com/engage/organization/----------------------"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "http://www.linkedin.com/in/alpfasyr"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

@@ -1,0 +1,167 @@
+[
+ {
+  "id": "og_umass_gac",
+  "name": "Greek Affiliated Council",
+  "logo": {
+   "emoji": "GA",
+   "hue": 152
+  },
+  "type": "council",
+  "schoolId": "s_umass",
+  "verified": false,
+  "description": "Council of academic, professional, and service fraternal organizations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umass.campuslabs.com/engage/organization/gac"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umass_ggsa",
+  "name": "Greek Graduate Student Association",
+  "logo": {
+   "emoji": "GG",
+   "hue": 16
+  },
+  "type": "council",
+  "schoolId": "s_umass",
+  "parent": "Graduate Student Organizations",
+  "verified": false,
+  "description": "The Greek Graduate Student Association (GGSA) has the purpose of integrating the Greek community in Amherst/Five College area, serving incoming and existing Greek students and developing the awareness of the contemporary Greece and its culture.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umass.campuslabs.com/engage/organization/ggsa"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umass_interfraternitycouncil",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/3beb7990-9528-45e5-acc0-933edb34e26bd800707b-6be5-49c1-914d-ff4f32158b90.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umass",
+  "parent": "IFC",
+  "verified": false,
+  "description": "The Interfraternity Council (IFC) is the governing body of the NIC-member fraternity chapters and their affiliates. The IFC coordinates the efforts of the various members in order to accomplish their common goals here at the University of Massachusetts",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umass.campuslabs.com/engage/organization/interfraternitycouncil"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.umass.edu/greek/IFC/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umassifc/"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/#!/umassifc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umass_umassmgc",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/2364449c-5242-4e01-b91e-7c3b82ac809759ca46de-f799-494a-9edd-8d18d632e50a.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umass",
+  "parent": "MGC",
+  "verified": false,
+  "description": "The fraternity movement at the University is almost as old as the institution itself. Fraternity and sorority chapters are open to all matriculating students at the University. However, there are fraternities and sororities that specifically serve the",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umass.campuslabs.com/engage/organization/umassmgc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umass_mgc/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/umassamherstmgc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umass_panhelleniccouncil",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/0ed2a23c-77b8-4216-b834-350ffe43a7e86ee02392-100c-4d76-86e0-8b4d2c774efe.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umass",
+  "parent": "Panhellenic",
+  "verified": false,
+  "description": "The Panhellenic Council serves as the local governing council for the NPC-affiliated sororities operating on campus as well as the council-affiliates. The Panhellenic Council sponsors a formal recruitment program, social events, and community",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umass.campuslabs.com/engage/organization/panhelleniccouncil"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.umass.edu/greek/npc"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/UmassPanhell"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]
