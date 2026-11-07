@@ -2964,6 +2964,39 @@
   }
  },
  {
+  "id": "oc_illinois_cg37187",
+  "name": "Applied Instrumental Design",
+  "logo": {
+   "emoji": "AI",
+   "hue": 216
+  },
+  "type": "club",
+  "schoolId": "s_illinois",
+  "parent": "Technology",
+  "verified": false,
+  "description": "AID exists to provide University of Illinois Urbana-Champaign students with hands-on experience designing, building, testing, calibrating, documenting, and improving scientific and engineering instruments. AID will bring together students from engineering, physics, chemistry, materials science, computer science, and other disciplines to apply classroom concepts to real technical systems. AID will emphasize safe experimentation, multidisciplinary collaboration, technical communication, responsible use of equipment, and accessible opportunities for students of all experience levels.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=37187"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_illinois_cg35529",
   "name": "Arab American Association of Engineers and Architects",
   "logo": {
@@ -6993,6 +7026,10 @@
    {
     "label": "Website",
     "url": "https://www.uofichristiansoncampus.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uofichristiansoncampus/"
    }
   ],
   "recruitment": {
@@ -10239,7 +10276,7 @@
   "schoolId": "s_illinois",
   "parent": "Identity & Culture",
   "verified": false,
-  "description": "To provide a safe place for egyptians to get a taste of home and for others to explore egyptian culture",
+  "description": "Our mission is to create a welcoming community where Egyptian students can celebrate their heritage, strengthen their connection to their Egyptian identity, and feel closer to home through programs and events rooted in Egyptian traditions, food, language, and entertainment, while promoting awareness, understanding, and appreciation of Egyptian culture throughout the broader campus community.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -14338,6 +14375,10 @@
    {
     "label": "Directory",
     "url": "https://one.illinois.edu/student_community?club_id=36912"
+   },
+   {
+    "label": "Website",
+    "url": "http://go.engineering.illinois.edu/GISP"
    }
   ],
   "recruitment": {
@@ -14658,7 +14699,7 @@
    "emoji": "GS",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_illinois",
   "parent": "Technology",
   "verified": false,
@@ -17306,303 +17347,6 @@
   }
  },
  {
-  "id": "oc_illinois_cg35833",
-  "name": "Illini Disc Golf Club",
-  "logo": {
-   "emoji": "ID",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Athletic & Recreation",
-  "verified": false,
-  "description": "We seek to introduce new members to the sport of disc golf and to increase the skill of experienced players. We are committed to providing both casual weekly rounds, practice rounds for competitive players, and competing in competitive tournaments. Link to our Discord for more information: https://discord.gg/T8kMnjp5W7",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35833"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg36943",
-  "name": "Illini Ducks Unlimited",
-  "logo": {
-   "emoji": "ID",
-   "hue": 224
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Agricultural",
-  "verified": false,
-  "description": "This club is a chartered chapter of national ducks unlimited and serves to conserve, restore and manage wetlands and associated habitats for North America's waterfowl. These habitats also benefit other wildlife and people. This club helps individual members of the Illini Ducks Unlimited chapter, the community, and surrounding areas to participate in this conservation effort.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=36943"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35834",
-  "name": "Illini Electric Motorsports",
-  "logo": {
-   "emoji": "IE",
-   "hue": 208
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Technology",
-  "verified": false,
-  "description": "The purpose of this organization is to provide University of Illinois Urbana-Champaign students a collaborative and educational environment to expand on skills learned in the classroom and to develop real world experiences both outside and inside of engineering. This goal is pursued by bringing together students of different scientific, engineering, artistic, business, and personal backgrounds and uniting them behind a common mission of designing, building, and competing a fully electric open wheeled race car in an intercollegiate design competition sponsored by the Society of Automotive Engin",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35834"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35836",
-  "name": "Illini Equestrians",
-  "logo": {
-   "emoji": "IE",
-   "hue": 296
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Agricultural",
-  "verified": false,
-  "description": "The Illini Equestrians seek to further student knowledge of, appreciation for, and participation within the equine industry through social, educational, and competitive activities.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35836"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35837",
-  "name": "Illini Esports",
-  "logo": {
-   "emoji": "IE",
-   "hue": 0
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Athletic & Recreation",
-  "verified": false,
-  "description": "The initiative of IE is to devote and support an Esports community on campus. Our mission is to allow members to develop a passion for Esports and the social, curricular, and industry tie-ins surrounding Esports. It is important to understand the multiple facets of the industry that span across many fields. As with traditional sports, a multitude of careers coincide within the Esports industry, making it relevant for students, graduates, faculty, and the community to explore, study, and grow. At UIUC, IE has paved the way for competitive video gaming, and with the unity of many academic intere",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35837"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35838",
-  "name": "Illini EV Concept",
-  "logo": {
-   "emoji": "IE",
-   "hue": 152
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Technology",
-  "verified": false,
-  "description": "To build an energy-efficient electric vehicle to compete in competitions, to practice and develop technical field-related skills in a non-academic environment, and to bring electric vehicles into the public consciousness. Members of the team shall contribute to building and improving a car and developing new systems for the car to make it competitive in the Shell Eco-Marathon.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35838"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35839",
-  "name": "Illini Fighting Hunger",
-  "logo": {
-   "emoji": "IF",
-   "hue": 160
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Community Service & Philanthropy",
-  "verified": false,
-  "description": "Illini Fighting Hunger serves as the chapter of Universities Fighting World Hunger that addresses local and international hunger issues by making meal packaging events more frequent, more accessible, and more effective in the state of Illinois.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35839"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35840",
-  "name": "Illini Film and Video",
-  "logo": {
-   "emoji": "IF",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Media Arts",
-  "verified": false,
-  "description": "Illini Film and Video shall facilitate the filmmaking process for students attending the University of Illinois, Urbana-Champaign (“University”), provide students with opportunities to show their film or video productions, and to provide students with opportunities to learn various production skills.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35840"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg36697",
-  "name": "Illini Fly Fishing",
-  "logo": {
-   "emoji": "IF",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Athletic & Recreation",
-  "verified": false,
-  "description": "Illini Fly Fishing serves to create and support a community of fly fishing anglers within the University of Illinois at Urbana-Champaign. Our mission is to promote environmental stewardship, outdoor recreation, and skill development in the pursuit of fly fishing.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=36697"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_illinois_cg37090",
   "name": "Illini Health Hub",
   "logo": {
@@ -19761,7 +19505,7 @@
   "schoolId": "s_illinois",
   "parent": "Social & Leisure",
   "verified": false,
-  "description": "IlliniReads provides a welcoming environment for students across all majors to engage with literature every month. This is a campus-wide community of readers that aspires to create meaningful connections through elevated discussion. By combining students’ academic and personal interests, IlliniReads fosters a lifelong love of reading, critical thinking, and an appreciation for the power of storytelling.",
+  "description": "IlliniReads provides a welcoming environment for students across all majors to engage with literature every month. This is a campus-wide community of readers that aspires to create meaningful connections through elevated discussion. The pillars of IlliniReads are as follows: 1) Community o Interpersonal connection: IlliniReads aims to foster friendship and community between members through discussion of literature and other social activities o Perspectives and diversity: IlliniReads aims to use literature as a way for students to explore unique and diverse perspectives 2) Literature o Discussi",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -21960,6 +21704,39 @@
   }
  },
  {
+  "id": "oc_illinois_cg37197",
+  "name": "Impact Karate",
+  "logo": {
+   "emoji": "IK",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_illinois",
+  "parent": "Athletic & Recreation",
+  "verified": false,
+  "description": "Impact Karate serves to use karate and physical activity to promote health and wellness in the Champaign-Urbana community. The organization works toward offering free karate classes and establishing an after-school program through a local school or community center, including its developing partnership with DREAAM. Through these programs, Impact Karate aims to improve physical fitness while teaching self-defense, confidence, discipline, and healthy habits. Impact Karate also provides University of Illinois Urbana-Champaign students with opportunities to learn, volunteer, and serve as mentors a",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=37197"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_illinois_cg36756",
   "name": "IMPACT Medical Solutions",
   "logo": {
@@ -21968,7 +21745,7 @@
   },
   "type": "club",
   "schoolId": "s_illinois",
-  "parent": "Advocacy & Activism",
+  "parent": "Health & Wellness",
   "verified": false,
   "description": "Our mission is to Inspire Minds, Promote Awareness, and Cultivate Talent by spreading medical knowledge among students. We are dedicated to fostering a safer and more informed future through comprehensive education and proactive engagement.",
   "gallery": [],
@@ -31233,6 +31010,39 @@
   }
  },
  {
+  "id": "oc_illinois_cg37198",
+  "name": "Pre-Health Personal Finance RSO",
+  "logo": {
+   "emoji": "PH",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_illinois",
+  "parent": "Community Service & Philanthropy",
+  "verified": false,
+  "description": "The Pre-Health Personal Finance Club of UIUC serves as a community for students who are interested in personal finance and who are pursuing a Pre-Health pathway. Utilizing University of Illinois resources as well as those obtained externally, the club aims to approach financial literacy from a healthcare-focused perspective, connecting the realities of medical education costs, student loan management, and early-career earnings with budgeting, investing, and long-term financial planning. Through application-based workshops, guest speaker events, and social networking, we hope to better prepare ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=37198"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_illinois_cg36651",
   "name": "Pre-Health Psychology Association of UIUC (PPA)",
   "logo": {
@@ -31255,6 +31065,10 @@
    {
     "label": "Directory",
     "url": "https://one.illinois.edu/student_community?club_id=36651"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ppauiuc"
    }
   ],
   "recruitment": {
@@ -38589,6 +38403,179 @@
   }
  },
  {
+  "id": "oc_illinois_cg37057",
+  "name": "The Wellness Society at UIUC",
+  "logo": {
+   "emoji": "WS",
+   "hue": 72
+  },
+  "type": "club",
+  "schoolId": "s_illinois",
+  "parent": "Athletic & Recreation",
+  "verified": false,
+  "description": "The Wellness Society at UIUC is a campus chapter of the national Wellness Society organization dedicated to fostering a culture that prioritizes holistic health, wellness, and balance. The chapter promotes mental and physical well-being through movement-based events, educational programming, and community-building initiatives that empower students to connect and embrace a balanced lifestyle.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=37057"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.thewellnesssociety.net/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uawellnesssociety/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_illinois_cg36328",
+  "name": "The Women's Network UIUC",
+  "logo": {
+   "emoji": "WS",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_illinois",
+  "parent": "Community Service & Philanthropy",
+  "verified": false,
+  "description": "The Women’s Network (TWN) was created for ambitious women looking to grow professionally while being lifted by their community. TWN offers opportunities to gain exposure to the professional world, network with high-profile speakers and meet peers around their campus and the country. TWN meets biweekly (twice a month) and holds speaker meetings, various networking events, resume, internship and LinkedIn workshops, alumni networking receptions and interactive activity sessions to develop relationships with fellow members. Our workshops and guest speakers help prepare you for your next steps and ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=36328"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_illinois_cg36329",
+  "name": "Themed Entertainment Association at University of Illinois Urbana-Champaign",
+  "logo": {
+   "emoji": "TE",
+   "hue": 272
+  },
+  "type": "club",
+  "schoolId": "s_illinois",
+  "parent": "Media Arts",
+  "verified": false,
+  "description": "The Themed Entertainment Association at The University of Illinois Urbana-Champaign serves to provide students with exposure to the world’s leading creators, developers, designers and producers of compelling places and experiences. In collaboration with the Themed Engineering Association provide students with social events, educational panels, exposure to industry professionals and more.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=36329"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_illinois_cg36567",
+  "name": "Theta Chi Fraternity - Rho Chapter",
+  "logo": {
+   "emoji": "TC",
+   "hue": 264
+  },
+  "type": "greek",
+  "schoolId": "s_illinois",
+  "parent": "Community Service & Philanthropy",
+  "verified": false,
+  "description": "The Rho Chapter of Theta Chi endeavors to instantiate a rigorously principled nature dedicated to communal uplift, fraternal cohesion, and the relentless cultivation of intellectual preeminence. Our aim is to embody impeccable integrity while advancing a culture of civic excellence.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=36567"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_illinois_cg36330",
+  "name": "Theta Tau Professional Engineering Fraternity",
+  "logo": {
+   "emoji": "TT",
+   "hue": 152
+  },
+  "type": "greek",
+  "schoolId": "s_illinois",
+  "parent": "Technology",
+  "verified": false,
+  "description": "Theta Tau's mission is to develop and maintain high standards of professional interest among its members within engineering, and to unite them in a strong bond of fraternal fellowship.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://one.illinois.edu/student_community?club_id=36330"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "og_illinois_cg36568",
   "name": "Theta Xi Fraternity",
   "logo": {
@@ -38776,204 +38763,6 @@
    {
     "label": "Directory",
     "url": "https://one.illinois.edu/student_community?club_id=36335"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg36340",
-  "name": "Turkish Student Association",
-  "logo": {
-   "emoji": "TS",
-   "hue": 168
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "International",
-  "verified": false,
-  "description": "The purposes of the Turkish Student Association are: -To unite students coming from Turkiye and Turkish Community in Champaign and those interested in Turkish culture; -To orient incoming students from Turkiye to the university environment and assist them in their effort to adjust to the new community (i.e. housing and commuting information, airport pickup, etc.). -To facilitate social and intellectual interaction between members.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=36340"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg36341",
-  "name": "Turning Point USA",
-  "logo": {
-   "emoji": "TP",
-   "hue": 192
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Advocacy & Activism",
-  "verified": false,
-  "description": "ALL INFO CAN BE FOUND AT @TPUSA_UIUC on INSTAGRAM. Turning Point USA at the University of Illinois exists to educate and empower students to boldly defend fiscal responsibility, free markets, capitalism, constitutional freedom, and American values through campus activism, open dialogue, and thought-provoking discussion. After the death of Charlie Kirk, our mission has become even more urgent. We are committed to carrying on his legacy by standing for truth with courage, keeping Jesus Christ at the center of everything we do, and raising up a generation of students who are not afraid to speak b",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=36341"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg35476",
-  "name": "TVC College",
-  "logo": {
-   "emoji": "TC",
-   "hue": 208
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Faith",
-  "verified": false,
-  "description": "TVC College exists to see students encounter the love of the Father, experience transformation in Jesus, and learn how to extend the miraculous through the power of the Holy Spirit.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=35476"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg36342",
-  "name": "Twin City Bible Church Students Organization",
-  "logo": {
-   "emoji": "TC",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Faith",
-  "verified": false,
-  "description": "The purpose of Twin City Bible Church Campus Fellowship is to bridge student life at the U of I for University students with spiritual life in our local church (Twin City Bible Church) right across from campus. We endeavor to broaden spiritual and community experiences for students engaging in Christian Fellowships on campus, as well as those who lack in any spiritual formation and community on campus. Our local church is a congregation committed to spread the Gospel of Jesus Christ, to being a disciple-making community of God's people, to serve as reconciling agents of the Kingdom of God to t",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=36342"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg36343",
-  "name": "Tzu Chi Collegiate Association",
-  "logo": {
-   "emoji": "TC",
-   "hue": 152
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Community Service & Philanthropy",
-  "verified": false,
-  "description": "The purposes of this club are: 1. To connect students with meaningful volunteer opportunities on campus and in the local community 2. To foster a sense of community among our club members 3. To promote morals, strengthen character, instill a spirit of compassion for all, exemplify humility, respect and gentleness in character",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=36343"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_illinois_cg37011",
-  "name": "UAV@Illinois",
-  "logo": {
-   "emoji": "UI",
-   "hue": 16
-  },
-  "type": "club",
-  "schoolId": "s_illinois",
-  "parent": "Technology",
-  "verified": false,
-  "description": "The mission of UAV@ILLINOIS is to design, build, and race FPV drones in MultiGP collegiate competitions while providing University of Illinois students with hands-on experience in Unmanned Aerial Vehicle (UAV) engineering, piloting, and team-based competition.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://one.illinois.edu/student_community?club_id=37011"
    }
   ],
   "recruitment": {
@@ -39564,7 +39353,7 @@
   "schoolId": "s_illinois",
   "parent": "Community Service & Philanthropy",
   "verified": false,
-  "description": "upliftED serves as a platform for college students to help underprivileged youth overcome educational hurdles by providing essential resources, mentorship, and engaging activities. Through partnerships with schools, orphanages, and community organizations, we aim to create a positive impact by offering backpack drives, meal kits, other necessities, and fun, interactive events. Our goal is to empower the next generation of learners while giving college students the opportunity to make a real difference, gain volunteer experience, and develop leadership skills.",
+  "description": "upliftED is a community of college students dedicated to learning, service, and growth. We create spaces where University of Illinois students can connect with one another, support their own well-being, and become lifelong learners, while using that energy to help underprivileged youth overcome educational hurdles. Through campus events, workshops, and partnerships with schools, social services, and community organizations, we provide essential resources like backpack drives and meal kits, mentorship, and fun, interactive activities. We also host conversations that raise awareness of education",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -41209,7 +40998,7 @@
   "schoolId": "s_illinois",
   "parent": "Agricultural",
   "verified": false,
-  "description": "Zamo Illini is a subchapter of the Zamorano Alumnus Association-United States (AGEAP-USA). The purpose of this organization is to promote student networking at a graduate level under the fields of agricultural sciences, food science and environmental sciences research through alumnus from Zamorano University in Honduras actively enrolled in their program at the University of Illinois Urbana-Champaign.",
+  "description": "Zamo Illini is a subchapter of the Zamorano Alumni Association–United States (AGEAP-USA) in the University of Illinois Urbana-Champaign. Zamorano is a Pan-American university in Honduras focused on agronomy, food science, agribusiness and agroenvironment. Zamo Illini’s mission is to support the professional development of Zamorano alumni pursuing graduate studies or research positions at the University of Illinois Urbana-Champaign, and of current Zamorano students who come to the University of Illinois as interns or visiting scholars, and to promote networking between them and the students, fa",
   "gallery": [],
   "regularActivities": [],
   "notices": [],

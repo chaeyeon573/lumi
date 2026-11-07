@@ -72,7 +72,7 @@
    "emoji": "2B",
    "hue": 160
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -546,7 +546,7 @@
    "emoji": "AA",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Cultural",
   "verified": false,
@@ -1711,7 +1711,7 @@
    "emoji": "AA",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Cultural",
   "verified": false,
@@ -6453,6 +6453,39 @@
   }
  },
  {
+  "id": "oc_yale_cg37683",
+  "name": "Diagnostic Radiology Interest Group",
+  "logo": {
+   "emoji": "DR",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_yale",
+  "parent": "Yale School of Medicine",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://yaleconnect.yale.edu/student_community?club_id=37683"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_yale_cg74374",
   "name": "Digestive Diseases Interest Group",
   "logo": {
@@ -7077,7 +7110,7 @@
    "emoji": "DH",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Service/Volunteering",
   "verified": false,
@@ -7114,7 +7147,7 @@
    "emoji": "DH",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Service/Volunteering",
   "verified": false,
@@ -9675,7 +9708,7 @@
    "emoji": "GL",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Health/Wellness",
   "verified": false,
@@ -10033,7 +10066,7 @@
    "emoji": "GE",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Health/Wellness",
   "verified": false,
@@ -10478,7 +10511,7 @@
    "emoji": "HA",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Leadership",
   "verified": false,
@@ -14083,7 +14116,7 @@
    "emoji": "LC",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Cultural",
   "verified": false,
@@ -15928,7 +15961,7 @@
    "emoji": "MM",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -16812,7 +16845,7 @@
    "emoji": "NA",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Cultural",
   "verified": false,
@@ -18348,6 +18381,10 @@
    {
     "label": "Directory",
     "url": "https://yaleconnect.yale.edu/student_community?club_id=47797"
+   },
+   {
+    "label": "Website",
+    "url": "https://medium.com/new-directions-in-outdoor-recreation-at-yale-fes"
    }
   ],
   "recruitment": {
@@ -19149,7 +19186,7 @@
    "emoji": "PU",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -19383,6 +19420,14 @@
    {
     "label": "Website",
     "url": "http://yalepitchesandtones.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/yalepitchesandtones/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/PitchesTones"
    }
   ],
   "recruitment": {
@@ -20707,39 +20752,6 @@
    {
     "label": "Directory",
     "url": "https://yaleconnect.yale.edu/student_community?club_id=37682"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_yale_cg37683",
-  "name": "Radiology Interest Group",
-  "logo": {
-   "emoji": "RI",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_yale",
-  "parent": "Yale School of Medicine",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://yaleconnect.yale.edu/student_community?club_id=37683"
    }
   ],
   "recruitment": {
@@ -24132,7 +24144,7 @@
    "emoji": "SA",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Professional",
   "verified": false,
@@ -25073,6 +25085,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/exitplayers/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/ExitPlayers"
    }
   ],
   "recruitment": {
@@ -26229,6 +26245,10 @@
    {
     "label": "Website",
     "url": "https://www.spizzwinks.com/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/spizzwinks"
    }
   ],
   "recruitment": {
@@ -27211,6 +27231,18 @@
    {
     "label": "Directory",
     "url": "https://yaleconnect.yale.edu/student_community?club_id=71712"
+   },
+   {
+    "label": "Website",
+    "url": "https://tommyfund.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tommyfund/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/TommyFundforChildhoodCancer"
    }
   ],
   "recruitment": {
@@ -28354,7 +28386,7 @@
    "emoji": "WH",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Special Interest",
   "verified": false,
@@ -28485,6 +28517,14 @@
    {
     "label": "Website",
     "url": "http://www.buckleyprogram.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/buckleyinstitute/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/buckleyinst"
    }
   ],
   "recruitment": {
@@ -29335,7 +29375,7 @@
   "schoolId": "s_yale",
   "parent": "Graduate School of Arts & Sciences (GSAS) Student Organizations",
   "verified": false,
-  "description": "",
+  "description": "The purpose of AGA is to serve as a social, academic, and resource-sharing space for graduate and professional school students affiliated with Yale University. AGA is a space dedicated to supporting all African-identifying people, as well as community members passionate about advancing the interests of Africa and its people.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -31074,7 +31114,7 @@
    "emoji": "YC",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Arts: Visual Arts",
   "verified": false,
@@ -31285,7 +31325,7 @@
    "emoji": "YC",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -33387,6 +33427,39 @@
   ]
  },
  {
+  "id": "oc_yale_cg33393",
+  "name": "Yale College Dean's Office",
+  "logo": {
+   "emoji": "YC",
+   "hue": 48
+  },
+  "type": "department",
+  "schoolId": "s_yale",
+  "parent": "Administrative",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://yaleconnect.yale.edu/student_community?club_id=33393"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_yale_cg32338",
   "name": "Yale College Dean's Office Student Affairs",
   "logo": {
@@ -33574,7 +33647,7 @@
    "emoji": "YC",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -33673,7 +33746,7 @@
    "emoji": "YC",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Health/Wellness",
   "verified": false,
@@ -34793,7 +34866,7 @@
    "emoji": "YE",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -36379,6 +36452,14 @@
    {
     "label": "Directory",
     "url": "https://yaleconnect.yale.edu/student_community?club_id=74275"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/yaleinnovatorsnetwork/"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/@yaleinnovatorsnetwork/"
    }
   ],
   "recruitment": {
@@ -36572,6 +36653,14 @@
    {
     "label": "Directory",
     "url": "https://yaleconnect.yale.edu/student_community?club_id=35296"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.interpretationnetwork.org/volunteer"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/Yale-Interpretation-Network-107428604185916"
    }
   ],
   "recruitment": {
@@ -38829,7 +38918,7 @@
    "emoji": "YP",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Cultural",
   "verified": false,
@@ -41387,7 +41476,7 @@
    "emoji": "YS",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Academic",
   "verified": false,
@@ -44072,7 +44161,7 @@
    "emoji": "YV",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_yale",
   "parent": "Veteran/Military",
   "verified": false,
@@ -45949,6 +46038,39 @@
   }
  },
  {
+  "id": "oc_yale_cg74548",
+  "name": "YSE Chess Club",
+  "logo": {
+   "emoji": "YC",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_yale",
+  "parent": "Games/Gaming",
+  "verified": false,
+  "description": "Our mission is to create a space where people can play chess, build their skills, or learn the game for the first time. We hope to strengthen the YSE community through friendly competition. We also aim to attract beginners, so I will host simple lessons on the fundamentals of chess. We want people of all skill levels to come to our meetings and learn something new.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://yaleconnect.yale.edu/student_community?club_id=74548"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_yale_cg64706",
   "name": "YSE Climate Change Science and Solutions Learning Community",
   "logo": {
@@ -47669,6 +47791,39 @@
    "period": "",
    "open": false,
    "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_yale_cg74549",
+  "name": "YSoA Makes",
+  "logo": {
+   "emoji": "YM",
+   "hue": 224
+  },
+  "type": "club",
+  "schoolId": "s_yale",
+  "parent": "Yale School of Architecture",
+  "verified": false,
+  "description": "YSoA Makes is a student-led group that creates opportunities for hands-on fabrication. Through specialized workshops, skill-sharing, and collaborative build projects, we aim to empower a community of makers.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://yaleconnect.yale.edu/student_community?club_id=74549"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
    "source": "campusgroups"
   }
  },

@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-04T06:41:21.050Z",
+ "checkedAt": "2026-11-07T12:46:51.351Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:uiuc",
- "sampled": 9811,
- "withTimes": 9811,
+ "sampled": 9842,
+ "withTimes": 9842,
  "terms": [
   "Fall 2026",
   "Spring 2027"
  ],
  "sample": [
   "AAS 100 · Intro Asian American Studies (Sec AL1) · Fall 2026 · M 13:00-13:50 W 13:00-13:50",
-  "ECE 210 · Analog Signal Processing (Sec AL3) · Fall 2026 · M 12:00-12:50 T 12:00-12:50 W 12:00-12:50 F 12:00-12:50",
-  "LING 300 · Anat & Physiol Spch Mechanism · Fall 2026 · M 08:30-09:50 W 08:30-09:50",
-  "STAT 433 · Stochastic Processes (Sec 1UG) · Fall 2026 · T 12:30-13:50 R 12:30-13:50",
-  "CSE 448 · Advanced Data Analysis (Sec 1GR) · Spring 2027 · M 15:00-15:50 W 15:00-15:50 F 15:00-15:50",
-  "MACS 503 · Historiography of Cinema · Spring 2027 · W 15:00-17:50"
+  "ECE 211 · Analog Circuits & Systems (Sec E) · Fall 2026 · M 14:00-14:50 T 14:00-14:50 W 14:00-14:50 F 14:00-14:50",
+  "LING 410 · Historical Linguistics (Sec G4) · Fall 2026 · M 09:00-09:50 W 09:00-09:50 F 09:00-09:50",
+  "STAT 510 · Mathematical Statistics · Fall 2026 · T 09:30-10:50 R 09:30-10:50",
+  "CW 100 · Intro to Creative Writing (Sec P) · Spring 2027 · T 11:00-12:15 R 11:00-12:15",
+  "MACS 381 · Black Women and Film · Spring 2027 · M 12:30-13:50 W 12:30-13:50"
  ],
  "spotCheck": {
   "matched": 0,
