@@ -1,0 +1,102 @@
+[
+ {
+  "id": "og_uva_interfraternitycouncil",
+  "name": "Inter-Fraternity Council",
+  "logo": {
+   "emoji": "IF",
+   "hue": 336
+  },
+  "type": "council",
+  "schoolId": "s_uva",
+  "verified": false,
+  "description": "FSL",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://virginia.campuslabs.com/engage/organization/interfraternitycouncil"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.virginiaifc.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ifcuva"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_uva_intersororitycouncil",
+  "name": "Inter-Sorority Council",
+  "logo": {
+   "emoji": "IS",
+   "hue": 48,
+   "url": "https://se-images.campuslabs.com/clink/images/9c86d1e8-3fc5-4b73-b123-727b3801d38f6bcce1c2-071c-4d6d-b9b7-8ece69cb4a22.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_uva",
+  "parent": "Service",
+  "verified": false,
+  "description": "The Inter-Sorority Council (ISC) is the governing body of the 14 National Panhellenic Council (NPC) social sororities on Grounds.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://virginia.campuslabs.com/engage/organization/intersororitycouncil"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.virginiaisc.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/virginiaisc/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_uva_mgc",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288
+  },
+  "type": "council",
+  "schoolId": "s_uva",
+  "verified": false,
+  "description": "MGC",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://virginia.campuslabs.com/engage/organization/mgc"
+   },
+   {
+    "label": "Website",
+    "url": "https://studentaffairs.virginia.edu/subsite/fsl/councils-committees/multicultural-greek-council"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

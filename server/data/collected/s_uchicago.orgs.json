@@ -36,7 +36,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagoacappella"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoacappella@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/acacouncil"
+  }
  },
  {
   "id": "oc_uchicago_active_minds",
@@ -75,7 +79,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagoactiveminds/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "activemindsuchi@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/active-minds"
+  }
  },
  {
   "id": "oc_uchicago_acsa",
@@ -114,7 +122,11 @@
     "label": "X",
     "url": "https://twitter.com/UChicagoACSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "letomk25@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/acsa"
+  }
  },
  {
   "id": "oc_uchicago_aiatuchicago",
@@ -148,7 +160,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/artificial-intelligence-at-uchicago-202662432/?isSelfProfile=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "suiwang@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/aiatuchicago"
+  }
  },
  {
   "id": "oc_uchicago_aikido_kokikai",
@@ -179,7 +195,11 @@
     "label": "Website",
     "url": "https://sites.google.com/view/UC-kokikai/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ethanli@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/aikido-kokikai"
+  }
  },
  {
   "id": "oc_uchicago_ahs",
@@ -213,7 +233,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ahs-uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jacksonslater@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ahs"
+  }
  },
  {
   "id": "oc_uchicago_algo",
@@ -290,7 +314,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagoveggie"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago@alliedscholars.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/alliedscholars"
+  }
  },
  {
   "id": "oc_uchicago_akpsiuchicago",
@@ -333,7 +361,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/akpsiuchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "akpsibetaepsilon@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/akpsiuchicago"
+  }
  },
  {
   "id": "oc_uchicago_apo",
@@ -376,7 +408,11 @@
     "label": "X",
     "url": "https://twitter.com/APOGammaSigma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchi.apo.president@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/apo"
+  }
  },
  {
   "id": "oc_uchicago_acs",
@@ -415,7 +451,11 @@
     "label": "X",
     "url": "https://twitter.com/UofCACS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acs@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/acs"
+  }
  },
  {
   "id": "oc_uchicago_alcsi",
@@ -448,8 +488,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoalcsi"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagoalcsi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tylerw@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/alcsi"
+  }
  },
  {
   "id": "oc_uchicago_amsa",
@@ -488,7 +536,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AMSANational"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iza@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/amsa"
+  }
  },
  {
   "id": "oc_uchicago_redcross",
@@ -519,7 +571,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoredcross/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tdulkis@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/redcross"
+  }
  },
  {
   "id": "oc_uchicago_amnesty",
@@ -558,7 +614,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/amnestyuchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nhu1@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/amnesty"
+  }
  },
  {
   "id": "oc_uchicago_saldf",
@@ -593,7 +653,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagosaldf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagosaldf@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/saldf"
+  }
  },
  {
   "id": "oc_uchicago_ankaramagic",
@@ -627,7 +691,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/ankara.magic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ankaramagicuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ankaramagic"
+  }
  },
  {
   "id": "oc_uchicago_apsara",
@@ -665,8 +733,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCNOXMfpx2nFLZuIA4SwjWeQ"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagoapsara/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoapsara@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/apsara"
+  }
  },
  {
   "id": "oc_uchicago_arabstudentassociation",
@@ -701,7 +777,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UofCASA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arabstudentassociation@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/arabstudentassociation"
+  }
  },
  {
   "id": "oc_uchicago_tango",
@@ -736,7 +816,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/42208194152/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tango@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tango"
+  }
  },
  {
   "id": "oc_uchicago_armenianstudentsassociation",
@@ -767,7 +851,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_asa/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hharoutu@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/armenianstudentsassociation"
+  }
  },
  {
   "id": "oc_uchicago_armyrotc",
@@ -806,7 +894,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoArmyROTC/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "armyrotc@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/armyrotc"
+  }
  },
  {
   "id": "oc_uchicago_artshould",
@@ -841,7 +933,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/ArtShould/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theartshouldteam@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/artshould"
+  }
  },
  {
   "id": "oc_uchicago_aaiv",
@@ -880,7 +976,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/UChicagoAAIV"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoaaiv@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/aaiv"
+  }
  },
  {
   "id": "oc_uchicago_ali",
@@ -918,7 +1018,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/asian-leadership-initiative/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ali.team.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ali"
+  }
  },
  {
   "id": "oc_uchicago_apamsa",
@@ -988,7 +1092,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/226054907590999/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "apf.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/apf"
+  }
  },
  {
   "id": "oc_uchicago_awm",
@@ -1019,7 +1127,11 @@
     "label": "Website",
     "url": "http://math.uchicago.edu/~awm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awm@math.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/awm"
+  }
  },
  {
   "id": "oc_uchicago_abs",
@@ -1084,7 +1196,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagobadminton/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "guanc@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/badminton"
+  }
  },
  {
   "id": "oc_uchicago_uchicagobahai",
@@ -1114,8 +1230,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/uchicago_bahais"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchicago_bahais"
    }
-  ]
+  ],
+  "contact": {
+   "email": "crabbani@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagobahai"
+  }
  },
  {
   "id": "oc_uchicago_blda",
@@ -1162,7 +1286,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCat46g7YIBTcQnBKX4o8fjA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uc.blda@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blda"
+  }
  },
  {
   "id": "oc_uchicago_barbell",
@@ -1192,7 +1320,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_barbell/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "leilakato@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/barbell"
+  }
  },
  {
   "id": "oc_uchicago_bite",
@@ -1235,7 +1367,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bite-culinary-magazine/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagobite@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bite"
+  }
  },
  {
   "id": "oc_uchicago_bapps",
@@ -1270,7 +1406,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bappsatharris/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bapps.harris@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bapps"
+  }
  },
  {
   "id": "oc_uchicago_ball",
@@ -1300,7 +1440,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago.ball/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoball@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ball"
+  }
  },
  {
   "id": "oc_uchicago_blsa",
@@ -1335,7 +1479,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/The-University-of-Chicago-Black-Law-Students-Association/814629971926665"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blsa@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blsa"
+  }
  },
  {
   "id": "oc_uchicago_blackmeninwhitecoats",
@@ -1398,8 +1546,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uofc_bsf"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uofc_bsf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofc.bsf@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blackstudentfellowship"
+  }
  },
  {
   "id": "oc_uchicago_blackgen",
@@ -1433,7 +1589,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/blackgenuchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blackgenuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blackgen"
+  }
  },
  {
   "id": "oc_uchicago_blacklight",
@@ -1472,7 +1632,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/blacklightmag"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blacklightuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blacklight"
+  }
  },
  {
   "id": "oc_uchicago_blockchainchicago",
@@ -1511,7 +1675,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/blockchain-chicago/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "victors@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blockchainchicago"
+  }
  },
  {
   "id": "oc_uchicago_thebluechips",
@@ -1542,7 +1710,11 @@
     "label": "Website",
     "url": "http://www.tbc.uchicago.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagobluechips@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/thebluechips"
+  }
  },
  {
   "id": "oc_uchicago_boxing",
@@ -1611,7 +1783,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoBSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "marinaferreira@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bsa"
+  }
  },
  {
   "id": "oc_uchicago_bridgeclub",
@@ -1646,7 +1822,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagobridge/?eid=ARCxqrzlMmJ5Bpw6PZsu24CODthaP7at_dta-IlrwI45q3Gc3S_cAlEJWLqnvu8j1Kj6w33_jX4zfg5s"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagobridge@googlegroups.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bridgeclub"
+  }
  },
  {
   "id": "oc_uchicago_bridgetocollege",
@@ -1681,7 +1861,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/ucbridgetocollege"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ckruger@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bridgetocollege"
+  }
  },
  {
   "id": "oc_uchicago_bridgeportfreeclinic",
@@ -1716,7 +1900,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bridgeportfreeclinic/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bridgeportfreeclinic@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bridgeportfreeclinic"
+  }
  },
  {
   "id": "oc_uchicago_uchicagobold",
@@ -1759,7 +1947,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicago-bold/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagobold@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagobold"
+  }
  },
  {
   "id": "oc_uchicago_uchicagocadenza",
@@ -1802,7 +1994,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UChicagoCadenzaACappella"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagocadenza@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagocadenza"
+  }
  },
  {
   "id": "oc_uchicago_campkesem",
@@ -1841,7 +2037,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/campkesemuofchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago@kesem.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/campkesem"
+  }
  },
  {
   "id": "oc_uchicago_campuscatalyst",
@@ -1888,7 +2088,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@campuscoordinator5201"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cjliao@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/campuscatalyst"
+  }
  },
  {
   "id": "oc_uchicago_cana",
@@ -1923,7 +2127,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cana_uchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagocana@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cana"
+  }
  },
  {
   "id": "oc_uchicago_catcher",
@@ -1958,7 +2166,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Catcher-in-the-Rhyme-259349454980945/?modal=admin_todo_tour"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagocitr@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/catcher"
+  }
  },
  {
   "id": "oc_uchicago_catholicstudentsassociation",
@@ -1997,7 +2209,11 @@
     "label": "X",
     "url": "https://twitter.com/CalvertHouse"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awetterhan@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/catholicstudentsassociation"
+  }
  },
  {
   "id": "oc_uchicago_csagrad",
@@ -2028,7 +2244,11 @@
     "label": "Website",
     "url": "https://uofccatholic.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "snlandon@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/csagrad"
+  }
  },
  {
   "id": "oc_uchicago_involvement",
@@ -2071,7 +2291,11 @@
     "label": "X",
     "url": "https://twitter.com/ORCSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cli-help@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/involvement"
+  }
  },
  {
   "id": "oc_uchicago_central",
@@ -2136,7 +2360,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/61551630975283"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cass.uofc@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cass"
+  }
  },
  {
   "id": "oc_uchicago_chabad",
@@ -2175,7 +2403,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/jewishmaroons/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chabad@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/chabad"
+  }
  },
  {
   "id": "oc_uchicago_eclabs",
@@ -2205,7 +2437,11 @@
     "label": "Website",
     "url": "https://uchicrel.com/apply/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "darshank@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/eclabs"
+  }
  },
  {
   "id": "oc_uchicago_uccheer",
@@ -2282,6 +2518,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagobenzene"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagobenzene"
    }
   ]
  },
@@ -2318,7 +2558,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/638162799532735/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danielpressman@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/chess"
+  }
  },
  {
   "id": "oc_uchicago_debate",
@@ -2361,7 +2605,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UChicago-debate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jakehirshberg@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/debate"
+  }
  },
  {
   "id": "oc_uchicago_cef",
@@ -2404,7 +2652,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoCEF"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagoeconomicsforum@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cef"
+  }
  },
  {
   "id": "oc_uchicago_ciao",
@@ -2435,7 +2687,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ciao_uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rosenmayr@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ciao"
+  }
  },
  {
   "id": "oc_uchicago_cjfp",
@@ -2482,7 +2738,11 @@
     "label": "X",
     "url": "https://twitter.com/ChiJournalFP"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagojournalfp@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cjfp"
+  }
  },
  {
   "id": "oc_uchicago_cjs",
@@ -2521,7 +2781,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/CJSUChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cjsuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cjs"
+  }
  },
  {
   "id": "oc_uchicago_cji",
@@ -2586,7 +2850,11 @@
     "label": "Website",
     "url": "https://chicagolinguisticsociety.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagolinguisticsociety63@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cls"
+  }
  },
  {
   "id": "oc_uchicago_clara",
@@ -2651,7 +2919,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/chicagoraas?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "captains@chicagoraas.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/chicagoraas"
+  }
  },
  {
   "id": "oc_uchicago_shadydealer",
@@ -2694,7 +2966,11 @@
     "label": "X",
     "url": "http://twitter.com/chishadydealer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagoshadydealer@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/shadydealer"
+  }
  },
  {
   "id": "oc_uchicago_csm",
@@ -2768,7 +3044,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/chicagostudies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagostudies@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/chicagostudies"
+  }
  },
  {
   "id": "oc_uchicago_swing",
@@ -2838,7 +3118,11 @@
     "label": "Website",
     "url": "https://sites.google.com/view/uchicagoccf/home?pli=1"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cscfuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cscf"
+  }
  },
  {
   "id": "oc_uchicago_uchicago_cssa",
@@ -2865,7 +3149,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/uchicago-cssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uccssaofficial@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicago-cssa"
+  }
  },
  {
   "id": "oc_uchicago_cusa",
@@ -2904,7 +3192,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/8431679"
    }
-  ]
+  ],
+  "contact": {
+   "email": "szhou17@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cusa"
+  }
  },
  {
   "id": "oc_uchicago_christiansoncampus",
@@ -2939,7 +3231,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/christians.uchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chrpark@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/christiansoncampus"
+  }
  },
  {
   "id": "oc_uchicago_citystepuchicago",
@@ -2972,8 +3268,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/citystepuchicago"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/citystepuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "citystepuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/citystepuchicago"
+  }
  },
  {
   "id": "oc_uchicago_classical_lecture_society",
@@ -3000,7 +3304,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/classical-lecture-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rciolek@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/classical-lecture-society"
+  }
  },
  {
   "id": "oc_uchicago_bowl",
@@ -3035,7 +3343,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoqb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cbowl@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/bowl"
+  }
  },
  {
   "id": "oc_uchicago_collegecouncil",
@@ -3062,7 +3374,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/collegecouncil"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kevin.guo@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/collegecouncil"
+  }
  },
  {
   "id": "oc_uchicago_republicans",
@@ -3097,7 +3413,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagorepublicans"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mac4@uchciago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/republicans"
+  }
  },
  {
   "id": "oc_uchicago_colombiansatuchicago",
@@ -3128,7 +3448,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/colombiansuchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gabrielag@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/colombiansatuchicago"
+  }
  },
  {
   "id": "oc_uchicago_comertutors",
@@ -3159,7 +3483,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/ComerTutors"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tutorscomer@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/comertutors"
+  }
  },
  {
   "id": "oc_uchicago_uofccommedia",
@@ -3202,7 +3530,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC9wSfihtSwvuULnV26aRD2g/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "attorisenzapaura@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uofccommedia"
+  }
  },
  {
   "id": "oc_uchicago_year",
@@ -3229,7 +3561,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/year"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbrunner@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/year"
+  }
  },
  {
   "id": "oc_uchicago_coup",
@@ -3268,7 +3604,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoCOUP?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wkouki@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/coup"
+  }
  },
  {
   "id": "oc_uchicago_crew",
@@ -3307,7 +3647,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicago.crew"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president@uchicagocrew.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/crew"
+  }
  },
  {
   "id": "oc_uchicago_cricket",
@@ -3338,7 +3682,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/uchicagocricket/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aarkinmenocha@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cricket"
+  }
  },
  {
   "id": "oc_uchicago_cult",
@@ -3403,7 +3751,11 @@
     "label": "X",
     "url": "https://twitter.com/hackuc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagocssac@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cssac"
+  }
  },
  {
   "id": "oc_uchicago_cot",
@@ -3438,7 +3790,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/cupoftheater"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cot_officers@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cot"
+  }
  },
  {
   "id": "oc_uchicago_dance_council",
@@ -3481,7 +3837,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCrYJodX8IR4NmD91Zy2JzxQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.dance.council@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/dance-council"
+  }
  },
  {
   "id": "oc_uchicago_dss",
@@ -3515,7 +3875,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagodss/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.dss@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/dss"
+  }
  },
  {
   "id": "oc_uchicago_uchicagodearasianyouth",
@@ -3554,7 +3918,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/dearasianyouthuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.dearasianyouth@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagodearasianyouth"
+  }
  },
  {
   "id": "oc_uchicago_defenders",
@@ -3580,7 +3948,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/defenders"
    }
-  ]
+  ],
+  "contact": {
+   "email": "defenders@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/defenders"
+  }
  },
  {
   "id": "og_uchicago_deltasigmapi",
@@ -3619,7 +3991,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagodsp/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hjamison@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/deltasigmapi"
+  }
  },
  {
   "id": "oc_uchicago_derivativesgroup",
@@ -3662,7 +4038,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/derivativesgroup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "derivativesgroupboard@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/derivativesgroup"
+  }
  },
  {
   "id": "oc_uchicago_derivatives",
@@ -3696,7 +4076,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/derivativesofdatascience/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago-dds@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/derivatives"
+  }
  },
  {
   "id": "oc_uchicago_formdoesnotacceptdashessocouldnotenterit",
@@ -3735,7 +4119,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC53SZmUV3IEspy5ffBU6uCw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dirtredbrass@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/formdoesnotacceptdashessocouldnotenterit"
+  }
  },
  {
   "id": "oc_uchicago_docfilms",
@@ -3778,7 +4166,11 @@
     "label": "X",
     "url": "https://twitter.com/DocFilmsChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "doc@docfilms.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/docfilms"
+  }
  },
  {
   "id": "oc_uchicago_dogs_lunch",
@@ -3805,7 +4197,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/dogs_lunch"
    }
-  ]
+  ],
+  "contact": {
+   "email": "siruochen@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/dogs_lunch"
+  }
  },
  {
   "id": "oc_uchicago_easa",
@@ -3839,7 +4235,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/easauchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "easauchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/easa"
+  }
  },
  {
   "id": "oc_uchicago_ec",
@@ -3882,7 +4282,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/eckhart-consulting/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "management.eckhart@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ec"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoedge",
@@ -3921,7 +4325,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/uchicago-edge-1746a32b5/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoedge@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoedge"
+  }
  },
  {
   "id": "oc_uchicago_ebs",
@@ -3952,7 +4360,11 @@
     "label": "Website",
     "url": "http://www.law.uchicago.edu/studentorgs/ebs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ebs@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ebs"
+  }
  },
  {
   "id": "oc_uchicago_ecschapter",
@@ -4020,7 +4432,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uofchicagoems/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucems.chief@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucems"
+  }
  },
  {
   "id": "oc_uchicago_es",
@@ -4054,8 +4470,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/es_uchicago"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/es_uchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "intelligence@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/es"
+  }
  },
  {
   "id": "oc_uchicago_enok",
@@ -4094,7 +4518,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/enok/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoenok@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/enok"
+  }
  },
  {
   "id": "oc_uchicago_ejtf",
@@ -4133,7 +4561,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/UChicagoStudentAction"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ejtf.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ejtf"
+  }
  },
  {
   "id": "oc_uchicago_environmental_law",
@@ -4160,7 +4592,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/environmental_law"
    }
-  ]
+  ],
+  "contact": {
+   "email": "els@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/environmental_law"
+  }
  },
  {
   "id": "oc_uchicago_erg",
@@ -4207,7 +4643,11 @@
     "label": "X",
     "url": "https://twitter.com/UCGEG"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicago.erg@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/erg"
+  }
  },
  {
   "id": "oc_uchicago_equestria",
@@ -4234,7 +4674,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/equestria"
    }
-  ]
+  ],
+  "contact": {
+   "email": "skritzler@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/equestria"
+  }
  },
  {
   "id": "oc_uchicago_ethicsbowl",
@@ -4268,8 +4712,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicago.ethicsbowl"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchicagoethicsbowl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoethicsbowl@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ethicsbowl"
+  }
  },
  {
   "id": "oc_uchicago_euphonyjournal",
@@ -4308,7 +4760,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/EuphonyJournal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "euphonyjournal@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/euphonyjournal"
+  }
  },
  {
   "id": "oc_uchicago_everest",
@@ -4342,7 +4798,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/everestsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoeverest@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/everest"
+  }
  },
  {
   "id": "oc_uchicago_excrew",
@@ -4381,7 +4841,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCgJsvez592xw4Sv4GXKqBUg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "excrew.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/excrew"
+  }
  },
  {
   "id": "oc_uchicago_federalist",
@@ -4420,7 +4884,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChiFedSoc?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fedsoc@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/federalist"
+  }
  },
  {
   "id": "oc_uchicago_fca",
@@ -4454,8 +4922,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/510100219041131/?fref=nf"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagofcaia"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sarakoniewicz@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/fca"
+  }
  },
  {
   "id": "oc_uchicago_uchicagofeministforum",
@@ -4486,7 +4962,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ucfeministforum/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofcfeministforum@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagofeministforum"
+  }
  },
  {
   "id": "oc_uchicago_fencing",
@@ -4525,7 +5005,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagofencing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofcfencingprez@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/fencing"
+  }
  },
  {
   "id": "oc_uchicago_uchifota",
@@ -4564,7 +5048,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChiFOTA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fotasubmission@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchifota"
+  }
  },
  {
   "id": "oc_uchicago_fieldhockey",
@@ -4595,7 +5083,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagofhockey?stkn=MWFkc2k2M2p6cHY5aw=="
    }
-  ]
+  ],
+  "contact": {
+   "email": "maldei@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/fieldhockey"
+  }
  },
  {
   "id": "oc_uchicago_filipinostudentassociation",
@@ -4630,7 +5122,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/kbbuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sginsberg@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/filipinostudentassociation"
+  }
  },
  {
   "id": "oc_uchicago_fireescapefilms",
@@ -4677,7 +5173,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCnNU7ciC2bC70N67ACKmmPA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fecommitttee@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/fireescapefilms"
+  }
  },
  {
   "id": "oc_uchicago_firebird",
@@ -4715,8 +5215,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/FirebirdMagazine?mibextid=LQQJ4d"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/firebirdmagazine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "firebirdmag@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/firebird"
+  }
  },
  {
   "id": "oc_uchicago_uofcfolk",
@@ -4759,7 +5267,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC4VPguUhaLOiwYJgispvGYQ/videos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofcfolk@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uofcfolk"
+  }
  },
  {
   "id": "oc_uchicago_foodrecoverynetwork",
@@ -4794,7 +5306,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagofoodrecoverynetwork/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "marnal@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/foodrecoverynetwork"
+  }
  },
  {
   "id": "oc_uchicago_foodrunproject",
@@ -4822,14 +5338,22 @@
     "url": "https://uchicago.campuslabs.com/engage/organization/foodrunproject"
    },
    {
-    "label": "Group chat",
-    "url": "https://chat.whatsapp.com/B7KSEb1NhAb91dSz0wODoX?s=cl&p=i&ilr=0"
+    "label": "Website",
+    "url": "https://voices.uchicago.edu/foodrunproject/"
    },
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/homelessfoodrun"
+   },
+   {
+    "label": "Group chat",
+    "url": "https://chat.whatsapp.com/B7KSEb1NhAb91dSz0wODoX?s=cl&p=i&ilr=0"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nicorose@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/foodrunproject"
+  }
  },
  {
   "id": "oc_uchicago_sae",
@@ -4906,7 +5430,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/universityofchicagofrenchclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagofrenchclub@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/frenchclub"
+  }
  },
  {
   "id": "oc_uchicago_wpyp",
@@ -4937,7 +5465,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/FriendsofWashingtonPark/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fowp.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/wpyp"
+  }
  },
  {
   "id": "oc_uchicago_furries",
@@ -5006,7 +5538,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UChicagoGameDesign"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagogamedesign0@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagogamedesign"
+  }
  },
  {
   "id": "oc_uchicago_uchicagogme",
@@ -5040,7 +5576,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UChicagoGME"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchi.gme@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagogme"
+  }
  },
  {
   "id": "oc_uchicago_gargoyleconsulting",
@@ -5079,7 +5619,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/gargoyle-consulting-club/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gargoyle.consulting.club@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/gargoyleconsulting"
+  }
  },
  {
   "id": "oc_uchicago_www_gatewayoutdoors_org",
@@ -5118,7 +5662,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCsCsOkEurvUfiv7BYFFTmkg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nwmeyer@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/www-gatewayoutdoors-org"
+  }
  },
  {
   "id": "oc_uchicago_genehackers",
@@ -5157,7 +5705,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/genehackers/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "genehackers.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/genehackers"
+  }
  },
  {
   "id": "oc_uchicago_generations",
@@ -5186,8 +5738,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchi.generations"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchi.generations"
    }
-  ]
+  ],
+  "contact": {
+   "email": "generationsvolunteer@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/generations"
+  }
  },
  {
   "id": "oc_uchicago_germanclub",
@@ -5221,8 +5781,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/ucgcp"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchicagogermanclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jepitts@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/germanclub"
+  }
  },
  {
   "id": "oc_uchicago_goclub",
@@ -5260,8 +5828,16 @@
    {
     "label": "YouTube",
     "url": "https://youtube.com/@uchicagogoclub?si=lrhPe4XxqMcBrM1k"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchicagogoclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nahutko@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/goclub"
+  }
  },
  {
   "id": "oc_uchicago_gcf",
@@ -5300,7 +5876,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1504684642985760/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eric.flood@intervarsity.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/gcf"
+  }
  },
  {
   "id": "oc_uchicago_grappling",
@@ -5338,8 +5918,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/300127473524736/"
+   },
+   {
+    "label": "Website",
+    "url": "https://voices.uchicago.edu/brazilianjiujitsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kgoldfinger@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/grappling"
+  }
  },
  {
   "id": "oc_uchicago_groovetheory",
@@ -5378,7 +5966,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC2DbGM0y9bjaCU4VnyICL-Q"
    }
-  ]
+  ],
+  "contact": {
+   "email": "groovetheorycrew@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/groovetheory"
+  }
  },
  {
   "id": "oc_uchicago_changeringers",
@@ -5413,7 +6005,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/changeringers"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ringers@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/changeringers"
+  }
  },
  {
   "id": "oc_uchicago_gymnastics",
@@ -5444,7 +6040,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagogymnasticsclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acharris@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/gymnastics"
+  }
  },
  {
   "id": "oc_uchicago_harriscommunityaction",
@@ -5479,7 +6079,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/company/harris-community-action/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "harriscommunityaction@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/harriscommunityaction"
+  }
  },
  {
   "id": "oc_uchicago_hprep",
@@ -5506,7 +6110,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/hprep"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bryce.hendren-santiago@uchospitals.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/hprep"
+  }
  },
  {
   "id": "oc_uchicago_hsa",
@@ -5567,7 +6175,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/highfidelity"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dylanstermer@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/highfidelity"
+  }
  },
  {
   "id": "oc_uchicago_hindusangam",
@@ -5606,7 +6218,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/Hindu-Student-Sangam/159374347593352"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pratyush2005@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/hindusangam"
+  }
  },
  {
   "id": "oc_uchicago_hlbsc",
@@ -5641,7 +6257,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagohlbsc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagohlbsc@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/hlbsc"
+  }
  },
  {
   "id": "oc_uchicago_hksa",
@@ -5702,7 +6322,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/h4f"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maxwellneri@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/h4f"
+  }
  },
  {
   "id": "oc_uchicago_mens_ice_hockey",
@@ -5737,7 +6361,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagohockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "auerbachm@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mens-ice-hockey"
+  }
  },
  {
   "id": "oc_uchicago_womensicehockey",
@@ -5776,7 +6404,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Chicago-Maroons-Womens-Hockey-725473910887881/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofchockey@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/womensicehockey"
+  }
  },
  {
   "id": "oc_uchicago_sli",
@@ -5803,7 +6435,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/sli"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sli@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sli"
+  }
  },
  {
   "id": "oc_uchicago_indonesian",
@@ -5879,7 +6515,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/c/UChicagoInstituteofPolitics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "politics@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/iop"
+  }
  },
  {
   "id": "oc_uchicago_ilc",
@@ -5914,7 +6554,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/InternationalLeadershipCouncil/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoilc@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ilc"
+  }
  },
  {
   "id": "oc_uchicago_iso",
@@ -5944,7 +6588,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/iso_uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isoboarduchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/iso"
+  }
  },
  {
   "id": "oc_uchicago_jadeuchicago",
@@ -6038,7 +6686,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/jgradschabadatuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rabbimendel@chabaduchicago.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/jgradschabadatuchicago"
+  }
  },
  {
   "id": "oc_uchicago_jrsiuchicago",
@@ -6072,8 +6724,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/jrsiuchicago"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/jrsiuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jrsi@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/jrsiuchicago"
+  }
  },
  {
   "id": "oc_uchicago_journees",
@@ -6099,7 +6759,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/journees"
    }
-  ]
+  ],
+  "contact": {
+   "email": "knhegde@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/journees"
+  }
  },
  {
   "id": "oc_uchicago_judo",
@@ -6134,7 +6798,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/578679758883039/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "judo@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/judo"
+  }
  },
  {
   "id": "oc_uchicago_jelly",
@@ -6200,7 +6868,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagoktp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoktp@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kappa-theta-pi"
+  }
  },
  {
   "id": "oc_uchicago_kendo",
@@ -6243,7 +6915,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCWgHRvmDv6gkS7-WWijobrQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "luobo@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kendo"
+  }
  },
  {
   "id": "oc_uchicago_kheyal",
@@ -6273,7 +6949,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/kheyal_uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tannistha@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kheyal"
+  }
  },
  {
   "id": "oc_uchicago_kitchensink",
@@ -6308,7 +6988,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uckitchensink"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uckitchensink@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kitchensink"
+  }
  },
  {
   "id": "oc_uchicago_kojodaiko",
@@ -6347,7 +7031,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@kojodaiko4214"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kojodaiko@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kojodaiko"
+  }
  },
  {
   "id": "oc_uchicago_kso",
@@ -6386,7 +7074,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagokso/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ekalex@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kso"
+  }
  },
  {
   "id": "oc_uchicago_kreyolclub",
@@ -6415,8 +7107,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/kreyoluchicago"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/kreyoluchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pierrej@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/kreyolclub"
+  }
  },
  {
   "id": "oc_uchicago_mlax",
@@ -6447,7 +7147,11 @@
     "label": "Website",
     "url": "https://www.theglll.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hwatkins@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mlax"
+  }
  },
  {
   "id": "oc_uchicago_lamuchicago",
@@ -6482,7 +7186,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/latin-american-matters-lam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danielagranados@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lamuchicago"
+  }
  },
  {
   "id": "oc_uchicago_llsa",
@@ -6517,7 +7225,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchi.llsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "llsa@law.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/llsa"
+  }
  },
  {
   "id": "oc_uchicago_lmsa",
@@ -6556,7 +7268,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/LMSA.Pritzker/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pritzkerlmsa@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lmsa"
+  }
  },
  {
   "id": "oc_uchicago_alma",
@@ -6585,8 +7301,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/alma_uchicago"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/alma_uchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoalma@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/alma"
+  }
  },
  {
   "id": "oc_uchicago_lawandeconomics",
@@ -6613,7 +7337,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/lawandeconomics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "npr@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lawandeconomics"
+  }
  },
  {
   "id": "oc_uchicago_lawoftheland",
@@ -6640,7 +7368,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/lawoftheland"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mdumm@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lawoftheland"
+  }
  },
  {
   "id": "oc_uchicago_lsfi",
@@ -6670,7 +7402,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagolawstudents4israel/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dmeirowitz@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lsfi"
+  }
  },
  {
   "id": "oc_uchicago_lwc",
@@ -6701,7 +7437,11 @@
     "label": "Website",
     "url": "http://www.law.uchicago.edu/studentorgs/lwc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "law-lso-lwc@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lwc"
+  }
  },
  {
   "id": "oc_uchicago_lawtines",
@@ -6734,8 +7474,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagolawtines/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/uchicagolawtinos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagolawtines@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lawtines"
+  }
  },
  {
   "id": "oc_uchicago_circus",
@@ -6778,7 +7526,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@levorrisvoxcircus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "levorrisandvoxcircus@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/circus"
+  }
  },
  {
   "id": "oc_uchicago_lifeofthemic",
@@ -6813,7 +7565,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Life-of-the-Mic-395981137"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elenae@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/lifeofthemic"
+  }
  },
  {
   "id": "oc_uchicago_uchicagolcm",
@@ -6852,7 +7608,11 @@
     "label": "X",
     "url": "https://twitter.com/UChicagoLCM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "campuspastor@augustanahydepark.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagolcm"
+  }
  },
  {
   "id": "oc_uchicago_mama",
@@ -6925,7 +7685,11 @@
     "label": "X",
     "url": "http://twitter.com/uchicagomab"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagomab@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagomab"
+  }
  },
  {
   "id": "oc_uchicago_masa",
@@ -6960,7 +7724,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoMaSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "weingxi@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/masa"
+  }
  },
  {
   "id": "oc_uchicago_mariashelter",
@@ -6991,7 +7759,11 @@
     "label": "X",
     "url": "https://twitter.com/HLChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rustom@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mariashelter"
+  }
  },
  {
   "id": "oc_uchicago_mc",
@@ -7030,7 +7802,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/13560638/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "marooncapitalboard@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mc"
+  }
  },
  {
   "id": "oc_uchicago_maroontv",
@@ -7073,7 +7849,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/maroontelevision"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maroontelevision@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/maroontv"
+  }
  },
  {
   "id": "oc_uchicago_maroonsforisrael",
@@ -7107,7 +7887,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UniversityofChicagoMaroonsforIsrael/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maroons4israel@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/maroonsforisrael"
+  }
  },
  {
   "id": "oc_uchicago_masaryk",
@@ -7132,6 +7916,10 @@
    {
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/masaryk"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagoczech/"
    },
    {
     "label": "Instagram",
@@ -7172,7 +7960,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchimathclub/?hl=am-et"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mathclub-contact@math.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mathclub"
+  }
  },
  {
   "id": "oc_uchicago_mecha",
@@ -7203,7 +7995,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mechadeuchicago/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mechadeuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mecha"
+  }
  },
  {
   "id": "oc_uchicago_med_ucate",
@@ -7246,7 +8042,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCMlqMHSl0jUUJIG5vv2PZwg/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "meducate.team@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/med-ucate"
+  }
  },
  {
   "id": "oc_uchicago_medlife",
@@ -7281,7 +8081,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/MEDLIFEmedia"
    }
-  ]
+  ],
+  "contact": {
+   "email": "juliaveiga@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/medlife"
+  }
  },
  {
   "id": "oc_uchicago_medusa",
@@ -7324,7 +8128,11 @@
     "label": "X",
     "url": "http://twitter.com/UCMenInDrag"
    }
-  ]
+  ],
+  "contact": {
+   "email": "medusa.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/medusa"
+  }
  },
  {
   "id": "oc_uchicago_memoryhouse",
@@ -7367,7 +8175,11 @@
     "label": "X",
     "url": "https://twitter.com/memoryhousemag"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagomemoryhouse@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/memoryhouse"
+  }
  },
  {
   "id": "oc_uchicago_rfc",
@@ -7402,7 +8214,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagorugby/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rugbyuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rfc"
+  }
  },
  {
   "id": "oc_uchicago_uchicagosquash",
@@ -7441,7 +8257,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoSquash"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagosquash@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagosquash"
+  }
  },
  {
   "id": "oc_uchicago_messa",
@@ -7480,7 +8300,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Chicagocmes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "messalightsjournal@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/messa"
+  }
  },
  {
   "id": "oc_uchicago_midwaveradio",
@@ -7518,7 +8342,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/category/Radio-Station"
    }
-  ]
+  ],
+  "contact": {
+   "email": "midwaveradio@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/midwaveradio"
+  }
  },
  {
   "id": "oc_uchicago_midwayvc",
@@ -7557,7 +8385,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/midwayventures/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "midwayvc@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/midwayvc"
+  }
  },
  {
   "id": "oc_uchicago_mindscapes",
@@ -7587,7 +8419,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchi.mindscapes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchi.mindscapes@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mindscapes"
+  }
  },
  {
   "id": "oc_uchicago_mipps",
@@ -7626,7 +8462,11 @@
     "label": "X",
     "url": "https://twitter.com/HarrisMiPPS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aashni@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mipps"
+  }
  },
  {
   "id": "oc_uchicago_mocktrial",
@@ -7669,7 +8509,11 @@
     "label": "X",
     "url": "http://twitter.com/ucmocktrial"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofcmocktrial@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mocktrial"
+  }
  },
  {
   "id": "oc_uchicago_moda",
@@ -7720,7 +8564,11 @@
     "label": "YouTube",
     "url": "http://youtube.com/modachicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ceciliamerloni@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/moda"
+  }
  },
  {
   "id": "oc_uchicago_munuc",
@@ -7767,7 +8615,11 @@
     "label": "X",
     "url": "https://twitter.com/MUNUC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "secgen@munuc.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/munuc"
+  }
  },
  {
   "id": "oc_uchicago_modelun",
@@ -7810,7 +8662,11 @@
     "label": "X",
     "url": "http://www.twitter.com/ChoMUN_XVI"
    }
-  ]
+  ],
+  "contact": {
+   "email": "secgen@chomun.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/modelun"
+  }
  },
  {
   "id": "oc_uchicago_moneythink",
@@ -7853,7 +8709,11 @@
     "label": "X",
     "url": "https://twitter.com/moneythink"
    }
-  ]
+  ],
+  "contact": {
+   "email": "moneythink.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/moneythink"
+  }
  },
  {
   "id": "oc_uchicago_mootcourt",
@@ -7896,7 +8756,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/moot-court-uchicago-7725141b7/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofcmootcourt@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mootcourt"
+  }
  },
  {
   "id": "oc_uchicago_mmsa",
@@ -7969,7 +8833,11 @@
     "label": "X",
     "url": "https://twitter.com/uchicagomsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msashura@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/msa"
+  }
  },
  {
   "id": "oc_uchicago_ncnw_uccs",
@@ -8038,7 +8906,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nsbeuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hanimn@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/nsbe"
+  }
  },
  {
   "id": "oc_uchicago_neuro",
@@ -8081,7 +8953,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/theNEUROclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theneuroclub@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/neuro"
+  }
  },
  {
   "id": "oc_uchicago_nauc",
@@ -8115,8 +8991,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/NAUCUChicago/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nauchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lguerrero1@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/nauc"
+  }
  },
  {
   "id": "oc_uchicago_nexus",
@@ -8159,7 +9043,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC0stGkkUb2IOHpUWlUz3b5w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagonexus@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/nexus"
+  }
  },
  {
   "id": "oc_uchicago_nigerianstudentsassociation",
@@ -8193,7 +9081,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/uchicagonsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagonsa@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/nigerianstudentsassociation"
+  }
  },
  {
   "id": "oc_uchicago_occamsrazor",
@@ -8232,7 +9124,11 @@
     "label": "X",
     "url": "https://twitter.com/occamsimprov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aitana@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/occamsrazor"
+  }
  },
  {
   "id": "oc_uchicago_oeconomica",
@@ -8275,7 +9171,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/oeconomica/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zhitongz@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/oeconomica"
+  }
  },
  {
   "id": "oc_uchicago_mensultimate",
@@ -8313,8 +9213,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoUltimate/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchi.ultimate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagoultimate@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mensultimate"
+  }
  },
  {
   "id": "oc_uchicago_obs1",
@@ -8349,7 +9257,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/obs_uchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "obsuchicago1968@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/obs1"
+  }
  },
  {
   "id": "oc_uchicago_olas",
@@ -8388,7 +9300,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/pages/OLAS-at-UChicago/272947726060864"
    }
-  ]
+  ],
+  "contact": {
+   "email": "olasboard@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/olas"
+  }
  },
  {
   "id": "oc_uchicago_ocf",
@@ -8423,7 +9339,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/UChicagoOCF"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pmaikkula@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ocf"
+  }
  },
  {
   "id": "oc_uchicago_outforbusiness",
@@ -8453,7 +9373,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ofbuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wfgruen@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/outforbusiness"
+  }
  },
  {
   "id": "oc_uchicago_oac",
@@ -8492,7 +9416,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/389255471158618/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "outdooradventureclub@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/oac"
+  }
  },
  {
   "id": "oc_uchicago_outpatient",
@@ -8525,8 +9453,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_outpatient"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicago_outpatient"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iterrique@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/outpatient"
+  }
  },
  {
   "id": "oc_uchicago_outsidethelines",
@@ -8565,7 +9501,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/109144528222/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "otl.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/outsidethelines"
+  }
  },
  {
   "id": "oc_uchicago_psa",
@@ -8596,7 +9536,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/psauchicago/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msnasir@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/psa"
+  }
  },
  {
   "id": "oc_uchicago_paleoclub",
@@ -8635,7 +9579,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/817368495018941/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccela@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/paleoclub"
+  }
  },
  {
   "id": "oc_uchicago_pama",
@@ -8661,7 +9609,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/pama"
    }
-  ]
+  ],
+  "contact": {
+   "email": "loicmagrou@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pama"
+  }
  },
  {
   "id": "oc_uchicago_panasia",
@@ -8696,7 +9648,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/PanAsiaUChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "panasiasolidaritycoalition@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/panasia"
+  }
  },
  {
   "id": "oc_uchicago_paragonglobalinvestments",
@@ -8734,7 +9690,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/paragoninvestments/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pnguchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/paragonglobalinvestments"
+  }
  },
  {
   "id": "oc_uchicago_paretosolutions",
@@ -8769,7 +9729,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/pareto-solutions-consulting"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uc.paretosolutions@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/paretosolutions"
+  }
  },
  {
   "id": "oc_uchicago_pdi",
@@ -8812,7 +9776,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/paul-douglas-institute/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elayna@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pdi"
+  }
  },
  {
   "id": "oc_uchicago_pediatrichealthandwellness",
@@ -8843,7 +9811,11 @@
     "label": "Website",
     "url": "https://pritzker.uchicago.edu/student-life/washington-park-childrens-free-health-clinic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thewashingtonparkclinic@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pediatrichealthandwellness"
+  }
  },
  {
   "id": "oc_uchicago_pepband",
@@ -8878,7 +9850,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/ucpepband"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchipepband@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pepband"
+  }
  },
  {
   "id": "oc_uchicago_pcs",
@@ -8909,7 +9885,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagopersians/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagopersians@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pcs"
+  }
  },
  {
   "id": "oc_uchicago_pad",
@@ -8943,8 +9923,20 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/paduchicago"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/paduchicago"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/paduchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagophialphadelta@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pad"
+  }
  },
  {
   "id": "oc_uchicago_ucphilosophyreview",
@@ -8979,7 +9971,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ucphilosophyreview/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucprboard@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucphilosophyreview"
+  }
  },
  {
   "id": "oc_uchicago_phoenixdevelopmentfund",
@@ -9018,7 +10014,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/pdfchicago/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phoenixdevelopmentfund.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/phoenixdevelopmentfund"
+  }
  },
  {
   "id": "oc_uchicago_phoenixfarms",
@@ -9053,7 +10053,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ucphoenixfarms"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phoenixfarmschicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/phoenixfarms"
+  }
  },
  {
   "id": "oc_uchicago_phoenixfunds",
@@ -9096,7 +10100,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/phoenixfunds-uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.phoenixfunds@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/phoenixfunds"
+  }
  },
  {
   "id": "oc_uchicago_uchicagogaming",
@@ -9123,7 +10131,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/uchicagogaming"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nneidlinger@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagogaming"
+  }
  },
  {
   "id": "oc_uchicago_phoenixsurvivorsalliance",
@@ -9162,7 +10174,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/phoenixsurvivorsalliance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "contactphoenixsa@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/phoenixsurvivorsalliance"
+  }
  },
  {
   "id": "oc_uchicago_psi",
@@ -9205,7 +10221,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/26547670/admin/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phoenix.initiative.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/psi"
+  }
  },
  {
   "id": "oc_uchicago_phoenixtutoring",
@@ -9244,7 +10264,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/phoenix-tutors"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucphoenixtutoring@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/phoenixtutoring"
+  }
  },
  {
   "id": "oc_uchicago_phoenixbiology",
@@ -9282,8 +10306,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/PhoenixBiology"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicago_phoenixbiology"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pbuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/phoenixbiology"
+  }
  },
  {
   "id": "oc_uchicago_pickleball",
@@ -9360,7 +10392,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@PlatypusAffiliatedSociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alex23@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/platypus"
+  }
  },
  {
   "id": "oc_uchicago_poema",
@@ -9391,7 +10427,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/poema.uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vjarvi@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/poema"
+  }
  },
  {
   "id": "oc_uchicago_pasa",
@@ -9430,7 +10470,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoPASA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kevingibek@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pasa"
+  }
  },
  {
   "id": "oc_uchicago_prism_consulting_group",
@@ -9473,7 +10517,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/prism-consulting-group/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.prismconsulting@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/prism-consulting-group"
+  }
  },
  {
   "id": "oc_uchicago_pltf",
@@ -9507,7 +10555,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/levelthefielduchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "staff@projectlevelthefield.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pltf"
+  }
  },
  {
   "id": "oc_uchicago_projectreproductivefreedom",
@@ -9542,7 +10594,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/UChicagoPRF"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hannahzthier@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/projectreproductivefreedom"
+  }
  },
  {
   "id": "oc_uchicago_promontoryir",
@@ -9585,7 +10641,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/promontory-investment-research/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "promontoryinvestmentresearch@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/promontoryir"
+  }
  },
  {
   "id": "oc_uchicago_pgso",
@@ -9611,7 +10671,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/pgso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sullivanma@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pgso"
+  }
  },
  {
   "id": "oc_uchicago_uc3p",
@@ -9654,7 +10718,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-chicago-public-policy-podcasts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theuc3p@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uc3p"
+  }
  },
  {
   "id": "oc_uchicago_pulse",
@@ -9730,7 +10798,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/quad-capital-management"
    }
-  ]
+  ],
+  "contact": {
+   "email": "admin@uchicagoquad.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/quad"
+  }
  },
  {
   "id": "oc_uchicago_qsaa",
@@ -9759,8 +10831,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/qsaa.uchicago/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/qsaa.uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "madelinemurphy@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/qsaa"
+  }
  },
  {
   "id": "oc_uchicago_rig",
@@ -9799,7 +10879,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicago-Real-Estate-Investment-Group-108705007947362"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riguchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rig"
+  }
  },
  {
   "id": "oc_uchicago_relic",
@@ -9829,7 +10913,11 @@
     "label": "Website",
     "url": "https://uchicagorelic.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagorelic@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/relic"
+  }
  },
  {
   "id": "oc_uchicago_remedy",
@@ -9860,7 +10948,11 @@
     "label": "Website",
     "url": "http://remedyuchicago.weebly.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alysia.martinez@uchicagomedicine.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/remedy"
+  }
  },
  {
   "id": "oc_uchicago_rhythmandjews",
@@ -9894,8 +10986,16 @@
    {
     "label": "YouTube",
     "url": "http://www.youtube.com/@RhythmAndJews"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rhythm_andjews"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rhythmandjews@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rhythmandjews"
+  }
  },
  {
   "id": "oc_uchicago_rbim",
@@ -9934,7 +11034,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChiPerfCO/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccela@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rbim"
+  }
  },
  {
   "id": "oc_uchicago_peeradvisors",
@@ -9960,7 +11064,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/peeradvisors"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagopeeradvisors@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/peeradvisors"
+  }
  },
  {
   "id": "oc_uchicago_womensrugby",
@@ -9999,7 +11107,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoRugby?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tavelm@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/womensrugby"
+  }
  },
  {
   "id": "oc_uchicago_runforcoveracappella",
@@ -10042,7 +11154,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCRFMUFimWNT4jznizWb5gUQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofcrunforcover@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/runforcoveracappella"
+  }
  },
  {
   "id": "oc_uchicago_ruralstudentalliance",
@@ -10076,14 +11192,18 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoRSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rural@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ruralstudentalliance"
+  }
  },
  {
   "id": "oc_uchicago_rusa",
-  "name": "Russian Undergraduate Student Association (RUSA)",
+  "name": "Russian-speaking Student Association",
   "logo": {
-   "emoji": "RU",
-   "hue": 40,
+   "emoji": "RS",
+   "hue": 160,
    "url": "https://se-images.campuslabs.com/clink/images/09765b14-1c4a-47a1-80c0-59eeb9416f7feab7ae99-ae01-41a9-9bfc-9d5d99e54726.JPG?preset=small-sq"
   },
   "type": "club",
@@ -10111,7 +11231,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/620602172272896"
    }
-  ]
+  ],
+  "contact": {
+   "email": "matveichernenko@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rusa"
+  }
  },
  {
   "id": "oc_uchicago_ras",
@@ -10185,7 +11309,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_sailing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sailing@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sailing"
+  }
  },
  {
   "id": "oc_uchicago_ssa",
@@ -10249,7 +11377,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoScav/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoscav@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/scavhunt"
+  }
  },
  {
   "id": "oc_uchicago_sof",
@@ -10276,7 +11408,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/sof"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isaiahgonzalez7@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sof"
+  }
  },
  {
   "id": "oc_uchicago_ucso",
@@ -10311,7 +11447,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoscioly/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoscio@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucso"
+  }
  },
  {
   "id": "oc_uchicago_sdr",
@@ -10345,7 +11485,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_sdr?igsi=ODN1emx1dnc0bHF1"
    }
-  ]
+  ],
+  "contact": {
+   "email": "warmcold@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sdr"
+  }
  },
  {
   "id": "oc_uchicago_seva",
@@ -10470,8 +11614,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagosikhs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagosikhs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "himat@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sikhstudentassociation"
+  }
  },
  {
   "id": "oc_uchicago_singuion",
@@ -10496,6 +11648,10 @@
    {
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/singuion"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicago_spanish_improv"
    },
    {
     "label": "Instagram",
@@ -10532,7 +11688,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/221655804511258"
    }
-  ]
+  ],
+  "contact": {
+   "email": "anze@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/singsoc"
+  }
  },
  {
   "id": "oc_uchicago_slicedbreadmag",
@@ -10571,7 +11731,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/slicedbreadmag/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "editors@slicedbreadmag.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/slicedbreadmag"
+  }
  },
  {
   "id": "oc_uchicago_sws",
@@ -10610,7 +11774,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/pages/University-of-Chicago-Smart-Woman-Securities/216528538444279"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.sws@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sws"
+  }
  },
  {
   "id": "oc_uchicago_societyforinternationalrelations",
@@ -10641,7 +11809,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagosir/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lejury@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/societyforinternationalrelations"
+  }
  },
  {
   "id": "oc_uchicago_sme",
@@ -10680,7 +11852,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoSME/?modal=admin_todo_tour"
    }
-  ]
+  ],
+  "contact": {
+   "email": "akankshavaranasi@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sme"
+  }
  },
  {
   "id": "oc_uchicago_ucsacnas",
@@ -10719,7 +11895,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/in/uc-sacnas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arana8@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucsacnas"
+  }
  },
  {
   "id": "oc_uchicago_sase",
@@ -10757,7 +11937,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/saseconnect/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago@saseconnect.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sase"
+  }
  },
  {
   "id": "oc_uchicago_shpe",
@@ -10796,7 +11980,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/shpe-uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shpe@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/shpe"
+  }
  },
  {
   "id": "oc_uchicago_sps",
@@ -10838,8 +12026,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC20uNasQyKZ69RqchxfIDbw"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/spsuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uphysicschicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sps"
+  }
  },
  {
   "id": "oc_uchicago_swe",
@@ -10874,7 +12070,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoSWE/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yeshetu@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/swe"
+  }
  },
  {
   "id": "oc_uchicago_swip",
@@ -10909,7 +12109,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoswip/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swipuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/swip"
+  }
  },
  {
   "id": "oc_uchicago_women_in_math",
@@ -10944,7 +12148,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagoswim/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.swim@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/women-in-math"
+  }
  },
  {
   "id": "oc_uchicago_aapi",
@@ -10974,8 +12182,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/pritzkersamsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/pritzkersamsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sethis@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/aapi"
+  }
  },
  {
   "id": "oc_uchicago_sasa",
@@ -11014,7 +12230,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoSASA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofc.sasa@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sasa"
+  }
  },
  {
   "id": "oc_uchicago_ssfmp",
@@ -11053,7 +12273,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ssfmp.uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ssfmp.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ssfmp"
+  }
  },
  {
   "id": "oc_uchicago_s4",
@@ -11115,7 +12339,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/southsidescribblers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoscribblers@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/scribblers"
+  }
  },
  {
   "id": "oc_uchicago_spie",
@@ -11146,7 +12374,11 @@
     "label": "Website",
     "url": "https://spie.rso.uchicago.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "renur@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/spie"
+  }
  },
  {
   "id": "oc_uchicago_splash",
@@ -11189,7 +12421,11 @@
     "label": "X",
     "url": "https://twitter.com/SplashChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "splashchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/splash"
+  }
  },
  {
   "id": "oc_uchicago_sports_analytics_group",
@@ -11228,7 +12464,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/602548178274496/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dhruvchopra@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sports-analytics-group"
+  }
  },
  {
   "id": "oc_uchicago_gha",
@@ -11266,8 +12506,16 @@
    {
     "label": "X",
     "url": "https://twitter.com/GlobeMedUofC"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/gha_uchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "global.health.alliance.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/gha"
+  }
  },
  {
   "id": "oc_uchicago_snma_graduate",
@@ -11298,7 +12546,11 @@
     "label": "Website",
     "url": "http://snma.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago@snma.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/snma-graduate"
+  }
  },
  {
   "id": "oc_uchicago_mapsuchicago",
@@ -11341,7 +12593,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCKOO6qc1-wQhIyrDW8cn4Og"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagomaps@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mapsuchicago"
+  }
  },
  {
   "id": "oc_uchicago_sjpalestine",
@@ -11388,7 +12644,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/@sjpuchicago5026"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sjpatuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sjpalestine"
+  }
  },
  {
   "id": "oc_uchicago_suppliesfordreams",
@@ -11419,7 +12679,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagosfd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kkflores@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/suppliesfordreams"
+  }
  },
  {
   "id": "oc_uchicago_uchicagosig",
@@ -11462,7 +12726,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicago-impact-investing-group/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoiig@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagosig"
+  }
  },
  {
   "id": "oc_uchicago_tabletennis",
@@ -11501,7 +12769,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagotabletennis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wongryan@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tabletennis"
+  }
  },
  {
   "id": "oc_uchicago_uchicagotabletop",
@@ -11544,7 +12816,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCr5ZLqaeD2tTP855d_4Qrog/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gwiltshire@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagotabletop"
+  }
  },
  {
   "id": "oc_uchicago_taekwondo",
@@ -11583,7 +12859,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/2200011310/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vialana@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/taekwondo"
+  }
  },
  {
   "id": "oc_uchicago_tasa",
@@ -11618,7 +12898,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagotasa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagotasa@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tasa"
+  }
  },
  {
   "id": "oc_uchicago_taiwan_student",
@@ -11653,7 +12937,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/uchicagotsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yuehmasonlu@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/taiwan-student"
+  }
  },
  {
   "id": "oc_uchicago_tamid",
@@ -11695,7 +12983,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tamid-group-at-the-university-of-chicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago@tamidgroup.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tamid"
+  }
  },
  {
   "id": "oc_uchicago_tap_that",
@@ -11726,7 +13018,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/tapthatuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eherrick@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tap_that"
+  }
  },
  {
   "id": "oc_uchicago_techsavvyfriends",
@@ -11761,7 +13057,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/techsavvyfriends"
    }
-  ]
+  ],
+  "contact": {
+   "email": "techsavvyfriends@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/techsavvyfriends"
+  }
  },
  {
   "id": "oc_uchicago_tennis",
@@ -11804,7 +13104,11 @@
     "label": "X",
     "url": "https://twitter.com/UCTennisClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofctennis@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tennis"
+  }
  },
  {
   "id": "oc_uchicago_thaisa",
@@ -11839,7 +13143,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoThaiSA/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "napats@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/thaisa"
+  }
  },
  {
   "id": "oc_uchicago_blackgradcoalition",
@@ -11874,7 +13182,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoBGC/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "camillet1@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/blackgradcoalition"
+  }
  },
  {
   "id": "oc_uchicago_thechicagoskepticssociety",
@@ -11909,7 +13221,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/theskepticssociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jadynhsiehbailey@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/thechicagoskepticssociety"
+  }
  },
  {
   "id": "oc_uchicago_classicssociety",
@@ -11948,7 +13264,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AnimusClassics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "evasalas@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/classicssociety"
+  }
  },
  {
   "id": "oc_uchicago_ucemergencyfund",
@@ -11978,7 +13298,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ucemergencyfund"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucemergencyfund@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucemergencyfund"
+  }
  },
  {
   "id": "oc_uchicago_theglasseyeball",
@@ -12013,7 +13337,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagophoto/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "photography@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/theglasseyeball"
+  }
  },
  {
   "id": "oc_uchicago_thehistones",
@@ -12044,7 +13372,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC2CL8wfWyTaClTWkt-oMpTg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "histonesuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/thehistones"
+  }
  },
  {
   "id": "oc_uchicago_themark",
@@ -12091,7 +13423,11 @@
     "label": "X",
     "url": "https://twitter.com/TheMarkUChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagothemark@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/themark"
+  }
  },
  {
   "id": "oc_uchicago_theransomnotes",
@@ -12138,7 +13474,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/TheRansomNotes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theransomnotes@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/theransomnotes"
+  }
  },
  {
   "id": "oc_uchicago_southsidefreeclinic",
@@ -12198,7 +13538,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicago.srs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "srsuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/thestudentresearchsociety"
+  }
  },
  {
   "id": "oc_uchicago_thetriplehelix",
@@ -12233,7 +13577,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/tth.uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tth.uchicago.president@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/thetriplehelix"
+  }
  },
  {
   "id": "oc_uchicago_pihengageuchicago",
@@ -12267,7 +13615,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pihengageuchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bousso@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/pihengageuchicago"
+  }
  },
  {
   "id": "oc_uchicago_cmac",
@@ -12306,7 +13658,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/cmacsings"
    }
-  ]
+  ],
+  "contact": {
+   "email": "exec@cmacsings.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cmac"
+  }
  },
  {
   "id": "oc_uchicago_golf",
@@ -12341,7 +13697,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchigolf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "benjaminrandall@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/golf"
+  }
  },
  {
   "id": "oc_uchicago_mexicansatuchicago",
@@ -12380,7 +13740,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12522084/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagomexicanassociation@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/mexicansatuchicago"
+  }
  },
  {
   "id": "oc_uchicago_ucsd",
@@ -12445,7 +13809,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchiteaclub?stkn=aDBhYWM0enp6N2Jt"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mulevicius@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tea-club"
+  }
  },
  {
   "id": "oc_uchicago_visualseries",
@@ -12475,7 +13843,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/visualsuchi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "visualseries.uchi@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/visualseries"
+  }
  },
  {
   "id": "oc_uchicago_tigertalks",
@@ -12502,7 +13874,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/tigertalks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sahas@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tigertalks"
+  }
  },
  {
   "id": "oc_uchicago_tightknit",
@@ -12562,7 +13938,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/trisci4stem"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lolaleafa@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/trisci"
+  }
  },
  {
   "id": "oc_uchicago_turkish",
@@ -12592,8 +13972,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagotsa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagotsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kaacik@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/turkish"
+  }
  },
  {
   "id": "oc_uchicago_tpusa",
@@ -12623,7 +14011,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/tpusauchi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tshas10@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/tpusa"
+  }
  },
  {
   "id": "oc_uchicago_ucdancers",
@@ -12662,7 +14054,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC_MtlQ1Z4rSqG_IjHQIEn_g"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagodancers@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucdancers"
+  }
  },
  {
   "id": "oc_uchicago_ucpsych",
@@ -12697,7 +14093,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uc.psych/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucpsych@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucpsych"
+  }
  },
  {
   "id": "oc_uchicago_uchicago_aag",
@@ -12736,7 +14136,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC0c-X0vBeNBBD7Eu_B5Wdhw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uofc.aag@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicago-aag"
+  }
  },
  {
   "id": "oc_uchicago_able",
@@ -12766,7 +14170,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoable/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoable@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/able"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoacm",
@@ -12804,7 +14212,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/uchicago-acm-b5a88b2a2/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoacm@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoacm"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoafrotc",
@@ -12839,7 +14251,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/DET195AFROTC/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "airforcerotc@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoafrotc"
+  }
  },
  {
   "id": "oc_uchicago_altprotein",
@@ -12877,7 +14293,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-uchicago-alt-protein-project/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nicorose@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/altprotein"
+  }
  },
  {
   "id": "oc_uchicago_barbershop",
@@ -12907,7 +14327,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagobhc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mattbnunez@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/barbershop"
+  }
  },
  {
   "id": "oc_uchicago_ucbea",
@@ -12938,7 +14362,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicago-behavioral-economics-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucbea.info@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucbea"
+  }
  },
  {
   "id": "oc_uchicago_uchicagobhangra",
@@ -12981,7 +14409,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC3XCj-b-IVW0DaUiOfenlVA?"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucbcaptains@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagobhangra"
+  }
  },
  {
   "id": "oc_uchicago_ucba",
@@ -13020,7 +14452,11 @@
     "label": "X",
     "url": "https://twitter.com/UChiBiotech"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagobiotech@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucba"
+  }
  },
  {
   "id": "oc_uchicago_buddhist",
@@ -13059,7 +14495,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ucbuddhist"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kstanisavljevic@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/buddhist"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoceramicsclub",
@@ -13089,8 +14529,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoceramicsclub?igsi=MXZ1c3JkcHo1MGdtaQ%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagoceramicsclub?igsi=MXZ1c3JkcHo1MGdtaQ%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sdespirito@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoceramicsclub"
+  }
  },
  {
   "id": "oc_uchicago_chineseopera",
@@ -13120,7 +14568,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_chinese_opera_society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chineseoperauchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/chineseopera"
+  }
  },
  {
   "id": "oc_uchicago_coffeeclub",
@@ -13176,7 +14628,11 @@
     "label": "Website",
     "url": "https://uccompbio.github.io/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uccompbio@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/computationalbiology"
+  }
  },
  {
   "id": "oc_uchicago_conlangs",
@@ -13210,7 +14666,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchiconlangs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchiconlangs@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/conlangs"
+  }
  },
  {
   "id": "oc_uchicago_countryswing",
@@ -13274,7 +14734,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicago-credit-group/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagocreditgroup@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/creditgroup"
+  }
  },
  {
   "id": "oc_uchicago_cyphers",
@@ -13304,7 +14768,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchi_cyphers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyahdyer@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/cyphers"
+  }
  },
  {
   "id": "oc_uchicago_effectivealtruism",
@@ -13343,7 +14811,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoEA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ea.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/effectivealtruism"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoenergyandclimateclub",
@@ -13372,8 +14844,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/uchicagoecc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchicagoecc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "irisbd@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoenergyandclimateclub"
+  }
  },
  {
   "id": "oc_uchicago_eesa",
@@ -13456,7 +14936,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoiceskating/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "colleenjkim6@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucfs"
+  }
  },
  {
   "id": "oc_uchicago_ucfj",
@@ -13487,7 +14971,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ufj.uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "anabarcinski@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucfj"
+  }
  },
  {
   "id": "oc_uchicago_ucgeo",
@@ -13521,7 +15009,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ucgeoclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "polsinellin@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucgeo"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoharmreductionproject",
@@ -13559,7 +15051,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100092027752711&mibextid=LQQJ4d"
    }
-  ]
+  ],
+  "contact": {
+   "email": "info@uchrp.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoharmreductionproject"
+  }
  },
  {
   "id": "oc_uchicago_uchicagohillel",
@@ -13598,7 +15094,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagohillel"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hillel@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagohillel"
+  }
  },
  {
   "id": "oc_uchicago_uchicagokehillah",
@@ -13624,7 +15124,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/uchicagokehillah"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zmeyer@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagokehillah"
+  }
  },
  {
   "id": "oc_uchicago_magroup",
@@ -13662,7 +15166,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicago-m-a-group/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.ma@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/magroup"
+  }
  },
  {
   "id": "oc_uchicago_mahjong",
@@ -13735,7 +15243,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagonelc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagomajalla@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagomajalla"
+  }
  },
  {
   "id": "oc_uchicago_makersociety",
@@ -13768,7 +15280,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagomakersociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagomaker@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/makersociety"
+  }
  },
  {
   "id": "oc_uchicago_uchicagomaya",
@@ -13811,7 +15327,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/uchicagomaya"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maya.uchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagomaya"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoplus",
@@ -13845,7 +15365,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/uchicagoplus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoplus@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoplus"
+  }
  },
  {
   "id": "oc_uchicago_predentalsociety",
@@ -13875,7 +15399,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagopredental/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gwencbye@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/predentalsociety"
+  }
  },
  {
   "id": "oc_uchicago_uchicagope",
@@ -13910,7 +15438,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/uchicagope/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagope@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagope"
+  }
  },
  {
   "id": "oc_uchicago_ucquantum",
@@ -13953,7 +15485,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/company/uchicago-quantum-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hmayerfield@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucquantum"
+  }
  },
  {
   "id": "oc_uchicago_questbridgescholarsnetwork",
@@ -13988,7 +15524,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicagoQuest/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucquestboard@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/questbridgescholarsnetwork"
+  }
  },
  {
   "id": "oc_uchicago_rationalitygroup",
@@ -14013,7 +15553,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/rationalitygroup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wkyle@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rationalitygroup"
+  }
  },
  {
   "id": "oc_uchicago_roadrunners",
@@ -14047,6 +15591,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoruns/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/uchicagoroadrunners"
    }
   ]
  },
@@ -14087,7 +15635,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagorobotics/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sashamalysheva@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/robotics"
+  }
  },
  {
   "id": "oc_uchicago_rsa",
@@ -14113,7 +15665,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/rsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "todoran@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/rsa"
+  }
  },
  {
   "id": "oc_uchicago_roundnet",
@@ -14147,8 +15703,20 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/uchicagospike"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/uchicagospike/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uchicagospike"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wmcphee@uchiago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/roundnet"
+  }
  },
  {
   "id": "oc_uchicago_uchismash",
@@ -14226,7 +15794,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicago-sp/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sedsuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucsp"
+  }
  },
  {
   "id": "oc_uchicago_biophysicalsociety",
@@ -14254,6 +15826,10 @@
    {
     "label": "Website",
     "url": "https://voices.uchicago.edu/bps/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchibps"
    },
    {
     "label": "Instagram",
@@ -14323,7 +15899,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/uchicagosynapse"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagosynapse@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagosynapse"
+  }
  },
  {
   "id": "oc_uchicago_transitenthusiasts",
@@ -14388,7 +15968,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagotri/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagotri@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/triathlon"
+  }
  },
  {
   "id": "oc_uchicago_uchicagounicef",
@@ -14419,7 +16003,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagounicef/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagounicef@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagounicef"
+  }
  },
  {
   "id": "oc_uchicago_vsa",
@@ -14454,7 +16042,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagovsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagovietsa@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/vsa"
+  }
  },
  {
   "id": "oc_uchicago_worldbuilders",
@@ -14523,7 +16115,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagorigami"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagorigami@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagorigami"
+  }
  },
  {
   "id": "oc_uchicago_uchicomics",
@@ -14554,7 +16150,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/uchicomics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vschoi@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicomics"
+  }
  },
  {
   "id": "oc_uchicago_ukrainian",
@@ -14619,7 +16219,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@uchi_supernova?si=rUuueALASQ7SyXpz"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chicagosupernova@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/womensultimate"
+  }
  },
  {
   "id": "oc_uchicago_uibg",
@@ -14654,7 +16258,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/13553480/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uibguchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uibg"
+  }
  },
  {
   "id": "oc_uchicago_philosophy",
@@ -14689,7 +16297,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UChicago-Philosophy-Club-181361219022422/?fb_dtsg_ag=AdxTybcGOyatozKqi9otVdyCOewgFjl2gFKuRW4Dv-xiDQ%3AAdzn0-8_knBDIKU36jyHR0zXf4XbsXCVM3KUrkoIc3ThWw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagophilosophyclub@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/philosophy"
+  }
  },
  {
   "id": "oc_uchicago_sg",
@@ -14732,7 +16344,11 @@
     "label": "X",
     "url": "http://twitter.com/studentgovt"
    }
-  ]
+  ],
+  "contact": {
+   "email": "usg-records@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/sg"
+  }
  },
  {
   "id": "oc_uchicago_uaiduc",
@@ -14771,7 +16387,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uaid.uchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uc.uaid@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uaiduc"
+  }
  },
  {
   "id": "oc_uchicago_uballet",
@@ -14818,7 +16438,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCPH5YYtXinlj7cMzGjekytA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcbrabrand@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uballet"
+  }
  },
  {
   "id": "oc_uchicago_ucsc",
@@ -14857,7 +16481,11 @@
     "label": "X",
     "url": "https://twitter.com/UCSCatUChicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cpernell@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucsc"
+  }
  },
  {
   "id": "oc_uchicago_christchurch",
@@ -14896,7 +16524,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/universityministrychristchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vjarvi@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/christchurch"
+  }
  },
  {
   "id": "oc_uchicago_archery",
@@ -14923,7 +16555,11 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/archery"
    }
-  ]
+  ],
+  "contact": {
+   "email": "archeryboard@lists.uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/archery"
+  }
  },
  {
   "id": "oc_uchicago_ucaps",
@@ -14965,7 +16601,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-chicago-association-of-peruvian-students-ucaps/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfairbairn@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucaps"
+  }
  },
  {
   "id": "oc_uchicago_uccp",
@@ -14995,7 +16635,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/uchicago.planning/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoplanning@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uccp"
+  }
  },
  {
   "id": "oc_uchicago_waterpolo",
@@ -15026,7 +16670,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ucwaterpolo/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "baylee@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/waterpolo"
+  }
  },
  {
   "id": "oc_uchicago_ucdems",
@@ -15104,7 +16752,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/ucjas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ppallothu@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucjas"
+  }
  },
  {
   "id": "oc_uchicago_ki_aikido",
@@ -15143,7 +16795,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UofCKiAikido"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kagana@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ki-aikido"
+  }
  },
  {
   "id": "oc_uchicago_musicforum",
@@ -15182,7 +16838,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UCMusicForum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aprocaccio@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/musicforum"
+  }
  },
  {
   "id": "oc_uchicago_seasoc",
@@ -15221,7 +16881,11 @@
     "label": "Facebook",
     "url": "https://facebook.com/uchicago.seasoc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tkwee@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/seasoc"
+  }
  },
  {
   "id": "oc_uchicago_uchicagoulm",
@@ -15260,7 +16924,11 @@
     "label": "X",
     "url": "http://twitter.com/uculr"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagoulm@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagoulm"
+  }
  },
  {
   "id": "oc_uchicago_universitytheater",
@@ -15299,7 +16967,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/universitytheater/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ut-committee@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/universitytheater"
+  }
  },
  {
   "id": "oc_uchicago_urock",
@@ -15330,7 +17002,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagoclimbing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "evenetiou@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/urock"
+  }
  },
  {
   "id": "oc_uchicago_ucvc",
@@ -15365,7 +17041,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_velo_club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "owoolford@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/ucvc"
+  }
  },
  {
   "id": "oc_uchicago_vetscholarassociation",
@@ -15396,7 +17076,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/14516381/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicago.veterans@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/vetscholarassociation"
+  }
  },
  {
   "id": "oc_uchicago_viyh",
@@ -15443,7 +17127,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCqBjB_thdMlXUhMiU_uE-bw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucviyh@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/viyh"
+  }
  },
  {
   "id": "oc_uchicago_club_volleyball",
@@ -15482,7 +17170,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/279809745436525/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ochung@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/club_volleyball"
+  }
  },
  {
   "id": "oc_uchicago_whpk",
@@ -15521,7 +17213,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/whpk885"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sm@whpk.org",
+   "source": "https://uchicago.campuslabs.com/engage/organization/whpk"
+  }
  },
  {
   "id": "oc_uchicago_uchicago_windmill",
@@ -15552,7 +17248,11 @@
     "label": "Website",
     "url": "http://www.windmilldrama.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fengchedramaclub@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicago-windmill"
+  }
  },
  {
   "id": "oc_uchicago_wyse",
@@ -15591,7 +17291,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/pages/WYSE-UChicago/118606128152364?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wyseuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/wyse"
+  }
  },
  {
   "id": "oc_uchicago_wibuchicago",
@@ -15634,7 +17338,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/uchicagowib/posts/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagowib@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/wibuchicago"
+  }
  },
  {
   "id": "oc_uchicago_winec",
@@ -15665,7 +17373,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicagowomeninecon/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amallier@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/winec"
+  }
  },
  {
   "id": "oc_uchicago_win",
@@ -15695,7 +17407,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/winuchicago/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "winuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/win"
+  }
  },
  {
   "id": "oc_uchicago_wis",
@@ -15734,7 +17450,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagowis/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womeninscienceuchicago@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/wis"
+  }
  },
  {
   "id": "oc_uchicago_womensquash",
@@ -15764,7 +17484,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uchicago_squash/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagosquash@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/womensquash"
+  }
  },
  {
   "id": "oc_uchicago_womeninchemistry",
@@ -15799,7 +17523,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wicplusuchicago"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vtian@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/womeninchemistry"
+  }
  },
  {
   "id": "oc_uchicago_uchicagowil",
@@ -15834,7 +17562,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/uchicagoWIL/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uchicagowil@gmail.com",
+   "source": "https://uchicago.campuslabs.com/engage/organization/uchicagowil"
+  }
  },
  {
   "id": "oc_uchicago_wwl",
@@ -15860,6 +17592,10 @@
    {
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/wwl"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uchicagowwl"
    },
    {
     "label": "Instagram",
@@ -15892,6 +17628,10 @@
     "label": "Directory",
     "url": "https://uchicago.campuslabs.com/engage/organization/writersworkshop"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hmayerfield@uchicago.edu",
+   "source": "https://uchicago.campuslabs.com/engage/organization/writersworkshop"
+  }
  }
 ]

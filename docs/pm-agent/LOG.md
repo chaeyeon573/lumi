@@ -2515,3 +2515,9 @@
 - Spot check clubs: UCI Habitat for Humanity, Penn State ICLC, Rutgers-Newark WRNU, Miami Méxicanes, NC State Triangle Bengali Association fine (5/5).
 - Spot check courses: 5 random UW Fall 2026 classes (BIOEN 327 Sec B, ENGL 281 Sec E, ESRM 323, CLAS 430 Sec C, MUSEN 446 Sec A) match.
 - Weekly re-collect group 7: UC Davis, UCSC, SF State, SJSU, Santa Clara, USF. The CampusGroups paging fix shows: UC Davis 532→865 groups (links 790→1,292), SJSU 392→407; UCSC 110→133 (school list). 14 delisted kept in orgs-dropped. USF classes 2,330. SF State's class search answered with a 48-byte page during the run (probe error, file untouched); it loads again now - retry later.
+
+## 2026-11-07 16:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Penn Chabad (403 to bots, title matched), Rice Lovett College, Michigan ASMA fine; UGA Delta Sigma Pi site answers 403. UMN Vietnamese Student Association's site (vsaminnesota.org) now shows "National Resource for Network Biology" - domain reused by an unrelated site (not spam, so the scan rules can't see it). Link moved to s_umn.deadlinks.json by hand.
+- Spot check courses: 5 random Harvard Spring 2027 classes (ANTHRO 1821, MATH 213BR, ENGLISH CMMU, MATH 230BR, AFVS 114) match.
+- Weekly re-collect group 8: UChicago 446, Vanderbilt 927→928 (5,087 classes), Michigan 1,757→1,781, UNC 1,236→1,277, UVA 1,025→1,027, Florida 1,193→1,194; links grew at all six (Michigan 4,976→5,192). 29 delisted kept in orgs-dropped. SF State class retry still running; next run.

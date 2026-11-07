@@ -1,0 +1,82 @@
+[
+ {
+  "id": "og_vanderbilt_ifc",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 56,
+   "url": "https://se-images.campuslabs.com/clink/images/7390eb40-869e-4d71-ba64-88679fe56eb0a9d40b17-1191-4502-9bac-a5513bea102c.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_vanderbilt",
+  "parent": "Registered Student Organization",
+  "verified": false,
+  "description": "The Interfraternity Council promotes the interests of fraternities in general, and insures cooperation among the different fraternities on campus.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://vanderbilt.campuslabs.com/engage/organization/ifc"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.vanderbilt.edu/greeklife"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/vuifc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "http://www.facebook.com/vanderbiltgreeklife"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_vanderbilt_panhelleniccouncil",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 296,
+   "url": "https://se-images.campuslabs.com/clink/images/50960c0c-11e4-4824-96bc-3afac1ec89e4d1526bd3-06a4-4c09-a43e-aa8eee0a00dd.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_vanderbilt",
+  "parent": "Registered Student Organization",
+  "verified": false,
+  "description": "The Panhellenic Council at Vanderbilt takes charge of and preserves the high standards of its member sororities on this campus. The Panhellenic Council at Vanderbilt develops and maintains fraternity/sorority life and interfraternity relations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://vanderbilt.campuslabs.com/engage/organization/panhelleniccouncil"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.vanderbilt.edu/greek_life/panhellenic-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/vupanhellenic"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/#!/VUPanhellenic"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

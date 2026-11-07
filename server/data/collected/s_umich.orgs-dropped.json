@@ -1,0 +1,534 @@
+[
+ {
+  "id": "oc_umich_buroaksociety",
+  "name": "Bur Oak Society at the University of Michigan",
+  "logo": {
+   "emoji": "BO",
+   "hue": 280,
+   "url": "https://se-images.campuslabs.com/clink/images/0048907d-00d8-48f4-99a9-2394258b8e1f4c7ecb11-ee7c-483c-8500-972a7ec2f02b.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Cultural/Ethnic",
+  "verified": false,
+  "description": "We engage with the classical intellectual tradition to foster humanities-centered, interdisciplinary scholarship on questions of the meaning and purpose of human life, and promote intellectual friendship in the pursuit of truth.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/buroaksociety"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.buroakfoundation.org/university"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_friendsforstjude",
+  "name": "Friends for St. Jude at UMich",
+  "logo": {
+   "emoji": "FS",
+   "hue": 240,
+   "url": "https://se-images.campuslabs.com/clink/images/7cf9b65c-a6d4-433e-800a-a1f7a5f0e73c4f547172-15e1-4e75-9a49-38c0ff4cb836.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Activism",
+  "verified": false,
+  "description": "We support St. Jude Children's Research Hospital as they improve means of prevention and research cures for pediatric cancer. We primarily host fundraisers to help pay for patient's treatments and advance research.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/friendsforstjude"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/friendsforstjudeumich/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/groups/214897860281743"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umich_ifc",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/4d6ed84c-f10a-478c-89cb-1eb359089edc200fa358-c36e-46f0-ad5a-d3b7f22de6e1.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umich",
+  "parent": "Governance",
+  "verified": false,
+  "description": "The Interfraternity Council (IFC) is the local governing body for National Interfraternity Conference fraternity chapters at the University of Michigan.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/ifc"
+   },
+   {
+    "label": "Website",
+    "url": "https://fsl.umich.edu/topic/interfraternity-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/umich_ifc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_mdurance",
+  "name": "MDurance",
+  "logo": {
+   "emoji": "M",
+   "hue": 130,
+   "url": "https://se-images.campuslabs.com/clink/images/2a677c9a-8258-45f0-a8b4-f0d1a208754be966e7e5-96f6-4e89-a0ea-eb6bf011ba91.jpeg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Graduate/Professional",
+  "verified": false,
+  "description": "We are a community of medical students dedicated to endurance sports, personal growth, and making a meaningful impact. Through collective resources, expert-led discussions, and fundraising, we strive to support one another both on and off the course.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/mdurance"
+   },
+   {
+    "label": "Website",
+    "url": "https://austinjc7.wixsite.com/mdurance"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/mdurance_umms/#"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_mindfulmichigan",
+  "name": "Mindful Michigan",
+  "logo": {
+   "emoji": "MM",
+   "hue": 112,
+   "url": "https://se-images.campuslabs.com/clink/images/972360d1-eef7-49e9-8c54-f4bbbce81f1fc8fcd909-d1ba-40cd-ba20-a189e5ff3ecd.PNG?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Health & Wellness",
+  "verified": false,
+  "description": "Mindful Michigan is a community of like-minded individuals interested in mindfulness and all things surrounding it.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/mindfulmichigan"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/mindful_michigan"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umich_mgc",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/df11a2a4-bc0a-45f7-be5f-3e7b7b743a673d2ed8ee-7f8c-4f43-8695-b7f0779cb1ee.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umich",
+  "parent": "Activism",
+  "verified": false,
+  "description": "The mission of the Multicultural Greek Council shall be to serve all MGC organizations as a support group in their events and communities, to promote multiculturalism and to improve relations between all campus Greeks.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/mgc"
+   },
+   {
+    "label": "Website",
+    "url": "https://fsl.umich.edu/topic/multicultural-greek-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umichmgc/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/UMichFSL/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_notablyblackandgay",
+  "name": "Notably Black and Gay",
+  "logo": {
+   "emoji": "NB",
+   "hue": 320,
+   "url": "https://se-images.campuslabs.com/clink/images/bdb536ef-f029-45a5-9f03-fe44d52bda1aaa1c2231-14b2-4b6a-ae1a-4619fea69eb7.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Activism",
+  "verified": false,
+  "description": "Notably Black and Gay was founded by Alexxus Lige, Kayla Tate, and Laila Kitchen in 2023 to create fellowship and change for and among black queer students, faculty, and staff at the University of Michigan.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/notablyblackandgay"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/nbg_umich"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nbg_umich/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umich_panhel",
+  "name": "Panhellenic Association",
+  "logo": {
+   "emoji": "PA",
+   "hue": 240,
+   "url": "https://se-images.campuslabs.com/clink/images/27cf978f-52e2-4280-aa76-6671d9d20f0422c4cb3f-4fd0-4b9a-9a32-110532d51365.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umich",
+  "parent": "Governance",
+  "verified": false,
+  "description": "The Panhellenic Association is the organization that strives to unite National Panhellenic Conference sororities and work for their common goals. Meetings are held weekly with a delegate from each sorority to share information and discuss concerns.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/panhel"
+   },
+   {
+    "label": "Website",
+    "url": "https://fsl.umich.edu/topic/panhellenic-association"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/panhelumich"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/umpanhel"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/UMichGreekLife"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_scholarsoffinance",
+  "name": "Scholars of Finance",
+  "logo": {
+   "emoji": "SF",
+   "hue": 280,
+   "url": "https://se-images.campuslabs.com/clink/images/841dce08-044c-4d61-acf6-17bca2b0badc33cd0722-de15-4a8f-8645-20e168e879df.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Business & Entrepreneurship",
+  "verified": false,
+  "description": "Scholars of Finance is an organization that develops the next generation of highly capable financial executives, who will act and lead from a strong grounding in principles and ethics.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/scholarsoffinance"
+   },
+   {
+    "label": "Website",
+    "url": "https://scholarsoffinance.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/sof.michigan"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/scholars-of-finance/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_sign",
+  "name": "Student Interest Group in Neurology",
+  "logo": {
+   "emoji": "SI",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/89724888-7783-4c11-9998-bbe3a367fdf34b51b734-7a5e-4f91-83dd-893132d4e2ec.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Academic/Honor Societies",
+  "verified": false,
+  "description": "SIGN is an organization that facilitates medical students' efforts to explore and to connect with the field of neurology.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/sign"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_slb",
+  "name": "Student Leadership Board in IOE",
+  "logo": {
+   "emoji": "SL",
+   "hue": 296,
+   "url": "https://se-images.campuslabs.com/clink/images/f04856e0-4a98-48e7-8c2a-997ef00b1d1d9a71cfbd-671b-4941-b29e-781b77b8a36a.PNG?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Academic/Honor Societies",
+  "verified": false,
+  "description": "The SLB exists to support and encourage the academic, social, and professional pursuits of students in Industrial and Operations Engineering.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/slb"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_studentsforabdul",
+  "name": "Students for Abdul",
+  "logo": {
+   "emoji": "SA",
+   "hue": 208,
+   "url": "https://se-images.campuslabs.com/clink/images/3aaf0912-428e-43f6-9bac-cd5f8baa33b021ce64dd-ff70-4543-a65f-c1d038cf8c0e.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Activism",
+  "verified": false,
+  "description": "Students for Abdul is uaffiliated with Abdul El-Sayed for U.S. Senate. As an organization on campus, we work to engage students in the political process, promote civic education, and build a community of supporters.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/studentsforabdul"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_synchronizedskating",
+  "name": "Synchronized Skating",
+  "logo": {
+   "emoji": "SS",
+   "hue": 208,
+   "url": "https://se-images.campuslabs.com/clink/images/3a517a5e-24e4-4194-925b-87b191dcaffbf8beef4b-8517-4eff-92e9-c68e8dcf5cb5.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Health & Wellness",
+  "verified": false,
+  "description": "The University of Michigan Synchronized Skating Team is a collegiate and open collegiate team, which is entirely student run. The team has medalled at the National Championships the last 13 years. The team is the 2017, 2018, and 2020 national champions.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/synchronizedskating"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/umichsynchro"
+   },
+   {
+    "label": "Facebook",
+    "url": "http://www.facebook.com/uofmsynchroskating?ref=ts"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/UMSST"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/channel/UCtCzW-o_nKeE8fMi8qvw0iw"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_umich_pcap",
+  "name": "The Prison Creative Arts Project Student Organization",
+  "logo": {
+   "emoji": "PC",
+   "hue": 24,
+   "url": "https://se-images.campuslabs.com/clink/images/68a2fea7-873f-4960-b69f-4a86ddd85d66bb81e9d9-4d84-4af6-a926-70730f419607.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_umich",
+  "parent": "Activism",
+  "verified": false,
+  "description": "The Prison Creative Arts Project Student Organization brings those impacted by the justice system and the University of Michigan Community into artistic collaboration for mutual learning and growth.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/pcap"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.prisonarts.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/prisonarts/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/prisonarts"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/channel/UC3wOj5cwgDhRiDNR8zh8f6Q"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_umich_unifiedgreekcouncil",
+  "name": "Unified Greek Council",
+  "logo": {
+   "emoji": "UG",
+   "hue": 40,
+   "url": "https://se-images.campuslabs.com/clink/images/a623d7b8-62ee-43a6-b327-5dd8f8d0c489de2eba40-546c-4427-b8cc-34dfe11cde7a.PNG?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_umich",
+  "parent": "Service/Service Learning",
+  "verified": false,
+  "description": "The Unified Greek Council promotes and protects the interests of the Fraternity and Sorority community and the department of Fraternity and Sorority Life and fosters a shared vision of organizing cross-council initiatives to make a meaningful impact.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://umich.campuslabs.com/engage/organization/unifiedgreekcouncil"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

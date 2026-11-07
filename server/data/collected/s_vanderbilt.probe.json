@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-03T11:39:48.820Z",
+ "checkedAt": "2026-11-07T16:41:22.286Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:vanderbilt",
- "sampled": 5070,
- "withTimes": 5070,
+ "sampled": 5087,
+ "withTimes": 5087,
  "terms": [
   "Fall 2026",
   "Spring 2027"
  ],
  "sample": [
   "CORE 1010 · Being Human (Sec 01) · Fall 2026 · M 08:40-09:55 W 08:40-09:55",
-  "ECON 3035 · Econometric Methods (Sec 03) · Fall 2026 · M 09:05-09:55 W 09:05-09:55 F 09:05-09:55",
-  "MGT 6478 · Business Project Management (Sec 01) · Fall 2026 · T 11:30-13:00 R 11:30-13:00",
-  "SPEDV 7800 · Characteristics of Students with Complex Learning Needs · Fall 2026 · M 16:30-19:20",
-  "ECON 3035 · Econometric Methods (Sec 01) · Spring 2027 · T 09:30-10:45 R 09:30-10:45",
-  "MGT 6574 · Spreadsheets for Business Analytics (Sec 02) · Spring 2027 · T 16:15-17:45 R 16:15-17:45"
+  "ECON 3150 · Topics in the Economic History of the U.S. · Fall 2026 · M 08:40-09:55 W 08:40-09:55",
+  "MGT 6526 · Corporate Strategy (Sec 01) · Fall 2026 · M 14:30-16:00 W 14:30-16:00",
+  "SLP 5301 · Acoustics and Perception of Speech and Speech Disorders · Fall 2026 · M 09:15-12:00",
+  "ECON 3012 · Microeconomics (Sec 03) · Spring 2027 · M 13:25-14:15 W 13:25-14:15 F 13:25-14:15",
+  "MGT 6552 · Project Pyramid · Spring 2027 · M 11:30-13:00 W 11:30-13:00"
  ],
  "spotCheck": {
   "matched": 0,
