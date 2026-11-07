@@ -1,6 +1,25 @@
 {
- "checkedAt": "2026-11-07T15:39:41.906Z",
- "status": "error",
+ "checkedAt": "2026-11-07T23:04:19.769Z",
+ "status": "applied",
  "stored": false,
- "error": "sfsu: no term (page 48 chars, 0 options)"
+ "source": "timetable:sfsu",
+ "sampled": 1487,
+ "withTimes": 1487,
+ "terms": [
+  "Spring 2027",
+  "Fall 2026"
+ ],
+ "sample": [
+  "LTNS 278 · History of Latinas/Latinos in the U.S. · Spring 2027 · W 12:30-13:45",
+  "PHIL 110 · Introduction to Critical Thinking I (Sec 17) · Spring 2027 · T 14:00-15:15 R 14:00-15:15",
+  "RRS 250 · Race, Ethnicity and Power in America (Sec 02) · Spring 2027 · T 12:30-13:45 R 12:30-13:45",
+  "LTNS 276 · Latina/o, U.S. Government, and Constitutional Ideals (Sec 02) · Fall 2026 · M 11:00-12:15 W 11:00-12:15",
+  "PHIL 110 · Introduction to Critical Thinking I (Sec 06) · Fall 2026 · M 12:30-13:45 W 12:30-13:45",
+  "RRS 110 · Critical Thinking and the Ethnic Studies Experience (Sec 15) · Fall 2026 · T 12:30-13:45 R 12:30-13:45"
+ ],
+ "spotCheck": {
+  "matched": 0,
+  "mismatched": [],
+  "unavailable": 0
+ }
 }
