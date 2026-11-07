@@ -2521,3 +2521,10 @@
 - Spot check clubs: Penn Chabad (403 to bots, title matched), Rice Lovett College, Michigan ASMA fine; UGA Delta Sigma Pi site answers 403. UMN Vietnamese Student Association's site (vsaminnesota.org) now shows "National Resource for Network Biology" - domain reused by an unrelated site (not spam, so the scan rules can't see it). Link moved to s_umn.deadlinks.json by hand.
 - Spot check courses: 5 random Harvard Spring 2027 classes (ANTHRO 1821, MATH 213BR, ENGLISH CMMU, MATH 230BR, AFVS 114) match.
 - Weekly re-collect group 8: UChicago 446, Vanderbilt 927→928 (5,087 classes), Michigan 1,757→1,781, UNC 1,236→1,277, UVA 1,025→1,027, Florida 1,193→1,194; links grew at all six (Michigan 4,976→5,192). 29 delisted kept in orgs-dropped. SF State class retry still running; next run.
+
+## 2026-11-07 17:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Background jobs do not survive between runs here (the 16:33 SF State class retry vanished with no output, like NYU/BU/Georgetown earlier). From now on long jobs run inside one run.
+- SF State classes in the foreground: stopped by my 25-minute limit before writing; file untouched (11-03 data). Queued to run in parts with SFSU_SUBJECTS.
+- Spot check clubs: UCI Delta Epsilon Mu, Indiana Citizen Opioid Responders, UNC MAC Student Association, UMD Thai Student Association fine; Michigan German Peer Mentors page answers 403 to bots.
+- Spot check courses: DukeHub answers again; 5 random Duke Spring 2027 classes (PUBPOL 790 Sec 02, LAW 202, POLSCI 350, WRITING 120 Sec 50, SPANISH 303 Sec 05) match. Duke's class re-collect can go next run.
