@@ -247,3 +247,15 @@ test('cleanCollectedOrgs: links into a school login portal (Rutgers-Newark raide
   assert.deepEqual(orgs[0].links!.map((l) => l.label), ['Directory', 'Instagram']);
   assert.equal(badLinks[0].url, 'https://raiderlink.newark.rutgers.edu/RUFF/');
 });
+
+test('cleanCollectedOrgs: retired directory addresses that redirect to a generic page are set aside (clubs.psu.edu, ross.campusgroups.com)', async () => {
+  const { cleanCollectedOrgs } = await import('./sources/orglinks');
+  const orgs = [
+    { id: 'oc_psu_astro', name: 'Astronomy Club', schoolId: 's_psu', type: 'club', links: [{ label: 'Website', url: 'http://www.clubs.psu.edu/up/astro' }, { label: 'Instagram', url: 'https://www.instagram.com/psuastro/' }] },
+    { id: 'oc_umich_aaba', name: 'AABA', schoolId: 's_umich', type: 'club', links: [{ label: 'Website', url: 'https://ross.campusgroups.com/AABA/' }] },
+  ] as never;
+  const r = cleanCollectedOrgs(orgs, '2026-11-07');
+  assert.deepEqual(r.orgs[0].links!.map((l) => l.label), ['Instagram']);
+  assert.deepEqual(r.orgs[1].links, []);
+  assert.equal(r.badLinks.length, 2);
+});

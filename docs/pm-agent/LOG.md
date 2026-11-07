@@ -2444,3 +2444,9 @@
 - Spot check clubs: Michigan TACO, Vanderbilt Entertainment Underground, UConn Notes Over Storrs, UNC MBASA fine. Rutgers-Newark RUFF's "Website" is raiderlink.newark.rutgers.edu, which redirects to a school login (/webapp/auth/login … LOGIN_REQUIRED). 201 of the 231 Rutgers-Newark groups had such a link (added yesterday) - against the no-login-pages rule.
   - `cleanCollectedOrgs` now sets aside links into that login portal (LOGIN_ONLY_RE, test added); applied: 201 links moved to s_rutgersnewark.deadlinks.json. 35 of 231 groups keep a public link besides the directory.
 - Spot check courses: 5 random Duke Fall 2026 classes (CHURHST 750 Sec 12P, ENVIRON 520, CMAC 248, PUBPOL 242, EGRMGMT 560) match DukeHub.
+
+## 2026-11-07 05:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Looked for other school portals behind club "Website" links (hosts used 15+ times per school). Found two retired directory addresses that now redirect to a generic page (checked 4 links each): Penn State clubs.psu.edu → "Student Organizations | Penn State Student Affairs" (36 links), Michigan ross.campusgroups.com → the vendor's sales page (28 links). New RETIRED_RE in cleanCollectedOrgs sets them aside (test added); 64 links moved to deadlinks. The other frequent hosts are ordinary school-hosted club sites (sites.psu.edu, sites.duke.edu, students.washington.edu …).
+- Spot check clubs: NC State IEEE, Penn EDAB, Tulane TIERA, Wisconsin If You're Reading This fine; Clemson "Adobe Digital Studio" is a library facility, typed `department`.
+- Spot check courses: 5 random UW Winter 2027 classes (EDLPS 575, A A 528, HSERV 542, TKISH 202, ASL 102 Sec D) match the UW time schedule.
