@@ -2503,3 +2503,9 @@
 - USC re-collect finished: 1,968 groups (8 delisted kept in orgs-dropped), 11,449 classes (a few cancellations in courses-dropped). NYU still running; NYU, BU and Georgetown next run.
 - Spot check clubs: USC American Cancer Society, UC Davis Genetic Counseling Club, Penn UES, UMD ACM fine. Rice "Transnational Asian Studies" is the academic department (its description says "The Department of …"), typed `department`.
 - Spot check courses: 5 random USC Spring 2027 classes match; OT 101's title had a run of spaces from the source ("Routines      (Sec 48022)"). Found 329 class titles with doubled/edge spaces across 9 schools (e.g. Georgia Tech "Structural  Analysis"). collect-courses now collapses spaces in titles; the 329 fixed in today's files.
+
+## 2026-11-07 14:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- The background re-collect for NYU/BU/Georgetown had stopped without output (no process left; the container was likely restarted) - restarted it. Done: NYU 952 groups (3 delisted kept), BU 432 (2 kept) with 7,914 classes, Georgetown 529. NYU and Georgetown catalog probes read 0 (rejected, nothing changed).
+- Spot check clubs: Notre Dame Harper Cancer Research Institute Society, UChicago Kappa Theta Pi, Indiana Business in Cosmetics, NYU Torch Journal, UT Koinonia fine (5/5).
+- Spot check courses: 5 random Rice Spring 2027 classes (PSYC 571 Sec 007, MATH 211 Sec S02, HART 349, FWIS 274 Sec 002, ELEC 327) match the Rice schedule.

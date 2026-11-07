@@ -105,7 +105,7 @@
    "emoji": "AR",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Academic",
   "verified": false,
@@ -138,7 +138,7 @@
    "emoji": "AS",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -428,7 +428,7 @@
    "emoji": "AS",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -553,7 +553,7 @@
    "emoji": "AB",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -1680,7 +1680,7 @@
    "emoji": "CC",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Pre-Professional",
   "verified": false,
@@ -1897,7 +1897,7 @@
    "emoji": "CO",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -2444,7 +2444,7 @@
    "emoji": "PA",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Academic",
   "verified": false,
@@ -2576,7 +2576,7 @@
    "emoji": "DC",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Academic",
   "verified": false,
@@ -2675,7 +2675,7 @@
    "emoji": "DE",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Academic",
   "verified": false,
@@ -3021,6 +3021,10 @@
    {
     "label": "Directory",
     "url": "https://georgetown.campusgroups.com/student_community?club_id=52354"
+   },
+   {
+    "label": "Website",
+    "url": "https://escape2024-2025.eventbrite.com/"
    }
   ]
  },
@@ -3163,7 +3167,7 @@
    "emoji": "FG",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Advocacy",
   "verified": false,
@@ -3262,7 +3266,7 @@
    "emoji": "FY",
    "hue": 32
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -4700,7 +4704,7 @@
    "emoji": "GI",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -4733,7 +4737,7 @@
    "emoji": "GI",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Political",
   "verified": false,
@@ -5112,6 +5116,10 @@
    {
     "label": "Directory",
     "url": "https://georgetown.campusgroups.com/student_community?club_id=74093"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gulc.law.philosophy"
    }
   ],
   "recruitment": {
@@ -6217,6 +6225,14 @@
    {
     "label": "Directory",
     "url": "https://georgetown.campusgroups.com/student_community?club_id=47065"
+   },
+   {
+    "label": "Website",
+    "url": "http://georgetownrunning.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/run_grc/"
    }
   ],
   "recruitment": {
@@ -6234,7 +6250,7 @@
    "emoji": "GS",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -9987,7 +10003,7 @@
    "emoji": "HE",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Health/Wellness",
   "verified": false,
@@ -10367,14 +10383,7 @@
     "label": "Directory",
     "url": "https://georgetown.campusgroups.com/student_community?club_id=73979"
    }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
+  ]
  },
  {
   "id": "oc_georgetown_cg47294",
@@ -10647,7 +10656,7 @@
    "emoji": "IO",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -11775,7 +11784,7 @@
    "emoji": "LC",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -12586,7 +12595,7 @@
    "emoji": "MV",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Special Interest",
   "verified": false,
@@ -13465,6 +13474,10 @@
    {
     "label": "Directory",
     "url": "https://georgetown.campusgroups.com/student_community?club_id=39925"
+   },
+   {
+    "label": "Website",
+    "url": "https://ideaa.georgetown.edu/notice-of-non-discrimination/"
    }
   ],
   "recruitment": {
@@ -14312,7 +14325,7 @@
    "emoji": "SC",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Special Interest",
   "verified": false,
@@ -14734,7 +14747,7 @@
    "emoji": "SI",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -15413,7 +15426,7 @@
    "emoji": "SS",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Academic",
   "verified": false,
@@ -15611,7 +15624,7 @@
    "emoji": "BC",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,
@@ -15769,7 +15782,7 @@
    "emoji": "CS",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Academic",
   "verified": false,
@@ -16762,7 +16775,7 @@
    "emoji": "WS",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_georgetown",
   "parent": "Leadership",
   "verified": false,

@@ -1,0 +1,95 @@
+[
+ {
+  "id": "og_nyu_interfraternity_council",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/39e27296-94e0-4afc-bf6c-a910d4c33e319e375517-4f43-49a2-a815-d2ee390b1ebf.jpeg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_nyu",
+  "parent": "Community Engagement & Service",
+  "verified": false,
+  "description": "The Interfraternity Council (IFC) serves as the governing body of 7 national Fraternities at NYU.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://nyu.campuslabs.com/engage/organization/interfraternity-council"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_nyu_multicultural_greek_council_mgc",
+  "name": "Multicultural Greek Council (MGC)",
+  "logo": {
+   "emoji": "MG",
+   "hue": 112
+  },
+  "type": "council",
+  "schoolId": "s_nyu",
+  "verified": false,
+  "description": "MGC is dedicated to strengthening the foundation of culture and socialization on the city campus of New York University through the collaboration and partnership of our Greek Organizations. Our Greeks are dedicated to the strengthening of brotherhood a...",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://nyu.campuslabs.com/engage/organization/multicultural-greek-council-mgc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_nyu_panhellenic_council_phc",
+  "name": "Panhellenic Council (PHC)",
+  "logo": {
+   "emoji": "PC",
+   "hue": 120,
+   "url": "https://se-images.campuslabs.com/clink/images/d0abc4a8-52d2-4ce9-9751-b5c10b61827e69cec0a6-bb28-4789-9308-9e59a3e12c5a.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_nyu",
+  "verified": false,
+  "description": "The National Panhellenic Conference is the premier advocacy and support organization for the advancement of the sorority experience.At NYU we have 7 Panhellenic Sororities that fall under this council.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://nyu.campuslabs.com/engage/organization/panhellenic-council-phc"
+   },
+   {
+    "label": "Website",
+    "url": "https://nyupanhel.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyupanhel/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/nyu-panhellenic-council/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

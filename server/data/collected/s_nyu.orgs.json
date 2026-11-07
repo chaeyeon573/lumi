@@ -7,7 +7,7 @@
    "hue": 41,
    "url": "https://se-images.campuslabs.com/clink/images/bfdb7e65-36d6-4ec6-9b2b-463142804c1ba5c01153-ac01-4f78-8383-e26b8ba39977.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Administrative ",
   "verified": false,
@@ -40,7 +40,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-1831-fund"
    }
-  ]
+  ],
+  "contact": {
+   "email": "1831fund@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/1831fund"
+  }
  },
  {
   "id": "oc_nyu_19wsnevents",
@@ -163,7 +167,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/aclassactnyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aclassactnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/a-class-act"
+  }
  },
  {
   "id": "oc_nyu_apabridge",
@@ -200,7 +208,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/APAInstitute"
    }
-  ]
+  ],
+  "contact": {
+   "email": "apa.institute@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/apabridge"
+  }
  },
  {
   "id": "oc_nyu_academic_achievement_program",
@@ -234,7 +246,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aapnyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aap.411@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/academic-achievement-program"
+  }
  },
  {
   "id": "oc_nyu_academy_of_general_dentistry_student_chapter_at_nyu_dentistry",
@@ -273,7 +289,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1965969396989993/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agd.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/academy-of-general-dentistry-student-chapter-at-nyu-dentistry"
+  }
  },
  {
   "id": "oc_nyu_ace_the_health_practitioner_s_society",
@@ -328,7 +348,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/acesarosnyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lgbtq.aces.aros@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/aces-aros"
+  }
  },
  {
   "id": "oc_nyu_actuarial_society",
@@ -366,7 +390,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/actrlsoc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "actrlsoc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/actuarial-society"
+  }
  },
  {
   "id": "oc_nyu_advanced_nursing_student_organization",
@@ -446,6 +474,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/aso.nyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/aso.nyu"
    }
   ]
  },
@@ -490,7 +522,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@nyuafricangraduatestudents3444"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuafricangradsclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuagsa"
+  }
  },
  {
   "id": "oc_nyu_african_heritage_month_all_university",
@@ -532,6 +568,10 @@
    {
     "label": "X",
     "url": "http://twitter.com/AHM_nyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ahm_nyu"
    }
   ]
  },
@@ -564,7 +604,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/asu_nyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.africanstudentsunion@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/african-students-union-all-university"
+  }
  },
  {
   "id": "oc_nyu_aftab_rays_of_light_all_university",
@@ -599,7 +643,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/aftab-literary-magazine/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aftabicnyumagazine@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/aftab-rays-of-light-all-university"
+  }
  },
  {
   "id": "oc_nyu_after_school_improv",
@@ -637,7 +685,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UChJ1LASV1dLeah_f4FEGcVQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afterschoolimprovnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/after-school-improv"
+  }
  },
  {
   "id": "oc_nyu_ahlulbaytstudentassociation",
@@ -698,7 +750,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aiindentistryclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aiindentistryclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/aidentistry"
+  }
  },
  {
   "id": "oc_nyu_albanianatudentassociation",
@@ -729,7 +785,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_asa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shqipeasanyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/albanianatudentassociation"
+  }
  },
  {
   "id": "oc_nyu_all_asian_arts_alliance",
@@ -763,7 +823,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/allasianartsalliance/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "allasianartsalliance@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/all-asian-arts-alliance"
+  }
  },
  {
   "id": "oc_nyu_awsc",
@@ -788,7 +852,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/awsc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.awsc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/awsc"
+  }
  },
  {
   "id": "oc_nyu_gls_aej",
@@ -957,7 +1025,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/alphaomegadental/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "is1369@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/alpha-omega-at-nyu-college-of-dentistry"
+  }
  },
  {
   "id": "og_nyu_alpha_omega_epsilon",
@@ -995,8 +1067,16 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/Alpha-Omega-Epsilon-at-NYU-School-of-Engineering"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/aoenyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyualphaomegaepsilon@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/alpha-omega-epsilon"
+  }
  },
  {
   "id": "og_nyu_alpha_phi_alpha_fraternity_inc_all_university",
@@ -1069,6 +1149,10 @@
    {
     "label": "X",
     "url": "http://twitter.com/APOBetaIota"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/apo_nyu"
    }
   ]
  },
@@ -1105,7 +1189,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/astnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aea9714@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/alpha-sigma-tau-sorority-all-university"
+  }
  },
  {
   "id": "oc_nyu_alumni_7th_street",
@@ -1169,7 +1257,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/alz_nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alznycnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/alzassociationnyu"
+  }
  },
  {
   "id": "oc_nyu_aadmd",
@@ -1259,7 +1351,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/neurosurg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.aans.students@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/neurosurg"
+  }
  },
  {
   "id": "oc_nyu_american_chemical_society",
@@ -1288,8 +1384,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/nyuacs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyuacs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuacs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/american-chemical-society"
+  }
  },
  {
   "id": "oc_nyu_american_dental_education_association_at_nyu_college_of_dentistry",
@@ -1322,8 +1426,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/nyuadea/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/adea_nyucd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuadea@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/american-dental-education-association-at-nyu-college-of-dentistry"
+  }
  },
  {
   "id": "oc_nyu_american_institute_of_chemical_engineers",
@@ -1400,7 +1512,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/nyuamsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuamsa0@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/american-medical-students-association"
+  }
  },
  {
   "id": "oc_nyu_american_medical_women_s_association",
@@ -1426,7 +1542,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/american-medical-women-s-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmb9525@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/american-medical-women-s-association"
+  }
  },
  {
   "id": "oc_nyu_american_sign_language_club",
@@ -1456,7 +1576,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/aslclubatnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aslclubnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/american-sign-language-club"
+  }
  },
  {
   "id": "oc_nyu_asce",
@@ -1495,7 +1619,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/asce-at-nyu/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-asce@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/asce"
+  }
  },
  {
   "id": "oc_nyu_asme",
@@ -1526,7 +1654,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyutandon_asme/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-asme@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/asme"
+  }
  },
  {
   "id": "oc_nyu_american_student_dental_association_at_nyu_college_of_dentistry",
@@ -1587,7 +1719,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AmnestyNYU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.amnesty.club@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/amnesty-international-all-university"
+  }
  },
  {
   "id": "oc_nyu_bte",
@@ -1644,7 +1780,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/anesthesiology-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ej.beck@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/anesthesiology-interest-group"
+  }
  },
  {
   "id": "oc_nyu_ani_v_ata_co_ed_a_capella_group_all_university",
@@ -1683,7 +1823,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/@AniVAtaNYUsPremierJewishACapel"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ani.v.ata.nyu.23@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/ani-v-ata-co-ed-a-capella-group-all-university"
+  }
  },
  {
   "id": "oc_nyu_animal_welfare_collective_all_university",
@@ -1721,7 +1865,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/animalrightscollectivenyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bjd8453@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/animal-welfare-collective-all-university"
+  }
  },
  {
   "id": "oc_nyu_anthropology_undergraduate_student_association",
@@ -1751,7 +1899,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuausa/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aw5275@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/anthropology-undergraduate-student-association"
+  }
  },
  {
   "id": "oc_nyu_antonio_s_army_all_university",
@@ -1813,7 +1965,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/apcrhythm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "al8852@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/apc-rhythm-all-university"
+  }
  },
  {
   "id": "oc_nyu_apug_club",
@@ -1843,7 +1999,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/apug_nyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuapug@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/apug-club"
+  }
  },
  {
   "id": "oc_nyu_applied_urban_science_association",
@@ -1881,8 +2041,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/showcase/cuspausa/?viewAsMember=true"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyu_ausa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-ausa@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/applied-urban-science-association"
+  }
  },
  {
   "id": "oc_nyu_ads",
@@ -2035,7 +2203,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuartistsanonymous/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccc9994@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/artistsanonymous"
+  }
  },
  {
   "id": "oc_nyu_artists_in_action",
@@ -2069,7 +2241,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/artistsinaction"
    }
-  ]
+  ],
+  "contact": {
+   "email": "artistsinaction.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/artists-in-action"
+  }
  },
  {
   "id": "oc_nyu_arts_and_entertainment",
@@ -2096,7 +2272,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/arts-and-entertainment"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prateek.khandelwal@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/arts-and-entertainment"
+  }
  },
  {
   "id": "oc_nyu_ash_advising",
@@ -2146,7 +2326,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/ash_doc_forum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ashdocforum-eboard-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ash_doc_forum"
+  }
  },
  {
   "id": "oc_nyu_asian_american_christian_fellowship_all_university",
@@ -2224,7 +2408,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/nyu.acu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.acu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/asian-cultural-union-all-university"
+  }
  },
  {
   "id": "oc_nyu_asian_fusion_dance_all_university",
@@ -2298,7 +2486,11 @@
     "label": "Facebook",
     "url": "http://facebook.com//nyuahm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.ahm@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/asian-heritage-month-all-university"
+  }
  },
  {
   "id": "oc_nyu_ali",
@@ -2412,8 +2604,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuacmw/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/women.acm.org"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-acmw@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/association-for-computing-machinery-women"
+  }
  },
  {
   "id": "oc_nyu_nyuawm",
@@ -2452,7 +2652,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/association-for-women-in-mathematics-nyu-chapter/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awmundergrad@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuawm"
+  }
  },
  {
   "id": "oc_nyu_asap",
@@ -2482,7 +2686,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/asap_nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steinhardt-asap-list@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/asap"
+  }
  },
  {
   "id": "oc_nyu_astor_place_riots",
@@ -2537,7 +2745,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuastronomyclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuastronomyclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/astronomy-club"
+  }
  },
  {
   "id": "oc_nyu_astudio",
@@ -2597,7 +2809,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nyugsom-asylum-clinic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asylumclinic@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyugsom-asylum-clinic"
+  }
  },
  {
   "id": "oc_nyu_aviation_club_at_nyu",
@@ -2636,7 +2852,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/aviation-club-at-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aviation.club.at.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/aviation-club-at-nyu"
+  }
  },
  {
   "id": "oc_nyu_azerbaijaniamericanyouthfederation",
@@ -2701,7 +2921,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyubaedeker/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyubaedeker@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/baedeker-all-university"
+  }
  },
  {
   "id": "oc_nyu_baha_i_club_all_university",
@@ -2731,7 +2955,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.bahai.club/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mir5465@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/baha-i-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_mexicanfolkloratnyu",
@@ -2761,8 +2989,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyumexfolklorico"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyumexfolklorico"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyufolklorico@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mexicanfolkloratnyu"
+  }
  },
  {
   "id": "oc_nyu_ballroom_and_latin_dance_team_all_university",
@@ -2809,7 +3045,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@nyuballroomteam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuballroom@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ballroom-and-latin-dance-team-all-university"
+  }
  },
  {
   "id": "oc_nyu_bechdeltest",
@@ -2848,7 +3088,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BechdelTestNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bechdeltestnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bechdeltest"
+  }
  },
  {
   "id": "oc_nyu_hillel",
@@ -2879,7 +3123,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/beitsagol/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hillel@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/hillel"
+  }
  },
  {
   "id": "oc_nyu_bella_quisqueya_all_university",
@@ -2913,8 +3161,16 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/BellaQuisqueya"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bellaquisqueyanyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bellaquisqueyanyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bella-quisqueya-all-university"
+  }
  },
  {
   "id": "oc_nyu_bengali_student_association_all_university",
@@ -2949,7 +3205,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BSAnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nib2010@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/bengali-student-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_dibnerlibrary",
@@ -2980,7 +3240,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyudibnerlibrary/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dibner.library@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/dibnerlibrary"
+  }
  },
  {
   "id": "oc_nyu_beta_alpha_psi",
@@ -3018,7 +3282,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bapnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bap@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/beta-alpha-psi"
+  }
  },
  {
   "id": "oc_nyu_blling",
@@ -3056,7 +3324,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/bllingslp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blling-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/blling"
+  }
  },
  {
   "id": "oc_nyu_bioethics_interest_group",
@@ -3118,7 +3390,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyubmes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-bmes@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/biomedical-engineering-society"
+  }
  },
  {
   "id": "oc_nyu_biomimeticsociety",
@@ -3187,7 +3463,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bipoc-op-legal-society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bipoclegalsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bipoclegalsociety"
+  }
  },
  {
   "id": "oc_nyu_bite_club_at_nyu_all_university",
@@ -3222,7 +3502,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-bite-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "biteclubnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bite-club-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_black_and_latinx_students_association",
@@ -3306,7 +3590,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bphn.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bphn027@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bphn"
+  }
  },
  {
   "id": "oc_nyu_black_student_health_association",
@@ -3345,7 +3633,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Black-Student-Health-Association-106500614627538"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyubsha@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/black-student-health-association"
+  }
  },
  {
   "id": "oc_nyu_black_student_union_all_university",
@@ -3380,7 +3672,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bsu.nyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bsunyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/black-student-union-all-university"
+  }
  },
  {
   "id": "oc_nyu_black_women_s_health_collective",
@@ -3410,7 +3706,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_bwhc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gphbwhc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/black-women-s-health-collective"
+  }
  },
  {
   "id": "oc_nyu_black_women_s_social_work_coalition",
@@ -3473,7 +3773,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/blackgennyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blackgennyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/blackgencapital"
+  }
  },
  {
   "id": "oc_nyu_blockchain_and_fintech_club",
@@ -3542,7 +3846,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/70431668"
    }
-  ]
+  ],
+  "contact": {
+   "email": "schack.blueprint@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/blueprint"
+  }
  },
  {
   "id": "oc_nyu_book_buddies",
@@ -3701,7 +4009,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyubridgeclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bridge-spades@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/bridge-and-spades-all-university"
+  }
  },
  {
   "id": "oc_nyu_bps",
@@ -3726,6 +4038,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/bps"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyu.bridge.to.practice?stkn=MXN6N2JsYzIxZXc2cg%3D%3D"
    },
    {
     "label": "Instagram",
@@ -3792,7 +4108,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bridgingsmilesorg/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bridgingsmilesnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bso"
+  }
  },
  {
   "id": "oc_nyu_brittany_hall",
@@ -3863,7 +4183,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCBazFP6UQLbv38FRE9Gh-iQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brokepeopleplayfestivalnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/broke-people-play-festival"
+  }
  },
  {
   "id": "oc_nyu_bronfman_center_for_jewish_student_life",
@@ -3905,7 +4229,11 @@
     "label": "X",
     "url": "http://twitter.com/BronfmanCenter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bronfman.center@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/bronfman-center-for-jewish-student-life"
+  }
  },
  {
   "id": "oc_nyu_brooklyn_research_bloc",
@@ -3932,7 +4260,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/brooklyn-research-bloc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-brb@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/brooklyn-research-bloc"
+  }
  },
  {
   "id": "oc_nyu_broome_street_residential_college",
@@ -3996,7 +4328,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bsb.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brownsugarbrilliance@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/bsb"
+  }
  },
  {
   "id": "oc_nyu_bsms",
@@ -4061,7 +4397,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/nyubuddhismclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyubuddhism.club1@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/buddhism-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_bugs_open_source_at_nyu",
@@ -4168,8 +4508,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-business-and-finance-group/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyubfg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-bfg@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/business-and-finance-group"
+  }
  },
  {
   "id": "oc_nyu_business_analytics_club",
@@ -4246,7 +4594,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/businessofstorytelling"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tc3679@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/businessofstorytelling"
+  }
  },
  {
   "id": "oc_nyu_campgrrl_all_university",
@@ -4281,7 +4633,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/CampGrrl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lgbtq.campgrrl+managers@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/campgrrl-all-university"
+  }
  },
  {
   "id": "oc_nyu_cams_on_campus",
@@ -4315,7 +4671,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/CAMSonCampus/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "camsoncampus.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/cams-on-campus"
+  }
  },
  {
   "id": "oc_nyu_canadiandentalstudentassociation",
@@ -4455,7 +4815,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/cardiothoracic-surgery-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "youngjin.choi@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/cardiothoracic-surgery-interest-group"
+  }
  },
  {
   "id": "oc_nyu_caribbean_students_association_all_university",
@@ -4648,8 +5012,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/cas.collegecohortprogram/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/cas.collegecohortprogram/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.collegeleaders@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cas-ccp"
+  }
  },
  {
   "id": "oc_nyu_cas_external_transfer_students",
@@ -4699,7 +5071,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/casfyadvising"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.newstudents@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/casfyadvising"
+  }
  },
  {
   "id": "oc_nyu_casfye",
@@ -4725,7 +5101,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/casfye"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.firstsecondyear@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/casfye"
+  }
  },
  {
   "id": "oc_nyu_cassye",
@@ -4751,7 +5131,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/cassye"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.firstsecondyear@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cassye"
+  }
  },
  {
   "id": "oc_nyu_cas_student_council",
@@ -4785,7 +5169,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_cassc/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.studentcouncil@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cas-student-council"
+  }
  },
  {
   "id": "oc_nyu_cassc_alumni_relations",
@@ -4980,7 +5368,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-hounds-head-society-at-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradstudents@nyucatholic.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/catholic-graduate-and-law-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_centerfordisabilitystudies",
@@ -5019,7 +5411,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/cdsNYU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kgotkin@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/centerfordisabilitystudies"
+  }
  },
  {
   "id": "oc_nyu_clacs",
@@ -5062,7 +5458,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/clacs-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clacs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/clacs"
+  }
  },
  {
   "id": "oc_nyu_center_for_multicultural_education_programs_office",
@@ -5095,7 +5495,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyucmep/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cmep@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/center-for-multicultural-education-programs-office"
+  }
  },
  {
   "id": "oc_nyu_undergraduateresearch",
@@ -5120,7 +5524,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/undergraduateresearch"
    }
-  ]
+  ],
+  "contact": {
+   "email": "undergraduateresearch@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduateresearch"
+  }
  },
  {
   "id": "oc_nyu_centralamericansforempowerment",
@@ -5150,8 +5558,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucafe"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyucafe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cafeatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/centralamericansforempowerment"
+  }
  },
  {
   "id": "oc_nyu_cah",
@@ -5190,7 +5606,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/central-asian-hub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "centralasia@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cah"
+  }
  },
  {
   "id": "oc_nyu_cheese_club_all_university",
@@ -5221,7 +5641,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucheeseclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucheeseclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/cheese-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_chemists_club",
@@ -5264,7 +5688,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-chemists-club/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chemistclubnyutandon@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/chemists-club"
+  }
  },
  {
   "id": "oc_nyu_chess_club_all_university",
@@ -5377,7 +5805,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.caa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "contact.nyucaa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/caa"
+  }
  },
  {
   "id": "oc_nyu_calligraphy_collective_for_impact",
@@ -5403,7 +5835,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/calligraphy-collective-for-impact"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dw3102@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/calligraphy-collective-for-impact"
+  }
  },
  {
   "id": "oc_nyu_chinese_finance_club",
@@ -5441,7 +5877,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-chinese-finance-club/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuchinesefinanceclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/chinese-finance-club"
+  }
  },
  {
   "id": "oc_nyu_chinese_mei_society_all_university",
@@ -5476,7 +5916,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/cmsnyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cms.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/chinese-mei-society-all-university"
+  }
  },
  {
   "id": "oc_nyu_chinese_student_dental_association",
@@ -5549,7 +5993,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyucss"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucss@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/chinese-student-society-all-university"
+  }
  },
  {
   "id": "oc_nyu_chinese_student_support_group",
@@ -5601,7 +6049,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nyu-tandon-chinese-students-scholars-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hx2493@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-tandon-chinese-students-scholars-association"
+  }
  },
  {
   "id": "oc_nyu_cssa_at_nyu_all_university",
@@ -5632,7 +6084,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/NYUCSSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucssa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/cssa-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_ctmc",
@@ -5689,7 +6145,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/cmda"
    }
-  ]
+  ],
+  "contact": {
+   "email": "david.horton@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/cmda"
+  }
  },
  {
   "id": "oc_nyu_christian_medical_and_dental_association",
@@ -5783,7 +6243,11 @@
     "label": "X",
     "url": "http://twitter.com/nyuzoe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuzoe@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/christians-on-campus-aka-zoe-christian-club"
+  }
  },
  {
   "id": "oc_nyu_circle_k_international_all_university",
@@ -5818,7 +6282,11 @@
     "label": "X",
     "url": "http://twitter.com/nyucirclek"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucirclekinternational@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/circle-k-international-all-university"
+  }
  },
  {
   "id": "oc_nyu_classical_voice_collective",
@@ -5852,7 +6320,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyucvc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucvc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/classical-voice-collective"
+  }
  },
  {
   "id": "oc_nyu_classics_club",
@@ -5886,7 +6358,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/nyuclassicsclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuclassicsclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/classics-club"
+  }
  },
  {
   "id": "oc_nyu_cleftomaniacs_women_a_capella_group_all_university",
@@ -5920,8 +6396,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/user/NYUCleftomaniacs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyucleftos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cleftomaniacs.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/cleftomaniacs-women-a-capella-group-all-university"
+  }
  },
  {
   "id": "oc_nyu_cec",
@@ -5959,7 +6443,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyucec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cec@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cec"
+  }
  },
  {
   "id": "oc_nyu_clive_davis_institute",
@@ -6002,7 +6490,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCthasx0JIWnVdM0PXnPWsQw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tisch.recorded.music@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/clive-davis-institute"
+  }
  },
  {
   "id": "oc_nyu_club_anime_japanese_animation_all_university",
@@ -6078,6 +6570,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/clubeatnyu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/clubeatnyu"
    }
   ]
  },
@@ -6118,7 +6614,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyustudentlife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clublife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/club-student-life-test-club"
+  }
  },
  {
   "id": "oc_nyu_coalition_against_cancer_all_university",
@@ -6156,7 +6656,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/Relay4LifeNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.coalitionagainstcancer@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/coalition-against-cancer-all-university"
+  }
  },
  {
   "id": "oc_nyu_codtest",
@@ -6186,7 +6690,11 @@
     "label": "Website",
     "url": "https://dental.nyu.edu/aboutus/info-alert.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jjl8@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/codtest"
+  }
  },
  {
   "id": "oc_nyu_college_democrats_all_university",
@@ -6225,7 +6733,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-college-democrats/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "democrats.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/college-democrats-all-university"
+  }
  },
  {
   "id": "oc_nyu_college_republicans_all_university",
@@ -6260,7 +6772,11 @@
     "label": "X",
     "url": "http://twitter.com/nyucr"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucollegerepublicans2020@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/college-republicans-all-university"
+  }
  },
  {
   "id": "oc_nyu_comic_book_league_all_university",
@@ -6299,7 +6815,11 @@
     "label": "X",
     "url": "http://twitter.com/nyucomics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chibblerox@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/comic-book-league-all-university"
+  }
  },
  {
   "id": "oc_nyu_comicsans",
@@ -6366,7 +6886,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyucommclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucommclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/communications-club"
+  }
  },
  {
   "id": "oc_nyu_community_agriculture_project_all_university",
@@ -6397,7 +6921,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucommag/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucommag@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/community-agriculture-project-all-university"
+  }
  },
  {
   "id": "oc_nyu_chai",
@@ -6456,7 +6984,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucommuters/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "commuters@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/commuter-assistants"
+  }
  },
  {
   "id": "oc_nyu_commuter_student_council",
@@ -6486,7 +7018,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucsc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/commuter-student-council"
+  }
  },
  {
   "id": "oc_nyu_compass",
@@ -6523,7 +7059,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/compassresearchjournal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "compass.gallatin@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/compass"
+  }
  },
  {
   "id": "oc_nyu_compass_koinonia_all_university",
@@ -6588,7 +7128,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/nyu.cc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucomposerscollective@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/composers-collective"
+  }
  },
  {
   "id": "oc_nyu_construction_management_association_of_america",
@@ -6614,6 +7158,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/construction-management-association-of-america"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyucmaa/"
    },
    {
     "label": "Instagram",
@@ -6662,7 +7210,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCt86-NXS9x9lLIlIMyw5mqg/videos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu@consultyourcommunity.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/consult-your-community-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_cpastudentclub",
@@ -6793,7 +7345,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/csj"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nija.leocadio@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/csj"
+  }
  },
  {
   "id": "oc_nyu_courantcs",
@@ -6819,7 +7375,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/courantcs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "graduate@cs.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/courantcs"
+  }
  },
  {
   "id": "oc_nyu_courier",
@@ -6849,7 +7409,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/couriernyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "couriernyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/courier"
+  }
  },
  {
   "id": "oc_nyu_course_liaisons",
@@ -6899,6 +7463,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/craniofacialortho"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/cranioorthosociety_nyucd"
    },
    {
     "label": "Instagram",
@@ -7128,7 +7696,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-csc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csc@osiris.cyber.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/csc"
+  }
  },
  {
   "id": "oc_nyu_d_d_rpg_club_at_nyu_all_university",
@@ -7163,7 +7735,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ttrpgclubatnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ttrpgclubatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/d-d-rpg-club-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_dancers_and_choreographers_alliance",
@@ -7193,7 +7769,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyudca/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyudca@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/dancers-and-choreographers-alliance"
+  }
  },
  {
   "id": "oc_nyu_dangerbox_all_university",
@@ -7228,7 +7808,11 @@
     "label": "X",
     "url": "http://twitter.com/DangerboxImprov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dangerboxnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/dangerbox-all-university"
+  }
  },
  {
   "id": "oc_nyu_dcim",
@@ -7292,7 +7876,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/data-science-club-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cds-dsc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/dsc"
+  }
  },
  {
   "id": "oc_nyu_dean_s_service_honor_corps",
@@ -7363,8 +7951,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/DEMatNYU"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/dem_alphatau"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dematnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/delta-epsilon-mu"
+  }
  },
  {
   "id": "og_nyu_delta_gamma_all_university",
@@ -7399,7 +7995,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_dg/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dgnyu.president@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/delta-gamma-all-university"
+  }
  },
  {
   "id": "og_nyu_delta_phi_epsilon_sorority_all_university",
@@ -7543,7 +8143,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/dentalhygienestudentgov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dental.dhstudentcouncil@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/dentalhygienestudentgov"
+  }
  },
  {
   "id": "oc_nyu_dental_mindfulness_fitness_society",
@@ -7628,7 +8232,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuarthistory/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arthistory@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/arthistory"
+  }
  },
  {
   "id": "oc_nyu_department_of_athletics_intramurals_and_recreation",
@@ -7670,7 +8278,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/new-york-university-athletics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asf9846@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/department-of-athletics-intramurals-and-recreation"
+  }
  },
  {
   "id": "oc_nyu_eastudies",
@@ -7705,7 +8317,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/easnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eastudies@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/eastudies"
+  }
  },
  {
   "id": "oc_nyu_tischphoto",
@@ -7740,7 +8356,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/tischphoto"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tischphoto@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tischphoto"
+  }
  },
  {
   "id": "oc_nyu_department_of_social_and_cultural_analysis",
@@ -7862,8 +8482,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCvqyLTAaM80hJgc2Difud0w/about"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/posts/dfa-nyu-7a2839270_dfa-nyutandon-studentleadership-activity-7323446928824807425-WE0s?rcm=ACoAACwdM10BdYD4-oF1PrGsmvWHbwoeGm7u55c"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu@designforamerica.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/design-for-america-of-nyu"
+  }
  },
  {
   "id": "oc_nyu_digital_accessibility",
@@ -7894,7 +8522,11 @@
     "label": "Website",
     "url": "https://www.nyu.edu/it/accessibility"
    }
-  ]
+  ],
+  "contact": {
+   "email": "digital-accessibility@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/digital-accessibility"
+  }
  },
  {
   "id": "oc_nyu_digitaldentclub",
@@ -7975,7 +8607,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/facebook.com/nyudillagi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyudillagi@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/dillagi-bollywood-dance-troupe-all-university"
+  }
  },
  {
   "id": "oc_nyu_disability_student_union_at_nyu_all_university",
@@ -7985,7 +8621,7 @@
    "hue": 160,
    "url": "https://se-images.campuslabs.com/clink/images/bd63ce1f-834f-4b4c-9727-4e921998b337e2487ce8-b22f-47be-8df4-8e803476376b.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Cultural & Identity-Based",
   "verified": false,
@@ -8006,7 +8642,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/dsuatnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dsuatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/disability-student-union-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_diversity_affairs",
@@ -8056,7 +8696,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/disc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steinhardt.disc-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/disc"
+  }
  },
  {
   "id": "oc_nyu_dka",
@@ -8090,7 +8734,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/dka_nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "secretary@nyu.dka.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/dka"
+  }
  },
  {
   "id": "oc_nyu_gphdcc",
@@ -8120,7 +8768,11 @@
     "label": "Website",
     "url": "https://publichealth.nyu.edu/students/current/student-life-resources"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gphclublife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gphdcc"
+  }
  },
  {
   "id": "oc_nyu_remnant_christian_fellowship",
@@ -8159,7 +8811,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RemnantWestsideChurch"
    }
-  ]
+  ],
+  "contact": {
+   "email": "college@remnantwestside.net",
+   "source": "https://nyu.campuslabs.com/engage/organization/remnant-christian-fellowship"
+  }
  },
  {
   "id": "oc_nyu_earth_matters_all_university",
@@ -8297,7 +8953,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-economics-review-at-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theeconomicsreview@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/economics-review-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_economics_club_all_university",
@@ -8336,7 +8996,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyuecon/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyueconsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/economics-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_ecuadorian_student_association_all_university",
@@ -8367,7 +9031,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuesa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuxesa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/ecuadorian-student-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_education_studies_student_committee",
@@ -8522,7 +9190,11 @@
     "label": "X",
     "url": "http://twitter.com/encounternyc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "junseob.shim@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/encounter-all-university"
+  }
  },
  {
   "id": "oc_nyu_endoverdose",
@@ -8606,7 +9278,11 @@
     "label": "Website",
     "url": "https://www.nyu.edu/life/information-technology/help-and-service-status/nyu-engage.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "it.engageteam@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-it-engage-support"
+  }
  },
  {
   "id": "oc_nyu_entrepreneurial_exchange_group",
@@ -8639,7 +9315,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.eeg/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eeg@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/entrepreneurial-exchange-group"
+  }
  },
  {
   "id": "oc_nyu_epic",
@@ -8677,7 +9357,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/nyuepic/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.gph.epic@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/epic"
+  }
  },
  {
   "id": "oc_nyu_etchasketch",
@@ -8707,7 +9391,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/etchasketch.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "etchasketchnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/etchasketch"
+  }
  },
  {
   "id": "oc_nyu_ethiopian_eritrean_student_association",
@@ -8742,7 +9430,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyueesa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eesaatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/ethiopian-eritrean-student-association"
+  }
  },
  {
   "id": "oc_nyu_evangelical_student_fellowship",
@@ -8806,7 +9498,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=zy7BMo8reYw&feature=youtu.be"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ss14958@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/every-nation-campus-ministry-all-university"
+  }
  },
  {
   "id": "oc_nyu_falun_dafa_at_nyu_all_university",
@@ -8974,7 +9670,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/femmesinfilmnyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "femmesinfilm@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/femmesinfilm"
+  }
  },
  {
   "id": "oc_nyu_filipinodentalassociation",
@@ -9102,7 +9802,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/fgsoc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.fgsoc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/fgsoc"
+  }
  },
  {
   "id": "oc_nyu_first_performance_performance",
@@ -9158,7 +9862,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.fglis/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyugphfglis@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/fglis"
+  }
  },
  {
   "id": "oc_nyu_flip",
@@ -9189,7 +9897,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/flip_nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "flip.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/flip"
+  }
  },
  {
   "id": "oc_nyu_focus_ophthalmology_interest_group",
@@ -9241,7 +9953,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/fare_collective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "farecollective@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/fare_collective"
+  }
  },
  {
   "id": "oc_nyu_food_and_wine_society",
@@ -9268,7 +9984,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/food-and-wine-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "exj201@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/food-and-wine-society"
+  }
  },
  {
   "id": "oc_nyu_food_studies_graduate_society",
@@ -9305,7 +10025,11 @@
     "label": "X",
     "url": "http://twitter.com//nyu_fsgs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "foodstudiesgradsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/food-studies-graduate-society"
+  }
  },
  {
   "id": "oc_nyu_fdc",
@@ -9369,7 +10093,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/96956011/admin/dashboard/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.forensicpsych@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/forensicpsychclub"
+  }
  },
  {
   "id": "oc_nyu_formula_one_club",
@@ -9432,8 +10160,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/@fossilfuelsemissionslab"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/fmlsketchcomedy/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fmlsketchcomedy@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/fml"
+  }
  },
  {
   "id": "oc_nyu_founders_hall",
@@ -9576,7 +10312,11 @@
     "label": "Website",
     "url": "https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/fubon-center-technology-business-and-innovation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "liz.chen@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/fuboncenter"
+  }
  },
  {
   "id": "oc_nyu_fusion_film_festival",
@@ -9626,7 +10366,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCoX6hnKSQWYVNRgxsQ5LXqA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fusion@fusionfilmfestival.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/fusion-film-festival"
+  }
  },
  {
   "id": "oc_nyu_future_fashion_group_all_university",
@@ -9661,7 +10405,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/futurefashionatnyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "futurefashionnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/future-fashion-group-all-university"
+  }
  },
  {
   "id": "oc_nyu_gallatin_business_society",
@@ -9720,8 +10468,16 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/gallatinfilm?ltsid=3fa3d652-011a-4b68-b60d-f878fcdddd8e"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/gallatinfilm?ltsid=3fa3d652-011a-4b68-b60d-f878fcdddd8e"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinfilm@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatin-film-alliance"
+  }
  },
  {
   "id": "oc_nyu_gallatin_law_society",
@@ -9755,7 +10511,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gallatinlawsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinlawsociety-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatin-law-society"
+  }
  },
  {
   "id": "oc_nyu_gallatinparkinsonspals",
@@ -9781,7 +10541,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/gallatinparkinsonspals"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinparkinsonspals-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatinparkinsonspals"
+  }
  },
  {
   "id": "oc_nyu_gallatinprehealth",
@@ -9810,8 +10574,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_galphs?stkn=ZDNlZDc0MzIxNw%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyu_galphs?stkn=ZDNlZDc0MzIxNw%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinprehealthsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatinprehealth"
+  }
  },
  {
   "id": "oc_nyu_gallatinresearchincubator",
@@ -9845,7 +10617,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gallatinresearchincubator/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinresearchincubator-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatinresearchincubator"
+  }
  },
  {
   "id": "oc_nyu_steamzine",
@@ -9871,7 +10647,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/steamzine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinsteamzine-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/steamzine"
+  }
  },
  {
   "id": "oc_nyu_gallatin_student_council",
@@ -9929,7 +10709,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/gallatinstudentlife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentlife.gallatin@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatinstudentlife"
+  }
  },
  {
   "id": "oc_nyu_gallatinsupperclub",
@@ -9955,7 +10739,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/gallatinsupperclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinsupperclub-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatinsupperclub"
+  }
  },
  {
   "id": "oc_nyu_gallatin_theatre_troupe",
@@ -9985,7 +10773,11 @@
     "label": "Discord",
     "url": "https://discord.com/invite/N7g6jujTQ2"
    }
-  ]
+  ],
+  "contact": {
+   "email": "trp295@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatin-theatre-troupe"
+  }
  },
  {
   "id": "oc_nyu_g4lsa",
@@ -10015,7 +10807,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyugames4learningclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "g4lsa.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/g4lsa"
+  }
  },
  {
   "id": "oc_nyu_genart",
@@ -10045,7 +10841,11 @@
     "label": "Website",
     "url": "https://genartnyu.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "genart@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/genart"
+  }
  },
  {
   "id": "oc_nyu_womxninmusic",
@@ -10079,8 +10879,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/nyu.gem"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyu.gem"
    }
-  ]
+  ],
+  "contact": {
+   "email": "genderequalityinmusicnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/womxninmusic"
+  }
  },
  {
   "id": "oc_nyu_feneralstudentaffairsevents",
@@ -10234,7 +11042,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/girls-who-code-nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-gwc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/girlswhocode"
+  }
  },
  {
   "id": "oc_nyu_glamour_gals_all_university",
@@ -10383,7 +11195,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-center-for-global-spiritual-life-gsl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spiritual.life@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/global-spiritual-life-at-nyu-department"
+  }
  },
  {
   "id": "oc_nyu_goddard_residential_college",
@@ -10509,7 +11325,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/gph-iss/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gphintenationalstudentsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/giss"
+  }
  },
  {
   "id": "oc_nyu_gph_student_governing_council",
@@ -10543,7 +11363,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/CGPH.SGC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gph.sgc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gph-student-governing-council"
+  }
  },
  {
   "id": "oc_nyu_grad_student_ambassadors",
@@ -10641,7 +11465,11 @@
     "label": "LinkedIn",
     "url": "https://linkedin.com/company/nyu-graduate-indian-student-association-gisa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-gisa@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-gisa"
+  }
  },
  {
   "id": "oc_nyu_gsas",
@@ -10697,7 +11525,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_gsas_gsc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsas.gss@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gsas-graduate-student-council-gsc"
+  }
  },
  {
   "id": "oc_nyu_graduate_student_association",
@@ -10860,7 +11692,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/greymattersnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "greymattersnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/greymattersjournal"
+  }
  },
  {
   "id": "oc_nyu_gsasfellowshipsandawards",
@@ -10891,7 +11727,11 @@
     "label": "Website",
     "url": "https://gsas.nyu.edu/financial-support/fellowships.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsas.fellowships@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gsasfellowshipsandawards"
+  }
  },
  {
   "id": "oc_nyu_gsasmasterscollege",
@@ -10920,7 +11760,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gsasmasterscollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsas.masterscollege@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gsasmasterscollege"
+  }
  },
  {
   "id": "oc_nyu_gsasprodevo",
@@ -10975,7 +11819,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyugfc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyugfc.work@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/guitar-fingerstyle-club"
+  }
  },
  {
   "id": "oc_nyu_haitian_american_students_association",
@@ -11014,7 +11862,11 @@
     "label": "X",
     "url": "http://twitter.com/NyuHasa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "1hasanyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/haitian-american-students-association"
+  }
  },
  {
   "id": "oc_nyu_hapa",
@@ -11045,7 +11897,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.hapa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rgs9672@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/hapa"
+  }
  },
  {
   "id": "oc_nyu_hammerkatz_nyu",
@@ -11114,7 +11970,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/haus.of.violets/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hausofviolets@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/hausofviolets"
+  }
  },
  {
   "id": "oc_nyu_hawaii_club_all_university",
@@ -11206,7 +12066,11 @@
     "label": "X",
     "url": "http://twitter.com/HeadlessNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theheadlesssocietynyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/headless-society-the-all-university"
+  }
  },
  {
   "id": "oc_nyu_psychiatry_club",
@@ -11269,8 +12133,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/nyuhhra"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyuhhra/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuhealthhumanrights@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/health-and-human-rights-association"
+  }
  },
  {
   "id": "oc_nyu_hcc",
@@ -11329,8 +12201,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/JI_GPH"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/hapan.gph"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hapan.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/hapan"
+  }
  },
  {
   "id": "oc_nyu_hpaig",
@@ -11412,7 +12292,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuheart2heart/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuh2h@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/heart-to-heart-all-university"
+  }
  },
  {
   "id": "oc_nyu_hellenic_heritage_association_all_university",
@@ -11489,7 +12373,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NYUHESS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuhess@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/hemmes-engineering-student-society"
+  }
  },
  {
   "id": "oc_nyu_hepatitis_project",
@@ -11516,7 +12404,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/hepatitis-project"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eva.abel@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/hepatitis-project"
+  }
  },
  {
   "id": "og_nyu_hermandad_de_sigma_iota_alpha_inc_sor",
@@ -11559,7 +12451,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/NYU_SIA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sia.powerfulphi@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/hermandad-de-sigma-iota-alpha-inc-sor"
+  }
  },
  {
   "id": "oc_nyu_brothers_and_sisters_in_science",
@@ -11585,7 +12481,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/brothers-and-sisters-in-science"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prateek.khandelwal@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/brothers-and-sisters-in-science"
+  }
  },
  {
   "id": "oc_nyu_highvaluecare",
@@ -11676,6 +12576,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/hsda_nyucd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/hsda_nyucd"
    }
   ]
  },
@@ -11703,7 +12607,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/history-of-medicine-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lucy.frucht@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/history-of-medicine-club"
+  }
  },
  {
   "id": "oc_nyu_history_society",
@@ -11737,7 +12645,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyuhistorysociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "historysocietynyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/history-society"
+  }
  },
  {
   "id": "oc_nyu_imbroglio_improvisation_club_all_university",
@@ -11803,7 +12715,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/hksa.nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hksa.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/hong-kong-student-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_horticultural_society",
@@ -12011,7 +12927,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/in2-m2"
    }
-  ]
+  ],
+  "contact": {
+   "email": "in2m2.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/in2-m2"
+  }
  },
  {
   "id": "oc_nyu_indian_cultural_club_all_university",
@@ -12038,7 +12958,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/indian-cultural-club-all-university"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuicc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/indian-cultural-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_indonesian_students_association_all_university",
@@ -12073,7 +12997,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.indonesia/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "indonesia@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/indonesian-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_ink_image",
@@ -12107,7 +13035,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuinkandimage"
    }
-  ]
+  ],
+  "contact": {
+   "email": "inkandimagenyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/ink-image"
+  }
  },
  {
   "id": "oc_nyu_institute_of_electrical_and_electronic_engineers",
@@ -12146,7 +13078,11 @@
     "label": "X",
     "url": "http://twitter.com/IEEEatNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-ieee@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/institute-of-electrical-and-electronic-engineers"
+  }
  },
  {
   "id": "oc_nyu_nyuiiseclub",
@@ -12185,7 +13121,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/iise-nyu-a75002242/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.iise@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuiiseclub"
+  }
  },
  {
   "id": "oc_nyu_institute_of_transportation_engineers",
@@ -12220,7 +13160,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-ite"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-ite@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/institute-of-transportation-engineers"
+  }
  },
  {
   "id": "oc_nyu_inter_club_council",
@@ -12281,10 +13225,14 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/interdisciplinary_encounters"
    }
-  ]
+  ],
+  "contact": {
+   "email": "interdisciplinaryencounters.xe@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/interdisciplinary_encounters"
+  }
  },
  {
-  "id": "og_nyu_interfraternity_council",
+  "id": "oc_nyu_interfraternity_council",
   "name": "Interfraternity Council",
   "logo": {
    "emoji": "IC",
@@ -12334,7 +13282,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/internal-medicine-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "joshua.stams@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/internal-medicine-interest-group"
+  }
  },
  {
   "id": "oc_nyu_iaem",
@@ -12360,7 +13312,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/iaem"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.iaem.club@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/iaem"
+  }
  },
  {
   "id": "oc_nyu_international_business_association",
@@ -12428,8 +13384,16 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/groups/ICCF.NYU/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/iccf_nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cl8550@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/international-chinese-christian-fellowship-at-nyu"
+  }
  },
  {
   "id": "oc_nyu_international_education_student_board",
@@ -12454,7 +13418,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/international-education-student-board"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steinhardt.iesb-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/international-education-student-board"
+  }
  },
  {
   "id": "oc_nyu_international_filipino_association_all_university",
@@ -12497,7 +13465,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCGRDDFBB2faFCXrmAsKbu3w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ifa.eboard@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/international-filipino-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_international_relations_society",
@@ -12531,7 +13503,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuirsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.irsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/international-relations-society"
+  }
  },
  {
   "id": "oc_nyu_international_student_advisory_board",
@@ -12617,7 +13593,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-international-student-council/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.isc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/international-student-council"
+  }
  },
  {
   "id": "oc_nyu_international_students_club",
@@ -12697,7 +13677,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/intersectionalempowermentcoalition"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.iec@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/intersectionalempowermentcoalition"
+  }
  },
  {
   "id": "oc_nyu_investment_analysis_group",
@@ -12791,7 +13775,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/italianclubnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "th3328@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/italian-club-at-nyu"
+  }
  },
  {
   "id": "oc_nyu_italiandentalsociety",
@@ -12878,7 +13866,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.jca/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.jca@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/japanese-cultural-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_jewish_student_union",
@@ -12913,7 +13905,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NYUTandonJSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-jsu@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/jewish-student-union"
+  }
  },
  {
   "id": "oc_nyu_jewish_students_association",
@@ -12940,7 +13936,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/jewish-students-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jonathan.katzman@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/jewish-students-association"
+  }
  },
  {
   "id": "oc_nyu_brademascenter",
@@ -12975,7 +13975,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@nyuwashingtondc2957"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brademas.center@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/brademascenter"
+  }
  },
  {
   "id": "oc_nyu_jpi",
@@ -13014,7 +14018,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/JPInquiry/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jpinquiry@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/jpi"
+  }
  },
  {
   "id": "oc_nyu_k_nesis_all_university",
@@ -13096,7 +14104,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCvQIZR-a_TM3PlRclK9UpwQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "etapikkg@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/kappa-kappa-gamma-sorority-all-university"
+  }
  },
  {
   "id": "og_nyu_kappa_phi_lambda_all_university",
@@ -13328,7 +14340,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/knifedogplayfestival"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jcw9330@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/knifedogplayfestival"
+  }
  },
  {
   "id": "oc_nyu_korean_graduate_students_association_university",
@@ -13367,7 +14383,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/nyukgsa/member-requests"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.kgsa.executive@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/korean-graduate-students-association-university"
+  }
  },
  {
   "id": "oc_nyu_kiso",
@@ -13410,7 +14430,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/nyukiso93"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyukiso1993@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/kiso"
+  }
  },
  {
   "id": "oc_nyu_korean_student_dental_association",
@@ -13467,7 +14491,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.ksa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "askmeaboutksa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/korean-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_la_herencia_latina_all_university",
@@ -13498,7 +14526,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuherencia/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuherencia@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/la-herencia-latina-all-university"
+  }
  },
  {
   "id": "og_nyu_lambdaupsilonlambda",
@@ -13537,7 +14569,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/oclan1994/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cac10199@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/lambdaupsilonlambda"
+  }
  },
  {
   "id": "oc_nyu_lalahaha",
@@ -13636,7 +14672,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/LamplightersNYU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lamplightersnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/lamplighters-all-university"
+  }
  },
  {
   "id": "oc_nyu_lasersindentistry",
@@ -13661,6 +14701,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/lasersindentistry"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyucd.lasers"
    },
    {
     "label": "Instagram",
@@ -13692,7 +14736,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/gphlinen"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyugphlinen@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/gphlinen"
+  }
  },
  {
   "id": "oc_nyu_latinidad",
@@ -13722,7 +14770,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/latinidadnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latinidadnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/latinidad"
+  }
  },
  {
   "id": "oc_nyu_lmsa",
@@ -13749,7 +14801,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/lmsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "carlos.mendezcruz@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/lmsa"
+  }
  },
  {
   "id": "oc_nyu_latinopre_healthsociety",
@@ -13778,8 +14834,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/nyulphs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyulphs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyulatinoprehealthsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/latinopre-healthsociety"
+  }
  },
  {
   "id": "oc_nyu_latinx_social_work_student_organization",
@@ -13844,7 +14908,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyulaya/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "layaatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/laya"
+  }
  },
  {
   "id": "oc_nyu_lgbtqclinicalclub",
@@ -13900,7 +14968,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_leagueoflinguistics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyulols2020@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/league-of-linguistics-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_lebanese_club_all_university",
@@ -13934,6 +15006,10 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/lebaneseclubatnyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/lebaneseclubnyu"
    }
   ]
  },
@@ -13988,7 +15064,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/lgbtq-people-in-medicine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "matthew.sandifer@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/lgbtq-people-in-medicine"
+  }
  },
  {
   "id": "oc_nyu_ls_economics_club",
@@ -14044,7 +15124,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/lslawcooperative/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jar10195@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ls-law-co-op"
+  }
  },
  {
   "id": "oc_nyu_liberal_studies_student_council",
@@ -14104,7 +15188,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/philosotea"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nk77@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ls-tea-and-philosophy"
+  }
  },
  {
   "id": "oc_nyu_lmig",
@@ -14186,7 +15274,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/literacymattersnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuliteracymatters@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/literacy-matters-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_lotus_lounge_all_university",
@@ -14221,7 +15313,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyulotuslounge"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsd@bhakticenter.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/lotus-lounge-all-university"
+  }
  },
  {
   "id": "oc_nyu_latinos_unidos_con_honor_y_amistad_all_university",
@@ -14388,7 +15484,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/NYUMalaysians"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyumysa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/malaysian-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_management_consulting_group",
@@ -14429,7 +15529,11 @@
     "label": "X",
     "url": "http://twitter.com/SternMCG"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcg@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/management-consulting-group"
+  }
  },
  {
   "id": "oc_nyu_mariachivioletas",
@@ -14463,7 +15567,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mariachi_nyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyumariachi@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mariachivioletas"
+  }
  },
  {
   "id": "oc_nyu_marketing_society",
@@ -14535,7 +15643,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/gphmarketplace"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gph.marketplace@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gphmarketplace"
+  }
  },
  {
   "id": "oc_nyu_mass_transit_men_a_capella_all_university",
@@ -14621,7 +15733,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/MedicalDialogueReview"
    }
-  ]
+  ],
+  "contact": {
+   "email": "medicaldialogue@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/medical-dialogue-md-all-university"
+  }
  },
  {
   "id": "oc_nyu_medical_student_doulas",
@@ -14647,7 +15763,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/medical-student-doulas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "doula.hotline@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/medical-student-doulas"
+  }
  },
  {
   "id": "oc_nyu_emiag",
@@ -14674,7 +15794,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/emiag"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rachael.hutson@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/emiag"
+  }
  },
  {
   "id": "oc_nyu_msfc",
@@ -14728,7 +15852,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/msdci"
    }
-  ]
+  ],
+  "contact": {
+   "email": "annie.liu3@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/msdci"
+  }
  },
  {
   "id": "oc_nyu_mexsa_all_university",
@@ -14762,8 +15890,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyumexsa/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/NYUMexSA?ltsid=f7619e2f-7a19-4bf2-9d4a-6289417654e2"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyumexsa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mexsa-all-university"
+  }
  },
  {
   "id": "oc_nyu_middle_east_business_association",
@@ -14840,7 +15976,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/middleschoolbasis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "martin.bouldo@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/middleschoolbasis"
+  }
  },
  {
   "id": "oc_nyu_military_alliance_community_center",
@@ -14899,7 +16039,11 @@
     "label": "X",
     "url": "http://twitter.com/MinettaReview"
    }
-  ]
+  ],
+  "contact": {
+   "email": "minettareviewmag@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/minetta-review-the-all-university"
+  }
  },
  {
   "id": "oc_nyu_mapss",
@@ -14930,7 +16074,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/mapssatnyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mapss.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mapss"
+  }
  },
  {
   "id": "oc_nyu_mixtapes_the_co_ed_a_capella_group_all_university",
@@ -14972,8 +16120,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/user/TheMixtapes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/themixtapesnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "themixtapes@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mixtapes-the-co-ed-a-capella-group-all-university"
+  }
  },
  {
   "id": "oc_nyu_mock_trial_at_nyu_all_university",
@@ -15020,7 +16176,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/nyumocktrial"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyumocktrialprogram@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mock-trial-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_model_united_nations_all_university",
@@ -15055,7 +16215,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/NYUModelUN"
    }
-  ]
+  ],
+  "contact": {
+   "email": "modelun.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/model-united-nations-all-university"
+  }
  },
  {
   "id": "oc_nyu_moutheatre",
@@ -15114,11 +16278,15 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/mpapcommunity"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/mpapcommunity"
    }
   ]
  },
  {
-  "id": "og_nyu_multicultural_greek_council_mgc",
+  "id": "oc_nyu_multicultural_greek_council_mgc",
   "name": "Multicultural Greek Council (MGC)",
   "logo": {
    "emoji": "MG",
@@ -15165,7 +16333,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/mpapase"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mpap-advisors@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/mpapase"
+  }
  },
  {
   "id": "oc_nyu_mpap",
@@ -15229,7 +16401,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/musba/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "musicbusinessambassadors@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/mbusambassadors"
+  }
  },
  {
   "id": "oc_nyu_music_technology_student_ambassadors",
@@ -15357,8 +16533,16 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/groups/234087236715222/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/mgsg.nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyumgsg@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/muslim-graduate-student-group-mgsg-all-university"
+  }
  },
  {
   "id": "oc_nyu_msanyugsom",
@@ -15384,7 +16568,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/msanyugsom"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sara.abul-khoudoud@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/msanyugsom"
+  }
  },
  {
   "id": "oc_nyu_muslim_students_association_all_university",
@@ -15504,7 +16692,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/thenyunharmonics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nharmzprez@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/n-harmonics"
+  }
  },
  {
   "id": "oc_nyu_nasha_south_asian_dance_troupe_all_university",
@@ -15535,7 +16727,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyunasha/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyunasha@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nasha-south-asian-dance-troupe-all-university"
+  }
  },
  {
   "id": "oc_nyu_nbaslh",
@@ -15600,7 +16796,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/nyunsbe/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.nyupoly@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/national-society-of-black-engineers"
+  }
  },
  {
   "id": "oc_nyu_nsslha",
@@ -15630,7 +16830,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyugradnsslha/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradnsslhanyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nsslha"
+  }
  },
  {
   "id": "oc_nyu_nyu_nsslha",
@@ -15660,7 +16864,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyunsslha/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsslha.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-nsslha"
+  }
  },
  {
   "id": "oc_nyu_native_american_and_indigenous_students_group_nyu",
@@ -15694,8 +16902,16 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/naisg.nyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyu.naisg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.naisg@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/native-american-and-indigenous-students-group-nyu"
+  }
  },
  {
   "id": "oc_nyu_navigators_ecumenical_all_university",
@@ -15752,6 +16968,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.nsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyu.nsa"
    }
   ]
  },
@@ -15791,7 +17011,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyunetimpact"
    }
-  ]
+  ],
+  "contact": {
+   "email": "impact@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/net-impact"
+  }
  },
  {
   "id": "oc_nyu_nbc",
@@ -15841,7 +17065,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nevermind-the-noise-composer-collective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steinhardt-gso-nevermindthenoise@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nevermind-the-noise-composer-collective"
+  }
  },
  {
   "id": "oc_nyu_new_major_records",
@@ -15875,7 +17103,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/newmajorrecords/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "newmajorrecords@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/new-major-records"
+  }
  },
  {
   "id": "oc_nyu_new_masculinities",
@@ -15906,7 +17138,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyunewmasculinities/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lgbtq.new.masculinities@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/new-masculinities"
+  }
  },
  {
   "id": "oc_nyu_dance_marathon_nydm",
@@ -15943,8 +17179,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/NYDMnyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nydmnyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nydm2026@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/dance-marathon-nydm"
+  }
  },
  {
   "id": "oc_nyu_new_york_machine_learning_club",
@@ -16006,7 +17250,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nymasti/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "srn9336@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/new-york-masti-all-university"
+  }
  },
  {
   "id": "oc_nyu_new_york_university_college_of_dentistry_student_government",
@@ -16151,7 +17399,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nywea.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-nywea@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nywea"
+  }
  },
  {
   "id": "oc_nyu_newman_club_catholic_ug_all_university",
@@ -16186,7 +17438,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyunewman/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "newman@nyucatholic.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/newman-club-catholic-ug-all-university"
+  }
  },
  {
   "id": "oc_nyu_nodanyugsom",
@@ -16213,7 +17469,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nodanyugsom"
    }
-  ]
+  ],
+  "contact": {
+   "email": "allen.fu@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/nodanyugsom"
+  }
  },
  {
   "id": "oc_nyu_nas",
@@ -16339,7 +17599,7 @@
   "logo": {
    "emoji": "NW",
    "hue": 248,
-   "url": "https://se-images.campuslabs.com/clink/images/859ba097-1449-4c39-b1db-82d1ded7d93933671414-6c58-4f29-bc80-14de83699d37.png?preset=small-sq"
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/4982/316338/17867605-00d8-4346-9a18-6866ff27fd4f.png?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_nyu",
@@ -16365,7 +17625,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_nwb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gphclublife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nutrition-without-borders"
+  }
  },
  {
   "id": "oc_nyu_nyuad_institute_ny",
@@ -16404,7 +17668,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/c/NYUADInstitute"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuad.institute.ny@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuad-institute-ny"
+  }
  },
  {
   "id": "oc_nyu_admissionsambassadors",
@@ -16451,7 +17719,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC6HX43zFHKNyy-BdraAv2Ew"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ambassadorsmr@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/admissionsambassadors"
+  }
  },
  {
   "id": "oc_nyu_nyuadvance",
@@ -16511,7 +17783,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-ai-safety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "exec@nyuaisafety.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/aisafety"
+  }
  },
  {
   "id": "oc_nyu_nyu_alternative_breaks",
@@ -16589,7 +17865,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nyusom-apamsa-med"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eric.wang2@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyusom-apamsa-med"
+  }
  },
  {
   "id": "oc_nyu_intramurals",
@@ -16624,7 +17904,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NYUAthletics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuintramurals@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/intramurals"
+  }
  },
  {
   "id": "oc_nyu_nyubp",
@@ -16718,7 +18002,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@nyucampusrec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "campusrec@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyucampusrecreation"
+  }
  },
  {
   "id": "oc_nyu_nyucampussafety",
@@ -16757,7 +18045,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@nyucampussafety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dcs-community-engagement@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyucampussafety"
+  }
  },
  {
   "id": "oc_nyu_nyucds",
@@ -16788,7 +18080,11 @@
     "label": "Website",
     "url": "https://cds.nyu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cds@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyucds"
+  }
  },
  {
   "id": "oc_nyu_changemaker",
@@ -16830,7 +18126,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCHDvmDQGC08f6doJzVx0hKw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "changemakercenter@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/changemaker"
+  }
  },
  {
   "id": "oc_nyu_ndcc",
@@ -16919,7 +18219,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuentrepreneur/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "entrepreneur@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/entrepreneur"
+  }
  },
  {
   "id": "oc_nyu_studentsuccess_financialeducation",
@@ -16961,7 +18265,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC4rdqOnYauEW5uE9AVOJ7qw/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "financial.education@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/studentsuccess-financialeducation"
+  }
  },
  {
   "id": "og_nyu_fraternity_sorority_life",
@@ -16992,7 +18300,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUGreeks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fsl@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/fraternity-sorority-life"
+  }
  },
  {
   "id": "oc_nyu_nyu_graduate_student_life",
@@ -17022,7 +18334,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyugradlife/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradlife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-graduate-student-life"
+  }
  },
  {
   "id": "oc_nyu_nyu_harm_reduction_alliance",
@@ -17048,7 +18364,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nyu-harm-reduction-alliance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rosa.shapiro-thompson@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-harm-reduction-alliance"
+  }
  },
  {
   "id": "oc_nyu_hpo",
@@ -17075,7 +18395,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/hpo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "health.promotion@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/hpo"
+  }
  },
  {
   "id": "oc_nyu_libraries",
@@ -17151,7 +18475,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-math-society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyumathsoc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-mathematics-society"
+  }
  },
  {
   "id": "oc_nyu_nyumsa",
@@ -17272,7 +18600,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NYUProductionLab"
    }
-  ]
+  ],
+  "contact": {
+   "email": "productionlab@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/productionlab"
+  }
  },
  {
   "id": "oc_nyu_nyu_program_board",
@@ -17314,7 +18646,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCKoKxFzCi4Y-LcU7EAq9WTg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "program.board@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-program-board"
+  }
  },
  {
   "id": "oc_nyu_nyu_project_outreach",
@@ -17403,7 +18739,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SACNASNYU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyusacnas@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyusacnas"
+  }
  },
  {
   "id": "oc_nyu_nyu_service",
@@ -17445,7 +18785,11 @@
     "label": "X",
     "url": "http://twitter.com/nyuservice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.service@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-service"
+  }
  },
  {
   "id": "oc_nyu_nstc",
@@ -17521,7 +18865,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/nyuscsg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.caribbean@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuscsg"
+  }
  },
  {
   "id": "oc_nyu_sonic",
@@ -17545,6 +18893,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/sonic"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyustudentorchestra"
    },
    {
     "label": "Instagram",
@@ -17626,7 +18978,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/stern_uc_advising"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uc.advising@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/stern_uc_advising"
+  }
  },
  {
   "id": "oc_nyu_saps",
@@ -17656,7 +19012,11 @@
     "label": "Group chat",
     "url": "https://chat.whatsapp.com/BQC9cTndvMT6JPFOgmTNlU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pe2126@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/saps"
+  }
  },
  {
   "id": "oc_nyu_nyusmg",
@@ -17736,7 +19096,11 @@
     "label": "Website",
     "url": "http://nyu.edu/health"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wellbeing@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/studentwellbeing"
+  }
  },
  {
   "id": "oc_nyu_nyu_studentlink_center",
@@ -17778,7 +19142,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCrLIk-yjdX9T0H_b8qewEsw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentlink@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-studentlink-center"
+  }
  },
  {
   "id": "oc_nyu_nyu_physicians_for_a_national_health_program",
@@ -17858,7 +19226,11 @@
     "label": "Website",
     "url": "https://engineering.nyu.edu/academics/departments/finance-and-risk-engineering"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jn67@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/fre"
+  }
  },
  {
   "id": "oc_nyu_nyu_tandon_makerspace",
@@ -17905,7 +19277,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCbNsooKLjbRgRa8RQoVgAaQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-makerspace@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-tandon-makerspace"
+  }
  },
  {
   "id": "oc_nyu_nyutelaviv",
@@ -17964,7 +19340,11 @@
     "label": "Website",
     "url": "https://tisch.nyu.edu/student-affairs/career-development"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tisch.career@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tischcareerdevelopment"
+  }
  },
  {
   "id": "oc_nyu_nyuvgo",
@@ -17998,7 +19378,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuvgm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuvgme@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuvgo"
+  }
  },
  {
   "id": "oc_nyu_welcome_programs",
@@ -18032,7 +19416,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/nyuwelcome"
    }
-  ]
+  ],
+  "contact": {
+   "email": "welcome@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/welcome-programs"
+  }
  },
  {
   "id": "oc_nyu_militaryvet",
@@ -18247,7 +19635,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/surgery-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zander.harpel@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/surgery-club"
+  }
  },
  {
   "id": "oc_nyu_obstetrics_and_gynecology_interest_group",
@@ -18303,7 +19695,11 @@
     "label": "Website",
     "url": "https://gsas.nyu.edu/student-life.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsas.studentaffairs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyugsasoasa"
+  }
  },
  {
   "id": "oc_nyu_ogi",
@@ -18333,7 +19729,11 @@
     "label": "Website",
     "url": "https://www.nyu.edu/life/global-inclusion-and-diversity.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "luis.cisneros@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ogi"
+  }
  },
  {
   "id": "oc_nyu_office_of_global_programs",
@@ -18525,7 +19925,11 @@
     "label": "Website",
     "url": "https://as.nyu.edu/academics/teaching-excellence-and-innovation/about.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asteaching@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tei"
+  }
  },
  {
   "id": "oc_nyu_oncology_club",
@@ -18586,7 +19990,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/nyu_op"
    }
-  ]
+  ],
+  "contact": {
+   "email": "opportunity.programs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/opportunityprograms"
+  }
  },
  {
   "id": "oc_nyu_oral_and_maxillofacial_surgery_society",
@@ -18620,7 +20028,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucd.oms.society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nhy5133@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/oral-and-maxillofacial-surgery-society"
+  }
  },
  {
   "id": "oc_nyu_obgsc",
@@ -18711,7 +20123,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/obw_nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "organizationofblackwomen@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/organization-of-black-women-all-university"
+  }
  },
  {
   "id": "oc_nyu_odawsmc",
@@ -18741,7 +20157,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/washington-square-management-consulting/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.iopsych@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/odawsmc"
+  }
  },
  {
   "id": "oc_nyu_orthodontics_society",
@@ -18828,7 +20248,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/orthopedic-surgery-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nicole.oberlag@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/orthopedic-surgery-interest-group"
+  }
  },
  {
   "id": "oc_nyu_ostem",
@@ -18871,7 +20295,11 @@
     "label": "X",
     "url": "http://twitter.com/ostematnyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-ostem@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ostem"
+  }
  },
  {
   "id": "oc_nyu_out_breath",
@@ -18922,7 +20350,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/outdoorsclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jacob.carter@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/outdoorsclub"
+  }
  },
  {
   "id": "oc_nyu_pdsa",
@@ -18990,7 +20422,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/psa-nyu/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupsa@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/pakistani-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_pagsa",
@@ -19015,10 +20451,14 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/pagsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupagsa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pagsa"
+  }
  },
  {
-  "id": "og_nyu_panhellenic_council_phc",
+  "id": "oc_nyu_panhellenic_council_phc",
   "name": "Panhellenic Council (PHC)",
   "logo": {
    "emoji": "PC",
@@ -19053,7 +20493,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-panhellenic-council/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "panhellenic@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/panhellenic-council-phc"
+  }
  },
  {
   "id": "oc_nyu_parliamentary_debaters_union_all_university",
@@ -19092,7 +20536,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/nyudebate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupdebate@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/parliamentary-debaters-union-all-university"
+  }
  },
  {
   "id": "oc_nyu_patent_pending",
@@ -19139,7 +20587,11 @@
     "label": "X",
     "url": "http://twitter.com/ppatentpending"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-patentpending@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/patent-pending"
+  }
  },
  {
   "id": "oc_nyu_pediatric_interest_group",
@@ -19166,7 +20618,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/pediatric-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fadzai.ngwerume@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/pediatric-interest-group"
+  }
  },
  {
   "id": "oc_nyu_peer_tutoring",
@@ -19193,7 +20649,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/peer-tutoring"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dental.studentengagement@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/peer-tutoring"
+  }
  },
  {
   "id": "oc_nyu_peer_undergraduate_mentorship_program_pump",
@@ -19227,7 +20687,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/NYUPUMP"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupump@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/peer-undergraduate-mentorship-program-pump"
+  }
  },
  {
   "id": "oc_nyu_paac",
@@ -19254,7 +20718,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/paac"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prateek.khandelwal@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/paac"
+  }
  },
  {
   "id": "oc_nyu_periodontal_club",
@@ -19284,7 +20752,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucd.periosociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucd.periosociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/periodontal-club"
+  }
  },
  {
   "id": "oc_nyu_persian_cultural_society_all_university",
@@ -19387,7 +20859,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyuperu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "peru@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/viva-peru-all-university"
+  }
  },
  {
   "id": "oc_nyu_petal",
@@ -19508,7 +20984,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_pad/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.phialphadelta@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/phi-alpha-delta"
+  }
  },
  {
   "id": "oc_nyu_phi_alpha_honor_society_pi_pi_chapter",
@@ -19604,8 +21084,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuphide"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyuphide"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ads8957@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/phi-delta-epsilon"
+  }
  },
  {
   "id": "oc_nyu_philosophy_club",
@@ -19704,7 +21192,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCWX9OVOYwcZ4LoHSfhRNWeg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyetavpcr@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pi-beta-phi-all-university"
+  }
  },
  {
   "id": "og_nyu_pi_delta_psi_fraternity_inc_all_university",
@@ -19743,7 +21235,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyupideltapsi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.zeta@pideltapsi.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pi-delta-psi-fraternity-inc-all-university"
+  }
  },
  {
   "id": "oc_nyu_pins_and_needles",
@@ -19801,7 +21297,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pizzaclubnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pizzaclubatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pizzaclubatnyu"
+  }
  },
  {
   "id": "oc_nyu_plague_all_university",
@@ -19836,7 +21336,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/plaguemagazine/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "plaguemagazine@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/plague-all-university"
+  }
  },
  {
   "id": "oc_nyu_plastic_surgery_club",
@@ -19922,6 +21426,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuplayback"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyuplayback"
    }
   ]
  },
@@ -19983,7 +21491,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.poleuro/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mpm9022@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/pes"
+  }
  },
  {
   "id": "oc_nyu_politics_society_at_nyu_all_university",
@@ -20030,7 +21542,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUPolSoc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "politics.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/politics-society-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_poly_anime_society",
@@ -20065,7 +21581,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/polyanimesociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupolyotaku@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/poly-anime-society"
+  }
  },
  {
   "id": "oc_nyu_polyprogrammingclub",
@@ -20138,7 +21658,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/polygeia"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.polygeia@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/polygeia"
+  }
  },
  {
   "id": "oc_nyu_ptc",
@@ -20169,7 +21693,11 @@
     "label": "Website",
     "url": "https://engineering.nyu.edu/academics/undergraduate/tutoring-center"
    }
-  ]
+  ],
+  "contact": {
+   "email": "polytechnictutoring@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ptc"
+  }
  },
  {
   "id": "oc_nyu_porcolombia_all_university",
@@ -20200,7 +21728,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/porcolombianyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "if2204@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/porcolombia-all-university"
+  }
  },
  {
   "id": "oc_nyu_preprofessional",
@@ -20258,8 +21790,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/pg/nyupredentalsociety/about/?ref=page_internal"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyupds/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupds@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pre-dental-society"
+  }
  },
  {
   "id": "oc_nyu_pre_soma",
@@ -20289,7 +21829,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyupresoma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupresoma@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pre-soma"
+  }
  },
  {
   "id": "oc_nyu_pvs",
@@ -20315,7 +21859,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/pvs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mja10021@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/pvs"
+  }
  },
  {
   "id": "oc_nyu_pride_corp",
@@ -20349,7 +21897,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sternpridecorp/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pride@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/pride-corp"
+  }
  },
  {
   "id": "oc_nyu_print3d_nyu_all_university",
@@ -20380,7 +21932,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/nyuprint3d"
    }
-  ]
+  ],
+  "contact": {
+   "email": "print3dclub@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/print3d-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_productmanagementclub",
@@ -20419,7 +21975,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-product-management-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pmc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/productmanagementclub"
+  }
  },
  {
   "id": "oc_nyu_professional_development_and_career_education",
@@ -20445,7 +22005,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/professional-development-and-career-education"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uc.careers@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/professional-development-and-career-education"
+  }
  },
  {
   "id": "oc_nyu_musical_mentors_collaborative_all_university",
@@ -20507,7 +22071,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUProjSunshine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "projectsunshineatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/project-sunshine-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_prosth",
@@ -20571,7 +22139,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/casproudtobefirst/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.proudtobefirst@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/proud-to-be-first-program"
+  }
  },
  {
   "id": "oc_nyu_nyupsichi",
@@ -20610,7 +22182,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-psychology-honors-society-psi-chi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psichiatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyupsichi"
+  }
  },
  {
   "id": "og_nyu_psiupsilon",
@@ -20636,6 +22212,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/psiupsilon"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/psiunyu"
    },
    {
     "label": "Instagram",
@@ -20675,7 +22255,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyupsychsociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupsychsociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/psychologystudentsociety"
+  }
  },
  {
   "id": "oc_nyu_pham",
@@ -20701,7 +22285,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/pham"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gphclublife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/pham"
+  }
  },
  {
   "id": "oc_nyu_public_policy_student_board",
@@ -20805,7 +22393,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/NYUPulseDanceProject"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupulsedanceproject@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/pulse-dance-project-all-university"
+  }
  },
  {
   "id": "oc_nyu_punjabistudentdental",
@@ -20939,8 +22531,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/gphqueerhealthcollective/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gphqueerhealthcollective/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "qhc.gph@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/queerhealthcollective"
+  }
  },
  {
   "id": "oc_nyu_queer_union_all_university",
@@ -20979,7 +22579,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/qunion.nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lgbtq.queer.union@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/queer-union-all-university"
+  }
  },
  {
   "id": "oc_nyu_quiz_bowl_at_nyu_all_university",
@@ -21044,7 +22648,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyucd_racketpaddleclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyucdracketandpaddleclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/racketandpaddleatnyudentistry"
+  }
  },
  {
   "id": "oc_nyu_radiology_interest_group",
@@ -21070,7 +22678,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/radiology-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nuri.choi@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/radiology-interest-group"
+  }
  },
  {
   "id": "oc_nyu_ruf_city_campus",
@@ -21168,7 +22780,11 @@
     "label": "X",
     "url": "http://twitter.com/nyusrh"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gph.nyu.rrc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/reproductiverightsclub"
+  }
  },
  {
   "id": "oc_nyu_resomnox",
@@ -21364,7 +22980,11 @@
     "label": "X",
     "url": "http://twitter.com/polybots"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-roboticsclub-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/robotics-club"
+  }
  },
  {
   "id": "oc_nyu_rogue_aerospace",
@@ -21403,7 +23023,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rogueaerospace/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rogueaeronyc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/rogue-aerospace"
+  }
  },
  {
   "id": "oc_nyu_rmsa",
@@ -21532,7 +23156,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/roc_nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "runasimi.oc@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/rocnyu"
+  }
  },
  {
   "id": "oc_nyu_russian_club_all_university",
@@ -21567,7 +23195,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyurussianclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "russian.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/russian-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_swear",
@@ -21592,7 +23224,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/swear"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.swear@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/swear"
+  }
  },
  {
   "id": "oc_nyu_sadha",
@@ -21602,7 +23238,7 @@
    "hue": 240,
    "url": "https://se-images.campuslabs.com/clink/images/e401cded-0ab4-42e9-9c07-b6ca06ac0307796941bb-b3a2-421d-a505-847cceaf78ec.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Health Professions & Clinical Interests",
   "verified": false,
@@ -21619,7 +23255,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/sadha"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sj87@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sadha"
+  }
  },
  {
   "id": "oc_nyu_ksu",
@@ -21654,7 +23294,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-saudi-student-association/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aka8046@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ksu"
+  }
  },
  {
   "id": "oc_nyu_scholarsoffinance",
@@ -21692,7 +23336,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/scholars-of-finance-nyu-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu@scholarsoffinance.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/scholarsoffinance"
+  }
  },
  {
   "id": "oc_nyu_second_street",
@@ -21857,7 +23505,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/shakespeareinthesquare"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shakespeareinthesquarenyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/shakespeare-in-the-square"
+  }
  },
  {
   "id": "oc_nyu_shalhevet_at_nyu_all_university",
@@ -21955,7 +23607,11 @@
     "label": "Website",
     "url": "https://www.hoffmanngroup.info/shecomputes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shecomputes@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/shecomputes"
+  }
  },
  {
   "id": "oc_nyu_shuruq_theme_month_all_university",
@@ -22010,7 +23666,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/sigmachi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dsg382@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sigmachi"
+  }
  },
  {
   "id": "og_nyu_sigma_psi_zeta",
@@ -22049,7 +23709,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/channel/UC3IRAA_I2hUc3iAIFUf6Unw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "syz.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/sigma-psi-zeta"
+  }
  },
  {
   "id": "oc_nyu_silverinclusivestudentlife",
@@ -22083,7 +23747,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/nyusssw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.inclusivestudentlife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/silverinclusivestudentlife"
+  }
  },
  {
   "id": "oc_nyu_silver_jewish_community",
@@ -22159,7 +23827,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/silversilvers"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.silvers@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/silversilvers"
+  }
  },
  {
   "id": "oc_nyu_singapore_students_association_all_university",
@@ -22193,8 +23865,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/nyu.ssa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyu.ssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyusingapore@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/singapore-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_ski_snowboard_club_all_university",
@@ -22233,7 +23913,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUski"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ski.snowboard.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/ski-snowboard-club-all-university"
+  }
  },
  {
   "id": "oc_nyu_slam_at_nyu_all_university",
@@ -22268,7 +23952,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/slamatnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yt2939@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/slam-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_slavicsociety",
@@ -22276,13 +23964,13 @@
   "logo": {
    "emoji": "SS",
    "hue": 336,
-   "url": "https://se-images.campuslabs.com/clink/images/a9967c46-f9d3-4144-87b4-00e28de9a3af84db3c75-f53a-405a-9ba5-17bc47277801.png?preset=small-sq"
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/4982/406809/f15e71dc-d34a-41bf-b8bc-8af22461f52e.png?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_nyu",
   "parent": "Cultural & Identity-Based",
   "verified": false,
-  "description": "The Slavic Society at NYU is dedicated to fostering a vibrant and inclusive community that unites Slavic students with all NYU students interested in exploring Slavic cultures.",
+  "description": "The Slavic Society at New York University is dedicated to fostering a vibrant and inclusive community that unites Slavic students with all NYU students interested in exploring Slavic cultures.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -22342,7 +24030,11 @@
     "label": "X",
     "url": "http://twitter.com/SWSatNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.smartwomansecurities@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/smart-woman-securities-all-university"
+  }
  },
  {
   "id": "oc_nyu_socialpsychclub",
@@ -22436,7 +24128,11 @@
     "label": "X",
     "url": "http://twitter.com/PolySHRM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-shrm@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/society-for-human-resource-management"
+  }
  },
  {
   "id": "oc_nyu_society_for_statistics_club",
@@ -22465,7 +24161,11 @@
     "label": "Website",
     "url": "https://nyu-stats-club.github.io/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.stats.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/society-for-statistics-club"
+  }
  },
  {
   "id": "oc_nyu_nyusampe",
@@ -22496,7 +24196,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.sampe/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-sampe@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyusampe"
+  }
  },
  {
   "id": "oc_nyu_society_for_undergraduate_neural_science",
@@ -22538,7 +24242,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/8927830/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyusuns@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/society-for-undergraduate-neural-science"
+  }
  },
  {
   "id": "oc_nyu_swis",
@@ -22572,6 +24280,10 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/society-for-women-in-sports/posts/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/swisatnyu?vrfl=MWZkMmg3bjAwNHdpaw%3D%3D"
    }
   ]
  },
@@ -22608,7 +24320,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/tandonsase/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-sase@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/society-of-asian-scientists-and-engineers"
+  }
  },
  {
   "id": "oc_nyu_society_of_hispanic_professional_engineers",
@@ -22643,7 +24359,11 @@
     "label": "X",
     "url": "http://twitter.com/shpenyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-shpe@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/society-of-hispanic-professional-engineers"
+  }
  },
  {
   "id": "oc_nyu_society_of_physics_students",
@@ -22789,7 +24509,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/nyuswitch"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuswitch@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/switch"
+  }
  },
  {
   "id": "oc_nyu_generativeaudioai",
@@ -22824,7 +24548,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/muse-at-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "muse.at.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/generativeaudioai"
+  }
  },
  {
   "id": "oc_nyu_soon_movement_all_university",
@@ -22885,7 +24613,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/southasianaffinitynyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sasianaffinity@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sasianaffinity"
+  }
  },
  {
   "id": "oc_nyu_sahar",
@@ -22919,7 +24651,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_sahar/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gph.sahar@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/sahar"
+  }
  },
  {
   "id": "oc_nyu_south_asian_medical_student_association",
@@ -22980,7 +24716,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUShruti"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyushruti@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/south-asian-students-association-shruti"
+  }
  },
  {
   "id": "oc_nyu_sisda",
@@ -23126,7 +24866,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/spin-doctors"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fadzai.ngwerume@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/spin-doctors"
+  }
  },
  {
   "id": "oc_nyu_sprout_up_all_university",
@@ -23169,7 +24913,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCgpfLVyRIPZM91PEcQ6ZfOw/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "directornyc@sproutup.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/sprout-up-all-university"
+  }
  },
  {
   "id": "oc_nyu_sps_bsu",
@@ -23199,7 +24947,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/nyusps_bsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.bsu@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-bsu"
+  }
  },
  {
   "id": "oc_nyu_sps_bpc",
@@ -23229,7 +24981,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyubpc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.bpc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-bpc"
+  }
  },
  {
   "id": "oc_nyu_sps_cga",
@@ -23285,14 +25041,18 @@
     "label": "Facebook",
     "url": "http://facebook.com/groups/2039666256316874"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.serves@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-community-service-committee"
+  }
  },
  {
   "id": "oc_nyu_cbss",
   "name": "SPS Consulting and Business Strategy Society",
   "logo": {
    "emoji": "SC",
-   "hue": 144,
+   "hue": 240,
    "url": "https://se-images.campuslabs.com/clink/images/2fa779bb-da43-4e16-a97a-c78adbfb0b56f8d97e49-fa32-49a5-b07d-4b10cf9162b0.png?preset=small-sq"
   },
   "type": "club",
@@ -23313,13 +25073,21 @@
    },
    {
     "label": "Instagram",
-    "url": "https://www.instagram.com/nyu.sps.cbss"
+    "url": "https://www.instagram.com/nyu.cbss.sps/"
    },
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/consulting-and-business-strategy-society/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyu.sps.cbss"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.cbss@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cbss"
+  }
  },
  {
   "id": "oc_nyu_cc",
@@ -23349,7 +25117,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_cyberclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.cyberclub@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/cc"
+  }
  },
  {
   "id": "oc_nyu_sps_digital_production_committee",
@@ -23383,7 +25155,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-sps-student-council/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.dpc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-digital-production-committee"
+  }
  },
  {
   "id": "oc_nyu_sps_daus",
@@ -23412,7 +25188,11 @@
     "label": "Website",
     "url": "https://www.sps.nyu.edu/homepage/academics/divisions-and-departments/division-of-applied-undergraduate-studies.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.daus@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-daus"
+  }
  },
  {
   "id": "oc_nyu_sps_etsa",
@@ -23447,7 +25227,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-emerging-tech-association-etsa/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.etsa@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-etsa"
+  }
  },
  {
   "id": "oc_nyu_sps_events_committee",
@@ -23474,7 +25258,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/sps-events-committee"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.studentlifeevents@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-events-committee"
+  }
  },
  {
   "id": "oc_nyu_sps_financial_planning",
@@ -23504,7 +25292,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_fpc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.financial-planning-club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-financial-planning"
+  }
  },
  {
   "id": "oc_nyu_sps_graduate_sports_business_society",
@@ -23546,7 +25338,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-sps-gsbs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.gsbs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-graduate-sports-business-society"
+  }
  },
  {
   "id": "oc_nyu_sps_graduate_student_council",
@@ -23589,7 +25385,11 @@
     "label": "X",
     "url": "http://twitter.com/SPSGSC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.gradstudents@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-graduate-student-council"
+  }
  },
  {
   "id": "oc_nyu_sps_hospitality_business_society",
@@ -23627,7 +25427,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/school/nyu-hbs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.hbs.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-hospitality-business-society"
+  }
  },
  {
   "id": "oc_nyu_sps_hospitality_tourism_and_events_society",
@@ -23695,7 +25499,11 @@
     "label": "Website",
     "url": "https://www.sps.nyu.edu/homepage/academics/divisions-and-departments/division-of-programs-in-business/integrated-marketing.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.imc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/imcd"
+  }
  },
  {
   "id": "oc_nyu_sps_integrated_marketing_association",
@@ -23741,7 +25549,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCIBvlVpgVOnQB_hf0WNFkYw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.ima@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-integrated-marketing-association"
+  }
  },
  {
   "id": "oc_nyu_sps_international_club",
@@ -23779,7 +25591,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-sps-international-club-ic/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.ic@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-international-club"
+  }
  },
  {
   "id": "oc_nyu_maps",
@@ -23821,7 +25637,11 @@
     "label": "X",
     "url": "http://twitter.com/MSSA_NYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.maps@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/maps"
+  }
  },
  {
   "id": "oc_nyu_sps_project_management_student_network",
@@ -23863,7 +25683,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUSPS_PMSN"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.pmsn@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-project-management-student-network"
+  }
  },
  {
   "id": "oc_nyu_sps_public_relations_league",
@@ -23905,7 +25729,11 @@
     "label": "X",
     "url": "http://twitter.com/NYUPRLeague"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.prl@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-public-relations-league"
+  }
  },
  {
   "id": "oc_nyu_sps_rainbow_alliance",
@@ -23935,7 +25763,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuspslgbtq"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.ra.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-rainbow-alliance"
+  }
  },
  {
   "id": "oc_nyu_sps_recreation_committee",
@@ -23961,7 +25793,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/sps-recreation-committee"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.recreation@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-recreation-committee"
+  }
  },
  {
   "id": "oc_nyu_sps_schack_real_estate_club",
@@ -24049,7 +25885,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCEaJzF4KVpM5iLRZU7HhGIw/about"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.reisa.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-schack-real-estate-institute-student-association"
+  }
  },
  {
   "id": "oc_nyu_sps_social_media_and_design_committee",
@@ -24121,7 +25961,11 @@
     "label": "X",
     "url": "http://twitter.com/nyushrm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.shrm@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-society-for-human-resource-management"
+  }
  },
  {
   "id": "oc_nyu_sps_scribe",
@@ -24151,7 +25995,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/sps.scribe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.scribe@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-scribe"
+  }
  },
  {
   "id": "oc_nyu_sps_sports_business_society",
@@ -24189,7 +26037,11 @@
     "label": "X",
     "url": "http://twitter.com/nyusbs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.sbs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-sports-business-society"
+  }
  },
  {
   "id": "oc_nyu_sps_student_association_for_applied_studies",
@@ -24309,7 +26161,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/WeAreNYUSPS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.academicsupport@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-sss"
+  }
  },
  {
   "id": "oc_nyu_sps_students",
@@ -24344,7 +26200,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/WeAreNYUSPS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.studentlife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-students"
+  }
  },
  {
   "id": "oc_nyu_sps_test",
@@ -24480,7 +26340,11 @@
     "label": "Website",
     "url": "https://www.sps.nyu.edu/about/academic-divisions-and-departments/division-of-applied-undergraduate-studies/workplace-learning-innovation-lab.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.wiln@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sps-wiln"
+  }
  },
  {
   "id": "oc_nyu_steinhardt_black_society",
@@ -24510,7 +26374,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/steinhardtblacksociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sbs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/steinhardt-black-society"
+  }
  },
  {
   "id": "oc_nyu_steinhardt_dance_education_association",
@@ -24540,7 +26408,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/nyudanceed"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sdea@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/steinhardt-dance-education-association"
+  }
  },
  {
   "id": "oc_nyu_steinhardt_graduate_student_organization",
@@ -24550,7 +26422,7 @@
    "hue": 120,
    "url": "https://se-images.campuslabs.com/clink/images/ed07b48d-89d9-41c9-8090-c2ec0dd80c700049f52f-4f11-4705-9198-23aa2211f2c4.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Community Engagement & Service",
   "verified": false,
@@ -24575,7 +26447,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/steinhardtgso/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steinhardt.gso@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/steinhardt-graduate-student-organization"
+  }
  },
  {
   "id": "oc_nyu_slgsa",
@@ -24605,7 +26481,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/slgsa_nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slgsa@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/slgsa"
+  }
  },
  {
   "id": "oc_nyu_steinhardt_undergraduate_student_government",
@@ -24643,7 +26523,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SteinhardtUSG"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steinhardt.usg@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/steinhardt-undergraduate-student-government"
+  }
  },
  {
   "id": "oc_nyu_steminist",
@@ -24682,7 +26566,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/STEMinistClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon.steminist@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/steminist"
+  }
  },
  {
   "id": "oc_nyu_step_team_at_nyu_all_university",
@@ -24755,7 +26643,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/company/nyusteba/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steba@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/stern-tisch-entertainment-business-association"
+  }
  },
  {
   "id": "oc_nyu_stern_accounting_society",
@@ -24826,7 +26718,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyusteba"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steba@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/stern-tisch-business-entertainment-association"
+  }
  },
  {
   "id": "oc_nyu_stern_business_and_law_association",
@@ -24898,7 +26794,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/stern-capital-management-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scm@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/scm"
+  }
  },
  {
   "id": "oc_nyu_stern2027",
@@ -24932,7 +26832,7 @@
    "emoji": "SC",
    "hue": 40
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Social",
   "verified": false,
@@ -25086,7 +26986,11 @@
     "label": "Website",
     "url": "https://www.stern.nyu.edu/programs-admissions/masters-programs/online-ms-quantitative-management/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msqmadvising@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sternmsqm"
+  }
  },
  {
   "id": "oc_nyu_stern_political_economy_exchange",
@@ -25208,7 +27112,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/sternsportssociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sss@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sss"
+  }
  },
  {
   "id": "oc_nyu_stern_student_council",
@@ -25317,7 +27225,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/c/StrategicVentureSociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "svs@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/strategic-venture-society"
+  }
  },
  {
   "id": "oc_nyu_student_activities_board_sab_sga",
@@ -25326,7 +27238,7 @@
    "emoji": "SA",
    "hue": 112
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Administrative ",
   "verified": false,
@@ -25347,7 +27259,11 @@
     "label": "Website",
     "url": "https://www.nyu.edu/students/getting-involved/clubs-and-organizations/student-activities-board.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sab.club@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/student-activities-board-sab-sga"
+  }
  },
  {
   "id": "oc_nyu_student_alumni_council_all_university",
@@ -25412,7 +27328,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/nyusal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentanimationleague@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/student-animation-league"
+  }
  },
  {
   "id": "oc_nyu_masa",
@@ -25471,7 +27391,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.sahm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sahm.gph@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/sahm"
+  }
  },
  {
   "id": "oc_nyu_student_central",
@@ -25481,7 +27405,7 @@
    "hue": 224,
    "url": "https://se-images.campuslabs.com/clink/images/2fb7b4e2-7ba2-4e19-ad95-4c23dbd05b2c2303a912-4904-450b-a14c-d22bb9db509c.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_nyu",
   "parent": "Administrative ",
   "verified": false,
@@ -25502,7 +27426,11 @@
     "label": "Website",
     "url": "https://med.nyu.edu/education/md-degree/current-md-students/clubs-activities"
    }
-  ]
+  ],
+  "contact": {
+   "email": "odessa.elmore@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/student-central"
+  }
  },
  {
   "id": "oc_nyu_student_collective_for_ear_nose_and_throat",
@@ -25598,7 +27526,11 @@
     "label": "X",
     "url": "http://twitter.com/nyussc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "student.government@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/student-government-assembly-student-senators-council"
+  }
  },
  {
   "id": "oc_nyu_student_health_center",
@@ -25689,7 +27621,11 @@
     "label": "X",
     "url": "http://twitter.com/NYURoosevelt"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyurooseveltinstitute@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/roosevelt-institute-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_smenyu",
@@ -25718,8 +27654,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/smenyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/smenyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "smenyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/smenyu"
+  }
  },
  {
   "id": "oc_nyu_student_national_dental_association",
@@ -25753,7 +27697,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/snda.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "am12366@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/student-national-dental-association"
+  }
  },
  {
   "id": "oc_nyu_nyusnma",
@@ -25784,7 +27732,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_snma/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu@snma.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyusnma"
+  }
  },
  {
   "id": "oc_nyu_sota",
@@ -25809,7 +27761,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/sota"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyusota@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/sota"
+  }
  },
  {
   "id": "oc_nyu_student_producers_association",
@@ -25847,7 +27803,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-student-producers-association/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tsoa.spa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/student-producers-association"
+  }
  },
  {
   "id": "oc_nyu_student_professionalism_and_ethics_association",
@@ -25929,7 +27889,11 @@
     "label": "Website",
     "url": "https://www.nyu.edu/life/information-technology/about-nyu-it/nyu-it-student-technology-advisory-council.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "it-stac-admins@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyustac"
+  }
  },
  {
   "id": "oc_nyu_student_technology_centers",
@@ -26002,7 +27966,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/13975160/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "veterans@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyu-military-alliance-all-university"
+  }
  },
  {
   "id": "oc_nyu_nyuscrc",
@@ -26033,7 +28001,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/nyuslam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuslam@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyuscrc"
+  }
  },
  {
   "id": "oc_nyu_students_for_justice_in_palestine_all_university",
@@ -26185,7 +28157,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/supporting-excellence-advocating-diversity"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sead@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/supporting-excellence-advocating-diversity"
+  }
  },
  {
   "id": "oc_nyu_allies_queers_for_understanding_and_awareness",
@@ -26273,7 +28249,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TPartyAtNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lgbtq.tparty@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/t-party-all-university"
+  }
  },
  {
   "id": "oc_nyu_tachycardia_interest_group",
@@ -26334,7 +28314,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/nyutass"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tass.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/taiwanese-american-student-society-all-university"
+  }
  },
  {
   "id": "oc_nyu_taiwanese_student_association_all_university",
@@ -26365,7 +28349,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NYUTSA2.0"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.tsa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/taiwanese-student-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_tamid_at_nyu",
@@ -26408,7 +28396,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tamid-at-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu@tamidgroup.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/tamid-at-nyu"
+  }
  },
  {
   "id": "oc_nyu_tandon_consulting_club",
@@ -26447,7 +28439,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tandonconsultingclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-consultingclub@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tandon-consulting-club"
+  }
  },
  {
   "id": "oc_nyu_graduate_student_council",
@@ -26482,7 +28478,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyutandongsc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-gsc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/graduate-student-council"
+  }
  },
  {
   "id": "oc_nyu_tandonmsa",
@@ -26525,7 +28525,11 @@
     "label": "X",
     "url": "http://twitter.com/polymsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-msa@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tandonmsa"
+  }
  },
  {
   "id": "oc_nyu_tandonstudentadvocacy",
@@ -26555,7 +28559,11 @@
     "label": "Website",
     "url": "https://engineering.nyu.edu/life-tandon/student-life/student-advocacy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "advocacy.tandonstudentlife@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tandonstudentadvocacy"
+  }
  },
  {
   "id": "oc_nyu_tandon_undergraduate_student_council",
@@ -26586,7 +28594,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyutandonusc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-usc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/tandon-undergraduate-student-council"
+  }
  },
  {
   "id": "og_nyu_tau_beta_pi",
@@ -26617,7 +28629,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyutaubetapi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbp.ny.r@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/tau-beta-pi"
+  }
  },
  {
   "id": "oc_nyu_teaching_and_learning_club",
@@ -26647,7 +28663,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyutlc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbv2009@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/teaching-and-learning-club"
+  }
  },
  {
   "id": "oc_nyu_tech_at_nyu_all_university",
@@ -26690,7 +28710,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCfnrLW1YMab6CDElGKw2aGQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hello@techatnyu.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/tech-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_tedxnyu_all_university",
@@ -26892,8 +28916,20 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com//NyuThaiStudentsAssociation"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/nyuthaisa?ltsid=069cd543-5863-48a0-b2ac-77638f6e77db"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nyu_tsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bk2330@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/thai-students-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_tact",
@@ -26919,7 +28955,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/tact"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theamericanclassicstheater@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/tact"
+  }
  },
  {
   "id": "oc_nyu_the_ballet_collaborative_all_university",
@@ -26954,7 +28994,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCKjM03ap65OzvwAWrjMqBfA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbcnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-ballet-collaborative-all-university"
+  }
  },
  {
   "id": "oc_nyu_the_ballet_company_all_university",
@@ -26989,7 +29033,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/facebook.com/groups/474591605932208/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ac9239@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-ballet-company-all-university"
+  }
  },
  {
   "id": "oc_nyu_silverblackcare",
@@ -27019,7 +29067,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu.blackcare/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.blackcare@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/silverblackcare"
+  }
  },
  {
   "id": "oc_nyu_the_black_muslim_initiative_at_nyu_all_university",
@@ -27058,7 +29110,11 @@
     "label": "X",
     "url": "http://twitter.com/nyubmi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyubmi@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-black-muslim-initiative-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_bordensociety",
@@ -27131,7 +29187,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NYUCatholic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "contact@nyucatholic.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/nyucatholic"
+  }
  },
  {
   "id": "oc_nyu_chemistclubwsq",
@@ -27204,7 +29264,11 @@
     "label": "X",
     "url": "http://twitter.com/nyucollective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuthecollective@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-collective"
+  }
  },
  {
   "id": "oc_nyu_delanysociety",
@@ -27264,7 +29328,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/egu.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuegyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/egu"
+  }
  },
  {
   "id": "oc_nyu_falsesettos",
@@ -27294,7 +29362,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/thefalsesettosnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thefalsesettos@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/falsesettos"
+  }
  },
  {
   "id": "oc_nyu_fauchardsociety",
@@ -27355,7 +29427,11 @@
     "label": "X",
     "url": "http://twitter.com/FemSocietyNYU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thefeministsocietyatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-feminist-society-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_flaggsociety",
@@ -27462,8 +29538,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/gallatin.disabilitycollective?stkn=YTdscGRtOGNmYXZx"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gallatin.disabilitycollective?stkn=YTdscGRtOGNmYXZx"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatindisabilitycollective-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/thegallatindisabilitycollective"
+  }
  },
  {
   "id": "oc_nyu_the_gaming_collective",
@@ -27501,8 +29585,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/user/polygamingnetwork/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyutgc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-pgn@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-gaming-collective"
+  }
  },
  {
   "id": "oc_nyu_giessociety",
@@ -27587,7 +29679,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuic_official"
    }
-  ]
+  ],
+  "contact": {
+   "email": "islamic.center@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/icnyu"
+  }
  },
  {
   "id": "oc_nyu_jonessociety",
@@ -27699,7 +29795,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyumlkscholars/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu_mlkscholars@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/mlkscholars"
+  }
  },
  {
   "id": "oc_nyu_oss",
@@ -27729,7 +29829,11 @@
     "label": "Website",
     "url": "https://www.nyu.edu/students/student-success.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentsuccess@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/oss"
+  }
  },
  {
   "id": "oc_nyu_undergraduate_academics",
@@ -27759,7 +29863,11 @@
     "label": "Website",
     "url": "https://engineering.nyu.edu/academics/undergraduate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uga.engineering@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduate_academics"
+  }
  },
  {
   "id": "oc_nyu_palladium_hall",
@@ -27823,7 +29931,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@thepianosocietyatnyu?si=DQ4gHjQvMHe5-b1u"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyupianosociety@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/thepianosocietyatnyu"
+  }
  },
  {
   "id": "oc_nyu_the_poly_project",
@@ -28119,7 +30231,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/in/the-torch-journal-of-higher-education-and-student-affairs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "torchjournal@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/the-torch"
+  }
  },
  {
   "id": "oc_nyu_thewomensnetwork",
@@ -28158,7 +30274,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TheWomensNetworkNational"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fvp2012@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/thewomensnetwork"
+  }
  },
  {
   "id": "og_nyu_theta_tau",
@@ -28205,7 +30325,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@nyuthetatau4480"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theta.tau.nyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/theta-tau"
+  }
  },
  {
   "id": "oc_nyu_third_north",
@@ -28276,7 +30400,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/tischnewtheatre"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tischnewtheatre@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/tisch-new-theatre"
+  }
  },
  {
   "id": "oc_nyu_tisch_school_of_the_arts_film_and_television_techs",
@@ -28335,7 +30463,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/tischtapcollective/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tischtapcollective@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/tisch-tap-collective"
+  }
  },
  {
   "id": "oc_nyu_tisch_undergraduate_student_council",
@@ -28394,7 +30526,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/transfersnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "transfers@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/transfer-life"
+  }
  },
  {
   "id": "oc_nyu_translation_nation",
@@ -28505,8 +30641,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/tca.nyu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/tca.nyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuturkishculture@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/turkish-culture-association"
+  }
  },
  {
   "id": "oc_nyu_tpusa",
@@ -28568,7 +30712,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/twobirdsonestonenyu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbosatnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/two-birds-one-stone-all-university"
+  }
  },
  {
   "id": "oc_nyu_tzu_ching_collegiate_association_all_university",
@@ -28629,7 +30777,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ukrainianclubnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ukrainiannyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/ukrainianclubatnyu"
+  }
  },
  {
   "id": "oc_nyu_undergraduate_latin_american_business_association",
@@ -28713,7 +30865,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-ulr/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ulrnyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduate-law-review-at-nyu-all-university"
+  }
  },
  {
   "id": "oc_nyu_ulsnyu",
@@ -28756,7 +30912,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nyu-undergraduate-law-society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uls@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/ulsnyu"
+  }
  },
  {
   "id": "oc_nyu_undergraduate_nursing_organization",
@@ -28789,7 +30949,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/unsonyu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nursing.studentaffairs@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduate-nursing-organization"
+  }
  },
  {
   "id": "oc_nyu_undergraduate_stern_women_in_business",
@@ -28831,7 +30995,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/USWIBgirl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uswib@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduate-stern-women-in-business"
+  }
  },
  {
   "id": "oc_nyu_undergraduate_student_government_association",
@@ -28868,8 +31036,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/silver_usga"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/silverusga"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.usga@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduate-student-government-association"
+  }
  },
  {
   "id": "oc_nyu_undergraduatewomeninlawassociation",
@@ -28900,7 +31076,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uwla.nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uwlanyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/undergraduatewomeninlawassociation"
+  }
  },
  {
   "id": "oc_nyu_unicef_all_university",
@@ -28943,7 +31123,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCeaykYmBGAl7LwyzimPEjLA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuunicef17@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/unicef-all-university"
+  }
  },
  {
   "id": "oc_nyu_united_sikh_association_all_university",
@@ -28978,7 +31162,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/groups/2380389405/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asb9954@stern.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/united-sikh-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_umm",
@@ -29003,7 +31191,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/umm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silver.unityofmanyminds@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/umm"
+  }
  },
  {
   "id": "oc_nyu_university_hall",
@@ -29062,7 +31254,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ulcnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cas.ulc@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/university-learning-center"
+  }
  },
  {
   "id": "oc_nyu_university_programs",
@@ -29164,7 +31360,11 @@
     "label": "X",
     "url": "http://twitter.com/NYU_UDAS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.udas@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/urban-design-architecture-society-all-university"
+  }
  },
  {
   "id": "oc_nyu_urbannaturalistclub",
@@ -29195,7 +31395,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyu_urbnat/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "urbannaturalistclub@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/urbannaturalistclub"
+  }
  },
  {
   "id": "oc_nyu_urology_interest_group",
@@ -29222,7 +31426,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/urology-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maxine.parkinson@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/urology-interest-group"
+  }
  },
  {
   "id": "oc_nyu_uxclubnyu",
@@ -29256,7 +31464,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ux-nyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ux-club@itp.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/uxclubnyu"
+  }
  },
  {
   "id": "oc_nyu_vascular_surgery_interest_group",
@@ -29283,7 +31495,11 @@
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/vascular-surgery-interest-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ethan.chervonski@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/vascular-surgery-interest-group"
+  }
  },
  {
   "id": "oc_nyu_vietnamese_student_association_all_university",
@@ -29318,7 +31534,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/nyuvsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.vsa17@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/vietnamese-student-association-all-university"
+  }
  },
  {
   "id": "oc_nyu_vsda",
@@ -29343,6 +31563,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/vsda"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nyucd_vsda"
    },
    {
     "label": "Instagram",
@@ -29382,7 +31606,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuvariety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "production@nyuvariety.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/views-from-nyu"
+  }
  },
  {
   "id": "oc_nyu_violet_diabolo_all_university",
@@ -29425,7 +31653,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCcgZAEvavBeDeb2ZrikopVA?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "violetdiabolo@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/violet-diabolo-all-university"
+  }
  },
  {
   "id": "oc_nyu_violetmoon",
@@ -29503,7 +31735,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NYUVioletOP"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuvalvop@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/violetop"
+  }
  },
  {
   "id": "oc_nyu_violet_society_program",
@@ -29534,7 +31770,11 @@
     "label": "Website",
     "url": "https://med.nyu.edu/education/md-degree/current-md-students/violet-society-program"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ryann.quigley@nyulangone.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/violet-society-program"
+  }
  },
  {
   "id": "oc_nyu_violet_vault",
@@ -29641,7 +31881,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC_FFOMl4bD6C6GnlJ0phmrw?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vocaholics@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/vocaholics-ttbb-a-cappella-all-university"
+  }
  },
  {
   "id": "oc_nyu_vocollision_asian_a_cappella_all_university",
@@ -29684,7 +31928,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCDDi3jb5bWPM1EgnBMzeeMA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyu.vocollision@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/vocollision-asian-a-cappella-all-university"
+  }
  },
  {
   "id": "oc_nyu_washington_square_news",
@@ -29734,7 +31982,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/c/WashingtonSquareNews"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mgmt@nyunews.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/washington-square-news"
+  }
  },
  {
   "id": "oc_nyu_graduate_housing",
@@ -29900,7 +32152,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UClk1Jf449COJUFUfONVmxRw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "west4thstagecompany@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/w4sc"
+  }
  },
  {
   "id": "oc_nyu_wildernessmed",
@@ -29959,7 +32215,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wnyu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "general.manager@wnyu.org",
+   "source": "https://nyu.campuslabs.com/engage/organization/wnyu-radio-89-1-fm"
+  }
  },
  {
   "id": "oc_nyu_women_in_business_and_entrepreneurship",
@@ -29994,7 +32254,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/wibe-women-in-business-and-entrepreneurship"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tandon-wibe@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/women-in-business-and-entrepreneurship"
+  }
  },
  {
   "id": "oc_nyu_womenincomputing",
@@ -30028,7 +32292,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuwinc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wincinfo@cs.nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/womenincomputing"
+  }
  },
  {
   "id": "oc_nyu_women_in_dentistry",
@@ -30181,7 +32449,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wushunyugallatin/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gallatinwushu-group@nyu.edu",
+   "source": "https://nyu.campuslabs.com/engage/organization/gallatinwushu"
+  }
  },
  {
   "id": "og_nyu_xi_psi_phi_fraternity",
@@ -30232,6 +32504,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/yarnitforward"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/yarnitforwardatnyu"
    },
    {
     "label": "Instagram",
@@ -30289,6 +32565,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/youngamericansforfreedom"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/yafnyu"
    },
    {
     "label": "Instagram",
@@ -30351,7 +32631,42 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuydsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuydsa@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/young-democratic-socialists-of-america-at-nyu"
+  }
+ },
+ {
+  "id": "og_nyu_zetaphibeta",
+  "name": "Zeta Phi Beta Sorority, Inc - All-University",
+  "logo": {
+   "emoji": "ZP",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/78a68b54-efb4-421c-986f-25c8924d67a52e245379-a76e-4b91-b10e-69bcacb2039c.png?preset=small-sq"
+  },
+  "type": "greek",
+  "schoolId": "s_nyu",
+  "parent": "Community Engagement & Service",
+  "verified": false,
+  "description": "Zeta Phi Beta Sorority, Incorporated is a historically Black Greek-letter organization founded January 16th, 1920, by five ladies at Howard University in Washington, DC.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://nyu.campuslabs.com/engage/organization/zetaphibeta"
+   }
+  ],
+  "contact": {
+   "email": "zetaphibetanyu@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/zetaphibeta"
+  }
  },
  {
   "id": "og_nyu_zetapsi",
@@ -30377,6 +32692,10 @@
    {
     "label": "Directory",
     "url": "https://nyu.campuslabs.com/engage/organization/zetapsi"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/zetapsinyc"
    },
    {
     "label": "Instagram",
@@ -30413,6 +32732,10 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nyuzta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nyuzta@gmail.com",
+   "source": "https://nyu.campuslabs.com/engage/organization/zeta-tau-alpha-all-university"
+  }
  }
 ]

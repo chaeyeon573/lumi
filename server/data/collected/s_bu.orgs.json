@@ -40,7 +40,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu180dc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boston@180dc.org",
+   "source": "https://bu.campuslabs.com/engage/organization/180-degrees-consulting"
+  }
  },
  {
   "id": "oc_bu_above_the_haze_a_chi_alpha_campus_ministry",
@@ -83,7 +87,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCy0xo278VGq9i0N7m29qExg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tomgriff@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/above-the-haze-a-chi-alpha-campus-ministry"
+  }
  },
  {
   "id": "oc_bu_accounting_association",
@@ -121,8 +129,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-accounting-association/posts/?feedView=all"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/buaccountingassociation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buaa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/accounting-association"
+  }
  },
  {
   "id": "oc_bu_adclub",
@@ -169,7 +185,11 @@
     "label": "X",
     "url": "http://twitter.com/BUadclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buadclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/adclub"
+  }
  },
  {
   "id": "oc_bu_adoptedandmulticulturalstudentalliance",
@@ -200,7 +220,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/BU_IAC/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amsa.bostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/adoptedandmulticulturalstudentalliance"
+  }
  },
  {
   "id": "oc_bu_african_students_organization",
@@ -239,7 +263,11 @@
     "label": "X",
     "url": "http://twitter.com/bu_aso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buaso@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/african-students-organization"
+  }
  },
  {
   "id": "oc_bu_afrithms",
@@ -270,7 +298,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/afrithms/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afrithms@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/afrithms"
+  }
  },
  {
   "id": "oc_bu_buas",
@@ -297,7 +329,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/buas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buafterschool@163.com",
+   "source": "https://bu.campuslabs.com/engage/organization/buas"
+  }
  },
  {
   "id": "oc_bu_absanetwork",
@@ -327,7 +363,11 @@
     "label": "Website",
     "url": "https://www.absanetwork.com/home/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "absa.bostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/absanetwork"
+  }
  },
  {
   "id": "oc_bu_asa",
@@ -357,8 +397,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/asabostonu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/asabostonu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "begollia@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/asa"
+  }
  },
  {
   "id": "oc_bu_alianza_latina",
@@ -397,7 +445,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AlianzaLatinaBU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alianzal@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/alianza-latina"
+  }
  },
  {
   "id": "oc_bu_allegrettos",
@@ -444,7 +496,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/BUAllegrettos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "allegro@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/allegrettos"
+  }
  },
  {
   "id": "oc_bu_aps",
@@ -514,7 +570,11 @@
     "label": "X",
     "url": "http://twitter.com/BU_Allocations"
    }
-  ]
+  ],
+  "contact": {
+   "email": "allocate@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/allocations-board"
+  }
  },
  {
   "id": "oc_bu_alpha_chi_sigma",
@@ -557,7 +617,11 @@
     "label": "X",
     "url": "http://twitter.com/alphachisigmabu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jsenel@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-chi-sigma"
+  }
  },
  {
   "id": "og_bu_alphadeltapi",
@@ -592,7 +656,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buadpi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buadpi@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alphadeltapi"
+  }
  },
  {
   "id": "oc_bu_alpha_epsilon_delta",
@@ -631,7 +699,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/aedbu/?ref=aymt_homepage_panel&eid=ARDCfWMvmgui7Q-yTNiOxQW7KDkTUDzYjoPbOjAocyZAkuhrUB-1T7uxu4riHSf_JWiiU0cuFwvT8XWv"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aed@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-epsilon-delta"
+  }
  },
  {
   "id": "og_bu_alpha_epsilon_phi",
@@ -666,7 +738,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/aephibu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buaephipres@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-epsilon-phi"
+  }
  },
  {
   "id": "og_bu_bostonaepi",
@@ -697,7 +773,11 @@
     "label": "Website",
     "url": "https://www.bostonaepi.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonaepi@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bostonaepi"
+  }
  },
  {
   "id": "og_bu_alpha_kappa_alpha_sorority_inc",
@@ -732,7 +812,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Alpha-Kappa-Alpha-Sorority-Inc-Epsilon-Chapter-Boston-Citywide-Events-167010500045898"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aka.epsilon@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-kappa-alpha-sorority-inc"
+  }
  },
  {
   "id": "og_bu_alpha_kappa_delta_phi",
@@ -771,7 +855,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bostonakdphi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boston.akdphi.president@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-kappa-delta-phi"
+  }
  },
  {
   "id": "oc_bu_alpha_kappa_psi",
@@ -814,7 +902,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/buakpsi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "akpsi.nu.chapter@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-kappa-psi"
+  }
  },
  {
   "id": "og_bu_alpha_phi",
@@ -857,7 +949,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCukv8ZqGUq4TY5gNQq1DkwA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bualphaphipres@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-phi"
+  }
  },
  {
   "id": "oc_bu_alpha_phi_omega",
@@ -892,7 +988,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/apozetaupsilon"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.buapo@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alpha-phi-omega"
+  }
  },
  {
   "id": "oc_bu_ask",
@@ -930,8 +1030,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/Alpha-Sigma-Kappa-WITS-Interest-Group-at-BU-2211654415754263/?modal=admin_todo_tour"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bualphasigmakappa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bualphasigmakappa@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/ask"
+  }
  },
  {
   "id": "oc_bu_buaig",
@@ -970,7 +1078,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bualternativeinvestments/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buaig@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buaig"
+  }
  },
  {
   "id": "oc_bu_alzheimersbuddies",
@@ -1001,7 +1113,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.alzbuddies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu@alzbuddies.org",
+   "source": "https://bu.campuslabs.com/engage/organization/alzheimersbuddies"
+  }
  },
  {
   "id": "oc_bu_colleges_against_cancer",
@@ -1040,7 +1156,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/relayforlifebu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "relaybu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/colleges-against-cancer"
+  }
  },
  {
   "id": "oc_bu_buaclu",
@@ -1071,7 +1191,11 @@
     "label": "Website",
     "url": "https://www.aclum.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aclubu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buaclu"
+  }
  },
  {
   "id": "oc_bu_american_institute_of_aeronautics_astronautics",
@@ -1110,7 +1234,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-aiaa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aiaa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/american-institute-of-aeronautics-astronautics"
+  }
  },
  {
   "id": "oc_bu_american_society_of_bmb",
@@ -1149,7 +1277,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/buasbmb"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asbmbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/american-society-of-bmb"
+  }
  },
  {
   "id": "oc_bu_american_society_of_mechanical_engineers",
@@ -1188,7 +1320,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/school/buasme/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asme@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/american-society-of-mechanical-engineers"
+  }
  },
  {
   "id": "oc_bu_american_studies_gsa",
@@ -1257,7 +1393,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/amnestybu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amnestyinternationalbosuniv@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/amnesty-international-at-boston-university"
+  }
  },
  {
   "id": "oc_bu_anime_club",
@@ -1296,7 +1436,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BuAnimeClub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buanime@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/anime-club"
+  }
  },
  {
   "id": "oc_bu_anthropology_in_the_works",
@@ -1335,7 +1479,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Boston-University-Anthropology-in-the-Works-Club-102057481579111/about/?ref=page_internal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aitw@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/anthropology-in-the-works"
+  }
  },
  {
   "id": "oc_bu_arabs",
@@ -1366,7 +1514,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.arabs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arabsbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/arabs"
+  }
  },
  {
   "id": "oc_bu_archaeology_society",
@@ -1397,7 +1549,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_arch_society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "archsoc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/archaeology-society"
+  }
  },
  {
   "id": "oc_bu_arche",
@@ -1436,7 +1592,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/arch%C3%A9-boston-university-s-undergraduate-philosophy-journal/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arche@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/arche"
+  }
  },
  {
   "id": "oc_bu_armenian_students_association",
@@ -1471,7 +1631,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUArmenianStudentsAssociation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/armenian-students-association"
+  }
  },
  {
   "id": "oc_bu_artclub",
@@ -1506,7 +1670,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/artclubbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "artclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/artclub"
+  }
  },
  {
   "id": "oc_bu_artfortheheart",
@@ -1537,7 +1705,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.art4heart/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "artheart@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/artfortheheart"
+  }
  },
  {
   "id": "oc_bu_art_history_association",
@@ -1567,8 +1739,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonu.aha"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bostonu.aha"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aha@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/art-history-association"
+  }
  },
  {
   "id": "oc_bu_aisociety",
@@ -1611,7 +1791,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@BUAISociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buais@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/aisociety"
+  }
  },
  {
   "id": "oc_bu_arts_administration_student_association",
@@ -1654,7 +1838,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/buaasa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buaasa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/arts-administration-student-association"
+  }
  },
  {
   "id": "oc_bu_asian_american_christian_fellowship",
@@ -1693,7 +1881,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/BUAACF"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buaacf@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/asian-american-christian-fellowship"
+  }
  },
  {
   "id": "oc_bu_asian_baptist_student_koinonia",
@@ -1728,7 +1920,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUabsk/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mattykim@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/asian-baptist-student-koinonia"
+  }
  },
  {
   "id": "oc_bu_asian_student_union",
@@ -1779,7 +1975,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC_Rrb6YfZWc0wfbkmQBl7Jg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buasu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/asian-student-union"
+  }
  },
  {
   "id": "oc_bu_arise",
@@ -1814,7 +2014,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.arise/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buarise@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/arise"
+  }
  },
  {
   "id": "oc_bu_buawm",
@@ -1857,7 +2061,11 @@
     "label": "X",
     "url": "http://twitter.com/BUAWM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buawmchapter@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/buawm"
+  }
  },
  {
   "id": "oc_bu_alpfa",
@@ -1900,7 +2108,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/alpfabu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alpfa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/alpfa"
+  }
  },
  {
   "id": "oc_bu_astronomical_society",
@@ -1943,7 +2155,11 @@
     "label": "X",
     "url": "http://twitter.com/buastros"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buastro@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/astronomical-society"
+  }
  },
  {
   "id": "oc_bu_aural_fixation",
@@ -1986,7 +2202,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCcuBfaXGw2-EuB3VzUWOqYA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "auralfixbuedu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/aural-fixation"
+  }
  },
  {
   "id": "oc_bu_buautomotiveclub",
@@ -2021,7 +2241,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-automotive-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "autoclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buautomotiveclub"
+  }
  },
  {
   "id": "oc_bu_bangladeshi_students_association",
@@ -2056,7 +2280,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUBANGLADESH/?eid=ARBw-fTFwjl0t6a6KN3tlnmtcC-P-_T-_F-lLEeo6ea0UC7crqJ-Oj_A8S-tRi8vbke4sGULXrGNix0N"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bubangla@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bangladeshi-students-association"
+  }
  },
  {
   "id": "oc_bu_bubarbell",
@@ -2087,7 +2315,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bubarbell/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adilynb@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bubarbell"
+  }
  },
  {
   "id": "oc_bu_bubbx",
@@ -2118,7 +2350,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_beatbox/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bubbx@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bubbx"
+  }
  },
  {
   "id": "oc_bu_bpsio",
@@ -2156,8 +2392,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/BUBetaPsiOmega/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bubetapsiomega"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bpsio@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bpsio"
+  }
  },
  {
   "id": "oc_bu_biobiz",
@@ -2195,8 +2439,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/biobizbu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/biobizbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adwax@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/biobiz"
+  }
  },
  {
   "id": "oc_bu_biomedical_engineering_society",
@@ -2239,7 +2491,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-bmes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bmes.bu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/biomedical-engineering-society"
+  }
  },
  {
   "id": "oc_bu_bipocmhc",
@@ -2274,7 +2530,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bipocmhc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cavelles@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bipocmhc"
+  }
  },
  {
   "id": "oc_bu_black_business_student_association",
@@ -2313,7 +2573,11 @@
     "label": "X",
     "url": "http://twitter.com//twitter.com/BBSABu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bbsa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/black-business-student-association"
+  }
  },
  {
   "id": "oc_bu_blackbox",
@@ -2343,8 +2607,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/blackboxbu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/blackboxbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bbox@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/blackbox"
+  }
  },
  {
   "id": "oc_bu_blockchain_club",
@@ -2410,7 +2682,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buboardgames/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bubgc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/board-games-club"
+  }
  },
  {
   "id": "oc_bu_boston_political_review",
@@ -2457,7 +2733,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/The_BPR"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gjmckean@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/boston-political-review"
+  }
  },
  {
   "id": "oc_bu_bhangra",
@@ -2496,7 +2776,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/BUbhangra"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bubhangra@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bhangra"
+  }
  },
  {
   "id": "oc_bu_bostones",
@@ -2535,7 +2819,11 @@
     "label": "X",
     "url": "http://twitter.com/thebostones"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostones@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bostones"
+  }
  },
  {
   "id": "oc_bu_boston_hacks",
@@ -2574,7 +2862,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bostonhacks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "contacts@bostonhacks.io",
+   "source": "https://bu.campuslabs.com/engage/organization/boston-hacks"
+  }
  },
  {
   "id": "oc_bu_bpm",
@@ -2613,7 +2905,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC7hldERrgYXMEjJ69TcqDmw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu.sorian@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bpm"
+  }
  },
  {
   "id": "oc_bu_brazilian_association",
@@ -2682,7 +2978,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/breathebu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonubreathe@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/breathebu"
+  }
  },
  {
   "id": "oc_bu_brothersunited",
@@ -2713,7 +3013,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/brothersunitedbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brotheru@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/brothersunited"
+  }
  },
  {
   "id": "oc_bu_bubassline",
@@ -2752,7 +3056,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bubassline/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bubassline@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bubassline"
+  }
  },
  {
   "id": "oc_bu_bostonuniversity",
@@ -2782,7 +3090,11 @@
     "label": "Website",
     "url": "http://www.bu.edu/studentactivities"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sao@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bostonuniversity"
+  }
  },
  {
   "id": "oc_bu_bugclub",
@@ -2813,7 +3125,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bubugclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lindens@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bugclub"
+  }
  },
  {
   "id": "oc_bu_bulletprooffunk",
@@ -2844,7 +3160,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.bpf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alankuang888@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bulletprooffunk"
+  }
  },
  {
   "id": "oc_bu_bubursa",
@@ -2879,7 +3199,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Boston-University-Burma-Student-Association-BURSA-106717118813400"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonubursa@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bubursa"
+  }
  },
  {
   "id": "oc_bu_business_technology_club",
@@ -2922,7 +3246,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bubiztechclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "biztech@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/business-technology-club"
+  }
  },
  {
   "id": "oc_bu_bubusinesslawclub",
@@ -2961,7 +3289,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bubusinesslaw/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonubizlaw@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bubusinesslawclub"
+  }
  },
  {
   "id": "oc_bu_callbacks",
@@ -3008,7 +3340,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/theBUcallbacks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thebucallbacks@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/callbacks"
+  }
  },
  {
   "id": "oc_bu_kesembu",
@@ -3051,7 +3387,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCF_AD8dhOgeAFkktdA11O4A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonu@kesem.org",
+   "source": "https://bu.campuslabs.com/engage/organization/kesembu"
+  }
  },
  {
   "id": "oc_bu_cab",
@@ -3090,7 +3430,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-campus-activities-board/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cabbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cab"
+  }
  },
  {
   "id": "oc_bu_bu_closet",
@@ -3117,7 +3461,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/bu-closet"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonucloset@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bu-closet"
+  }
  },
  {
   "id": "oc_bu_cvsa",
@@ -3144,7 +3492,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/cvsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cvstudentsassoc@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/cvsa"
+  }
  },
  {
   "id": "oc_bu_casstugov",
@@ -3191,7 +3543,11 @@
     "label": "X",
     "url": "http://twitter.com/CASGov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "casstugov@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/casstugov"
+  }
  },
  {
   "id": "oc_bu_catholic_student_association",
@@ -3230,7 +3586,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/BUCatholicCenter/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucatholic@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/catholic-student-association"
+  }
  },
  {
   "id": "oc_bu_cdsstugov",
@@ -3261,7 +3621,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cds.stugov/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rhemehta@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cdsstugov"
+  }
  },
  {
   "id": "oc_bu_center_for_gender_sexuality_and_activism",
@@ -3300,7 +3664,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/bucgsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cgsa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/center-for-gender-sexuality-and-activism"
+  }
  },
  {
   "id": "oc_bu_cfa_student_government",
@@ -3335,7 +3703,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-college-of-fine-arts-student-government"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cfagov@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cfa-student-government"
+  }
  },
  {
   "id": "oc_bu_cgs_student_government",
@@ -3370,7 +3742,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUCGSSGA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "azepeda@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cgs-student-government"
+  }
  },
  {
   "id": "oc_bu_cheer",
@@ -3395,6 +3771,10 @@
    {
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/cheer"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/terriercheerleading"
    },
    {
     "label": "Instagram",
@@ -3439,7 +3819,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/buchemia/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buchemia@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/chemia"
+  }
  },
  {
   "id": "oc_bu_chess_club",
@@ -3470,7 +3854,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buchessclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chessbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/chess-club"
+  }
  },
  {
   "id": "oc_bu_chinese_students_association",
@@ -3517,7 +3905,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCpnuZd_zVRR3fj5Yb97pMFQ/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuniversitycsa@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/chinese-students-association"
+  }
  },
  {
   "id": "oc_bu_choral_society",
@@ -3552,7 +3944,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/buchoralsociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "choral@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/choral-society"
+  }
  },
  {
   "id": "oc_bu_chordially_yours",
@@ -3599,7 +3995,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCV0NYfBefbYheeObfc0WAUw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chordially.yours@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/chordially-yours"
+  }
  },
  {
   "id": "oc_bu_christians_on_campus",
@@ -3641,8 +4041,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/buchristians"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/buchristiansoncampus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buchristiansoncampus@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/christians-on-campus"
+  }
  },
  {
   "id": "oc_bu_circle_k_international",
@@ -3673,7 +4081,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bucirclek/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucirclekinternational@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/circle-k-international"
+  }
  },
  {
   "id": "oc_bu_bucleantech",
@@ -3716,7 +4128,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bucleantech"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clntech@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bucleantech"
+  }
  },
  {
   "id": "oc_bu_climbingclub",
@@ -3755,7 +4171,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=66KF_5JWpdA&ab_channel=DavidSnow"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sylvie@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/climbingclub"
+  }
  },
  {
   "id": "oc_bu_clubcolombiabu",
@@ -3790,7 +4210,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/club-colombia0/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubcol@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/clubcolombiabu"
+  }
  },
  {
   "id": "oc_bu_clubsports",
@@ -3872,7 +4296,11 @@
     "label": "X",
     "url": "http://twitter.com/BUCollegeDems"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucollegedemocrats@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/college-democrats"
+  }
  },
  {
   "id": "oc_bu_bucollegerepublicans",
@@ -3903,7 +4331,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonucollegerepublicans/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucollegerep@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bucollegerepublicans"
+  }
  },
  {
   "id": "oc_bu_bugardens",
@@ -3934,7 +4366,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bucommunitygarden/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "warrengarden.bu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bugardens"
+  }
  },
  {
   "id": "oc_bu_cscic",
@@ -3965,7 +4401,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bucomputerscience/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucsclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cscic"
+  }
  },
  {
   "id": "oc_bu_cec",
@@ -4031,7 +4471,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-consulting-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucg@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/consulting-group"
+  }
  },
  {
   "id": "oc_bu_cru",
@@ -4070,7 +4514,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/CruatBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "keilana@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cru"
+  }
  },
  {
   "id": "oc_bu_cybersecurity_assn",
@@ -4105,7 +4553,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/cybersecurity-association-bu/about/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucys@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/cybersecurity-assn"
+  }
  },
  {
   "id": "oc_bu_danceteam",
@@ -4147,7 +4599,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC8A-vHi4iAm6EiDYe_srzow"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budt@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/danceteam"
+  }
  },
  {
   "id": "oc_bu_dance_theatre_group",
@@ -4190,7 +4646,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCXqqlqM625DLE_cHm_nmjqQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dtg@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/dance-theatre-group"
+  }
  },
  {
   "id": "oc_bu_ballroom_dance",
@@ -4237,7 +4697,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/BUBallroomTeam/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ballroom@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/ballroom-dance"
+  }
  },
  {
   "id": "oc_bu_budsa",
@@ -4272,7 +4736,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/budsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dsabu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/budsa"
+  }
  },
  {
   "id": "oc_bu_deaf_studies_club",
@@ -4303,7 +4771,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/budeafstudiesclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budsc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/deaf-studies-club"
+  }
  },
  {
   "id": "oc_bu_debate_society",
@@ -4338,7 +4810,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bostonuniversitydebate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boston.university.debate@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/debate-society"
+  }
  },
  {
   "id": "og_bu_delta_delta_delta",
@@ -4377,7 +4853,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/pages/Tri-Delta-Boston-University/148158480497"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphapresident1888@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/delta-delta-delta"
+  }
  },
  {
   "id": "og_bu_delta_gamma",
@@ -4463,7 +4943,11 @@
     "label": "X",
     "url": "http://twitter.com/bu_dka"
    }
-  ]
+  ],
+  "contact": {
+   "email": "secretary@bu.dka.org",
+   "source": "https://bu.campuslabs.com/engage/organization/delta-kappa-alpha"
+  }
  },
  {
   "id": "oc_bu_delta_phi_epsilon_international",
@@ -4502,7 +4986,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/dpebu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dpe@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/delta-phi-epsilon-international"
+  }
  },
  {
   "id": "oc_bu_delta_sigma_pi",
@@ -4541,7 +5029,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/dspgamma/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dspgamma@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/delta-sigma-pi"
+  }
  },
  {
   "id": "og_bu_iotachapterdeltas",
@@ -4580,7 +5072,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/iotachapterdeltas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iotadst@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/iotachapterdeltas"
+  }
  },
  {
   "id": "og_bu_delta_tau_delta",
@@ -4615,7 +5111,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/dtd.betasigma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budeltsbetasigma@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/delta-tau-delta"
+  }
  },
  {
   "id": "oc_bu_dheem_indian_classical_arts_association",
@@ -4654,7 +5154,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/budheem"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budheem@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/dheem-indian-classical-arts-association"
+  }
  },
  {
   "id": "oc_bu_diversity_in_law_association",
@@ -4685,7 +5189,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/budiversityinlaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budiversityinlawassociation@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/diversity-in-law-association"
+  }
  },
  {
   "id": "oc_bu_dodgeballclub",
@@ -4716,7 +5224,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_dodgeballclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iherrick@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/dodgeballclub"
+  }
  },
  {
   "id": "oc_bu_dsabu",
@@ -4746,8 +5258,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonu.dsa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bostonu.dsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonu.dsa@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/dsabu"
+  }
  },
  {
   "id": "oc_bu_edge_dance_company",
@@ -4790,7 +5310,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@BUEdge"
    }
-  ]
+  ],
+  "contact": {
+   "email": "edgebu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/edge-dance-company"
+  }
  },
  {
   "id": "oc_bu_egyptian_club",
@@ -4821,7 +5345,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buegyptianclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yasmeene@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/egyptian-club"
+  }
  },
  {
   "id": "oc_bu_elementary_education",
@@ -4852,7 +5380,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/elemedbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lmedclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/elementary-education"
+  }
  },
  {
   "id": "oc_bu_emsclub",
@@ -4886,8 +5418,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_ems"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bu_ems"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buemsclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/emsclub"
+  }
  },
  {
   "id": "oc_bu_eng_student_government",
@@ -4965,7 +5505,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/EWBBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.ewbbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/engineers-without-borders"
+  }
  },
  {
   "id": "oc_bu_entrepreneurs_club",
@@ -5008,7 +5552,11 @@
     "label": "X",
     "url": "http://twitter.com/BU_EClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/entrepreneurs-club"
+  }
  },
  {
   "id": "oc_bu_environmental_student_organization",
@@ -5051,7 +5599,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-eso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eso@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/environmental-student-organization"
+  }
  },
  {
   "id": "oc_bu_epsilon_eta",
@@ -5086,7 +5638,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/EpsilonEtaBU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "epsiloneta.bu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/epsilon-eta"
+  }
  },
  {
   "id": "oc_bu_eritrean_and_ethiopian_students_association",
@@ -5117,7 +5673,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_eesa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eesa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/eritrean-and-ethiopian-students-association"
+  }
  },
  {
   "id": "oc_bu_etcchoir",
@@ -5159,8 +5719,16 @@
    {
     "label": "YouTube",
     "url": "https://youtube.com/@etcchoirbu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/etc.choir"
    }
-  ]
+  ],
+  "contact": {
+   "email": "etcchoir@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/etcchoir"
+  }
  },
  {
   "id": "oc_bu_f1tenthautonomousracingorg",
@@ -5187,7 +5755,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/f1tenthautonomousracingorg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "f1tenthbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/f1tenthautonomousracingorg"
+  }
  },
  {
   "id": "oc_bu_fashion_and_retail_association",
@@ -5226,7 +5798,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bufashionandretail/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bufashion@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/fashion-and-retail-association"
+  }
  },
  {
   "id": "oc_bu_fatakada",
@@ -5265,7 +5841,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-fatakada/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fatakada.bu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/fatakada"
+  }
  },
  {
   "id": "oc_bu_feelgood_world",
@@ -5299,8 +5879,16 @@
    {
     "label": "Instagram",
     "url": "http://instagram.com/feelgoodbu"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/feelgoodworld"
    }
-  ]
+  ],
+  "contact": {
+   "email": "feelgood@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/feelgood-world"
+  }
  },
  {
   "id": "oc_bu_fenwayhc",
@@ -5368,7 +5956,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/boofTV"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bufsa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/filipino-student-association"
+  }
  },
  {
   "id": "oc_bu_film_society",
@@ -5411,7 +6003,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/BU_Film_Society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thebufilmsociety@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/film-society"
+  }
  },
  {
   "id": "oc_bu_filmbiz",
@@ -5442,7 +6038,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/filmbizbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bufilmbiz@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/filmbiz"
+  }
  },
  {
   "id": "oc_bu_finance_and_investment_club",
@@ -5481,7 +6081,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-finance-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buinvest@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/finance-and-investment-club"
+  }
  },
  {
   "id": "oc_bu_financial_modeling_club",
@@ -5520,7 +6124,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-boston-university-financial-modeling-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buexcel@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/financial-modeling-club"
+  }
  },
  {
   "id": "oc_bu_financial_technology_group",
@@ -5563,7 +6171,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/fintech-bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fintechc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/financial-technology-group"
+  }
  },
  {
   "id": "oc_bu_flipbostonu",
@@ -5598,7 +6210,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/flipbostonu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "flip@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/flipbostonu"
+  }
  },
  {
   "id": "oc_bu_na",
@@ -5629,7 +6245,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buflagfootballclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rhomer@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/na"
+  }
  },
  {
   "id": "oc_bu_forgedesignstudios",
@@ -5676,7 +6296,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCiYjONI2RvGcwyVYxAXS73w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budesign@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/forgedesignstudios"
+  }
  },
  {
   "id": "oc_bu_forte",
@@ -5715,7 +6339,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/busweethearts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuforte@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/forte"
+  }
  },
  {
   "id": "oc_bu_french_club",
@@ -5750,7 +6378,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/FrenchClubBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/french-club"
+  }
  },
  {
   "id": "oc_bu_fusion",
@@ -5793,7 +6425,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/fusionbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fusion.bu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/fusion"
+  }
  },
  {
   "id": "oc_bu_g_power",
@@ -5827,6 +6463,10 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/@G-powerDanceCrew"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/__gpower__"
    }
   ]
  },
@@ -5867,7 +6507,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/groups/171510589597531/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bugamingclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/gaming-club"
+  }
  },
  {
   "id": "og_bu_gamma_phi_beta",
@@ -5898,7 +6542,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gammaphibu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hlavena@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/gamma-phi-beta"
+  }
  },
  {
   "id": "oc_bu_soulaan",
@@ -5932,8 +6580,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/soulaan-at-boston-university"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/soulaan_bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soulaan@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/soulaan"
+  }
  },
  {
   "id": "oc_bu_bugs",
@@ -5964,7 +6620,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_geological_society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bugeologicalsociety@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bugs"
+  }
  },
  {
   "id": "oc_bu_german_culture_club",
@@ -5999,7 +6659,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_germanclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "germancc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/german-culture-club"
+  }
  },
  {
   "id": "oc_bu_gso",
@@ -6033,8 +6697,20 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bu.gso"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/bu.gso?ltsid=2f6fac54-ee12-49d9-978c-8e5fd68067f5"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bu.gso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bugso@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/gso"
+  }
  },
  {
   "id": "oc_bu_girlgainsbu",
@@ -6073,7 +6749,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100078232548431"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ggains@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/girlgainsbu"
+  }
  },
  {
   "id": "oc_bu_swsg",
@@ -6104,7 +6784,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/swsg_bu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu@swsg.org",
+   "source": "https://bu.campuslabs.com/engage/organization/swsg"
+  }
  },
  {
   "id": "oc_bu_bugwcchapter",
@@ -6143,7 +6827,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/girlswhocodeBU/?eid=ARDI2pq0C7TjVvKSBy4Q853UJHeTPrZG2SmZUb_lJfC5obTgz4dMko8c5PLpisbGENVTrdaCMesx1vPB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gwcbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bugwcchapter"
+  }
  },
  {
   "id": "oc_bu_bugliding",
@@ -6182,7 +6870,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@terriergliding?si=WIPSHUEFMxYGZxP7"
    }
-  ]
+  ],
+  "contact": {
+   "email": "terriergliding@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bugliding"
+  }
  },
  {
   "id": "oc_bu_global_china_connection",
@@ -6221,7 +6913,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-global-china-connection/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bugcc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/global-china-connection"
+  }
  },
  {
   "id": "oc_bu_global_engineering_brigade",
@@ -6263,8 +6959,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12373095/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bu.gengb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bugengb@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/global-engineering-brigade"
+  }
  },
  {
   "id": "oc_bu_global_medical_brigades",
@@ -6295,7 +6999,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bugmb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gmb.bostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/global-medical-brigades"
+  }
  },
  {
   "id": "oc_bu_global_tea_club",
@@ -6322,7 +7030,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/global-tea-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buglobalteaclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/global-tea-club"
+  }
  },
  {
   "id": "oc_bu_bucssa",
@@ -6349,7 +7061,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/bucssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jcy83@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bucssa"
+  }
  },
  {
   "id": "oc_bu_taiwanese_student_association_graduate_23300",
@@ -6384,7 +7100,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/butsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "butsaa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/taiwanese-student-association-graduate-23300"
+  }
  },
  {
   "id": "oc_bu_graphicmedicine",
@@ -6414,8 +7134,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bu.graphicmedicine"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bu.graphicmedicine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gmed@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/graphicmedicine"
+  }
  },
  {
   "id": "oc_bu_groupirean",
@@ -6489,7 +7217,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bostongms"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bugms@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/guerrilla-marketing-society"
+  }
  },
  {
   "id": "oc_bu_hack4impact",
@@ -6532,7 +7264,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/103846219/admin/feed/posts/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuniversity@hack4impact.org",
+   "source": "https://bu.campuslabs.com/engage/organization/hack4impact"
+  }
  },
  {
   "id": "oc_bu_hackhardwarebu",
@@ -6567,7 +7303,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/hackhardware_bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hackh@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/hackhardwarebu"
+  }
  },
  {
   "id": "oc_bu_hawaii_cultural_association",
@@ -6610,7 +7350,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC7ZQvfjat6CYr2G84Tjskcg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pauhana@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/hawaii-cultural-association"
+  }
  },
  {
   "id": "oc_bu_3hclub",
@@ -6641,7 +7385,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/3h_bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hhhclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/3hclub"
+  }
  },
  {
   "id": "oc_bu_healthcareimprovementinc",
@@ -6680,7 +7428,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/healthcareimprovementinc/?modal=admin_todo_tour"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hci@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/healthcareimprovementinc"
+  }
  },
  {
   "id": "oc_bu_hearts_4_the_homeless_boston_university",
@@ -6719,7 +7471,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/h4hboston/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hearts@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/hearts-4-the-homeless-boston-university"
+  }
  },
  {
   "id": "oc_bu_hellenic_association",
@@ -6758,7 +7514,11 @@
     "label": "X",
     "url": "http://twitter.com/buha_bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hellenic@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/hellenic-association"
+  }
  },
  {
   "id": "oc_bu_helping_hands_for_the_homeless",
@@ -6793,7 +7553,11 @@
     "label": "X",
     "url": "http://twitter.com/@helphandsatBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buhelphand@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/helping-hands-for-the-homeless"
+  }
  },
  {
   "id": "oc_bu_hercampusbu",
@@ -6840,7 +7604,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/HerCampusMagazine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hc.bu@hercampus.com",
+   "source": "https://bu.campuslabs.com/engage/organization/hercampusbu"
+  }
  },
  {
   "id": "oc_bu_herfinancialfuture",
@@ -6875,7 +7643,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/herfinancialfuture/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hffuture@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/herfinancialfuture"
+  }
  },
  {
   "id": "oc_bu_hernetwork_boston_university_women_in_business",
@@ -6918,7 +7690,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/3705983/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "herntwrk@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/hernetwork-boston-university-women-in-business"
+  }
  },
  {
   "id": "oc_bu_hillel_students_organization",
@@ -7004,7 +7780,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCNZCXiB5TUq0Y6EJE-dK7zQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buhsc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buhca"
+  }
  },
  {
   "id": "oc_bu_hong_kong_student_association",
@@ -7043,7 +7823,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-hong-kong-student-association/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "1buhksa@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/hong-kong-student-association"
+  }
  },
  {
   "id": "oc_bu_hospitality_association",
@@ -7078,7 +7862,11 @@
     "label": "X",
     "url": "http://twitter.com/buahla"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buha0928@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/hospitality-association"
+  }
  },
  {
   "id": "oc_bu_htc",
@@ -7150,7 +7938,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/Boston-University-IEEE-102075591232385/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ieee@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/ieee-student-chapter-ieee-hkn"
+  }
  },
  {
   "id": "oc_bu_buinachord",
@@ -7193,7 +7985,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/buinachord2"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buinachord@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/buinachord"
+  }
  },
  {
   "id": "oc_bu_india_club",
@@ -7224,7 +8020,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buindiaclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buindiaclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/india-club"
+  }
  },
  {
   "id": "oc_bu_indonesian_student_association",
@@ -7259,7 +8059,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/theisabu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isabu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/indonesian-student-association"
+  }
  },
  {
   "id": "oc_bu_ink",
@@ -7294,7 +8098,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.ink/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "inkclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/ink"
+  }
  },
  {
   "id": "oc_bu_inner_strength_gospel_choir",
@@ -7337,10 +8145,14 @@
     "label": "X",
     "url": "http://twitter.com/isgcatbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isgchoir@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/inner-strength-gospel-choir"
+  }
  },
  {
-  "id": "og_bu_inter_fraternity_council",
+  "id": "oc_bu_inter_fraternity_council",
   "name": "Inter Fraternity Council",
   "logo": {
    "emoji": "IF",
@@ -7442,7 +8254,11 @@
     "label": "X",
     "url": "http://twitter.com/BU_IAA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buiaa.exec@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/international-affairs-association"
+  }
  },
  {
   "id": "oc_bu_islamic_society",
@@ -7477,7 +8293,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/islamicsocietybu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isbuact@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/islamic-society"
+  }
  },
  {
   "id": "oc_bu_itsonus",
@@ -7512,7 +8332,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/itsonus_bostonu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "itsonus@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/itsonus"
+  }
  },
  {
   "id": "oc_bu_italian_students_association",
@@ -7539,7 +8363,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/italian-students-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "italians@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/italian-students-association"
+  }
  },
  {
   "id": "oc_bu_jains_in_voice_and_action",
@@ -7582,7 +8410,11 @@
     "label": "X",
     "url": "http://twitter.com/BUJIVA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pranati@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/jains-in-voice-and-action"
+  }
  },
  {
   "id": "oc_bu_jalwa",
@@ -7621,7 +8453,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@JalwaBU/videos"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jalwabu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/jalwa"
+  }
  },
  {
   "id": "oc_bu_japanese_student_association",
@@ -7664,7 +8500,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCNmuk6WXB8BXIeoaSLcr_fA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bujsa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/japanese-student-association"
+  }
  },
  {
   "id": "oc_bu_jewishoncampus",
@@ -7707,7 +8547,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/jewishoncampus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuniversity@jewishoncampus.org",
+   "source": "https://bu.campuslabs.com/engage/organization/jewishoncampus"
+  }
  },
  {
   "id": "oc_bu_bujh",
@@ -7738,7 +8582,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buhistoryjournal/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bujh@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bujh"
+  }
  },
  {
   "id": "oc_bu_bujoc",
@@ -7773,7 +8621,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/bu-journalists-of-color-438744368/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bujournalistsofcolor@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bujoc"
+  }
  },
  {
   "id": "og_bu_kappaalphapsi",
@@ -7804,7 +8656,11 @@
     "label": "Website",
     "url": "https://www.kappaalphapsi1911.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chi.kapsi@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/kappaalphapsi"
+  }
  },
  {
   "id": "og_bu_kappa_alpha_theta",
@@ -7839,7 +8695,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/thetabostonu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buthetacao@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/kappa-alpha-theta"
+  }
  },
  {
   "id": "og_bu_kappa_delta",
@@ -7870,7 +8730,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bukappadelta/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vp.bukappadelta@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/kappa-delta"
+  }
  },
  {
   "id": "og_bu_kappa_kappa_psi",
@@ -7908,8 +8772,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/KKPsiThetaBeta"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/kkpsithetabeta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kkpsi@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/kappa-kappa-psi"
+  }
  },
  {
   "id": "og_bu_kappa_sig",
@@ -7944,7 +8816,11 @@
     "label": "Facebook",
     "url": "http://facebook.com//kappasigmabu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jakeyuu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/kappa-sig"
+  }
  },
  {
   "id": "oc_bu_ktpbostonu",
@@ -7983,7 +8859,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/company/kappa-theta-pi-lambda-chapter/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ktpbostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/ktpbostonu"
+  }
  },
  {
   "id": "oc_bu_khmer_student_association",
@@ -8009,6 +8889,10 @@
    {
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/khmer-student-association"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bu.khmer"
    },
    {
     "label": "Instagram",
@@ -8049,7 +8933,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-kidney-disease-screening-and-awareness-program"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kdsapbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/kidney-disease-screening-and-awareness-program"
+  }
  },
  {
   "id": "oc_bu_knitting_club",
@@ -8084,7 +8972,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/buknitting/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "knitting@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/knitting-club"
+  }
  },
  {
   "id": "oc_bu_korean_communication_association",
@@ -8127,7 +9019,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@kommniverse"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boston.komma@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/korean-communication-association"
+  }
  },
  {
   "id": "oc_bu_korean_student_association",
@@ -8166,7 +9062,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/bostonuksa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buksa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/korean-student-association"
+  }
  },
  {
   "id": "oc_bu_lacasaperuana",
@@ -8197,7 +9097,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_lacasaperuana/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "casaperu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/lacasaperuana"
+  }
  },
  {
   "id": "oc_bu_workinprogress",
@@ -8224,7 +9128,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/workinprogress"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dancastr@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/workinprogress"
+  }
  },
  {
   "id": "oc_bu_bulatam",
@@ -8259,7 +9167,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/latam-boston-university/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isacw@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bulatam"
+  }
  },
  {
   "id": "oc_bu_latinasbu",
@@ -8290,7 +9202,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/latinas_bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latinasbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/latinasbu"
+  }
  },
  {
   "id": "oc_bu_lebanese_club",
@@ -8321,7 +9237,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/lebaneseclubbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lebaneseclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/lebanese-club"
+  }
  },
  {
   "id": "oc_bu_liquid_fun",
@@ -8368,7 +9288,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@LiquidFun"
    }
-  ]
+  ],
+  "contact": {
+   "email": "liquidfun@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/liquid-fun"
+  }
  },
  {
   "id": "oc_bu_questrom_lock",
@@ -8403,7 +9327,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/questromlock"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lock@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/questrom-lock"
+  }
  },
  {
   "id": "oc_bu_losmariachiterriers",
@@ -8430,7 +9358,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/losmariachiterriers"
    }
-  ]
+  ],
+  "contact": {
+   "email": "losmariachiterriers@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/losmariachiterriers"
+  }
  },
  {
   "id": "oc_bu_lower_bay_state",
@@ -8492,7 +9424,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100082490023453"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumahjong@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/mahjong-club"
+  }
  },
  {
   "id": "oc_bu_malaysian_cultural_association",
@@ -8527,7 +9463,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bumyca/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "myca.bostonuniversity@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/malaysian-cultural-association"
+  }
  },
  {
   "id": "oc_bu_marine_science_association",
@@ -8565,8 +9505,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/MSAatBU"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/msaatbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fosterd@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/marine-science-association"
+  }
  },
  {
   "id": "oc_bu_bumkc",
@@ -8609,7 +9557,11 @@
     "label": "X",
     "url": "http://twitter.com/BUMKClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "masante@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bumkc"
+  }
  },
  {
   "id": "oc_bu_bumrc",
@@ -8652,7 +9604,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@BUMRC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumrc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bumrc"
+  }
  },
  {
   "id": "oc_bu_mabu",
@@ -8683,7 +9639,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonu_maa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumaa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/mabu"
+  }
  },
  {
   "id": "oc_bu_medical_ethics_society",
@@ -8722,7 +9682,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-medical-ethics-society/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumedes@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/medical-ethics-society"
+  }
  },
  {
   "id": "oc_bu_mexican_students_association",
@@ -8757,7 +9721,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/facebook.com/mexasatbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mexasbostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/mexican-students-association"
+  }
  },
  {
   "id": "oc_bu_migrationtales",
@@ -8788,7 +9756,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/migration.tales/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "themigrationtales@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/migrationtales"
+  }
  },
  {
   "id": "oc_bu_mind_and_brain_society",
@@ -8831,7 +9803,11 @@
     "label": "LinkedIn",
     "url": "http://linkedin.com/company/mind-and-brain-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ombs@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/mind-and-brain-society"
+  }
  },
  {
   "id": "oc_bu_minority_association_of_pre_med_health_students",
@@ -8866,7 +9842,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BostonUniversityMAPS/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mapsbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/minority-association-of-pre-med-health-students"
+  }
  },
  {
   "id": "oc_bu_mixedstudentunion",
@@ -8897,7 +9877,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/bu_msu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumsu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/mixedstudentunion"
+  }
  },
  {
   "id": "oc_bu_mixx_k_pop_cover_dance_crew",
@@ -8936,7 +9920,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/BUmiXxKPopDance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumixxkpopdance@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/mixx-k-pop-cover-dance-crew"
+  }
  },
  {
   "id": "oc_bu_mock_mediation_organization",
@@ -8967,7 +9955,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bumockmediation/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mockmed@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/mock-mediation-organization"
+  }
  },
  {
   "id": "oc_bu_mto",
@@ -9010,7 +10002,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bumto/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mto@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/mto"
+  }
  },
  {
   "id": "oc_bu_bumco",
@@ -9044,8 +10040,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.mco/"
+   },
+   {
+    "label": "Website",
+    "url": "https://bumoot.wixsite.com/boston-university-mo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bumco@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bumco"
+  }
  },
  {
   "id": "oc_bu_muepsilondelta",
@@ -9080,7 +10084,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mednationals/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonumed@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/muepsilondelta"
+  }
  },
  {
   "id": "oc_bu_music_business_club",
@@ -9123,7 +10131,11 @@
     "label": "X",
     "url": "http://twitter.com/bu_mbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mbceboard@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/music-business-club"
+  }
  },
  {
   "id": "oc_bu_mustard_seed",
@@ -9174,7 +10186,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCf_2QRkUjJ--_3oD9UKqTTQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jhcaitie@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/mustard-seed"
+  }
  },
  {
   "id": "oc_bu_national_society_of_black_engineers",
@@ -9213,7 +10229,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/nsbebu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu.nsbe.president@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/national-society-of-black-engineers"
+  }
  },
  {
   "id": "oc_bu_blackwomeninmedicine",
@@ -9248,7 +10268,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.nsbwm/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu.nsbwm@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/blackwomeninmedicine"
+  }
  },
  {
   "id": "oc_bu_national_society_of_collegiate_scholars",
@@ -9314,7 +10338,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/groups/BostonUniversityNSSLHA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonunsslha@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/nationalstudentspeechlanguagehearingassociation"
+  }
  },
  {
   "id": "oc_bu_bu_naturally",
@@ -9357,7 +10385,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BU-Naturally-105197754213770"
    }
-  ]
+  ],
+  "contact": {
+   "email": "natural@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bu-naturally"
+  }
  },
  {
   "id": "oc_bu_navigators_christian_fellowship",
@@ -9396,7 +10428,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/facebook.com/BostonNavigators"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bunavs@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/navigators-christian-fellowship"
+  }
  },
  {
   "id": "oc_bu_bu_nigerian_students_association",
@@ -9427,7 +10463,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_nsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adedoyin@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bu-nigerian-students-association"
+  }
  },
  {
   "id": "oc_bu_nmdp",
@@ -9462,7 +10502,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.nmdp/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "btmocbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/nmdp"
+  }
  },
  {
   "id": "oc_bu_nasoatbostonu",
@@ -9496,8 +10540,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/north-african-student-organization-at-boston-university"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bu.naso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bunaso22@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/nasoatbostonu"
+  }
  },
  {
   "id": "oc_bu_nutrition_and_dietetics_club",
@@ -9536,7 +10588,11 @@
     "label": "X",
     "url": "http://twitter.com/bunutritionclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bunutritionclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/nutrition-and-dietetics-club"
+  }
  },
  {
   "id": "oc_bu_off_the_cuff_magazine",
@@ -9583,7 +10639,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCSkIRqtvHuzXzONJuACUtaA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "otc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/off-the-cuff-magazine"
+  }
  },
  {
   "id": "oc_bu_offthehook",
@@ -9613,8 +10673,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/offthehookbu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/offthehookbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amagana5@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/offthehook"
+  }
  },
  {
   "id": "oc_bu_omega_phi_alpha",
@@ -9649,7 +10717,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Omega-Phi-Alpha-at-Boston-University-157425140984945/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alpha.mu.president@omegaphialpha.org",
+   "source": "https://bu.campuslabs.com/engage/organization/omega-phi-alpha"
+  }
  },
  {
   "id": "oc_bu_bob",
@@ -9680,7 +10752,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buonbeat/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dejaford@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bob"
+  }
  },
  {
   "id": "oc_bu_on_broadway",
@@ -9727,7 +10803,11 @@
     "label": "X",
     "url": "http://twitter.com/BUOnBroadway"
    }
-  ]
+  ],
+  "contact": {
+   "email": "onbrdway@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/on-broadway"
+  }
  },
  {
   "id": "oc_bu_on_tap",
@@ -9766,7 +10846,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCDqdCaqCLAa8Hn5ZUpkS3gA/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buontap@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/on-tap"
+  }
  },
  {
   "id": "oc_bu_onelovebu",
@@ -9809,7 +10893,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/JoinOneLove"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fundraising@joinonelove.org",
+   "source": "https://bu.campuslabs.com/engage/organization/onelovebu"
+  }
  },
  {
   "id": "oc_bu_one_voice",
@@ -9852,7 +10940,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@buonevoice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "onevoice@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/one-voice"
+  }
  },
  {
   "id": "oc_bu_oha_bu",
@@ -9883,7 +10975,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/oha_bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ohabu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/oha-bu"
+  }
  },
  {
   "id": "oc_bu_organization_of_pakistani_students",
@@ -9918,7 +11014,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUOPS/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pakistan@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/organization-of-pakistani-students"
+  }
  },
  {
   "id": "oc_bu_outing_club",
@@ -9953,7 +11053,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/buoutingclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buoutingclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/outing-club"
+  }
  },
  {
   "id": "oc_bu_overarching_executive_council",
@@ -10006,10 +11110,14 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/bupsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lsarhan@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bupsa"
+  }
  },
  {
-  "id": "og_bu_panhellenic_council",
+  "id": "oc_bu_panhellenic_council",
   "name": "Panhellenic Council",
   "logo": {
    "emoji": "PC",
@@ -10037,7 +11145,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bupanhel/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bupanhelpresident@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/panhellenic-council"
+  }
  },
  {
   "id": "oc_bu_period",
@@ -10072,7 +11184,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/periodatbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "period@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/period"
+  }
  },
  {
   "id": "oc_bu_iranian_students_association",
@@ -10107,7 +11223,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bupersian/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "skhatami@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/iranian-students-association"
+  }
  },
  {
   "id": "oc_bu_pad",
@@ -10146,7 +11266,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/buphialphadelta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bupad@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pad"
+  }
  },
  {
   "id": "og_bu_phi_chi_theta_business_fraternity",
@@ -10189,7 +11313,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/phi-chi-theta-zeta/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pct.bostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/phi-chi-theta-business-fraternity"
+  }
  },
  {
   "id": "og_bu_pgnleaders",
@@ -10228,7 +11356,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pgnbostonu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "expansionvp@pgnleaders.org",
+   "source": "https://bu.campuslabs.com/engage/organization/pgnleaders"
+  }
  },
  {
   "id": "og_bu_pktbu",
@@ -10271,7 +11403,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC1MbX35a1ddUcLCig5N4QhA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pktau.bu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/pktbu"
+  }
  },
  {
   "id": "oc_bu_photography_club",
@@ -10306,7 +11442,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/BUPhotoClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "photobu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/photography-club"
+  }
  },
  {
   "id": "oc_bu_physical_therapy_association_graduate_32375",
@@ -10333,7 +11473,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/physical-therapy-association-graduate-32375"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buphysicaltherapy@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/physical-therapy-association-graduate-32375"
+  }
  },
  {
   "id": "og_bu_pi_kappa_alpha",
@@ -10399,7 +11543,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/pioneer-impact-consutling"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pic@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pic"
+  }
  },
  {
   "id": "oc_bu_pmready",
@@ -10430,7 +11578,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bupmready/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pmready@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pmready"
+  }
  },
  {
   "id": "oc_bu_pre_dental_society",
@@ -10460,8 +11612,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bupredent"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bupredent"
    }
-  ]
+  ],
+  "contact": {
+   "email": "predent@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pre-dental-society"
+  }
  },
  {
   "id": "oc_bu_phpc",
@@ -10492,7 +11652,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_phpc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phpcbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/phpc"
+  }
  },
  {
   "id": "oc_bu_pre_law_review",
@@ -10531,7 +11695,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUprelawreview"
    }
-  ]
+  ],
+  "contact": {
+   "email": "plr@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pre-law-review"
+  }
  },
  {
   "id": "oc_bu_pre_law_society",
@@ -10570,7 +11738,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BostonUniversityPreLawSociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pls@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pre-law-society"
+  }
  },
  {
   "id": "oc_bu_premedical_society",
@@ -10605,7 +11777,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bupremedsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bupremed@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/premedical-society"
+  }
  },
  {
   "id": "oc_bu_pre_physician_assistant_club",
@@ -10639,8 +11815,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/buprepac/?ref=bookmarks"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bostonuprepa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prepac@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pre-physician-assistant-club"
+  }
  },
  {
   "id": "oc_bu_pre_veterinary_and_animal_lovers_society",
@@ -10671,7 +11855,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/palsbostonu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bupals@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pre-veterinary-and-animal-lovers-society"
+  }
  },
  {
   "id": "oc_bu_buprevent",
@@ -10698,7 +11886,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/buprevent"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hvora@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buprevent"
+  }
  },
  {
   "id": "oc_bu_pride_in_business",
@@ -10741,7 +11933,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/prideinbusiness"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prideinbusinessbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/pride-in-business"
+  }
  },
  {
   "id": "oc_bu_prisonoutreachinitiative",
@@ -10772,7 +11968,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_prisonoutreach/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu.prisonoutreachinitiative@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/prisonoutreachinitiative"
+  }
  },
  {
   "id": "oc_bu_project_sunshine",
@@ -10815,7 +12015,11 @@
     "label": "X",
     "url": "http://twitter.com/sunshineatbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "llaurenn@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/project-sunshine"
+  }
  },
  {
   "id": "oc_bu_psi_chi",
@@ -10846,7 +12050,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/bupsichi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jpalfai@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/psi-chi"
+  }
  },
  {
   "id": "oc_bu_public_relations_student_society_of_america",
@@ -10889,7 +12097,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-prssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gracecu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/public-relations-student-society-of-america"
+  }
  },
  {
   "id": "oc_bu_puerto_rican_student_association",
@@ -10924,7 +12136,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/prsa2018"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prsa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/puerto-rican-student-association"
+  }
  },
  {
   "id": "oc_bu_kazakh_student_union",
@@ -10998,7 +12214,11 @@
     "label": "X",
     "url": "http://twitter.com/buqcollective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "queer@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/queeractivistcollective"
+  }
  },
  {
   "id": "oc_bu_questromgov",
@@ -11045,7 +12265,11 @@
     "label": "X",
     "url": "http://twitter.com/questromgov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "questromgov@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/questromgov"
+  }
  },
  {
   "id": "oc_bu_bu_quiz_bowl",
@@ -11080,7 +12304,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buquizclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "quizbowl@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bu-quiz-bowl"
+  }
  },
  {
   "id": "oc_bu_burec",
@@ -11111,7 +12339,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/bureclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bureclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/burec"
+  }
  },
  {
   "id": "oc_bu_burectennisclub",
@@ -11142,7 +12374,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/bu_rectennis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "recten@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/burectennisclub"
+  }
  },
  {
   "id": "oc_bu_red_cross_volunteers",
@@ -11176,6 +12412,10 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/groups/buredcross"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bu_redcross/"
    }
   ]
  },
@@ -11204,7 +12444,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/red-star-theater"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aglow@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/red-star-theater"
+  }
  },
  {
   "id": "oc_bu_reformed_university_fellowship_at_boston_universit",
@@ -11247,7 +12491,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC-2xJsWKW-KI04K8Xe4ch-Q"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rufbostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/reformed-university-fellowship-at-boston-universit"
+  }
  },
  {
   "id": "oc_bu_rlcassociation",
@@ -11282,7 +12530,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-retail-luxury-consumer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "retailluxuryconsumer@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/rlcassociation"
+  }
  },
  {
   "id": "oc_bu_rhythmnbeat",
@@ -11313,7 +12565,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rnbstep.bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rnbstep@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/rhythmnbeat"
+  }
  },
  {
   "id": "oc_bu_rocket_propulsion_group",
@@ -11360,7 +12616,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCuAWqGdB4Up8DxazMDBlARg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "burpg@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/rocket-propulsion-group"
+  }
  },
  {
   "id": "oc_bu_rotaract",
@@ -11398,8 +12658,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/rotaract-club-of-boston-university"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/bu_rotaract/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rotaract@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/rotaract"
+  }
  },
  {
   "id": "oc_bu_running_club",
@@ -11434,7 +12702,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_running/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "burunningclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/running-club"
+  }
  },
  {
   "id": "oc_bu_russian_speaking_society",
@@ -11473,7 +12745,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/236559123540060/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "russian@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/russian-speaking-society"
+  }
  },
  {
   "id": "oc_bu_sabor_latino",
@@ -11504,7 +12780,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/saborlatinobu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "saborlatinopres@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/sabor-latino"
+  }
  },
  {
   "id": "oc_bu_54_3_47_570_3_550_470",
@@ -11535,7 +12815,11 @@
     "label": "Website",
     "url": "https://sites.google.com/view/busahelianstudentassoc/home"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sahelassocbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/54-3-47-570-3-550-470"
+  }
  },
  {
   "id": "oc_bu_sar_student_government",
@@ -11570,7 +12854,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Sargent-College-Student-Events-1075116806001895/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sargov@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sar-student-government"
+  }
  },
  {
   "id": "oc_bu_sargent_college_honor_society",
@@ -11600,8 +12888,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bu_sargenthonorssociety"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bu_sargenthonorssociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sargenthonorsociety@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/sargent-college-honor-society"
+  }
  },
  {
   "id": "oc_bu_saudi_cultural_club",
@@ -11636,7 +12932,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/busaudis/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busaudis@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/saudi-cultural-club"
+  }
  },
  {
   "id": "oc_bu_sha_student_government_association",
@@ -11671,7 +12971,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUSHAgov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shagov@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sha-student-government-association"
+  }
  },
  {
   "id": "oc_bu_scibu",
@@ -11706,7 +13010,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/scibostonu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scibu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/scibu"
+  }
  },
  {
   "id": "oc_bu_shades",
@@ -11741,7 +13049,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/shades.bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shades@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/shades"
+  }
  },
  {
   "id": "oc_bu_shakespeare_society",
@@ -11784,7 +13096,11 @@
     "label": "X",
     "url": "http://twitter.com/bushakespeare"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bard@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/shakespeare-society"
+  }
  },
  {
   "id": "og_bu_sigmachi",
@@ -11827,7 +13143,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/65473407"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sigmachi@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sigmachi"
+  }
  },
  {
   "id": "og_bu_sigma_delta_tau",
@@ -11897,7 +13217,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sigmakappa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sigkappvpem@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/sigma-kappa"
+  }
  },
  {
   "id": "oc_bu_sikh_association",
@@ -11932,7 +13256,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Sikh-Association-at-Boston-University-SABU-165247203561761"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sabu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sikh-association"
+  }
  },
  {
   "id": "oc_bu_singapore_students_association",
@@ -11966,8 +13294,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/sgterriers/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bostonu_ssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bussa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/singapore-students-association"
+  }
  },
  {
   "id": "oc_bu_sisters_united",
@@ -12002,7 +13338,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sistersunitedbu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sistersu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sisters-united"
+  }
  },
  {
   "id": "oc_bu_buskiandboard",
@@ -12033,7 +13373,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buskiandboard/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "skiclub@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buskiandboard"
+  }
  },
  {
   "id": "oc_bu_csc",
@@ -12067,7 +13411,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/slic.bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cwon@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/csc"
+  }
  },
  {
   "id": "oc_bu_slippery_when_wet",
@@ -12106,7 +13454,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@slipperywhenwetBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scap.2010@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/slippery-when-wet"
+  }
  },
  {
   "id": "oc_bu_smash_bros_society",
@@ -12149,7 +13501,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCFk284r-hy9uKM4ydunvjRQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kweiss@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/smash-bros-society"
+  }
  },
  {
   "id": "oc_bu_busfb",
@@ -12180,7 +13536,11 @@
     "label": "Website",
     "url": "https://blogs.bu.edu/busfb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuniversitysfb@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/busfb"
+  }
  },
  {
   "id": "oc_bu_society_of_asian_scientists_and_engineers",
@@ -12223,7 +13583,11 @@
     "label": "X",
     "url": "http://twitter.com/BU_SASE"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busase@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/society-of-asian-scientists-and-engineers"
+  }
  },
  {
   "id": "oc_bu_society_of_hispanic_professional_engineers",
@@ -12266,7 +13630,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12269941/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shpe@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/society-of-hispanic-professional-engineers"
+  }
  },
  {
   "id": "oc_bu_photon",
@@ -12340,7 +13708,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/buspj"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buspj@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/society-of-professional-journalists"
+  }
  },
  {
   "id": "oc_bu_sosh",
@@ -12371,7 +13743,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.horror/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buscifiandhorror@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/sosh"
+  }
  },
  {
   "id": "oc_bu_society_of_women_engineers",
@@ -12414,7 +13790,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/school/buswe/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swe@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/society-of-women-engineers"
+  }
  },
  {
   "id": "oc_bu_swise",
@@ -12449,7 +13829,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bu.swise.75/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swiseatbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/swise"
+  }
  },
  {
   "id": "oc_bu_busc",
@@ -12483,8 +13867,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/busongwriterscircle"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/busongwriterscircle"
    }
-  ]
+  ],
+  "contact": {
+   "email": "songwriterscircle@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/busc"
+  }
  },
  {
   "id": "oc_bu_soonmvmntbu",
@@ -12522,8 +13914,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/1616629101897731/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/soonmvmtbostonuniversity"
    }
-  ]
+  ],
+  "contact": {
+   "email": "suyeonyy@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/soonmvmntbu"
+  }
  },
  {
   "id": "oc_bu_busasa",
@@ -12554,7 +13954,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonusasa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busasa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/busasa"
+  }
  },
  {
   "id": "oc_bu_south_campus_hall_council",
@@ -12581,7 +13985,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/south-campus-hall-council"
    }
-  ]
+  ],
+  "contact": {
+   "email": "southrha@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/south-campus-hall-council"
+  }
  },
  {
   "id": "oc_bu_spoon_university",
@@ -12620,7 +14028,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/spoonbostonu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spoonuniversitybu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/spoon-university"
+  }
  },
  {
   "id": "oc_bu_sagbu",
@@ -12658,8 +14070,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/busportsanalytics/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bu_sportsanalytics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busportsanalytics@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/sagbu"
+  }
  },
  {
   "id": "oc_bu_busbc",
@@ -12690,7 +14110,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/busbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busbc@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/busbc"
+  }
  },
  {
   "id": "oc_bu_stage_troupe",
@@ -12729,7 +14153,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUStageTroupe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stage@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/stage-troupe"
+  }
  },
  {
   "id": "oc_bu_stand_up",
@@ -12759,8 +14187,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bustandupclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bustandupclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "roheblue@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/stand-up"
+  }
  },
  {
   "id": "oc_bu_stocktradingatbu",
@@ -12799,7 +14235,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/stocktradingatbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stabu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/stocktradingatbu"
+  }
  },
  {
   "id": "oc_bu_student_elections_commission",
@@ -12834,7 +14274,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonu_sec/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "election@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/student-elections-commission"
+  }
  },
  {
   "id": "oc_bu_student_government",
@@ -12877,7 +14321,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-student-government"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stugov@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/student-government"
+  }
  },
  {
   "id": "oc_bu_bu_central",
@@ -12908,7 +14356,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/slic.bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slic@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bu-central"
+  }
  },
  {
   "id": "oc_bu_bu_students_for_israel",
@@ -12951,7 +14403,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/israeliclubatbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "edukorn@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bu-students-for-israel"
+  }
  },
  {
   "id": "oc_bu_students_for_reproductive_freedom",
@@ -12986,7 +14442,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BostonUSRF/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busrf@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/students-for-reproductive-freedom"
+  }
  },
  {
   "id": "oc_bu_students_of_caribbean_ancestry",
@@ -13021,7 +14481,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/people/BU-Soca/100008399529467"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busoca@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/students-of-caribbean-ancestry"
+  }
  },
  {
   "id": "oc_bu_seaa",
@@ -13051,8 +14515,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/seaa__bu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/seaa__bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "seaabostonu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/seaa"
+  }
  },
  {
   "id": "oc_bu_sor",
@@ -13082,8 +14554,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/busorclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/busorclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sor@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sor"
+  }
  },
  {
   "id": "oc_bu_suno_boston",
@@ -13122,7 +14602,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/user/BostonUniversitySuno"
    }
-  ]
+  ],
+  "contact": {
+   "email": "suno@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/suno-boston"
+  }
  },
  {
   "id": "oc_bu_survivorbu",
@@ -13149,7 +14633,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/survivorbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "survivorbostonuni@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/survivorbu"
+  }
  },
  {
   "id": "oc_bu_sustainablebusinessclub",
@@ -13180,7 +14668,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/busustainablebusinessclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busustainbusiness@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/sustainablebusinessclub"
+  }
  },
  {
   "id": "oc_bu_sustainable_ocean_alliance",
@@ -13211,7 +14703,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_soa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "soa18@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/sustainable-ocean-alliance"
+  }
  },
  {
   "id": "oc_bu_taiwanese_american_student_association",
@@ -13250,7 +14746,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Boston.TASA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "butasainfo@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/taiwanese-american-student-association"
+  }
  },
  {
   "id": "oc_bu_taiwanese_overseas_students_association",
@@ -13285,7 +14785,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/TOSAatBU/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tosa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/taiwanese-overseas-students-association"
+  }
  },
  {
   "id": "oc_bu_tamid_group",
@@ -13328,7 +14832,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tamidbu/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bu@tamidgroup.org",
+   "source": "https://bu.campuslabs.com/engage/organization/tamid-group"
+  }
  },
  {
   "id": "oc_bu_tau_beta_pi_association",
@@ -13362,8 +14870,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-tbp/about/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/taubetapibu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbp@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/tau-beta-pi-association"
+  }
  },
  {
   "id": "og_bu_tau_beta_sigma",
@@ -13402,7 +14918,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TBSEtaGamma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "etagamma@tbsigma.org",
+   "source": "https://bu.campuslabs.com/engage/organization/tau-beta-sigma"
+  }
  },
  {
   "id": "oc_bu_terpsichore",
@@ -13445,7 +14965,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/BUTerpsichore"
    }
-  ]
+  ],
+  "contact": {
+   "email": "terps@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/terpsichore"
+  }
  },
  {
   "id": "oc_bu_terriermotorsport",
@@ -13484,7 +15008,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/terrier-motorsport/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "butm@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/terriermotorsport"
+  }
  },
  {
   "id": "oc_bu_trec_bu",
@@ -13523,7 +15051,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/106843465/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "trec@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/trec_bu"
+  }
  },
  {
   "id": "oc_bu_testclub",
@@ -13562,7 +15094,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BUStudentActivities/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sao@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/testclub"
+  }
  },
  {
   "id": "oc_bu_thai_student_association",
@@ -13597,7 +15133,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/facebook.com/BUThaiSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buthaisa@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/thai-student-association"
+  }
  },
  {
   "id": "oc_bu_alexander_hamilton_society",
@@ -13636,7 +15176,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-alexander-hamilton-society/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuniversityahs@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/alexander-hamilton-society"
+  }
  },
  {
   "id": "oc_bu_thebeacon",
@@ -13679,7 +15223,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-boston-university-beacon/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thebeaconbu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/thebeacon"
+  }
  },
  {
   "id": "oc_bu_tugi_boston",
@@ -13714,7 +15262,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/tugi_boston"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tugiboston@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/tugi-boston"
+  }
  },
  {
   "id": "oc_bu_the_buzz",
@@ -13761,7 +15313,11 @@
     "label": "X",
     "url": "http://twitter.com/TheBUBuzz"
    }
-  ]
+  ],
+  "contact": {
+   "email": "analiseb@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/the-buzz"
+  }
  },
  {
   "id": "oc_bu_casa_bu",
@@ -13839,7 +15395,11 @@
     "label": "X",
     "url": "http://twitter.com/BU_COMSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "comgov@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/comstugov"
+  }
  },
  {
   "id": "oc_bu_the_dear_abbeys",
@@ -13886,7 +15446,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCyxctPQYbdrk2o_kxqbJL3A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ethanjw@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/the-dear-abbeys"
+  }
  },
  {
   "id": "oc_bu_dream_program",
@@ -13917,7 +15481,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/budreamprogram/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "budreamrecruit@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/dream-program"
+  }
  },
  {
   "id": "oc_bu_thebostonuniversityshortfilmclub",
@@ -13944,7 +15512,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/thebostonuniversityshortfilmclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "redlist@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/thebostonuniversityshortfilmclub"
+  }
  },
  {
   "id": "oc_bu_ocf",
@@ -13979,7 +15551,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/orthodoxchristianfellowship_bu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ilincaid@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/ocf"
+  }
  },
  {
   "id": "oc_bu_pinkytoepaper",
@@ -14010,7 +15586,11 @@
     "label": "Website",
     "url": "https://pinkytoepaper.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "avacarre@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/pinkytoepaper"
+  }
  },
  {
   "id": "oc_bu_the_politica",
@@ -14049,7 +15629,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-politica-at-bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/the-politica"
+  }
  },
  {
   "id": "oc_bu_thetataubu",
@@ -14092,7 +15676,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/thetatau"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thetatau@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/thetataubu"
+  }
  },
  {
   "id": "oc_bu_butcg",
@@ -14123,7 +15711,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/butcgclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuniversitytcgclub@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/butcg"
+  }
  },
  {
   "id": "oc_bu_trans_listening_circle",
@@ -14158,7 +15750,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bu.tlc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "translisteningcircle@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/trans-listening-circle"
+  }
  },
  {
   "id": "oc_bu_treblemakers",
@@ -14205,7 +15801,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/BUTreblemakers"
    }
-  ]
+  ],
+  "contact": {
+   "email": "butreblemakers@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/treblemakers"
+  }
  },
  {
   "id": "oc_bu_turkish_student_association",
@@ -14266,8 +15866,16 @@
    {
     "label": "Instagram",
     "url": "http://instagram.com/umoja.bu"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/umojabu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "umoja@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/umoja"
+  }
  },
  {
   "id": "oc_bu_buarchitecture",
@@ -14302,7 +15910,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/699316190963529"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uaa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buarchitecture"
+  }
  },
  {
   "id": "oc_bu_undergraduate_classics_association",
@@ -14336,8 +15948,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/uca_bu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/uca_bu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uca@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/undergraduate-classics-association"
+  }
  },
  {
   "id": "oc_bu_uea",
@@ -14376,7 +15996,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/boston-university-undergraduate-economics-association-4a9b17266/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uea@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/uea"
+  }
  },
  {
   "id": "oc_bu_buues",
@@ -14403,7 +16027,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/buues"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jnrich@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buues"
+  }
  },
  {
   "id": "oc_bu_undergraduate_history_association",
@@ -14438,7 +16066,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/groups/buuha/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uha@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/undergraduate-history-association"
+  }
  },
  {
   "id": "oc_bu_undergraduate_philosophy_association",
@@ -14469,7 +16101,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.upa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jsperl@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/undergraduate-philosophy-association"
+  }
  },
  {
   "id": "oc_bu_undergraduate_psychology_association",
@@ -14499,7 +16135,11 @@
     "label": "Website",
     "url": "https://www.bu.edu/psych/academics/undergraduate/student-organizations/upa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ugradpsy@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/undergraduate-psychology-association"
+  }
  },
  {
   "id": "oc_bu_undergraduate_public_health_association",
@@ -14538,7 +16178,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bostonuupha/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "upha@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/undergraduate-public-health-association"
+  }
  },
  {
   "id": "oc_bu_none",
@@ -14569,7 +16213,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bosu_usa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mjshaw@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/none"
+  }
  },
  {
   "id": "oc_bu_buuwe",
@@ -14608,7 +16256,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/bu-uwe/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uwe@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buuwe"
+  }
  },
  {
   "id": "oc_bu_uwise",
@@ -14647,7 +16299,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-university-undergraduate-women-in-stem-and-engineering-uwise/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uwise@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/uwise"
+  }
  },
  {
   "id": "oc_bu_undergraduate_wll_association",
@@ -14682,7 +16338,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/buwllassociation/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buwa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/undergraduate-wll-association"
+  }
  },
  {
   "id": "oc_bu_unicef_campus_initiative",
@@ -14721,7 +16381,11 @@
     "label": "X",
     "url": "http://twitter.com/BUnicef"
    }
-  ]
+  ],
+  "contact": {
+   "email": "unicef@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/unicef-campus-initiative"
+  }
  },
  {
   "id": "oc_bu_bostonuniversityubi",
@@ -14759,8 +16423,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/UniversityBloodInitiative"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bostonubloodinitiative/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bsolot@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/bostonuniversityubi"
+  }
  },
  {
   "id": "oc_bu_unmanned_aerial_vehicles_team",
@@ -14799,7 +16471,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/buuavt"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uav@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/unmanned-aerial-vehicles-team"
+  }
  },
  {
   "id": "oc_bu_unofficial_project",
@@ -14846,7 +16522,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@UnofficialProjectBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "upro@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/unofficial-project"
+  }
  },
  {
   "id": "oc_bu_untangle",
@@ -14873,7 +16553,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/untangle"
    }
-  ]
+  ],
+  "contact": {
+   "email": "untanglebu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/untangle"
+  }
  },
  {
   "id": "oc_bu_upper_bay_state",
@@ -14964,7 +16648,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/upeatbu/?ref=bookmarks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "upe@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/upsilon-pi-epsilon"
+  }
  },
  {
   "id": "oc_bu_burbanbirding",
@@ -14998,8 +16686,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/burbanbirding/"
+   },
+   {
+    "label": "Website",
+    "url": "https://bubirding.carrd.co/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "birding@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/burbanbirding"
+  }
  },
  {
   "id": "oc_bu_urbanistsbu",
@@ -15030,7 +16726,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/burbanists/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "burbanists@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/urbanistsbu"
+  }
  },
  {
   "id": "oc_bu_vtd",
@@ -15061,7 +16761,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/bostonvtd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonvtd@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/vtd"
+  }
  },
  {
   "id": "oc_bu_buvcg",
@@ -15096,7 +16800,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_vcg/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buvcgroup@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/buvcg"
+  }
  },
  {
   "id": "oc_bu_verge",
@@ -15135,7 +16843,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCjOxYom0L36FdMCpn3OXBiA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vergedancecompany@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/verge"
+  }
  },
  {
   "id": "oc_bu_veteranassist",
@@ -15166,7 +16878,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/buveteranassist"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buveteranassist@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/veteranassist"
+  }
  },
  {
   "id": "oc_bu_vibes",
@@ -15205,7 +16921,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCSDWV25gZQaJiqybh0YWFeA/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vibes@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/vibes"
+  }
  },
  {
   "id": "oc_bu_vietnamese_student_association",
@@ -15252,7 +16972,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCGVVkhbMe3NMPyEPdVHUsEw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buvsa@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/vietnamese-student-association"
+  }
  },
  {
   "id": "oc_bu_buvja",
@@ -15283,7 +17007,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu_vja/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buvja@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/buvja"
+  }
  },
  {
   "id": "oc_bu_volunteers_inclusion_accessibility",
@@ -15318,7 +17046,11 @@
     "label": "X",
     "url": "http://twitter.com/SVSN3"
    }
-  ]
+  ],
+  "contact": {
+   "email": "svsn@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/volunteers-inclusion-accessibility"
+  }
  },
  {
   "id": "oc_bu_wandering_minds",
@@ -15361,7 +17093,11 @@
     "label": "X",
     "url": "http://twitter.com/wmindsbu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wanderingmindstheater@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/wandering-minds"
+  }
  },
  {
   "id": "oc_bu_warren_towers_hall_council",
@@ -15461,7 +17197,11 @@
     "label": "X",
     "url": "http://twitter.com/SEDSG"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sedsg@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/wheelock-student-government"
+  }
  },
  {
   "id": "oc_bu_women_in_computer_science",
@@ -15504,7 +17244,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/wics-bu/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wics@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/women-in-computer-science"
+  }
  },
  {
   "id": "oc_bu_bu_wids",
@@ -15531,7 +17275,11 @@
     "label": "Directory",
     "url": "https://bu.campuslabs.com/engage/organization/bu_wids"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostonuwids@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bu_wids"
+  }
  },
  {
   "id": "oc_bu_wil",
@@ -15566,7 +17314,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bu.wil/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wilbu@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/wil"
+  }
  },
  {
   "id": "oc_bu_winbostonuwixsitecom",
@@ -15597,7 +17349,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostonuwin/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buwin@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/winbostonuwixsitecom"
+  }
  },
  {
   "id": "oc_bu_yaf_org",
@@ -15628,7 +17384,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/yaf_bu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yaf@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/yaf_org"
+  }
  },
  {
   "id": "oc_bu_yeministrybu",
@@ -15671,7 +17431,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@youthempowermentministry2479"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yeministrybu@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/yeministrybu"
+  }
  },
  {
   "id": "oc_bu_zen_community",
@@ -15710,7 +17474,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/ZenMindfulBU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buzen@bu.edu",
+   "source": "https://bu.campuslabs.com/engage/organization/zen-community"
+  }
  },
  {
   "id": "og_bu_bxchapterzphib",
@@ -15745,6 +17513,10 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/betachi_zetas/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zphibbetachi@gmail.com",
+   "source": "https://bu.campuslabs.com/engage/organization/bxchapterzphib"
+  }
  }
 ]

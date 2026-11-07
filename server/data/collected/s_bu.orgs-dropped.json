@@ -1,0 +1,66 @@
+[
+ {
+  "id": "og_bu_inter_fraternity_council",
+  "name": "Inter Fraternity Council",
+  "logo": {
+   "emoji": "IF",
+   "hue": 96,
+   "url": "https://se-images.campuslabs.com/clink/images/b17b1c29-a308-42a0-8894-39f0ea351cbb80673eb7-6504-4f65-942b-f9e9ecd1c551.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_bu",
+  "parent": "Fraternities and Sororities",
+  "verified": false,
+  "description": "The InterFraternity Council (IFC) represents all recognized fraternities as a general assembly comprised of an elected board, chapter presidents, and chapter delegates. Our primary goals are the advancement, safety, and security of each fraternity.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bu.campuslabs.com/engage/organization/inter-fraternity-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/buifc/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_bu_panhellenic_council",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/0af109eb-e014-4c1f-bcc9-6137c7c5f2a91716d678-633f-4f5a-a995-e0ca044c9fd1.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_bu",
+  "parent": "Fraternities and Sororities",
+  "verified": false,
+  "description": "The Boston University Panhellenic Council is the governing body for the ten sororities chartered on campus. With the help of one delegate from each sorority, Panhel helps to regulate Greek Life and maintain its growth on campus.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bu.campuslabs.com/engage/organization/panhellenic-council"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bupanhel/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]
