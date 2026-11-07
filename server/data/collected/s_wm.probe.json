@@ -1,10 +1,10 @@
 {
- "checkedAt": "2026-11-05T19:35:59.053Z",
+ "checkedAt": "2026-11-07T18:46:45.852Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:fose:https://registration.wm.edu",
- "sampled": 3200,
- "withTimes": 3200,
+ "sampled": 3198,
+ "withTimes": 3198,
  "terms": [
   "Fall 2026",
   "Spring 2027"
@@ -14,8 +14,8 @@
   "DATA 201 · Data in the Age of AI (Sec 02) · Fall 2026 · T 08:00-09:20 R 08:00-09:20",
   "LAW 305 · Trust and Estates · Fall 2026 · M 15:30-16:45 W 15:30-16:45",
   "AAI 301 · Designing AI Agents · Spring 2027 · T 14:00-15:20 R 14:00-15:20",
-  "DATA 445 · Network Analysis · Spring 2027 · T 09:30-10:50 R 09:30-10:50",
-  "LAW 325 · Role of a Federal Prosecutor · Spring 2027 · T 15:30-17:34"
+  "DATA 442 · Neural Networks & Deep Learning · Spring 2027 · T 14:00-15:20 R 14:00-15:20",
+  "LAW 320 · Business Associations (Sec 02) · Spring 2027 · M 11:30-12:45 W 11:30-12:45 R 11:30-12:45"
  ],
  "spotCheck": {
   "matched": 6,

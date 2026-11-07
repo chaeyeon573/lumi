@@ -2528,3 +2528,11 @@
 - SF State classes in the foreground: stopped by my 25-minute limit before writing; file untouched (11-03 data). Queued to run in parts with SFSU_SUBJECTS.
 - Spot check clubs: UCI Delta Epsilon Mu, Indiana Citizen Opioid Responders, UNC MAC Student Association, UMD Thai Student Association fine; Michigan German Peer Mentors page answers 403 to bots.
 - Spot check courses: DukeHub answers again; 5 random Duke Spring 2027 classes (PUBPOL 790 Sec 02, LAW 202, POLSCI 350, WRITING 120 Sec 50, SPANISH 303 Sec 05) match. Duke's class re-collect can go next run.
+
+## 2026-11-07 18:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Ran schools one at a time in the foreground (background jobs don't survive between runs).
+  - Duke classes (DukeHub back): 6,702 → 6,731.
+  - Weekly re-collect: Brown 412 groups (unchanged), NC State 806 (links 2,315→2,406), W&M 534→536 (2 delisted kept; links 1,591→1,648; 3,198 classes).
+- Spot check clubs: UGA If/When/How, Penn State Turfgrass Club, UNC LAB! Theatre, UF Society of Physics Students fine; Notre Dame Baja SAE (sites.nd.edu) answers 403 to bots.
+- Spot check courses: 5 random Duke Fall 2026 classes (MATH 730 Sec 03, I&E 252, SWAHILI 701, XTIANPRC 704 Sec 01, WRITING 120 Sec 61CN) match DukeHub.

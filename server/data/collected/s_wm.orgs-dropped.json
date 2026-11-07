@@ -1,0 +1,74 @@
+[
+ {
+  "id": "og_wm_ifc",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/e36d1889-c1eb-460f-b6c1-a1142a8a3fc6ccaa2e49-b0d1-49b0-b4f3-d7ac265dae45.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_wm",
+  "parent": "Fraternity and Sorority Life",
+  "verified": false,
+  "description": "\"The Core Purpose of the Interfraternity Council is to build a stronger Fraternity & Sorority Community through efforts to foster a positive image, to enhance Greek unity, and to recruit men consistent with the high standards of our Chapters.\"",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://tribelink.wm.edu/organization/ifc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wm_ifc/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/WMFSL/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_wm_panhellenic",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/593eed95-98d5-430e-bf0b-88dd129621022074c9fe-5442-47b2-83fe-ac7be42d1e8a.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_wm",
+  "parent": "Fraternity and Sorority Life",
+  "verified": false,
+  "description": "The governing body for Panhellenic sorority life",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://tribelink.wm.edu/organization/panhellenic"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wmpanhellenic/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/WMPanhellenicRecruitment/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

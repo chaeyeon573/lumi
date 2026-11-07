@@ -1,20 +1,5 @@
 [
  {
-  "orgId": "oc_wm_mcc",
-  "url": "https://linktr.ee/macc.wm",
-  "checkedAt": "2026-11-04"
- },
- {
-  "orgId": "og_wm_nphc01",
-  "url": "https://nphchq.com/millennium1/",
-  "checkedAt": "2026-11-04"
- },
- {
-  "orgId": "oc_wm_tedx",
-  "url": "http://tedx.wm.edu/",
-  "checkedAt": "2026-11-04"
- },
- {
   "orgId": "oc_wm_soccerm",
   "url": "http://wmpeople.wm.edu/site/page/soccerm/generalinformation",
   "checkedAt": "2026-11-05",
@@ -45,9 +30,23 @@
   "note": "wmpeople.wm.edu retired; redirects to the W&M IT services page"
  },
  {
+  "orgId": "oc_wm_mcc",
+  "url": "https://linktr.ee/macc.wm",
+  "checkedAt": "2026-11-07"
+ },
+ {
+  "orgId": "og_wm_nphc01",
+  "url": "https://nphchq.com/millennium1/",
+  "checkedAt": "2026-11-07"
+ },
+ {
   "orgId": "oc_wm_tbdtheatre",
   "url": "http://www.tbdtheatre.com/",
-  "checkedAt": "2026-11-06",
-  "note": "domain now shows an unrelated streaming spam site"
+  "checkedAt": "2026-11-07"
+ },
+ {
+  "orgId": "oc_wm_tedx",
+  "url": "http://tedx.wm.edu/",
+  "checkedAt": "2026-11-07"
  }
 ]

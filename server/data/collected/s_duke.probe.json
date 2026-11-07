@@ -1,6 +1,25 @@
 {
- "checkedAt": "2026-11-07T11:50:21.714Z",
- "status": "error",
+ "checkedAt": "2026-11-07T18:40:59.253Z",
+ "status": "applied",
  "stored": false,
- "error": "https://dukehub.duke.edu/psc/CSPRD01/EMPLOYEE/SA → not JSON (200): <!DOCTYPE html><html lang=\"en\" prefix=\"og: https://ogp.me/ns#\"><head><meta charS"
+ "source": "timetable:hcx:https://dukehub.duke.edu/psc/CSPRD01/EMPLOYEE/SA|DUKEU",
+ "sampled": 6731,
+ "withTimes": 6731,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "AAAS 102 · Introduction to African American Studies · Fall 2026 · M 11:45-13:00 W 11:45-13:00",
+  "ENVIRON 630 · Transportation and Energy · Fall 2026 · T 13:25-14:40 R 13:25-14:40",
+  "MUSIC 161 · Introduction to Music Theory · Fall 2026 · M 18:15-19:30 W 18:15-19:30",
+  "AIPI 549 · Capstone Practicum 1 (Sec 02) · Spring 2027 · R 13:40-16:25",
+  "ENVIRON 816 · Applied Environmental Policy Analysis · Spring 2027 · T 13:25-15:55",
+  "MOLCAN 730 · Stem Cell Course · Spring 2027 · T 09:00-10:15 R 09:00-10:15"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
 }
