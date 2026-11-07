@@ -2463,3 +2463,9 @@
 - Spot check clubs: Penn State AFSP, UGA Dawgs for Diabetes, Illinois AKA Improv, Penn Undergraduate Geography Club fine. USC "Viterbi Career Connections" is the engineering school's career office (site: "USC Viterbi | Career Services", SECC), typed `department`.
 - Spot check courses: 5 random UMD Fall 2026 classes (COMM 107 Sec 9922, NFSC 624, ENPM 667, INAG 110 Sec 3101, LACS 250) match Testudo.
 - Weekly re-collect group 2: Tulane, Syracuse, Miami, Clemson, UMass, UConn. Groups held or grew (UConn 855→863), links grew at every school (e.g. UConn 2,395→2,514), hand-typed departments held. The new keep rule worked: 24 groups no longer listed went to <id>.orgs-dropped.json (Tulane 2, Syracuse 6, Miami 4, Clemson 4, UMass 5, UConn 3) instead of disappearing.
+
+## 2026-11-07 08:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Michigan MUSKET, Chicago Debate Society, Emory Barkley Forum, UT Bhakti Yoga Club fine. Yale "Environmental Leadership and Training Initiative" is a Yale School of the Environment initiative that trains practitioners (site footer: "ELTI is an initiative of … Yale School of the Environment"), typed `department`.
+- Spot check courses: 5 random USC Fall 2026 classes (CMGT 558, LING 486, MATH 225, HRM 515, FREN 270) match classes.usc.edu.
+- Weekly re-collect group 3: UGA, Indiana, MSU, Purdue, UMN, UCR. Groups held or grew (UCR 664→673), links grew everywhere (MSU 3,632→3,790, Purdue 3,907→4,035), departments held. 33 delisted groups kept in orgs-dropped (UMN 17). UCR classes 3,113. UMN's catalog probe was rejected (catalog.umn.edu now redirects to catalogs.umn.edu; reads 0) - nothing stored, UMN never had a course file; added to the queue.

@@ -1,0 +1,98 @@
+[
+ {
+  "id": "og_uga_interfraternitycouncil",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/a523d444-d41c-4e32-b4c6-d9416da16f974a5733f0-69ab-4445-a5a0-0a1defcd9023.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_uga",
+  "parent": "*All Student Organizations",
+  "verified": false,
+  "description": "The Interfraternity Council (IFC) is the self-governing body of the 26 traditionally social fraternities at the University of Georgia. The Interfraternity Council strives to represent the ideals of fraternity life in its endeavours.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://uga.campuslabs.com/engage/organization/interfraternitycouncil"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ugaifc/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_uga_multiculturalgreekcouncil",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/c52531d0-2aff-416d-8881-239e2585c92848843777-856a-4ce3-b2dc-624e5b8479cc.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_uga",
+  "parent": "*All Student Organizations",
+  "verified": false,
+  "description": "Greek Life Office Roster for CRETS EMS",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://uga.campuslabs.com/engage/organization/multiculturalgreekcouncil"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_uga_panhelleniccouncil",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/f794168f-29dd-4d82-92f9-e1212b9ba876ea06fe4d-dc18-4fb8-aabd-07a73ddb82d3.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_uga",
+  "parent": "*All Student Organizations",
+  "verified": false,
+  "description": "We promote cooperation and cohesiveness within the Greek community, oversee formal recruitment for its member groups, and sponsor community service opportunities, social events, and educational programs throughout the year.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://uga.campuslabs.com/engage/organization/panhelleniccouncil"
+   },
+   {
+    "label": "Website",
+    "url": "https://greeklife.uga.edu/panhellenic-council/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ugapanhellenic/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

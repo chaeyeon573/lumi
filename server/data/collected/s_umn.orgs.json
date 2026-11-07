@@ -22,6 +22,10 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=36801"
+   },
+   {
+    "label": "Website",
+    "url": "https://0to1startup.club/"
    }
   ],
   "recruitment": {
@@ -1063,7 +1067,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Our mission is to empower AI enthusiasts with the technical expertise, leadership skills, and business insights to solve real-world problems and drive innovation.",
   "gallery": [],
@@ -1224,15 +1228,15 @@
   }
  },
  {
-  "id": "og_umn_cg36530",
+  "id": "oc_umn_cg36530",
   "name": "Alpha Chi Omega-Alpha Lambda Chapter #528",
   "logo": {
    "emoji": "AC",
    "hue": 176
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Alpha Chi Omega is an NPC sorority chartered at the University of Minnesota in September of 1921, marking over 100 years on campus. Alpha Chi supports Domestic Violence Awareness and Sexual Assault Prevention. We work directly with our local women's shelter, Alexandra House. Our five membership standards include Leadership Ability, Personal Development, Academic Interest, Character, and Responsibility! Our motto is \"Together let us seek the heights.\"",
   "gallery": [],
@@ -1302,15 +1306,15 @@
   }
  },
  {
-  "id": "og_umn_cg36565",
+  "id": "oc_umn_cg36565",
   "name": "Alpha Delta Phi #687",
   "logo": {
    "emoji": "AD",
    "hue": 264
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "We are the Minnesota Chapter of Alpha Delta Phi. Since 1892, we’ve focused on fostering a spirit of inclusion and community at the U while staying true to our literary roots.",
   "gallery": [],
@@ -1339,15 +1343,15 @@
   }
  },
  {
-  "id": "og_umn_cg36583",
+  "id": "oc_umn_cg36583",
   "name": "Alpha Epsilon Pi #831",
   "logo": {
    "emoji": "AE",
    "hue": 248
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Alpha Epsilon Pi is unique at the University of Minnesota as a Jewish fraternity and brotherhood. We are dedicated to developing leadership for the Jewish community, strengthening fraternal bonds, and helping brothers grow and succeed. Alpha Epsilon Pi is involved in the Greek community as an IFC fraternity, participating in Homecoming and Machy Days. We are also involved in the campus Jewish community, working with organizations like Chabad and Hillel. Our chapter hosts philanthropy events driven by the Jewish value of Tzedakah for organizations including the Gift of Life foundation.",
   "gallery": [],
@@ -1373,10 +1377,10 @@
  },
  {
   "id": "og_umn_cg36501",
-  "name": "Alpha Gamma Delta #429",
+  "name": "Alpha Gamma Delta - Delta Chapter at the University of Minnesota #429",
   "logo": {
    "emoji": "AG",
-   "hue": 24
+   "hue": 232
   },
   "type": "greek",
   "schoolId": "s_umn",
@@ -1499,7 +1503,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Social/Recreational",
   "verified": false,
   "description": "Chi Psi is a men’s fraternity focused on fostering social relationships and pursuing academic excellence, philanthropy, and school engagement.",
   "gallery": [],
@@ -1557,15 +1561,15 @@
   }
  },
  {
-  "id": "og_umn_cg36485",
+  "id": "oc_umn_cg36485",
   "name": "Alpha Phi #379",
   "logo": {
    "emoji": "AP",
    "hue": 208
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Chapter Mission Statement: Alpha Phi is a membership organization dedicated to promoting sisterhood, cultivating leadership, encouraging intellectual curiosity and advocating service. Alpha Phi provides unlimited leadership opportunities, academic support, campus involvement, and most importantly, long-lasting friendships. As a lifelong commitment, Alpha Phi provides an unparalleled collegiate experience and highlights individual growth through friendship and sisterhood. Our chapter holds two principal philanthropic events per year: HeartBeat Week and The Red Dress Gala. Both of these events f",
   "gallery": [],
@@ -1886,7 +1890,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Agriculture/Animals/Natural Resources",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "SCAAEP is the regional Student Chapter of the American Association of Equine Practitioners. We are a group of students interested in pursuing and/or learning more about equine medicine and the role of an equine practitioner. The SCAAEP Mission is to educate students, play a role in the community, promote equine health and welfare, and gain hands on experience. SCAAEP events include wet labs, lunch and learns, resident and hospital rounds, and social events. SCAAEP members also have the chance to attend events through an AAEP membership such as the National Convention and Essential Skills Works",
   "gallery": [],
@@ -1919,7 +1923,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Campus Life Program",
+  "parent": "Academic Major/Minor/Program Related",
   "verified": false,
   "description": "Welcome to the University of Minnesota chapter of the American Chemical Society. We bring together students who are curious about how chemistry shapes the world, from molecules in the lab to solutions for global challenges. Just as importantly, we foster a fun, welcoming community through social events, mixers, and low-stress ways to connect with others in STEM.",
   "gallery": [],
@@ -2174,7 +2178,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Activism/Social Justice",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "To promote lung cancer screening for people who are at high-risk of developing lung cancer.",
   "gallery": [],
@@ -2277,7 +2281,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "APWA is a non-profit organization that serves as a gateway to connect civil engineering students with working professionals as a way to increase job placement following graduation. Memberships will assist you in finding networking opportunities and could be key to acquiring a challenging, long-term employment opportunity prior to graduation. Guide students through the steps required to become a successful professional civil engineer within the field of public works while promoting the better good for society. And promote a spirit of unity by providing an opportunity for students to become acqu",
   "gallery": [],
@@ -2483,7 +2487,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "We are a drama club with a focus on ancient Greek and Roman plays and performances. We also host events that are not necessarily connected to theater but are related to the world of Classical antiquity. We are open to all majors and both undergraduate and graduate students!",
   "gallery": [],
@@ -2516,7 +2520,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "For Professional Students",
+  "parent": "Pre-Health/Health Professional",
   "verified": false,
   "description": "The Anesthesiology Interest Group (AIG) empowers medical students to explore and engage with the dynamic field of anesthesiology. Our mission is to foster interest for the specialty through informative presentations, engaging discussions, and community-building social events. We are dedicated to offering hands-on learning experiences, including workshops and physician shadowing, to equip students with essential skills and insights that deepen their understanding of anesthesiology. Furthermore, we aim to support aspiring anesthesiologists in successfully navigating the match process and achievi",
   "gallery": [],
@@ -3187,7 +3191,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Cultural",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "U-Tango is a registered student group that promotes Argentine culture and dance. The club was founded in the summer of 2004 and since then we have held weekly meetings, sponsored guest instructors from Minneapolis and beyond, and hosted social dance events. We are currently holding our workshops on Thursdays, in Recwell MP 7 (4th floor) Workshops are held from 7:00 PM till 9:00 PM!",
   "gallery": [],
@@ -3521,7 +3525,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Academic Major/Minor/Program Related",
   "verified": false,
   "description": "The mission of an ASHRAE Student Chapter is to advance the arts and sciences of heating, ventilation, air conditioning, refrigeration (HVAC&R), and related fields while fostering student engagement in sustainability, innovation, and professional development. Student chapters provide technical education, hands-on experiences, and career growth opportunities through networking, internships, and scholarships. They encourage research, innovation, and participation in ASHRAE-sponsored projects and competitions while promoting energy-efficient building practices and sustainability efforts. Additiona",
   "gallery": [],
@@ -3620,7 +3624,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Activism/Social Justice",
+  "parent": "Interest/Affinity",
   "verified": false,
   "description": "Our mission is to address issues in medicine and public health important to Asian Pacific American heritage medical students. We combine advocacy, public awareness, community service, community building, and professional development activities to achieve this mission. We also hold fun cultural events and casual hangouts to get to know each other better and foster community.",
   "gallery": [],
@@ -4256,6 +4260,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/umnrespectacle?ltsid=2a691b19-f2ec-4fe1-a2ee-57ce86946d6b"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/umnrespectacle?ltsid=2a691b19-f2ec-4fe1-a2ee-57ce86946d6b"
    }
   ],
   "recruitment": {
@@ -4658,15 +4666,15 @@
   }
  },
  {
-  "id": "og_umn_cg36520",
+  "id": "oc_umn_cg36520",
   "name": "Beta Theta Pi #486",
   "logo": {
    "emoji": "BT",
    "hue": 224
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Beta Theta Pi is a national fraternity founded locally at the University of Minnesota in 1889. Our mission is to build principled men for a principled life under the values of Mutual Assistance, Intellectual Growth, Trust, Integrity, and Responsible conduct.",
   "gallery": [],
@@ -4968,6 +4976,10 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=36321"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/biology_biweekly/"
    }
   ],
   "recruitment": {
@@ -5156,7 +5168,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Academic Major/Minor/Program Related",
   "verified": false,
   "description": "The mission of BLOT is to strengthen relationships between life science, business, and law students at UMN with the local biotech industries and prepare them for careers in this field.",
   "gallery": [],
@@ -5255,7 +5267,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Religion/Faith/Spirituality",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "We exist to establish and advance witnessing communities of Black college students growing in love for God, God's Word, God's people of every ethnicity and culture, and God's purposes in the world. Connect with us on Instagram: @umnblackcm or at our website: metromnintervarsity.org/university-of-minnesota. We are a Black Christian community on campus with weekly gatherings for worship, Bible study, prayer, and community. We also participate in local and national conferences, retreats, and excellent leadership trainings. Our top values are Bible study, discipleship, prayer, justice, and mission",
   "gallery": [],
@@ -5436,7 +5448,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Registered Student Organization",
+  "parent": "Cultural",
   "verified": false,
   "description": "The Black Minds in Medicine(BMED) empowers Black and underrepresented students pursuing careers in medicine through academic support, mentorship, cultural community, professional development, and service. The organization shall comply with all University policies and procedures, as well as local, state, and federal laws and regulations.",
   "gallery": [],
@@ -5741,7 +5753,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Service/Volunteer/Philanthropy",
+  "parent": "Pre-Health/Health Professional",
   "verified": false,
   "description": "The focus of our club is on connection and collaboration while making tie blankets together. After the event, the completed blankets will be collected and donated by the club officers to the Minneapolis Children’s Hospital.",
   "gallery": [],
@@ -6318,7 +6330,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Social/Recreational",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "To empower and unite graduate students and postdoctoral researchers by facilitating transparent communication, collaborative decision-making, and meaningful advocacy with department leadership.",
   "gallery": [],
@@ -6464,6 +6476,43 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=36873"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg37052",
+  "name": "Business & Marketing Collective #5113",
+  "logo": {
+   "emoji": "BM",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Academic Major/Minor/Program Related",
+  "verified": false,
+  "description": "We are a test RSO group for the University of Minnesota - Twin Cities. We are used to test software.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=37052"
+   },
+   {
+    "label": "Website",
+    "url": "https://student.sua.umn.edu/"
    }
   ],
   "recruitment": {
@@ -7621,7 +7670,7 @@
    "emoji": "CU",
    "hue": 176
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Academic Major/Minor/Program Related",
   "verified": false,
@@ -7701,7 +7750,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Cultural",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Your Jewish home away from home",
   "gallery": [],
@@ -8104,7 +8153,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Social/Recreational",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "To group chinese student have a group to play soccer and know each other.",
   "gallery": [],
@@ -9107,7 +9156,7 @@
    "emoji": "CB",
    "hue": 80
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Campus Governing and Advisory Boards",
   "verified": false,
@@ -9206,7 +9255,7 @@
    "emoji": "CL",
    "hue": 352
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Campus Governing and Advisory Boards",
   "verified": false,
@@ -9230,6 +9279,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/clastudentboard/"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/clasbumn"
    }
   ],
   "recruitment": {
@@ -9748,6 +9801,39 @@
   }
  },
  {
+  "id": "oc_umn_cg36635",
+  "name": "Construction Management Student Association #4712",
+  "logo": {
+   "emoji": "CM",
+   "hue": 104
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Career/Professional Development",
+  "verified": false,
+  "description": "The Construction and Facility Management Association is a University of Minnesota student group devoted to creating real-world relationships in the construction field through numerous events, tours, and service projects. We aim to forge into the construction industry and gain lasting relationships with professionals.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=36635"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_umn_cg37041",
   "name": "Consumer Law Advocates, Students, and Scholars Network at the University of Minnesota #5710",
   "logo": {
@@ -10065,7 +10151,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Social/Recreational",
   "verified": false,
   "description": "The mission of the Counseling Psychology Club is to foster the next generation of counselors, therapists, researchers, and mental health professionals, and we plan to do this by stimulating interest in the field of counseling psychology, providing social activities/events for members, and to provide information and resources to aspiring counselors so that they have the connections to get to where they want to be.",
   "gallery": [],
@@ -10508,7 +10594,7 @@
    "emoji": "CB",
    "hue": 24
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Campus Governing and Advisory Boards",
   "verified": false,
@@ -10950,7 +11036,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Delta Chi is one of the University of Minnesota's premier Interfraternity Council (IFC) fraternities located in the heart of campus on University Avenue. At Delta Chi, we are committed to the promotion of friendship, development of character, advancement of justice, and the acquisition of a sound education.",
   "gallery": [],
@@ -10975,15 +11061,15 @@
   }
  },
  {
-  "id": "og_umn_cg36449",
+  "id": "oc_umn_cg36449",
   "name": "Delta Kappa Epsilon #262",
   "logo": {
    "emoji": "DK",
    "hue": 192
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "A large group of respectful and courteous gentlemen who want to be part of an organization that holds each other to the highest standard possible, in the classroom and beyond.",
   "gallery": [],
@@ -11049,15 +11135,15 @@
   }
  },
  {
-  "id": "og_umn_cg36792",
+  "id": "oc_umn_cg36792",
   "name": "Delta Sigma Delta #4869",
   "logo": {
    "emoji": "DS",
    "hue": 216
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Social/Recreational",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Academic Excellence: To provide a platform for dental students and professionals to enhance their educational and clinical skills, and support the advancement of dental knowledge. Brotherhood and Support: To create a strong support network among members, fostering camaraderie, professional collaboration, and lifelong relationships in the dental community. Service and Leadership: To encourage leadership and community service, both within the dental profession and in broader society. This includes supporting charitable causes, dental outreach programs, and the overall betterment of public health",
   "gallery": [],
@@ -12290,6 +12376,10 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=35923"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/groups/502822236540971"
    }
   ],
   "recruitment": {
@@ -13622,7 +13712,7 @@
   },
   "type": "council",
   "schoolId": "s_umn",
-  "parent": "Management/Entrepreneurship",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "FPA is a student owned and operated nonprofit cooperative. FPA's primary purpose is to promote financial stability in our member organizations.",
   "gallery": [],
@@ -14713,6 +14803,43 @@
   }
  },
  {
+  "id": "oc_umn_cg36531",
+  "name": "Gopher Motorsports #529",
+  "logo": {
+   "emoji": "GM",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Sports/Games/Recreation/Competition",
+  "verified": false,
+  "description": "Each year, we design and build a vehicle to compete in the global Formula SAE Series. The competition goal is to design, manufacture, market, and race an open-wheel, open-cockpit, and single-seat vehicle designed for the weekend racer. After graduation, Formula SAE students are sought out for their passion and attention to detail in developing highly-engineered, high-performance products. Being a part of Gopher Motorsports means developing life-long skills!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=36531"
+   },
+   {
+    "label": "Website",
+    "url": "https://gophermotorsports.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_umn_cg36185",
   "name": "GopherHack #4489",
   "logo": {
@@ -15108,7 +15235,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "This is the best place to communicate with those who like badminton and want to learn badminton. Here you can practice your badminton skills, find people of your age who share a similar passion and have fun. This is a sports club for pure badminton sport.",
   "gallery": [],
@@ -15930,6 +16057,10 @@
    {
     "label": "Document",
     "url": "https://www.canva.com/design/DAFtzkmSEEs/SGd_avoVjr3Wy56FRzr5JA/edit"
+   },
+   {
+    "label": "Document",
+    "url": "https://www.canva.com/design/DAFtzkmSEEs/SGd_avoVjr3Wy56FRzr5JA/edit"
    }
   ],
   "recruitment": {
@@ -16079,7 +16210,7 @@
    "emoji": "HS",
    "hue": 272
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Campus Governing and Advisory Boards",
   "verified": false,
@@ -17877,7 +18008,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Kappa Alpha Pi Pre-Law and Government Fraternity is a professional co-ed organization committed to fostering academic excellence, leadership, and community among students interested in pursuing careers in law, government, and public service. We strive to empower our members through mentorship, networking, educational programming, and service opportunities that cultivate critical thinking, civic engagement, and a deep understanding of the legal and political landscape. Guided by principles of integrity, professionalism, and equity, we prepare the next generation of advocates, policymakers, and ",
   "gallery": [],
@@ -17955,7 +18086,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Pharmaceutical fraternity that to support the professional development of pharmacists around the country. Our mission is to unite students, faculty, and alumni members in the pahrmaceutical fraternity to promote personal and professional competence, as well as develop leadership within our profession and community, while providing both professional and philanthropic services.",
   "gallery": [],
@@ -17973,6 +18104,14 @@
    {
     "label": "Website",
     "url": "https://kappaepsilon.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/kappaepsilon1921/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/pages/Kappa-Epsilon/106203372744315"
    }
   ],
   "recruitment": {
@@ -18021,15 +18160,15 @@
   }
  },
  {
-  "id": "og_umn_cg36548",
+  "id": "oc_umn_cg36548",
   "name": "Kappa Kappa Gamma, Chi Chapter of #589",
   "logo": {
    "emoji": "KK",
    "hue": 8
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Kappa Kappa Gamma is an organization of women, which seeks for every member throughout her life bonds of friendship, mutual support, opportunities for self-growth, respect for intellectual development, and an understanding of and an allegiance to positive ethical principles.",
   "gallery": [],
@@ -18387,7 +18526,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Registered Student Organization",
+  "parent": "Cultural",
   "verified": false,
   "description": "The Korean Student Association (KSA) is an organization of the University of Minnesota-Twin Cities for students who are interested in Korean heritage and culture. Our mission is to advocate for and spread Korean culture throughout the Twin Cities campus and surrounding areas and build a community for students of the University of Minnesota. We are also devoted to supporting the Asian and Korean communities through volunteer work and by hosting social and educational events. The University of Minnesota has a large number of Korean students and students interested in Korea, and as a group of ded",
   "gallery": [],
@@ -19112,7 +19251,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Service/Volunteer/Philanthropy",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Letters of Love focuses on emotionally supporting people in our community who need a little extra love. We do this through making handmade cards with words of encouragement and affirmations to brighten the lives of those encountering troubling times. Letters of Love is excited to become a new student group at the University of Minnesota. We are even more excited to reach out to our community to increase emotional support and philanthropic values. Along with donating cards, we will also execute fundraising activities to help support various groups in our community. We will also carry out multip",
   "gallery": [],
@@ -20072,6 +20211,43 @@
   }
  },
  {
+  "id": "oc_umn_cg37054",
+  "name": "Media, Entertainment, and Music Exploration #5115",
+  "logo": {
+   "emoji": "ME",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Social/Recreational",
+  "verified": false,
+  "description": "Our mission for this club is to create a safe and fun community to discuss and analyze media, entertainment, and music.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=37054"
+   },
+   {
+    "label": "Website",
+    "url": "https://student.sua.umn.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_umn_cg36804",
   "name": "MEDIC #4881",
   "logo": {
@@ -20917,7 +21093,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Social/Recreational",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "As a student chapter of the Mineralogical Society of America, our mission is to 1) provide a space for undergraduate and graduate students to connect over a shared interest in mineral-based sciences, 2) provide and highlight resources and opportunities for students interested in mineralogy and its related fields, and 3) share the joy of minerals with professionals, students, and mineral enthusiasts.",
   "gallery": [],
@@ -21038,6 +21214,43 @@
    {
     "label": "Website",
     "url": "https://minnesota.sigep.org/bms/#:~:text=Minnesota%20Alpha%20is%20awarding%20%242%2C000,open%20until%20August%201%2C%202023/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg37055",
+  "name": "Minnesota Badminton Club #5116",
+  "logo": {
+   "emoji": "MB",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Social/Recreational",
+  "verified": false,
+  "description": "To create a fun environment for people of all experience levels to play badminton",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=37055"
+   },
+   {
+    "label": "Website",
+    "url": "https://student.sua.umn.edu/"
    }
   ],
   "recruitment": {
@@ -21670,7 +21883,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Cultural",
+  "parent": "Social/Recreational",
   "verified": false,
   "description": "The University of Minnesota's premier competitive Bollywood fusion dance team.",
   "gallery": [],
@@ -21736,7 +21949,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Health/Wellness",
+  "parent": "Career/Professional Development",
   "verified": false,
   "description": "Minnesota KDSAP is a chapter of the national organization committed to combating chronic kidney disease in the Twin Cities and equipping a new generation of health professionals with knowledge of the disease. Our diverse range of activities include community engagement to raise awareness of kidney disease, volunteer outreach to encourage healthy lifestyles, talks from physicians and researchers, mentorship programs, shadowing opportunities, and workshops on applications to medical, graduate, and PA programs. We partner with organizations like the National Kidney Foundation and work with physic",
   "gallery": [],
@@ -22063,6 +22276,10 @@
    {
     "label": "Website",
     "url": "https://www.minnesotanordic.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/minnesotanordic/"
    }
   ],
   "recruitment": {
@@ -22432,7 +22649,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "The purpose of the Minnesota Sailing Team is: 1. to provide University students with instructional and competitive sailing opportunities. 2. to promote the sport of sailing in surrounding communities. 3. to provide student development through officer positions. 4. to provide social activities and events for members. Our group's activities include sailing practice three times a week at the Minneapolis Sailing Center, social activities, recruitment activities, and more. We partake in weekend travel to compete with other Midwest sailing teams. Our group supports the leadership development of its ",
   "gallery": [],
@@ -23243,7 +23460,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "The Minority Association of Pre-Medical Students (MAPS) is a pipeline program sponsored by SNMA (Student National Medical Association) to directly serve minority students through mentorship, education, and guidance. MAPS strives to create an inviting and culturally inclusive community in which minority pre-med students can thrive, learn, grow. We hope to increase the representation of underrepresented backgrounds in the medical field. We educate ourselves and our members about health inequities so that as future physicians, we can help address and decrease them. The purpose of our organization",
   "gallery": [],
@@ -23290,6 +23507,105 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=36974"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg36352",
+  "name": "Mondale Racketeering Club #4695",
+  "logo": {
+   "emoji": "MR",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Career/Professional Development",
+  "verified": false,
+  "description": "The Mondale Racketeering Club is dedicated to developing networking skills that are often helpful to advancing a legal career. MRC has a particular focus on connecting law students with experience and interest in racket sports for structured experiential learning opportunities during court time.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=36352"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg35571",
+  "name": "Mortuary Science Student Association #2251",
+  "logo": {
+   "emoji": "MS",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Campus Life Program",
+  "verified": false,
+  "description": "Represent the voice of the students with faculty, Mortuary Science Program Advisory Council, MN legislative efforts, other programs at U of M, and potential future students. To enrich students education by creating educational workshops on a consistent basis, organize student events, foster peer support, promote professional connections in death care for our Mort Sci students. Promote community involvement (volunteer) opportunities aligned with funeral service.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=35571"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg35864",
+  "name": "Moving Image, Media, and Sound Studies Graduate Group #3683",
+  "logo": {
+   "emoji": "MI",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Registered Student Organization",
+  "verified": false,
+  "description": "The Moving Image & Media Studies Graduate Group has served as a collaboratively-run nexus for students, faculty, and production professionals working in film and audiovisual media across the University of Minnesota and the Twin Cities community at large. MIMSGG is open to and inclusive of all scholars of cinema and media, particularly those who find themselves in departments without established focuses on cinema and media. Our objective is to generate new approaches to the study of cinema and media through cross-disciplinary encounter and dialogue, which we achieve through a radically open cal",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=35864"
    }
   ],
   "recruitment": {
@@ -24600,6 +24916,10 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=36101"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.google.com/view/umn-navigators-international/home"
    }
   ],
   "recruitment": {
@@ -24826,6 +25146,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/neurodiversity_umn/"
+   },
+   {
+    "label": "Website",
+    "url": "https://neurodiv5.wixsite.com/neurodiv"
    }
   ],
   "recruitment": {
@@ -25888,7 +26212,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Cultural",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "OMC is a music club that spreads Chinese culture and promote mutual-cultural communication. It may give performances of playing Chinese instruments.",
   "gallery": [],
@@ -26283,7 +26607,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Cultural",
+  "parent": "Law/Criminal Justice",
   "verified": false,
   "description": "A community for all LGBTQIA+ law students at the University of Minnesota.",
   "gallery": [],
@@ -26876,7 +27200,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Health/Wellness",
+  "parent": "Career/Professional Development",
   "verified": false,
   "description": "Our mission is to provide dental students with comprehensive exposure to the evolving field of periodontics and implant dentistry through hands-on workshops, expert-led lectures, and collaborative events. We aim to empower general dentists by demonstrating the scope of periodontal procedures they can perform, such as crown lengthening and grafting techniques, while fostering a deeper understanding of the relationship between periodontics and general dentistry. Through mentorship, clinical observation, and networking, we prepare our members to excel in both the surgical and collaborative aspect",
   "gallery": [],
@@ -27072,7 +27396,7 @@
    "emoji": "PC",
    "hue": 216
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Academic Major/Minor/Program Related",
   "verified": false,
@@ -27132,15 +27456,15 @@
   }
  },
  {
-  "id": "og_umn_cg36532",
+  "id": "oc_umn_cg36532",
   "name": "Phi Delta Chi #532",
   "logo": {
    "emoji": "PD",
    "hue": 304
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Phi Delta Chi is a fraternity that aims to provide a lifelong home for pharmacy professionals and inspires brotherhood, leadership, service and scholarship.",
   "gallery": [],
@@ -27774,7 +28098,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "The Phytograds is the Plant and Microbial Biology graduate student association. Anyone can join, but PMB graduate students are automatically part of Phytograds. We are a network for PMB graduate students who are spread out among various buildings on the St. Paul campus. We also serve as the voice of the PMB graduate students on various program, departmental and college committees.",
   "gallery": [],
@@ -27803,15 +28127,15 @@
   }
  },
  {
-  "id": "og_umn_cg36516",
+  "id": "oc_umn_cg36516",
   "name": "Pi Beta Phi #470",
   "logo": {
    "emoji": "PB",
    "hue": 0
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Pi Beta Phi is a social club part of the Fraternity and Sorority life at the University of Minnesota. We empower and help connect women during their undergraduate years. We have date parties and formals, sisterhood events, philanthropy events, and so much more!",
   "gallery": [],
@@ -28173,6 +28497,105 @@
   }
  },
  {
+  "id": "oc_umn_cg36747",
+  "name": "Pre-Health Advocacy and Support Exchange #4826",
+  "logo": {
+   "emoji": "PH",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Social/Recreational",
+  "verified": false,
+  "description": "We offer a support network for pre-health students, especially those who have underrepresented identities in healthcare fields. We aim to encourage, guide, and educate students via peer connections.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=36747"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg35604",
+  "name": "Pre-Health Community Connections #2435",
+  "logo": {
+   "emoji": "PH",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Campus Life Program",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=35604"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg36815",
+  "name": "Pre-health Student Advocates #4892",
+  "logo": {
+   "emoji": "PH",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Activism/Social Justice",
+  "verified": false,
+  "description": "This group aims to give pre-health students at the University of Minnesota the opportunity to educate themselves on local health disparities and become advocates for change through volunteering, civic engagement, and more. Improving civic engagement/education amongst pre-health students Partnering with local organizations to volunteer (thinking about the social determinants of health - food security, having a safe place to live, education, etc.)",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=36815"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_umn_cg36465",
   "name": "Pre-Law Society #307",
   "logo": {
@@ -28445,7 +28868,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "Product Design Minnesota (PDMN) is a campus life program dedicated to building and supporting our community of designers, connecting members with industry professionals, and cultivating the idea generation processes outside of the classroom. As a campus life program we promote the Product Design program at the U and provide services to help our members by hosting a variety of events such as workshops, collaborations with partnering organizations, sponsored events with local companies, and social events. Don't hesitate to contact us with any questions~ the best way to reach us is at our email p",
   "gallery": [],
@@ -28715,7 +29138,7 @@
    "emoji": "PS",
    "hue": 232
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Academic Major/Minor/Program Related",
   "verified": false,
@@ -28780,10 +29203,10 @@
  },
  {
   "id": "oc_umn_cg36517",
-  "name": "Psi Chi/Psychology Club #472",
+  "name": "Psi Chi/Psychology Club at the University of Minnesota #472",
   "logo": {
    "emoji": "PC",
-   "hue": 160
+   "hue": 288
   },
   "type": "club",
   "schoolId": "s_umn",
@@ -28950,7 +29373,7 @@
    "emoji": "PA",
    "hue": 64
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Campus Governing and Advisory Boards",
   "verified": false,
@@ -29162,7 +29585,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Interest/Affinity",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "Queer Science organizes multidisciplinary STEM outreach events for queer and trans high school students in the Twin Cities and surrounding regions, with an expansive definition of \"STEM.\" We host free events where young people interact with and work alongside trans and queer STEM-ists to explore and expand their passion for science. We seek queer and trans volunteers from all STEM-related disciplines, whether in academia, industry, government, etc. Our events are as diverse as our attendees, all with the goal of supporting queer and trans youth interested in STEM, and we focus on experiences p",
   "gallery": [],
@@ -29335,7 +29758,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Fine Arts/Music/Film/Performance",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "Radio K is the award-winning student-run radio station of the University of Minnesota, playing an eclectic variety of music both old and new. Radio K educates students, breaks ground in musical programming, and provides cutting-edge cultural and sports coverage through our specialty shows and Real College Podcast. You can get involved with Radio K by emailing training@radiok.org and joining one of our weekly staff and volunteer meetings Friday's at 1:30 PM! These meetings can be attended either in-person in room 616 of the Rarig Center, or via Zoom at https://us05web.zoom.us/j/2349579783?pwd=S",
   "gallery": [],
@@ -29920,6 +30343,43 @@
   }
  },
  {
+  "id": "oc_umn_cg37053",
+  "name": "Robosub #5114",
+  "logo": {
+   "emoji": "R5",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Academic Major/Minor/Program Related",
+  "verified": false,
+  "description": "Our mission is to create a competitive robot for the annual robosub competition. We seek to foster a welcoming environment to learn about and create new robots.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=37053"
+   },
+   {
+    "label": "Website",
+    "url": "https://student.sua.umn.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_umn_cg36319",
   "name": "Ronald McDonald House Club @ UMN #4662",
   "logo": {
@@ -29994,7 +30454,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "To connect students through roundnet and make competitive roundnet more accessible and inclusive.",
   "gallery": [],
@@ -30276,6 +30736,10 @@
    {
     "label": "Website",
     "url": "https://www.sph.umn.edu/current/engagement-opportunities/senate/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/umnsphsenate/"
    }
   ],
   "recruitment": {
@@ -30330,7 +30794,7 @@
    "emoji": "SE",
    "hue": 24
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Social/Recreational",
   "verified": false,
@@ -30810,7 +31274,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "To grow, strengthen, and inspire women within mechanical engineering by providing resources, opportunities, and connections within the department, college, and industry.",
   "gallery": [],
@@ -30873,6 +31337,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/shesthefirst"
+   },
+   {
+    "label": "Website",
+    "url": "https://shesthefirst.org/"
    }
   ],
   "recruitment": {
@@ -30954,15 +31422,15 @@
   }
  },
  {
-  "id": "og_umn_cg36546",
+  "id": "oc_umn_cg36546",
   "name": "Sigma Alpha Epsilon #573",
   "logo": {
    "emoji": "SA",
    "hue": 232
   },
-  "type": "greek",
+  "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Through friendship, scholarship, leadership, and service, SAE finds men with impeccable character and helps them achieve their full potential, letting them rise to face every challenge today and tomorrow. We accomplish this by building our members into True Gentlemen.",
   "gallery": [],
@@ -31085,7 +31553,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Sorority/Fraternity",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Our mission is to develop values-based leaders committed to the betterment of character, campus and community. We do this through various brotherhood activities, leadership exercises, and philanthropy events throughout the community. We support academic excellence through different incentive based academic programs as well as academic mentorships and tutelage. To get involved with our group, find us on Instagram @sigmachiumn or email us at assigmachi@gmail.com",
   "gallery": [],
@@ -31233,7 +31701,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Sigma Psi Zeta Sorority, Inc. is a progressive, multicultural Greek Organization that provides a means to success and support for womxn, particularly womxn of color. The sorority builds on the unity of strong and independent leaders to affect change in our organization, our campuses, and our local communities. Sigma Psi Zeta is an official partner of It’s On Us, the White House Initiative to end sexual assault on college campuses. We aim to be a community of pioneers and innovators offering opportunities for womxn to develop professional and interpersonal skills in service of education, cultur",
   "gallery": [],
@@ -31369,7 +31837,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Our club is open to all members and experience levels. We are a great place to ski, snowboard, meet friends, and have a great time! Our club plans many events, local ski trips, and two large out-of-state trips during the Winter and Spring Break seasons. Our sponsors also give you the chance to earn great deals on gear and lift tickets throughout the season. Check us out!",
   "gallery": [],
@@ -33326,7 +33794,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Pre-Health/Health Professional",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "The purpose of SIGN is to introduce medical students to the field of neurology by bringing them together with fellow students with similar interests through discussions by neurologists, patient presentations, seminars, journal clubs, and learning materials, creating a new generation of neurologists. Learn about neurology through planning and participating in clinical, research, and service activities.",
   "gallery": [],
@@ -33596,7 +34064,7 @@
    "emoji": "SO",
    "hue": 64
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_umn",
   "parent": "Campus Governing and Advisory Boards",
   "verified": false,
@@ -35119,7 +35587,7 @@
   },
   "type": "greek",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Fine Arts/Music/Film/Performance",
   "verified": false,
   "description": "The Alpha Iota chapter of Tau Beta Sigma promotes greater bands through service, social, and fundraising activities for band communities in and around the University of Minnesota. We donate our time to the bands through service projects like teaching high school students to chair step march at our Band Clinic Day, organizing donation drives, stage-handing at School of Music concerts and organizing musical events at venues around campus and Minneapolis. Our chapter also hosts social activities such as an ice cream social, a formal riverboat dance function, and de-stress nights for band members.",
   "gallery": [],
@@ -35137,6 +35605,14 @@
    {
     "label": "Website",
     "url": "https://sites.google.com/umn.edu/tbsalphaiota/home?authuser=0"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tbsalphaiota/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/TBSAlphaIota"
    }
   ],
   "recruitment": {
@@ -35473,7 +35949,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Cultural",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "The mission of the Thai Student Association is to uphold and advance Thai culture inside the institution and across the state of Minnesota. In addition, to improve the college experiences of individuals participating, we work to help one another academically and socially. Our main goals are: 1. Organize social activities/events among our members and others interested in Thai culture. 2. Promote Thai culture within the university and Twin Cities. 3. Connect with Thai individuals in Minnesota. 4. Exchange ideas and information between Thais within and outside the state.",
   "gallery": [],
@@ -35506,7 +35982,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "We are a passionate group of individuals who advocate for the ethical use of AI, with the overarching goal of serving the common good of humanity. Our club aims to foster a sense of belonging for students interested in AI and the field of computer science, regardless of their major or experience level, so our workshops and events are open to everyone! Through discussion groups, workshops, and guest speakers, we provide opportunities for learning and collaborating in various fields of AI.",
   "gallery": [],
@@ -37339,7 +37815,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Religion/Faith/Spirituality",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "True North exists to provide college students with the opportunity and encouragement to grow in their faith through food and fellowship every week.",
   "gallery": [],
@@ -37516,7 +37992,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "The Twin Cities Pre-optometry Club is an academic and educational student organization established at the University of Minnesota, Twin Cities. We are dedicated to providing the tools and resources needed to help pre-optometry students pursue a successful career in the field of optometry. The Twin Cities Pre-Optometry Club hosts a number of open workshops every school year that focus on topics such as the OAT, OptomCAS application, optometry school, life as an optometrist, and much more. Additionally, we try to bring in optometrists and optometry school representatives to our meetings in order",
   "gallery": [],
@@ -37530,208 +38006,6 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=35525"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_umn_cg36793",
-  "name": "Tzedek #4870",
-  "logo": {
-   "emoji": "T4",
-   "hue": 352
-  },
-  "type": "club",
-  "schoolId": "s_umn",
-  "parent": "Registered Student Organization",
-  "verified": false,
-  "description": "The purpose of Tzedek shall be to provide a safe, welcoming environment for Jews at the University of Minnesota Twin Cities campus, regardless of their political beliefs or ideologies. It shall also seek to provide assistance for like-minded groups and vulnerable members of the university community, regardless of race, color, creed, religion, national origin, gender, age, marital status, disability, public assistance status, veteran status, sexual orientation, gender identity, or gender expression.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://gopherlink.umn.edu/student_community?club_id=36793"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_umn_cg36199",
-  "name": "U Link #4507",
-  "logo": {
-   "emoji": "UL",
-   "hue": 184
-  },
-  "type": "club",
-  "schoolId": "s_umn",
-  "parent": "Activism/Social Justice",
-  "verified": false,
-  "description": "U Link is a student-run, non-profit organization at the U composed of professional students positioned to support the needs of community organizations that serve vulnerable youth. Our mission is to make our organization a place where student-mentors are inspired to become leaders and advocates for change within our communities, all while providing vulnerable youth stable role-models in their sometimes unstable lives. U Link currently has chapters at the University of Minnesota - Twin Cities and the University of Minnesota - Duluth.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://gopherlink.umn.edu/student_community?club_id=36199"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_umn_cg36039",
-  "name": "U Volunteer #4219",
-  "logo": {
-   "emoji": "UV",
-   "hue": 344
-  },
-  "type": "club",
-  "schoolId": "s_umn",
-  "parent": "Service/Volunteer/Philanthropy",
-  "verified": false,
-  "description": "U Volunteer is an organization that brings volunteer opportunities to students at the University of Minnesota. Each month, U Volunteer offers its members various opportunities to give back to the community during meetings and group outings. U Volunteer has monthly meetings on Wednesday from 7-8pm. During these meetings, students will get together to talk about upcoming volunteer events and volunteer their time in a simple way such as making blankets for those in need or picking up trash. There will also be one \"outing\" each month where students will go somewhere on or near campus to volunteer ",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://gopherlink.umn.edu/student_community?club_id=36039"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_umn_cg35737",
-  "name": "U-Finance #3046",
-  "logo": {
-   "emoji": "UF",
-   "hue": 288
-  },
-  "type": "club",
-  "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
-  "verified": false,
-  "description": "U-Finance is a student group that is focused on providing services to other clubs through three distinct service areas - Data Analytics, Budget and Grants, and Tax. We work on client teams and solve problems for our clients. Members develop skills such as communication, presentation and technical skills.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://gopherlink.umn.edu/student_community?club_id=35737"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_umn_cg36473",
-  "name": "U-Swing #334",
-  "logo": {
-   "emoji": "US",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_umn",
-  "parent": "Social/Recreational",
-  "verified": false,
-  "description": "Dancing is a fun, healthy way to meet new people, learn something new, relieve stress, and build confidence! At Uswing, our mission is to introduce you to the vibrant swing dance community in the Twin Cities and teach basic swing moves so you feel comfortable dancing socially. We provide a safe space to practice and have fun! At Uswing, we have a strong sense of community. The club is open to all University of Minnesota students and no prior dance experience is needed. We welcome any new members at any time of the year! Our meetings are from 8:30-10/10:30 PM on Thursday every week at the Barba",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://gopherlink.umn.edu/student_community?club_id=36473"
-   },
-   {
-    "label": "Website",
-    "url": "https://sites.google.com/umn.edu/tbsalphaiota/home?authuser=0"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_umn_cg35544",
-  "name": "UBreak #2033",
-  "logo": {
-   "emoji": "U2",
-   "hue": 328
-  },
-  "type": "club",
-  "schoolId": "s_umn",
-  "parent": "Fine Arts/Music/Film/Performance",
-  "verified": false,
-  "description": "We breakdance! Ubreak is a club for anyone who wants to learn breakdancing or hone their skills, there is no prior experience required. Ubreak is a good place to learn a new skill, meet new people, and just have fun! Reach out over email or instagram for practice time details!",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://gopherlink.umn.edu/student_community?club_id=35544"
    }
   ],
   "recruitment": {
@@ -38019,7 +38293,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "We have monthly meetings with a variety of speakers from a variety of backgrounds. We try to introduce group members to research being done on campus in the microbiology field as well as to careers in academia, the government, and the private sector, and dispense information on post-graduation options. We also are scheduling volunteer and social activities on and around campus, scheduling site visits to local microbiologist employers, and we encourage attending seminars and getting otherwise involved and connected.",
   "gallery": [],
@@ -38134,7 +38408,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "Our goal is to provide ultimate players with a fun and competitive environment to play in. We have a no cut program and welcome both new and experienced players. Anyone interested in learning more about our program is welcome to reach out! Both of our teams practice 2-3 times a week on campus throughout the entire school year. The number of tournaments varies between the A and B team, but it is usually around 3 per semester. Some tournaments are close enough to drive to and from each day, but most are located outside of Minnesota. To get involved with our group, please reach out to umnwomensul",
   "gallery": [],
@@ -38171,7 +38445,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "The Anthropology Club's mission is to provide a space for University of Minnesota students to contribute to the anthropological discipline in a meaningful and proactive manner through an ongoing conversation about the past, present, and future of humanity. The club welcomes students from any major and minor to join and participate in bi-weekly discussion meetings and social events. Additionally, Anthropology Club puts on an annual conference that hosts academics and promotes student research. Joining the club is easy! Email anthro@umn.edu to receive our weekly newsletters and keep up to date o",
   "gallery": [],
@@ -38241,7 +38515,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "We, the members of the Business Law Association, in pursuit of fostering an inclusive, innovative, and professional environment for understanding and engaging with business law, establish this constitution to guide our actions, uphold our values, and achieve our goals.",
   "gallery": [],
@@ -38420,6 +38694,10 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=35601"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/umnphysiology?ltsid=24ca2ce0-877e-473d-902b-b865a09bc84b"
    },
    {
     "label": "Website",
@@ -39657,7 +39935,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "The mission of UMN NeuroNetwork will be to work with students, staff, and faculty within the Neuroscience Department and create an environment that fosters a sense of community and belonging for Neuroscience majors and minors. This will be done by hosting recreational events for students and staff and providing research and volunteer opportunities for students within Neuroscience. Students will be able to interconnect with each other and with the Neuroscience faculty to create a stronger connection and a sense of belonging. We aim to target students from all backgrounds and different interests",
   "gallery": [],
@@ -39690,7 +39968,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Campus Life Program",
   "verified": false,
   "description": "The team exists to promote trivia-based academic competitions and related pop-culture-based activities among students at the University of Minnesota - Twin Cities. The team does so by organizing and sending teams to a wide range of regional and national intercollegiate tournaments and by hosting intercollegiate, intramural, and high school tournaments in Minneapolis. The team aims to include as many students as possible in its activities while at the same time maintaining its high competitive position on the national academic competition circuit. We will be hosting quizbowl practices in person",
   "gallery": [],
@@ -40556,6 +40834,10 @@
    {
     "label": "Website",
     "url": "https://vetouch.umn.edu/"
+   },
+   {
+    "label": "Website",
+    "url": "https://vetouch.umn.edu/"
    }
   ],
   "recruitment": {
@@ -40917,7 +41199,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Career/Professional Development",
+  "parent": "Social/Recreational",
   "verified": false,
   "description": "WAM Collective, of the Weisman Art Museum at the University of Minnesota, serves as the student voice of and for the museum. WAM Collective shall act as a bridge between the widely diverse student body of the University and WAM. The Collective shall foster student ownership of the museum, advise staff on effective ways to engage the student body, and be proactive in promoting WAM throughout the University community and beyond.",
   "gallery": [],
@@ -40983,7 +41265,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Social/Recreational",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "To create an inclusive and safe space for students to share their culture and traditions and celebrate the culture and traditions of others. In addition to creating a community where people know they are always welcome.",
   "gallery": [],
@@ -41226,7 +41508,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Academic Major/Minor/Program Related",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "Women in Biological Sciences is a welcoming club dedicated to fostering a supportive community for women pursuing studies and careers in biology. Our goal is to provide a platform for networking, mentorship, and personal development. Through workshops, guest speakers, and social events, we aim to empower women in the field, celebrate their achievements, and advocate for gender equality in science. Join us as we strive to inspire and uplift women in biological sciences.",
   "gallery": [],
@@ -41372,6 +41654,43 @@
    {
     "label": "Directory",
     "url": "https://gopherlink.umn.edu/student_community?club_id=36024"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_umn_cg37051",
+  "name": "Women in Planning at University of Minnesota - Twin Cities #5112",
+  "logo": {
+   "emoji": "WP",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_umn",
+  "parent": "Academic Major/Minor/Program Related",
+  "verified": false,
+  "description": "To empower women in planning and related fields by fostering a supportive community focused on professional development, mentorship, networking, and meaningful connections.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gopherlink.umn.edu/student_community?club_id=37051"
+   },
+   {
+    "label": "Website",
+    "url": "https://student.sua.umn.edu/"
    }
   ],
   "recruitment": {
@@ -41968,7 +42287,7 @@
   },
   "type": "club",
   "schoolId": "s_umn",
-  "parent": "Sports/Games/Recreation/Competition",
+  "parent": "Registered Student Organization",
   "verified": false,
   "description": "The Yu-Gi-Oh! Club is a club that provides a place where players of the Yu-Gi-Oh! Trading Card Game (TCG) can meet and hang out. Our mission is to provide a safe, secure, and fun place for University of Minnesota students to play the Yu-Gi-Oh! TCG. We also occasionally host casual club tournaments. The Yu-Gi-Oh! Club meets every Friday in Coffman Memorial Union Room 326 from 3:00-8:00pm, with tournaments typically starting no later than 5:00pm if they occur. You can stop by at any time to get involved with the club, as we always have open dueling available. We hope to see you there! Most annou",
   "gallery": [],

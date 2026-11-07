@@ -1,0 +1,158 @@
+[
+ {
+  "id": "og_indiana_ifc",
+  "name": "Interfraternity Council at Indiana University",
+  "logo": {
+   "emoji": "IC",
+   "hue": 320,
+   "url": "https://se-images.campuslabs.com/clink/images/a01c7586-9939-4ced-a7aa-913904b6ec8a3f944556-da4f-4159-8f8e-4c03601b8e31.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_indiana",
+  "parent": "Governance",
+  "verified": false,
+  "description": "Interfraternity Council at Indiana University",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://beinvolved.indiana.edu/organization/ifc"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.ifcindiana.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ifcatindiana/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_indiana_pfc",
+  "name": "Kelley Professional Fraternity Council",
+  "logo": {
+   "emoji": "KP",
+   "hue": 72,
+   "url": "https://se-images.campuslabs.com/clink/images/07d49abf-474e-4b37-b156-95324132c1554b1249a4-f899-4c0b-b8ad-dcf196a12259.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_indiana",
+  "parent": "Academic and Professional",
+  "verified": false,
+  "description": "The Professional Fraternity Council is the governing authority of the many business fraternity chapters at Indiana University.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://beinvolved.indiana.edu/organization/pfc"
+   },
+   {
+    "label": "Website",
+    "url": "https://kelley.iu.edu/programs/undergrad/student-life/student-organizations.html"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/pfc_iu/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/pfc-indianauniversity/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_indiana_mgc",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/478155f2-88cd-4f15-9c81-e8f0ce984e9ebee2af96-2559-480b-b5a3-640fc4442deb.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_indiana",
+  "parent": "MGC",
+  "verified": false,
+  "description": "Multicultural Greek Council is composed of 11 chapters of different cultural Greek-lettered organizations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://beinvolved.indiana.edu/organization/mgc"
+   },
+   {
+    "label": "Website",
+    "url": "https://iumcgc.wixsite.com/mcgc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/mgc_iub/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_indiana_pha",
+  "name": "Panhellenic Association",
+  "logo": {
+   "emoji": "PA",
+   "hue": 264,
+   "url": "https://se-images.campuslabs.com/clink/images/56f68bdf-4b30-481b-a8a1-8c7ea191e6657c6d5a70-962c-4551-9e88-e785c4ce014d.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_indiana",
+  "parent": "Governance",
+  "verified": false,
+  "description": "The Panhellenic Association is comprised of 22 sorority chapters that work together to improve the Indiana University community. Through shared values, each chapter works to instill leadership, respect, and overall sisterhood through its membership.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://beinvolved.indiana.edu/organization/pha"
+   },
+   {
+    "label": "Website",
+    "url": "https://panhellenicindiana.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/panhellenicindiana"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/panhellenicatiu/"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/IUBPHA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

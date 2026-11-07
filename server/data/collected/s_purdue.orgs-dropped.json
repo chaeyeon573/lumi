@@ -1,0 +1,138 @@
+[
+ {
+  "id": "og_purdue_interfraternitycouncil",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/6c9a3f88-c06f-41c6-8e38-23a0821b77b1d1f1ae6a-7952-415a-a4db-778a84c960b4.JPG?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_purdue",
+  "parent": "Social Fraternities",
+  "verified": false,
+  "description": "Welcome to the Interfraternity Council of Purdue University. The Interfraternity Council is the student-run governing and programing body for the 38 member fraternity chapters.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://purdue.campuslabs.com/engage/organization/interfraternitycouncil"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.purdue.edu/fscl"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/purdueifc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "http://www.facebook.com/pages/Purdue-Fraternity-and-Sorority-Life/160157580706940"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/purdue-interfraternity-council"
+   },
+   {
+    "label": "X",
+    "url": "http://twitter.com/#!/PurdueGreeks"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_purdue_multiculturalgreekcouncil",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/15b44886-adfa-4b59-8936-cc6e2103ace30739f1df-9360-4e5f-a320-7d2119d8f50e.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_purdue",
+  "parent": "Ethnic / Cultural",
+  "verified": false,
+  "description": "The Multicultural Greek Council was established at Purdue University in 2003 to serve as a governing body, to create and maintain high standards in the life of culturally-based Fraternities and Sororities.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://purdue.campuslabs.com/engage/organization/multiculturalgreekcouncil"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.purdue.edu/fscl/councils/mgc/index.html"
+   },
+   {
+    "label": "Instagram",
+    "url": "http://www.instagram.com/purduemgc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/MGCPurdue/?ref=aymt_homepage_panel&eid=ARBoLW0RFRYeou8HUflpd_fu-666CpkpUIm2vKpmrP19YLUhdsCEIgylOqFbvJnzG1vEelgfiFHSU3v7"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_purdue_panhellenicassociation",
+  "name": "Panhellenic Association",
+  "logo": {
+   "emoji": "PA",
+   "hue": 264,
+   "url": "https://se-images.campuslabs.com/clink/images/39a28590-98ea-48f5-93ff-434e9d1d7de58cc8dfe6-7064-4fcb-a8b0-3faae3d6e433.gif?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_purdue",
+  "parent": "Social Sororities",
+  "verified": false,
+  "description": "The Panhellenic Association is the student-run governing and program body for sororities at Purdue University.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://purdue.campuslabs.com/engage/organization/panhellenicassociation"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.purduepanhellenic.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/purduegreeks/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/Purdue-Fraternity-and-Sorority-Life-160157580706940/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/18985558"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/PurdueGreeks"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

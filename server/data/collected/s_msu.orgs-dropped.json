@@ -1,0 +1,122 @@
+[
+ {
+  "id": "og_msu_ifc",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 56,
+   "url": "https://se-images.campuslabs.com/clink/images/533b1dcd-7aca-48ca-b73b-8b748be87e5d75a9dfca-e830-4049-abb2-c921bbfc022d.jpg?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_msu",
+  "parent": "IFC",
+  "verified": false,
+  "description": "Governing body of Interfraternity Council Greek Life at Michigan State University",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://msu.campuslabs.com/engage/organization/ifc"
+   },
+   {
+    "label": "Website",
+    "url": "http://msuifc.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ifc_michigan_state/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/ifcmichiganstate/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_msu_mgc",
+  "name": "Multicultural Greek Council",
+  "logo": {
+   "emoji": "MG",
+   "hue": 288,
+   "url": "https://se-images.campuslabs.com/clink/images/e3fac41f-e3dd-45ec-ba7d-6aa529a65dbfee09964a-e9be-41d0-a02f-170f43311c27.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_msu",
+  "parent": "IFC",
+  "verified": false,
+  "description": "The Multicultural Greek Council (MGC) at Michigan State is a unique governing body that represents Latinx, Asian, and Multicultural/Multiethnic, and progressive fraternities and sororities on campus.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://msu.campuslabs.com/engage/organization/mgc"
+   },
+   {
+    "label": "Website",
+    "url": "https://greeklife.msu.edu/governing-councils/mgc.html"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/mgc_msu/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/MichiganStateMGC"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_msu_panhelleniccouncil",
+  "name": "Panhellenic Council",
+  "logo": {
+   "emoji": "PC",
+   "hue": 64,
+   "url": "https://se-images.campuslabs.com/clink/images/e6df9ee6-6b9e-488f-8519-94adf172a62472aa33af-dc53-49bd-99e4-b9de8aca67e7.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_msu",
+  "parent": "Academic ",
+  "verified": false,
+  "description": "The Michigan State Panhellenic Council is a governing body of 14 National Panhellenic Conference sororities on campus.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://msu.campuslabs.com/engage/organization/panhelleniccouncil"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.msupanhellenic.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/msupanhel/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/MSUPanhellenicCouncil/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]
