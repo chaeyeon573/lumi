@@ -239,3 +239,11 @@ test('publicFix: tracking tails (fbclid, utm_*, igshid) are removed, other query
   assert.equal(publicFix('https://example.org/page?id=7&utm_campaign=x'), 'https://example.org/page?id=7');
   assert.equal(publicFix('https://example.org/page?id=7'), 'https://example.org/page?id=7');
 });
+
+test('cleanCollectedOrgs: links into a school login portal (Rutgers-Newark raiderlink) are set aside, not kept as the website', async () => {
+  const { cleanCollectedOrgs } = await import('./sources/orglinks');
+  const org = { id: 'oc_rn_ruff', name: 'RUFF', schoolId: 's_rutgersnewark', type: 'club', links: [{ label: 'Directory', url: 'https://rutgers.campusgroups.com/student_community?club_id=1' }, { label: 'Website', url: 'https://raiderlink.newark.rutgers.edu/RUFF/' }, { label: 'Instagram', url: 'https://www.instagram.com/ruff/' }] } as never;
+  const { orgs, badLinks } = cleanCollectedOrgs([org], '2026-11-07');
+  assert.deepEqual(orgs[0].links!.map((l) => l.label), ['Directory', 'Instagram']);
+  assert.equal(badLinks[0].url, 'https://raiderlink.newark.rutgers.edu/RUFF/');
+});

@@ -2438,3 +2438,9 @@
 - Jobs refreshed: 1,273 postings from 183/183 boards (Target answered again): internships 859, new grad 362, PhD 176, master's 80, postdoc 13.
 - Spot check clubs: MIT Chorallaries, MSU AMSA, Rice Red Cross, Lehigh Global Union, Michigan Wolverine Sports Analytics fine (5/5).
 - Spot check courses: 5 random Tulane Fall 2026 classes (ANTH 6500, KINE 3120, MGSC 7340, BEMH 6002, INTU 2020-02) match the live Tulane schedule.
+
+## 2026-11-07 04:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits. UCLA Spring 2027 still not published.
+- Spot check clubs: Michigan TACO, Vanderbilt Entertainment Underground, UConn Notes Over Storrs, UNC MBASA fine. Rutgers-Newark RUFF's "Website" is raiderlink.newark.rutgers.edu, which redirects to a school login (/webapp/auth/login … LOGIN_REQUIRED). 201 of the 231 Rutgers-Newark groups had such a link (added yesterday) - against the no-login-pages rule.
+  - `cleanCollectedOrgs` now sets aside links into that login portal (LOGIN_ONLY_RE, test added); applied: 201 links moved to s_rutgersnewark.deadlinks.json. 35 of 231 groups keep a public link besides the directory.
+- Spot check courses: 5 random Duke Fall 2026 classes (CHURHST 750 Sec 12P, ENVIRON 520, CMAC 248, PUBPOL 242, EGRMGMT 560) match DukeHub.
