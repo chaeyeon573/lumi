@@ -667,39 +667,6 @@
   }
  },
  {
-  "id": "oc_mit_cg53307",
-  "name": "American Institute of Aeronautics and Astronautics MIT Chapter",
-  "logo": {
-   "emoji": "AI",
-   "hue": 176
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Academic and Pre-Professional",
-  "verified": false,
-  "description": "The purpose of the American Institute of Aeronautics and Astronautics is to be a voice for the course 16 undergraduate community, assist the course 16 department in first-year outreach, host events to uplift the undergraduate AeroAstro community, and participate in AIAA region events and conferences.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53307"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg52614",
   "name": "American Institute of Chemical Engineers Student Chapter MIT",
   "logo": {
@@ -2601,43 +2568,6 @@
   }
  },
  {
-  "id": "oc_mit_cg53084",
-  "name": "Canadians Club",
-  "logo": {
-   "emoji": "C",
-   "hue": 232
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Cultural",
-  "verified": false,
-  "description": "We bring together the Canadian community at MIT. From hosting social events, supporting Canadians, to creating professional connections -- we help Canadians in Cambridge/Boston change the world. --- From our humble beginnings as a \"mom and pop” type operation to hosting the largest gatherings of Canadians in Boston, the MIT Canadians Club has been in operation as early as 1991 to support fellow Canadians and Friends of Canada! Over the years we have sponsored the undefeated Canadian Hockey Teams (such as the Loonies), spreading Canadian delicacies such as Poutine, Nanaimo bars, and Timmies to ",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53084"
-   },
-   {
-    "label": "Website",
-    "url": "http://web.mit.edu/canadians/www/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg52966",
   "name": "Casino Rueda",
   "logo": {
@@ -3538,47 +3468,6 @@
    {
     "label": "MIT Engage",
     "url": "https://engage.mit.edu/student_community?club_id=53462"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_mit_cg52677",
-  "name": "Climate and Energy Prize",
-  "logo": {
-   "emoji": "CE",
-   "hue": 56
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Academic and Pre-Professional",
-  "verified": false,
-  "description": "The MIT Climate & Energy Prize connects student climate entrepreneurs, MIT students, and a network of interested community members who are passionate about energy, climate change, and entrepreneurship. Since 2007, the Climate & Energy Prize has been MIT’s flagship climate entrepreneurship platform for student entrepreneurs to gain experience, visibility, and funding for their ventures.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=52677"
-   },
-   {
-    "label": "Website",
-    "url": "http://cep.mit.edu/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/cep_mit/"
    }
   ],
   "recruitment": {
@@ -5213,43 +5102,6 @@
   }
  },
  {
-  "id": "oc_mit_cg53004",
-  "name": "Filipino Students Association",
-  "logo": {
-   "emoji": "FS",
-   "hue": 272
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Cultural",
-  "verified": false,
-  "description": "The MIT Filipino Students Association (FSA) is a community of people who appreciate Filipino culture. The group seeks to: • provide a community for Filipino or Filipino-identifying students; • strengthen members’ connections with their culture and heritage; and • promote awareness of Filipino culture within the greater MIT community.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53004"
-   },
-   {
-    "label": "Website",
-    "url": "http://mitfsa.mit.edu/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg52973",
   "name": "Fixation",
   "logo": {
@@ -6546,39 +6398,6 @@
   }
  },
  {
-  "id": "oc_mit_cg53359",
-  "name": "Individualized Tutoring for English and Citizenship",
-  "logo": {
-   "emoji": "IT",
-   "hue": 336
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Community Service",
-  "verified": false,
-  "description": "ITEC (Individualized Tutoring for English and Citizenship) empowers immigrants in Massachusetts by providing free, one-on-one virtual tutoring in conversational English and citizenship exam preparation. By pairing them with MIT students who have a passion for service, ITEC fosters cross-cultural exchange, promotes community service, and equips students with a deeper understanding of the immigration and naturalization process.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53359"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg52747",
   "name": "Infinite Magazine",
   "logo": {
@@ -7230,6 +7049,152 @@
   }
  },
  {
+  "id": "oc_mit_cg52920",
+  "name": "Korean Karate Club",
+  "logo": {
+   "emoji": "KK",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Athletics and Outdoors",
+  "verified": false,
+  "description": "We strive to help members learn taekwondo skills for the responsible use of self-practice and self-defense.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=52920"
+   },
+   {
+    "label": "Website",
+    "url": "http://web.mit.edu/mitkkc"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_mit_cg53039",
+  "name": "Laboratory for Chocolate Science",
+  "logo": {
+   "emoji": "LC",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Hobbies and Special Interests",
+  "verified": false,
+  "description": "Founded in 2003, the Laboratory for Chocolate Science (LCS) is dedicated to spreading the appreciation of chocolate on campus, and to bringing opportunities for learning about, appreciation of, and indulgence in our favorite substance to the community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=53039"
+   },
+   {
+    "label": "Website",
+    "url": "http://chocolate.mit.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_mit_lambda_chi_alpha",
+  "name": "Lambda Chi Alpha",
+  "logo": {
+   "emoji": "LC",
+   "hue": 344
+  },
+  "type": "greek",
+  "schoolId": "s_mit",
+  "parent": "Departmental Program",
+  "verified": false,
+  "description": "ΛΧΑ · IFC fraternity, founded 1909.",
+  "gallery": [],
+  "regularActivities": [
+   "Chapter meetings",
+   "Philanthropy events",
+   "Socials & formals"
+  ],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "joinProcess": "Rush week → bid",
+  "policyNote": "Recruitment runs through the Interfraternity Council. Dry recruitment and anti-hazing policies apply.",
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=53340"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_mit_cg53429",
+  "name": "Lambda Upsilon Lambda",
+  "logo": {
+   "emoji": "LU",
+   "hue": 0
+  },
+  "type": "greek",
+  "schoolId": "s_mit",
+  "parent": "FSILG",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=53429"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_mit_cg53406",
   "name": "Latin Music Society",
   "logo": {
@@ -7392,51 +7357,6 @@
    {
     "label": "MIT Engage",
     "url": "https://engage.mit.edu/student_community?club_id=52761"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_mit_cg52763",
-  "name": "Leadership Training Institute",
-  "logo": {
-   "emoji": "LT",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Community Service",
-  "verified": false,
-  "description": "The Leadership Training Institute (LTI) is a 10-week program in which MIT undergraduates mentor Boston-area high school students, helping them gain leadership skills while implementing original community service projects. Many high school students are passionate about solving community problems; however, they often lack the experience and mentorship to effectively pursue their ideas. At LTI, we offer such motivated students the skills, guidance, and individualized support to translate their ideas into real impact. By pairing local high school students from underprivileged backgrounds with MIT ",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=52763"
-   },
-   {
-    "label": "Website",
-    "url": "http://lti.mit.edu/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/mit.lti/"
-   },
-   {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/MIT-Leadership-Training-Institute-210983808973944"
    }
   ],
   "recruitment": {
@@ -7970,6 +7890,158 @@
   }
  },
  {
+  "id": "oc_mit_cg52915",
+  "name": "Men's Soccer",
+  "logo": {
+   "emoji": "MS",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Athletics and Outdoors",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=52915"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.mit.edu/mitfc/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_mit_cg52922",
+  "name": "Mens Ice Hockey Club",
+  "logo": {
+   "emoji": "MI",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Athletics and Outdoors",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=52922"
+   },
+   {
+    "label": "Website",
+    "url": "http://mithockey.pointstreaksites.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_mit_cg52923",
+  "name": "Mens Rugby Football Club",
+  "logo": {
+   "emoji": "MR",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Athletics and Outdoors",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=52923"
+   },
+   {
+    "label": "Website",
+    "url": "http://rugby.mit.edu/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/mitrugby"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_mit_cg52924",
+  "name": "Mens Ultimate Frisbee",
+  "logo": {
+   "emoji": "MU",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Athletics and Outdoors",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=52924"
+   },
+   {
+    "label": "Website",
+    "url": "https://mens-ult.mit.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_mit_cg52925",
   "name": "Mens Volleyball Club",
   "logo": {
@@ -8404,43 +8476,6 @@
    {
     "label": "MIT Engage",
     "url": "https://engage.mit.edu/student_community?club_id=53456"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_mit_cg53040",
-  "name": "MIT Bridge Club",
-  "logo": {
-   "emoji": "MB",
-   "hue": 176
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Games and Puzzles",
-  "verified": false,
-  "description": "To provide a platform for bridge lovers to play bridge weekly. To teach bridge to those who are interested.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53040"
-   },
-   {
-    "label": "Website",
-    "url": "https://bridgeclub.mit.edu/"
    }
   ],
   "recruitment": {
@@ -9824,47 +9859,6 @@
   ]
  },
  {
-  "id": "oc_mit_cg53292",
-  "name": "MIT Wind Club",
-  "logo": {
-   "emoji": "MW",
-   "hue": 280
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Technology",
-  "verified": false,
-  "description": "The purpose of the MIT Wind is to promote wind energy education and outreach within MIT and in the greater Boston community. The goal educational component of MIT Wind is to prepare students with the skills and connections to enter the wind energy industry. For undergraduate members, the centerpiece of MIT Wind is participation in the Department of Energy Collegiate Wind Competition (CWC), an annual event in which the objective is to build an operational model turbine to compete against other collegiate teams. Graduate students and non-student members in MIT Wind can serve as mentors to the CW",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53292"
-   },
-   {
-    "label": "Website",
-    "url": "https://sites.mit.edu/wind/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/mitwindclub/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg53413",
   "name": "MIT Young Democratic Socialists of America",
   "logo": {
@@ -10818,39 +10812,6 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/OmegaPhiBeta"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_mit_cg53310",
-  "name": "Open Discourse Society",
-  "logo": {
-   "emoji": "OD",
-   "hue": 32
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Academic and Pre-Professional",
-  "verified": false,
-  "description": "The purpose of the MIT Open Discourse Society (MODS) is to cultivate civil discourse and intellectual diversity within the MIT community. MIT is the global STEM epicenter, and for so long, advancements in science and technology here and elsewhere have stemmed from the willingness to engage in productive discussions and good-faith evaluation of ideas. MODS aims to recreate environments where such discussions and evaluation are the norm and devoid of bigoted obloquy. Such environments range from speaker events and panel discussions to roundtables and workshops to networking events that connect s",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53310"
    }
   ],
   "recruitment": {
@@ -12169,6 +12130,43 @@
   }
  },
  {
+  "id": "oc_mit_cg52838",
+  "name": "Sakata Afrique",
+  "logo": {
+   "emoji": "SA",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_mit",
+  "parent": "Performance",
+  "verified": false,
+  "description": "The purpose of Sakata Afrique is to help MIT students of African and Caribbean origin or descent preserve their cultural heritage through music and dance, and to introduce Afro-Caribbean dance to the MIT community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "MIT Engage",
+    "url": "https://engage.mit.edu/student_community?club_id=52838"
+   },
+   {
+    "label": "Website",
+    "url": "http://sakata.mit.edu/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_mit_cg53094",
   "name": "Sangam",
   "logo": {
@@ -12210,47 +12208,6 @@
    "period": "",
    "open": false,
    "mode": "closed",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_mit_cg53219",
-  "name": "Scholars of Finance",
-  "logo": {
-   "emoji": "SF",
-   "hue": 280
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Academic and Pre-Professional",
-  "verified": false,
-  "description": "The purpose of the Scholars of Finance is to develop the next generation of highly capable financial executives, who will act and lead from a strong grounding in principles and ethics.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53219"
-   },
-   {
-    "label": "Website",
-    "url": "https://scholarsoffinance.org/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/scholarsoffinance/"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
    "source": "campusgroups"
   }
  },
@@ -13113,39 +13070,6 @@
   }
  },
  {
-  "id": "oc_mit_cg53248",
-  "name": "Stand-Up CoMITy",
-  "logo": {
-   "emoji": "SU",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Performance",
-  "verified": false,
-  "description": "The purpose of Stand-Up CoMITy is to promote student mental health and wellbeing through comedy, as well as provide a platform for students and staff to ideate, write, and perform stand-up comedy as a means of self-expression.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53248"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg52954",
   "name": "StartLabs",
   "logo": {
@@ -13409,39 +13333,6 @@
   }
  },
  {
-  "id": "oc_mit_cg53314",
-  "name": "Students of Open and Universal Learning",
-  "logo": {
-   "emoji": "SO",
-   "hue": 288
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Community Service",
-  "verified": false,
-  "description": "The purpose of SOUL is to accelerate, experiment with, and build a stronger culture of open education at institutions of higher education, starting with MIT.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53314"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_mit_cg53404",
   "name": "Sudanese@MIT",
   "logo": {
@@ -13582,39 +13473,6 @@
    "period": "",
    "open": false,
    "mode": "closed",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_mit_cg53335",
-  "name": "Taara",
-  "logo": {
-   "emoji": "T",
-   "hue": 76
-  },
-  "type": "club",
-  "schoolId": "s_mit",
-  "parent": "Activism",
-  "verified": false,
-  "description": "Taara (meaning: Star) aims to provide a dynamic platform that empowers and elevates the voices of South Asian women, femme, and gender non-conforming students at MIT. Through advocacy, activism, and action, we are committed to challenging systemic barriers that hinder our access to opportunity, representation, and well-being.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "MIT Engage",
-    "url": "https://engage.mit.edu/student_community?club_id=53335"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
    "source": "campusgroups"
   }
  },
