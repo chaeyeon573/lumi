@@ -1,0 +1,144 @@
+[
+ {
+  "id": "og_gatech_collegiate_panhellenic_council",
+  "name": "Collegiate Panhellenic Council",
+  "logo": {
+   "emoji": "CP",
+   "hue": 248,
+   "url": "https://se-images.campuslabs.com/clink/images/3df6d436-e205-4093-bdcd-2e25e112fe8e0b85cd2e-0cca-4995-921e-f1fcb60d2616.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_gatech",
+  "parent": "Governing Board",
+  "verified": false,
+  "description": "The Collegiate Panhellenic Council is made up of 8 NPC sororities (ΑΧΩ, ΑΞΔ, AΔΠ,ΦΜ, ΖΤΑ, ΑΦ, ΑΓΔ, KAΘ) and 1 associate sorority (ΑΩΕ). Sorority chapters of CPC work to grow and develop women during their collegiate years by providing academic s..",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gatech.campuslabs.com/engage/organization/collegiate-panhellenic-council"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.gatechcpc.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gtcpc/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "http://facebook.com/gtcpc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_gatech_interfraternity_council",
+  "name": "Interfraternity Council",
+  "logo": {
+   "emoji": "IC",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/94c3a22e-579d-4537-b651-687f20c0afb8ed845a7c-010a-4233-8b5b-f8718b66480d.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_gatech",
+  "parent": "Governing Board",
+  "verified": false,
+  "description": "The Interfraternity Council (IFC) is the governing board for 31 inter/national fraternities. It acts similarly to a trade association of its fraternities. It is an organization founded and funded by its members, wholly member owned and member operated.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gatech.campuslabs.com/engage/organization/interfraternity-council"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.gatechifc.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gt_ifc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "http://facebook.com/gtifc"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_gatech_mpc",
+  "name": "Multicultural Panhellenic Council",
+  "logo": {
+   "emoji": "MP",
+   "hue": 112,
+   "url": "https://se-images.campuslabs.com/clink/images/d994bf79-5846-4f04-970e-5c3c7af2f0bb037b0405-0f4c-47a5-8c71-4beb2ea8c219.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_gatech",
+  "parent": "Governing Board",
+  "verified": false,
+  "description": "The Multicultural Panhellenic Council is one of Georgia Tech's four Greek councils. Our sororities and fraternities foster and promote unity, campus awareness, and community service. Our member organizations are open to students from all backgrounds.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gatech.campuslabs.com/engage/organization/mpc"
+   },
+   {
+    "label": "Website",
+    "url": "http://gtmpc.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gt.mpc/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "og_gatech_piepsilonphi",
+  "name": "The Alpha Chapter of the Pi Epsilon Phi Honorary Choral Service Fraternity",
+  "logo": {
+   "emoji": "AC",
+   "hue": 88
+  },
+  "type": "greek",
+  "schoolId": "s_gatech",
+  "verified": false,
+  "description": "The purpose of this organization is to uphold the ideals and objects of Pi Epsilon Phi through service to local ensembles, the Georgia Institute of Technology, and the surrounding community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://gatech.campuslabs.com/engage/organization/piepsilonphi"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]

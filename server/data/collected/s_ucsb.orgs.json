@@ -165,39 +165,6 @@
   }
  },
  {
-  "id": "oc_ucsb_cg54565",
-  "name": "Academic & Staff Assistance Program",
-  "logo": {
-   "emoji": "AS",
-   "hue": 264
-  },
-  "type": "department",
-  "schoolId": "s_ucsb",
-  "parent": "Department",
-  "verified": false,
-  "description": "The UCSB Academic & Staff Assistance Program (ASAP) supports the health and well-being of faculty, staff, and family members. We assist with identifying, managing, and resolving work-related and personal concerns that may affect job performance and relationships. We offer confidential short-term counseling, consultation, wellness workshops, and assistance with threat management.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://shoreline.ucsb.edu/student_community?club_id=54565"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_ucsb_cg73986",
   "name": "Achayot",
   "logo": {
@@ -336,7 +303,7 @@
    "emoji": "AH",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Community Service",
   "verified": false,
@@ -369,7 +336,7 @@
    "emoji": "AP",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Sports / Recreation",
   "verified": false,
@@ -468,7 +435,7 @@
    "emoji": "AD",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Cultural",
   "verified": false,
@@ -1392,7 +1359,7 @@
    "emoji": "AI",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Cultural",
   "verified": false,
@@ -4040,7 +4007,7 @@
    "emoji": "AP",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Professional",
   "verified": false,
@@ -4106,7 +4073,7 @@
    "emoji": "AR",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Cultural",
   "verified": false,
@@ -4254,6 +4221,14 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=74027"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/acm_ucsb"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/acm.ucsb/"
    }
   ],
   "recruitment": {
@@ -4320,6 +4295,10 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=69823"
+   },
+   {
+    "label": "Website",
+    "url": "https://awm-math.org/about/"
    }
   ],
   "recruitment": {
@@ -5838,6 +5817,10 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=73966"
+   },
+   {
+    "label": "Website",
+    "url": "https://education.ucsb.edu/academic-programs/calteach-science-math-initiative/overview"
    }
   ],
   "recruitment": {
@@ -6020,7 +6003,7 @@
    "emoji": "SA",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Professional",
   "verified": false,
@@ -6647,7 +6630,7 @@
    "emoji": "CL",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Cultural",
   "verified": false,
@@ -6729,39 +6712,6 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=29756"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_ucsb_cg74234",
-  "name": "Chinese Students and Scholars Association",
-  "logo": {
-   "emoji": "CS",
-   "hue": 72
-  },
-  "type": "council",
-  "schoolId": "s_ucsb",
-  "parent": "Cultural",
-  "verified": false,
-  "description": "Promote cultural exchange, fostering deeper understanding and appreciation of Chinese culture within the university community and creating a welcoming environment for all through diverse social and cultural activities. Represent the whole Chinese student body on campus; try our best to meet their need and make them feel at home; make their college lives more colorful.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://shoreline.ucsb.edu/student_community?club_id=74234"
    }
   ],
   "recruitment": {
@@ -10470,6 +10420,10 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=48257"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.ece.ucsb.edu/"
    }
   ],
   "recruitment": {
@@ -10619,7 +10573,7 @@
    "emoji": "EO",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Academic / Honorary",
   "verified": false,
@@ -10833,6 +10787,18 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=30301"
+   },
+   {
+    "label": "Website",
+    "url": "https://elcongresodeucsb.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/elcongreso.ucsb/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/elcongreso.deucsb"
    }
   ],
   "recruitment": {
@@ -12362,39 +12328,6 @@
   }
  },
  {
-  "id": "oc_ucsb_cg30234",
-  "name": "Freedom 4 Youth Advocates",
-  "logo": {
-   "emoji": "F4",
-   "hue": 352
-  },
-  "type": "club",
-  "schoolId": "s_ucsb",
-  "parent": "Community Service",
-  "verified": false,
-  "description": "Freedom 4 Youth's mission is to uplift and empower youth to build safe and compassionate communities.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://shoreline.ucsb.edu/student_community?club_id=30234"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_ucsb_cg32598",
   "name": "French & Italian",
   "logo": {
@@ -13081,6 +13014,14 @@
    {
     "label": "Website",
     "url": "https://gauchomarks.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gaucho.marks/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/GauchoMarksMagazine"
    }
   ],
   "recruitment": {
@@ -13098,7 +13039,7 @@
    "emoji": "GM",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Professional",
   "verified": false,
@@ -15072,39 +15013,6 @@
   }
  },
  {
-  "id": "oc_ucsb_cg73332",
-  "name": "Her Campus at UCSB",
-  "logo": {
-   "emoji": "HU",
-   "hue": 152
-  },
-  "type": "club",
-  "schoolId": "s_ucsb",
-  "parent": "Professional",
-  "verified": false,
-  "description": "UCSB's Elite level chapter of Her Campus, the #1 online magazine for collegiate women.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://shoreline.ucsb.edu/student_community?club_id=73332"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "oc_ucsb_cg29623",
   "name": "Hermanas Unidas Inc.",
   "logo": {
@@ -16827,7 +16735,7 @@
    "emoji": "JF",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Cultural",
   "verified": false,
@@ -19929,7 +19837,7 @@
    "emoji": "ME",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Cultural",
   "verified": false,
@@ -21975,7 +21883,7 @@
    "emoji": "PB",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Academic / Honorary",
   "verified": false,
@@ -22589,39 +22497,6 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=29648"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_ucsb_cg29636",
-  "name": "Pops Orchestra at UCSB",
-  "logo": {
-   "emoji": "PO",
-   "hue": 280
-  },
-  "type": "club",
-  "schoolId": "s_ucsb",
-  "parent": "Visual and Performing Arts",
-  "verified": false,
-  "description": "To give anyone at UCSB the opportunity to play orchestral music in a casual setting, and a chance to connect and bond with a community of people with shared interests, regardless of skill level.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://shoreline.ucsb.edu/student_community?club_id=29636"
    }
   ],
   "recruitment": {
@@ -24877,6 +24752,303 @@
   }
  },
  {
+  "id": "oc_ucsb_cg73140",
+  "name": "San Miguel Hall",
+  "logo": {
+   "emoji": "SM",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Department",
+  "verified": false,
+  "description": "TBD",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=73140"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg73133",
+  "name": "San Nicolas Hall",
+  "logo": {
+   "emoji": "SN",
+   "hue": 320
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Department",
+  "verified": false,
+  "description": "Our mission at San Nicolas Hall is to provide a safe, educational, and supportive community for residents to grow and connect with one another.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=73133"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg73134",
+  "name": "San Rafael Hall",
+  "logo": {
+   "emoji": "SR",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Department",
+  "verified": false,
+  "description": "Beyond managing a building, we cultivate empowered and motivated student leaders to work in tandem to provide stability, belonging, and safety to residents, ensuring student retention. - RD Tim & ARD Brian",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=73134"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg74185",
+  "name": "SAND Club at UCSB- support, advocacy, network, diversity",
+  "logo": {
+   "emoji": "SU",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Social",
+  "verified": false,
+  "description": "The mission of SAND (Support Advocacy Network Diversity) is to foster the mental health and emotional wellbeing of disabled students by providing a compassionate and inclusive peer support network. Through mutual understanding, shared experiences, and community engagement, SAND strives to create a safe environment where students can connect, find encouragement, and strengthen their overall wellness.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=74185"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg74266",
+  "name": "Santa Barbara Aeronautics",
+  "logo": {
+   "emoji": "SB",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Academic / Honorary",
+  "verified": false,
+  "description": "This organization is built upon the fundamental principles of personal integrity, innovation, entrepreneurship, comradery, and leadership. Our main objective is to foster the talents of our members and instill these fundamental principles so when they graduate, they will take with them what they have learned to any company, university, start up, or any other organization they choose to enter. Our mission is not to be the average engineering organization, our goal is to be the leading collegiate organization across all of California in Aeronautics, Controls, and Robotics in all metrics. Our aim",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=74266"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg74102",
+  "name": "Santa Barbara Belles",
+  "logo": {
+   "emoji": "SB",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Community Service",
+  "verified": false,
+  "description": "The mission of the Santa Barbara Belles is to serve the community and create strong connections between women.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=74102"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg66828",
+  "name": "Santa Barbara Case Club",
+  "logo": {
+   "emoji": "SB",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Academic / Honorary",
+  "verified": false,
+  "description": "We will prepare our members to excel in local, national, and international case competitions and for careers in finance/consulting via an extensive training program, mentorship, and a community of camaraderie.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=66828"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg29621",
+  "name": "Santa Barbara Hillel - A Jewish Community",
+  "logo": {
+   "emoji": "SB",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Religious",
+  "verified": false,
+  "description": "Our Mission: To enrich student lives so they may enrich our community, the Jewish people, and the world. Our Vision: A community in which every student has the opportunity to make an enduring commitment to Jewish life, learning, and making the world a better place. Santa Barbara Hillel enables students to connect with one another in a Jewish environment at their \"Jewish Home Away From Home.\" We offer a safe, welcoming, and pluralistic presence as a vibrant center of student life in Isla Vista. Santa Barbara Hillel is proactive in standing up for our students, building bridges, and fostering a ",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=29621"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_ucsb_cg74267",
+  "name": "Santa Barbara Sales Club",
+  "logo": {
+   "emoji": "SB",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_ucsb",
+  "parent": "Professional",
+  "verified": false,
+  "description": "To help students develop real-world sales, communication, and leadership skills through hands-on training, mentorship, and a supportive team environment, preparing members for success in any career.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://shoreline.ucsb.edu/student_community?club_id=74267"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_ucsb_cg32487",
   "name": "Santa Barbara Student Housing Co-op",
   "logo": {
@@ -24932,39 +25104,6 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=50941"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_ucsb_cg54839",
-  "name": "School on Wheels at UCSB",
-  "logo": {
-   "emoji": "SO",
-   "hue": 216
-  },
-  "type": "club",
-  "schoolId": "s_ucsb",
-  "parent": "K-12 Outreach",
-  "verified": false,
-  "description": "School on Wheels is a nonprofit organization dedicated to tutoring K-12 children in underserved and homeless communities. Our chapter at UCSB is looking for passionate and dedicated members to join as general tutors and leadership positions! Additionally, we aim to host school supply drives, fundraiser events, and create education materials for SOW to distribute to other tutors.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://shoreline.ucsb.edu/student_community?club_id=54839"
    }
   ],
   "recruitment": {
@@ -26962,7 +27101,7 @@
    "emoji": "SM",
    "hue": 160
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Academic / Honorary",
   "verified": false,
@@ -27589,7 +27728,7 @@
    "emoji": "SI",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "K-12 Outreach",
   "verified": false,
@@ -28368,6 +28507,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/ucsbtabletop"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tabletop.ucsb/"
    }
   ],
   "recruitment": {
@@ -29676,7 +29819,7 @@
    "emoji": "MP",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Community Service",
   "verified": false,
@@ -31491,7 +31634,7 @@
    "emoji": "UM",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_ucsb",
   "parent": "Professional",
   "verified": false,
@@ -34114,6 +34257,10 @@
    {
     "label": "Directory",
     "url": "https://shoreline.ucsb.edu/student_community?club_id=74052"
+   },
+   {
+    "label": "Website",
+    "url": "http://bit.ly/yep-application"
    }
   ],
   "recruitment": {

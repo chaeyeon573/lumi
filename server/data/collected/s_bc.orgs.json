@@ -31,8 +31,16 @@
    {
     "label": "YouTube",
     "url": "https://youtube.com/@capitaldanceministry866?si=RKFTiY6EmHYb7fs5"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/capitaldanceministry_"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danceministry.capital@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/capitaldanceministry"
+  }
  },
  {
   "id": "oc_bc_180consulting",
@@ -70,7 +78,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/180DegreesConsulting"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollege@180dc.org",
+   "source": "https://bc.campuslabs.com/engage/organization/180consulting"
+  }
  },
  {
   "id": "oc_bc_4boston",
@@ -96,7 +108,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/4boston"
    }
-  ]
+  ],
+  "contact": {
+   "email": "4bostonvolunteers@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/4boston"
+  }
  },
  {
   "id": "oc_bc_theavenue",
@@ -179,7 +195,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/accountingacademybc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegea2@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/accounting-academy"
+  }
  },
  {
   "id": "oc_bc_acoustics",
@@ -226,7 +246,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@bcAcoustics?si=6XPnLqgf3V1kHCQR"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcacoustics@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/acoustics"
+  }
  },
  {
   "id": "oc_bc_aerok",
@@ -261,7 +285,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@aerokdance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcaerodynamik@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/aerok"
+  }
  },
  {
   "id": "oc_bc_african_student_organization",
@@ -291,8 +319,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bostoncollegeaso"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bostoncollegeaso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "africanstudentorg.bc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/african-student-organization"
+  }
  },
  {
   "id": "oc_bc_against_the_current",
@@ -331,7 +367,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@atcurrent"
    }
-  ]
+  ],
+  "contact": {
+   "email": "atcurrent@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/against-the-current"
+  }
  },
  {
   "id": "oc_bc_ahana_management_academy",
@@ -366,7 +406,11 @@
     "label": "X",
     "url": "http://twitter.com/AMAatBC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amaatbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/ahana-management-academy"
+  }
  },
  {
   "id": "oc_bc_ahana_pre_law_student_association",
@@ -376,7 +420,7 @@
    "hue": 304,
    "url": "https://se-images.campuslabs.com/clink/images/f8942267-5689-44a7-b219-0fd0ccdef7c34e1c23aa-d67a-4712-930a-590e9920b3f0.jpeg?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_bc",
   "parent": "Academic/Pre-Professional",
   "verified": false,
@@ -405,7 +449,42 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bcaplsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ahanalawstudentassociation@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/ahana-pre-law-student-association"
+  }
+ },
+ {
+  "id": "oc_bc_bcapec",
+  "name": "AI Prompt Engineering Club",
+  "logo": {
+   "emoji": "AP",
+   "hue": 304,
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/476/435892/a161c5b9-d96b-483f-9120-6ef4d66fe66c.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "A student-run club teaching AI literacy and prompt engineering, so students use AI as a learning partner, not a shortcut, through workshops, ethics discussions, and real-world applications in fields like law, finance, and medicine.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/bcapec"
+   }
+  ],
+  "contact": {
+   "email": "sevakk@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bcapec"
+  }
  },
  {
   "id": "oc_bc_alumniassociation",
@@ -524,8 +603,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/redcrossofbostoncollege"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/redcrossofbostoncollege"
    }
-  ]
+  ],
+  "contact": {
+   "email": "redcrossofbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/american-red-cross"
+  }
  },
  {
   "id": "oc_bc_anime_of_boston_college",
@@ -556,7 +643,11 @@
     "label": "Discord",
     "url": "https://discord.gg/gNDE2vnCCs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "animebccontact@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/anime-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_antioch_boston_college",
@@ -611,7 +702,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcarabs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arabstudents.bc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/arab-students-association"
+  }
  },
  {
   "id": "oc_bc_armenian_club",
@@ -638,7 +733,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/armenian-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sarkisan@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/armenian-club"
+  }
  },
  {
   "id": "oc_bc_arrupe_summer_immersion_cuernavaca",
@@ -668,7 +767,11 @@
     "label": "Website",
     "url": "http://bc.edu/arrupe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arrupe.program@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/arrupe-summer-immersion-cuernavaca"
+  }
  },
  {
   "id": "oc_bc_art_club",
@@ -699,7 +802,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/artclubbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "artclubbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/art-club"
+  }
  },
  {
   "id": "oc_bc_art_law_society",
@@ -725,7 +832,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/art-law-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "artlawsociety@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/art-law-society"
+  }
  },
  {
   "id": "oc_bc_asiam",
@@ -811,7 +922,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AsianCaucus/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asiancaucus@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/asian-caucus"
+  }
  },
  {
   "id": "oc_bc_asian_christian_fellowship_intervarsity",
@@ -898,7 +1013,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UC60dL2VJED9teq3TFFA3rhg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mullenms@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/asinine-sketch-and-improv-comedy"
+  }
  },
  {
   "id": "oc_bc_awma",
@@ -925,7 +1044,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/awma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awmgtma@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/awma"
+  }
  },
  {
   "id": "oc_bc_athletes_in_action_sports_ministry",
@@ -953,6 +1076,45 @@
   ]
  },
  {
+  "id": "oc_bc_aviationclub",
+  "name": "Aviation Club",
+  "logo": {
+   "emoji": "A",
+   "hue": 80,
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/476/435886/d13f4c28-3b42-46f4-9d38-b8345f0e3207.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "Boston College Aviation Club brings together students of all backgrounds and experience levels to explore military, commercial, and general aviation through history, case studies, guest speakers, industry experts, and hands-on experience",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/aviationclub"
+   },
+   {
+    "label": "Website",
+    "url": "https://bc-aviation-club.juzzy88.chatgpt.site/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bc_aviationclub/"
+   }
+  ],
+  "contact": {
+   "email": "halljus@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/aviationclub"
+  }
+ },
+ {
   "id": "oc_bc_avid_listeners_of_boston_college",
   "name": "Avid Listeners of Boston College",
   "logo": {
@@ -977,7 +1139,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/avid-listeners-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "avidlistenersbc-ggroup@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/avid-listeners-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_baha_i_club",
@@ -1029,7 +1195,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/baking-club-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gregorbf@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/baking-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_bc_ballet_company",
@@ -1060,7 +1230,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcballetcompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcballetcompany@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bc-ballet-company"
+  }
  },
  {
   "id": "oc_bc_bcbop",
@@ -1091,7 +1265,11 @@
     "label": "Website",
     "url": "http://www.bc.edu/bands"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busal@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bcbop"
+  }
  },
  {
   "id": "oc_bc_bcems",
@@ -1152,7 +1330,11 @@
     "label": "Website",
     "url": "https://www.centreforeffectivealtruism.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chapters@effectivealtruism.org",
+   "source": "https://bc.campuslabs.com/engage/organization/bcforeffectivealtruism"
+  }
  },
  {
   "id": "oc_bc_bc_law_republicans",
@@ -1178,7 +1360,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bc-law-republicans"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bclawrepublicans@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bc-law-republicans"
+  }
  },
  {
   "id": "oc_bc_student_veterans_association",
@@ -1234,7 +1420,11 @@
     "label": "X",
     "url": "http://twitter.com/hollywoodeags"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bchollywoodeagles@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bc-motion"
+  }
  },
  {
   "id": "oc_bc_bc_television",
@@ -1269,7 +1459,11 @@
     "label": "X",
     "url": "http://twitter.com/BostonCollegeTV"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegetv@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bc-television"
+  }
  },
  {
   "id": "oc_bc_bellarmine_law_society",
@@ -1279,7 +1473,7 @@
    "hue": 88,
    "url": "https://se-images.campuslabs.com/clink/images/4d967ecf-8900-46ad-9bf1-eb2e3053671b0f110982-4d76-4134-881d-23514daee7de.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_bc",
   "parent": "Academic/Pre-Professional",
   "verified": false,
@@ -1300,7 +1494,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_bellarmine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcbellarminelawsociety@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bellarmine-law-society"
+  }
  },
  {
   "id": "oc_bc_best_buddies",
@@ -1327,7 +1525,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/best-buddies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "valencsc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/best-buddies"
+  }
  },
  {
   "id": "oc_bc_bioengineeringsociety",
@@ -1366,7 +1568,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_bioengineering/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcbioengineering@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bioengineeringsociety"
+  }
  },
  {
   "id": "oc_bc_bioethics_society_of_boston_college",
@@ -1393,7 +1599,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bioethics-society-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bioethicsbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bioethics-society-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_biology_graduate_student_association",
@@ -1418,6 +1628,36 @@
    {
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/biology-graduate-student-association"
+   }
+  ],
+  "contact": {
+   "email": "bibeaus@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/biology-graduate-student-association"
+  }
+ },
+ {
+  "id": "oc_bc_bwc",
+  "name": "Bird Watching Club",
+  "logo": {
+   "emoji": "BW",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Specific Interest",
+  "verified": false,
+  "description": "The Bird Watching Club explores the rich biodiversity of Chestnut Hill and the greater Boston area through guided bird walks and lectures. Beginners and experienced birders alike are welcome!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/bwc"
    }
   ]
  },
@@ -1449,7 +1689,11 @@
     "label": "Website",
     "url": "https://intervarsity.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amoakohe@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/black-christian-fellowship-intervarsity"
+  }
  },
  {
   "id": "oc_bc_black_experience_in_america_through_song",
@@ -1483,8 +1727,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-college-beats/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bc_beats/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boxellm@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/black-experience-in-america-through-song"
+  }
  },
  {
   "id": "oc_bc_blackinbusiness",
@@ -1515,7 +1767,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/blackinbusinessbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blackbizbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/blackinbusiness"
+  }
  },
  {
   "id": "oc_bc_black_law_students_association_blsa",
@@ -1570,7 +1826,40 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bmi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "harrisvs@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bmi"
+  }
+ },
+ {
+  "id": "oc_bc_blackprelawsociety",
+  "name": "Black Pre-Law Society",
+  "logo": {
+   "emoji": "BP",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "verified": false,
+  "description": "Undergraduate organization at BC specifically designed to center the Black experience within a pre-professional legal setting.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/blackprelawsociety"
+   }
+  ],
+  "contact": {
+   "email": "soumaho@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/blackprelawsociety"
+  }
  },
  {
   "id": "oc_bc_black_student_forum",
@@ -1605,7 +1894,11 @@
     "label": "X",
     "url": "http://twitter.com/BlkStudentForum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blackstudentforum@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/black-student-forum"
+  }
  },
  {
   "id": "oc_bc_messinabloomingvoices",
@@ -1661,8 +1954,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bctcgc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bctcgc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brantzeg@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bgtcgc"
+  }
  },
  {
   "id": "oc_bc_board_of_student_advisors_bc_law",
@@ -1802,7 +2103,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bcartscouncil"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arts@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/boston-college-arts-council"
+  }
  },
  {
   "id": "oc_bc_career_center",
@@ -1840,7 +2145,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_career/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "career.center@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/career-center"
+  }
  },
  {
   "id": "oc_bc_boston_college_club_baseball",
@@ -2070,7 +2379,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_filmsociety?stkn=MWhmYzl2b2RsdThubg=="
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegefilmsociety@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/film-society-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_bclaw",
@@ -2181,7 +2494,11 @@
     "label": "X",
     "url": "http://twitter.com/bclawlib"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lawcirc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/boston-college-law-library"
+  }
  },
  {
   "id": "oc_bc_boston_college_law_review",
@@ -2236,6 +2553,35 @@
     "url": "https://bc.campuslabs.com/engage/organization/boston-college-law-school-pro-bono-board"
    }
   ]
+ },
+ {
+  "id": "oc_bc_liftingclub",
+  "name": "Boston College Lifting Club",
+  "logo": {
+   "emoji": "BC",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "verified": false,
+  "description": "The Boston College Lifting Club would give students another way to build friendships and feel connected to campus through a shared interest in fitness.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/liftingclub"
+   }
+  ],
+  "contact": {
+   "email": "faba@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/liftingclub"
+  }
  },
  {
   "id": "oc_bc_boston_college_men_s_club_basketball",
@@ -2541,7 +2887,11 @@
     "label": "Website",
     "url": "http://www.bc.edu/neighborhood"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcneighborhoodcenter@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/boston-college-neighborhood-center"
+  }
  },
  {
   "id": "oc_bc_boston_college_symphony_orchestra",
@@ -2569,6 +2919,37 @@
   ]
  },
  {
+  "id": "oc_bc_theologysociety",
+  "name": "Boston College Theology Society",
+  "logo": {
+   "emoji": "BC",
+   "hue": 272,
+   "url": "https://se-images.campuslabs.com/clink/images/50275853-42bd-4c8f-883d-137e6d6a0cde8e884806-ec0f-4891-a60c-6fbaa872b872.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "A student-led community for all majors and faith backgrounds. Explore faith, ethics, culture, and religion in society, learn to integrate faith into daily life, and connect through faculty talks, social events, mentoring, and career guidance.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/theologysociety"
+   }
+  ],
+  "contact": {
+   "email": "closeki@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/theologysociety"
+  }
+ },
+ {
   "id": "oc_bc_bcvcpe",
   "name": "Boston College Venture Capital / Private Equity Association",
   "logo": {
@@ -2592,7 +2973,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bcvcpe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegevcpe@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bcvcpe"
+  }
  },
  {
   "id": "oc_bc_boston_college_women_s_club_basketball",
@@ -2755,7 +3140,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/boston-college-women-s-club-ultimate-frisbee"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wfrisbee@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/boston-college-women-s-club-ultimate-frisbee"
+  }
  },
  {
   "id": "oc_bc_boston_college_women_s_club_volleyball",
@@ -2907,7 +3296,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bcbostonians"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fraiola@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bostonians"
+  }
  },
  {
   "id": "oc_bc_brazilian_club_of_boston_college",
@@ -2938,7 +3331,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/brasabostoncollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "brasabc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/brazilian-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_buddhism_club",
@@ -2963,7 +3360,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/buddhism-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "buddhismbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/buddhism-club"
+  }
  },
  {
   "id": "oc_bc_information_systems_academy",
@@ -2990,7 +3391,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/information-systems-academy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "baacademybc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/information-systems-academy"
+  }
  },
  {
   "id": "oc_bc_business_law_society",
@@ -3016,7 +3421,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/business-law-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "abrahacc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/business-law-society"
+  }
  },
  {
   "id": "oc_bc_cab",
@@ -3047,7 +3456,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cabofbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "campusactvitiesboard@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/cab"
+  }
  },
  {
   "id": "oc_bc_campusministry",
@@ -3077,7 +3490,11 @@
     "label": "Website",
     "url": "http://bc.edu/ministry"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hefferra@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/campusministry"
+  }
  },
  {
   "id": "oc_bc_campusrecreation",
@@ -3115,7 +3532,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BCRecreation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "turbush@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/campusrecreation"
+  }
  },
  {
   "id": "oc_bc_campus_school_volunteers",
@@ -3141,7 +3562,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/campus-school-volunteers"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cs.volunteers@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/campus-school-volunteers"
+  }
  },
  {
   "id": "oc_bc_canvases_of_care",
@@ -3168,7 +3593,46 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/canvases-of-care"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.canvasesofcare@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/canvases-of-care"
+  }
+ },
+ {
+  "id": "oc_bc_cape_verdean_student_association",
+  "name": "Cape Verdean Student Association",
+  "logo": {
+   "emoji": "CV",
+   "hue": 152,
+   "url": "https://se-images.campuslabs.com/clink/images/477a3db7-66df-434c-bf29-3857501fa059ef9894eb-2869-42fe-9dc9-d5871101510a.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Specific Interest",
+  "verified": false,
+  "description": "CVSA brings the Cape Verdean experience to Boston College by hosting engaging events that celebrate and share Cape Verdean culture. We foster a welcoming and inclusive environment for all students to share our love and appreciation for Cape Verde!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/cape-verdean-student-association"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bc_cvsa/"
+   }
+  ],
+  "contact": {
+   "email": "capeverdeanstudentorg.bc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/cape-verdean-student-association"
+  }
  },
  {
   "id": "oc_bc_office_of_career_services_bc_law",
@@ -3197,7 +3661,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/schools/law/.../career-services.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "law.career@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-career-services-bc-law"
+  }
  },
  {
   "id": "oc_bc_caribbean_culture_club",
@@ -3228,7 +3696,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc.ccc_"
    }
-  ]
+  ],
+  "contact": {
+   "email": "caribbeanculturebc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/caribbean-culture-club"
+  }
  },
  {
   "id": "oc_bc_carroll_school_of_management_honors_program",
@@ -3316,7 +3788,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCdGrjtoFAzs0adb5-VoJ07A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "karcz@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/humanrights"
+  }
  },
  {
   "id": "oc_bc_office_of_health_promotion",
@@ -3346,7 +3822,11 @@
     "label": "Website",
     "url": "http://bc.edu/student-wellness"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bwell@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-health-promotion"
+  }
  },
  {
   "id": "oc_bc_center_for_teaching_excellence",
@@ -3406,8 +3886,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/elcentrobc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/elcentrobc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "centralamericabc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/el_centro"
+  }
  },
  {
   "id": "oc_bc_charity_water",
@@ -3477,7 +3965,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcacs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc@chem.club",
+   "source": "https://bc.campuslabs.com/engage/organization/chemistry-club-american-chemical-society"
+  }
  },
  {
   "id": "oc_bc_chemistry_gsa",
@@ -3503,7 +3995,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/chemistry-gsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "marsto@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/chemistry-gsa"
+  }
  },
  {
   "id": "oc_bc_chess_club_of_boston_college",
@@ -3530,7 +4026,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/chess-club-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riah@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/chess-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_chcrx",
@@ -3557,7 +4057,42 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/chcrx"
    }
-  ]
+  ],
+  "contact": {
+   "email": "guimarpe@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/chcrx"
+  }
+ },
+ {
+  "id": "oc_bc_chestnuthillventureclub",
+  "name": "Chestnut Hill Venture Club",
+  "logo": {
+   "emoji": "CH",
+   "hue": 240,
+   "url": "https://se-images.campuslabs.com/clink/images/5bb3479f-0401-4068-b303-989f7cb09d60a896d69e-cfd0-43a7-bfaf-afe20a51f465.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "CHVC is a student investment research group that maps and researches Boston’s early-stage founder ecosystem, producing original diligence memos reviewed by practicing investors.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/chestnuthillventureclub"
+   }
+  ],
+  "contact": {
+   "email": "gomesq@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/chestnuthillventureclub"
+  }
  },
  {
   "id": "oc_bc_ckm",
@@ -3669,7 +4204,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bccisa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zhangdyq@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bccisa"
+  }
  },
  {
   "id": "oc_bc_chinese_students_association",
@@ -3696,7 +4235,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/chinese-students-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegecsa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/chinese-students-association"
+  }
  },
  {
   "id": "oc_bc_circle_k",
@@ -3723,7 +4266,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/circle-k"
    }
-  ]
+  ],
+  "contact": {
+   "email": "circlekbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/circle-k"
+  }
  },
  {
   "id": "oc_bc_bcclassics",
@@ -3750,7 +4297,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bcclassics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "duncanes@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bcclassics"
+  }
  },
  {
   "id": "oc_bc_clxf",
@@ -3812,7 +4363,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcclimatejustice/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cjbc.coordinatingteam@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/climate-justice-at-boston-college"
+  }
  },
  {
   "id": "oc_bc_school_of_theology_ministry_student_forum",
@@ -3838,7 +4393,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/school-of-theology-ministry-student-forum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "skrove@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/school-of-theology-ministry-student-forum"
+  }
  },
  {
   "id": "oc_bc_club_table_tennis",
@@ -3933,7 +4492,11 @@
     "label": "X",
     "url": "http://twitter.com/collegedemsofbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "democrats.bc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/college-democrats"
+  }
  },
  {
   "id": "oc_bc_college_republicans",
@@ -3972,7 +4535,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BostonCollegeGOP"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollege.republicans@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/college-republicans"
+  }
  },
  {
   "id": "oc_bc_colombianorganization",
@@ -3999,7 +4566,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/colombianorganization"
    }
-  ]
+  ],
+  "contact": {
+   "email": "porcolombiaorg@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/colombianorganization"
+  }
  },
  {
   "id": "oc_bc_committee_for_creative_enactments",
@@ -4069,7 +4640,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@thecommontonesofbostoncoll7882"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bccommontones@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/common-tones-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_commonwealth_collective",
@@ -4096,7 +4671,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/commonwealth-collective"
    }
-  ]
+  ],
+  "contact": {
+   "email": "commonwealthcollectivebc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/commonwealth-collective"
+  }
  },
  {
   "id": "oc_bc_computer_science_society",
@@ -4139,7 +4718,11 @@
     "label": "X",
     "url": "http://twitter.com/BCCSSociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bccssociety@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/computer-science-society"
+  }
  },
  {
   "id": "oc_bc_consulting_club_of_boston_college",
@@ -4174,7 +4757,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/consultingclubofbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "consultingclubofbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/consulting-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_contemporary_theater",
@@ -4205,7 +4792,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/contemporarytheatre.bc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.contemporarytheater@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/contemporary-theater"
+  }
  },
  {
   "id": "oc_bc_cooking_club_of_boston_college",
@@ -4236,7 +4827,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cookingclubofbostoncollege/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cookingclubofbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/cooking-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_criminal_law_society",
@@ -4291,8 +4886,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bc_casa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bc_casa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gonzaa@bc.edu,",
+   "source": "https://bc.campuslabs.com/engage/organization/cuban-american-student-association"
+  }
  },
  {
   "id": "oc_bc_cura_program",
@@ -4321,6 +4924,36 @@
    {
     "label": "Website",
     "url": "https://www.bc.edu/bc-web/offices/studentaffairs/initiatives/cura/core-team.html"
+   }
+  ],
+  "contact": {
+   "email": "cisnerop@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/cura-program"
+  }
+ },
+ {
+  "id": "oc_bc_cybersecurityclub",
+  "name": "Cybersecurity Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The Cybersecurity Club intends to develop student interest in cybersecurity and expand their understanding of the different opportunities within the field. It will be a place for students interested in cybersecurity to meet each other and work together",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/cybersecurityclub"
    }
   ]
  },
@@ -4356,8 +4989,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bcdanceensemble/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bcdanceensemble/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcdanceensemble@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/dance-ensemble"
+  }
  },
  {
   "id": "oc_bc_dance_organization",
@@ -4392,7 +5033,72 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@DanceOrgBC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danceorgbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/dance-organization"
+  }
+ },
+ {
+  "id": "oc_bc_datasciencesociety",
+  "name": "Data Science Society (DSS)",
+  "logo": {
+   "emoji": "DS",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The Data Science Society builds a community for students passionate about data science. Through technical workshops, alumni panels, and projects, members will collaborate, build skills, and explore real-world applications across interdisciplinary fields.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/datasciencesociety"
+   }
+  ],
+  "contact": {
+   "email": "bardani@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/datasciencesociety"
+  }
+ },
+ {
+  "id": "oc_bc_dac",
+  "name": "Derivatives & Arbitrage Club",
+  "logo": {
+   "emoji": "DA",
+   "hue": 224,
+   "url": "https://se-images.campuslabs.com/clink/images/0fb39fd1-c96c-4d91-944d-b28aa7cb34811ac5e135-cf3b-47d4-8cfb-ea290aa47408.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "We aim to help students build the practical derivatives knowledge that many bank professionals say they lacked when first starting out. Through workshops, simulations, and education sessions, we seek to prepare members for successful quantitative career",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/dac"
+   }
+  ],
+  "contact": {
+   "email": "derivatives.arbitrage@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/dac"
+  }
  },
  {
   "id": "oc_bc_disability_law_student_association",
@@ -4444,7 +5150,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/dominican-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "reynosma@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/dominican-association"
+  }
  },
  {
   "id": "oc_bc_dramatics_society",
@@ -4544,7 +5254,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@thebcdynamics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcdynamics@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/dynamics"
+  }
  },
  {
   "id": "oc_bc_eagles_and_buddies",
@@ -4569,6 +5283,33 @@
    {
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/eagles-and-buddies"
+   }
+  ]
+ },
+ {
+  "id": "oc_bc_eagles_for_alzheimers",
+  "name": "Eagles For Alzheimer's",
+  "logo": {
+   "emoji": "EA",
+   "hue": 24,
+   "url": "https://se-images.campuslabs.com/clink/images/0e8745e3-32ce-4ebf-a15e-326f6b6d9ed2ec83fee0-a06f-4a06-95ed-2ba8ccbda705.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Specific Interest",
+  "verified": false,
+  "description": "Eagles for Alzheimer's is a student-run organization that aims to support individuals living with Alzheimer's Disease through education, fundraising, community service, and volunteering.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/eagles-for-alzheimers"
    }
   ]
  },
@@ -4601,7 +5342,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/eaglesfordiabetes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eaglesfordiabetes@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/eaglesfordiabetes"
+  }
  },
  {
   "id": "oc_bc_e4e",
@@ -4652,7 +5397,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/earth-environmental-sciences"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ilana.jacobs@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/earth-environmental-sciences"
+  }
  },
  {
   "id": "oc_bc_economics_association",
@@ -4687,7 +5436,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-college-economics-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bceconomicsassociation@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/economics-association"
+  }
  },
  {
   "id": "oc_bc_ecopledge",
@@ -4718,7 +5471,11 @@
     "label": "Website",
     "url": "https://bcecopledge.weebly.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ecopledge@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/ecopledge"
+  }
  },
  {
   "id": "oc_bc_elections",
@@ -4728,7 +5485,7 @@
    "hue": 312,
    "url": "https://se-images.campuslabs.com/clink/images/47176630-2068-430b-94a1-f3b1e46fd71a78746d92-26fa-4fe3-a77a-772622a52428.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_bc",
   "parent": "Political",
   "verified": false,
@@ -4749,7 +5506,11 @@
     "label": "Website",
     "url": "https://bc.campuslabs.com/engage/organization/elections"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elect@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/elections"
+  }
  },
  {
   "id": "oc_bc_elp",
@@ -4780,7 +5541,41 @@
     "label": "Website",
     "url": "http://www.bc.edu/elp"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elp@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/elp"
+  }
+ },
+ {
+  "id": "oc_bc_efg",
+  "name": "Energy Finance Group",
+  "logo": {
+   "emoji": "EF",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The Energy Finance Group (EFG) is a student-lead organization that seeks to give students education and exposure to energy, renewables, and infrastructure finance through hands-on modeling workshops, deal case studies, and speaker events.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/efg"
+   }
+  ],
+  "contact": {
+   "email": "bostonenergyfinance@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/efg"
+  }
  },
  {
   "id": "oc_bc_environmental_law_society",
@@ -4879,7 +5674,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/BostonCollegeEsports/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcesportseboard@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/esports-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_eesa",
@@ -4909,8 +5708,46 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/bc_eesa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bc_eesa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eesastudentorg.bc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/eesa"
+  }
+ },
+ {
+  "id": "oc_bc_europeanbusinessclub",
+  "name": "European Business Club",
+  "logo": {
+   "emoji": "EB",
+   "hue": 224
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The European Business Club would connect BC students with Europe's business world through speaker events, case discussions, and study-abroad and internship opportunities, backed by a network of alumni mentors at leading firms.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/europeanbusinessclub"
+   }
+  ],
+  "contact": {
+   "email": "doportof@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/europeanbusinessclub"
+  }
  },
  {
   "id": "oc_bc_faces",
@@ -4941,7 +5778,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/faces.council/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "facesdirectors@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/faces"
+  }
  },
  {
   "id": "oc_bc_fashion_club_of_boston_college",
@@ -4976,7 +5817,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc.fashionclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fashionclub.bostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/fashion-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_federalist_society",
@@ -5032,8 +5877,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/fistsladies"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/fistsladies"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fistsladiesbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/females-incorporating-sisterhood-through-step"
+  }
  },
  {
   "id": "oc_bc_i_am_that_feminist_boston_college",
@@ -5060,7 +5913,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/i-am-that-feminist-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "feministclubofbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/i-am-that-feminist-boston-college"
+  }
  },
  {
   "id": "oc_bc_finance_academy",
@@ -5086,7 +5943,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/finance-academy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.bcfa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/finance-academy"
+  }
  },
  {
   "id": "oc_bc_boston_college_fintech",
@@ -5117,7 +5978,11 @@
     "label": "Website",
     "url": "https://bcfintech.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ayman.baba@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/boston-college-fintech"
+  }
  },
  {
   "id": "oc_bc_first_generation_professionals_bc_law",
@@ -5174,7 +6039,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/firstgenofbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "firstgenclubbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/first-generation-club-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_fitandfeminine",
@@ -5201,7 +6070,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/fitandfeminine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chronako@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/fitandfeminine"
+  }
  },
  {
   "id": "oc_bc_fsg",
@@ -5257,7 +6130,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/sites/forum-on-racial-justice/about.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcsa@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/forumonracialjustice"
+  }
  },
  {
   "id": "oc_bc_french_club",
@@ -5287,7 +6164,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/frenchsociety.bc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "frenchsocietybc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/french-club"
+  }
  },
  {
   "id": "oc_bc_fuego_del_corazon",
@@ -5317,8 +6198,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/fuegodelcorazon_bc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/fuegodelcorazon_bc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fuegocorazon@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/fuego-del-corazon"
+  }
  },
  {
   "id": "oc_bc_full_swing",
@@ -5353,7 +6242,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCVmmzQ7TLY7eNg_PXVbn6nw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcfullswing@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/full-swing"
+  }
  },
  {
   "id": "oc_bc_bcgeographyclub",
@@ -5387,6 +6280,41 @@
   ]
  },
  {
+  "id": "oc_bc_gcc",
+  "name": "Geopolitical Capital Club",
+  "logo": {
+   "emoji": "GC",
+   "hue": 128,
+   "url": "https://se-images.campuslabs.com/clink/images/e22efb5f-a4e5-44a9-9919-315281ffd8f851503b9f-1909-41e9-b9e5-f598cc713ee2.PNG?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The GCC aims to educate students on how geopolitical change creates investment risk and business opportunity. Members rotate between evaluating ventures as investors and building them as founders, then launch one together. All majors welcome.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/gcc"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.google.com/bc.edu/gcc/home"
+   }
+  ],
+  "contact": {
+   "email": "geopoliticalcapitalclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/gcc"
+  }
+ },
+ {
   "id": "oc_bc_german_club",
   "name": "German Club",
   "logo": {
@@ -5415,7 +6343,46 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/germanclubbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "germanclubbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/german-club"
+  }
+ },
+ {
+  "id": "oc_bc_ghanaian_student_organization",
+  "name": "Ghana Student Organization",
+  "logo": {
+   "emoji": "GS",
+   "hue": 24,
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/476/435889/ff11ff53-3a64-4cc6-8601-d85b533a5fc8.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Intercultural",
+  "verified": false,
+  "description": "Ghanaian Student Organization is a cultural organization dedicated to celebrating and promoting Ghanaian culture at Boston College. We create a welcoming space to connect, build community, and share Ghanaian heritage and traditions.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/ghanaian-student-organization"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ghanaso__/"
+   }
+  ],
+  "contact": {
+   "email": "ghanaianstuorg@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/ghanaian-student-organization"
+  }
  },
  {
   "id": "oc_bc_goldeneagles",
@@ -5445,7 +6412,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/offices/student-affairs/sites/BC-Bands/ensembles/dance-team.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "healeydd@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/goldeneagles"
+  }
  },
  {
   "id": "oc_bc_ggp",
@@ -5501,7 +6472,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/gasa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "allenhg@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/gasa"
+  }
  },
  {
   "id": "oc_bc_graduate_education_association",
@@ -5535,7 +6510,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/BostonCollegeGraduateEducationAssociation"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gea@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-education-association"
+  }
  },
  {
   "id": "oc_bc_graduate_history_alliance",
@@ -5561,7 +6540,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/graduate-history-alliance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcghaconference@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-history-alliance"
+  }
  },
  {
   "id": "oc_bc_graduate_international_student_association",
@@ -5599,7 +6582,11 @@
     "label": "X",
     "url": "http://twitter.com/BCGISA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gisa@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-international-student-association"
+  }
  },
  {
   "id": "oc_bc_graduate_management_association",
@@ -5633,7 +6620,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/boston_college_gma/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gma@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-management-association"
+  }
  },
  {
   "id": "oc_bc_graduate_nursing_association",
@@ -5663,7 +6654,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcgradnurses/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradnursesassociation@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-nursing-association"
+  }
  },
  {
   "id": "oc_bc_gradstuparents",
@@ -5694,7 +6689,11 @@
     "label": "Website",
     "url": "https://sites.google.com/bc.edu/gradparentstudentsatbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "guidottb@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/gradstuparents"
+  }
  },
  {
   "id": "oc_bc_graduate_school_of_social_work_collective",
@@ -5762,7 +6761,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_gsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsa@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-student-association"
+  }
  },
  {
   "id": "oc_bc_gradstudentlife",
@@ -5796,7 +6799,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_ogsl/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/gradstudentlife"
+  }
  },
  {
   "id": "oc_bc_graduate_students_of_color_association",
@@ -5822,7 +6829,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/graduate-students-of-color-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsca@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-students-of-color-association"
+  }
  },
  {
   "id": "oc_bc_gratiaplena",
@@ -5852,7 +6863,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/bc-web/offices/missionministry/sites/campus-ministry/faith-prayer/catholic-programs/gratia-plena.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hartv@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/gratiaplena"
+  }
  },
  {
   "id": "oc_bc_gsa_economics",
@@ -5878,7 +6893,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/gsa-economics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stackmc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/gsa-economics"
+  }
  },
  {
   "id": "oc_bc_gsa_physics",
@@ -5904,7 +6923,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/gsa-physics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsa-physics-ggroup@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/gsa-physics"
+  }
  },
  {
   "id": "oc_bc_habitat_for_humanity_campus_chapter",
@@ -5930,7 +6953,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/habitat-for-humanity-campus-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegehfh@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/habitat-for-humanity-campus-chapter"
+  }
  },
  {
   "id": "oc_bc_hardeycush",
@@ -5987,7 +7014,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bchawaiiclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bchawaiiclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/hcbc"
+  }
  },
  {
   "id": "oc_bc_health_law_society",
@@ -6040,7 +7071,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/heightsmen"
    }
-  ]
+  ],
+  "contact": {
+   "email": "heightsmen@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/heightsmen"
+  }
  },
  {
   "id": "oc_bc_hellenic_society",
@@ -6079,7 +7114,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/the-hellenic-society-of-boston-college/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.hellenic.society@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/hellenic-society"
+  }
  },
  {
   "id": "oc_bc_hello_shovelhead",
@@ -6114,7 +7153,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@HelloShovelhead"
    }
-  ]
+  ],
+  "contact": {
+   "email": "macdougp@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/hello-shovelhead"
+  }
  },
  {
   "id": "oc_bc_hillel",
@@ -6179,7 +7222,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/historyclubbc/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "historyclubbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/history-club"
+  }
  },
  {
   "id": "oc_bc_holocaust_human_rights_project_bc_law",
@@ -6230,7 +7277,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/hoops-for-hope"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tomap@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/hoops-for-hope"
+  }
  },
  {
   "id": "oc_bc_if_when_how_law_students_for_reproductive_justice",
@@ -6341,7 +7392,11 @@
     "label": "Website",
     "url": "http://bc.edu/ignatian"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ignatian@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/ignatian-society"
+  }
  },
  {
   "id": "oc_bc_il_circolo_italiano",
@@ -6423,7 +7478,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/intellectual-property-technology-forum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bciptfclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/intellectual-property-technology-forum"
+  }
  },
  {
   "id": "oc_bc_intent",
@@ -6465,7 +7524,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@bcintent8603"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lalliert@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/intent"
+  }
  },
  {
   "id": "oc_bc_international_club",
@@ -6492,7 +7555,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/international-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zhukov@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/international-club"
+  }
  },
  {
   "id": "oc_bc_international_law_society",
@@ -6553,7 +7620,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcinternationalmarketsclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcinternationalmarketsclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/imc"
+  }
  },
  {
   "id": "oc_bc_internationalstudiesprogram",
@@ -6587,7 +7658,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_isp/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isp@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/internationalstudiesprogram"
+  }
  },
  {
   "id": "oc_bc_international_studies_student_association",
@@ -6684,7 +7759,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-college-investment-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcinvestclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/investment-club"
+  }
  },
  {
   "id": "oc_bc_irish_dance",
@@ -6715,7 +7794,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostoncollegeirishdance/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcirishdanceclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/irish-dance"
+  }
  },
  {
   "id": "oc_bc_irish_society",
@@ -6745,8 +7828,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bcirishsociety"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bcirishsociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "demersh@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/irish-society"
+  }
  },
  {
   "id": "oc_bc_japan_club",
@@ -6773,7 +7864,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/japan-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jcbccontact@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/japan-club"
+  }
  },
  {
   "id": "oc_bc_jewish_law_students_association",
@@ -6855,7 +7950,11 @@
     "label": "Website",
     "url": "https://linktr.ee/bc_kdc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bckpopdancecrew@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/kdc"
+  }
  },
  {
   "id": "oc_bc_kaleidoscope_international_journal",
@@ -6906,7 +8005,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/keyes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chloe.amour@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/keyes"
+  }
  },
  {
   "id": "oc_bc_knights_of_columbus_of_boston_college",
@@ -6931,7 +8034,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/knights-of-columbus-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcknightsofcolumbus@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/knights-of-columbus-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_korea_campus_crusade_for_christ",
@@ -7004,7 +8111,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@bostoncollegeksa/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegeksa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/korean-students-association"
+  }
  },
  {
   "id": "oc_bc_kubs",
@@ -7031,7 +8142,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/kubs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bckubs25@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/kubs"
+  }
  },
  {
   "id": "oc_bc_l_association_haitienne",
@@ -7065,8 +8180,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/BC_Haiti"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bc_haiti"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dieujusr@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/l-association-haitienne"
+  }
  },
  {
   "id": "oc_bc_lahanas",
@@ -7092,7 +8215,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/lahanas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lahanas.org@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/lahanas"
+  }
  },
  {
   "id": "oc_bc_lambda_bc",
@@ -7122,7 +8249,11 @@
     "label": "X",
     "url": "http://twitter.com/BC_LAMBDA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.lambda@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/lambda-bc"
+  }
  },
  {
   "id": "oc_bc_latin_american_business_club",
@@ -7149,7 +8280,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/latin-american-business-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latinamericanbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/latin-american-business-club"
+  }
  },
  {
   "id": "oc_bc_latin_american_law_students_association",
@@ -7179,7 +8314,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/8952325/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cohenqb@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/latin-american-law-students-association"
+  }
  },
  {
   "id": "oc_bc_latter_day_saint_student_association",
@@ -7254,7 +8393,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/law-school-bookstore"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc-law@bkstr.com",
+   "source": "https://bc.campuslabs.com/engage/organization/law-school-bookstore"
+  }
  },
  {
   "id": "oc_bc_law_student_association",
@@ -7310,8 +8453,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/lebaneseofbostoncollege"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/lebaneseofbostoncollege"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lebaneseofbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/lebanese"
+  }
  },
  {
   "id": "oc_bc_lex_vitae",
@@ -7366,7 +8517,11 @@
     "label": "Website",
     "url": "http://bc.edu/lgbtq"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spectrum@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/lgbtqstudentoutreachandsupport"
+  }
  },
  {
   "id": "oc_bc_libertariansofbc",
@@ -7393,7 +8548,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/libertariansofbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegelibertarians@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/libertariansofbc"
+  }
  },
  {
   "id": "oc_bc_bclinguisticsclub",
@@ -7420,7 +8579,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bclinguisticsclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bclingclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bclinguisticsclub"
+  }
  },
  {
   "id": "oc_bc_bcliondance",
@@ -7455,7 +8618,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcliondance/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcliondance@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bcliondance"
+  }
  },
  {
   "id": "oc_bc_liturgy_arts_group",
@@ -7481,7 +8648,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/liturgy-arts-group"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lag@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/liturgy-arts-group"
+  }
  },
  {
   "id": "oc_bc_lynchschoolofeducation_undergraduatestudentsenate",
@@ -7508,7 +8679,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/lynchschoolofeducation-undergraduatestudentsenate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lynchsenate@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/lynchschoolofeducation-undergraduatestudentsenate"
+  }
  },
  {
   "id": "oc_bc_mig",
@@ -7542,8 +8717,47 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/migbostoncollege"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/migbostoncollege"
    }
-  ]
+  ],
+  "contact": {
+   "email": "migofbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/mig"
+  }
+ },
+ {
+  "id": "oc_bc_mahjong",
+  "name": "Mahjong Club",
+  "logo": {
+   "emoji": "M",
+   "hue": 184,
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/476/435887/516d0c4d-b4f4-4f0a-8689-3d2241f56b1a.jpg?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Specific Interest",
+  "verified": false,
+  "description": "Mahjong Club is a passionate community of Hong Kong-style Mahjong players. We welcome players of all skill levels, from beginners to experienced players. Join us for open play, tournaments, and workshops!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/mahjong"
+   }
+  ],
+  "contact": {
+   "email": "chmahjongclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/mahjong"
+  }
  },
  {
   "id": "oc_bc_makebc",
@@ -7578,7 +8792,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/makebc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "makebcclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/makebc"
+  }
  },
  {
   "id": "oc_bc_marketing_academy",
@@ -7621,7 +8839,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bcmarketingacademy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegemarketing@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/marketing-academy"
+  }
  },
  {
   "id": "oc_bc_bcmasti",
@@ -7652,7 +8874,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc.masti/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.masti@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bcmasti"
+  }
  },
  {
   "id": "oc_bc_math_gsa",
@@ -7678,7 +8904,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/math-gsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmathgrad@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/math-gsa"
+  }
  },
  {
   "id": "oc_bc_mathematics_society",
@@ -7736,7 +8966,11 @@
     "label": "Website",
     "url": "https://mechaeagles.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mishrave@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/mechaeagles"
+  }
  },
  {
   "id": "oc_bc_medlife_boston_college_chapter",
@@ -7763,7 +8997,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/medlife-boston-college-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmedlife@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/medlife-boston-college-chapter"
+  }
  },
  {
   "id": "oc_bc_mendel_society",
@@ -7793,8 +9031,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bcmendelsociety"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bcmendelsociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmendelsociety@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/mendel-society"
+  }
  },
  {
   "id": "oc_bc_messinalightsup",
@@ -7821,7 +9067,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/messinalightsup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bclightsup@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/messinalightsup"
+  }
  },
  {
   "id": "oc_bc_messinabrotherhood",
@@ -8049,8 +9299,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/masparabc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/masparabc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maseboard@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/mexican-association-of-students"
+  }
  },
  {
   "id": "oc_bc_middle_eastern_law_students_association",
@@ -8102,7 +9360,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/midwestsociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "crillyp@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/midwestsociety"
+  }
  },
  {
   "id": "oc_bc_mindfulnessclub",
@@ -8129,7 +9391,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/mindfulnessclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmindfulness@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/mindfulnessclub"
+  }
  },
  {
   "id": "oc_bc_wasianstudentassociation",
@@ -8160,7 +9426,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc.masa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegemasa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/wasianstudentassociation"
+  }
  },
  {
   "id": "oc_bc_mixed_martial_arts_club",
@@ -8195,7 +9465,11 @@
     "label": "X",
     "url": "http://twitter.com/BCMartialArts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmixedmartialartsclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/mixed-martial-arts-club"
+  }
  },
  {
   "id": "oc_bc_bcmocktrial",
@@ -8230,7 +9504,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/boston-college-mock-trial/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmt@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bcmocktrial"
+  }
  },
  {
   "id": "oc_bc_model_united_nations",
@@ -8240,7 +9518,7 @@
    "hue": 248,
    "url": "https://se-images.campuslabs.com/clink/images/be3219f5-5fb6-4aed-b4e1-bcac31d6accf8a65e713-487c-4a9f-9baa-ef4d82307e96.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_bc",
   "parent": "Specific Interest",
   "verified": false,
@@ -8261,7 +9539,11 @@
     "label": "X",
     "url": "http://twitter.com/BCModelUN"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegemun@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/model-united-nations"
+  }
  },
  {
   "id": "oc_bc_modstayer",
@@ -8348,7 +9630,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/schools/morrissey/graduate.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsasinfo@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/mcgs"
+  }
  },
  {
   "id": "oc_bc_music_guild",
@@ -8387,7 +9673,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcmusicguild/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "musicg@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/music-guild"
+  }
  },
  {
   "id": "oc_bc_bcmpc",
@@ -8414,7 +9704,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bcmpc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcmusicproductionclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/bcmpc"
+  }
  },
  {
   "id": "oc_bc_musical_theatre_wing",
@@ -8453,7 +9747,11 @@
     "label": "X",
     "url": "http://twitter.com/bcmtwing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mtbirdies5678@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/musical-theatre-wing"
+  }
  },
  {
   "id": "oc_bc_muslim_student_association",
@@ -8522,7 +9820,11 @@
     "label": "X",
     "url": "http://twitter.com/mmfleabag"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mymothersfleabag@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/my-mothers-fleabag"
+  }
  },
  {
   "id": "oc_bc_national_lawyers_guild",
@@ -8629,7 +9931,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nsaofbc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adebisi@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/nsa"
+  }
  },
  {
   "id": "oc_bc_nu_rho_psi",
@@ -8660,7 +9966,11 @@
     "label": "Website",
     "url": "https://zacharir.wixsite.com/bcnurhopsi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maldonnc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/nu-rho-psi"
+  }
  },
  {
   "id": "oc_bc_off_campus_student_living",
@@ -8694,7 +10004,11 @@
     "label": "X",
     "url": "http://twitter.com/bc_offcampus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "offcampus@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/off-campus-student-living"
+  }
  },
  {
   "id": "oc_bc_office_of_academic_student_services_bc_law",
@@ -8719,7 +10033,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/office-of-academic-student-services-bc-law"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lawacastu@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-academic-student-services-bc-law"
+  }
  },
  {
   "id": "oc_bc_office_of_admissions_and_financial_aid_bc_law",
@@ -8748,7 +10066,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/bc-web/schools/law/admission-aid.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bclawadm@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-admissions-and-financial-aid-bc-law"
+  }
  },
  {
   "id": "oc_bc_office_of_alumni_relations_bc_law",
@@ -8777,7 +10099,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/schools/law/...alumni/.../contact-us.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "maria.tringale@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-alumni-relations-bc-law"
+  }
  },
  {
   "id": "oc_bc_office_of_external_relations_diversity_inclusion_bc_law",
@@ -8802,7 +10128,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/office-of-external-relations-diversity-inclusion-bc-law"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gearyju@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-external-relations-diversity-inclusion-bc-law"
+  }
  },
  {
   "id": "oc_bc_oge",
@@ -8911,7 +10241,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_osi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "osi@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/osi"
+  }
  },
  {
   "id": "oc_bc_officeofsustainbility",
@@ -8949,7 +10283,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/OfficeOfSustainability"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bruce.dixon@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/officeofsustainbility"
+  }
  },
  {
   "id": "oc_bc_dos",
@@ -8979,7 +10317,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/bc-web/offices/student-affairs/sites/dean-of-students.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "odsd@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/dos"
+  }
  },
  {
   "id": "oc_bc_office_of_the_dean_bc_law",
@@ -9008,7 +10350,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/schools/law/about/contact.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mannajo@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/office-of-the-dean-bc-law"
+  }
  },
  {
   "id": "oc_bc_vpsaoffice",
@@ -9035,7 +10381,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/vpsaoffice"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcsa@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/vpsaoffice"
+  }
  },
  {
   "id": "oc_bc_on_tap",
@@ -9062,7 +10412,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/on-tap"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcontap@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/on-tap"
+  }
  },
  {
   "id": "oc_bc_operationsmile",
@@ -9100,8 +10454,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/operationsmile"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/opsmilebc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mariank@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/operationsmile"
+  }
  },
  {
   "id": "oc_bc_organization_of_latin_american_affairs",
@@ -9227,7 +10589,11 @@
     "label": "Website",
     "url": "https://bcpaddleclub.joinclubpack.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dirkesmb@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bcpaddle"
+  }
  },
  {
   "id": "oc_bc_psa",
@@ -9258,7 +10624,11 @@
     "label": "Website",
     "url": "http://www.bostoncollegepsa.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegepsa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/psa"
+  }
  },
  {
   "id": "oc_bc_parliamentary_debating_union_of_boston_college",
@@ -9285,7 +10655,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/parliamentary-debating-union-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "parlidubc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/parliamentary-debating-union-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_pihe",
@@ -9316,7 +10690,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pihengagebc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcpihengage@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/pihe"
+  }
  },
  {
   "id": "oc_bc_persian_student_association",
@@ -9370,7 +10748,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/psco"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pscobc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/psco"
+  }
  },
  {
   "id": "oc_bc_phaymus_dance_entertainment",
@@ -9417,7 +10799,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@PhaymusDanceEnt"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phaymusdance@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/phaymus-dance-entertainment"
+  }
  },
  {
   "id": "oc_bc_philippine_society",
@@ -9448,7 +10834,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/psbcpamilya/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psbcinfo@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/philippine-society"
+  }
  },
  {
   "id": "oc_bc_the_philosophical_society",
@@ -9458,7 +10848,7 @@
    "hue": 48,
    "url": "https://se-images.campuslabs.com/clink/images/7cba9d25-20bf-4637-a116-851d9a60fa360e96184a-b571-4240-8c6f-b157079e4a75.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_bc",
   "parent": "Specific Interest",
   "verified": false,
@@ -9475,7 +10865,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/the-philosophical-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kleskenl@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/the-philosophical-society"
+  }
  },
  {
   "id": "oc_bc_philosophy_gsa",
@@ -9501,7 +10895,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/philosophy-gsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "laura.santer@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/philosophy-gsa"
+  }
  },
  {
   "id": "oc_bc_bcpc",
@@ -9528,7 +10926,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/bcpc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mbithi@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/bcpc"
+  }
  },
  {
   "id": "oc_bc_plantclub",
@@ -9559,7 +10961,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/plantclubbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "plantclub@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/plantclub"
+  }
  },
  {
   "id": "oc_bc_political_science_gsa",
@@ -9584,6 +10990,37 @@
    {
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/political-science-gsa"
+   }
+  ],
+  "contact": {
+   "email": "kimdcn@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/political-science-gsa"
+  }
+ },
+ {
+  "id": "oc_bc_political_science_student_association",
+  "name": "Political Science Student Association",
+  "logo": {
+   "emoji": "PS",
+   "hue": 80,
+   "url": "https://se-images.campuslabs.com/clink/images/51ddbd1a-b7b6-40b3-aa89-2104f5d536e8b7d38951-bfd0-4b34-8084-5d1cc088a802.png?preset=small-sq"
+  },
+  "type": "council",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The Political Science Student Association (PSSA) builds community among students interested in political science through social events, academic support, career exploration, faculty engagement, thoughtful dialogue, and opportunities beyond the classroom.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/political-science-student-association"
    }
   ]
  },
@@ -9639,7 +11076,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/na"
    }
-  ]
+  ],
+  "contact": {
+   "email": "singerae@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/na"
+  }
  },
  {
   "id": "oc_bc_patu",
@@ -9670,7 +11111,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/patubc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bc.patu@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/patu"
+  }
  },
  {
   "id": "oc_bc_program_on_innovation_and_entrepreneurship",
@@ -9699,7 +11144,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/bc-web/schools/law/centers/program-on-innovation-and-entrepreneurship.html#faculty"
    }
-  ]
+  ],
+  "contact": {
+   "email": "olsondb@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/program-on-innovation-and-entrepreneurship"
+  }
  },
  {
   "id": "oc_bc_project_sunshine",
@@ -9738,7 +11187,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/projectsunshineUSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "projectsunshinebc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/project-sunshine"
+  }
  },
  {
   "id": "oc_bc_psi_chi",
@@ -9765,7 +11218,42 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/psi-chi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "changbai@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/psi-chi"
+  }
+ },
+ {
+  "id": "oc_bc_psychological_humanites_club",
+  "name": "Psychological Humanities & Ethics",
+  "logo": {
+   "emoji": "PH",
+   "hue": 224,
+   "url": "https://se-images.campuslabs.com/clink/images/81d960de-1a56-4cf4-93f9-ef654c45123e5657a72c-335c-44e6-94a2-0588e94272a7.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Specific Interest",
+  "verified": false,
+  "description": "An interdisciplinary club exploring psychology through the humanities, ethics, philosophy, culture, and the arts. Through discussions, events, and guest speakers, students examine the human, social, and ethical dimensions of psychology.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/psychological_humanites_club"
+   }
+  ],
+  "contact": {
+   "email": "doerinel@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/psychological_humanites_club"
+  }
  },
  {
   "id": "oc_bc_psychology_department_graduate_student_council",
@@ -9791,7 +11279,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/psychology-department-graduate-student-council"
    }
-  ]
+  ],
+  "contact": {
+   "email": "riddicso@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/psychology-department-graduate-student-council"
+  }
  },
  {
   "id": "oc_bc_public_health_club",
@@ -9822,7 +11314,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcpublichealthclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcpublichealthclub@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/public-health-club"
+  }
  },
  {
   "id": "oc_bc_public_interest_law_foundation",
@@ -9860,7 +11356,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bc.pilf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bclawpilf@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/public-interest-law-foundation"
+  }
  },
  {
   "id": "oc_bc_public_interest_law_retreat",
@@ -9912,7 +11412,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/prsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegeprsa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/prsa"
+  }
  },
  {
   "id": "oc_bc_quiet_waters",
@@ -9964,7 +11468,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/boston-college-quiz-bowl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gibbsowe@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/boston-college-quiz-bowl"
+  }
  },
  {
   "id": "oc_bc_the_reading_group",
@@ -10018,7 +11526,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/real-estate-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vatoci@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/real-estate-club"
+  }
  },
  {
   "id": "oc_bc_real_estate_law_society",
@@ -10075,7 +11587,11 @@
     "label": "Group chat",
     "url": "https://groupme.com/join_group/96280203/v52doq6A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "realfoodbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/real-food"
+  }
  },
  {
   "id": "oc_bc_relayforlife",
@@ -10113,7 +11629,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/RelayForLife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcrelayforlife@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/relayforlife"
+  }
  },
  {
   "id": "oc_bc_reservoir",
@@ -10143,7 +11663,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chloe.amour@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/reservoir"
+  }
  },
  {
   "id": "oc_bc_rha",
@@ -10174,7 +11698,11 @@
     "label": "Website",
     "url": "http://bc.edu/reslife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rha@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/rha"
+  }
  },
  {
   "id": "oc_bc_residentiallife",
@@ -10204,7 +11732,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/offices/student-affairs/sites/residential-life.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "reslife@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/residentiallife"
+  }
  },
  {
   "id": "oc_bc_resmin",
@@ -10230,7 +11762,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/resmin"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jessica.graf@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/resmin"
+  }
  },
  {
   "id": "oc_bc_retro_gaming_club",
@@ -10261,7 +11797,11 @@
     "label": "Discord",
     "url": "https://discord.gg/mGKJdg2Rhu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swansn@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/retro-gaming-club"
+  }
  },
  {
   "id": "oc_bc_romance_languages_graduate_student_association",
@@ -10291,7 +11831,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_rll/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gonnelli@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/romance-languages-graduate-student-association"
+  }
  },
  {
   "id": "oc_bc_coro",
@@ -10320,6 +11864,33 @@
   ]
  },
  {
+  "id": "oc_bc_we_dont_have_a_website_yet",
+  "name": "Sailing Club",
+  "logo": {
+   "emoji": "S",
+   "hue": 336,
+   "url": "https://se-images.campuslabs.com/clink/images/b609d1b6-5fe5-431f-8171-fe284019691db21d6dfa-8d79-4670-9c81-0cd5f638be3b.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Specific Interest",
+  "verified": false,
+  "description": "A sailing club for those passionate about sailing and interested in learning the sport. Weekly educational meetings on campus and once-a-week outings to sail recreationally on the Charles River. Hoping to build a community for BC sailors.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/we-dont-have-a-website-yet"
+   }
+  ]
+ },
+ {
   "id": "oc_bc_sta",
   "name": "Sales & Trading Association",
   "logo": {
@@ -10344,7 +11915,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/sta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agnewmo@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sta"
+  }
  },
  {
   "id": "oc_bc_scholarsoffinance",
@@ -10400,7 +11975,11 @@
     "label": "Website",
     "url": "http://www.bc.edu/jointheband"
    }
-  ]
+  ],
+  "contact": {
+   "email": "healeyda@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/screamingeagles"
+  }
  },
  {
   "id": "oc_bc_sea_eagles_of_boston_college",
@@ -10427,7 +12006,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/sea-eagles-of-boston-college"
    }
-  ]
+  ],
+  "contact": {
+   "email": "seaeaglesofbc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sea-eagles-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_seniorweek",
@@ -10457,7 +12040,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/content/bc-web/offices/student-affairs/sites/student-involvement/programs-and-services/senior-week.html"
    }
-  ]
+  ],
+  "contact": {
+   "email": "seniorwk@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/seniorweek"
+  }
  },
  {
   "id": "oc_bc_sexual_chocolate",
@@ -10484,7 +12071,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/sexual-chocolate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sxchocolate@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/sexual-chocolate"
+  }
  },
  {
   "id": "oc_bc_sharps",
@@ -10515,7 +12106,11 @@
     "label": "X",
     "url": "http://twitter.com/sharpsacappella"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcsharps@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/sharps"
+  }
  },
  {
   "id": "oc_bc_slavic_club",
@@ -10589,7 +12184,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SACNAS"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sacnas-exec-board-ggroup@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sacnas"
+  }
  },
  {
   "id": "oc_bc_society_of_physics_students",
@@ -10616,7 +12215,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/society-of-physics-students"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sps.bostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/society-of-physics-students"
+  }
  },
  {
   "id": "oc_bc_swe",
@@ -10643,7 +12246,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/swe"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcsocietyofwomenengineers@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/swe"
+  }
  },
  {
   "id": "oc_bc_sociology_gsa",
@@ -10669,7 +12276,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/sociology-gsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "janea@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sociology-gsa"
+  }
  },
  {
   "id": "oc_bc_sons_of_st_patrick",
@@ -10699,7 +12310,11 @@
     "label": "Website",
     "url": "http://www.sonsofsaintpatrick.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "diamonaf@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sons-of-st-patrick"
+  }
  },
  {
   "id": "oc_bc_south_asian_law_student_association",
@@ -10725,7 +12340,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/south-asian-law-student-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "salsa.org@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/south-asian-law-student-association"
+  }
  },
  {
   "id": "oc_bc_south_asian_student_association",
@@ -10752,7 +12371,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/south-asian-student-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegesasa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/south-asian-student-association"
+  }
  },
  {
   "id": "oc_bc_southeast_asian_student_association",
@@ -10787,7 +12410,11 @@
     "label": "X",
     "url": "http://twitter.com/BC_SEASA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegeseasa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/southeast-asian-student-association"
+  }
  },
  {
   "id": "oc_bc_space_law_society",
@@ -10843,7 +12470,11 @@
     "label": "Group chat",
     "url": "https://groupme.com/join_group/117095259/2Owy10fZ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcdoubledragons@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/special-olympics-boston-college"
+  }
  },
  {
   "id": "oc_bc_bostoncollegespikeball",
@@ -10962,7 +12593,11 @@
     "label": "X",
     "url": "http://twitter.com/SBSofBC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "griffin.clark@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sports-business-society"
+  }
  },
  {
   "id": "oc_bc_st_thomas_more_society",
@@ -11052,7 +12687,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/StartatShea"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steichje@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/startatshea"
+  }
  },
  {
   "id": "oc_bc_stem_and_health_organization_for_ahana",
@@ -11083,7 +12722,11 @@
     "label": "Document",
     "url": "https://drive.google.com/file/d/1ktYO3nZ620K0tHi4c_MReNpV_jzdFtua/view?usp=sharing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "orgshofa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/stem-and-health-organization-for-ahana"
+  }
  },
  {
   "id": "oc_bc_stock_talk",
@@ -11140,7 +12783,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/swsg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollege@swsg.org",
+   "source": "https://bc.campuslabs.com/engage/organization/swsg"
+  }
  },
  {
   "id": "oc_bc_student_business_consortium_of_boston_college",
@@ -11171,7 +12818,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc.sbc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sbcbostoncollege1@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/student-business-consortium-of-boston-college"
+  }
  },
  {
   "id": "oc_bc_student_conduct_board",
@@ -11231,7 +12882,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/GlobeMedBC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shef.bostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/shef-at-boston-college"
+  }
  },
  {
   "id": "oc_bc_student_nurses_association",
@@ -11257,7 +12912,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/student-nurses-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcstudentnurses@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/student-nurses-association"
+  }
  },
  {
   "id": "oc_bc_sofc",
@@ -11283,7 +12942,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/sofc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blackac@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sofc"
+  }
  },
  {
   "id": "oc_bc_graduate_student_veteran_association",
@@ -11313,7 +12976,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_vets?stkn=MXY5ZzllMngxdGZhOQ=="
    }
-  ]
+  ],
+  "contact": {
+   "email": "studentveteran@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/graduate-student-veteran-association"
+  }
  },
  {
   "id": "oc_bc_students_taking_initiative_to_creative_heights",
@@ -11379,7 +13046,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcstylus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcstylus@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/stylus"
+  }
  },
  {
   "id": "oc_bc_sub_turri_yearbook",
@@ -11409,7 +13080,11 @@
     "label": "X",
     "url": "http://twitter.com/subturri"
    }
-  ]
+  ],
+  "contact": {
+   "email": "subturri@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/sub-turri-yearbook"
+  }
  },
  {
   "id": "oc_bc_symba",
@@ -11439,7 +13114,11 @@
     "label": "Website",
     "url": "http://bc.edu/bands"
    }
-  ]
+  ],
+  "contact": {
+   "email": "healeyda@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/symba"
+  }
  },
  {
   "id": "oc_bc_synergy_hip_hop_dance_company",
@@ -11478,7 +13157,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@synergyhiphopdance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "synergyhiphopdance@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/synergy-hip-hop-dance-company"
+  }
  },
  {
   "id": "oc_bc_boston_college_tabletop_roleplaying_games_club",
@@ -11544,7 +13227,11 @@
     "label": "X",
     "url": "http://twitter.com/bc_tco"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bctaiwaneseculturalorg@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/taiwanese-cultural-organization"
+  }
  },
  {
   "id": "oc_bc_tedxbostoncollege",
@@ -11570,6 +13257,36 @@
    {
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/tedxbostoncollege"
+   }
+  ],
+  "contact": {
+   "email": "tedxbostoncollege@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/tedxbostoncollege"
+  }
+ },
+ {
+  "id": "oc_bc_thebritishclub",
+  "name": "The British Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 272
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Intercultural",
+  "verified": false,
+  "description": "The British Club at Boston College is a cultural student organization dedicated to celebrating, sharing, and exploring the rich heritage and diverse cultures of the British Isles. .",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/thebritishclub"
    }
   ]
  },
@@ -11602,7 +13319,42 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc.theatre.comm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bctheatrecomm@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/council-of-majors-and-minors"
+  }
+ },
+ {
+  "id": "oc_bc_theduihua",
+  "name": "The Duihua: The Chinese Dialogue Club",
+  "logo": {
+   "emoji": "DC",
+   "hue": 72,
+   "url": "https://se-images.campuslabs.com/clink/images/f4e2b6dd-1162-4794-8837-fd72acf6380ae553caeb-4e98-4e19-afca-e5f510856787.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "Duihua is a Chinese dialogue club, striving to help students of all levels and backgrounds share in the joy of learning the Chinese language by cultivating a welcoming community emphasizing conversation, writing, reading, and cultural immersion.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/theduihua"
+   }
+  ],
+  "contact": {
+   "email": "duihuaclubbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/theduihua"
+  }
  },
  {
   "id": "oc_bc_fultonleadershipsociety",
@@ -11640,7 +13392,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/csom.fls"
    }
-  ]
+  ],
+  "contact": {
+   "email": "walkerew@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/fultonleadershipsociety"
+  }
  },
  {
   "id": "oc_bc_thegavel",
@@ -11670,7 +13426,11 @@
     "label": "Website",
     "url": "http://bcgavel.com/about"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcgavel@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/thegavel"
+  }
  },
  {
   "id": "oc_bc_the_graduate_pride_alliance",
@@ -11734,7 +13494,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bc_hatchery/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shopadmin@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/thehatchery"
+  }
  },
  {
   "id": "oc_bc_the_heights_inc",
@@ -11772,7 +13536,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/theheights"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president@bcheights.com",
+   "source": "https://bc.campuslabs.com/engage/organization/the-heights-inc"
+  }
  },
  {
   "id": "oc_bc_the_laughing_medusa",
@@ -11803,7 +13571,11 @@
     "label": "Website",
     "url": "https://thelaughingmedusa.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ktoridi@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/the-laughing-medusa"
+  }
  },
  {
   "id": "oc_bc_testtesttest",
@@ -11830,7 +13602,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/testtesttest"
    }
-  ]
+  ],
+  "contact": {
+   "email": "trosth@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/testtesttest"
+  }
  },
  {
   "id": "oc_bc_the_rappaport_center_for_law_and_public_policy",
@@ -11859,7 +13635,42 @@
     "label": "X",
     "url": "http://twitter.com/RappaportCenter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rappaport@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/the-rappaport-center-for-law-and-public-policy"
+  }
+ },
+ {
+  "id": "oc_bc_theresearchroundtable",
+  "name": "The Research Roundtable: The Scientific Journal Forum",
+  "logo": {
+   "emoji": "RR",
+   "hue": 312,
+   "url": "https://se-images.campuslabs.com/clink/images/49ac556f-2144-412e-ac94-1a9b71107bfb0a2cba89-3357-4ce1-9f94-96d287fe1edb.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "The Research Roundtable is a student-led journal club where members strengthen their ability to read, analyze, and discuss scientific research. Through engaging discussions, students build confidence in interpreting evidence for medicine and STEM careers",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/theresearchroundtable"
+   }
+  ],
+  "contact": {
+   "email": "theresearchroundtable@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/theresearchroundtable"
+  }
  },
  {
   "id": "oc_bc_windensemble",
@@ -11889,7 +13700,11 @@
     "label": "Website",
     "url": "https://www.bc.edu/bands"
    }
-  ]
+  ],
+  "contact": {
+   "email": "busal@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/windensemble"
+  }
  },
  {
   "id": "oc_bc_thea_bowman_ahana_and_intercultural_center",
@@ -11918,7 +13733,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/BCBowmanCntr"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bowmancenter@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/thea-bowman-ahana-and-intercultural-center"
+  }
  },
  {
   "id": "oc_bc_theology_gsa",
@@ -11997,7 +13816,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/transfer-ambassador-program"
    }
-  ]
+  ],
+  "contact": {
+   "email": "silvacu@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/transfer-ambassador-program"
+  }
  },
  {
   "id": "oc_bc_trusts_estates_elder_family_law_association",
@@ -12049,7 +13872,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/tsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yigite@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/tsa"
+  }
  },
  {
   "id": "oc_bc_ugbc",
@@ -12059,7 +13886,7 @@
    "hue": 56,
    "url": "https://se-images.campuslabs.com/clink/images/7eb0f8b4-aa2d-4625-995f-143b0d1d9418d3657f6a-6714-472e-9127-c573ebf43fae.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "council",
   "schoolId": "s_bc",
   "parent": "Government",
   "verified": false,
@@ -12088,7 +13915,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/UGBCeagles"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ugbc@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/ugbc"
+  }
  },
  {
   "id": "oc_bc_ubdc",
@@ -12142,7 +13973,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/unheardnarratives"
    }
-  ]
+  ],
+  "contact": {
+   "email": "choirac@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/unheardnarratives"
+  }
  },
  {
   "id": "oc_bc_uniform_commercial_code_reporter_digest",
@@ -12222,7 +14057,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@theuniversitychoraleofbost9519"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcchorale@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/university-chorale"
+  }
  },
  {
   "id": "oc_bc_uprising_dance_crew",
@@ -12260,8 +14099,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/@UPrisingDance"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uprisingdance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uprisingcrew@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/uprising-dance-crew"
+  }
  },
  {
   "id": "oc_bc_vandy90",
@@ -12326,7 +14173,11 @@
     "label": "YouTube",
     "url": "https://youtube.com/@VidadeIntensaPasion"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vidadeintensapasion@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/vip"
+  }
  },
  {
   "id": "oc_bc_vietnamese_students_association",
@@ -12357,7 +14208,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bostoncollegevsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bostoncollegevsa@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/vietnamese-students-association"
+  }
  },
  {
   "id": "oc_bc_voices_of_imani",
@@ -12388,7 +14243,11 @@
     "label": "X",
     "url": "http://twitter.com/VoicesofImani"
    }
-  ]
+  ],
+  "contact": {
+   "email": "voicesimani.bc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/voices-of-imani"
+  }
  },
  {
   "id": "oc_bc_walsh",
@@ -12444,7 +14303,11 @@
     "label": "Website",
     "url": "http://bc.edu/welcome"
    }
-  ]
+  ],
+  "contact": {
+   "email": "welcome@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/wow"
+  }
  },
  {
   "id": "oc_bc_women_in_business",
@@ -12487,7 +14350,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BCWIB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womeninbusinessbc@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/women-in-business"
+  }
  },
  {
   "id": "oc_bc_women_in_computer_science",
@@ -12518,7 +14385,50 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/wics_bc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcwicomputerscience@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/women-in-computer-science"
+  }
+ },
+ {
+  "id": "oc_bc_women_in_stem",
+  "name": "Women in STEM",
+  "logo": {
+   "emoji": "WS",
+   "hue": 328,
+   "url": "https://se-images.campuslabs.com/clink/images/2fb1f7f9-dca6-4a15-b307-87b62916f828bb04374c-b0a5-4b61-9c4d-fe39447681c9.png?preset=small-sq"
+  },
+  "type": "club",
+  "schoolId": "s_bc",
+  "parent": "Academic/Pre-Professional",
+  "verified": false,
+  "description": "Women in STEM aims to empower women through mentorship groups, fun socials, career building workshops, biweekly discussions, and volunteering with our after-school science club for girls!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://bc.campuslabs.com/engage/organization/women-in-stem"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.bcwomeninstem.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bcwomeninstem/"
+   }
+  ],
+  "contact": {
+   "email": "bostoncollegewomeninstem@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/women-in-stem"
+  }
  },
  {
   "id": "oc_bc_womeninnovatorsnetwork",
@@ -12544,7 +14454,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/womeninnovatorsnetwork"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcwomeninnovators@gmail.com",
+   "source": "https://bc.campuslabs.com/engage/organization/womeninnovatorsnetwork"
+  }
  },
  {
   "id": "oc_bc_wgs",
@@ -12578,7 +14492,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcwomensandgenderstudies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gender@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/wgs"
+  }
  },
  {
   "id": "oc_bc_women_s_center",
@@ -12608,7 +14526,11 @@
     "label": "X",
     "url": "http://twitter.com/@WCatBC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "women@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/women-s-center"
+  }
  },
  {
   "id": "oc_bc_woodsgsa",
@@ -12634,7 +14556,11 @@
     "label": "Directory",
     "url": "https://bc.campuslabs.com/engage/organization/woodsgsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "merlinp@bc.edu",
+   "source": "https://bc.campuslabs.com/engage/organization/woodsgsa"
+  }
  },
  {
   "id": "oc_bc_wzbc_90_3_fm",

@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-05T10:59:11.271Z",
+ "checkedAt": "2026-11-07T09:51:45.525Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:banner9:https://registration.banner.gatech.edu",
- "sampled": 7199,
- "withTimes": 7199,
+ "sampled": 7214,
+ "withTimes": 7214,
  "terms": [
   "Fall 2026",
   "Spring 2027"
  ],
  "sample": [
   "ACCT 2101 · Principles of Accounting I (Sec A) · Fall 2026 · M 12:30-13:45 W 12:30-13:45",
-  "ENGL 1101 · English Composition I (Sec D3) · Fall 2026 · M 09:30-10:45 W 09:30-10:45",
-  "MATH 4782 · Quantum Info&Quant Comp (Sec AU) · Fall 2026 · T 09:30-10:45 R 09:30-10:45",
-  "VIP 6601 · VIP Proj Team: GR I (Sec VZM) · Fall 2026 · W 15:30-16:20",
-  "ECE 2040 · Circuit Analysis (Sec B) · Spring 2027 · M 17:00-18:15 W 17:00-18:15",
-  "ME 3017 · System Dynamics (Sec R) · Spring 2027 · M 14:00-15:15 W 14:00-15:15"
+  "ENGL 1101 · English Composition I (Sec G2) · Fall 2026 · T 12:30-13:45 R 12:30-13:45",
+  "MATH 4803 · Intro to Computational Neurosc (Sec NSC) · Fall 2026 · M 15:30-16:45 W 15:30-16:45",
+  "VIP 6602 · VIP Proj Team: GR II (Sec OWJ) · Fall 2026 · R 12:30-13:20",
+  "ECE 3058 · Architecture, Systems, Concurrency, and Energy in Computation (Sec R) · Spring 2027 · T 14:00-15:15 R 14:00-15:15",
+  "ME 3180 · Machine Design (Sec D) · Spring 2027 · M 09:30-10:45 W 09:30-10:45"
  ],
  "spotCheck": {
   "matched": 6,

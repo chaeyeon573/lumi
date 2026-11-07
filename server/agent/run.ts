@@ -201,6 +201,15 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   const prevOrgs: Organization[] = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : [];
   if (d) out.push(await runScript(`collect-orgs:${row.id}`, 'fetch:orgs', row.id, { ...orgsEnv(row.id, d.platform, d.host), FETCH_DRY: '1', ORGS_JSON_DIR: COLLECTED_DIR }));
   else out.push(await record({ task: `collect-orgs:${row.id}`, schoolId: row.id, status: 'rejected', startedAt: new Date().toISOString(), summary: { error: 'no public club directory found', tried: row.orgs_host || 'guessed hosts' } }));
+  // 새 목록이 이전의 절반도 안 되면 디렉터리가 덜 보낸 것(2026-11-07 Wisconsin 1,218 → 462) — 이전 파일을 그대로 두고 이번 단체 수집은 버린다
+  if (prevOrgs.length >= 40 && existsSync(file)) {
+    const fresh = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
+    if (fresh.length < prevOrgs.length * 0.5) {
+      writeFileSync(file, `${JSON.stringify(prevOrgs, null, 1)}\n`);
+      out.push(await record({ task: `collect-orgs-guard:${row.id}`, schoolId: row.id, status: 'rejected', startedAt: new Date().toISOString(), summary: { error: 'directory returned less than half of the last list - kept the last file', before: prevOrgs.length, now: fresh.length } }));
+      console.log(`  ${row.id}: directory returned ${fresh.length} of ${prevOrgs.length} groups - kept the last file`);
+    }
+  }
   // 학생회: 디렉터리에 없을 때만 더한다
   const govRows = existsSync(GOV_CSV) ? (parseCSV(readFileSync(GOV_CSV, 'utf8')) as unknown as StudentGovRow[]).filter((r) => r.school_id === row.id) : [];
   if (govRows.length) {

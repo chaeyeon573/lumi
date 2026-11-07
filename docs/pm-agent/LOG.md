@@ -2469,3 +2469,12 @@
 - Spot check clubs: Michigan MUSKET, Chicago Debate Society, Emory Barkley Forum, UT Bhakti Yoga Club fine. Yale "Environmental Leadership and Training Initiative" is a Yale School of the Environment initiative that trains practitioners (site footer: "ELTI is an initiative of … Yale School of the Environment"), typed `department`.
 - Spot check courses: 5 random USC Fall 2026 classes (CMGT 558, LING 486, MATH 225, HRM 515, FREN 270) match classes.usc.edu.
 - Weekly re-collect group 3: UGA, Indiana, MSU, Purdue, UMN, UCR. Groups held or grew (UCR 664→673), links grew everywhere (MSU 3,632→3,790, Purdue 3,907→4,035), departments held. 33 delisted groups kept in orgs-dropped (UMN 17). UCR classes 3,113. UMN's catalog probe was rejected (catalog.umn.edu now redirects to catalogs.umn.edu; reads 0) - nothing stored, UMN never had a course file; added to the queue.
+
+## 2026-11-07 09:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Indiana Debate Team, UMN Pinky Swear PACK, UW Foster Evening MBA Association, Lehigh Marketing Club fine. Tulane "The New Orleans Book Festival" is a university-run festival, typed `department`.
+- Spot check courses: 5 random Harvard Fall 2026 classes (MCB 121, SEMPHIL 152, FYSEMR 73Y, SPANSH 20 Sec 004, LATIN 1 Sec 002) match my.harvard.
+- Weekly re-collect group 4: BC, Tufts, UCSB, UCI, Wisconsin, Georgia Tech.
+  - **Wisconsin's directory returned 462 groups instead of 1,218** and the collector wrote the short list over the full file. Restored the full file from the copy taken before the run, and added a guard to collect: if the new list is less than half of the last one (and the last had 40+), keep the last file and record the run as rejected. Re-ran Wisconsin: the directory again sent 462, the guard kept 1,218, social step ran on the full list. Cause still unknown - queued.
+  - Others held or grew (BC 425→449, UCI 733→742). Directory categories now mark more offices: UCI departments 65→149 (e.g. Basic Needs Center, Campus Planning & Sustainability, Cancer Research Institute), UCSB 120→136, Tufts 11→17; looked through the UCI list, they are offices/programs. 10 delisted groups kept in orgs-dropped. Georgia Tech classes 7,214.
+  - Tufts and Wisconsin catalog probes read 0 (rejected, existing files untouched) - queued.

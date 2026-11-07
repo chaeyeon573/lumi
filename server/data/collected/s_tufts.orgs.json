@@ -3231,7 +3231,7 @@
    "emoji": "CE",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_tufts",
   "parent": "Advocacy",
   "verified": false,
@@ -6337,7 +6337,7 @@
    "emoji": "IC",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_tufts",
   "parent": "Culture & Identity",
   "verified": false,
@@ -7834,7 +7834,7 @@
    "emoji": "LC",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_tufts",
   "parent": "Advocacy",
   "verified": false,
@@ -7850,6 +7850,10 @@
    {
     "label": "Directory",
     "url": "https://tufts.campusgroups.com/student_community?club_id=35814"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/tuftslgbtcenter?ltsid=97e1ea86-8926-44d3-a0d0-cb7a597564ac"
    },
    {
     "label": "Website",
@@ -12568,7 +12572,7 @@
    "emoji": "AC",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_tufts",
   "parent": "Academic & Pre-Professional",
   "verified": false,
@@ -12595,13 +12599,46 @@
   }
  },
  {
+  "id": "oc_tufts_cg35896",
+  "name": "The Experimental College",
+  "logo": {
+   "emoji": "EC",
+   "hue": 0
+  },
+  "type": "club",
+  "schoolId": "s_tufts",
+  "parent": "University Department",
+  "verified": false,
+  "description": "The Experimental College is a department at Tufts University that offers innovative undergraduate elective courses. We hire Visiting Lecturers with a range of perspectives and professional experience to teach interdisciplinary, interactive courses. At the ExCollege, students can design and teach courses, serve on our governing board, evaluate course proposals, interview prospective Visiting Lecturers, select courses to be offered, and more!",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://tufts.campusgroups.com/student_community?club_id=35896"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_tufts_cg35851",
   "name": "The Office of Religious and Philosophical Life",
   "logo": {
    "emoji": "OR",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_tufts",
   "parent": "Culture & Identity",
   "verified": false,
@@ -14220,7 +14257,7 @@
    "emoji": "WS",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_tufts",
   "parent": "Advocacy",
   "verified": false,

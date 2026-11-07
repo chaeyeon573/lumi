@@ -1,20 +1,11 @@
 {
- "checkedAt": "2026-11-03T01:33:37.387Z",
- "status": "applied",
+ "checkedAt": "2026-11-07T09:56:40.262Z",
+ "status": "rejected",
  "stored": false,
  "source": "catalog:https://guide.wisc.edu/courses/",
- "sampled": 159,
+ "sampled": 0,
  "withTimes": 0,
- "terms": [
-  "catalog"
- ],
- "sample": [
-  "MATH 716 · ORDINARY DIFFERENTIAL EQUATIONS · catalog",
-  "MATH 828 · ADVANCED TOPICS IN HARMONIC ANALYSIS · catalog",
-  "MATH 570 · FUNDAMENTALS OF SET THEORY · catalog",
-  "MATH 849 · AUTOMORPHIC FORMS · catalog",
-  "MATH 941 · SEMINAR-ALGEBRA · catalog",
-  "ASTRON 202 · INTRODUCTION TO ASTRONOMY RESEARCH · catalog"
- ],
+ "terms": [],
+ "sample": [],
  "spotCheck": "no lookup (catalog codes/titles only)"
 }

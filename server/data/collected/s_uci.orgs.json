@@ -113,7 +113,7 @@
    "emoji": "AW",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -253,7 +253,7 @@
    "emoji": "AC",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -701,6 +701,10 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=71529"
+   },
+   {
+    "label": "Website",
+    "url": "https://aisafetyuci.org/"
    }
   ],
   "recruitment": {
@@ -2343,7 +2347,7 @@
    "emoji": "AE",
    "hue": 160
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -3179,7 +3183,7 @@
    "emoji": "AG",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -3195,6 +3199,10 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=71687"
+   },
+   {
+    "label": "Website",
+    "url": "https://uci.questionpro.com/"
    }
   ],
   "recruitment": {
@@ -3463,7 +3471,7 @@
    "emoji": "AM",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -3533,7 +3541,7 @@
    "emoji": "AY",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -3937,7 +3945,7 @@
    "emoji": "AS",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Creative Arts",
   "verified": false,
@@ -4019,6 +4027,10 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=33506"
+   },
+   {
+    "label": "Website",
+    "url": "https://aacfuci.weebly.com/"
    },
    {
     "label": "Website",
@@ -4943,7 +4955,7 @@
    "emoji": "BN",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -5025,6 +5037,18 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=71494"
+   },
+   {
+    "label": "Website",
+    "url": "https://bewelloc.org/mobile-response/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bewelloc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/bewelloc"
    }
   ],
   "recruitment": {
@@ -5075,7 +5099,7 @@
    "emoji": "BA",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -5112,7 +5136,7 @@
    "emoji": "BB",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Environmental",
   "verified": false,
@@ -5561,7 +5585,7 @@
    "emoji": "BG",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -6088,7 +6112,7 @@
    "emoji": "BC",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -6722,7 +6746,7 @@
    "emoji": "CI",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -6948,7 +6972,7 @@
    "emoji": "PS",
    "hue": 32
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Environmental",
   "verified": false,
@@ -7014,7 +7038,7 @@
    "emoji": "CR",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -7096,6 +7120,39 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=71520"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uci_cg71704",
+  "name": "Caribbean Student Association",
+  "logo": {
+   "emoji": "CS",
+   "hue": 72
+  },
+  "type": "club",
+  "schoolId": "s_uci",
+  "parent": "Multicultural",
+  "verified": false,
+  "description": "The Caribbean Student Association is a student-run campus organization dedicated to celebrating, promoting, and educating the campus community about the diverse cultures, histories, traditions, and experiences of the Caribbean. Our mission is to create a welcoming community where students of Caribbean descent can connect with their culture and with one another while providing an inclusive space for anyone interested in learning about and celebrating the Caribbean.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=71704"
    }
   ],
   "recruitment": {
@@ -7191,7 +7248,7 @@
    "emoji": "CM",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -7677,7 +7734,7 @@
    "emoji": "CS",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -8397,6 +8454,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/circleoffifthsuci"
+   },
+   {
+    "label": "Website",
+    "url": "https://circleoffifthsuci.wixsite.com/circleoffifthsuci"
    }
   ],
   "recruitment": {
@@ -8414,7 +8475,7 @@
    "emoji": "CE",
    "hue": 32
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Environmental",
   "verified": false,
@@ -8521,7 +8582,7 @@
    "emoji": "CT",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -9040,7 +9101,7 @@
    "emoji": "CS",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Club Sports",
   "verified": false,
@@ -9147,7 +9208,7 @@
    "emoji": "CC",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -9452,7 +9513,7 @@
    "emoji": "CL",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -9468,6 +9529,10 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=71694"
+   },
+   {
+    "label": "Website",
+    "url": "https://cls.soceco.uci.edu/pages/department-overview"
    }
   ],
   "recruitment": {
@@ -9485,7 +9550,7 @@
    "emoji": "CL",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -9551,7 +9616,7 @@
    "emoji": "CT",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -9617,7 +9682,7 @@
    "emoji": "CC",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -9950,7 +10015,7 @@
    "emoji": "DA",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -10304,7 +10369,7 @@
    "emoji": "DS",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -11145,7 +11210,7 @@
    "emoji": "DC",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Multicultural",
   "verified": false,
@@ -11186,7 +11251,7 @@
    "emoji": "DS",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Multicultural",
   "verified": false,
@@ -11527,7 +11592,7 @@
    "emoji": "DL",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -11593,7 +11658,7 @@
    "emoji": "EU",
    "hue": 72
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -11799,7 +11864,7 @@
    "emoji": "EO",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -11873,7 +11938,7 @@
    "emoji": "EU",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -12285,7 +12350,7 @@
    "emoji": "FR",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Health and Wellness",
   "verified": false,
@@ -12623,7 +12688,7 @@
    "emoji": "FM",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -12668,7 +12733,7 @@
    "emoji": "FM",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -12734,7 +12799,7 @@
    "emoji": "FG",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Peer Support",
   "verified": false,
@@ -12964,6 +13029,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/freeclinicproject"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.uci.edu/freeclinic/"
    }
   ],
   "recruitment": {
@@ -13055,7 +13124,7 @@
    "emoji": "GD",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -13121,7 +13190,7 @@
    "emoji": "GH",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Health and Wellness",
   "verified": false,
@@ -13319,7 +13388,7 @@
    "emoji": "GC",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -13702,7 +13771,7 @@
    "emoji": "GD",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -13739,7 +13808,7 @@
    "emoji": "GM",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Creative Arts",
   "verified": false,
@@ -13772,7 +13841,7 @@
    "emoji": "GP",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -13875,7 +13944,7 @@
    "emoji": "GW",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -14093,6 +14162,39 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=33687"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_uci_cg71708",
+  "name": "Health EDU at UCI",
+  "logo": {
+   "emoji": "HE",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_uci",
+  "parent": "Community Service",
+  "verified": false,
+  "description": "Our mission is to empower future healthcare providers to advocate for health equity, serve local communities through health outreach, and destigmatize health education. Through collaboration, education, and community engagement, we hope to make healthcare knowledge more accessible for everyone.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=71708"
    }
   ],
   "recruitment": {
@@ -14641,7 +14743,7 @@
    "emoji": "IG",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -14674,7 +14776,7 @@
    "emoji": "IO",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Peer Support",
   "verified": false,
@@ -14785,7 +14887,7 @@
    "emoji": "IC",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Creative Arts",
   "verified": false,
@@ -15057,7 +15159,7 @@
    "emoji": "IC",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -15123,7 +15225,7 @@
    "emoji": "IA",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -15440,7 +15542,7 @@
    "emoji": "IA",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -15473,7 +15575,7 @@
    "emoji": "IN",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -15613,7 +15715,7 @@
    "emoji": "IS",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Multicultural",
   "verified": false,
@@ -15827,7 +15929,7 @@
    "emoji": "IB",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Performance and Entertainment",
   "verified": false,
@@ -16008,7 +16110,7 @@
    "emoji": "IS",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -16950,6 +17052,39 @@
   }
  },
  {
+  "id": "og_uci_cg71701",
+  "name": "Lambda Theta Alpha Latin Sorority, Inc.",
+  "logo": {
+   "emoji": "LT",
+   "hue": 56
+  },
+  "type": "greek",
+  "schoolId": "s_uci",
+  "parent": "Community Service",
+  "verified": false,
+  "description": "The purpose of Lambda Theta Alpha shall be to provide a sisterhood based on unity, love, and respect. To develop strong leaders who will then provide and practice political, social and cultural activities. Promote unity through charitable and educational programs. Maintain a higher standard of learning and serve as a voice for all students.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=71701"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "og_uci_cg47689",
   "name": "Lambda Theta Delta",
   "logo": {
@@ -16972,10 +17107,6 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=47689"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.lambdathetadelta.com/"
    }
   ],
   "recruitment": {
@@ -17067,7 +17198,7 @@
    "emoji": "LS",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -17281,7 +17412,7 @@
    "emoji": "LR",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Multicultural",
   "verified": false,
@@ -17771,7 +17902,7 @@
    "emoji": "LU",
    "hue": 352
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -17964,6 +18095,10 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=33782"
+   },
+   {
+    "label": "Website",
+    "url": "http://www.maissuci.com/"
    },
    {
     "label": "Website",
@@ -18166,7 +18301,7 @@
    "emoji": "MA",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -18199,7 +18334,7 @@
    "emoji": "MC",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -18236,7 +18371,7 @@
    "emoji": "ME",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -18269,7 +18404,7 @@
    "emoji": "ME",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -18302,7 +18437,7 @@
    "emoji": "ML",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -18335,7 +18470,7 @@
    "emoji": "MP",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -18368,7 +18503,7 @@
    "emoji": "MP",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -18401,7 +18536,7 @@
    "emoji": "MU",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -18434,7 +18569,7 @@
    "emoji": "MC",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Environmental",
   "verified": false,
@@ -18467,7 +18602,7 @@
    "emoji": "MS",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -18603,7 +18738,7 @@
    "emoji": "MC",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -19093,7 +19228,7 @@
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
-  "description": "The Merage Business Analytics Club is a student-run organization that aims to help members with networking opportunities, organize small workshops, engage with industry speakers and be a resource for members in the field of analytics and data science.",
+  "description": "The Merage Business Analytics Club is a community for students interested in business analytics and data. Our goal is to help students learn, connect with others, and explore different career opportunities in analytics through workshops, events, and networking opportunities.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -20434,6 +20569,39 @@
   }
  },
  {
+  "id": "og_uci_cg71702",
+  "name": "National Pan-Hellenic Council at UC Irvine",
+  "logo": {
+   "emoji": "NP",
+   "hue": 120
+  },
+  "type": "greek",
+  "schoolId": "s_uci",
+  "parent": "Sorority/Fraternity Life",
+  "verified": false,
+  "description": "The National Pan-Hellenic Council, Incorporated serves as the coordinating body for the nine historically Black Greek-letter organizations known collectively as the Divine Nine. NPHC brings member organizations together around shared priorities while respecting the identity, history and mission of each fraternity and sorority. Through national leadership and local councils, the Council helps advance service, scholarship, leadership, advocacy and community engagement.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=71702"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_uci_cg33839",
   "name": "National Society of Black Engineers (NSBE)",
   "logo": {
@@ -20736,7 +20904,7 @@
    "emoji": "NS",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Creative Arts",
   "verified": false,
@@ -20802,7 +20970,7 @@
    "emoji": "NV",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -20839,7 +21007,7 @@
    "emoji": "NV",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -20876,7 +21044,7 @@
    "emoji": "NC",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Community Service",
   "verified": false,
@@ -20909,7 +21077,7 @@
    "emoji": "NG",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Peer Support",
   "verified": false,
@@ -21755,6 +21923,39 @@
   }
  },
  {
+  "id": "oc_uci_cg71707",
+  "name": "Origins at UCI",
+  "logo": {
+   "emoji": "OU",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_uci",
+  "parent": "Community Service",
+  "verified": false,
+  "description": "The purpose of this organization is to educate and practice how to lead a more meaningful life in light of the Vedic scriptures. The goal is to present these teachings very systematically in harmony with modern science.The crown jewel of this rich tradition is Yoga and Mantra Meditation which cultivate total harmony in the mind, body, and soul of every human being, regardless of their background or ideologies. This club aims to gift this universal message of the age old Vedic wisdom to each and every student at UCI, transforming the campus’s social climate. Specifically, UCI is known among the",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=71707"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_uci_cg71409",
   "name": "Orthodox Christian Fellowship",
   "logo": {
@@ -22033,7 +22234,7 @@
    "emoji": "PA",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -22140,7 +22341,7 @@
    "emoji": "PP",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -22543,7 +22744,7 @@
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
-  "description": "The Physics Grad Caucus seeks to enhance the physics graduate student experience in three primary ways: To provide a voice for physics graduate students in departmental affairs. To facilitate scientific and social interaction between physics graduate students of all different subfields. To provide physics graduate students a forum beyond official department channels to improve their education, research, and prospects for postgraduate work.",
+  "description": "The Physics Graduate Caucus seeks to enhance the physics graduate student experience in three primary ways: To provide a voice for physics graduate students in departmental affairs. To facilitate scientific and social interaction between physics graduate students of all different subfields. To provide physics graduate students a forum beyond official department channels to improve their education, research, and prospects for postgraduate work.",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -23662,7 +23863,7 @@
    "emoji": "PS",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -23695,7 +23896,7 @@
    "emoji": "PS",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -23728,7 +23929,7 @@
    "emoji": "PS",
    "hue": 72
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -23761,7 +23962,7 @@
    "emoji": "PS",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Graduate",
   "verified": false,
@@ -23835,7 +24036,7 @@
    "emoji": "PH",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Multicultural",
   "verified": false,
@@ -24090,6 +24291,10 @@
    {
     "label": "Directory",
     "url": "https://zotspot.uci.edu/student_community?club_id=33910"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.qc-uci.club/"
    }
   ],
   "recruitment": {
@@ -24589,7 +24794,7 @@
    "emoji": "R",
    "hue": 124
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Health and Wellness",
   "verified": false,
@@ -24791,7 +24996,7 @@
    "emoji": "SA",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
@@ -24894,7 +25099,7 @@
    "emoji": "SO",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Academics and Honors",
   "verified": false,
@@ -25551,13 +25756,149 @@
   }
  },
  {
+  "id": "og_uci_cg33942",
+  "name": "Sigma Lambda Gamma National Sorority Inc.",
+  "logo": {
+   "emoji": "SL",
+   "hue": 304
+  },
+  "type": "greek",
+  "schoolId": "s_uci",
+  "parent": "Multicultural",
+  "verified": false,
+  "description": "Sigma Lambda Gamma is a historically Latina, multicultural sorority founded on the five principles of Academics, Community Service, Cultural Awareness, Morals and Ethics and Social Interaction.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=33942"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_uci_cg33943",
+  "name": "Sigma Nu",
+  "logo": {
+   "emoji": "SN",
+   "hue": 161
+  },
+  "type": "greek",
+  "schoolId": "s_uci",
+  "parent": "Sorority/Fraternity Life",
+  "verified": false,
+  "description": "To develop ethical leaders inspired by the principles of Love, Honor and Truth. To foster the personal growth of each man's mind, heart, and character. To perpetuate lifelong friendships and commitment to the Fraternity.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=33943"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_uci_cg33945",
+  "name": "Sigma Phi Epsilon (SigEp)",
+  "logo": {
+   "emoji": "SP",
+   "hue": 304
+  },
+  "type": "greek",
+  "schoolId": "s_uci",
+  "parent": "Sorority/Fraternity Life",
+  "verified": false,
+  "description": "Building Balanced Men",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=33945"
+   },
+   {
+    "label": "Website",
+    "url": "https://ucirvine.sigep.org/"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_uci_cg33946",
+  "name": "Sigma Pi",
+  "logo": {
+   "emoji": "SP",
+   "hue": 211
+  },
+  "type": "greek",
+  "schoolId": "s_uci",
+  "parent": "Sorority/Fraternity Life",
+  "verified": false,
+  "description": "Sigma Pi is an elite collegiate men's social fraternity founded on the principles of brotherhood, scholarship, sportsmanship, and philanthropy. Sigma Pi strives to be exemplary citizens and gentlemen in our UC Irvine community and outside the community every day and teaches members many important aspects in life to apply it towards their future.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://zotspot.uci.edu/student_community?club_id=33946"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_uci_cg35979",
   "name": "Wayfinder Incubator",
   "logo": {
    "emoji": "WI",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_uci",
   "parent": "Career and Professional",
   "verified": false,
