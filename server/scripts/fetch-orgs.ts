@@ -78,7 +78,9 @@ async function fetchCampusGroups(host: string): Promise<CampusGroupsOrg[]> {
   // 중간에 빈 페이지가 섞여 나온다(MIT: range=270 이 비고 300 은 찬다) — 첫 페이지의 총 개수까지 끝까지 걷고, 빈 페이지로 멈추지 않는다
   let total = Infinity;
   // 학교마다 한 페이지 크기가 다르다 (MIT·Stanford 30, UC Davis·SJSU 8~10) — 30씩 넘기면 작은 학교는 절반을 건너뛰었다. 10씩 넘기고 겹치는 건 seen 으로 거른다
-  for (let range = 0; range < Math.min(total + 60, 20000); range += 10) {
+  // 첫 페이지의 총 개수가 실제보다 작게 나올 때가 있다(Wisconsin 2026-11-07: '(719)' 인데 range=1150 까지 단체가 나온다) — 총 개수를 넘은 뒤에도 새 단체가 안 나오는 쪽이 6번 이어질 때까지 간다
+  let quiet = 0;
+  for (let range = 0; range < 20000 && (range < total + 60 || quiet < 6); range += 10) {
     const html = await getWithRetry(`${host}/club_signup?ax=1&range=${range}`);
     if (range === 0) total = Number(/clubsCount'\)\.innerHTML = '\((\d+)\)'/.exec(html)?.[1] ?? '') || 3000;
     const items = html.split('<li class="list-group-item"').slice(1);
@@ -94,7 +96,7 @@ async function fetchCampusGroups(host: string): Promise<CampusGroupsOrg[]> {
       const mission = strip(new RegExp(`id="club_${id}"[^>]*>\\s*<strong>Mission</strong><br>([\\s\\S]*?)</p>`).exec(it)?.[1] ?? '');
       out.push({ id, name, groupType: groupType.trim(), tags: tagText.split(',').map((t) => t.trim()).filter(Boolean), mission, website: campusGroupsWebsite(it, host), closed: /Membership is closed/i.test(it), joinable: /cb_club_\d+/.test(it) });
     }
-    void added;
+    quiet = added ? 0 : quiet + 1;
     await new Promise((r) => setTimeout(r, 200));
   }
   return out;
