@@ -2563,3 +2563,16 @@
 - SF State classes refreshed in three parts with SFSU_SUBJECTS (122 subjects, ~14 min total): 6,954→6,958, 15 new sections, 30 time changes, 11 gone kept in courses-dropped.
 - Spot check clubs: UCI Anteater Mock Trial, Indiana CORe, UMich Pre-SOMA, Cornell CUAir fine; Rice Sleepy Cyborg Gallery host matchbox.rice.edu no longer resolves - set aside in deadlinks.
 - Spot check courses: 5 random Cornell Spring 2027 classes match the live class roster.
+
+## 2026-11-07 23:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Queue items checked, none readable from here (not bypassed, notes in DATA_SOURCES):
+  - Tufts: courses.tufts.edu now redirects to continuing-ed pages; courses only in SIS (login). File kept.
+  - Wisconsin guide.wisc.edu: connection reset at the container proxy on every try.
+  - UMN: catalog moved to Coursedog; its course API answers "Unauthenticated" outside the catalog site. Sending the site's own Origin header was refused by the session's safety check - not pursued.
+  - SJSU, UCSC, UCI WebSoc, UNC class search: TLS fails here. NC State coursecat 503.
+  - UF Schedule of Courses API is public but every section's meeting times are empty - nothing to add.
+  - UCLA Spring 2027: still not published.
+- Borderline schools: Utah (Engage 503) and Baylor (Engage 380) also open publicly - added to the existing QUESTIONS item.
+- Spot check clubs: CMU Treblemakers, NC State Pi Alpha Xi (503 then 302 - up), Indiana NODE Policy Lab (site now forwards to Instagram) fine; Illinois CLAID claiduiuc.com gives 502 at the proxy (left to the weekly dead-link check); UVA "Pre-Health Advising" is a Career Center office listed as a club - it and 3 more UVA offices/centers (McIntire Admission, Galant Center, Center for Politics) set to department and added to org-type-overrides.csv.
+- Spot check courses: 5 random USC Spring 2027 classes match.
