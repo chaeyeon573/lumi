@@ -1,0 +1,929 @@
+[
+ {
+  "id": "oc_ucla_rco6234",
+  "name": "Alpha Omega Westside UCLA",
+  "logo": {
+   "emoji": "AO",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Religious - Christian · Service - Outreach",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Alpha%20Omega%20Westside%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/aowestside.la/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco3210",
+  "name": "Anderson Full-time Student Association",
+  "logo": {
+   "emoji": "AF",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Business · Leadership",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Anderson%20Full-time%20Student%20Association"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6777",
+  "name": "Augustine Center Student Group",
+  "logo": {
+   "emoji": "AC",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Academic · Religious - Christian",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Augustine%20Center%20Student%20Group"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6923",
+  "name": "Because of Love",
+  "logo": {
+   "emoji": "BL",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Service · Service - Outreach",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Because%20of%20Love"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/because_of_love419"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco4276",
+  "name": "Blockchain at UCLA",
+  "logo": {
+   "emoji": "B",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Engineering · Technology",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Blockchain%20at%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/blockchainucla/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/blockchainucla/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/blockchainatucla/"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/blockchainucla"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/channel/UCAmSZoh-Nvx7OSZTiAIrcAA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco2719",
+  "name": "Bruin Beans Health Club",
+  "logo": {
+   "emoji": "BH",
+   "hue": 216
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Medical · Health and Wellness",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Bruin%20Beans%20Health%20Club"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bruinbeans"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/bruin-beans-health-club/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6653",
+  "name": "Chess Access @ UCLA",
+  "logo": {
+   "emoji": "CA",
+   "hue": 336
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Service - Community Involvement · Educational",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Chess%20Access%20%40%20UCLA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6587",
+  "name": "Cub Support",
+  "logo": {
+   "emoji": "CS",
+   "hue": 224
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Service · Academic",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Cub%20Support"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco3615",
+  "name": "Effective Altruism at UCLA",
+  "logo": {
+   "emoji": "EA",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Social Activism · Leadership",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Effective%20Altruism%20at%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/effectivebruins/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco4885",
+  "name": "Eta Omega Chi",
+  "logo": {
+   "emoji": "EO",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Business · Pre-Professional",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Eta%20Omega%20Chi"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/hox_ucla/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/eta-omega-chi/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6846",
+  "name": "Evolutionary Biology and Medicine Club @ UCLA",
+  "logo": {
+   "emoji": "EB",
+   "hue": 8
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Medical · Environmental",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Evolutionary%20Biology%20and%20Medicine%20Club%20%40%20UCLA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6033",
+  "name": "Firearm Injury Reduction through Education, Advocacy, Research, and Mentorship (FIREARM)",
+  "logo": {
+   "emoji": "FI",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Medical · Social Activism",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Firearm%20Injury%20Reduction%20through%20Education%2C%20Advocacy%2C%20Research%2C%20and%20Mentorship%20(FIREARM)"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco2894",
+  "name": "Fresh Productions Art at UCLA",
+  "logo": {
+   "emoji": "FP",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Arts · Social",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Fresh%20Productions%20Art%20at%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/freshproductionsatucla/"
+   },
+   {
+    "label": "X",
+    "url": "https://twitter.com/freshprodatucla"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/channel/UCJFflzcFAAZrgyT-ztrzz3A"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco3665",
+  "name": "Fully-Employed MBA (FEMBA)",
+  "logo": {
+   "emoji": "FE",
+   "hue": 112
+  },
+  "type": "council",
+  "schoolId": "s_ucla",
+  "parent": "Student Government - GSA Affiliated · Student Government",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Fully-Employed%20MBA%20(FEMBA)"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/ucla-femba"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6950",
+  "name": "Gender Inclusivity in Film and Television at UCLA",
+  "logo": {
+   "emoji": "GI",
+   "hue": 48
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Film · Social Activism",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Gender%20Inclusivity%20in%20Film%20and%20Television%20at%20UCLA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6978",
+  "name": "Ideation at UCLA",
+  "logo": {
+   "emoji": "I",
+   "hue": 96
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Cultural · Educational",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Ideation%20at%20UCLA"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6669",
+  "name": "Love and Time",
+  "logo": {
+   "emoji": "LT",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Service - Community Involvement · Service - Outreach",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Love%20and%20Time"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/loveandtimeucla"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6704",
+  "name": "Master of Legal Studies Students of Color",
+  "logo": {
+   "emoji": "ML",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Law · Cultural/Ethnic",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Master%20of%20Legal%20Studies%20Students%20of%20Color"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6873",
+  "name": "Middle Eastern Pre-Law Student Association",
+  "logo": {
+   "emoji": "ME",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Law · Academic",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Middle%20Eastern%20Pre-Law%20Student%20Association"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/melsaucla/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6259",
+  "name": "Music Meditation",
+  "logo": {
+   "emoji": "MM",
+   "hue": 296
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Self Improvement - Meditation · Health and Wellness",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Music%20Meditation"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/meditationatucla"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6499",
+  "name": "Naya Zamaana",
+  "logo": {
+   "emoji": "NZ",
+   "hue": 304
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Music · Asian",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Naya%20Zamaana"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uclanayazamaana/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/nayazamaana/"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/c/nayazamaana"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco4038",
+  "name": "Photography Club @ UCLA",
+  "logo": {
+   "emoji": "P",
+   "hue": 224
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Arts · Media",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Photography%20Club%20%40%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/uclaphoto/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco5488",
+  "name": "Pilipinx Pre-Law Pipeline",
+  "logo": {
+   "emoji": "PP",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Law · Asian Pacific Islander",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Pilipinx%20Pre-Law%20Pipeline"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/pppatucla/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6101",
+  "name": "Save The Children",
+  "logo": {
+   "emoji": "SC",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Service - Community Involvement · Leadership",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Save%20The%20Children"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/savethechildren.ucla"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco5353",
+  "name": "SOLIDWORKS User Group",
+  "logo": {
+   "emoji": "SU",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Engineering · Technology",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=SOLIDWORKS%20User%20Group"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/westwoodswug/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/westwoodswug"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/@westwoodswug"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco5721",
+  "name": "The Castel Collective",
+  "logo": {
+   "emoji": "CC",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Arts · Media",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=The%20Castel%20Collective"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/thecastelcollective/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/thecastelcollective/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco5371",
+  "name": "The Shifa Society of Muslim Pre-Health Students at UCLA",
+  "logo": {
+   "emoji": "SS",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Pre-Professional · Religious - Muslim",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=The%20Shifa%20Society%20of%20Muslim%20Pre-Health%20Students%20at%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/shifasocietyucla/?hl=en"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco6556",
+  "name": "Undergraduate Journal of International Law at UCLA",
+  "logo": {
+   "emoji": "UJ",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Journals · Law",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=Undergraduate%20Journal%20of%20International%20Law%20at%20UCLA"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ujilucla/"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/company/ucla-undergraduate-journal-of-international-law/"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ },
+ {
+  "id": "oc_ucla_rco5367",
+  "name": "University Presbyterian Church on Campus",
+  "logo": {
+   "emoji": "UP",
+   "hue": 296
+  },
+  "type": "club",
+  "schoolId": "s_ucla",
+  "parent": "Religious - Christian · Religious",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sa.ucla.edu/RCO/public/search?q=University%20Presbyterian%20Church%20on%20Campus"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/upcla/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/upcla/"
+   },
+   {
+    "label": "YouTube",
+    "url": "https://www.youtube.com/@UniversityPresbyterianChurchLA/streams"
+   }
+  ],
+  "droppedAt": "2026-11-07"
+ }
+]
