@@ -52,7 +52,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/3dclubsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fbaltazardecamargo@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/3dprintclub"
+  }
  },
  {
   "id": "oc_sfsu_accounting_students_organization",
@@ -79,7 +83,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/accounting-students-organization"
    }
-  ]
+  ],
+  "contact": {
+   "email": "membership.sfsuaso@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/accounting-students-organization"
+  }
  },
  {
   "id": "oc_sfsu_active_minds",
@@ -121,7 +129,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/activeminds.sfstate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfstate.activeminds@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/active-minds"
+  }
  },
  {
   "id": "oc_sfsu_afghan_student_association",
@@ -151,8 +163,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_asa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_asa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "homesfsu.asa@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/afghan-student-association"
+  }
  },
  {
   "id": "oc_sfsu_african_student_association",
@@ -182,8 +202,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstateasa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstateasa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu.africanstudentassociation@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/african-student-association"
+  }
  },
  {
   "id": "oc_sfsu_afrolatinesfsu",
@@ -213,7 +241,11 @@
     "label": "Website",
     "url": "http://www.afrolatinesfsu.wixsite.com/aflx"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afrolatinxsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/afrolatinesfsu"
+  }
  },
  {
   "id": "oc_sfsu_aiagentsclub",
@@ -239,7 +271,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/aiagentsclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adhir@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/aiagentsclub"
+  }
  },
  {
   "id": "oc_sfsu_algorithms",
@@ -306,8 +342,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/ALPFA_SFState"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/alpfasfstate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elara7@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alpfa-sfsu"
+  }
  },
  {
   "id": "og_sfsu_alpha_gamma_delta",
@@ -348,7 +392,11 @@
     "label": "X",
     "url": "http://twitter.com/@AlphaGamSFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agddeltapipresident@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alphagammadelta"
+  }
  },
  {
   "id": "og_sfsu_alpha_kappa_alpha_sorority_inc",
@@ -386,7 +434,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/akasorority1908"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aka.etasigma@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alpha-kappa-alpha-sorority-inc"
+  }
  },
  {
   "id": "og_sfsu_alpha_kappa_delta_phi",
@@ -427,7 +479,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_akdphi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu.akdphi.president@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alpha-kappa-delta-phi"
+  }
  },
  {
   "id": "og_sfsu_alpha_kappa_psi",
@@ -472,7 +528,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/alpha-kappa-psi-psi-kappa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.akpsisfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alpha-kappa-psi"
+  }
  },
  {
   "id": "og_sfsu_alpha_phi_alpha_fraternity_inc",
@@ -506,7 +566,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/xirhoalphas/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "xirho1906@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alpha-phi-alpha-fraternity-inc"
+  }
  },
  {
   "id": "og_sfsu_alphaphi",
@@ -541,37 +605,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsualphaphi"
    }
-  ]
- },
- {
-  "id": "og_sfsu_alpha_pi_sigma_sorority_inc",
-  "name": "Alpha Pi Sigma Sorority, Incorporated.",
-  "logo": {
-   "emoji": "AP",
-   "hue": 120,
-   "url": "https://se-images.campuslabs.com/clink/images/b9bb5837-1c28-4add-ab90-bac8c9f0e300fa3c702d-e868-41d4-80d0-396916c072f8.jpeg?preset=small-sq"
-  },
-  "type": "greek",
-  "schoolId": "s_sfsu",
-  "verified": false,
-  "description": "Alpha Pi Sigma So was established on March 10, 1990. A group of Latina women from a variety of backgrounds came together to form an organization that would unite and support the Latina women on campus. Alpha Pi Sigma has grown into a well respected org.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sfsu.campuslabs.com/engage/organization/alpha-pi-sigma-sorority-inc"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/sfsualphapisigma/"
-   }
-  ]
+  ],
+  "contact": {
+   "email": "etatheta.alphaphi.president@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/alphaphi"
+  }
  },
  {
   "id": "og_sfsu_american_society_of_civil_engineers",
@@ -606,7 +644,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/asce-sfsu-student-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfascesu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/american-society-of-civil-engineers"
+  }
  },
  {
   "id": "oc_sfsu_asme",
@@ -640,7 +682,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsuasme/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asme@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asme"
+  }
  },
  {
   "id": "oc_sfsu_animation_society",
@@ -674,7 +720,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/animationsocietysfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "animationsocietyatsfsuofficial@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/animation-society"
+  }
  },
  {
   "id": "oc_sfsu_anime_fx",
@@ -712,7 +762,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/animefx/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "animefxclub@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/anime-fx"
+  }
  },
  {
   "id": "oc_sfsu_asu_sfsu_com",
@@ -742,7 +796,11 @@
     "label": "Website",
     "url": "https://linktr.ee/asusfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asu.sfsu.edu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asu-sfsu-com"
+  }
  },
  {
   "id": "oc_sfsu_archery_club",
@@ -771,8 +829,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsuarchery"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsuarchery"
    }
-  ]
+  ],
+  "contact": {
+   "email": "archeryclub@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/archery_club"
+  }
  },
  {
   "id": "oc_sfsu_arduino_club",
@@ -802,7 +868,11 @@
     "label": "Document",
     "url": "https://drive.google.com/file/d/1D5EFll168qo4ryfsHh_9vAkrjJsy_fj_/view?usp=sharing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arduinoclubsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/arduino_club"
+  }
  },
  {
   "id": "oc_sfsu_ai_at_sfsu",
@@ -832,7 +902,11 @@
     "label": "Website",
     "url": "https://sfsuaiclub.vercel.app/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuaiclub@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ai-at-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_ascend_chapter_at_sf_state",
@@ -871,7 +945,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ascend-sf-state-chapter/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuascendpresident@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ascend-chapter-at-sf-state"
+  }
  },
  {
   "id": "oc_sfsu_aspire",
@@ -901,7 +979,11 @@
     "label": "Website",
     "url": "http://aspire.sfsu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aspire@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/aspire"
+  }
  },
  {
   "id": "oc_sfsu_asian_american_christian_fellowship",
@@ -940,7 +1022,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/groups/aacfsfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aacf.sanfranciscostate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asian-american-christian-fellowship"
+  }
  },
  {
   "id": "oc_sfsu_asian_student_union",
@@ -975,7 +1061,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/asianstudentunion"
    }
-  ]
+  ],
+  "contact": {
+   "email": "membership.asusfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asian-student-union"
+  }
  },
  {
   "id": "oc_sfsu_aslgators",
@@ -1001,7 +1091,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/aslgators"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aslgatorclub@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/aslgators"
+  }
  },
  {
   "id": "oc_sfsu_associated_students_incorporated",
@@ -1065,7 +1159,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_artgallery_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "artgallery@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asartgallery"
+  }
  },
  {
   "id": "oc_sfsu_asi_board_of_directors",
@@ -1159,7 +1257,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_eros_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "erosdirector@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asi-educational-referral-organization-for-sexuality"
+  }
  },
  {
   "id": "oc_sfsu_environmentalresourcecenter",
@@ -1193,7 +1295,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_erc_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "erc@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/environmentalresourcecenter"
+  }
  },
  {
   "id": "oc_sfsu_asi_legal_resource_center",
@@ -1227,7 +1333,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_lrc_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lrc@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asi-legal-resource-center"
+  }
  },
  {
   "id": "oc_sfsu_asi_programs_services",
@@ -1257,7 +1367,11 @@
     "label": "Website",
     "url": "http://asi.sfsu.edu/productions/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "productionsassistant@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asi-programs-services"
+  }
  },
  {
   "id": "oc_sfsu_asi_project_connect",
@@ -1291,7 +1405,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_project.connect_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aspcoutreach@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asi-project-connect"
+  }
  },
  {
   "id": "oc_sfsu_asi_project_rebound",
@@ -1321,7 +1439,11 @@
     "label": "Website",
     "url": "https://asi.sfsu.edu/project-rebound/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "projectrebound@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asi-project-rebound"
+  }
  },
  {
   "id": "oc_sfsu_associated_students_queer_and_trans_resource_center",
@@ -1363,7 +1485,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/as.qtrc.sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "qtrc@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/associated-students-queer-and-trans-resource-center"
+  }
  },
  {
   "id": "oc_sfsu_rackncue",
@@ -1397,7 +1523,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_rackncue_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gmmanager@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/rackncue"
+  }
  },
  {
   "id": "oc_sfsu_richard_oakes_multicultural_center",
@@ -1466,7 +1596,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_thedepot_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thedepot@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/thedepot"
+  }
  },
  {
   "id": "oc_sfsu_asi_women_s_center",
@@ -1500,7 +1634,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/as_womenscenter_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womencenter@asi.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/asi-women-s-center"
+  }
  },
  {
   "id": "oc_sfsu_acm_student_chapter_at_sfsu",
@@ -1534,7 +1672,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/acm.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acm.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/acm-student-chapter-at-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_aes",
@@ -1561,7 +1703,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/aes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aes@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/aes"
+  }
  },
  {
   "id": "oc_sfsu_awsatsfsu",
@@ -1587,7 +1733,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/awsatsfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awsatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/awsatsfsu"
+  }
  },
  {
   "id": "oc_sfsu_badminton_club",
@@ -1613,7 +1763,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/badminton-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eli14@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/badminton-club"
+  }
  },
  {
   "id": "oc_sfsu_food_shelter_success",
@@ -1643,7 +1797,11 @@
     "label": "Website",
     "url": "https://basicneeds.sfsu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "basicneeds@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/food_shelter_success"
+  }
  },
  {
   "id": "oc_sfsu_bosa",
@@ -1673,7 +1831,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/projectbosa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bosa.studios1@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/bosa"
+  }
  },
  {
   "id": "oc_sfsu_beta_alpha_psi",
@@ -1704,7 +1866,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu.bap/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rliu12@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/beta-alpha-psi"
+  }
  },
  {
   "id": "oc_sfsu_bit_bots",
@@ -1734,7 +1900,11 @@
     "label": "Discord",
     "url": "https://discord.gg/gfEZMJYvGg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rlopez34@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/bit-bots"
+  }
  },
  {
   "id": "oc_sfsu_black_excellence_in_science_technology_engineering",
@@ -1767,8 +1937,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/sfsubestem"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bestemsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bestemsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/black-excellence-in-science-technology-engineering"
+  }
  },
  {
   "id": "oc_sfsu_black_student_union",
@@ -1801,7 +1979,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsubsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsubsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/black-student-union"
+  }
  },
  {
   "id": "oc_sfsu_blackunitycenter",
@@ -1835,7 +2017,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/blackunitysfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bucketmanyweather@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/blackunitycenter"
+  }
  },
  {
   "id": "oc_sfsu_bravensfsu",
@@ -1873,7 +2059,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BeBraven"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dpaniagua1@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/bravensfsu"
+  }
  },
  {
   "id": "oc_sfsu_brownissuesatsfstate",
@@ -1903,7 +2093,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/brownissues_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsubrownissues@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/brownissuesatsfstate"
+  }
  },
  {
   "id": "oc_sfsu_sfsuedu",
@@ -1941,7 +2135,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFStateCoB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lfcobempowermentgroup@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsuedu"
+  }
  },
  {
   "id": "oc_sfsu_campus_recreation",
@@ -1983,7 +2181,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFSUcampusrec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dboliver@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/campus-recreation"
+  }
  },
  {
   "id": "oc_sfsu_career_services_leadership_development",
@@ -2051,7 +2253,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/cheeratsfstate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aminor@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cheer-at-sf-state"
+  }
  },
  {
   "id": "oc_sfsu_chemistry_and_biochemistry_student_association",
@@ -2111,6 +2317,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/xposf"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/xposf"
    }
   ]
  },
@@ -2146,7 +2356,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu.cadclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mollymcmanus@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsucadclub"
+  }
  },
  {
   "id": "oc_sfsu_cinecolloquium",
@@ -2172,7 +2386,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/cinecolloquium"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuconference@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cinecolloquium"
+  }
  },
  {
   "id": "oc_sfsu_cinemacollective",
@@ -2203,7 +2421,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cinemacollective_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cinemacollectiveatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cinemacollective"
+  }
  },
  {
   "id": "oc_sfsu_classics_students_association",
@@ -2234,10 +2456,14 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/csa.sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csa.sfsu13@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/classics-students-association"
+  }
  },
  {
-  "id": "og_sfsu_college_panhellenic_conference",
+  "id": "oc_sfsu_college_panhellenic_conference",
   "name": "College Panhellenic Conference",
   "logo": {
    "emoji": "CP",
@@ -2303,7 +2529,11 @@
     "label": "X",
     "url": "http://twitter.com/SFSUCSB"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csborganization@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/college-students-in-broadcasting"
+  }
  },
  {
   "id": "oc_sfsu_comic_arts_club",
@@ -2337,7 +2567,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_comicarts/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsucomicarts@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/comic-arts-club"
+  }
  },
  {
   "id": "oc_sfsu_cis",
@@ -2363,7 +2597,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/cis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cissfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cis"
+  }
  },
  {
   "id": "oc_sfsu_caps",
@@ -2397,7 +2635,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsucaps/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "caps@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/caps"
+  }
  },
  {
   "id": "oc_sfsu_counseling_student_association",
@@ -2423,7 +2665,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/counseling-student-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "coun-l-request@lists.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/counseling-student-association"
+  }
  },
  {
   "id": "oc_sfsu_createsfstate",
@@ -2457,7 +2703,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstate_create/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lmyslak@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/createsfstate"
+  }
  },
  {
   "id": "oc_sfsu_cricketsfsu",
@@ -2486,8 +2736,16 @@
    {
     "label": "Website",
     "url": "https://https//www.instagram.com/sfstate_cricket"
+   },
+   {
+    "label": "Website",
+    "url": "https://https//www.instagram.com/sfstate_cricket"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ddomadiya@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cricketsfsu"
+  }
  },
  {
   "id": "oc_sfsu_cube_club",
@@ -2513,7 +2771,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/cube-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mdargani@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cube-club"
+  }
  },
  {
   "id": "oc_sfsu_cybersec",
@@ -2539,7 +2801,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/cybersec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsucyberclub@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/cybersec"
+  }
  },
  {
   "id": "oc_sfsu_sfsudanceelite",
@@ -2569,7 +2835,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsudanceelite/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsudanceeliteteam@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsudanceelite"
+  }
  },
  {
   "id": "oc_sfsu_dancing_divas_of_state",
@@ -2599,7 +2869,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/dancingdivas.sf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dancingdivas.art@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/dancing-divas-of-state"
+  }
  },
  {
   "id": "oc_sfsu_dean_of_students_staff",
@@ -2641,41 +2915,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCwA4UHvwP24bYFWLNyZ0x3g"
    }
-  ]
- },
- {
-  "id": "oc_sfsu_delta_kappa_alpha",
-  "name": "Delta Kappa Alpha",
-  "logo": {
-   "emoji": "DK",
-   "hue": 280,
-   "url": "https://se-images.campuslabs.com/clink/images/773cf410-49c1-41f1-90f0-17ff6bf904fda5a35762-8f15-4937-adab-bcbd5b6b4dcc.png?preset=small-sq"
-  },
-  "type": "club",
-  "schoolId": "s_sfsu",
-  "verified": false,
-  "description": "National, Honorary, Values-Based, Professional, Gender-Inclusive, Cinema Society.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sfsu.campuslabs.com/engage/organization/delta-kappa-alpha"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/dkasfsu/"
-   },
-   {
-    "label": "YouTube",
-    "url": "https://www.youtube.com/channel/UCcW4D4hEwjkvhtIhRd9EcDg?app=desktop"
-   }
-  ]
+  ],
+  "contact": {
+   "email": "dos@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/dean-of-students-staff"
+  }
  },
  {
   "id": "oc_sfsu_deltakappasigma",
@@ -2713,7 +2957,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/delta-kappa-sigma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsudeltakappasigma@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/deltakappasigma"
+  }
  },
  {
   "id": "og_sfsu_delta_sigma_pi",
@@ -2754,7 +3002,11 @@
     "label": "X",
     "url": "http://twitter.com/DSP_SFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dsp.deltaomicron.president@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsudsp_org"
+  }
  },
  {
   "id": "oc_sfsu_dprc",
@@ -2783,7 +3035,11 @@
     "label": "Website",
     "url": "https://access.sfsu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afisk@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/dprc"
+  }
  },
  {
   "id": "oc_sfsu_drawing_practice_club",
@@ -2851,7 +3107,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@dreamsfsu7339"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dreamatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/dream_sfsu"
+  }
  },
  {
   "id": "oc_sfsu_dream_resource_center",
@@ -2888,7 +3148,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFSUDRC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "drc@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/dream-resource-center"
+  }
  },
  {
   "id": "oc_sfsu_eeri",
@@ -2940,7 +3204,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/economics-students-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuesa@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/economics-students-association"
+  }
  },
  {
   "id": "oc_sfsu_eop",
@@ -2974,7 +3242,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstateeop/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rherrera8@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/eop"
+  }
  },
  {
   "id": "oc_sfsu_eopso",
@@ -3005,7 +3277,11 @@
     "label": "X",
     "url": "http://twitter.com/twitter.com/EOPSOatSFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rherrera8@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/eopso"
+  }
  },
  {
   "id": "oc_sfsu_engineering_students_advisory_board",
@@ -3035,7 +3311,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/esabsfstate/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "esabsfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/engineering-students-advisory-board"
+  }
  },
  {
   "id": "oc_sfsu_enterprise_risk_management",
@@ -3091,7 +3371,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/eesasfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "malemayehu@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/eritrean-ethiopian-student-association"
+  }
  },
  {
   "id": "oc_sfsu_experimental_college",
@@ -3125,7 +3409,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstateexco/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfstateexco@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/experimental-college"
+  }
  },
  {
   "id": "oc_sfsu_fashion_network_association",
@@ -3155,7 +3443,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/fnasf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fashionnetworkassociation@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fashion-network-association"
+  }
  },
  {
   "id": "oc_sfsu_fca",
@@ -3185,7 +3477,11 @@
     "label": "Website",
     "url": "https://www.fca.org/what-is-fca"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fcasfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fca"
+  }
  },
  {
   "id": "oc_sfsu_none",
@@ -3227,7 +3523,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCm__nOzoMxNpT_tNumSRMqA?view_as=subscriber"
    }
-  ]
+  ],
+  "contact": {
+   "email": "f3sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/none"
+  }
  },
  {
   "id": "oc_sfsu_figma_at_sfsu",
@@ -3253,7 +3553,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/figma-at-sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "figmaatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/figma-at-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_fame",
@@ -3283,7 +3587,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_fame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fame@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fame"
+  }
  },
  {
   "id": "oc_sfsu_fintechclub",
@@ -3317,7 +3625,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/fin.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "finsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fintechclub"
+  }
  },
  {
   "id": "oc_sfsu_fye",
@@ -3346,7 +3658,11 @@
     "label": "Website",
     "url": "https://ueap.sfsu.edu/fye"
    }
-  ]
+  ],
+  "contact": {
+   "email": "firstyear@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fye"
+  }
  },
  {
   "id": "oc_sfsu_fcr",
@@ -3376,7 +3692,11 @@
     "label": "Website",
     "url": "https://fogcityrocketry.com/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gjanjua@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fcr"
+  }
  },
  {
   "id": "oc_sfsu_foodclub",
@@ -3410,7 +3730,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@FoodClub_SFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "foodclubsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/foodclub"
+  }
  },
  {
   "id": "oc_sfsu_focf_sfsu",
@@ -3469,7 +3793,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/fpc_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fpcsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/fpc"
+  }
  },
  {
   "id": "oc_sfsu_gabriela_sfsu",
@@ -3499,7 +3827,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/gabrielasfsu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gabrielasfsu@proton.me",
+   "source": "https://sfsu.campuslabs.com/engage/organization/gabriela-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_gamedevelopmentclub",
@@ -3533,7 +3865,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/game-development-club-at-sf-state/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsugamedev@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/gamedevelopmentclub"
+  }
  },
  {
   "id": "oc_sfsu_ggsfsu",
@@ -3541,7 +3877,7 @@
   "logo": {
    "emoji": "GG",
    "hue": 216,
-   "url": "https://se-images.campuslabs.com/clink/images/ab34c508-68c9-430a-99e7-6b386ab7d0ebbf8568a4-884b-4db8-8c56-e5ac37bc5222.png?preset=small-sq"
+   "url": "https://se-images.campuslabs.com/clink/images/2b6ccf24-f433-4c66-b7cd-5ea3f35ee6f780bf3ab6-740b-4d74-adda-71edb36c4de6.png?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_sfsu",
@@ -3563,7 +3899,11 @@
     "label": "Website",
     "url": "https://beacons.ai/ggsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ggsfsu@outlook.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ggsfsu"
+  }
  },
  {
   "id": "oc_sfsu_newman_club",
@@ -3620,7 +3960,11 @@
     "label": "Discord",
     "url": "https://discord.gg/bEVBp3ZRFk"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gatorgreasers@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/gatorgreasers"
+  }
  },
  {
   "id": "oc_sfsu_gatorwomensrugby",
@@ -3646,7 +3990,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/gatorwomensrugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womensclubrugby@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/gatorwomensrugby"
+  }
  },
  {
   "id": "oc_sfsu_gators_rugby_football_club",
@@ -3693,7 +4041,11 @@
     "label": "X",
     "url": "http://twitter.com/@sfstaterugbyclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rugby@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/gators-rugby-football-club"
+  }
  },
  {
   "id": "oc_sfsu_gcoe_sfsu",
@@ -3744,7 +4096,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/genb"
    }
-  ]
+  ],
+  "contact": {
+   "email": "genb.organization@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/genb"
+  }
  },
  {
   "id": "oc_sfsu_general_union_of_palestine_students",
@@ -3770,7 +4126,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/general-union-of-palestine-students"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsugups415@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/general-union-of-palestine-students"
+  }
  },
  {
   "id": "oc_sfsu_girls_craft_club",
@@ -3852,7 +4212,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/gospel-gators"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steague1@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/gospel-gators"
+  }
  },
  {
   "id": "oc_sfsu_grabai",
@@ -3882,7 +4246,11 @@
     "label": "Sign-up form",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSdrvUPQIAHgmRQfxG005GGsXrBbCAR4DM9XQeoMwP5lhlgoeQ/viewform?usp=header"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ezubritsky@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/grabai"
+  }
  },
  {
   "id": "oc_sfsu_hausblaque",
@@ -3908,7 +4276,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/hausblaque"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hausblaque@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/hausblaque"
+  }
  },
  {
   "id": "oc_sfsu_healthedu",
@@ -3933,7 +4305,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/healthedu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmccartney@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/healthedu"
+  }
  },
  {
   "id": "oc_sfsu_health_promotion_wellness",
@@ -3967,7 +4343,11 @@
     "label": "X",
     "url": "http://twitter.com/sfstatecares"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hpw@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/health-promotion-wellness"
+  }
  },
  {
   "id": "oc_sfsu_activitiessfsuedu",
@@ -3993,7 +4373,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/activitiessfsuedu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsalcedo2@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/activitiessfsuedu"
+  }
  },
  {
   "id": "oc_sfsu_h4hinternational",
@@ -4022,8 +4406,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/h4hsanfrancisco"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/h4hsanfrancisco"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu@h4hinternational.org",
+   "source": "https://sfsu.campuslabs.com/engage/organization/h4hinternational"
+  }
  },
  {
   "id": "oc_sfsu_history_students_association",
@@ -4057,7 +4449,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@sfsu_hsa/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuhsa@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/history-students-association"
+  }
  },
  {
   "id": "oc_sfsu_hms",
@@ -4083,6 +4479,10 @@
    {
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/hms"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstatehtm?obrf=MWdnaW0yMzZjM3hrOQ%3D%3D"
    },
    {
     "label": "Instagram",
@@ -4123,7 +4523,11 @@
     "label": "X",
     "url": "http://twitter.com/ideasSFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "drc@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/improving-dreams-equity-access-and-success"
+  }
  },
  {
   "id": "oc_sfsu_indian_student_association",
@@ -4156,8 +4560,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/isa.sfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/isa.sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "indianstudentassociation.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/indian-student-association"
+  }
  },
  {
   "id": "oc_sfsu_industrial_designers_society_of_america",
@@ -4183,7 +4595,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/industrial-designers-society-of-america"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kmukherjee@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/industrial-designers-society-of-america"
+  }
  },
  {
   "id": "oc_sfsu_iopsa",
@@ -4213,7 +4629,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/iopsa.sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "iopsa.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/iopsa"
+  }
  },
  {
   "id": "oc_sfsu_information_management_systems_association",
@@ -4248,7 +4668,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/imsasf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "imsa.lfcob.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/information-management-systems-association"
+  }
  },
  {
   "id": "oc_sfsu_institute_of_electrical_and_electronic_engineers",
@@ -4279,7 +4703,11 @@
     "label": "Discord",
     "url": "https://discord.gg/7VVcR4H2VP"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu.ieee@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/institute-of-electrical-and-electronic-engineers"
+  }
  },
  {
   "id": "oc_sfsu_ite_sfsu",
@@ -4313,10 +4741,14 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ite.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ite.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ite_sfsu"
+  }
  },
  {
-  "id": "og_sfsu_ifc",
+  "id": "oc_sfsu_ifc",
   "name": "Interfraternity Council",
   "logo": {
    "emoji": "IC",
@@ -4339,7 +4771,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/ifc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bmungaray@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ifc"
+  }
  },
  {
   "id": "oc_sfsu_international_educational_exchange_council",
@@ -4378,7 +4814,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sfsuieec"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ieec@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/international-educational-exchange-council"
+  }
  },
  {
   "id": "oc_sfsu_international_relations_students_association",
@@ -4416,7 +4856,11 @@
     "label": "X",
     "url": "http://twitter.com/irsa_sf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "irsa@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/international-relations-students-association"
+  }
  },
  {
   "id": "oc_sfsu_intervarsity_christian_fellowship",
@@ -4443,7 +4887,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/intervarsity-christian-fellowship"
    }
-  ]
+  ],
+  "contact": {
+   "email": "darreola@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/intervarsity-christian-fellowship"
+  }
  },
  {
   "id": "oc_sfsu_ipt",
@@ -4510,7 +4958,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_isa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isa@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/isa"
+  }
  },
  {
   "id": "oc_sfsu_jpaullibrary",
@@ -4548,7 +5000,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sfstatelibrary"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ask@sfsu.libanswers.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/jpaullibrary"
+  }
  },
  {
   "id": "oc_sfsu_jabulani_the_black_african_legacy_rite",
@@ -4579,7 +5035,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/jabulani.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jabulanisfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/jabulani-the-black-african-legacy-rite"
+  }
  },
  {
   "id": "oc_sfsu_japancareerclub",
@@ -4613,7 +5073,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/jsacareer_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.sfsu@jsacareer.org",
+   "source": "https://sfsu.campuslabs.com/engage/organization/japancareerclub"
+  }
  },
  {
   "id": "oc_sfsu_japanese_student_association",
@@ -4644,7 +5108,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/jsa_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jsasocial.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/japanese-student-association"
+  }
  },
  {
   "id": "oc_sfsu_journalismclub",
@@ -4674,7 +5142,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/journalism_club_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "journalismclubatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/journalismclub"
+  }
  },
  {
   "id": "oc_sfsu_kappa_psi_epsilon",
@@ -4708,7 +5180,11 @@
     "label": "X",
     "url": "http://twitter.com/kpsie_beta"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kpsiebetaeboard@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/kappa-psi-epsilon"
+  }
  },
  {
   "id": "og_sfsu_kappa_sigma",
@@ -4774,8 +5250,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ksasfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ksasfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfksa27@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/kinesiology-student-association"
+  }
  },
  {
   "id": "oc_sfsu_koinonia",
@@ -4809,6 +5293,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/sfsukoinonia"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/sfsukoinonia"
    }
   ]
  },
@@ -4836,7 +5324,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/la-raza-student-organization"
    }
-  ]
+  ],
+  "contact": {
+   "email": "larazasfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/la-raza-student-organization"
+  }
  },
  {
   "id": "oc_sfsu_lfcob",
@@ -4895,8 +5387,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/lta_deltatau"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/lta_deltatau"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lta.dtau.president@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ltadeltatau"
+  }
  },
  {
   "id": "og_sfsu_lambda_theta_nu_sorority_inc",
@@ -4934,7 +5434,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/lambdathetanu86"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphaetapresident@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/lambda-theta-nu-sorority-inc"
+  }
  },
  {
   "id": "og_sfsu_lambda_theta_phi_latin_fraternity_inc",
@@ -4967,8 +5471,20 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sf_lambdas"
+   },
+   {
+    "label": "Website",
+    "url": "https://linktr.ee/gzlambdas?ltsid=874d1216-8902-4ae5-8797-f80bbfdfe48a"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sf_lambdas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gzlambdas.president@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/lambda-theta-phi-latin-fraternity-inc"
+  }
  },
  {
   "id": "oc_sfsu_latinasinstem",
@@ -4994,10 +5510,14 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/latinasinstem"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latinasinstemsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/latinasinstem"
+  }
  },
  {
-  "id": "og_sfsu_latino_greek_council",
+  "id": "oc_sfsu_latino_greek_council",
   "name": "Latine Greek Council",
   "logo": {
    "emoji": "LG",
@@ -5024,7 +5544,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/lgc_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu.lgc@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/latino-greek-council"
+  }
  },
  {
   "id": "oc_sfsu_latinoaxflimclub",
@@ -5054,7 +5578,11 @@
     "label": "Website",
     "url": "https://linktr.ee/ltn_film_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "raflores@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/latinoaxflimclub"
+  }
  },
  {
   "id": "oc_sfsu_latinxqueerclub",
@@ -5080,7 +5608,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/latinxqueerclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ltnxqc@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/latinxqueerclub"
+  }
  },
  {
   "id": "oc_sfsu_lcalive",
@@ -5139,7 +5671,11 @@
     "label": "X",
     "url": "http://twitter.com/lfssfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lfs.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/lfs-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_liberal_studies_student_organization",
@@ -5174,7 +5710,11 @@
     "label": "X",
     "url": "http://twitter.com/@sfsu_LSSO"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lssoatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/liberal-studies-student-organization"
+  }
  },
  {
   "id": "oc_sfsu_marketing_association",
@@ -5208,7 +5748,11 @@
     "label": "X",
     "url": "http://twitter.com/sfsuma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsumasocial@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/marketing-association"
+  }
  },
  {
   "id": "oc_sfsu_matesol",
@@ -5235,7 +5779,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/matesol"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ychiu2@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/matesol"
+  }
  },
  {
   "id": "oc_sfsu_masters_of_social_work_council",
@@ -5262,7 +5810,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/masters-of-social-work-council"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arogge@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/masters-of-social-work-council"
+  }
  },
  {
   "id": "oc_sfsu_mathematistas",
@@ -5291,7 +5843,11 @@
     "label": "Website",
     "url": "https://sites.google.com/view/sfsumathematistas/home"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsumathematistas@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/mathematistas"
+  }
  },
  {
   "id": "oc_sfsu_mediacreativesociety",
@@ -5321,7 +5877,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mcs.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcs.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/mediacreativesociety"
+  }
  },
  {
   "id": "oc_sfsu_wwwmedlifemovement",
@@ -5359,7 +5919,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TheMEDLIFEMovement"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsumedlife.org@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/wwwmedlifemovement"
+  }
  },
  {
   "id": "oc_sfsu_men_s_volleyball",
@@ -5388,8 +5952,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_mcvb"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_mcvb"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acmelak@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/men-s-volleyball"
+  }
  },
  {
   "id": "oc_sfsu_mensoccer",
@@ -5419,7 +5991,11 @@
     "label": "Website",
     "url": "https://sfsu.campuslabs.com/engage/organization/mensoccer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mensoccerclub@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/mensoccer"
+  }
  },
  {
   "id": "oc_sfsu_sfsuminiaturesclub",
@@ -5479,7 +6055,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_mma_club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "azamora@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/mma-club-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_movimiento_estudiantil_chican_de_aztlan",
@@ -5513,11 +6093,19 @@
    {
     "label": "X",
     "url": "http://twitter.com/mechadesf"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/meladesanpancho"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mechadesanpancho@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/movimiento-estudiantil-chican-de-aztlan"
+  }
  },
  {
-  "id": "og_sfsu_multicultural_greek_council",
+  "id": "oc_sfsu_multicultural_greek_council",
   "name": "Multicultural Greek Council",
   "logo": {
    "emoji": "MG",
@@ -5571,7 +6159,11 @@
     "label": "X",
     "url": "http://twitter.com/SFStateMuseum"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mssa@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/museum-studies-student-association"
+  }
  },
  {
   "id": "oc_sfsu_musicstudentalliance",
@@ -5605,7 +6197,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/musicstudentalliance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "musicstudentalliance.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/musicstudentalliance"
+  }
  },
  {
   "id": "oc_sfsu_msa",
@@ -5640,7 +6236,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/msasfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsumsaboard@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/msa"
+  }
  },
  {
   "id": "oc_sfsu_mtcsfsu",
@@ -5670,7 +6270,11 @@
     "label": "Website",
     "url": "http://muslimtech.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mtcsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/mtcsfsu"
+  }
  },
  {
   "id": "oc_sfsu_national_association_of_black_accountant",
@@ -5711,6 +6315,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/onenaba"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_naba"
    }
   ]
  },
@@ -5742,8 +6350,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsunphc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsunphc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsunphc1@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/national-pan-hellenic-council"
+  }
  },
  {
   "id": "oc_sfsu_nppa_org_student_chapters",
@@ -5777,7 +6393,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NPPAatSFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nppaatsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/nppa-org-student-chapters"
+  }
  },
  {
   "id": "oc_sfsu_national_society_of_black_engineers",
@@ -5818,8 +6438,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/NSBE1975"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_nsbe/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ekigoye@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/national-society-of-black-engineers"
+  }
  },
  {
   "id": "oc_sfsu_nsslha",
@@ -5856,8 +6484,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/nsslha"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nsslha_sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsshla.sfsu@outlook.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/nsslha"
+  }
  },
  {
   "id": "oc_sfsu_net_impact_at_sfsu",
@@ -5892,7 +6528,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/netimpact.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "netimpactsfsu25@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/net-impact-at-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_new_student_programs",
@@ -5922,7 +6562,11 @@
     "label": "Website",
     "url": "https://newstudentprograms.sfsu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsp@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/new-student-programs"
+  }
  },
  {
   "id": "oc_sfsu_nikkeistudentunion",
@@ -5952,7 +6596,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sf_nsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsu.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/nikkeistudentunion"
+  }
  },
  {
   "id": "og_sfsu_nu_alpha_kappa_fraternity_inc",
@@ -5982,7 +6630,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsunaks/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alphabeta@nakinc.org",
+   "source": "https://sfsu.campuslabs.com/engage/organization/nu-alpha-kappa-fraternity-inc"
+  }
  },
  {
   "id": "oc_sfsu_nursing_students_association",
@@ -6020,7 +6672,11 @@
     "label": "X",
     "url": "http://twitter.com/nsasfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.sfsunsa@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/nursing-students-association"
+  }
  },
  {
   "id": "oc_sfsu_sustainability",
@@ -6058,7 +6714,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sustainsfstate/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kordesch@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sustainability"
+  }
  },
  {
   "id": "oc_sfsu_openverseclub",
@@ -6088,7 +6748,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@OpenVerseClub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuovc@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/openverseclub"
+  }
  },
  {
   "id": "oc_sfsu_operation_smile_at_sf_state",
@@ -6122,7 +6786,11 @@
     "label": "Facebook",
     "url": "http://facebook.com/facebook.com/operation-smile-at-sf-state"
    }
-  ]
+  ],
+  "contact": {
+   "email": "operationsmile.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/operation-smile-at-sf-state"
+  }
  },
  {
   "id": "oc_sfsu_ossa",
@@ -6148,7 +6816,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/ossa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "epace@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/ossa"
+  }
  },
  {
   "id": "oc_sfsu_pisa",
@@ -6178,7 +6850,11 @@
     "label": "Website",
     "url": "https://linktr.ee/pisasfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pisasfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pisa"
+  }
  },
  {
   "id": "oc_sfsu_pakistani_student_association",
@@ -6204,7 +6880,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/pakistani-student-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psa.sfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pakistani-student-association"
+  }
  },
  {
   "id": "oc_sfsu_perfectpair",
@@ -6242,7 +6922,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/perfectpairorg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu@perfectpair.org",
+   "source": "https://sfsu.campuslabs.com/engage/organization/perfectpair"
+  }
  },
  {
   "id": "oc_sfsu_phi_alpha_honors",
@@ -6276,34 +6960,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/PhiAlphaHS"
    }
-  ]
- },
- {
-  "id": "og_sfsu_phi_kappa_tau",
-  "name": "Phi Kappa Tau",
-  "logo": {
-   "emoji": "PK",
-   "hue": 312,
-   "url": "https://se-images.campuslabs.com/clink/images/3671aff4-baaf-4dd1-960e-bc4ec5dd1d6baa5dcd3f-5ff4-4037-a99d-e57fcc5b53d5.png?preset=small-sq"
-  },
-  "type": "greek",
-  "schoolId": "s_sfsu",
-  "parent": "Fraternity/Sorority Life ",
-  "verified": false,
-  "description": "MissionThe mission of Phi Kappa Tau is to champion a lifelong commitment to brotherhood, learning, ethical leadership and exemplary character.The vision of Phi Kappa Tau is to be recognized as a leadership organization that binds men together.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sfsu.campuslabs.com/engage/organization/phi-kappa-tau"
-   }
-  ]
+  ],
+  "contact": {
+   "email": "asaunders@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/phi_alpha_honors"
+  }
  },
  {
   "id": "og_sfsu_phi_sigma_sigma",
@@ -6334,7 +6995,11 @@
     "label": "Website",
     "url": "https://www.onephisigmasigma.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "delta.gamma.archon@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/phi-sigma-sigma"
+  }
  },
  {
   "id": "oc_sfsu_philosophy_club_at_sfsu",
@@ -6364,7 +7029,11 @@
     "label": "Website",
     "url": "https://linktr.ee/phi.club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "crileynorman@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/philosophy-club-at-sfsu"
+  }
  },
  {
   "id": "oc_sfsu_pickleball_sfsu",
@@ -6398,7 +7067,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pickleball.sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pickleball.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pickleball_sfsu"
+  }
  },
  {
   "id": "oc_sfsu_pilipinx_american_collegiate_endeavor",
@@ -6432,7 +7105,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pacesfsu1967/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pacesfsu.execdirector@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pilipinx-american-collegiate-endeavor"
+  }
  },
  {
   "id": "oc_sfsu_pcts_sf_state",
@@ -6489,7 +7166,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsuplayersclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dwoods@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/player-s-club"
+  }
  },
  {
   "id": "oc_sfsu_sfsupssa",
@@ -6515,7 +7196,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/sfsupssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pssasfsu@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsupssa"
+  }
  },
  {
   "id": "oc_sfsu_pre_dental_society",
@@ -6546,7 +7231,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/predentalsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu.pds@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pre-dental-society"
+  }
  },
  {
   "id": "oc_sfsu_premedsatsfstate",
@@ -6580,7 +7269,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/premedsatsfstate/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "premedsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/premedsatsfstate"
+  }
  },
  {
   "id": "oc_sfsu_pre_physician_assistant_society",
@@ -6606,7 +7299,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/pre-physician-assistant-society"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuppas@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pre-physician-assistant-society"
+  }
  },
  {
   "id": "oc_sfsu_pvs",
@@ -6632,7 +7329,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/pvs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pvs.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/pvs"
+  }
  },
  {
   "id": "oc_sfsu_project_shine_at_san_francisco_state_university",
@@ -6659,7 +7360,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/project-shine-at-san-francisco-state-university"
    }
-  ]
+  ],
+  "contact": {
+   "email": "projectshine@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/project-shine-at-san-francisco-state-university"
+  }
  },
  {
   "id": "oc_sfsu_providing_opportunity_for_women",
@@ -6692,8 +7397,16 @@
    {
     "label": "X",
     "url": "http://twitter.com/powsfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/powsfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pow.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/providing-opportunity-for-women"
+  }
  },
  {
   "id": "oc_sfsu_psichi",
@@ -6728,7 +7441,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_psichi/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psichi.sfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/psichi"
+  }
  },
  {
   "id": "og_sfsu_the_interested_men_of_psi_chi_omega",
@@ -6755,7 +7472,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/the-interested-men-of-psi-chi-omega"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jmiranda7@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/the-interested-men-of-psi-chi-omega"
+  }
  },
  {
   "id": "oc_sfsu_public_health_organization_of_graduate_students",
@@ -6785,7 +7506,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/phogsatsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phogsatsfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/public-health-organization-of-graduate-students"
+  }
  },
  {
   "id": "oc_sfsu_public_health_scholars_network",
@@ -6819,7 +7544,11 @@
     "label": "X",
     "url": "http://twitter.com/HESA_sfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phstudentorgs@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/public-health-scholars-network"
+  }
  },
  {
   "id": "oc_sfsu_qcc",
@@ -6849,7 +7578,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/queercinemacoalition/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "qccsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/qcc"
+  }
  },
  {
   "id": "oc_sfsu_recreation_parks_and_tourism",
@@ -6879,7 +7612,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rptclub_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rptc.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/recreation-parks-and-tourism"
+  }
  },
  {
   "id": "oc_sfsu_residential_housing_association",
@@ -6905,7 +7642,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/residential-housing-association"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rhaboard@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/residential-housing-association"
+  }
  },
  {
   "id": "oc_sfsu_residential_life",
@@ -6964,7 +7705,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/resistusledwarsfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "resistusledwarsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/resistusledwarsfsu"
+  }
  },
  {
   "id": "oc_sfsu_rho_delta_chi",
@@ -7024,7 +7769,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/really_nice_cues"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acarlos1@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/billiards_club"
+  }
  },
  {
   "id": "oc_sfsu_rock_climbing_club",
@@ -7050,7 +7799,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/rock_climbing_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ogalarza@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/rock_climbing_club"
+  }
  },
  {
   "id": "oc_sfsu_san_francisco_hillel",
@@ -7088,7 +7841,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFHillel/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "avery@sfhillel.org",
+   "source": "https://sfsu.campuslabs.com/engage/organization/san-francisco-hillel"
+  }
  },
  {
   "id": "oc_sfsu_sfpunjabis",
@@ -7114,7 +7871,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/sfpunjabis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfpunjabis@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfpunjabis"
+  }
  },
  {
   "id": "oc_sfsu_sfstategators",
@@ -7147,7 +7908,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFStateWRSTL"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jsheared@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfstategators"
+  }
  },
  {
   "id": "oc_sfsu_upd",
@@ -7185,7 +7950,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstatepd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "upd@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/upd"
+  }
  },
  {
   "id": "oc_sfsu_sfstatepcma",
@@ -7211,7 +7980,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/sfstatepcma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acarrillo14@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfstatepcma"
+  }
  },
  {
   "id": "oc_sfsu_sfyd_sfstate",
@@ -7249,7 +8022,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFYoungDemocrats"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sanfranciscoyoungdems.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfyd_sfstate"
+  }
  },
  {
   "id": "oc_sfsu_sf_hacks",
@@ -7291,7 +8068,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/sf-hacks-sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfhacksteam@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sf-hacks"
+  }
  },
  {
   "id": "oc_sfsu_sfsudiningservices",
@@ -7330,7 +8111,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sfstatediningservices"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alexander.olaes@sodexo.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsudiningservices"
+  }
  },
  {
   "id": "oc_sfsu_a",
@@ -7356,7 +8141,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/a"
    }
-  ]
+  ],
+  "contact": {
+   "email": "924449120@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/a"
+  }
  },
  {
   "id": "oc_sfsu_sfsuartclub",
@@ -7390,7 +8179,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_artclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuartclub25@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsuartclub"
+  }
  },
  {
   "id": "oc_sfsu_sfsu_bhangra_giddha",
@@ -7419,7 +8212,7 @@
   ]
  },
  {
-  "id": "oc_sfsu__",
+  "id": "oc_sfsu_sfsu_future_dentists",
   "name": "SFSU Future Dentists",
   "logo": {
    "emoji": "SF",
@@ -7446,7 +8239,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsufuturedentists/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsufuturedentists@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/--"
+  }
  },
  {
   "id": "oc_sfsu_dseip",
@@ -7472,7 +8269,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/dseip"
    }
-  ]
+  ],
+  "contact": {
+   "email": "balkachak@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/dseip"
+  }
  },
  {
   "id": "oc_sfsu_queer_alliance",
@@ -7503,7 +8304,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/qasfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "qasfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/queer-alliance"
+  }
  },
  {
   "id": "oc_sfsu_solargatorsregatta",
@@ -7559,7 +8364,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsuclub_wvb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "womensvballclubsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/women-s-volleyball"
+  }
  },
  {
   "id": "oc_sfsu_womenssoccerclub",
@@ -7585,7 +8394,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/womenssoccerclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "slentz@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/womenssoccerclub"
+  }
  },
  {
   "id": "oc_sfsu_snag",
@@ -7615,7 +8428,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/snag_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "snag.members@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/snag"
+  }
  },
  {
   "id": "og_sfsu_sigma_gamma_rho_sorority_inc",
@@ -7649,7 +8466,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/piphi.rydas.9"
    }
-  ]
+  ],
+  "contact": {
+   "email": "piphi.sgrho@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sigma-gamma-rho-sorority-inc"
+  }
  },
  {
   "id": "og_sfsu_sigma_lambda_gamma",
@@ -7686,7 +8507,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsugammas/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsugammas.president@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sigma-lambda-gamma"
+  }
  },
  {
   "id": "og_sfsu_sigma_omicron_pi",
@@ -7730,8 +8555,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/sf.sopi"
+   },
+   {
+    "label": "Website",
+    "url": "https://sfsopi.carrd.co/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "president.sfsusopi@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sopi"
+  }
  },
  {
   "id": "og_sfsu_sigma_pi_alpha_sorority_inc",
@@ -7770,7 +8603,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/sigmapialpha"
    }
-  ]
+  ],
+  "contact": {
+   "email": "deltachapter.president2003@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sigma-pi-alpha-sorority-inc"
+  }
  },
  {
   "id": "oc_sfsu_sikh_student_association",
@@ -7800,7 +8637,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_ssa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsussa23@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sikh-student-association"
+  }
  },
  {
   "id": "oc_sfsu_sky",
@@ -7826,7 +8667,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/sky"
    }
-  ]
+  ],
+  "contact": {
+   "email": "skysfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sky"
+  }
  },
  {
   "id": "oc_sfsu_social_work_advocates_for_visions_of_empowerment",
@@ -7852,7 +8697,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/social-work-advocates-for-visions-of-empowerment"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcampomanes@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/social-work-advocates-for-visions-of-empowerment"
+  }
  },
  {
   "id": "oc_sfsu_sacnas",
@@ -7878,7 +8727,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/sacnas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsusacnas@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sacnas"
+  }
  },
  {
   "id": "oc_sfsu_shrm_chapter",
@@ -7916,7 +8769,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/society-for-human-resource-management-shrm-sfsu-chapter/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "epaquette@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/shrm-chapter"
+  }
  },
  {
   "id": "oc_sfsu_sfsusiam",
@@ -7942,7 +8799,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/sfsusiam"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mattei@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sfsusiam"
+  }
  },
  {
   "id": "oc_sfsu_society_of_automotive_engineers",
@@ -7973,7 +8834,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/goldengate_racing/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sae.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/society-of-automotive-engineers"
+  }
  },
  {
   "id": "oc_sfsu_society_of_hispanic_professional_engineers",
@@ -8003,7 +8868,11 @@
     "label": "Website",
     "url": "https://shpesfsu.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shpesfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/society-of-hispanic-professional-engineers"
+  }
  },
  {
   "id": "oc_sfsu_society_of_women_engineers",
@@ -8042,7 +8911,11 @@
     "label": "X",
     "url": "http://twitter.com/swesfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swesfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/society-of-women-engineers"
+  }
  },
  {
   "id": "oc_sfsu_swana_in_stem",
@@ -8097,7 +8970,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/seasasfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "seasasfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/seasasfsu"
+  }
  },
  {
   "id": "oc_sfsu_sparksf",
@@ -8127,7 +9004,11 @@
     "label": "Website",
     "url": "https://sparksf.io/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "teamsparksf@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/sparksf"
+  }
  },
  {
   "id": "oc_sfsu_steelbridgeclub",
@@ -8186,7 +9067,11 @@
     "label": "Website",
     "url": "https://www.seaonc.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gfuller@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/seaonc"
+  }
  },
  {
   "id": "oc_sfsu_student_academy_of_audiology",
@@ -8216,7 +9101,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/saa_sfsu/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "karata@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/student-academy-of-audiology"
+  }
  },
  {
   "id": "oc_sfsu_student_activities_events",
@@ -8246,7 +9135,11 @@
     "label": "Website",
     "url": "http://activities.sfsu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "activities@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/student-activities-events"
+  }
  },
  {
   "id": "oc_sfsu_123",
@@ -8280,7 +9173,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstate_saac/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "phsieh@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/123"
+  }
  },
  {
   "id": "oc_sfsu_studentdanceunion",
@@ -8306,7 +9203,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/studentdanceunion"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sdusfsu26@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/studentdanceunion"
+  }
  },
  {
   "id": "oc_sfsu_student_kouncil_of_intertribal_nations",
@@ -8337,7 +9238,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/kouncilsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kouncilsf@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/student-kouncil-of-intertribal-nations"
+  }
  },
  {
   "id": "oc_sfsu_student_life",
@@ -8367,7 +9272,11 @@
     "label": "Website",
     "url": "http://dos.sfsu.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dos@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/student-life"
+  }
  },
  {
   "id": "oc_sfsu_snda",
@@ -8402,7 +9311,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SFstateSNDA/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sda.sfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/snda"
+  }
  },
  {
   "id": "oc_sfsu_physics_and_astronomy_club",
@@ -8437,7 +9350,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_space/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsu.space@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/physics-and-astronomy-club"
+  }
  },
  {
   "id": "oc_sfsu_studyaborad",
@@ -8471,7 +9388,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfstateabroad/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studyabroad@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/studyaborad"
+  }
  },
  {
   "id": "oc_sfsu_surfandsnow",
@@ -8497,7 +9418,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/surfandsnow"
    }
-  ]
+  ],
+  "contact": {
+   "email": "peterchamberlain7@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/surfandsnow"
+  }
  },
  {
   "id": "oc_sfsu_soma",
@@ -8523,7 +9448,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/soma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsorensen@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/soma"
+  }
  },
  {
   "id": "oc_sfsu_taiwanese_student_association",
@@ -8558,7 +9487,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TsaAtSfsu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tsa.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/taiwanese-student-association"
+  }
  },
  {
   "id": "oc_sfsu_tau_beta_pi_honors_society",
@@ -8592,7 +9525,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/tbpsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbpsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/tau-beta-pi-honors-society"
+  }
  },
  {
   "id": "oc_sfsu_teachersclub",
@@ -8622,7 +9559,11 @@
     "label": "Website",
     "url": "https://teachersclub.webflow.io/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "teachersclub47@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/teachersclub"
+  }
  },
  {
   "id": "oc_sfsu_tennis_club_at_sf_state",
@@ -8656,7 +9597,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsutennisclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hacostamontesdeoca@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/tennis-club-at-sf-state"
+  }
  },
  {
   "id": "oc_sfsu_safeplace",
@@ -8687,7 +9632,11 @@
     "label": "Website",
     "url": "https://dos.sfsu.edu/safeplace"
    }
-  ]
+  ],
+  "contact": {
+   "email": "safeplace@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/safeplace"
+  }
  },
  {
   "id": "oc_sfsu_wwwinstagramcomthesoulofsfstate",
@@ -8717,7 +9666,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/thesoulofsfstate"
    }
-  ]
+  ],
+  "contact": {
+   "email": "therealsoulofsfstate@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/wwwinstagramcomthesoulofsfstate"
+  }
  },
  {
   "id": "oc_sfsu_strength_and_conditioning_club",
@@ -8744,7 +9697,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/strength-and-conditioning-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "creid4@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/strength-and-conditioning-club"
+  }
  },
  {
   "id": "oc_sfsu_transfer_sfsu_edu",
@@ -8770,7 +9727,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/transfer-sfsu-edu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "transfercommunityorg@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/transfer-sfsu-edu"
+  }
  },
  {
   "id": "oc_sfsu_turningpointusa",
@@ -8847,10 +9808,14 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TASCatSFSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tutoring@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/tasc"
+  }
  },
  {
-  "id": "og_sfsu_united_greek_council",
+  "id": "oc_sfsu_united_greek_council",
   "name": "United Greek Council",
   "logo": {
    "emoji": "UG",
@@ -8877,7 +9842,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ugc_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ugc.pres.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/united-greek-council"
+  }
  },
  {
   "id": "oc_sfsu_urbanaction",
@@ -8902,7 +9871,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/urbanaction"
    }
-  ]
+  ],
+  "contact": {
+   "email": "urbanactionforever.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/urbanaction"
+  }
  },
  {
   "id": "oc_sfsu_vets",
@@ -8932,7 +9905,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/vets_sfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vetsorg@sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/vets"
+  }
  },
  {
   "id": "oc_sfsu_vietnamese_student_association",
@@ -8963,7 +9940,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsuvsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sanfrancisco.vsa@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/vietnamese-student-association"
+  }
  },
  {
   "id": "oc_sfsu_water_polo",
@@ -8989,7 +9970,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/water-polo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poloclub@mail.sfsu.edu",
+   "source": "https://sfsu.campuslabs.com/engage/organization/water-polo"
+  }
  },
  {
   "id": "oc_sfsu_wise",
@@ -9015,7 +10000,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/wise"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuwise@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/wise"
+  }
  },
  {
   "id": "oc_sfsu_womensflagfb",
@@ -9041,7 +10030,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/womensflagfb"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sfsuwomensflagfootball@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/womensflagfb"
+  }
  },
  {
   "id": "oc_sfsu_wrestling_club",
@@ -9085,7 +10078,7 @@
   "type": "club",
   "schoolId": "s_sfsu",
   "verified": false,
-  "description": "The Zen Meditation Club with the input of all of our club members, aim to cultivate wisdom, encourage spiritual and intellectual growth through meditation together and zen lecture by vulnerable Buddhism Shifu",
+  "description": "The Zen Meditation Club with the input of all of our club members, aim to cultivate wisdom, encourage spiritual and intellectual growth through meditation together and zen lecture by venerable Buddhism Shifu",
   "gallery": [],
   "regularActivities": [],
   "notices": [],
@@ -9098,7 +10091,11 @@
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/zenclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zen.sfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/zenclub"
+  }
  },
  {
   "id": "oc_sfsu_zeta_chi_epsilon",
@@ -9128,7 +10125,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/zetachiepsilonsfsu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zetachiepsilonsfsu@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/zeta-chi-epsilon"
+  }
  },
  {
   "id": "og_sfsu_zeta_phi_beta_sorority_incorporated",
@@ -9158,6 +10159,10 @@
     "label": "Website",
     "url": "https://zphib1920.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "zphibnumu1920@gmail.com",
+   "source": "https://sfsu.campuslabs.com/engage/organization/zeta-phi-beta-sorority-incorporated"
+  }
  }
 ]

@@ -2509,3 +2509,9 @@
 - The background re-collect for NYU/BU/Georgetown had stopped without output (no process left; the container was likely restarted) - restarted it. Done: NYU 952 groups (3 delisted kept), BU 432 (2 kept) with 7,914 classes, Georgetown 529. NYU and Georgetown catalog probes read 0 (rejected, nothing changed).
 - Spot check clubs: Notre Dame Harper Cancer Research Institute Society, UChicago Kappa Theta Pi, Indiana Business in Cosmetics, NYU Torch Journal, UT Koinonia fine (5/5).
 - Spot check courses: 5 random Rice Spring 2027 classes (PSYC 571 Sec 007, MATH 211 Sec S02, HART 349, FWIS 274 Sec 002, ELEC 327) match the Rice schedule.
+
+## 2026-11-07 15:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UCI Habitat for Humanity, Penn State ICLC, Rutgers-Newark WRNU, Miami Méxicanes, NC State Triangle Bengali Association fine (5/5).
+- Spot check courses: 5 random UW Fall 2026 classes (BIOEN 327 Sec B, ENGL 281 Sec E, ESRM 323, CLAS 430 Sec C, MUSEN 446 Sec A) match.
+- Weekly re-collect group 7: UC Davis, UCSC, SF State, SJSU, Santa Clara, USF. The CampusGroups paging fix shows: UC Davis 532→865 groups (links 790→1,292), SJSU 392→407; UCSC 110→133 (school list). 14 delisted kept in orgs-dropped. USF classes 2,330. SF State's class search answered with a 48-byte page during the run (probe error, file untouched); it loads again now - retry later.

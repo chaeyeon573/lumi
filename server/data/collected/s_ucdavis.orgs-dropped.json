@@ -1,0 +1,40 @@
+[
+ {
+  "id": "oc_ucdavis_cg38789",
+  "name": "Association of Environmental Professionals at UC Davis",
+  "logo": {
+   "emoji": "AE",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_ucdavis",
+  "parent": "Graduate Student Organization",
+  "verified": false,
+  "description": "AEP at UC Davis is designed to enhance the professional development of our students by offering educational panels, career training workshops and networking opportunities that connect students to academics and working professionals.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://aggielife.ucdavis.edu/student_community?club_id=38789"
+   },
+   {
+    "label": "Website",
+    "url": "https://epm.ucdavis.edu/aep-uc-davis"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  },
+  "droppedAt": "2026-11-07"
+ }
+]
