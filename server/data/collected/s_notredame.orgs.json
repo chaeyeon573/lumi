@@ -24,7 +24,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/firstgnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "firstgnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/firstgnd"
+  }
  },
  {
   "id": "oc_notredame_accable",
@@ -58,7 +62,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDAccessABLE/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "accable@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/accable"
+  }
  },
  {
   "id": "oc_notredame_ndaa",
@@ -92,7 +100,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12584883/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndaa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndaa"
+  }
  },
  {
   "id": "oc_notredame_poker",
@@ -118,7 +130,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/poker"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poker@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/poker"
+  }
  },
  {
   "id": "oc_notredame_activemindsclub",
@@ -156,7 +172,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/active-minds-at-notre-dame/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "activemi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/activemindsclub"
+  }
  },
  {
   "id": "oc_notredame_actuary",
@@ -194,7 +214,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/actuarialscienceclubatnotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "actuary@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/actuary"
+  }
  },
  {
   "id": "oc_notredame_smithsoc",
@@ -232,8 +256,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/SmithSoc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/smithsoc_mendoza?igsi=MWwydDVrZ2Nnc2lhOA%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pohliger@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/smithsoc"
+  }
  },
  {
   "id": "oc_notredame_afci",
@@ -263,7 +295,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/afci_nd/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "afci@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/afci"
+  }
  },
  {
   "id": "oc_notredame_adedalli",
@@ -289,7 +325,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/adedalli"
    }
-  ]
+  ],
+  "contact": {
+   "email": "adedalli@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/adedalli"
+  }
  },
  {
   "id": "oc_notredame_africagc",
@@ -331,8 +371,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/africa-graduate-club-of-notre-dame-68477634b"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ndafricagraduateclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "africagc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/africagc"
+  }
  },
  {
   "id": "oc_notredame_asa",
@@ -370,7 +418,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/asanotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/asa"
+  }
  },
  {
   "id": "oc_notredame_africana",
@@ -396,7 +448,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/africana"
    }
-  ]
+  ],
+  "contact": {
+   "email": "africana@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/africana"
+  }
  },
  {
   "id": "oc_notredame_agewell",
@@ -422,7 +478,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/agewell"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agewell@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/agewell"
+  }
  },
  {
   "id": "oc_notredame_agsand",
@@ -451,8 +511,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/agriculture__nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/agriculture__nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mfoote@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/agsand"
+  }
  },
  {
   "id": "oc_notredame_ndhamsoc",
@@ -486,7 +554,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/alexanderhamiltonsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndhamsoc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndhamsoc"
+  }
  },
  {
   "id": "oc_notredame_alumnihall",
@@ -520,8 +592,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/alumni_dawgs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/alumni_dawgs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alumh@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/alumnihall"
+  }
  },
  {
   "id": "oc_notredame_amateurradio",
@@ -547,7 +627,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/amateurradio"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arcnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/amateurradio"
+  }
  },
  {
   "id": "oc_notredame_ndaclu",
@@ -574,7 +658,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndaclu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndaclu@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndaclu"
+  }
  },
  {
   "id": "oc_notredame_acs",
@@ -605,7 +693,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/notredameacs/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "acs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/acs"
+  }
  },
  {
   "id": "oc_notredame_aiaa",
@@ -642,8 +734,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-aiaa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/aiaa_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aiaa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/aiaa"
+  }
  },
  {
   "id": "oc_notredame_aiasnd",
@@ -673,7 +773,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_aias/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aiasnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/aiasnd"
+  }
  },
  {
   "id": "oc_notredame_aiche",
@@ -711,7 +815,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/ndaiche/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aiche@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/aiche"
+  }
  },
  {
   "id": "oc_notredame_alcsi_nd",
@@ -737,7 +845,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/alcsi-nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "smeier2@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/alcsi-nd"
+  }
  },
  {
   "id": "oc_notredame_amwand",
@@ -771,8 +883,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/amwa_nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/amwa_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amwand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/amwand"
+  }
  },
  {
   "id": "oc_notredame_redcross",
@@ -802,7 +922,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndredcross/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "redcross@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/redcross"
+  }
  },
  {
   "id": "oc_notredame_aslnd",
@@ -835,7 +959,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@ASLClubofNotreDame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aslnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/aslnd"
+  }
  },
  {
   "id": "oc_notredame_asce",
@@ -877,7 +1005,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-student-chapter-of-american-society-of-civil-engineers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "asce@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/asce"
+  }
  },
  {
   "id": "oc_notredame_ndasme",
@@ -911,7 +1043,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/19920024"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndasme@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndasme"
+  }
  },
  {
   "id": "oc_notredame_amst",
@@ -940,7 +1076,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/amstnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "amstclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/amst"
+  }
  },
  {
   "id": "oc_notredame_ndanimate",
@@ -969,8 +1109,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nd.anim8tes"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nd.anim8tes"
    }
-  ]
+  ],
+  "contact": {
+   "email": "animate@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndanimate"
+  }
  },
  {
   "id": "oc_notredame_anthclub",
@@ -1000,7 +1148,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndanthroclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndanthropologyclub@gmail.com",
+   "source": "https://nd.campuslabs.com/engage/organization/anthclub"
+  }
  },
  {
   "id": "oc_notredame_anthrogsa",
@@ -1026,7 +1178,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/anthrogsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "agsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/anthrogsa"
+  }
  },
  {
   "id": "oc_notredame_arabicnd",
@@ -1055,8 +1211,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/arabic_club_nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/arabic_club_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arabicnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/arabicnd"
+  }
  },
  {
   "id": "oc_notredame_archery",
@@ -1090,7 +1254,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/80837133"
    }
-  ]
+  ],
+  "contact": {
+   "email": "archery@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/archery"
+  }
  },
  {
   "id": "oc_notredame_nd_asa",
@@ -1115,7 +1283,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/nd-asa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "armenian@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nd-asa"
+  }
  },
  {
   "id": "oc_notredame_arc",
@@ -1153,7 +1325,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/in/notredamerotc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/arc"
+  }
  },
  {
   "id": "oc_notredame_aas",
@@ -1190,8 +1366,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/ArnoldAirSociety.SilverWings"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/arnoldairsociety_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aas@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/aas"
+  }
  },
  {
   "id": "oc_notredame_arthstry",
@@ -1220,8 +1404,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/ndarthistory"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ndarthistory"
    }
-  ]
+  ],
+  "contact": {
+   "email": "arthstry@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/arthstry"
+  }
  },
  {
   "id": "oc_notredame_artlaw",
@@ -1246,7 +1438,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/artlaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "achmls@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/artlaw"
+  }
  },
  {
   "id": "oc_notredame_ascend",
@@ -1284,7 +1480,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@ascendnotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ascend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ascend"
+  }
  },
  {
   "id": "oc_notredame_aaa",
@@ -1314,7 +1514,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/aaaofnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "aaa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/aaa"
+  }
  },
  {
   "id": "oc_notredame_amsa",
@@ -1348,8 +1552,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ndmba_asianclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ndmba_asianclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "avats@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/amsa"
+  }
  },
  {
   "id": "oc_notredame_apalsa",
@@ -1384,7 +1596,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ndls-apalsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jeng@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/apalsa"
+  }
  },
  {
   "id": "oc_notredame_awis",
@@ -1427,7 +1643,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=OKLLLFzH-ho&ab_channel=NotreDameScience"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awis@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/awis"
+  }
  },
  {
   "id": "oc_notredame_alpfand",
@@ -1460,8 +1680,16 @@
    {
     "label": "LinkedIn",
     "url": "https://linkedin.com/in/alpfa-notre-dame-604b48234"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/alpfand"
    }
-  ]
+  ],
+  "contact": {
+   "email": "alpfand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/alpfand"
+  }
  },
  {
   "id": "oc_notredame_awm",
@@ -1488,7 +1716,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/awm"
    }
-  ]
+  ],
+  "contact": {
+   "email": "awm@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/awm"
+  }
  },
  {
   "id": "oc_notredame_flynd",
@@ -1521,8 +1753,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/flynotredame"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/flynotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "flynd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/flynd"
+  }
  },
  {
   "id": "oc_notredame_beposnd",
@@ -1560,7 +1800,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bepositivend"
    }
-  ]
+  ],
+  "contact": {
+   "email": "beposnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/beposnd"
+  }
  },
  {
   "id": "oc_notredame_badin",
@@ -1591,7 +1835,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/badinhall/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "badin@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/badin"
+  }
  },
  {
   "id": "oc_notredame_gobirdie",
@@ -1617,7 +1865,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/gobirdie"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gobirdie@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gobirdie"
+  }
  },
  {
   "id": "oc_notredame_bagpipes",
@@ -1655,7 +1907,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameBagpipeBand"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bagpipes@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bagpipes"
+  }
  },
  {
   "id": "oc_notredame_tbab",
@@ -1684,8 +1940,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/tbab_nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/tbab_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbab@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tbab"
+  }
  },
  {
   "id": "oc_notredame_balletnd",
@@ -1718,8 +1982,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/notredame_ballet/"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.nd.edu/balletclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "balletnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/balletnd"
+  }
  },
  {
   "id": "oc_notredame_bfayo",
@@ -1757,7 +2029,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@balletfolkloricoazulyoro5131"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bfayo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bfayo"
+  }
  },
  {
   "id": "oc_notredame_ballroom",
@@ -1786,8 +2062,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/ndsmc.ballroomclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ndsmc.ballroomclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ballroom@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ballroom"
+  }
  },
  {
   "id": "oc_notredame_bandlink",
@@ -1817,7 +2101,11 @@
     "label": "Website",
     "url": "https://sites.nd.edu/bandlink/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bandlink@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bandlink"
+  }
  },
  {
   "id": "oc_notredame_bsand",
@@ -1847,7 +2135,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameBDSA"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bsand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bsand"
+  }
  },
  {
   "id": "oc_notredame_bcm",
@@ -1880,8 +2172,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/bcmatnd?igsi=ZDNlZDc0MzIxNw%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bcmatnd?igsi=ZDNlZDc0MzIxNw%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcm@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bcm"
+  }
  },
  {
   "id": "oc_notredame_baumer",
@@ -1916,7 +2216,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/baumerhall/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "baumer@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/baumer"
+  }
  },
  {
   "id": "oc_notredame_beend",
@@ -1946,7 +2250,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/beeclubnd/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "beend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/beend"
+  }
  },
  {
   "id": "oc_notredame_beloved",
@@ -1980,7 +2288,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/belovednd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "beloved@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/beloved"
+  }
  },
  {
   "id": "oc_notredame_biphgsg",
@@ -2006,7 +2318,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/biphgsg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "biphgsg@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/biphgsg"
+  }
  },
  {
   "id": "oc_notredame_bbuddies",
@@ -2043,8 +2359,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/bestbuddies"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bestbuddiesnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bbuddies@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bbuddies"
+  }
  },
  {
   "id": "oc_notredame_bapsi",
@@ -2070,7 +2394,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/bapsi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bapsi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bapsi"
+  }
  },
  {
   "id": "oc_notredame_beyondwelcomeweek",
@@ -2122,7 +2450,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/bbbsnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bbbsnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bbbsnd"
+  }
  },
  {
   "id": "oc_notredame_bioclub",
@@ -2152,7 +2484,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndbiologyclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bioclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bioclub"
+  }
  },
  {
   "id": "oc_notredame_bgso",
@@ -2191,7 +2527,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDBGSO"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bgso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bgso"
+  }
  },
  {
   "id": "oc_notredame_bmes",
@@ -2221,7 +2561,11 @@
     "label": "Website",
     "url": "https://sites.nd.edu/bmes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bmes@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bmes"
+  }
  },
  {
   "id": "oc_notredame_bpsnd",
@@ -2247,7 +2591,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/bpsnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bpsnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bpsnd"
+  }
  },
  {
   "id": "oc_notredame_biotechnd",
@@ -2281,7 +2629,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12917663/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "biotech@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/biotechnd"
+  }
  },
  {
   "id": "oc_notredame_naba",
@@ -2319,7 +2671,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/bband-black-business-association-of-notre-dame-88aa4220b/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "naba@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/naba"
+  }
  },
  {
   "id": "oc_notredame_bcac",
@@ -2349,7 +2705,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bcacnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcac@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bcac"
+  }
  },
  {
   "id": "oc_notredame_bgsa",
@@ -2384,7 +2744,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/654269554730065"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bgsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bgsa"
+  }
  },
  {
   "id": "oc_notredame_ndblsa",
@@ -2423,7 +2787,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/31900331874"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndblsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndblsa"
+  }
  },
  {
   "id": "oc_notredame_blackpremedsociety",
@@ -2491,7 +2859,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/bsa-nd-632b51224"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bsa"
+  }
  },
  {
   "id": "oc_notredame_bloodcancerunited_nd",
@@ -2517,7 +2889,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/bloodcancerunited_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bcund@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bloodcancerunited_nd"
+  }
  },
  {
   "id": "oc_notredame_bluegold",
@@ -2547,7 +2923,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/bluegoldnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bluegold@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bluegold"
+  }
  },
  {
   "id": "oc_notredame_risk",
@@ -2577,7 +2957,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/boardgameclubnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "risk@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/risk"
+  }
  },
  {
   "id": "oc_notredame_bookclub",
@@ -2616,7 +3000,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ndbookclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bookclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bookclub"
+  }
  },
  {
   "id": "oc_notredame_bkstr",
@@ -2654,7 +3042,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/bkstrbball/?fref=ts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bkstr@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bkstr"
+  }
  },
  {
   "id": "oc_notredame_boxing",
@@ -2696,7 +3088,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BengalBouts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "boxing@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/boxing"
+  }
  },
  {
   "id": "oc_notredame_wboxing",
@@ -2742,7 +3138,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCvFW_o5YSvvJVeGmo7oYI0g"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wboxing@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wboxing"
+  }
  },
  {
   "id": "oc_notredame_brasand",
@@ -2776,7 +3176,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/brasa_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bibblnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/brasand"
+  }
  },
  {
   "id": "oc_notredame_bphall",
@@ -2811,7 +3215,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/breenphillipshall/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bphall@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bphall"
+  }
  },
  {
   "id": "oc_notredame_bridgend",
@@ -2849,7 +3257,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/BridgeUSAatND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bridgend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bridgend"
+  }
  },
  {
   "id": "oc_notredame_businessgolf",
@@ -2901,7 +3313,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/blf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "blf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/blf"
+  }
  },
  {
   "id": "oc_notredame_caembayouthecuador",
@@ -2965,7 +3381,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_californiaclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "caclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/caclub"
+  }
  },
  {
   "id": "oc_notredame_cknd",
@@ -3011,7 +3431,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@KesemNationwide"
    }
-  ]
+  ],
+  "contact": {
+   "email": "notredame@kesem.org",
+   "source": "https://nd.campuslabs.com/engage/organization/cknd"
+  }
  },
  {
   "id": "oc_notredame_campfell",
@@ -3037,7 +3461,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/campfell"
    }
-  ]
+  ],
+  "contact": {
+   "email": "campfell@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/campfell"
+  }
  },
  {
   "id": "oc_notredame_caribsa",
@@ -3075,7 +3503,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@CaribSAatND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "caribsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/caribsa"
+  }
  },
  {
   "id": "oc_notredame_carroll",
@@ -3110,7 +3542,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/carrollhallnd/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "carroll@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/carroll"
+  }
  },
  {
   "id": "oc_notredame_tac",
@@ -3141,7 +3577,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/catholic-graduate-community"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tac@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tac"
+  }
  },
  {
   "id": "oc_notredame_ndcrs",
@@ -3171,7 +3611,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/crs_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndcrs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndcrs"
+  }
  },
  {
   "id": "oc_notredame_thenaugh",
@@ -3206,7 +3650,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cavanaughhall/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thenaugh@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/thenaugh"
+  }
  },
  {
   "id": "oc_notredame_cssc",
@@ -3236,7 +3684,11 @@
     "label": "Website",
     "url": "https://supportandcare.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "care@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cssc"
+  }
  },
  {
   "id": "oc_notredame_cbegso",
@@ -3271,7 +3723,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/ndcbegso/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cbegso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cbegso"
+  }
  },
  {
   "id": "oc_notredame_ndsaacs",
@@ -3301,7 +3757,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndchembiochemclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndsaacs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndsaacs"
+  }
  },
  {
   "id": "oc_notredame_cgso",
@@ -3328,7 +3788,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/cgso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cgso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cgso"
+  }
  },
  {
   "id": "oc_notredame_ndchess",
@@ -3361,8 +3825,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/notredame_chess"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/notredame_chess"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndchess@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndchess"
+  }
  },
  {
   "id": "oc_notredame_chialpha",
@@ -3396,7 +3868,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndchialpha/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chialpha@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/chialpha"
+  }
  },
  {
   "id": "oc_notredame_cehs",
@@ -3422,7 +3898,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/cehs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cehs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cehs"
+  }
  },
  {
   "id": "oc_notredame_ccs",
@@ -3452,7 +3932,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ccsofnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ccs"
+  }
  },
  {
   "id": "oc_notredame_ndcssa",
@@ -3486,7 +3970,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/nd_cssa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndcfa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndcssa"
+  }
  },
  {
   "id": "oc_notredame_chorale",
@@ -3528,7 +4016,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@thenotredamechorale7690/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chorale@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/chorale"
+  }
  },
  {
   "id": "oc_notredame_cls",
@@ -3555,7 +4047,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/cls"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cls@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cls"
+  }
  },
  {
   "id": "oc_notredame_circlek",
@@ -3584,8 +4080,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/notredamecirclek"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/notredamecirclek"
    }
-  ]
+  ],
+  "contact": {
+   "email": "circlek@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/circlek"
+  }
  },
  {
   "id": "oc_notredame_classof2027",
@@ -3615,7 +4119,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndclass2027/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "class27@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/classof2027"
+  }
  },
  {
   "id": "oc_notredame_class_28",
@@ -3644,8 +4152,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_class_of_2028/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nd_class_of_2028/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "class28@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/class_28"
+  }
  },
  {
   "id": "oc_notredame_class29",
@@ -3679,7 +4195,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/19990026/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "class29@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/class29"
+  }
  },
  {
   "id": "oc_notredame_class30",
@@ -3705,7 +4225,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/class30"
    }
-  ]
+  ],
+  "contact": {
+   "email": "class30@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/class30"
+  }
  },
  {
   "id": "oc_notredame_clasclub",
@@ -3739,7 +4263,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/Clasclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clasclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/clasclub"
+  }
  },
  {
   "id": "oc_notredame_ndclimb",
@@ -3773,7 +4301,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndclimb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndclimb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndclimb"
+  }
  },
  {
   "id": "oc_notredame_cbnd",
@@ -3802,8 +4334,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/ndclubbaseball"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ndclubbaseball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cbnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cbnd"
+  }
  },
  {
   "id": "oc_notredame_clubhoop",
@@ -3833,7 +4373,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndclubbasketball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubhoop@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/clubhoop"
+  }
  },
  {
   "id": "oc_notredame_ccc",
@@ -3866,8 +4410,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/clubcoordcouncil"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/clubcoordcouncil"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ccc"
+  }
  },
  {
   "id": "oc_notredame_ndclubsb",
@@ -3896,8 +4448,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/ndclubsoftball"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ndclubsoftball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndclubsb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndclubsb"
+  }
  },
  {
   "id": "oc_notredame_cdems",
@@ -3939,7 +4499,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/collegedemocrats-of-notre-dame/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cdems@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cdems"
+  }
  },
  {
   "id": "oc_notredame_liberty",
@@ -3965,7 +4529,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/liberty"
    }
-  ]
+  ],
+  "contact": {
+   "email": "liberty@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/liberty"
+  }
  },
  {
   "id": "oc_notredame_cmk",
@@ -3991,7 +4559,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/cmk"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cmk@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cmk"
+  }
  },
  {
   "id": "oc_notredame_collegiategospelgroup",
@@ -4043,7 +4615,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/colorstacknd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cstacknd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/colorstacknd"
+  }
  },
  {
   "id": "oc_notredame_clu",
@@ -4069,7 +4645,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/clu"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clu@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/clu"
+  }
  },
  {
   "id": "oc_notredame_nil",
@@ -4099,7 +4679,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_communitygarden/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gardennd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nil"
+  }
  },
  {
   "id": "oc_notredame_ccimnd",
@@ -4136,8 +4720,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/CompassionateCareinMedicine"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ccim.nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ccimnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ccimnd"
+  }
  },
  {
   "id": "oc_notredame_cocond",
@@ -4162,7 +4754,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/cocond"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cocond@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cocond"
+  }
  },
  {
   "id": "oc_notredame_csegso",
@@ -4189,7 +4785,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/csegso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csegso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/csegso"
+  }
  },
  {
   "id": "oc_notredame_cookingclubnd",
@@ -4219,7 +4819,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cookingclubnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cookclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cookingclubnd"
+  }
  },
  {
   "id": "oc_notredame_coroprimavera",
@@ -4256,8 +4860,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/coroprimaveraND/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/coroprimavera/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "coro@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/coroprimavera"
+  }
  },
  {
   "id": "oc_notredame_finclub",
@@ -4295,7 +4907,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/corporatefinanceclubnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "finclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/finclub"
+  }
  },
  {
   "id": "oc_notredame_cosmos",
@@ -4325,7 +4941,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/cosmos_nd1/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cosmos@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cosmos"
+  }
  },
  {
   "id": "oc_notredame_fisher",
@@ -4368,7 +4988,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/13894222/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "coyle@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fisher"
+  }
  },
  {
   "id": "oc_notredame_cs4good",
@@ -4406,7 +5030,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/cs4good-notre-dame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cs4good@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/cs4good"
+  }
  },
  {
   "id": "oc_notredame_caos",
@@ -4436,7 +5064,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/caos.nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "caos@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/caos"
+  }
  },
  {
   "id": "oc_notredame_curling",
@@ -4465,8 +5097,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_curlingclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nd_curlingclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "curling@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/curling"
+  }
  },
  {
   "id": "oc_notredame_bike",
@@ -4496,7 +5136,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/notredame_cycling/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bike@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bike"
+  }
  },
  {
   "id": "oc_notredame_danceafricaclubofnotredame",
@@ -4522,7 +5166,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/danceafricaclubofnotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "daofnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/danceafricaclubofnotredame"
+  }
  },
  {
   "id": "oc_notredame_danceco",
@@ -4560,7 +5208,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@notredamedancecompany3952"
    }
-  ]
+  ],
+  "contact": {
+   "email": "danceco@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/danceco"
+  }
  },
  {
   "id": "oc_notredame_dataclub",
@@ -4598,7 +5250,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-data-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dataclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dataclub"
+  }
  },
  {
   "id": "oc_notredame_dpas",
@@ -4624,7 +5280,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/dpas"
    }
-  ]
+  ],
+  "contact": {
+   "email": "abogart@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dpas"
+  }
  },
  {
   "id": "oc_notredame_debate",
@@ -4658,7 +5318,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndspeechanddebate/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "debate@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/debate"
+  }
  },
  {
   "id": "oc_notredame_delight",
@@ -4692,7 +5356,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/delight_notredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "delight@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/delight"
+  }
  },
  {
   "id": "oc_notredame_dfa",
@@ -4722,7 +5390,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/dfa_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dfa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dfa"
+  }
  },
  {
   "id": "oc_notredame_dillon",
@@ -4753,7 +5425,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/dillonhallnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dillon@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dillon"
+  }
  },
  {
   "id": "oc_notredame_dgcnd",
@@ -4779,7 +5455,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/dgcnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dgcnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dgcnd"
+  }
  },
  {
   "id": "oc_notredame_diversnd",
@@ -4821,7 +5501,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCuechrFezRK4IWY4HSloSxQ"
    }
-  ]
+  ],
+  "contact": {
+   "email": "diversnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/diversnd"
+  }
  },
  {
   "id": "oc_notredame_domer_rover",
@@ -4863,7 +5547,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@DomerRover"
    }
-  ]
+  ],
+  "contact": {
+   "email": "drnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/domer-rover"
+  }
  },
  {
   "id": "oc_notredame_domersmentoringkids",
@@ -4915,7 +5603,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/dream316"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dream316@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dream316"
+  }
  },
  {
   "id": "oc_notredame_duncan",
@@ -4950,7 +5642,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_duncanhall/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "duncan@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/duncan"
+  }
  },
  {
   "id": "oc_notredame_dunnehall",
@@ -4985,7 +5681,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/dunnehall/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "chess7@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dunnehall"
+  }
  },
  {
   "id": "oc_notredame_enablend",
@@ -5027,7 +5727,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12509036/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "enablend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/enablend"
+  }
  },
  {
   "id": "oc_notredame_eeriund",
@@ -5053,7 +5757,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/eeriund"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eeriund@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/eeriund"
+  }
  },
  {
   "id": "oc_notredame_econoclb",
@@ -5086,8 +5794,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-notre-dame-economics-club/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/econclubnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "econoclb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/econoclb"
+  }
  },
  {
   "id": "oc_notredame_elfnd",
@@ -5118,7 +5834,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/ndls-elf/home?authuser=1"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elfnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/elfnd"
+  }
  },
  {
   "id": "oc_notredame_educlub",
@@ -5152,7 +5872,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/educlubnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "educlub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/educlub"
+  }
  },
  {
   "id": "oc_notredame_ecsnd",
@@ -5183,7 +5907,11 @@
     "label": "LinkedIn",
     "url": "https://linkedin.com/company/university-of-notre-dame-student-chapter"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ecssc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ecsnd"
+  }
  },
  {
   "id": "oc_notredame_elc",
@@ -5225,7 +5953,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ELCofND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "elc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/elc"
+  }
  },
  {
   "id": "oc_notredame_ewbnd",
@@ -5271,7 +6003,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCiRLhj8b-bhja2JAoB53s_Q"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ewbnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ewbnd"
+  }
  },
  {
   "id": "oc_notredame_egsa",
@@ -5298,7 +6034,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/egsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "egsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/egsa"
+  }
  },
  {
   "id": "oc_notredame_eesnd",
@@ -5328,7 +6068,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ees_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eesnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/eesnd"
+  }
  },
  {
   "id": "oc_notredame_envlaw",
@@ -5355,7 +6099,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/envlaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "envlaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/envlaw"
+  }
  },
  {
   "id": "oc_notredame_ndhorse",
@@ -5393,7 +6141,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameEquestrian/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndhorse@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndhorse"
+  }
  },
  {
   "id": "oc_notredame_e2sa",
@@ -5423,7 +6175,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd.eesa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eesa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/e2sa"
+  }
  },
  {
   "id": "oc_notredame_hkn",
@@ -5452,8 +6208,20 @@
    {
     "label": "Website",
     "url": "https://hkn.ieee.org/hkn-chapters/all-chapters/delta-sigma-chapter"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ieee_hkn/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/IEEE.HKN"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hkn@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hkn"
+  }
  },
  {
   "id": "oc_notredame_executivecabinet",
@@ -5499,7 +6267,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/ndstudentgov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studegov@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/executivecabinet"
+  }
  },
  {
   "id": "oc_notredame_ndep",
@@ -5526,7 +6298,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndep"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndep@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndep"
+  }
  },
  {
   "id": "oc_notredame_eyhnd",
@@ -5561,7 +6337,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/expandingyourhorizons_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "eyhnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/eyhnd"
+  }
  },
  {
   "id": "oc_notredame_frc",
@@ -5633,7 +6413,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndfarleyhall/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "farley@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/farley"
+  }
  },
  {
   "id": "oc_notredame_fedfisnd",
@@ -5667,7 +6451,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ffc_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fedfisnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fedfisnd"
+  }
  },
  {
   "id": "oc_notredame_fedsoc",
@@ -5706,7 +6494,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDFederalistSociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tschacht@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fedsoc"
+  }
  },
  {
   "id": "oc_notredame_feminism",
@@ -5735,8 +6527,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/feministnd/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/feministnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "feminism@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/feminism"
+  }
  },
  {
   "id": "oc_notredame_fhockey",
@@ -5766,7 +6566,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndfieldhockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fhockey@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fhockey"
+  }
  },
  {
   "id": "oc_notredame_firacing",
@@ -5796,7 +6600,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/fightingirishracing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "firacing@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/firacing"
+  }
  },
  {
   "id": "oc_notredame_fiscoly",
@@ -5830,7 +6638,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/fiso_notredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fiso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fiscoly"
+  }
  },
  {
   "id": "oc_notredame_ftnd",
@@ -5864,7 +6676,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/watch?v=FvxaSgWwHpk"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ftnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ftnd"
+  }
  },
  {
   "id": "oc_notredame_ndfsc",
@@ -5898,7 +6714,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/ndfigureskating"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndfsc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndfsc"
+  }
  },
  {
   "id": "oc_notredame_children_of_mary",
@@ -5932,7 +6752,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ChildrenOfMaryNotreDame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mary@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/children-of-mary"
+  }
  },
  {
   "id": "oc_notredame_faso",
@@ -5974,7 +6798,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCaejr3v8wWOeHDK0R7sYM2w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "faso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/faso"
+  }
  },
  {
   "id": "oc_notredame_fmb",
@@ -6004,7 +6832,11 @@
     "label": "Website",
     "url": "https://fmb.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fmb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fmb"
+  }
  },
  {
   "id": "oc_notredame_fast",
@@ -6034,7 +6866,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/fast"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fast@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fast"
+  }
  },
  {
   "id": "oc_notredame_firstgenmbaclub",
@@ -6064,7 +6900,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nd-1st-gen-mba-club/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pgranqui@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/firstgenmbaclub"
+  }
  },
  {
   "id": "oc_notredame_fgplaw",
@@ -6095,7 +6935,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndls_first_gen_professionals/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fgplaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fgplaw"
+  }
  },
  {
   "id": "oc_notredame_fuel",
@@ -6121,7 +6965,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/fuel"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studegov@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fuel"
+  }
  },
  {
   "id": "oc_notredame_fishingclubnd",
@@ -6186,7 +7034,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/flaherty_hall/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "flaherty@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/flaherty"
+  }
  },
  {
   "id": "oc_notredame_flipside",
@@ -6216,7 +7068,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/flipsidend/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "flipside@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/flipside"
+  }
  },
  {
   "id": "oc_notredame_na",
@@ -6246,7 +7102,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/florida_domers/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fldomers@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/na"
+  }
  },
  {
   "id": "oc_notredame_folkchoir_nd_edu",
@@ -6288,7 +7148,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/c/TheUniversityofNotreDameFolkChoir"
    }
-  ]
+  ],
+  "contact": {
+   "email": "folk@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/folkchoir_nd_edu"
+  }
  },
  {
   "id": "oc_notredame_faand",
@@ -6322,7 +7186,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/faandnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "faand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/faand"
+  }
  },
  {
   "id": "oc_notredame_fablaw",
@@ -6349,7 +7217,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/fablaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fablaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fablaw"
+  }
  },
  {
   "id": "oc_notredame_foodshare",
@@ -6375,7 +7247,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/foodshare"
    }
-  ]
+  ],
+  "contact": {
+   "email": "foodshar@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/foodshare"
+  }
  },
  {
   "id": "oc_notredame_fimrc",
@@ -6413,7 +7289,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/officialfimrcpage"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fimrc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fimrc"
+  }
  },
  {
   "id": "oc_notredame_founders",
@@ -6446,7 +7326,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-venture-capital-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "founders@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/founders"
+  }
  },
  {
   "id": "oc_notredame_fmsc",
@@ -6476,7 +7360,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/thefrankmontanasketchingclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fmsc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fmsc"
+  }
  },
  {
   "id": "oc_notredame_lecercle",
@@ -6506,7 +7394,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/notredamefrenchclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lecercle@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lecercle"
+  }
  },
  {
   "id": "oc_notredame_futsal",
@@ -6532,7 +7424,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/futsal"
    }
-  ]
+  ],
+  "contact": {
+   "email": "futsal@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/futsal"
+  }
  },
  {
   "id": "oc_notredame_fpac",
@@ -6559,7 +7455,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/fpac"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fpac@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fpac"
+  }
  },
  {
   "id": "oc_notredame_gaa",
@@ -6592,8 +7492,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/nd_gaa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nd_gaa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gaa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gaa"
+  }
  },
  {
   "id": "oc_notredame_g8wyclub",
@@ -6619,7 +7527,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/g8wyclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "g8wyclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/g8wyclub"
+  }
  },
  {
   "id": "oc_notredame_grc",
@@ -6649,7 +7561,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/grcnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "grc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/grc"
+  }
  },
  {
   "id": "oc_notredame_genomix_club",
@@ -6675,7 +7591,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/genomix-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "genomix@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/genomix-club"
+  }
  },
  {
   "id": "oc_notredame_germclub",
@@ -6701,7 +7621,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/germclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "germclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/germclub"
+  }
  },
  {
   "id": "oc_notredame_giftlife",
@@ -6739,7 +7663,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/giftoflife"
    }
-  ]
+  ],
+  "contact": {
+   "email": "giftlife@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/giftlife"
+  }
  },
  {
   "id": "oc_notredame_girlgains",
@@ -6773,7 +7701,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/girlgains.nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "girlgain@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/girlgains"
+  }
  },
  {
   "id": "oc_notredame_gleeclub",
@@ -6799,7 +7731,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/gleeclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gleeclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gleeclub"
+  }
  },
  {
   "id": "oc_notredame_globaldentalbrigades",
@@ -6829,7 +7765,11 @@
     "label": "Website",
     "url": "https://my.globalbrigades.org/university/university-of-notre-dame/brigade/University-of-Notre-Dame-Dental-Brigade-October-2026-Greece-1"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bdang@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/globaldentalbrigades"
+  }
  },
  {
   "id": "oc_notredame_ghcnd",
@@ -6866,8 +7806,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/ghc-nd/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ghc_notredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ghc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ghcnd"
+  }
  },
  {
   "id": "oc_notredame_ndgmb",
@@ -6901,7 +7849,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndgmb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndgmb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndgmb"
+  }
  },
  {
   "id": "oc_notredame_globemed",
@@ -6935,7 +7887,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/globemednd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "globemed@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/globemed"
+  }
  },
  {
   "id": "oc_notredame_goldenbonds",
@@ -6995,7 +7951,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndclubgolf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "golfclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/golfclub"
+  }
  },
  {
   "id": "oc_notredame_gradientnd",
@@ -7026,7 +7986,11 @@
     "label": "Website",
     "url": "https://gradient.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradient@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gradientnd"
+  }
  },
  {
   "id": "oc_notredame_ndgcc",
@@ -7069,7 +8033,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/NDGCC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndgcc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndgcc"
+  }
  },
  {
   "id": "oc_notredame_lasu",
@@ -7100,7 +8068,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd.lasu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latgrad@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lasu"
+  }
  },
  {
   "id": "oc_notredame_women_in_engineering",
@@ -7134,7 +8106,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDGradSWE"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gradswe@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/women-in-engineering"
+  }
  },
  {
   "id": "oc_notredame_gsg",
@@ -7172,7 +8148,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ndGSU"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsu@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gsg"
+  }
  },
  {
   "id": "oc_notredame_gs_arind",
@@ -7198,8 +8178,16 @@
    {
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/gs-arind"
+   },
+   {
+    "label": "Document",
+    "url": "https://drive.google.com/drive/folders/1Ke6688LMUKMOpqCibmCoOpuHtg1hbbf0"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gsarind@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gs-arind"
+  }
  },
  {
   "id": "oc_notredame_gts",
@@ -7226,7 +8214,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/gts"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gts@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gts"
+  }
  },
  {
   "id": "oc_notredame_none_",
@@ -7265,7 +8257,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/ndgrahamhallparents"
    }
-  ]
+  ],
+  "contact": {
+   "email": "graham@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/none-"
+  }
  },
  {
   "id": "oc_notredame_gogreen",
@@ -7295,7 +8291,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/go_greend/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gogreen@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gogreen"
+  }
  },
  {
   "id": "oc_notredame_greendot",
@@ -7355,7 +8355,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/rotcw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rotcw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rotcw"
+  }
  },
  {
   "id": "oc_notredame_grojean",
@@ -7411,7 +8415,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/guamxcnmi.nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "guamcnmi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/gcmnicund"
+  }
  },
  {
   "id": "oc_notredame_ndsmcgym",
@@ -7441,7 +8449,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/notredamegymnastics/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndsmcgym@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndsmcgym"
+  }
  },
  {
   "id": "oc_notredame_habitat",
@@ -7471,7 +8483,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndhabitatforhumanity/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "habitat@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/habitat"
+  }
  },
  {
   "id": "oc_notredame_halftime",
@@ -7513,7 +8529,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/NDhalftime"
    }
-  ]
+  ],
+  "contact": {
+   "email": "halftime@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/halftime"
+  }
  },
  {
   "id": "oc_notredame_hpc",
@@ -7547,7 +8567,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/ndhpc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hpc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hpc"
+  }
  },
  {
   "id": "oc_notredame_handbell",
@@ -7573,7 +8597,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/handbell"
    }
-  ]
+  ],
+  "contact": {
+   "email": "handbell@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/handbell"
+  }
  },
  {
   "id": "oc_notredame_harmonia",
@@ -7615,7 +8643,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/ndharmonia"
    }
-  ]
+  ],
+  "contact": {
+   "email": "harmonia@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/harmonia"
+  }
  },
  {
   "id": "oc_notredame_hcris",
@@ -7653,7 +8685,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/HarperSociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hcris@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hcris"
+  }
  },
  {
   "id": "oc_notredame_hawaiian",
@@ -7682,8 +8718,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nd.hawaiiclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nd.hawaiiclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hawaiian@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hawaiian"
+  }
  },
  {
   "id": "oc_notredame_hls",
@@ -7710,7 +8754,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/hls"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hls@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hls"
+  }
  },
  {
   "id": "oc_notredame_hsand",
@@ -7736,7 +8784,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/hsand"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mfontane@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hsand"
+  }
  },
  {
   "id": "oc_notredame_vegnd",
@@ -7762,7 +8814,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/vegnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vegnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/vegnd"
+  }
  },
  {
   "id": "oc_notredame_hesburghsheroes",
@@ -7792,7 +8848,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/hesburghsheroes/--"
    }
-  ]
+  ],
+  "contact": {
+   "email": "heshero@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hesburghsheroes"
+  }
  },
  {
   "id": "oc_notredame_hlsa",
@@ -7823,7 +8883,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/272975932775715/?fref=nf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "hlsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/hlsa"
+  }
  },
  {
   "id": "oc_notredame_historicpreservationclub",
@@ -7849,7 +8913,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/historicpreservationclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "histpres@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/historicpreservationclub"
+  }
  },
  {
   "id": "oc_notredame_holyhalf",
@@ -7887,7 +8955,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/holyhalf/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "holyhalf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/holyhalf"
+  }
  },
  {
   "id": "oc_notredame_hosand",
@@ -7942,8 +9014,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/notredameclubhockey"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/notredameclubhockey"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ihcmnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ihcmnd"
+  }
  },
  {
   "id": "oc_notredame_whockey",
@@ -7977,7 +9057,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_whockey/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "whockey@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/whockey"
+  }
  },
  {
   "id": "oc_notredame_idnd",
@@ -8015,7 +9099,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/IDENTITYND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "idnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/idnd"
+  }
  },
  {
   "id": "oc_notredame_igemnd",
@@ -8057,7 +9145,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@igem_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "igem@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/igemnd"
+  }
  },
  {
   "id": "oc_notredame_permiasnd",
@@ -8087,7 +9179,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/permiasnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wtumbel2@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/permiasnd"
+  }
  },
  {
   "id": "oc_notredame_ifori",
@@ -8117,7 +9213,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/innovation4impactnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ifori@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ifori"
+  }
  },
  {
   "id": "oc_notredame_ieee_ndu",
@@ -8155,7 +9255,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ieee-nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ieee@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ieee_ndu"
+  }
  },
  {
   "id": "oc_notredame_ibmsgso",
@@ -8182,7 +9286,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ibmsgso"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ibmsgso@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ibmsgso"
+  }
  },
  {
   "id": "oc_notredame_ipls",
@@ -8213,7 +9321,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDLSIPLS/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ipls@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ipls"
+  }
  },
  {
   "id": "oc_notredame_ihrs",
@@ -8252,7 +9364,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameLawSchool"
    }
-  ]
+  ],
+  "contact": {
+   "email": "intlhrs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ihrs"
+  }
  },
  {
   "id": "oc_notredame_ijmnd",
@@ -8282,7 +9398,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/justicemissionnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ijmnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ijmnd"
+  }
  },
  {
   "id": "oc_notredame_intlaw",
@@ -8313,7 +9433,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndintlawsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "intlaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/intlaw"
+  }
  },
  {
   "id": "oc_notredame_ismba",
@@ -8342,8 +9466,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/ismbanotredame?mdxt=dDF1aDVzbjQ0eDZs"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ismbanotredame?mdxt=dDF1aDVzbjQ0eDZs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ismba@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ismba"
+  }
  },
  {
   "id": "oc_notredame_shamrock",
@@ -8369,7 +9501,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/shamrock"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shamrock@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/shamrock"
+  }
  },
  {
   "id": "oc_notredame_icc",
@@ -8399,7 +9535,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/irishconsultingclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "icc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/icc"
+  }
  },
  {
   "id": "oc_notredame_www3ndeduirishdan",
@@ -8433,7 +9573,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCB7pUYYKt6indebR6FTv6_w"
    }
-  ]
+  ],
+  "contact": {
+   "email": "irishdan@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/www3ndeduirishdan"
+  }
  },
  {
   "id": "oc_notredame_stjude",
@@ -8463,7 +9607,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndstj/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stjude@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/stjude"
+  }
  },
  {
   "id": "oc_notredame_none",
@@ -8492,8 +9640,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/irish_first_robotics"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/irish_first_robotics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "firstnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/none"
+  }
  },
  {
   "id": "oc_notredame_rmhcmichianaorg",
@@ -8518,7 +9674,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/rmhcmichianaorg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "gbetanzo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rmhcmichianaorg"
+  }
  },
  {
   "id": "oc_notredame_igardens",
@@ -8556,7 +9716,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/flowershopND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "igardens@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/igardens"
+  }
  },
  {
   "id": "oc_notredame_irishsat",
@@ -8598,7 +9762,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NDIrishSat/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "irishsat@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/irishsat"
+  }
  },
  {
   "id": "oc_notredame_isi",
@@ -8632,7 +9800,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ironsharpensiron_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "isi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/isi"
+  }
  },
  {
   "id": "oc_notredame_jamnd",
@@ -8658,7 +9830,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/jamnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mherndl@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jamnd"
+  }
  },
  {
   "id": "oc_notredame_jclub",
@@ -8700,7 +9876,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCcGZzsDoVLs15B-BY5fz9jw/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jclub"
+  }
  },
  {
   "id": "oc_notredame_jewishclub",
@@ -8734,7 +9914,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/jewishclubnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jcnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jewishclub"
+  }
  },
  {
   "id": "oc_notredame_jlsa",
@@ -8790,8 +9974,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_jogsrunclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nd_jogsrunclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jogs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jogs"
+  }
  },
  {
   "id": "oc_notredame_jqas",
@@ -8825,7 +10017,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/jqasociety"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jqas@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jqas"
+  }
  },
  {
   "id": "oc_notredame_johnsonfamily",
@@ -8860,7 +10056,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/johnsonfamilyhall/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sghyseli@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/johnsonfamily"
+  }
  },
  {
   "id": "oc_notredame_ndjicl",
@@ -8899,7 +10099,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/linkedinndjicl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndjicl@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndjicl"
+  }
  },
  {
   "id": "oc_notredame_ndjlepp",
@@ -8934,7 +10138,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-journal-of-law-ethics-and-public-policy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndjlepp@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndjlepp"
+  }
  },
  {
   "id": "oc_notredame_jleg",
@@ -8968,7 +10176,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-journal-of-legislation/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndjleg@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jleg"
+  }
  },
  {
   "id": "oc_notredame_ndlsjet",
@@ -9007,7 +10219,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-journal-on-emerging-technologies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndlsjet@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndlsjet"
+  }
  },
  {
   "id": "oc_notredame_jcouncil",
@@ -9037,7 +10253,11 @@
     "label": "Website",
     "url": "http://jcouncil.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jcouncil@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jcouncil"
+  }
  },
  {
   "id": "oc_notredame_juggling",
@@ -9067,7 +10287,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/juggling_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poglesb2@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/juggling"
+  }
  },
  {
   "id": "oc_notredame_jpw",
@@ -9097,7 +10321,11 @@
     "label": "Website",
     "url": "https://jpw.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jpw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jpw"
+  }
  },
  {
   "id": "oc_notredame_jusvitae",
@@ -9124,7 +10352,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/jusvitae"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jusvitae@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/jusvitae"
+  }
  },
  {
   "id": "oc_notredame_keenan",
@@ -9159,7 +10391,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/keenanhallnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "keenan@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/keenan"
+  }
  },
  {
   "id": "oc_notredame_keough",
@@ -9202,7 +10438,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/keough-hall-200703323/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "keough@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/keough"
+  }
  },
  {
   "id": "oc_notredame_knights",
@@ -9240,7 +10480,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDKOFC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "knights@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/knights"
+  }
  },
  {
   "id": "oc_notredame_knott_hall",
@@ -9279,7 +10523,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12494615/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "knott@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/knott-hall"
+  }
  },
  {
   "id": "oc_notredame_ksa",
@@ -9313,7 +10561,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/groups/nd.ksa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ksa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ksa"
+  }
  },
  {
   "id": "oc_notredame_clublax",
@@ -9347,7 +10599,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndclublax/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clublax@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/clublax"
+  }
  },
  {
   "id": "oc_notredame_ndwlax",
@@ -9373,7 +10629,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndwlax"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndwlax@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndwlax"
+  }
  },
  {
   "id": "oc_notredame_lacam",
@@ -9408,7 +10668,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/latinclubnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shmband@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lacam"
+  }
  },
  {
   "id": "oc_notredame_latinohonorsociety",
@@ -9442,7 +10706,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/latinohonorsociety/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "latinohs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/latinohonorsociety"
+  }
  },
  {
   "id": "oc_notredame_lmsaplusofnotredame",
@@ -9476,7 +10744,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/lmsaplusnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lmsaplus@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lmsaplusofnotredame"
+  }
  },
  {
   "id": "oc_notredame_lsa",
@@ -9510,7 +10782,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/profile.php?id=100093625253119"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lsa"
+  }
  },
  {
   "id": "oc_notredame_lvcy",
@@ -9536,7 +10812,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/lvcy"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lvcy@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lvcy"
+  }
  },
  {
   "id": "oc_notredame_legion",
@@ -9570,7 +10850,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/leplegion/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "legion@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/legion"
+  }
  },
  {
   "id": "oc_notredame_lewis",
@@ -9605,7 +10889,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/lewishallchicks"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lewis@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/lewis"
+  }
  },
  {
   "id": "oc_notredame_llf",
@@ -9635,8 +10923,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/lgbt.ndls"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/lgbt.ndls"
    }
-  ]
+  ],
+  "contact": {
+   "email": "llf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/llf"
+  }
  },
  {
   "id": "oc_notredame_ndlug",
@@ -9666,7 +10962,11 @@
     "label": "Website",
     "url": "https://ndlug.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndlug@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndlug"
+  }
  },
  {
   "id": "oc_notredame_litchoir",
@@ -9708,7 +11008,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCtoACljfiOY_B15l1WaA2bw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "litchoir@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/litchoir"
+  }
  },
  {
   "id": "oc_notredame_ndlogan",
@@ -9734,7 +11038,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndlogan"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndlogan@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndlogan"
+  }
  },
  {
   "id": "oc_notredame_lsf",
@@ -9799,7 +11107,11 @@
     "label": "Facebook",
     "url": "http://www.facebook.com/ndlyonshall"
    }
-  ]
+  ],
+  "contact": {
+   "email": "lyonshallnd@gmail.com",
+   "source": "https://nd.campuslabs.com/engage/organization/lyonshall"
+  }
  },
  {
   "id": "oc_notredame_mariachi",
@@ -9837,7 +11149,11 @@
     "label": "YouTube",
     "url": "http://www.youtube.com/@mariachiND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mariachi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mariachi"
+  }
  },
  {
   "id": "oc_notredame_mktgclub",
@@ -9871,7 +11187,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-notre-dame-undergraduate-marketing-club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mktgclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mktgclub"
+  }
  },
  {
   "id": "oc_notredame_na2",
@@ -9900,8 +11220,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ndmarriedandparenting"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ndmarriedandparenting"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mpsc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/na2"
+  }
  },
  {
   "id": "oc_notredame_married_law",
@@ -9928,7 +11256,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/married-law"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mslo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/married-law"
+  }
  },
  {
   "id": "oc_notredame_ndmai",
@@ -9958,7 +11290,11 @@
     "label": "Website",
     "url": "http://www3.nd.edu/~ndmai"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndmai@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndmai"
+  }
  },
  {
   "id": "oc_notredame_msaa",
@@ -9985,7 +11321,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/msaa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msaa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/msaa"
+  }
  },
  {
   "id": "oc_notredame_msma",
@@ -10011,7 +11351,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/msma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msma@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/msma"
+  }
  },
  {
   "id": "oc_notredame_mgasac",
@@ -10037,7 +11381,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mgasac"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mgasag@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mgasac"
+  }
  },
  {
   "id": "oc_notredame_mendoza_nd_edu_graduate_programs_master_of_nonprof",
@@ -10063,7 +11411,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mendoza_nd_edu_graduate_programs_master_of_nonprof"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mnasa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mendoza_nd_edu_graduate_programs_master_of_nonprof"
+  }
  },
  {
   "id": "oc_notredame_msbaa",
@@ -10089,6 +11441,35 @@
    {
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/msbaa"
+   }
+  ],
+  "contact": {
+   "email": "sao360@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/msbaa"
+  }
+ },
+ {
+  "id": "oc_notredame_msdm",
+  "name": "Masters of Science in Digital Marketing",
+  "logo": {
+   "emoji": "MS",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_notredame",
+  "verified": false,
+  "description": "Specialized Masters of Science in Digital Marketing",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://nd.campuslabs.com/engage/organization/msdm"
    }
   ]
  },
@@ -10119,8 +11500,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/notredamemsfa"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/notredamemsfa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "msfa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/msfa"
+  }
  },
  {
   "id": "oc_notredame_mrs",
@@ -10146,7 +11535,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mrs"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mrs@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mrs"
+  }
  },
  {
   "id": "oc_notredame_mathclub",
@@ -10172,7 +11565,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mathclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mathclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mathclub"
+  }
  },
  {
   "id": "oc_notredame_mbaa",
@@ -10203,7 +11600,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/notredamemba"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mbaa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mbaa"
+  }
  },
  {
   "id": "oc_notredame_icgroup",
@@ -10234,7 +11635,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-mba-consulting-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "icgroup@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/icgroup"
+  }
  },
  {
   "id": "oc_notredame_mbaeclub",
@@ -10261,7 +11666,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mbaeclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mbaeclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mbaeclub"
+  }
  },
  {
   "id": "oc_notredame_fniclub",
@@ -10292,7 +11701,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-mba-finance-and-investments-club/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "fniclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/fniclub"
+  }
  },
  {
   "id": "oc_notredame_mbahbc",
@@ -10323,7 +11736,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/healthcare-biotechnology-club-918208249/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mbahbc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mbahbc"
+  }
  },
  {
   "id": "oc_notredame_market",
@@ -10357,8 +11774,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/mendoza-mba-marketing/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ndmba_marketingclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "market@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/market"
+  }
  },
  {
   "id": "oc_notredame_mbavetsclub",
@@ -10397,7 +11822,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/mba-military-veterans-club-of-notre-dame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "military@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mbavetsclub"
+  }
  },
  {
   "id": "oc_notredame_ndmbare",
@@ -10424,7 +11853,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndmbare"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndmbare@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndmbare"
+  }
  },
  {
   "id": "oc_notredame_techclub",
@@ -10459,7 +11892,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/mendozambatechclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "techclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/techclub"
+  }
  },
  {
   "id": "oc_notredame_bgm",
@@ -10493,8 +11930,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/80825556/admin/feed/posts/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/bgmmendoza"
    }
-  ]
+  ],
+  "contact": {
+   "email": "bgm@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/bgm"
+  }
  },
  {
   "id": "oc_notredame_mcdonald",
@@ -10559,7 +12004,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/mcglinn-hall"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mcglinn@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mcglinn"
+  }
  },
  {
   "id": "oc_notredame_mphasis",
@@ -10588,7 +12037,11 @@
     "label": "Instagram",
     "url": "https://instagram.com/mdphdnotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mphasis@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mphasis"
+  }
  },
  {
   "id": "oc_notredame_mic",
@@ -10614,7 +12067,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mic@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mic"
+  }
  },
  {
   "id": "oc_notredame_medlife",
@@ -10652,7 +12109,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/TheMEDLIFEMovement"
    }
-  ]
+  ],
+  "contact": {
+   "email": "medlife@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/medlife"
+  }
  },
  {
   "id": "oc_notredame_mendmind",
@@ -10682,7 +12143,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mendingmindsnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mendmind@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mendmind"
+  }
  },
  {
   "id": "oc_notredame_mlac",
@@ -10721,7 +12186,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-notre-dame-mendoza-lgbtq-and-allies-club?trk=public_profile_experience-item_profile-section-card_image-click"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mlac@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mlac"
+  }
  },
  {
   "id": "oc_notredame_mbawib",
@@ -10760,7 +12229,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/mendoza-wib/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndwib@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mbawib"
+  }
  },
  {
   "id": "oc_notredame_melsa",
@@ -10789,8 +12262,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ndlawmelsa/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ndlawmelsa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "melsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/melsa"
+  }
  },
  {
   "id": "oc_notredame_middlemeetsnd",
@@ -10823,8 +12304,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/middlemeetsnd?igsi=MXV3MnNhejV1dTdiNA%3D%3D"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/middlemeetsnd?igsi=MXV3MnNhejV1dTdiNA%3D%3D"
    }
-  ]
+  ],
+  "contact": {
+   "email": "midmeets@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/middlemeetsnd"
+  }
  },
  {
   "id": "oc_notredame_mil_law",
@@ -10867,7 +12356,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameLawSchool"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mil_law@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mil-law"
+  }
  },
  {
   "id": "oc_notredame_ndmi",
@@ -10897,7 +12390,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/ndmi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndmi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndmi"
+  }
  },
  {
   "id": "oc_notredame_mindful",
@@ -10923,7 +12420,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mindful"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mindful@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mindful"
+  }
  },
  {
   "id": "oc_notredame_mnscnd",
@@ -10953,7 +12454,11 @@
     "label": "Website",
     "url": "https://ndmn.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mnscnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mnscnd"
+  }
  },
  {
   "id": "oc_notredame_mt",
@@ -10995,7 +12500,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/14118509/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mt@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mt"
+  }
  },
  {
   "id": "oc_notredame_ndmun",
@@ -11029,7 +12538,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/14191469/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndmun@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndmun"
+  }
  },
  {
   "id": "oc_notredame_moneythink",
@@ -11059,7 +12572,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/moneythink-notre-dame/posts/?feedView=all"
    }
-  ]
+  ],
+  "contact": {
+   "email": "moneythink@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/moneythink"
+  }
  },
  {
   "id": "oc_notredame_manor",
@@ -11090,7 +12607,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/morrisseymanor/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "manor@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/manor"
+  }
  },
  {
   "id": "oc_notredame_mpms",
@@ -11120,7 +12641,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/mpms.nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "premed.premed.1@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mpms"
+  }
  },
  {
   "id": "oc_notredame_mmsand",
@@ -11153,8 +12678,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/mmsa__nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/mmsa__nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mmsand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mmsand"
+  }
  },
  {
   "id": "oc_notredame_musicmd",
@@ -11180,7 +12713,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/musicmd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "musicmd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/musicmd"
+  }
  },
  {
   "id": "oc_notredame_ndmsa",
@@ -11214,7 +12751,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_msa/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndmsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndmsa"
+  }
  },
  {
   "id": "oc_notredame_mustard",
@@ -11240,7 +12781,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mustard"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mustard@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mustard"
+  }
  },
  {
   "id": "oc_notredame_nabnd",
@@ -11266,7 +12811,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/nabnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nabnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nabnd"
+  }
  },
  {
   "id": "oc_notredame_nlg",
@@ -11293,7 +12842,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/nlg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nlg@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nlg"
+  }
  },
  {
   "id": "oc_notredame_nomas",
@@ -11323,7 +12876,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nomas_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nomas@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nomas"
+  }
  },
  {
   "id": "oc_notredame_nrfsand",
@@ -11352,8 +12909,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nrfsa.nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nrfsa.nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nrfsand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nrfsand"
+  }
  },
  {
   "id": "oc_notredame_nsbe",
@@ -11391,7 +12956,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/ndnsbe/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsbe@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nsbe"
+  }
  },
  {
   "id": "oc_notredame_nativlaw",
@@ -11418,7 +12987,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/nativlaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nativlaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nativlaw"
+  }
  },
  {
   "id": "oc_notredame_nasand",
@@ -11448,7 +13021,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/native_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nasand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nasand"
+  }
  },
  {
   "id": "oc_notredame_nsa",
@@ -11474,7 +13051,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/nsa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nsa"
+  }
  },
  {
   "id": "oc_notredame_netimpact",
@@ -11505,7 +13086,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/net-impact-notre-dame-mendoza/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ntmpct@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/netimpact"
+  }
  },
  {
   "id": "oc_notredame_neurosci",
@@ -11531,7 +13116,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/neurosci"
    }
-  ]
+  ],
+  "contact": {
+   "email": "neurosci@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/neurosci"
+  }
  },
  {
   "id": "oc_notredame_ndnj",
@@ -11565,7 +13154,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12626726/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndnj@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndnj"
+  }
  },
  {
   "id": "oc_notredame_nycund",
@@ -11598,8 +13191,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/notredamenewyork"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/notredamenewyork"
    }
-  ]
+  ],
+  "contact": {
+   "email": "newyork@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nycund"
+  }
  },
  {
   "id": "oc_notredame_xcski",
@@ -11629,7 +13230,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_nordicski/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "xcski@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/xcski"
+  }
  },
  {
   "id": "oc_notredame_nsrsco",
@@ -11666,8 +13271,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/NotSoRoyalShakespeareCo"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nsr_shakespeare"
    }
-  ]
+  ],
+  "contact": {
+   "email": "nsrsco@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nsrsco"
+  }
  },
  {
   "id": "oc_notredame_colrepub",
@@ -11705,7 +13318,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDrepublicans"
    }
-  ]
+  ],
+  "contact": {
+   "email": "colrepub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/colrepub"
+  }
  },
  {
   "id": "oc_notredame_invclub",
@@ -11731,7 +13348,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/invclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "invclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/invclub"
+  }
  },
  {
   "id": "oc_notredame_italian_club",
@@ -11760,8 +13381,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nditalianclub/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/nditalianclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "italian@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/italian_club"
+  }
  },
  {
   "id": "oc_notredame_mhme",
@@ -11786,7 +13415,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/mhme"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mhme@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mhme"
+  }
  },
  {
   "id": "oc_notredame_squash",
@@ -11816,7 +13449,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_squash/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "squash@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/squash"
+  }
  },
  {
   "id": "oc_notredame_greennd",
@@ -11854,7 +13491,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCPaVIkMdyvoev9j_PejU3lg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "green@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/greennd"
+  }
  },
  {
   "id": "oc_notredame_ndsymphony",
@@ -11892,7 +13533,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCvYeYioH_LV4j8Av2idf6aw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "symphony@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndsymphony"
+  }
  },
  {
   "id": "oc_notredame_ndtv",
@@ -11930,7 +13575,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCV1kPG79cIsxQAW6ZPnoEAg"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndtv@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndtv"
+  }
  },
  {
   "id": "oc_notredame_tcnd",
@@ -11956,7 +13605,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/tcnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theoclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tcnd"
+  }
  },
  {
   "id": "oc_notredame_wcbball",
@@ -11986,7 +13639,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd.wcbball/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wcbball@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wcbball"
+  }
  },
  {
   "id": "oc_notredame_oneill",
@@ -12013,7 +13670,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/oneill"
    }
-  ]
+  ],
+  "contact": {
+   "email": "oneill@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/oneill"
+  }
  },
  {
   "id": "oc_notredame_occ",
@@ -12043,7 +13704,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndoffcampus/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "occ@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/occ"
+  }
  },
  {
   "id": "oc_notredame_reslife",
@@ -12073,7 +13738,11 @@
     "label": "Website",
     "url": "https://residentiallife.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "residentiallife@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/reslife"
+  }
  },
  {
   "id": "oc_notredame_ose",
@@ -12107,7 +13776,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/enrichnd/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "enrich@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ose"
+  }
  },
  {
   "id": "oc_notredame_owls",
@@ -12162,6 +13835,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/onelovenotredame"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/onelovenotredame"
    }
   ]
  },
@@ -12201,7 +13878,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/operationsmile"
    }
-  ]
+  ],
+  "contact": {
+   "email": "opsmile@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/opsmile"
+  }
  },
  {
   "id": "oc_notredame_icstudi",
@@ -12227,7 +13908,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/icstudi"
    }
-  ]
+  ],
+  "contact": {
+   "email": "icstudi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/icstudi"
+  }
  },
  {
   "id": "oc_notredame_ocf",
@@ -12256,8 +13941,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/nd_ocf"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nd_ocf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ocf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ocf"
+  }
  },
  {
   "id": "oc_notredame_ocnd",
@@ -12291,7 +13984,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/outingclubnd/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ocnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ocnd"
+  }
  },
  {
   "id": "oc_notredame_pihengag",
@@ -12321,7 +14018,11 @@
     "label": "Website",
     "url": "https://www.pih.org/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pihengag@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pihengag"
+  }
  },
  {
   "id": "oc_notredame_pasqeast",
@@ -12360,7 +14061,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@pepyros"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pasqeast@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pasqeast"
+  }
  },
  {
   "id": "oc_notredame_pasquerillawesthall",
@@ -12395,7 +14100,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pasquerillawesthall/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pasquerillawest@gmail.com",
+   "source": "https://nd.campuslabs.com/engage/organization/pasquerillawesthall"
+  }
  },
  {
   "id": "oc_notredame_ppwmc",
@@ -12424,8 +14133,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ppwmc_nd/#"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ppwmc_nd/#"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ppwmc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ppwmc"
+  }
  },
  {
   "id": "oc_notredame_pemusic",
@@ -12467,7 +14184,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NDPEMCo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pemusic@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pemusic"
+  }
  },
  {
   "id": "oc_notredame_philo",
@@ -12492,7 +14213,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/philo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "philo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/philo"
+  }
  },
  {
   "id": "oc_notredame_pitausigma",
@@ -12518,7 +14243,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/pitausigma"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pts@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pitausigma"
+  }
  },
  {
   "id": "oc_notredame_ndpickle",
@@ -12548,7 +14277,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndpickle"
    }
-  ]
+  ],
+  "contact": {
+   "email": "picklend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndpickle"
+  }
  },
  {
   "id": "oc_notredame_kielbasa",
@@ -12574,7 +14307,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/kielbasa"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kielbasa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/kielbasa"
+  }
  },
  {
   "id": "oc_notredame_pogo",
@@ -12600,7 +14337,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/pogo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pograd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pogo"
+  }
  },
  {
   "id": "oc_notredame_politicalunion",
@@ -12630,7 +14371,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/notredamepolitical"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pund@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/politicalunion"
+  }
  },
  {
   "id": "oc_notredame_ndpomsquad",
@@ -12671,8 +14416,16 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCsglbCx3sxFQ4xyTPC4Kvzg"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/ndpomsquad"
    }
-  ]
+  ],
+  "contact": {
+   "email": "poms@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndpomsquad"
+  }
  },
  {
   "id": "oc_notredame_powerlifting",
@@ -12702,7 +14455,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndpowerlifting/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "liftnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/powerlifting"
+  }
  },
  {
   "id": "oc_notredame_ndpds",
@@ -12732,7 +14489,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/pdsnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "predent@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndpds"
+  }
  },
  {
   "id": "oc_notredame_paclub",
@@ -12758,7 +14519,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/paclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "paclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/paclub"
+  }
  },
  {
   "id": "oc_notredame_medinfo",
@@ -12792,7 +14557,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12470635/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "medinfo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/medinfo"
+  }
  },
  {
   "id": "oc_notredame_ndpv",
@@ -12822,7 +14591,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndprevetclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndpv@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndpv"
+  }
  },
  {
   "id": "oc_notredame_prelaw_nd",
@@ -12848,7 +14621,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/prelaw-nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prelwsoc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/prelaw-nd"
+  }
  },
  {
   "id": "oc_notredame_poet",
@@ -12882,7 +14659,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/nd_poet"
    }
-  ]
+  ],
+  "contact": {
+   "email": "equity@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/poet"
+  }
  },
  {
   "id": "oc_notredame_prismnd",
@@ -12920,7 +14701,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/PrismND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prismnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/prismnd"
+  }
  },
  {
   "id": "oc_notredame_pfresh",
@@ -12962,7 +14747,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/NDProjectFresh/featured"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pfresh@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pfresh"
+  }
  },
  {
   "id": "oc_notredame_projectsunshinend",
@@ -12988,7 +14777,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/projectsunshinend"
    }
-  ]
+  ],
+  "contact": {
+   "email": "jsolanob@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/projectsunshinend"
+  }
  },
  {
   "id": "oc_notredame_psyclub",
@@ -13018,7 +14811,11 @@
     "label": "Instagram",
     "url": "http://www.instagram.com/ndpsychology"
    }
-  ]
+  ],
+  "contact": {
+   "email": "psyclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/psyclub"
+  }
  },
  {
   "id": "oc_notredame_pilf",
@@ -13045,7 +14842,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/pilf"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pilf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/pilf"
+  }
  },
  {
   "id": "oc_notredame_prsand",
@@ -13075,7 +14876,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/prsa.nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prsand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/prsand"
+  }
  },
  {
   "id": "oc_notredame_quants",
@@ -13101,7 +14906,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/quants"
    }
-  ]
+  ],
+  "contact": {
+   "email": "quants@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/quants"
+  }
  },
  {
   "id": "oc_notredame_questnd",
@@ -13139,7 +14948,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/QuestBridge"
    }
-  ]
+  ],
+  "contact": {
+   "email": "notredame.chapter@questbridge.org",
+   "source": "https://nd.campuslabs.com/engage/organization/questnd"
+  }
  },
  {
   "id": "oc_notredame_accnd",
@@ -13164,7 +14977,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/accnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "accnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/accnd"
+  }
  },
  {
   "id": "oc_notredame_rarend",
@@ -13194,7 +15011,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/rarendclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rarend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rarend"
+  }
  },
  {
   "id": "oc_notredame_rend",
@@ -13220,7 +15041,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/rend"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rend@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rend"
+  }
  },
  {
   "id": "oc_notredame_ndrels",
@@ -13246,7 +15071,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndrels"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndrels@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndrels"
+  }
  },
  {
   "id": "oc_notredame_nd_rec",
@@ -13279,8 +15108,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/renergy.nd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/renergy.nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "renergy@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nd-rec"
+  }
  },
  {
   "id": "oc_notredame_prolife",
@@ -13322,7 +15159,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameRTL"
    }
-  ]
+  ],
+  "contact": {
+   "email": "prolife@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/prolife"
+  }
  },
  {
   "id": "oc_notredame_ritmond",
@@ -13352,7 +15193,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ritmo_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ritmo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ritmond"
+  }
  },
  {
   "id": "oc_notredame_rfc",
@@ -13390,7 +15235,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/nd-rfc"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rfc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rfc"
+  }
  },
  {
   "id": "oc_notredame_rpg",
@@ -13419,8 +15268,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/rpgnotredame/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/rpgnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rpg@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rpg"
+  }
  },
  {
   "id": "oc_notredame_ndcrew",
@@ -13457,8 +15314,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/ndmensrowing"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ndmensrowing"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndcrew@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndcrew"
+  }
  },
  {
   "id": "oc_notredame_rubiks",
@@ -13483,8 +15348,16 @@
    {
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/rubiks"
+   },
+   {
+    "label": "LinkedIn",
+    "url": "https://www.linkedin.com/in/joshraynes/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "cube@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/rubiks"
+  }
  },
  {
   "id": "oc_notredame_wrugby",
@@ -13526,7 +15399,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NDWomensRugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wrugby@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wrugby"
+  }
  },
  {
   "id": "oc_notredame_mensrugby",
@@ -13564,7 +15441,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameRugby"
    }
-  ]
+  ],
+  "contact": {
+   "email": "rugby@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mensrugby"
+  }
  },
  {
   "id": "oc_notredame_runningclub",
@@ -13598,7 +15479,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndrunningclub/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "runclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/runningclub"
+  }
  },
  {
   "id": "oc_notredame_russian",
@@ -13624,7 +15509,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/russian"
    }
-  ]
+  ],
+  "contact": {
+   "email": "russian@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/russian"
+  }
  },
  {
   "id": "oc_notredame_ryan",
@@ -13659,10 +15548,14 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ryanhallwildcats/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ryan@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ryan"
+  }
  },
  {
-  "id": "oc_notredame__",
+  "id": "oc_notredame_sacnas_at_the_university_of_notre_dame",
   "name": "SACNAS at the University of Notre Dame",
   "logo": {
    "emoji": "SU",
@@ -13689,7 +15582,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sacnas_nd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sacnas@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/-"
+  }
  },
  {
   "id": "oc_notredame_ndsail",
@@ -13727,7 +15624,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/irishsail/%20https://www.facebook.com/irishsail/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndsail@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndsail"
+  }
  },
  {
   "id": "oc_notredame_steds",
@@ -13758,7 +15659,11 @@
     "label": "Website",
     "url": "https://steds.nd.edu/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "steds@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/steds"
+  }
  },
  {
   "id": "oc_notredame_stms",
@@ -13785,7 +15690,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/stms"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndlawtms@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/stms"
+  }
  },
  {
   "id": "oc_notredame_scholast",
@@ -13827,7 +15736,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDscholastic"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scholast@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scholast"
+  }
  },
  {
   "id": "oc_notredame_sffclub",
@@ -13853,7 +15766,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/sffclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sffclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sffclub"
+  }
  },
  {
   "id": "oc_notredame_scipolnd",
@@ -13888,7 +15805,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SciencePolicyInitiativeND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scipolnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scipolnd"
+  }
  },
  {
   "id": "oc_notredame_scbuclub",
@@ -13914,7 +15835,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/scbuclub"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scbuclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scbuclub"
+  }
  },
  {
   "id": "oc_notredame_shades",
@@ -13944,7 +15869,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/shades_nd/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shades@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/shades"
+  }
  },
  {
   "id": "oc_notredame_stfnd",
@@ -13972,8 +15901,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/stf_notredame"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/stf_notredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stfnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/stfnd"
+  }
  },
  {
   "id": "oc_notredame_sieghall",
@@ -14012,7 +15949,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/siegfried-hall/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sieghall@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sieghall"
+  }
  },
  {
   "id": "oc_notredame_ndski",
@@ -14050,7 +15991,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/company/notre-dame-ski-snowboard-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndski@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndski"
+  }
  },
  {
   "id": "oc_notredame_sol",
@@ -14080,7 +16025,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sliceoflifeatnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sol@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sol"
+  }
  },
  {
   "id": "oc_notredame_ndsws",
@@ -14110,7 +16059,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/in/smart-woman-securities-01b357274"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndsws@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndsws"
+  }
  },
  {
   "id": "oc_notredame_ndmsc",
@@ -14140,7 +16093,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/nd_mensclubsoccer"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndmsc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndmsc"
+  }
  },
  {
   "id": "oc_notredame_wcsnd",
@@ -14174,7 +16131,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndwclubsoccer/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wcsnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wcsnd"
+  }
  },
  {
   "id": "oc_notredame_shpe",
@@ -14212,7 +16173,11 @@
     "label": "LinkedIn",
     "url": "http://www.linkedin.com/companysolesnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "shpe@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/shpe"
+  }
  },
  {
   "id": "oc_notredame_physclub",
@@ -14249,8 +16214,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/University-of-Notre-Dame-Physics-86978691885"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/irish_sps"
    }
-  ]
+  ],
+  "contact": {
+   "email": "physclub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/physclub"
+  }
  },
  {
   "id": "oc_notredame_ssfnd",
@@ -14281,7 +16254,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/society-of-schmitt-fellows/home"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ssfnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ssfnd"
+  }
  },
  {
   "id": "oc_notredame_swe",
@@ -14345,7 +16322,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/sociology_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "kardise@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sociology_club"
+  }
  },
  {
   "id": "oc_notredame_sldrtynd",
@@ -14379,7 +16360,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@solidaritynd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sldrtynd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sldrtynd"
+  }
  },
  {
   "id": "oc_notredame_songwriting",
@@ -14405,7 +16390,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/songwriting"
    }
-  ]
+  ],
+  "contact": {
+   "email": "songnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/songwriting"
+  }
  },
  {
   "id": "oc_notredame_otters",
@@ -14432,7 +16421,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/otters"
    }
-  ]
+  ],
+  "contact": {
+   "email": "otters@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/otters"
+  }
  },
  {
   "id": "oc_notredame_sasa",
@@ -14466,7 +16459,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@SouthAsianStudentAssociationND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sasa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sasa"
+  }
  },
  {
   "id": "oc_notredame_spacelaw",
@@ -14493,7 +16490,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/spacelaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spacelaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/spacelaw"
+  }
  },
  {
   "id": "oc_notredame_ndspanishclub",
@@ -14522,8 +16523,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/spanishclubnd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/spanishclubnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spanish@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndspanishclub"
+  }
  },
  {
   "id": "oc_notredame_sond",
@@ -14553,7 +16562,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndspecialolympics/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sond@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sond"
+  }
  },
  {
   "id": "oc_notredame_smcouncl",
@@ -14578,7 +16591,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/smcouncl"
    }
-  ]
+  ],
+  "contact": {
+   "email": "smcouncl@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/smcouncl"
+  }
  },
  {
   "id": "oc_notredame_spie",
@@ -14617,7 +16634,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SPIE.org"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spie@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/spie"
+  }
  },
  {
   "id": "oc_notredame_srcnd",
@@ -14647,7 +16668,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/notredameroundnet/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "srcnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/srcnd"
+  }
  },
  {
   "id": "oc_notredame_nd_sports_analytics",
@@ -14685,7 +16710,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/notre-dame-sports-analytics-club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tlohmann@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nd-sports-analytics"
+  }
  },
  {
   "id": "oc_notredame_sportsb",
@@ -14716,7 +16745,11 @@
     "label": "Website",
     "url": "https://mbaclubs.nd.edu/sportsbusiness/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sportsb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sportsb"
+  }
  },
  {
   "id": "oc_notredame_scelf",
@@ -14747,7 +16780,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/SCELFNDLS/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scelf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scelf"
+  }
  },
  {
   "id": "oc_notredame_stanford",
@@ -14786,7 +16823,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12615077/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stanford@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/stanford"
+  }
  },
  {
   "id": "oc_notredame_stoamag",
@@ -14820,7 +16861,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/stoa-magazine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "stoamag@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/stoamag"
+  }
  },
  {
   "id": "oc_notredame_sao",
@@ -14858,7 +16903,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/saond"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sao@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sao"
+  }
  },
  {
   "id": "oc_notredame_sawa",
@@ -14888,7 +16937,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/sawa.nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sawa@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sawa"
+  }
  },
  {
   "id": "oc_notredame_ndlssba",
@@ -14953,7 +17006,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/scianotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scia@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scia"
+  }
  },
  {
   "id": "oc_notredame_senate",
@@ -14999,7 +17056,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/ndstudentgov"
    }
-  ]
+  ],
+  "contact": {
+   "email": "studegov@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/senate"
+  }
  },
  {
   "id": "oc_notredame_sibc",
@@ -15041,7 +17102,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NDSIBC"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sibc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sibc"
+  }
  },
  {
   "id": "oc_notredame_ndband",
@@ -15083,7 +17148,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/notredameband"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndband@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndband"
+  }
  },
  {
   "id": "oc_notredame_spn",
@@ -15116,8 +17185,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ndspn/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/notredamespn"
    }
-  ]
+  ],
+  "contact": {
+   "email": "spn@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/spn"
+  }
  },
  {
   "id": "oc_notredame_standup",
@@ -15143,7 +17220,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/standup"
    }
-  ]
+  ],
+  "contact": {
+   "email": "standup@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/standup"
+  }
  },
  {
   "id": "oc_notredame_sub",
@@ -15181,7 +17262,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/SubND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sub@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/sub"
+  }
  },
  {
   "id": "oc_notredame_studentveteransofamerica",
@@ -15211,7 +17296,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/share/1B9hUMnV3Q/?mibextid=wwXIfr"
    }
-  ]
+  ],
+  "contact": {
+   "email": "akent3@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/studentveteransofamerica"
+  }
  },
  {
   "id": "oc_notredame_svp",
@@ -15241,7 +17330,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/svpnotredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "svp@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/svp"
+  }
  },
  {
   "id": "oc_notredame_scnond",
@@ -15279,7 +17372,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12298587/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scnond@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scnond"
+  }
  },
  {
   "id": "oc_notredame_scop",
@@ -15313,7 +17410,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/scop_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scop@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scop"
+  }
  },
  {
   "id": "oc_notredame_scand",
@@ -15339,7 +17440,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/scand"
    }
-  ]
+  ],
+  "contact": {
+   "email": "scand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/scand"
+  }
  },
  {
   "id": "oc_notredame_snu",
@@ -15369,7 +17474,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/snu.notredame/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "snu@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/snu"
+  }
  },
  {
   "id": "oc_notredame_supersibs",
@@ -15403,7 +17512,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/supersibsnd/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "supersib@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/supersibs"
+  }
  },
  {
   "id": "oc_notredame_ndsurvivor",
@@ -15429,7 +17542,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ndsurvivor"
    }
-  ]
+  ],
+  "contact": {
+   "email": "survivor@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndsurvivor"
+  }
  },
  {
   "id": "oc_notredame_clubswim",
@@ -15455,7 +17572,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/clubswim"
    }
-  ]
+  ],
+  "contact": {
+   "email": "clubswim@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/clubswim"
+  }
  },
  {
   "id": "oc_notredame_swingers",
@@ -15492,8 +17613,16 @@
    {
     "label": "Facebook",
     "url": "http://facebook.com/fred.astaire.332"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/nd_swing_club"
    }
-  ]
+  ],
+  "contact": {
+   "email": "swingers@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/swingers"
+  }
  },
  {
   "id": "oc_notredame_tabletennis",
@@ -15523,7 +17652,11 @@
     "label": "Website",
     "url": "https://sites.nd.edu/ndttc/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndttc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tabletennis"
+  }
  },
  {
   "id": "oc_notredame_tsand",
@@ -15553,7 +17686,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndtsa/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tsand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tsand"
+  }
  },
  {
   "id": "oc_notredame_tbp",
@@ -15583,7 +17720,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tau-beta-pi-indiana-gamma-chapter-at-the-university-of-notre-dame/?viewAsMember=true"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tbp@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tbp"
+  }
  },
  {
   "id": "oc_notredame_taxlaw",
@@ -15610,7 +17751,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/taxlaw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "taxlaw@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/taxlaw"
+  }
  },
  {
   "id": "oc_notredame_technology_and_catholicism",
@@ -15636,7 +17781,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/technology_and_catholicism"
    }
-  ]
+  ],
+  "contact": {
+   "email": "techcath@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/technology_and_catholicism"
+  }
  },
  {
   "id": "oc_notredame_tennis01",
@@ -15666,7 +17815,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndclubtennis"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tennis01@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tennis01"
+  }
  },
  {
   "id": "oc_notredame_nd_texas",
@@ -15696,7 +17849,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndtexasclub/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "texas@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/nd-texas"
+  }
  },
  {
   "id": "oc_notredame_canadaclub",
@@ -15764,7 +17921,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ndyearbook/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "dome@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/dome"
+  }
  },
  {
   "id": "oc_notredame_echoes",
@@ -15802,7 +17963,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCju0FYHWGd3FF0FVMxhdKVw"
    }
-  ]
+  ],
+  "contact": {
+   "email": "echoes@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/echoes"
+  }
  },
  {
   "id": "oc_notredame_flyirish",
@@ -15840,7 +18005,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/AFROTCDet225"
    }
-  ]
+  ],
+  "contact": {
+   "email": "csheeran@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/flyirish"
+  }
  },
  {
   "id": "oc_notredame_humorart",
@@ -15874,7 +18043,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/humorartistsofnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "humorart@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/humorart"
+  }
  },
  {
   "id": "oc_notredame_juggler",
@@ -15908,7 +18081,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/jugglernd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "juggler@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/juggler"
+  }
  },
  {
   "id": "oc_notredame_magnificat",
@@ -15954,7 +18131,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/channel/UCM000Fdw3Wu0iSfohU_3A8A"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndwlc@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/magnificat"
+  }
  },
  {
   "id": "oc_notredame_melodies",
@@ -15992,7 +18173,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@melodiesnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "melodies@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/melodies"
+  }
  },
  {
   "id": "oc_notredame_tmnnd",
@@ -16018,7 +18203,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/tmnnd"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tmnnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tmnnd"
+  }
  },
  {
   "id": "oc_notredame_thepoint",
@@ -16048,7 +18237,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/thepointnotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "thepoint@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/thepoint"
+  }
  },
  {
   "id": "oc_notredame_theshirt",
@@ -16094,7 +18287,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/user/TheShirtND"
    }
-  ]
+  ],
+  "contact": {
+   "email": "theshirt@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/theshirt"
+  }
  },
  {
   "id": "oc_notredame_wabruda",
@@ -16127,8 +18324,16 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/9174392/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wabruda"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wabruda@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wabruda"
+  }
  },
  {
   "id": "oc_notredame_thewomensnetworknotredame",
@@ -16158,7 +18363,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/thewomensnetwork_notredame/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "twnnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/thewomensnetworknotredame"
+  }
  },
  {
   "id": "oc_notredame_tea",
@@ -16196,7 +18405,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/tea-nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "tea@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/tea"
+  }
  },
  {
   "id": "oc_notredame_timmynd",
@@ -16230,7 +18443,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/timmy_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "timmynd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/timmynd"
+  }
  },
  {
   "id": "oc_notredame_totustuus",
@@ -16256,7 +18473,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/totustuus"
    }
-  ]
+  ],
+  "contact": {
+   "email": "sbenigno@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/totustuus"
+  }
  },
  {
   "id": "oc_notredame_transact",
@@ -16282,7 +18503,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/transact"
    }
-  ]
+  ],
+  "contact": {
+   "email": "transact@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/transact"
+  }
  },
  {
   "id": "oc_notredame_transpose",
@@ -16316,7 +18541,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@transposedance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "pose@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/transpose"
+  }
  },
  {
   "id": "oc_notredame_ndtri",
@@ -16354,7 +18583,11 @@
     "label": "Facebook",
     "url": "https://www.facebook.com/NotreDameTriathlon"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndtri@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndtri"
+  }
  },
  {
   "id": "oc_notredame_trident",
@@ -16380,7 +18613,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/trident"
    }
-  ]
+  ],
+  "contact": {
+   "email": "trident@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/trident"
+  }
  },
  {
   "id": "oc_notredame_troopnd",
@@ -16409,8 +18646,16 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/troop.nd.dance"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://instagram.com/troop.nd.dance"
    }
-  ]
+  ],
+  "contact": {
+   "email": "troopnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/troopnd"
+  }
  },
  {
   "id": "oc_notredame_ukraine",
@@ -16436,7 +18681,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/ukraine"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ukraine@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ukraine"
+  }
  },
  {
   "id": "oc_notredame_ndultimate",
@@ -16474,7 +18723,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@notredameultimate1843"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ultimate@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndultimate"
+  }
  },
  {
   "id": "oc_notredame_ubac",
@@ -16508,7 +18761,11 @@
     "label": "Instagram",
     "url": "http://instagram.com/ubacnotredame"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ubac@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ubac"
+  }
  },
  {
   "id": "oc_notredame_ucf",
@@ -16539,7 +18796,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ucf.fireflies/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ucf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ucf"
+  }
  },
  {
   "id": "oc_notredame_mootct",
@@ -16569,7 +18830,11 @@
     "label": "Website",
     "url": "https://sites.google.com/nd.edu/mootct/home"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mootct@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mootct"
+  }
  },
  {
   "id": "oc_notredame_ugwib",
@@ -16607,7 +18872,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nduwib/mycompany/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ugwib@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ugwib"
+  }
  },
  {
   "id": "oc_notredame_ndbaja",
@@ -16649,7 +18918,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@irishracing6137"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndbaja@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/ndbaja"
+  }
  },
  {
   "id": "oc_notredame_yl",
@@ -16679,7 +18952,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ylcollegemichiana/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yl@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/yl"
+  }
  },
  {
   "id": "oc_notredame_unleash",
@@ -16713,7 +18990,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/ndusv/about/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "unleash@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/unleash"
+  }
  },
  {
   "id": "oc_notredame_uavnd",
@@ -16743,7 +19024,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/uavnd_"
    }
-  ]
+  ],
+  "contact": {
+   "email": "uavnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/uavnd"
+  }
  },
  {
   "id": "oc_notredame_vgc",
@@ -16777,7 +19062,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/vgcnd.club/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndcvg@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/vgc"
+  }
  },
  {
   "id": "oc_notredame_vsand",
@@ -16807,7 +19096,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/vsa_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "vsand@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/vsand"
+  }
  },
  {
   "id": "oc_notredame_voices_of_faith",
@@ -16837,7 +19130,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndvof/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "voices@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/voices-of-faith"
+  }
  },
  {
   "id": "oc_notredame_mensvb",
@@ -16879,7 +19176,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@NDMensVolleyball"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mensvb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mensvb"
+  }
  },
  {
   "id": "oc_notredame_wclubvb",
@@ -16913,7 +19214,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndwcvb/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wclubvb@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wclubvb"
+  }
  },
  {
   "id": "oc_notredame_wallst",
@@ -16947,7 +19252,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12609055/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wallst@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wallst"
+  }
  },
  {
   "id": "oc_notredame_wild",
@@ -16978,7 +19287,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/walshhallnd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wild@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wild"
+  }
  },
  {
   "id": "oc_notredame_irishwwpolo",
@@ -17007,8 +19320,16 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/ndwwaterpolo"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ndwwaterpolo"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wwpolo@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/irishwwpolo"
+  }
  },
  {
   "id": "oc_notredame_wpolo",
@@ -17042,7 +19363,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndmwaterpolo/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "ndwpolo@gmail.com",
+   "source": "https://nd.campuslabs.com/engage/organization/wpolo"
+  }
  },
  {
   "id": "oc_notredame_waterski",
@@ -17072,7 +19397,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndwaterski/?hl=en"
    }
-  ]
+  ],
+  "contact": {
+   "email": "waterski@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/waterski"
+  }
  },
  {
   "id": "oc_notredame_welcomeweekend",
@@ -17106,7 +19435,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/ndwelcome/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "welcome@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/welcomeweekend"
+  }
  },
  {
   "id": "oc_notredame_welshfam",
@@ -17168,7 +19501,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/vismoot"
    }
-  ]
+  ],
+  "contact": {
+   "email": "abogart@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/vismoot"
+  }
  },
  {
   "id": "oc_notredame_mawnd",
@@ -17198,7 +19535,11 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/makeawish.nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "mawnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/mawnd"
+  }
  },
  {
   "id": "oc_notredame_wics",
@@ -17262,7 +19603,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/university-of-notre-dame-women-in-economics"
    }
-  ]
+  ],
+  "contact": {
+   "email": "femecon@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/femecon"
+  }
  },
  {
   "id": "oc_notredame_wlf",
@@ -17297,7 +19642,11 @@
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/groups/12648130/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wlf@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wlf"
+  }
  },
  {
   "id": "oc_notredame_wrestle",
@@ -17324,7 +19673,11 @@
     "label": "Directory",
     "url": "https://nd.campuslabs.com/engage/organization/wrestle"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wrestle@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wrestle"
+  }
  },
  {
   "id": "oc_notredame_wsnd",
@@ -17363,7 +19716,11 @@
     "label": "YouTube",
     "url": "https://www.youtube.com/@889WSNDFM"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wsnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wsnd"
+  }
  },
  {
   "id": "oc_notredame_wvfi",
@@ -17401,8 +19758,16 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/WVFIradio"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/wvfi_radio"
    }
-  ]
+  ],
+  "contact": {
+   "email": "wvfi@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/wvfi"
+  }
  },
  {
   "id": "oc_notredame_yafnd",
@@ -17433,6 +19798,10 @@
     "label": "Instagram",
     "url": "https://www.instagram.com/yaf_nd/"
    }
-  ]
+  ],
+  "contact": {
+   "email": "yafnd@nd.edu",
+   "source": "https://nd.campuslabs.com/engage/organization/yafnd"
+  }
  }
 ]

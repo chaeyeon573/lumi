@@ -2536,3 +2536,9 @@
   - Weekly re-collect: Brown 412 groups (unchanged), NC State 806 (links 2,315→2,406), W&M 534→536 (2 delisted kept; links 1,591→1,648; 3,198 classes).
 - Spot check clubs: UGA If/When/How, Penn State Turfgrass Club, UNC LAB! Theatre, UF Society of Physics Students fine; Notre Dame Baja SAE (sites.nd.edu) answers 403 to bots.
 - Spot check courses: 5 random Duke Fall 2026 classes (MATH 730 Sec 03, I&E 252, SWAHILI 701, XTIANPRC 704 Sec 01, WRITING 120 Sec 61CN) match DukeHub.
+
+## 2026-11-07 19:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Weekly re-collect, one school at a time: Rutgers-Newark 231 (login-portal links stayed out), Dartmouth 406→438 groups (paging fix), Notre Dame 540→541 (1 delisted kept), Penn State 1,302→1,309 (links 3,477→3,642; retired clubs.psu.edu links stayed out).
+- Spot check clubs: MSU Kesem, Tufts WIA, Michigan SAFE Project, Vanderbilt Thomistic Institute fine; Indiana Fighting Pretty site behind a bot check (202).
+- Spot check courses: 5 random W&M Spring 2027 classes (PHYS 772, FMST 330 Sec 02, FREN 210, CAMS 210, CLCV 431) match the W&M schedule.

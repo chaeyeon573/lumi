@@ -284,39 +284,6 @@
   }
  },
  {
-  "id": "oc_dartmouth_cg67845",
-  "name": "Allied Scholars for Animal Protection",
-  "logo": {
-   "emoji": "AS",
-   "hue": 104
-  },
-  "type": "club",
-  "schoolId": "s_dartmouth",
-  "parent": "Issue Awareness",
-  "verified": false,
-  "description": "Some of our goals include setting up film screenings, tabling events, and guest lectures in order to bring awareness of the practices of the animal agriculture industry and the environmental and health benefits of a plant-based lifestyle to the Dartmouth community.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67845"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
   "id": "og_dartmouth_cg67387",
   "name": "Alpha Chi Alpha",
   "logo": {
@@ -1348,7 +1315,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Issue Awareness",
   "verified": false,
   "description": "Our mission is to pursue fostering intelligent, meaningful, and constructive discourse on contentious issues at Dartmouth, ensuring students are exposed to a wide array of points of view, and to promote education for the purpose of improving discourse. Rather than encouraging debate for the sake of debate, we hope to encourage students to learn. We hope students can learn both the perspectives of others and where their views may be improved. In this way we hope to approach meaningful solutions to important problems both at Dartmouth and around the world.",
   "gallery": [],
@@ -1381,7 +1348,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Culture Specific",
   "verified": false,
   "description": "British Society exists to create a welcoming home at Dartmouth for British students and students who have attended school in Britain, and to share British culture with the wider campus community. We bring together students across all four class years for socials, meals, cultural celebrations, and conversation, so that no British student at Dartmouth feels socially outnumbered or disconnected from the traditions of home, and so that any Dartmouth student curious about British life has an accessible way in.",
   "gallery": [],
@@ -4048,7 +4015,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Service & Philanthropy",
   "verified": false,
   "description": "To give Dartmouth students the chance to participate in Remote Area Medical (RAM) trips focused on providing free services to those who are unable to afford medical care themselves and for those who do not have access to hospitals or healthcare facilities in their area. Through this organization, members will have the opportunity to volunteer and travel to RAM clinics across the nation. This will be an especially valuable learning and leadership experience for aspiring healthcare professionals. This organization will aspire to promote quality healthcare both locally and nationally to the fulle",
   "gallery": [],
@@ -4448,7 +4415,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Culture Specific",
   "verified": false,
   "description": "When I came to Dartmouth for the first time in September 2024 from Uzbekistan, a lot of questions were thrown at me during the New Student Orientation: Do you speak Russian? Have you watched Borat? Is it true that your government is totalitarian?, and many more. I realized for many of my peers, I was the first person they’d meet from Central Asia, and that would carry a lot of expectations and perceptions by people in the West. I'm glad there are a lot of student organizations that are identity-based on campus. However, Iman (who’s a treasurer) and I feel there's no organization on campus for ",
   "gallery": [],
@@ -5112,7 +5079,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Culture Specific",
   "verified": false,
   "description": "The mission of Dartmouth Nigerian Students Association is to offer a space for all students to learn more about Nigerian culture, history, politics, and hold space for conversation about life at Dartmouth as a Nigerian.",
   "gallery": [],
@@ -5423,6 +5390,10 @@
    {
     "label": "Directory",
     "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67578"
+   },
+   {
+    "label": "Website",
+    "url": "https://dartmouthquant.com/"
    }
   ],
   "recruitment": {
@@ -5823,6 +5794,39 @@
    {
     "label": "Directory",
     "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67623"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67845",
+  "name": "Dartmouth Student Animal Rights Coalition",
+  "logo": {
+   "emoji": "DS",
+   "hue": 272
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Issue Awareness",
+  "verified": false,
+  "description": "Some of our goals include setting up film screenings, tabling events, and guest lectures in order to bring awareness of the practices of the animal agriculture industry and the environmental and health benefits of a plant-based lifestyle to the Dartmouth community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67845"
    }
   ],
   "recruitment": {
@@ -7035,7 +7039,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Pre-Professional",
   "verified": false,
   "description": "The Dartmouth Undergraduate Pre-Law Coalition shall be organized for the purpose of enhancing the undergraduate pre-law experience at Dartmouth. This purpose shall be realized through the advancement of collaborative activities, interdisciplinary dialogue, and community cohesion among the pre-law student groups of which the Coalition is composed, the dissemination of pre-law information and opportunities to the general student body, and the promotion of positive alumni-student relationships, each to be executed in partnership with the Center for Career Design.",
   "gallery": [],
@@ -7476,7 +7480,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Social",
+  "parent": "Service & Philanthropy",
   "verified": false,
   "description": "Disability Empowerment aims to foster a more inclusive Upper Valley by providing essential respite care and relief for caregivers of individuals with disabilities. Through this mission, we provide Dartmouth students with comprehensive disability training, foster personal growth, and build meaningful, inclusive connections within the Upper Valley.",
   "gallery": [],
@@ -8100,6 +8104,39 @@
    {
     "label": "Directory",
     "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67856"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67796",
+  "name": "Flying Club",
+  "logo": {
+   "emoji": "F",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Recreational",
+  "verified": false,
+  "description": "The purpose of the Flying Club is to promote and enhance the understanding and appreciation of aviation, aeronautics, and related fields among its members and the greater Dartmouth community. Our mission is to foster a community of passionate individuals who share a common interest in aviation and its impact on society. Through various activities and events, we aim to educate, inspire and connect our members to the vast opportunities and potential careers within the aviation industry. We strive to provide our members with a platform to develop their knowledge and skills in aviation, from learn",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67796"
    }
   ],
   "recruitment": {
@@ -9579,7 +9616,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Performance",
   "verified": false,
   "description": "The specific purposes and objectives which the Organization shall be organized to pursue include fostering the appreciation of mariachi music; providing Dartmouth students with opportunities to develop musical skills while cultivating collaborative skills through ensemble participation, performances, and programming; and promoting cultural exchange and community at Dartmouth College through the celebration of Mexican musical traditions.",
   "gallery": [],
@@ -11220,7 +11257,7 @@
   },
   "type": "club",
   "schoolId": "s_dartmouth",
-  "parent": "Community",
+  "parent": "Recreational",
   "verified": false,
   "description": "REACH Dartmouth Student Creators is a student-led community for Dartmouth undergraduates of all experience levels who want to create short-form social media content and understand the work behind it. That includes creators, editors, marketers, and students in advertising and communications. We offer a supportive space where creating and sharing online is welcomed rather than judged, and where members can talk openly about their work. Through peer-led workshops, panels with Dartmouth faculty and alumni, collaborative projects on campus, and creator socials, members build practical skills, pract",
   "gallery": [],
@@ -12595,7 +12632,7 @@
    "emoji": "SW",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_dartmouth",
   "parent": "Wellness",
   "verified": false,
@@ -12685,39 +12722,6 @@
    {
     "label": "Directory",
     "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67791"
-   }
-  ],
-  "recruitment": {
-   "title": "Open to join anytime",
-   "period": "",
-   "open": true,
-   "mode": "rolling",
-   "source": "campusgroups"
-  }
- },
- {
-  "id": "oc_dartmouth_cg67796",
-  "name": "Students of Aviation Club, Dartmouth",
-  "logo": {
-   "emoji": "SA",
-   "hue": 224
-  },
-  "type": "club",
-  "schoolId": "s_dartmouth",
-  "parent": "Recreational",
-  "verified": false,
-  "description": "The purpose of the Students of Aviation Club, Dartmouth is to promote and enhance the understanding and appreciation of aviation, aeronautics, and related fields among its members and the greater Dartmouth community. Our mission is to foster a community of passionate individuals who share a common interest in aviation and its impact on society. Through various activities and events, we aim to educate, inspire and connect our members to the vast opportunities and potential careers within the aviation industry. We strive to provide our members with a platform to develop their knowledge and skill",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67796"
    }
   ],
   "recruitment": {
@@ -13290,6 +13294,307 @@
   }
  },
  {
+  "id": "oc_dartmouth_cg67929",
+  "name": "The Dartmouth Undergraduate Muslim Journal",
+  "logo": {
+   "emoji": "DU",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Publication",
+  "verified": false,
+  "description": "The Dartmouth Muslim Journal is a thoughtful, sacred, and imaginative platform where students explore Islam intellectually, emotionally, creatively, and communally. We honor spiritual rigor and personal vulnerability, amplify diverse Muslim voices, and welcome dialogue with non-Muslim contributors and readers.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67929"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67846",
+  "name": "The Federalist Society Student Chapter at Dartmouth College",
+  "logo": {
+   "emoji": "FS",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Issue Awareness",
+  "verified": false,
+  "description": "The specific purposes and objectives which the Organization shall be organized to pursue include the sponsorship of fair, serious, and open debate and discussion on domestic and international legal matters. The Society is founded on the principles that the state exists to preserve freedom, that the separation of governmental powers is central to our Constitution, and that it is emphatically the province and duty of the judiciary to be sound of mind in its interpretation of the U.S. Constitution. The Society seeks both to promote an awareness of these principles and to further their application",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67846"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67908",
+  "name": "The Hidden Opponent - Dartmouth Students",
+  "logo": {
+   "emoji": "HO",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Sports / Recreation",
+  "verified": false,
+  "description": "The Hidden Opponent - Dartmouth Student (THO-DS) advocates for mental health awareness in athletics and is committed to breaking the stigma surrounding the expectation of constant mental resilience. Through community building, educational programming, mentorship, campus outreach, and professional support, THO-DS empowers student-athletes while fostering a more inclusive and supportive Dartmouth community.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67908"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_dartmouth_cg67438",
+  "name": "The Tabard",
+  "logo": {
+   "emoji": "T",
+   "hue": 228
+  },
+  "type": "greek",
+  "schoolId": "s_dartmouth",
+  "parent": "Greek Life",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67438"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67676",
+  "name": "The William Jewett Tucker Center for Spiritual and Ethical Life",
+  "logo": {
+   "emoji": "WJ",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Tucker Center",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67676"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_dartmouth_cg67439",
+  "name": "Theta Delta Chi",
+  "logo": {
+   "emoji": "TD",
+   "hue": 272
+  },
+  "type": "greek",
+  "schoolId": "s_dartmouth",
+  "parent": "Greek Life",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67439"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67760",
+  "name": "Treasurer's Corner",
+  "logo": {
+   "emoji": "TS",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Student Life",
+  "verified": false,
+  "description": "The Treasurer's Corner is the support center for managing your club and organization finances. If you're here, there's a good chance you are looking for the financial forms and applications. Please click on the forms tab at the top of the page.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67760"
+   },
+   {
+    "label": "Website",
+    "url": "https://students.dartmouth.edu/collis/finances/treasurers-corner"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_dartmouth_cg67440",
+  "name": "Treasurers Group Page",
+  "logo": {
+   "emoji": "TG",
+   "hue": 64
+  },
+  "type": "greek",
+  "schoolId": "s_dartmouth",
+  "parent": "Greek Life",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67440"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67703",
+  "name": "Triangle House",
+  "logo": {
+   "emoji": "TH",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Living Learning Community House",
+  "verified": false,
+  "description": "The aim of the Triangle House program is to enhance the intellectual and cultural environment of the Dartmouth College campus with particular regard to issues that pertain to the historical and contemporary experiences of lesbian, gay, bisexual, transgender, queer, intersex, asexual, aromantic, and allied people.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67703"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
   "id": "oc_dartmouth_cg67377",
   "name": "Triathlon Club",
   "logo": {
@@ -13319,6 +13624,109 @@
    "period": "",
    "open": true,
    "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67901",
+  "name": "Tucker Interfaith",
+  "logo": {
+   "emoji": "TI",
+   "hue": 224
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Religious",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67901"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67892",
+  "name": "Turning Point USA Student Association at Dartmouth College",
+  "logo": {
+   "emoji": "TP",
+   "hue": 320
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Issue Awareness",
+  "verified": false,
+  "description": "Turning Point USA’s mission is to educate students about the importance of fiscal responsibility, free markets, and constitutional rights through innovative campus activism and non-partisan, thought-provoking discussion. Among the chapter’s top priorities is the promotion and expansion of dialogue at Dartmouth, helping to better represent conservative voices on campus. Promoting the conservative mission begins with allowing people to feel like their voices can be heard and giving them the courage to speak up in the form of activism.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67892"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67632",
+  "name": "Ujima Dance Troupe",
+  "logo": {
+   "emoji": "UD",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "OPAL",
+  "verified": false,
+  "description": "Founded in 1985, Ujima Dance Troupe is the oldest dance group on campus. Named after the third Kwanzaa principle meaning collective work and responsibility, Ujima takes pride in their name as a core value that distinguishes their work, performance, and group dynamic. Primarily a hip-hop group, Ujima intertwines it with other dance styles to bring Dartmouth's campus a vibrant and energetic dance experience. Ujima welcomes students from all backgrounds and even ones with no experience.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67632"
+   },
+   {
+    "label": "Website",
+    "url": "https://www.ujimadartmouth.com/"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
    "source": "campusgroups"
   }
  },
@@ -13389,6 +13797,571 @@
    "period": "",
    "open": false,
    "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67900",
+  "name": "Undergraduate Deans Office - Class of 2029",
+  "logo": {
+   "emoji": "UD",
+   "hue": 56
+  },
+  "type": "department",
+  "schoolId": "s_dartmouth",
+  "parent": "Department",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67900"
+   },
+   {
+    "label": "Website",
+    "url": "https://students.dartmouth.edu/undergraduate-deans/"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67939",
+  "name": "Undergraduate Deans Office - Class of 2030",
+  "logo": {
+   "emoji": "UD",
+   "hue": 56
+  },
+  "type": "department",
+  "schoolId": "s_dartmouth",
+  "parent": "Department",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67939"
+   }
+  ],
+  "recruitment": {
+   "title": "Not taking new members",
+   "period": "",
+   "open": false,
+   "mode": "closed",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67888",
+  "name": "Undergraduate Tea Enthusiasts At Dartmouth",
+  "logo": {
+   "emoji": "UT",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Recreational",
+  "verified": false,
+  "description": "UTeaDartmouth seeks to create an inclusive and engaging community that explores the diverse and rich world of tea. Our mission is to offer a space where students can immerse themselves in the cultural, scientific, and wellness aspects of tea while fostering relaxation, connection, and learning.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67888"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67826",
+  "name": "Undergraduate Women of Color Collective",
+  "logo": {
+   "emoji": "UW",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Culture Specific",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67826"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67859",
+  "name": "Vietnamese Student Association",
+  "logo": {
+   "emoji": "VS",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Culture Specific",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67859"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67872",
+  "name": "Vita Clamantis",
+  "logo": {
+   "emoji": "VC",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Issue Awareness",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67872"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67756",
+  "name": "Viva Hardigg Outdoors Club",
+  "logo": {
+   "emoji": "VH",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Outdoor Programs",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67756"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67840",
+  "name": "Vox Christian Fellowship",
+  "logo": {
+   "emoji": "VC",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Religious",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67840"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67624",
+  "name": "Vox Veritatis",
+  "logo": {
+   "emoji": "VV",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Issue Awareness",
+  "verified": false,
+  "description": "Vox Veritatis aims to promote the thought and philosophy of the Christian intellectual tradition to Dartmouth students and faculty. To that end, we host small discussion groups and lecture events.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67624"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67711",
+  "name": "West House",
+  "logo": {
+   "emoji": "WH",
+   "hue": 134
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "House Community",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67711"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67532",
+  "name": "Wild Things Dance Workshops",
+  "logo": {
+   "emoji": "WT",
+   "hue": 192
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Recreational",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67532"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67674",
+  "name": "Winter Carnival",
+  "logo": {
+   "emoji": "WC",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Student Life",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67674"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67757",
+  "name": "Winter Sports Club",
+  "logo": {
+   "emoji": "WS",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Outdoor Programs",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67757"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67625",
+  "name": "Within",
+  "logo": {
+   "emoji": "W",
+   "hue": 34
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Issue Awareness",
+  "verified": false,
+  "description": "LGBTQ+ Student Organization",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67625"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67522",
+  "name": "Women in Business",
+  "logo": {
+   "emoji": "WB",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Pre-Professional",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67522"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67520",
+  "name": "Women in Computer Science",
+  "logo": {
+   "emoji": "WC",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Pre-Professional",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67520"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67626",
+  "name": "Women in Media",
+  "logo": {
+   "emoji": "WM",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Pre-Professional",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67626"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
    "source": "campusgroups"
   }
  },
@@ -13580,6 +14553,117 @@
    {
     "label": "Directory",
     "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67383"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67685",
+  "name": "World Outlook",
+  "logo": {
+   "emoji": "WO",
+   "hue": 72
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Dickey Center",
+  "verified": false,
+  "description": "World Outlook is a student-run, peer-reviewed international affairs journal at the Dickey Center for International Understanding at Dartmouth College. We publish outstanding work by Dartmouth students and undergraduates worldwide in our bi-annual journal. The organization’s name and missions are motivated by the words of late Dartmouth President John Sloan Dickey, who emphasized that Dartmouth can and should be a catalyst for addressing global issues.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67685"
+   },
+   {
+    "label": "Website",
+    "url": "https://sites.dartmouth.edu/worldoutlook/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/dartmouth.world.outlook/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/worldoutlook"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "oc_dartmouth_cg67658",
+  "name": "Zen Practice Group",
+  "logo": {
+   "emoji": "ZP",
+   "hue": 24
+  },
+  "type": "club",
+  "schoolId": "s_dartmouth",
+  "parent": "Religious",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67658"
+   }
+  ],
+  "recruitment": {
+   "title": "Open to join anytime",
+   "period": "",
+   "open": true,
+   "mode": "rolling",
+   "source": "campusgroups"
+  }
+ },
+ {
+  "id": "og_dartmouth_cg67441",
+  "name": "Zeta Psi",
+  "logo": {
+   "emoji": "ZP",
+   "hue": 293
+  },
+  "type": "greek",
+  "schoolId": "s_dartmouth",
+  "parent": "Greek Life",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://dartmouthgroups.dartmouth.edu/student_community?club_id=67441"
    }
   ],
   "recruitment": {
