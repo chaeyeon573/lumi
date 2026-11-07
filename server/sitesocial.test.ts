@@ -109,6 +109,14 @@ test('isSignInPage: an old school Google Site that now asks for Google sign-in i
   assert.equal(isSignInPage('<html><head><title>BLiSS at The University of Michigan</title></head><body>Sign in to see more</body></html>'), false);
 });
 
+test('isParkedPage: expired domains parked at a registrar or for sale are not the club', async () => {
+  const { isParkedPage } = await import('./sources/sitesocial');
+  assert.equal(isParkedPage('<html><head><title>Domain Registered at Safenames</title></head></html>'), true);
+  assert.equal(isParkedPage('<html><head><title>artofascientist.org is for sale | HugeDomains</title></head></html>'), true);
+  assert.equal(isParkedPage('<html><head><title>Art of a Scientist</title></head></html>'), false);
+  assert.equal(isParkedPage('<html><head><title>Domain Science Club at Duke</title></head></html>'), false);
+});
+
 test('isHijackedPage: an expired club domain now showing a gambling spam page is not the club', async () => {
   const { isHijackedPage } = await import('./sources/sitesocial');
   assert.equal(isHijackedPage('<html><head><title>Slot Pulsa Indosat 5000: Pilihan Deposit Minimum Serta Gampang Menang</title></head></html>'), true);

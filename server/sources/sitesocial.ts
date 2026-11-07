@@ -91,6 +91,8 @@ export const isSignInPage = (html: string) => /<title>[^<]*(Google (Drive|Accoun
 // 베트남어 축구 중계·도박 사이트로 넘어간 도메인 (BU Alpha Phi Omega: apo-zu.org → "TieuLamTV - Trực tiếp Ngoại Hạng Anh 2026 miễn phí full HD", 2026-11-06)
 const VI_SPAM = /(trực tiếp|xem bóng đá|link xem).*(miễn phí|bóng đá|ngoại hạng|full hd)|nhà cái|cá cược|đá gà|xổ số|tài xỉu/i;
 const CJK_SPAM = /((影视|电影|热播|综艺|在线观看|追剧).*(免费|高清|最新|畅享))|((免费|高清|最新).*(影视|在线观看|热播))|博彩|娱乐城|彩票|成人视频/;
+/** 만료돼 주차된 도메인(등록 대행사·판매 안내 페이지) — 동아리 사이트가 아니다 (Duke Art of a Scientist: "Domain Registered at Safenames", 2026-11-07) */
+export const isParkedPage = (html: string) => { const t = (/<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? '').trim(); return /^(domain registered at |this domain (is|may be) for sale|.*\b(is|may be) for sale\b|buy this domain|parked (free|domain)|.* - parked|domain parking|hugedomains|dan\.com|godaddy domain|sedo domain)/i.test(t); };
 export const isHijackedPage = (html: string) => { const raw = /<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? ''; const t = raw.toLowerCase(); return /\b(slot|slots|gacor|togel|judi|casino|poker online|sportsbook|betting|bet88|pulsa|maxwin|viagra|cialis|escort|porn)\b/.test(t) || CJK_SPAM.test(raw) || VI_SPAM.test(raw); };
 export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number; deadList: { orgId: string; url: string }[] }> {
   orgs = orgs.map(relabelSocialWebsites);
@@ -101,7 +103,7 @@ export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: 
     while (i < want.length) {
       const o = want[i++]; const site = o.links!.find((l) => l.label === 'Website')!.url;
       if (isPlaceholderSite(site)) { dead.add(o.id); continue; }
-      try { const html = await fetchPage(site); if (html === DEAD || isSignInPage(html) || isHijackedPage(html)) dead.add(o.id); else if (html) got.set(o.id, extractAllSocial(html)); } catch { /* skip */ }
+      try { const html = await fetchPage(site); if (html === DEAD || isSignInPage(html) || isHijackedPage(html) || isParkedPage(html)) dead.add(o.id); else if (html) got.set(o.id, extractAllSocial(html)); } catch { /* skip */ }
     }
   }));
   // 학교 바닥글 계정 거르기

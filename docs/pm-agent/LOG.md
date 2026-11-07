@@ -2419,3 +2419,9 @@
 - Spot check courses: 5 random Harvard Spring 2027 classes (ITAL 15, GOV 1094, PSY 1903, ESE 168, ISLAMCIV 207) match my.harvard.
 - Rutgers: rutgers.campusgroups.com has a public group list and event feed. First collected as "Rutgers University" (New Brunswick), then saw 229 of 231 groups are Rutgers-Newark; re-collected under an accurate row `s_rutgersnewark` "Rutgers University-Newark" (Newark coordinates) and removed the never-committed files under the wrong id (same data). 231 orgs (club 177, greek 23, council 9, department 22), 59 events. Asked the owner whether to keep a non-flagship campus (QUESTIONS).
 - Event text: 321 titles (1,050 events counting descriptions and places) carried HTML entities ("Men&apos;s Water Polo"). New `decodeHtmlText` (entities.ts) now runs on title, host, description and place in collectEvents; applied to today's files (31 files); no raw HTML tags appear in descriptions before or after. Test added.
+
+## 2026-11-07 01:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: WFU Outdoor Pursuits (Campus Rec program page, left as is), W&M Agape, Penn State LimitlesS, BU Marketing Club fine. Duke "Art of a Scientist" website now shows "Domain Registered at Safenames": the domain expired and is parked.
+  - New `isParkedPage` (registrar/for-sale titles; test added) used by the weekly website step and by scan-club-sites; this link moved to s_duke.deadlinks.json. The scan after the weekly re-collect will catch other parked domains.
+- Spot check courses: 5 random Rice Fall 2026 classes (EDUC 566, UNIV 194 Sec 005, SPAN 141 Sec 001, PHYS 100 Sec 003, EDUC 463) match. Note: Rice publishes short ALL-CAPS titles, title-casing turns acronyms like CTIS into "Ctis" (cosmetic, not fixed).

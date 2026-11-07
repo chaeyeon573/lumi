@@ -1,5 +1,5 @@
 /**
- * 동아리 웹사이트 한 번씩 열어 보기 — 도메인이 남에게 넘어가 도박·불법 영상 사이트가 된 것(isHijackedPage)만 골라 낸다.
+ * 동아리 웹사이트 한 번씩 열어 보기 — 도메인이 남에게 넘어가 도박·불법 영상 사이트가 된 것(isHijackedPage)과 주차된 도메인(isParkedPage)만 골라 낸다.
  *   npm run -s scan-club-sites -- [사이트 수=1500]
  * 2026-11-06: 무작위 검사 10개 중 2개가 넘어간 도메인이었다(W&M TBD Theatre, BU Alpha Phi Omega). 주간 수집의 웹사이트 읽기는
  * 인스타·페북이 없는 동아리만 열어서, 나머지는 한 번도 열지 않았다.
@@ -9,7 +9,7 @@
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
-import { isHijackedPage } from '../sources/sitesocial';
+import { isHijackedPage, isParkedPage } from '../sources/sitesocial';
 import type { Organization } from '@core/types';
 
 const DIR = path.join(import.meta.dirname, '..', 'data', 'collected');
@@ -40,7 +40,7 @@ await Promise.all(Array.from({ length: 6 }, async () => {
     const { url } = batch[i++];
     const html = await title(url); prog[url] = today;
     if (html === null) continue; opened++;
-    if (isHijackedPage(html)) hits.set(url, (/<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? '').trim().slice(0, 120));
+    if (isHijackedPage(html) || isParkedPage(html)) hits.set(url, (/<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? '').trim().slice(0, 120));
   }
 }));
 // 찾은 링크를 동아리에서 빼고 deadlinks 에 남긴다
