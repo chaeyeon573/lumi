@@ -2497,3 +2497,9 @@
 - Spot check clubs: USC Ansar Service Partnership, W&M Global Medical Brigades fine; UConn CLAS Student Leadership Board and UT WiCS pages answered 503. Penn State "Student Awards and Recognition Program from SLI!" is run by the Student Leadership & Involvement office, typed `department`.
 - Spot check courses: 5 random Cornell Fall 2026 classes (SHUM 6715, CS 1110 Lec 001, ILRLE 9400, ENGL 1183 Sem 104, HADM 6200 Lec 001) match the Cornell roster.
 - Weekly re-collect group 6 started (Yale, Illinois, USC, NYU, BU, Georgetown). Done this run: Yale 1,377→1,380 groups (departments 87→110 from directory categories), Illinois 1,227→1,220 (15 delisted kept in orgs-dropped), Illinois classes 9,811→9,843. USC is still reading its 11,000 classes; USC, NYU, BU and Georgetown are committed next run.
+
+## 2026-11-07 13:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- USC re-collect finished: 1,968 groups (8 delisted kept in orgs-dropped), 11,449 classes (a few cancellations in courses-dropped). NYU still running; NYU, BU and Georgetown next run.
+- Spot check clubs: USC American Cancer Society, UC Davis Genetic Counseling Club, Penn UES, UMD ACM fine. Rice "Transnational Asian Studies" is the academic department (its description says "The Department of …"), typed `department`.
+- Spot check courses: 5 random USC Spring 2027 classes match; OT 101's title had a run of spaces from the source ("Routines      (Sec 48022)"). Found 329 class titles with doubled/edge spaces across 9 schools (e.g. Georgia Tech "Structural  Analysis"). collect-courses now collapses spaces in titles; the 329 fixed in today's files.
