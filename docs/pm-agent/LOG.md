@@ -2584,3 +2584,11 @@
 - Dead domains: the weekly site check could not tell "domain no longer exists" from "slow" behind the proxy, so gone domains stayed (spot checks found 3 this week). Added `domainGone` (asks public DNS only when a site fails to open; NXDOMAIN = gone) to collect-social and scan-club-sites, with a test. One-time check of all 11,881 website hosts: 783 no longer exist (each confirmed twice; a sample also confirmed by Cloudflare DNS) → 827 Website links moved to deadlinks (kept, not deleted).
 - Spot check clubs: UMich BSU, Tulane Bands, UMass Women's Network, Indiana WIG fine; USC EcoFin uscecofin.org NXDOMAIN (led to the fix above).
 - Spot check courses: 5 random UW Winter 2027 classes match.
+
+## 2026-11-08 01:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events audit: every CampusGroups event host read as "<groupId> <name>" (e.g. "28730 Residence Life") - the RSS tag reader matched <groupId> when looking for <group>. Reader fixed (tag name must end at space or >), test added, 6,124 hosts repaired in 27 event files (only `_cg_` events, all of which had the prefix; real names like "180 Degrees Consulting" from other readers untouched).
+- Same title + same start inside a school (co-hosted events listed once per host, or on both the school calendar and the club feed): merged into one event that keeps both host names (`dedupeEvents`, test) - 123 repeats.
+- Checked and skipped: club websites written only in descriptions (42, mostly national-org pages, broken URLs or single videos); MIT Spring 2027 still not on FireRoad and student.mit.edu fails TLS here; Caltech Winter already in.
+- Spot check clubs: W&M Alpha Psi Omega, Purdue Cloud Network, Rice PRIDE, UCI Alpha Chi Sigma fine; UW SARP sarpuw.com shows "Service Suspended" (503) - set aside, and suspended-hosting pages now count as dead in collect-social and scan-club-sites (test).
+- Spot check courses: 5 random Maryland Spring 2027 classes match.

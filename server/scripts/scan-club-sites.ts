@@ -30,8 +30,9 @@ const hits = new Map<string, string>(); // url → title
 async function title(url: string): Promise<string | null> {
   try {
     const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; Lumi-campus-directory/1.0)', accept: 'text/html' }, redirect: 'follow', signal: AbortSignal.timeout(15000) });
-    if (!r.ok || !/html/i.test(r.headers.get('content-type') ?? '')) return null;
-    return (await r.text()).slice(0, 200_000);
+    if (!/html/i.test(r.headers.get('content-type') ?? '')) return null;
+    const t = (await r.text()).slice(0, 200_000);
+    return r.ok || isParkedPage(t) ? t : null; // 503 '호스팅 정지' 화면은 본문으로 판단
   } catch { return null; }
 }
 let i = 0, opened = 0;

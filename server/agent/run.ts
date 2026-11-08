@@ -28,7 +28,7 @@ import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, isPlaceholderOrg, cleanCollectedOrgs, type StudentGovRow } from '../sources/orglinks';
-import { enrichFromWebsites, isDeadPage, DEAD, domainGone } from '../sources/sitesocial';
+import { enrichFromWebsites, isDeadPage, isParkedPage, DEAD, domainGone } from '../sources/sitesocial';
 import { publicLinks, stripEmoji } from '@core/lib/orglinks';
 import { noEmojiView } from '../noemoji';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -150,7 +150,7 @@ async function fetchPublicPage(url: string): Promise<string> {
   try {
     const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; Lumi-campus-directory/1.0)', accept: 'text/html' }, redirect: 'follow', signal: AbortSignal.timeout(10_000) });
     const body = /html/i.test(r.headers.get('content-type') ?? '') ? (await r.text()).slice(0, 500_000) : '';
-    if (isDeadPage(r.status, body)) return DEAD;
+    if (isDeadPage(r.status, body) || isParkedPage(body)) return DEAD; // 503 '호스팅 정지' 화면도 (r.ok 가 아니어도 본문을 본다)
     return r.ok ? body : '';
   } catch { return (await domainGone(url)) ? DEAD : ''; } // 도메인이 없어졌으면(NXDOMAIN) 끊긴 링크로
 }

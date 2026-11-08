@@ -115,6 +115,9 @@ test('isParkedPage: expired domains parked at a registrar or for sale are not th
   assert.equal(isParkedPage('<html><head><title>artofascientist.org is for sale | HugeDomains</title></head></html>'), true);
   assert.equal(isParkedPage('<html><head><title>Art of a Scientist</title></head></html>'), false);
   assert.equal(isParkedPage('<html><head><title>Domain Science Club at Duke</title></head></html>'), false);
+  assert.equal(isParkedPage('<html><head><title>Service Suspended</title></head></html>'), true);
+  assert.equal(isParkedPage('<html><head><title>This Account has been suspended</title></head></html>'), true);
+  assert.equal(isParkedPage('<html><head><title>Suspended Ceiling Club</title></head></html>'), false);
 });
 
 test('isHijackedPage: an expired club domain now showing a gambling spam page is not the club', async () => {
