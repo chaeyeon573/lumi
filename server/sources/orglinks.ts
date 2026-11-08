@@ -346,6 +346,9 @@ export function descriptionInstagram(text?: string): string | undefined {
   return `https://www.instagram.com/${h.toLowerCase()}/`;
 }
 
+/** UMN GopherLink 은 단체 이름 끝에 등록 번호를 붙인다("GopherHack #4489", 1,222개 중 1,214개) — 이름이 아니라 번호라 뗀다. UCLA "USAC General Representative #1" 같은 자리 이름은 그대로 (UMN 만) */
+export const stripRegNumber = (schoolId: string | undefined, name: string) => (schoolId === 's_umn' ? name.replace(/\s*#\d{2,5}$/, '') : name);
+
 export function cleanCollectedOrgs(list: Organization[], today: string): { orgs: Organization[]; badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] } {
   const has = (t?: string) => !!t && /[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]/u.test(t);
   const ent = (t?: string) => (t && /&(amp|quot|lt|gt|apos|#\d+|#x[0-9a-f]+);/i.test(t) ? decodeNumericEntities(t.replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')).replace(/&amp;/g, '&') : t);
@@ -375,6 +378,7 @@ export function cleanCollectedOrgs(list: Organization[], today: string): { orgs:
       for (const l of links.filter((l) => /\s/.test(l.url))) badLinks.push({ orgId: o.id, url: l.url, checkedAt: today, note: `${l.label} address has spaces - does not open` });
       o = { ...o, links: links.filter((l) => !/\s/.test(l.url)) };
     }
+    if (stripRegNumber(o.schoolId, o.name) !== o.name) o = { ...o, name: stripRegNumber(o.schoolId, o.name) };
     // 인스타 링크가 없는데 소개에 "Instagram: @handle" 이 있으면 붙인다
     const ig = (o.type === 'club' || o.type === 'greek') && !(o.links ?? []).some((l) => l.label === 'Instagram') ? descriptionInstagram(o.description) : undefined;
     if (ig) o = { ...o, links: [...(o.links ?? []), { label: 'Instagram', url: ig }] };

@@ -2592,3 +2592,11 @@
 - Checked and skipped: club websites written only in descriptions (42, mostly national-org pages, broken URLs or single videos); MIT Spring 2027 still not on FireRoad and student.mit.edu fails TLS here; Caltech Winter already in.
 - Spot check clubs: W&M Alpha Psi Omega, Purdue Cloud Network, Rice PRIDE, UCI Alpha Chi Sigma fine; UW SARP sarpuw.com shows "Service Suspended" (503) - set aside, and suspended-hosting pages now count as dead in collect-social and scan-club-sites (test).
 - Spot check courses: 5 random Maryland Spring 2027 classes match.
+
+## 2026-11-08 02:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits. Daily events/jobs refresh left for the 03:33 run.
+- Jobs audit (1,273): no HTML or entities; 19 repeats with the same company + title + location under different requisition ids (Intel PhD interns, Boeing, Coinbase …). `splitRepeatJobs` (test) keeps the first and sets the rest aside in jobs-us.dropped.json - takes effect on the next `npm run -s jobs`.
+- Events audit after yesterday's fixes: ALL-CAPS and long titles are as the sources wrote them - left; no fallback hosts.
+- UMN club names carried GopherLink registration numbers ("GopherHack #4489" - 1,214 of 1,222). `stripRegNumber` (UMN only, test) applied in club cleanup and event hosts; files updated (1,222 names, 77 event hosts). UCLA "USAC General Representative #1" kept as is. 5 UMN names now appear twice (two registrations under one name) - left as two entries.
+- Spot check clubs: UMN GopherHack (led to the fix above), UChicago Women in Science, UT Mending Medical Minds, UCI Anime Club, UGA Choral Project - all fine.
+- Spot check courses: 5 random Georgia Tech Spring 2027 classes match.

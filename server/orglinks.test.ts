@@ -277,3 +277,11 @@ test('descriptionInstagram: handle named with Instagram/IG becomes a link; bare 
   assert.equal(orgs[1].links?.length, 1);
   assert.equal(orgs[2].links?.length, 0);
 });
+
+test('stripRegNumber: UMN registration number after the name is dropped; other schools untouched', async () => {
+  const { stripRegNumber } = await import('./sources/orglinks');
+  assert.equal(stripRegNumber('s_umn', 'GopherHack #4489'), 'GopherHack');
+  assert.equal(stripRegNumber('s_umn', '180 Degrees Consulting #3467'), '180 Degrees Consulting');
+  assert.equal(stripRegNumber('s_umn', 'Pi Delta Psi, Alpha Delta Chapter, Fraternity, Inc.#2314'), 'Pi Delta Psi, Alpha Delta Chapter, Fraternity, Inc.');
+  assert.equal(stripRegNumber('s_ucla', 'USAC General Representative #1'), 'USAC General Representative #1');
+});
