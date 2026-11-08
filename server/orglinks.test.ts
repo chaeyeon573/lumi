@@ -300,3 +300,16 @@ test('cleanCollectedOrgs: a university home page or Instagram login screen is no
   assert.deepEqual(orgs[0].links, [{ label: 'Website', url: 'https://www.nyu.edu/clubs/a' }]);
   assert.equal(badLinks.length, 2);
 });
+
+test('cleanCollectedOrgs: named entities, double-encoded letters and literal "\\n" in club text are cleaned; correct text kept', async () => {
+  const { cleanCollectedOrgs } = await import('./sources/orglinks');
+  const base = { schoolId: 's_x', verified: false, gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], logo: { emoji: 'X', hue: 1 }, type: 'club', links: [] };
+  const { orgs } = cleanCollectedOrgs([
+    { ...base, id: 'a', name: 'Sociedad de Debate en EspaÃƒÂ±ol de Cornell', description: 'Imagine a cello &mdash; deep.\\nJoin us&nbsp;today' },
+    { ...base, id: 'b', name: 'Café Société', description: 'We rock � here' },
+  ] as never, '2026-11-08');
+  assert.equal(orgs[0].name, 'Sociedad de Debate en Español de Cornell');
+  assert.equal(orgs[0].description, 'Imagine a cello — deep. Join us today');
+  assert.equal(orgs[1].name, 'Café Société');
+  assert.equal(orgs[1].description, 'We rock � here');
+});

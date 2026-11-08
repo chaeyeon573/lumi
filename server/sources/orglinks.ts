@@ -3,7 +3,7 @@
  * 디렉터리가 공개로 주는 값만 쓴다 (지어내지 않는다). 2026-11-02 사장님: "정보 얻을 수 있는 사이트 링크도 가져와야"
  */
 import type { Organization } from '@core/types';
-import { decodeNumericEntities } from './entities';
+import { decodeNumericEntities, fixMojibake } from './entities';
 import { stripEmoji } from '@core/lib/orglinks';
 
 type Link = { label: string; url: string };
@@ -377,6 +377,9 @@ export function cleanCollectedOrgs(list: Organization[], today: string): { orgs:
     }
     let o = has(o0.name) || has(o0.description) ? { ...o0, name: has(o0.name) ? stripEmoji(o0.name) || o0.name : o0.name, ...(has(o0.description) ? { description: stripEmoji(o0.description!) } : {}) } : o0;
     if (ent(o.name) !== o.name || ent(o.description) !== o.description) o = { ...o, name: ent(o.name)!, ...(o.description ? { description: ent(o.description) } : {}) };
+    // 글자 코드 이름(&mdash; &rsquo; &nbsp;), 깨진 글자("EspaÃƒÂ±ol"), 글자 그대로 들어온 "\n" (2026-11-08 점검: 소개 188곳, 깨진 글자 13곳)
+    { const name = fixMojibake(decodeHtmlText(o.name)).trim(); const description = o.description ? fixMojibake(decodeHtmlText(o.description)).replace(/\s*(?:\\r\\n|\\n|\\r|\r)\s*/g, ' ').trim() : o.description;
+      if (name !== o.name || description !== o.description) o = { ...o, name: name || o.name, ...(o.description ? { description } : {}) }; }
     if (tags(o.description) !== o.description) o = { ...o, description: tags(o.description)! };
     if ((o.links ?? []).some((l) => shared.has(l.url.trim()) && !DIR.test(l.label))) {
       for (const l of (o.links ?? []).filter((l) => shared.has(l.url.trim()) && !DIR.test(l.label))) badLinks.push({ orgId: o.id, url: l.url.trim(), checkedAt: today, note: `${l.label} is a school page shared by ${uses.get(l.url.trim())} clubs, not this club's own` });
