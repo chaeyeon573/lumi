@@ -2620,3 +2620,13 @@
 - Recruiting info: every CampusGroups school and Penn already carry open/closed (or cycle/deadline at Penn); Engage schools publish no recruiting field - nothing more to read without guessing.
 - Spot check clubs: Rice CSSA, PSU SWIM, Cornell Lunatic, UT Dragon/Lion Dance fine; MSU COM SOMA links to the college's student-organizations page, which does not name the club (official page, only this club uses it) - left, noted.
 - Spot check courses: 5 random Rice Spring 2027 classes match.
+
+## 2026-11-08 06:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Course file sweep (all schools: duplicate ids, empty titles, bad times/days, entities, HTML):
+  - Penn State: 860 catalog titles ended in a half-cut tag ("… 3 Credits </d", "… <div cla") - the CourseLeaf reader takes the first 400 characters when a block has no title element and cut inside a tag. Reader fixed (drops a half tag; strips leading "/ CODE /" cross-list numbers), test reproduces both shapes, file repaired. 2 cross-listed titles could not be repaired without the page - bulletins.psu.edu resets the connection here now; queued.
+  - 135 titles kept raw entities ("&quot;American Dream&quot;") in Brown, Harvard, UCLA, UNC and 4 more - decoded in files and now on every collect.
+  - Wisconsin titles are ALL CAPS in the source (2,829): left, queued (auto title-case breaks acronyms).
+  - No duplicate ids, empty titles, start >= end or bad days.
+- Spot check clubs: UNC Nurses Christian Fellowship, Michigan Interactive Investments fine; W&M Alexander Hamilton Society page 404 → deadlinks; UConn "First Year Experience Mentor" is a university program → department (override); UMD LACS and UConn FYE hosts do not answer from here.
+- Spot check courses: 5 random Duke Spring 2027 classes match.
