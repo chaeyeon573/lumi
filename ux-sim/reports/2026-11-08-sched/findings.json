@@ -1,0 +1,1236 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T19:18:08.847Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "sched-20261108-1915-aisha-lunch-today",
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "lunch-today",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 4,
+      "actions": 6,
+      "frictionCount": 2,
+      "maxSeverity": 1,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "0782bc0c765c",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "low",
+        "rationale": "Every step told me what would happen before I tapped, nothing was posted publicly without warning, and 'Can't make it?' plus report/block made me feel safe; I'd come back to find more small plans.",
+        "basis": [
+          3,
+          6,
+          8
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/run.json",
+      "report": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/report.md"
+    },
+    {
+      "runId": "sched-20261108-1915-diego-internship-near-berkeley",
+      "persona": "diego-transfer-commuter",
+      "scenario": "internship-near-berkeley",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 8,
+      "actions": 9,
+      "frictionCount": 2,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "0782bc0c765c",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Filters were fast and the listing felt legit, but no civil roles and no pay/deadline info means I'd still have to go elsewhere; prep groups might bring me back.",
+        "basis": [
+          9,
+          13,
+          15
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/run.json",
+      "report": "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/report.md"
+    },
+    {
+      "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+      "persona": "diego-transfer-commuter",
+      "scenario": "ride-sfo-thanksgiving",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 8,
+      "frictionCount": 5,
+      "maxSeverity": 3,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "0782bc0c765c",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": true,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Came with one concrete need (SFO ride); nav, meetup form and search gave no sign rides exist, and Explore is grad seminars — nothing tells a transfer commuter this app is for him",
+        "basis": [
+          4,
+          8,
+          12,
+          14
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/run.json",
+      "report": "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/report.md"
+    },
+    {
+      "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+      "persona": "marcus-senior-lowtech",
+      "scenario": "internship-near-berkeley",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 12,
+      "actions": 19,
+      "frictionCount": 9,
+      "maxSeverity": 3,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "0782bc0c765c",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Filters with plain words worked once I figured them out, but the 'No results' scare from my search word and no pay info anywhere make me think I'd just go back to Handshake.",
+        "basis": [
+          9,
+          21,
+          32
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/run.json",
+      "report": "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/report.md"
+    }
+  ],
+  "totals": {
+    "runs": 4,
+    "findings": 15,
+    "frictionEvents": 18,
+    "environmentLimitedEvents": 1,
+    "maxSeverity": 3,
+    "bySeverity": {
+      "1": 7,
+      "2": 8,
+      "3": 3,
+      "4": 0
+    },
+    "multiPersonaFindings": 2,
+    "singletonFindings": 13
+  },
+  "findings": [
+    {
+      "fingerprint": "6d922472ea26",
+      "title": "Missing / empty content on /opportunities/:id — “Details”",
+      "screen": "/opportunities/:id",
+      "frictionType": "content_gap",
+      "keyElement": "details",
+      "keyElementLabel": "Details",
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-internship-near-berkeley",
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 3,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-internship-near-berkeley",
+          "persona": "diego-transfer-commuter",
+          "scenario": "internship-near-berkeley",
+          "step": 13,
+          "severity": 2,
+          "quote": "OK, it's real and checked today, and I know how to apply. But is it paid? When does it close? Nothing up top says.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/shots/013-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/shots/013-click-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_greenhouse_samsara_8226602",
+          "wish": "show pay (or 'paid') and the application deadline right in the details"
+        },
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 21,
+          "severity": 2,
+          "quote": "'Source verified' and 'Last checked Sun, Nov 8' — OK, that makes it feel legit. Apply at Source is clear. But is it paid? It doesn't say.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/021-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/021-click-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+          "wish": "Show pay (or 'pay not stated') and whether it's still open"
+        },
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 32,
+          "severity": 2,
+          "quote": "Pinterest, San Francisco, not engineering, and it says verified and checked today. A company like that pays interns, I'd guess, but the app never actually told me. I'll hit Apply at Source on the real site. Good enough for today.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/032-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/032-click-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_greenhouse_pinterest_8334878",
+          "wish": "Pay and deadline right on the details page"
+        }
+      ],
+      "wishes": [
+        "show pay (or 'paid') and the application deadline right in the details",
+        "Show pay (or 'pay not stated') and whether it's still open",
+        "Pay and deadline right on the details page"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /opportunities/:id is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show pay (or 'paid') and the application deadline right in the details”; “Show pay (or 'pay not stated') and whether it's still open”; “Pay and deadline right on the details page”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "df7b2a2fea8f",
+      "title": "Hard to find on /explore/opportunities — “Internships”",
+      "screen": "/explore/opportunities",
+      "frictionType": "discoverability",
+      "keyElement": "internships",
+      "keyElementLabel": "Internships",
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-internship-near-berkeley",
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 2,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-internship-near-berkeley",
+          "persona": "diego-transfer-commuter",
+          "scenario": "internship-near-berkeley",
+          "step": 3,
+          "severity": 1,
+          "quote": "Bay Area chip, nice. But no 'paid' option and nothing for civil engineering — I'll have to check each one.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/shots/003-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/shots/003-click-som.jpg"
+          ],
+          "url": "/explore/opportunities",
+          "wish": "a Paid filter and a major/field filter"
+        },
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 6,
+          "severity": 1,
+          "quote": "Now we're talking. Internships, Bay Area — plain words. I wish there was a 'paid only' button but this is close.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/006-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/006-click-som.jpg"
+          ],
+          "url": "/explore/opportunities?q=Berkeley",
+          "wish": "A 'Paid only' filter"
+        }
+      ],
+      "wishes": [
+        "a Paid filter and a major/field filter",
+        "A 'Paid only' filter"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Internships”) where they looked (/explore/opportunities); label icon-only controls. Personas said they wanted: “a Paid filter and a major/field filter”; “A 'Paid only' filter”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "dc8ff16e3045",
+      "title": "Hard to find on /explore/events — “Explore”",
+      "screen": "/explore/events",
+      "frictionType": "discoverability",
+      "keyElement": "explore",
+      "keyElementLabel": "Explore",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 8,
+          "severity": 3,
+          "quote": "Seminars. Not what I need. I'm burning my break. Let me just search 'ride'.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/008-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/008-click-som.jpg"
+          ],
+          "url": "/explore/events",
+          "wish": "rides should be findable from the main nav"
+        }
+      ],
+      "wishes": [
+        "rides should be findable from the main nav"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Explore”) where they looked (/explore/events); label icon-only controls. Personas said they wanted: “rides should be findable from the main nav”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "35e0a7871c95",
+      "title": "Hard to find on /search — “Search events, people, clubs…”",
+      "screen": "/search",
+      "frictionType": "discoverability",
+      "keyElement": "search events people clubs",
+      "keyElementLabel": "Search events, people, clubs…",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 14,
+          "severity": 3,
+          "quote": "Search doesn't know rides exist. Does this app even do rides? Last try — Social, For You.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/014-type.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/014-type-som.jpg"
+          ],
+          "url": "/search?q=ride",
+          "wish": "search for 'ride' should point me to rides/carpools or at least suggest posting one"
+        }
+      ],
+      "wishes": [
+        "search for 'ride' should point me to rides/carpools or at least suggest posting one"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Search events, people, clubs…”) where they looked (/search); label icon-only controls. Personas said they wanted: “search for 'ride' should point me to rides/carpools or at least suggest posting one”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b2a4b9339dd4",
+      "title": "Confusing UI on /explore/opportunities — “No results”",
+      "screen": "/explore/opportunities",
+      "frictionType": "ux_confusion",
+      "keyElement": "no results",
+      "keyElementLabel": "No results",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 9,
+          "severity": 3,
+          "quote": "No internships in the Bay Area? At Berkeley? That can't be right. Maybe it's because I typed 'Berkeley' up top earlier... I don't know. It doesn't tell me why.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/009-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/009-click-som.jpg"
+          ],
+          "url": "/explore/opportunities?q=Berkeley",
+          "wish": "Tell me my search word is also being used, or offer to clear it"
+        }
+      ],
+      "wishes": [
+        "Tell me my search word is also being used, or offer to clear it"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “No results” on /explore/opportunities does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Tell me my search word is also being used, or offer to clear it”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "9ddf54c59b26",
+      "title": "Hard to find on /",
+      "screen": "/",
+      "frictionType": "discoverability",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 0,
+          "severity": 2,
+          "quote": "OK, where's rides? Nothing says ride or carpool. Internship card isn't what I need. Meetups maybe?",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/000-start.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "a Rides / carpool entry on home"
+        }
+      ],
+      "wishes": [
+        "a Rides / carpool entry on home"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for where they looked (/); label icon-only controls. Personas said they wanted: “a Rides / carpool entry on home”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7d5aa37f0937",
+      "title": "Missing / empty content on /social/meetups — “Create Meetup”",
+      "screen": "/social/meetups",
+      "frictionType": "content_gap",
+      "keyElement": "create meetup",
+      "keyElementLabel": "Create Meetup",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 2,
+          "severity": 2,
+          "quote": "Empty. Nobody's posted a ride. Fine, I'll post mine — maybe Create Meetup lets me pick a ride.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/002-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/002-click-som.jpg"
+          ],
+          "url": "/social/meetups",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /social/meetups is really missing (or only missing in the test environment); avoid showing empty sections."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8318302be3f9",
+      "title": "Hard to find on /meetups/new — “Coffee”",
+      "screen": "/meetups/new",
+      "frictionType": "discoverability",
+      "keyElement": "coffee",
+      "keyElementLabel": "Coffee",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 4,
+          "severity": 2,
+          "quote": "Coffee, study, workout... no 'ride'. Locations are Doe and Sproul, not SFO. This isn't for carpools. Let me check Explore before I hack this.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/004-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/004-click-som.jpg"
+          ],
+          "url": "/meetups/new",
+          "wish": "a Ride / carpool type, or a separate rides section"
+        }
+      ],
+      "wishes": [
+        "a Ride / carpool type, or a separate rides section"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Coffee”) where they looked (/meetups/new); label icon-only controls. Personas said they wanted: “a Ride / carpool type, or a separate rides section”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "bc3cb011854f",
+      "title": "Confusing UI on /explore/opportunities — “Search opportunities”",
+      "screen": "/explore/opportunities",
+      "frictionType": "ux_confusion",
+      "keyElement": "search opportunities",
+      "keyElementLabel": "Search opportunities",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 4,
+          "severity": 2,
+          "quote": "Hm. It just found anything with 'Berkeley' in it. Tokyo isn't near Berkeley. The first one, city government internship, might be local but doesn't say paid.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/004-type.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/004-type-som.jpg"
+          ],
+          "url": "/explore/opportunities?q=Berkeley",
+          "wish": "A way to say 'near me' / Bay Area and only internships"
+        }
+      ],
+      "wishes": [
+        "A way to say 'near me' / Bay Area and only internships"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Search opportunities” on /explore/opportunities does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “A way to say 'near me' / Bay Area and only internships”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "abddf69cb236",
+      "title": "No reason to stay on /explore/opportunities — “Filters, 2 applied”",
+      "screen": "/explore/opportunities",
+      "frictionType": "motivation",
+      "keyElement": "filters applied",
+      "keyElementLabel": "Filters, 2 applied",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 28,
+          "severity": 2,
+          "quote": "Software engineer, software engineer, software engineer... I'm a History major. There's no way to say 'non-tech' and none of the cards say if they pay.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/028-scroll.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/028-scroll-som.jpg"
+          ],
+          "url": "/explore/opportunities?type=internship&region=Bay+Area",
+          "wish": "Filter by field (like Policy, Business, Humanities) and show pay on the card"
+        }
+      ],
+      "wishes": [
+        "Filter by field (like Policy, Business, Humanities) and show pay on the card"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /explore/opportunities: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “Filter by field (like Policy, Business, Humanities) and show pay on the card”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "4807d3262467",
+      "title": "Unclear wording on /activities/:id — “Details”",
+      "screen": "/activities/:id",
+      "frictionType": "copy",
+      "keyElement": "details",
+      "keyElementLabel": "Details",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-aisha-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-aisha-lunch-today",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "lunch-today",
+          "step": 3,
+          "severity": 1,
+          "quote": "This is really clear — today 12:30, Crossroads, and 'happy to meet new people' makes me feel less weird about it. Wait, 'Full → Join Waitlist' — is it full? It says 4 spots, so I think that's just explaining what happens if it fills? The arrow is a bit cryptic.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click-som.jpg"
+          ],
+          "url": "/activities/a_r7zmhbq21p",
+          "wish": "say 'If it fills up, you can join a waitlist' in words"
+        }
+      ],
+      "wishes": [
+        "say 'If it fills up, you can join a waitlist' in words"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Details” on /activities/:id in plain language (and check the Korean UI). Personas said they wanted: “say 'If it fills up, you can join a waitlist' in words”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "80df1efc7c08",
+      "title": "Confusing UI on /chats/:id — “Message”",
+      "screen": "/chats/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "message",
+      "keyElementLabel": "Message",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-aisha-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-aisha-lunch-today",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "lunch-today",
+          "step": 10,
+          "severity": 1,
+          "quote": "It's there. I can't tell if Hana's seen it or when I sent it, which makes me a little nervous, but it's fine — the chat says I joined and the plan is on my schedule.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type.jpg",
+            "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type-som.jpg"
+          ],
+          "url": "/chats/cr_0ofmjyq21p",
+          "wish": "a small 'sent' / time under my message so I know it went through"
+        }
+      ],
+      "wishes": [
+        "a small 'sent' / time under my message so I know it went through"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Message” on /chats/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “a small 'sent' / time under my message so I know it went through”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "604f559f1bdb",
+      "title": "Unclear wording on /explore/opportunities — “Internship D-4 GENERAL STUDENT TRAINEE (”",
+      "screen": "/explore/opportunities",
+      "frictionType": "copy",
+      "keyElement": "internship d general student trainee",
+      "keyElementLabel": "Internship D-4 GENERAL STUDENT TRAINEE (",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 2,
+          "severity": 1,
+          "quote": "OK, these are internships. But Department of Defense, Air Force, Rangeland... none of it says Berkeley. And what's D-4, D-1?",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/002-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/002-click-som.jpg"
+          ],
+          "url": "/explore/opportunities",
+          "wish": "Say what D-4 means, like 'closes in 4 days'"
+        }
+      ],
+      "wishes": [
+        "Say what D-4 means, like 'closes in 4 days'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Internship D-4 GENERAL STUDENT TRAINEE (” on /explore/opportunities in plain language (and check the Korean UI). Personas said they wanted: “Say what D-4 means, like 'closes in 4 days'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "6d9bc9a532c9",
+      "title": "Confusing UI on /explore/opportunities — “Filters”",
+      "screen": "/explore/opportunities",
+      "frictionType": "ux_confusion",
+      "keyElement": "filters",
+      "keyElementLabel": "Filters",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 11,
+          "severity": 1,
+          "quote": "OK, I'll erase 'Berkeley' and try the filters again.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/011-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/011-click-som.jpg"
+          ],
+          "url": "/explore/opportunities?q=Berkeley",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Filters” on /explore/opportunities does before people tap it — plain-word label, visible result, or a one-line hint."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "aa40a423e598",
+      "title": "Missing / empty content on /explore/opportunities — “Internship Legal Intern Oakland, CA / Wa”",
+      "screen": "/explore/opportunities",
+      "frictionType": "content_gap",
+      "keyElement": "internship legal intern oakland ca",
+      "keyElementLabel": "Internship Legal Intern Oakland, CA / Wa",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261108-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 19,
+          "severity": 1,
+          "quote": "Sierra Club, Oakland. That's a real organization and it's right next door. Most of these are engineering, but that one could fit a History guy. Doesn't say if it's paid though.",
+          "evidence": [
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/019-click.jpg",
+            "ux-sim/runs/sched-20261108-1915-marcus-internship-near-berkeley/shots/019-click-som.jpg"
+          ],
+          "url": "/explore/opportunities?type=internship&region=Bay+Area",
+          "wish": "Show 'Paid' on every card, like the government ones do"
+        }
+      ],
+      "wishes": [
+        "Show 'Paid' on every card, like the government ones do"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /explore/opportunities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Show 'Paid' on every card, like the government ones do”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [
+    {
+      "runId": "sched-20261108-1915-diego-internship-near-berkeley",
+      "persona": "diego-transfer-commuter",
+      "scenario": "internship-near-berkeley",
+      "step": 9,
+      "type": "content_gap",
+      "severity": 2,
+      "quote": "Zero civil internships in the whole Bay Area? Come on. Fine, I'll take any engineering one that pays.",
+      "route": "/explore/opportunities",
+      "reason": "local stack listings are a sample/deadline calendar, not a live feed"
+    }
+  ],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/explore/opportunities",
+      "device": "phone",
+      "smallTapTargetsMax": 22,
+      "examples": [
+        {
+          "id": 1,
+          "name": "Search",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Search opportunities",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 28,
+          "name": "Filters",
+          "w": 87,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/shots/001-click.jpg"
+    },
+    {
+      "route": "/meetups/new",
+      "device": "phone",
+      "smallTapTargetsMax": 13,
+      "examples": [
+        {
+          "id": 38,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 40,
+          "name": "Coffee",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 41,
+          "name": "Study",
+          "w": 92,
+          "h": 36
+        },
+        {
+          "id": 42,
+          "name": "Workout",
+          "w": 109,
+          "h": 36
+        },
+        {
+          "id": 43,
+          "name": "Lunch",
+          "w": 93,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/004-click.jpg"
+    },
+    {
+      "route": "/explore/events",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 1,
+          "name": "Search",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 77,
+          "name": "Search events",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 78,
+          "name": "Filters",
+          "w": 87,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/008-click.jpg"
+    },
+    {
+      "route": "/social/meetups",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Create",
+          "w": 100,
+          "h": 36
+        },
+        {
+          "id": 28,
+          "name": "All",
+          "w": 49,
+          "h": 36
+        },
+        {
+          "id": 29,
+          "name": "My Groups",
+          "w": 102,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/001-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 1,
+          "name": "Search",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 10,
+          "name": "See all",
+          "w": 55,
+          "h": 20
+        },
+        {
+          "id": 12,
+          "name": "View source",
+          "w": 90,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/000-start.jpg"
+    },
+    {
+      "route": "/activities/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "Hosted by Hana · Lunch",
+          "w": 160,
+          "h": 22
+        },
+        {
+          "id": 40,
+          "name": "Details",
+          "w": 77,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click.jpg"
+    },
+    {
+      "route": "/opportunities/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 183,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 184,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 185,
+          "name": "View source",
+          "w": 77,
+          "h": 20
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-diego-internship-near-berkeley/shots/013-click.jpg"
+    },
+    {
+      "route": "/chats/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 2,
+      "examples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/008-click.jpg"
+    },
+    {
+      "route": "/search",
+      "device": "phone",
+      "smallTapTargetsMax": 2,
+      "examples": [
+        {
+          "id": 38,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 168,
+          "name": "Search events, people, clubs…",
+          "w": 295,
+          "h": 23
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261108-1915-diego-ride-sfo-thanksgiving/shots/010-click.jpg"
+    }
+  ]
+}

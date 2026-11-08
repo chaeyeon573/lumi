@@ -1,0 +1,1644 @@
+{
+  "schemaVersion": 1,
+  "runId": "sched-20261108-1915-aisha-lunch-today",
+  "status": "finished",
+  "createdAt": "2026-11-08T19:15:37.977Z",
+  "finishedAt": "2026-11-08T19:16:41.765Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "aisha-firstgen-anxious",
+    "name": "Aisha",
+    "age": 18,
+    "year": "First-year (first in her family to go to college)",
+    "school": "UC Berkeley",
+    "major": "Public Health (intended)",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Aisha",
+      "department": "Public Health",
+      "yearInSchool": 1,
+      "goals": [
+        "friends",
+        "join_club"
+      ],
+      "interests": [
+        "club",
+        "walk"
+      ],
+      "purposes": [
+        "friend",
+        "club"
+      ],
+      "lookingFor": [
+        "friend"
+      ]
+    },
+    "purpose": "Find a club where she'd feel welcome and people to go to events with; careful and patient but anxious about doing it wrong.",
+    "techFamiliarity": "medium",
+    "readingDepth": 0.9,
+    "readingCharsPerSec": 22,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Native English."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 50,
+      "frustrationThreshold": 6,
+      "confusionTolerance": 4,
+      "timeBudgetSec": 600
+    },
+    "backstory": "Nobody in my family has done this before, so I don't know the unwritten rules — like whether you need to apply to clubs. I read everything carefully because I'm scared of signing up for the wrong thing or looking dumb. I want somewhere I'd belong, not a résumé club.",
+    "quitsWhen": [
+      "I'm afraid tapping something will send a message or sign me up publicly",
+      "Everything is competitive/application-only",
+      "Privacy feels unclear"
+    ],
+    "voice": "Thoughtful, a bit anxious, reads carefully. 'Wait, does this mean…?', 'I don't want to accidentally…'"
+  },
+  "scenario": {
+    "id": "lunch-today",
+    "title": "Find someone to get lunch with today",
+    "goal": "It's a weekday and you'd rather not eat lunch alone again. Use the app to find someone (or a group) to get lunch with today, and let them know you're in.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "notes": "A brand-new real account (not the shared demo). Two other real students (local fixtures, not samples) have posted lunch plans for today, so there is someone to join — as on live, where real students post plans.",
+      "peers": [
+        {
+          "nickname": "Hana",
+          "department": "Cognitive Science",
+          "yearInSchool": 2,
+          "age": 19,
+          "activity": {
+            "category": "meal",
+            "emoji": "🍱",
+            "title": "Lunch at Crossroads — anyone want to join?",
+            "description": "Grabbing lunch between classes. Happy to meet new people!",
+            "startTime": "12:30",
+            "endTime": "13:15",
+            "place": {
+              "name": "Crossroads Dining Commons",
+              "area": "Unit 1 / Southside",
+              "lat": 37.8667,
+              "lng": -122.256
+            },
+            "capacity": 4,
+            "joinPolicy": "open"
+          }
+        },
+        {
+          "nickname": "Leo",
+          "department": "Economics",
+          "yearInSchool": 3,
+          "age": 21,
+          "activity": {
+            "category": "meal",
+            "emoji": "🌯",
+            "title": "Quick burrito on Bancroft",
+            "description": "30 min, then I have section.",
+            "startTime": "13:00",
+            "endTime": "13:40",
+            "place": {
+              "name": "Bancroft Way",
+              "area": "Southside",
+              "lat": 37.8686,
+              "lng": -122.2595
+            },
+            "capacity": 3,
+            "joinPolicy": "approval"
+          }
+        }
+      ]
+    },
+    "success": {
+      "description": "During the run the persona's own account joined/requested one of today's lunch plans, posted its own meal plan for today, or messaged in a lunch plan's chat.",
+      "any": [
+        {
+          "record": {
+            "collection": "participations",
+            "where": {
+              "userId": "$me",
+              "activityId": {
+                "in": "$peerActivities"
+              }
+            },
+            "description": "joined or asked to join a peer's lunch plan"
+          }
+        },
+        {
+          "record": {
+            "collection": "participations",
+            "where": {
+              "userId": "$me"
+            },
+            "description": "joined or asked to join a plan"
+          }
+        },
+        {
+          "record": {
+            "collection": "activities",
+            "where": {
+              "hostId": "$me",
+              "date": "$today",
+              "category": {
+                "re": "^(meal|coffee)$"
+              }
+            },
+            "description": "posted a meal/coffee plan for today"
+          }
+        },
+        {
+          "record": {
+            "collection": "activities",
+            "where": {
+              "hostId": "$me",
+              "date": "$today",
+              "title": {
+                "re": "lunch|eat|food|bite|meal|점심|밥"
+              }
+            },
+            "description": "posted a lunch plan for today"
+          }
+        },
+        {
+          "record": {
+            "collection": "chatRooms",
+            "where": {
+              "memberIds": {
+                "has": "$me"
+              },
+              "messages": {
+                "some": {
+                  "senderId": "$me",
+                  "system": {
+                    "exists": false
+                  }
+                }
+              }
+            },
+            "fresh": "changed",
+            "description": "sent a message in a chat"
+          }
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:45717",
+    "stack": {
+      "catalog": {
+        "kind": "cached",
+        "source": "berkeley course adapter (server/sources/courses.ts) via server/scripts/fetch-courses.ts",
+        "schoolId": "s_berkeley",
+        "courses": 6619,
+        "terms": [
+          "Fall 2026",
+          "Spring 2027"
+        ],
+        "fetchedAt": "2026-11-05T19:20:36.331Z"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-08T19:15:03.755Z",
+        "stamp": "dc17ee82",
+        "opportunities": 1272,
+        "updatedExisting": 113,
+        "byType": {
+          "exchange": 317,
+          "event": 168,
+          "internship": 587,
+          "lab": 39,
+          "hackathon": 103,
+          "scholarship": 57,
+          "startup": 1
+        },
+        "eventsThisWeek": 106,
+        "freeFoodThisWeek": 3
+      },
+      "port": 45717,
+      "worktree": "/home/user/lumi-live",
+      "commit": "0782bc0c765c55d1dd4ca872bee9242dd94b0df9",
+      "stamp": "0782bc0c765c",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-live-0782bc0c765c-cat355fc699-evdc17ee82.json",
+      "log": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "peers": [
+      {
+        "userId": "u_7ro00rq1wl",
+        "nickname": "Hana",
+        "activityId": "a_r7zmhbq21p"
+      },
+      {
+        "userId": "u_463pzaq298",
+        "nickname": "Leo",
+        "activityId": "a_vbix78q2dn"
+      }
+    ],
+    "userId": "u_3yx29aq1cw",
+    "email": "aisha.odayq0wp@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Aisha",
+      "birthYear": 2008,
+      "department": "Public Health",
+      "yearInSchool": 1,
+      "role": "undergraduate",
+      "year": 2026,
+      "gender": "private",
+      "goals": [
+        "friends",
+        "join_club"
+      ],
+      "interests": [
+        "club",
+        "walk"
+      ],
+      "purposes": [
+        "friend",
+        "club"
+      ],
+      "lookingFor": [
+        "friend"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "en",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the real Berkeley Class Schedule (6619 courses, Fall 2026 + Spring 2027), fetched 2026-11-05 with the worker's adapter. Seat counts and very recent changes may differ from live.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1272 real items, 106 events this week, taken 2026-11-08 19:15 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 50,
+    "frustrationThreshold": 6,
+    "confusionTolerance": 4,
+    "timeBudgetSec": 600,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 6,
+    "frustration": 0,
+    "confusionNotes": 0,
+    "simTimeSec": 73.41854545454547
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-08T19:15:45.817Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "aisha-firstgen-anxious",
+        "scenario": "lunch-today",
+        "auth": "fresh"
+      },
+      "latencyMs": 1264,
+      "urlBefore": null,
+      "setupNotes": [
+        "seeded 2 peer account(s) (real, non-sample local fixtures): Hana, Leo",
+        "signed in as a brand-new verified account aisha.odayq0wp@berkeley.edu (Aisha, Public Health, born 2008)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 22,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Events",
+          "[5]<button> Opportunities",
+          "[6]<button> Clubs",
+          "[7]<button> Meetups",
+          "[8]<button> RSF Crowd meter unavailable",
+          "[9]<button> Dining Menus unavailable",
+          "[10]<button> See all",
+          "[11]<button> Research D-87 Mayo Clinic Summer Undergraduate Research Fellowship (SURF) 2027 Ten-week bi",
+          "[12]<a> View source",
+          "[13]<button> Save",
+          "[18]<a selected> Home",
+          "[19]<a> Explore",
+          "[20]<a> Schedule",
+          "[21]<a> Social",
+          "[22]<a> Profile",
+          "[14]<a> View source  ↓ below",
+          "[15]<button> Make room for a good plan Add classes and find your free time  ↓ below",
+          "[16]<button> Explore  ↓ below",
+          "[17]<button> Find your communities Follow interests. Verify membership separately.  ↓ below"
+        ],
+        "text": "Lumi | Good morning! | What’s happening at UC Berkeley | Events | Opportunities | Clubs | Meetups | Campus today | RSF | Crowd meter unavailable | Dining | Menus unavailable | For you | See all | Research | D-87 | Mayo Clinic Summer Undergraduate Research Fellowship (SURF) 2027 | Ten-week biomedical research fellowship at Mayo Clinic campuses, June 1-Aug 6, 2027. Application window Nov 1, 2026 - Feb 3, 2027. | Mayo Clinic Graduate School of Biomedical Sciences | View source | Campus event | Tomorrow · 12:30 PM | Home | Explore | Schedule | Social | Profile",
+        "scroll": {
+          "top": 0,
+          "max": 560
+        },
+        "fingerprint": "d78f1a01d9a000554c1e90ff80547045c0143433",
+        "simReadSec": 20.9
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 1,
+            "name": "Search",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 2,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 3,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 10,
+            "name": "See all",
+            "w": 55,
+            "h": 20
+          },
+          {
+            "id": 12,
+            "name": "View source",
+            "w": 90,
+            "h": 19
+          },
+          {
+            "id": 13,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-08T19:15:53.421Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 7,
+        "expect": "a list of casual meetups like lunch or coffee with other students",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:45717/",
+      "target": {
+        "id": 7,
+        "tag": "button",
+        "role": "button",
+        "name": "Meetups",
+        "box": {
+          "x": 201,
+          "y": 258,
+          "w": 173,
+          "h": 104
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a list of casual meetups like lunch or coffee with other students",
+        "confidence": 0.6
+      },
+      "latencyMs": 915,
+      "tapPoint": {
+        "x": 287.5,
+        "y": 310.4,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/social/meetups",
+      "route": "/social/meetups",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/001-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/001-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 19,
+        "newElementIds": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "elements": [
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[23]<a role=tab> For You",
+          "[24]<a role=tab selected> Meetups",
+          "[25]<a role=tab> People",
+          "[26]<a role=tab> Feed",
+          "[27]<button> Create",
+          "[28]<button selected> All",
+          "[29]<button> My Groups",
+          "[30]<button> My Classes",
+          "[31]<button> Nearby",
+          "[32]<button> Lunch Today · 12:30 PM Lunch at Crossroads — anyone want to join? Hana · Crossroads Dining",
+          "[33]<button> Lunch Today · 1 PM Quick burrito on Bancroft Leo · Southside L 1 going View meetup",
+          "[34]<button> Find your groups Clubs, labs and communities on campus",
+          "[18]<a> Home",
+          "[19]<a> Explore",
+          "[20]<a> Schedule",
+          "[21]<a selected> Social",
+          "[22]<a> Profile"
+        ],
+        "text": "Lumi | Social | For You | Meetups | People | Feed | Better together | Create | All | My Groups | My Classes | Nearby | Lunch | Today · 12:30 PM | Lunch at Crossroads — anyone want to join? | Hana · Crossroads Dining Commons | H | 1 going | View meetup | Lunch | Today · 1 PM | Quick burrito on Bancroft | Leo · Southside | L | 1 going | View meetup | Your groups | Find your groups | Clubs, labs and communities on campus | Small Tables | Small plans, good company | Home | Explore | Schedule | Social | Profile",
+        "scroll": {
+          "top": 0,
+          "max": 127
+        },
+        "fingerprint": "952f447afce93101a7c035929429210f5c58987a",
+        "simReadSec": 15.7
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 2,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 3,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 27,
+            "name": "Create",
+            "w": 100,
+            "h": 36
+          },
+          {
+            "id": 28,
+            "name": "All",
+            "w": 49,
+            "h": 36
+          },
+          {
+            "id": 29,
+            "name": "My Groups",
+            "w": 102,
+            "h": 36
+          },
+          {
+            "id": 30,
+            "name": "My Classes",
+            "w": 104,
+            "h": 36
+          },
+          {
+            "id": 31,
+            "name": "Nearby",
+            "w": 80,
+            "h": 36
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Meetups tab with two lunch plans today: Hana at Crossroads 12:30, Leo burrito 1 PM",
+        "feeling": "curious",
+        "note": "Oh good, these are exactly lunch plans for today. Crossroads is a dining hall I actually know. 'View meetup' sounds safe — it doesn't sound like it'll sign me up yet."
+      }
+    },
+    {
+      "index": 2,
+      "at": "2026-11-08T19:15:58.722Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Meetups tab with two lunch plans today: Hana at Crossroads 12:30, Leo burrito 1 PM",
+        "feeling": "curious",
+        "thought": "Oh good, these are exactly lunch plans for today. Crossroads is a dining hall I actually know. 'View meetup' sounds safe — it doesn't sound like it'll sign me up yet."
+      },
+      "about": 1,
+      "feeling": "curious",
+      "thought": "Oh good, these are exactly lunch plans for today. Crossroads is a dining hall I actually know. 'View meetup' sounds safe — it doesn't sound like it'll sign me up yet.",
+      "urlAfter": "http://localhost:45717/social/meetups",
+      "route": "/social/meetups"
+    },
+    {
+      "index": 3,
+      "at": "2026-11-08T19:16:00.932Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 32,
+        "expect": "details of Hana's lunch, who's going, and a way to join",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:45717/social/meetups",
+      "target": {
+        "id": 32,
+        "tag": "button",
+        "role": "button",
+        "name": "Lunch Today · 12:30 PM Lunch at Crossroads — anyone want to join? Hana · Crossroads Dining",
+        "box": {
+          "x": 16,
+          "y": 268,
+          "w": 358,
+          "h": 184
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "details of Hana's lunch, who's going, and a way to join",
+        "confidence": 0.7
+      },
+      "latencyMs": 841,
+      "tapPoint": {
+        "x": 195,
+        "y": 360.5,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "route": "/activities/:id",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 8,
+        "newElementIds": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "elements": [
+          "[35]<button> Back",
+          "[36]<button> More",
+          "[37]<button> Hosted by Hana · Lunch",
+          "[38]<button> Where Crossroads Dining Commons Agree on the exact spot in the chat",
+          "[39]<button> Going 1 going · 4 spots H",
+          "[40]<button> Details",
+          "[41]<input> Ask the host…",
+          "[42]<button> Join Meetup"
+        ],
+        "text": "Meetup details | Lunch at Crossroads — anyone want to join? | Hosted by | Hana | · Lunch | When | Today · 12:30 PM–1:15 PM | Where | Crossroads Dining Commons | Agree on the exact spot in the chat | Who can join | Campus-wide | All academic statuses welcome | Going | 1 going · 4 spots | H | Grabbing lunch between classes. Happy to meet new people! | Details | Join to get the group chat. Full → Join Waitlist. | Join Meetup",
+        "scroll": {
+          "top": 0,
+          "max": 121
+        },
+        "fingerprint": "490ec1f4f173a502b9f1a5b652a88c819fecbe40",
+        "simReadSec": 14
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 35,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 36,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Hosted by Hana · Lunch",
+            "w": 160,
+            "h": 22
+          },
+          {
+            "id": 40,
+            "name": "Details",
+            "w": 77,
+            "h": 36
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Meetup details: time, place, 1 going of 4 spots, Hana's note, Join Meetup button",
+        "feeling": "curious",
+        "note": "This is really clear — today 12:30, Crossroads, and 'happy to meet new people' makes me feel less weird about it. Wait, 'Full → Join Waitlist' — is it full? It says 4 spots, so I think that's just explaining what happens if it fills? The arrow is a bit cryptic."
+      }
+    },
+    {
+      "index": 4,
+      "at": "2026-11-08T19:16:08.626Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Meetup details: time, place, 1 going of 4 spots, Hana's note, Join Meetup button",
+        "feeling": "curious",
+        "thought": "This is really clear — today 12:30, Crossroads, and 'happy to meet new people' makes me feel less weird about it. Wait, 'Full → Join Waitlist' — is it full? It says 4 spots, so I think that's just explaining what happens if it fills? The arrow is a bit cryptic.",
+        "friction": "copy",
+        "severity": "1",
+        "element": "40",
+        "wish": "say 'If it fills up, you can join a waitlist' in words"
+      },
+      "about": 3,
+      "feeling": "curious",
+      "thought": "This is really clear — today 12:30, Crossroads, and 'happy to meet new people' makes me feel less weird about it. Wait, 'Full → Join Waitlist' — is it full? It says 4 spots, so I think that's just explaining what happens if it fills? The arrow is a bit cryptic.",
+      "urlAfter": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "route": "/activities/:id",
+      "frictionId": "f1"
+    },
+    {
+      "index": 5,
+      "at": "2026-11-08T19:16:11.462Z",
+      "kind": "action",
+      "command": "scroll",
+      "args": {
+        "direction": "down"
+      },
+      "urlBefore": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "latencyMs": 1309,
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "route": "/activities/:id",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/005-scroll.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/005-scroll-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 10,
+        "newElementIds": [
+          43,
+          44
+        ],
+        "elements": [
+          "[35]<button> Back",
+          "[36]<button> More",
+          "[37]<button> Hosted by Hana · Lunch",
+          "[38]<button> Where Crossroads Dining Commons Agree on the exact spot in the chat",
+          "[39]<button> Going 1 going · 4 spots H",
+          "[40]<button> Details",
+          "[41]<input> Ask the host…",
+          "[43]<button disabled> Send",
+          "[42]<button> Join Meetup",
+          "[44]<label> (no label)"
+        ],
+        "text": "Hosted by | Hana | · Lunch | When | Today · 12:30 PM–1:15 PM | Where | Crossroads Dining Commons | Agree on the exact spot in the chat | Who can join | Campus-wide | All academic statuses welcome | Going | 1 going · 4 spots | H | Grabbing lunch between classes. Happy to meet new people! | Details | Join to get the group chat. Full → Join Waitlist. | Questions | Join Meetup",
+        "scroll": {
+          "top": 121,
+          "max": 121
+        },
+        "fingerprint": "e7fb91b439d94335c24183a3808693593e5b2809",
+        "simReadSec": 0.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 35,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 36,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Hosted by Hana · Lunch",
+            "w": 160,
+            "h": 22
+          },
+          {
+            "id": 40,
+            "name": "Details",
+            "w": 77,
+            "h": 36
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      },
+      "signals": [],
+      "frustrationAfter": 0
+    },
+    {
+      "index": 6,
+      "at": "2026-11-08T19:16:18.137Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 42,
+        "expect": "I'm added to the lunch as going, and I get access to a group chat with Hana",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "target": {
+        "id": 42,
+        "tag": "button",
+        "role": "button",
+        "name": "Join Meetup",
+        "box": {
+          "x": 16,
+          "y": 792,
+          "w": 358,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "I'm added to the lunch as going, and I get access to a group chat with Hana",
+        "confidence": 0.7
+      },
+      "latencyMs": 834,
+      "tapPoint": {
+        "x": 195,
+        "y": 817.5,
+        "centre": true
+      },
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "route": "/activities/:id",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/006-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/006-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          45,
+          46,
+          47,
+          48
+        ],
+        "elements": [
+          "[35]<button> Back",
+          "[36]<button> More",
+          "[37]<button> Hosted by Hana · Lunch",
+          "[38]<button> Where Crossroads Dining Commons Agree on the exact spot in the chat",
+          "[45]<button> Going 2 going · 4 spots H A",
+          "[40]<button> Details",
+          "[46]<button> Group chat",
+          "[41]<input> Ask the host…",
+          "[43]<button disabled> Send",
+          "[47]<button> Can’t make it?",
+          "[48]<button> Open Group Chat",
+          "[44]<label> (no label)"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | Hosted by | Hana | · Lunch | When | Today · 12:30 PM–1:15 PM | Where | Crossroads Dining Commons | Agree on the exact spot in the chat | Who can join | Campus-wide | All academic statuses welcome | Going | 2 going · 4 spots | H | A | Grabbing lunch between classes. Happy to meet new people! | Details | Group chat | Questions | You’re going. | Can’t make it? | Open Group Chat | You’re going! It’s on your Schedule.",
+        "scroll": {
+          "top": 115,
+          "max": 115
+        },
+        "fingerprint": "cf428fae32835e1db6884e96a5f3174318271f16",
+        "simReadSec": 6.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 35,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 36,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Hosted by Hana · Lunch",
+            "w": 160,
+            "h": 22
+          },
+          {
+            "id": 40,
+            "name": "Details",
+            "w": 77,
+            "h": 36
+          },
+          {
+            "id": 46,
+            "name": "Group chat",
+            "w": 105,
+            "h": 36
+          },
+          {
+            "id": 47,
+            "name": "Can’t make it?",
+            "w": 90,
+            "h": 20
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Now 2 going with my 'A' avatar, toast 'You're going! It's on your Schedule', button became Open Group Chat, and a gentle 'Can't make it?' option",
+        "feeling": "delighted",
+        "note": "Oh that was easy and it didn't post anything weird. I like that 'Can't make it?' is right there so I'm not trapped. I should probably say hi in the chat so Hana knows a real person is coming."
+      }
+    },
+    {
+      "index": 7,
+      "at": "2026-11-08T19:16:26.682Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Now 2 going with my 'A' avatar, toast 'You're going! It's on your Schedule', button became Open Group Chat, and a gentle 'Can't make it?' option",
+        "feeling": "delighted",
+        "thought": "Oh that was easy and it didn't post anything weird. I like that 'Can't make it?' is right there so I'm not trapped. I should probably say hi in the chat so Hana knows a real person is coming."
+      },
+      "about": 6,
+      "feeling": "delighted",
+      "thought": "Oh that was easy and it didn't post anything weird. I like that 'Can't make it?' is right there so I'm not trapped. I should probably say hi in the chat so Hana knows a real person is coming.",
+      "urlAfter": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "route": "/activities/:id"
+    },
+    {
+      "index": 8,
+      "at": "2026-11-08T19:16:26.843Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 48,
+        "expect": "a group chat with Hana where I can type a message",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:45717/activities/a_r7zmhbq21p",
+      "target": {
+        "id": 48,
+        "tag": "button",
+        "role": "button",
+        "name": "Open Group Chat",
+        "box": {
+          "x": 16,
+          "y": 792,
+          "w": 358,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a group chat with Hana where I can type a message",
+        "confidence": 0.8
+      },
+      "latencyMs": 945,
+      "tapPoint": {
+        "x": 195,
+        "y": 817.9,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "route": "/chats/:id",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/008-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/008-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 6,
+        "newElementIds": [
+          49,
+          50,
+          51
+        ],
+        "elements": [
+          "[35]<button> Back",
+          "[36]<button> More",
+          "[49]<button> Lunch at Crossroads — anyone want to join? Crossroads Dining Commons · Today 12:30 PM",
+          "[50]<input> Message",
+          "[43]<button disabled> Send",
+          "[51]<label> (no label, icon: send-horizontal)"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | 2 members | Lunch at Crossroads — anyone want to join? | Crossroads Dining Commons · Today 12:30 PM | Say hi. Report or block from ··· anytime. | The group chat for this activity is open. | Aisha joined.",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "786aa3f14f214820d887823bfe4ecd9647246ee7",
+        "simReadSec": 6.1
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 35,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 36,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Group chat opened with 2 members, 'Aisha joined.' system line, a 'Say hi' prompt and report/block reassurance",
+        "feeling": "curious",
+        "note": "Okay, it already says 'Aisha joined' so Hana will see it. The report/block note makes me feel safer. I'll say a short hi so it's not awkward when I show up."
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-08T19:16:34.301Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Group chat opened with 2 members, 'Aisha joined.' system line, a 'Say hi' prompt and report/block reassurance",
+        "feeling": "curious",
+        "thought": "Okay, it already says 'Aisha joined' so Hana will see it. The report/block note makes me feel safer. I'll say a short hi so it's not awkward when I show up."
+      },
+      "about": 8,
+      "feeling": "curious",
+      "thought": "Okay, it already says 'Aisha joined' so Hana will see it. The report/block note makes me feel safer. I'll say a short hi so it's not awkward when I show up.",
+      "urlAfter": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "route": "/chats/:id"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-08T19:16:34.390Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 50,
+        "text": "Hi Hana! I'm Aisha, a first-year — I'd love to join for lunch. Where should I look for you at Crossroads?",
+        "submit": true,
+        "expect": "my message appears in the chat",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "target": {
+        "id": 50,
+        "tag": "input",
+        "role": "textbox",
+        "name": "Message",
+        "box": {
+          "x": 37,
+          "y": 808,
+          "w": 282,
+          "h": 24
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "my message appears in the chat",
+        "confidence": 0.8
+      },
+      "latencyMs": 870,
+      "tapPoint": {
+        "x": 178,
+        "y": 820,
+        "centre": true
+      },
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "route": "/chats/:id",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 6,
+        "newElementIds": [],
+        "elements": [
+          "[35]<button> Back",
+          "[36]<button> More",
+          "[49]<button> Lunch at Crossroads — anyone want to join? Crossroads Dining Commons · Today 12:30 PM",
+          "[50]<input> Message",
+          "[43]<button disabled> Send",
+          "[51]<label> (no label, icon: send-horizontal)"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | 2 members | Lunch at Crossroads — anyone want to join? | Crossroads Dining Commons · Today 12:30 PM | The group chat for this activity is open. | Aisha joined. | Hi Hana! I'm Aisha, a first-year — I'd love to join for lunch. Where should I look for you at Crossroads?",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "8582f6ae372ca30fea16c3131822d7be0a0a131a",
+        "simReadSec": 4.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 35,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 36,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "My message appeared as a bubble on the right; no sent/read indicator or timestamp",
+        "feeling": "neutral",
+        "note": "It's there. I can't tell if Hana's seen it or when I sent it, which makes me a little nervous, but it's fine — the chat says I joined and the plan is on my schedule."
+      }
+    },
+    {
+      "index": 11,
+      "at": "2026-11-08T19:16:41.596Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "My message appeared as a bubble on the right; no sent/read indicator or timestamp",
+        "feeling": "neutral",
+        "thought": "It's there. I can't tell if Hana's seen it or when I sent it, which makes me a little nervous, but it's fine — the chat says I joined and the plan is on my schedule.",
+        "friction": "ux_confusion",
+        "severity": "1",
+        "element": "50",
+        "wish": "a small 'sent' / time under my message so I know it went through"
+      },
+      "about": 10,
+      "feeling": "neutral",
+      "thought": "It's there. I can't tell if Hana's seen it or when I sent it, which makes me a little nervous, but it's fine — the chat says I joined and the plan is on my schedule.",
+      "urlAfter": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "route": "/chats/:id",
+      "frictionId": "f2"
+    },
+    {
+      "index": 12,
+      "at": "2026-11-08T19:16:41.686Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "I joined Hana's 12:30 lunch at Crossroads, it's on my schedule, and I said hi in the group chat so she knows I'm coming.",
+        "dropoff": "low",
+        "dropoff-why": "Every step told me what would happen before I tapped, nothing was posted publicly without warning, and 'Can't make it?' plus report/block made me feel safe; I'd come back to find more small plans.",
+        "dropoff-basis": "3,6,8"
+      },
+      "urlBefore": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45717/chats/cr_0ofmjyq21p",
+      "route": "/chats/:id",
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/012-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/012-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 6,
+        "newElementIds": [],
+        "elements": [
+          "[35]<button> Back",
+          "[36]<button> More",
+          "[49]<button> Lunch at Crossroads — anyone want to join? Crossroads Dining Commons · Today 12:30 PM",
+          "[50]<input> Message",
+          "[43]<button disabled> Send",
+          "[51]<label> (no label, icon: send-horizontal)"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | 2 members | Lunch at Crossroads — anyone want to join? | Crossroads Dining Commons · Today 12:30 PM | The group chat for this activity is open. | Aisha joined. | Hi Hana! I'm Aisha, a first-year — I'd love to join for lunch. Where should I look for you at Crossroads?",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "8582f6ae372ca30fea16c3131822d7be0a0a131a",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 35,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 36,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 345
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 3,
+      "noteStep": 4,
+      "type": "copy",
+      "severity": 1,
+      "feeling": "curious",
+      "quote": "This is really clear — today 12:30, Crossroads, and 'happy to meet new people' makes me feel less weird about it. Wait, 'Full → Join Waitlist' — is it full? It says 4 spots, so I think that's just explaining what happens if it fills? The arrow is a bit cryptic.",
+      "url": "/activities/a_r7zmhbq21p",
+      "route": "/activities/:id",
+      "element": {
+        "id": 40,
+        "role": "button",
+        "name": "Details"
+      },
+      "key": null,
+      "wish": "say 'If it fills up, you can join a waitlist' in words",
+      "evidence": [
+        "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click.jpg",
+        "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 10,
+      "noteStep": 11,
+      "type": "ux_confusion",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "It's there. I can't tell if Hana's seen it or when I sent it, which makes me a little nervous, but it's fine — the chat says I joined and the plan is on my schedule.",
+      "url": "/chats/cr_0ofmjyq21p",
+      "route": "/chats/:id",
+      "element": {
+        "id": 50,
+        "role": "textbox",
+        "name": "Message"
+      },
+      "key": null,
+      "wish": "a small 'sent' / time under my message so I know it went through",
+      "evidence": [
+        "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type.jpg",
+        "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/",
+      "smallTapTargets": 6,
+      "smallTapTargetExamples": [
+        {
+          "id": 1,
+          "name": "Search",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 10,
+          "name": "See all",
+          "w": 55,
+          "h": 20
+        },
+        {
+          "id": 12,
+          "name": "View source",
+          "w": 90,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/000-start.jpg"
+    },
+    {
+      "step": 1,
+      "route": "/social/meetups",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Create",
+          "w": 100,
+          "h": 36
+        },
+        {
+          "id": 28,
+          "name": "All",
+          "w": 49,
+          "h": 36
+        },
+        {
+          "id": 29,
+          "name": "My Groups",
+          "w": 102,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/001-click.jpg"
+    },
+    {
+      "step": 3,
+      "route": "/activities/:id",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "Hosted by Hana · Lunch",
+          "w": 160,
+          "h": 22
+        },
+        {
+          "id": 40,
+          "name": "Details",
+          "w": 77,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/003-click.jpg"
+    },
+    {
+      "step": 5,
+      "route": "/activities/:id",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "Hosted by Hana · Lunch",
+          "w": 160,
+          "h": 22
+        },
+        {
+          "id": 40,
+          "name": "Details",
+          "w": 77,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/005-scroll.jpg"
+    },
+    {
+      "step": 6,
+      "route": "/activities/:id",
+      "smallTapTargets": 6,
+      "smallTapTargetExamples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "Hosted by Hana · Lunch",
+          "w": 160,
+          "h": 22
+        },
+        {
+          "id": 40,
+          "name": "Details",
+          "w": 77,
+          "h": 36
+        },
+        {
+          "id": 46,
+          "name": "Group chat",
+          "w": 105,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/006-click.jpg"
+    },
+    {
+      "step": 8,
+      "route": "/chats/:id",
+      "smallTapTargets": 2,
+      "smallTapTargetExamples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/008-click.jpg"
+    },
+    {
+      "step": 10,
+      "route": "/chats/:id",
+      "smallTapTargets": 2,
+      "smallTapTargetExamples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/010-type.jpg"
+    },
+    {
+      "step": 12,
+      "route": "/chats/:id",
+      "smallTapTargets": 2,
+      "smallTapTargetExamples": [
+        {
+          "id": 35,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/012-finish.jpg"
+    }
+  ],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "I joined Hana's 12:30 lunch at Crossroads, it's on my schedule, and I said hi in the group chat so she knows I'm coming.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 6,
+  "stepsToGoal": 4,
+  "goalEvidence": {
+    "step": 6,
+    "url": "/activities/a_r7zmhbq21p",
+    "matched": [
+      {
+        "record": "participations",
+        "where": {
+          "userId": "$me",
+          "activityId": {
+            "in": "$peerActivities"
+          }
+        },
+        "description": "joined or asked to join a peer's lunch plan"
+      },
+      {
+        "record": "participations",
+        "where": {
+          "userId": "$me"
+        },
+        "description": "joined or asked to join a plan"
+      }
+    ],
+    "screenshot": "ux-sim/runs/sched-20261108-1915-aisha-lunch-today/shots/006-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "local data file"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "low",
+    "rationale": "Every step told me what would happen before I tapped, nothing was posted publicly without warning, and 'Can't make it?' plus report/block made me feel safe; I'd come back to find more small plans.",
+    "basis": [
+      3,
+      6,
+      8
+    ],
+    "source": "persona-agent"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T19:17:43.464Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-08-sched/findings.json",
+    "runs": [
+      "sched-20261108-1915-aisha-lunch-today",
+      "sched-20261108-1915-diego-internship-near-berkeley",
+      "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+      "sched-20261108-1915-marcus-internship-near-berkeley"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "0782bc0c765c"
+    ]
+  },
+  "problems": [
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Verified in live code: src/routes/redirects.tsx sends /rides/* to /.",
+      "key": "rides-removed-but-still-wanted",
+      "title": "Rides is gone from the app (removed 2026-11-06); a student looking for an SFO ride finds no trace of it",
+      "summary": "Diego searched Home, Meetups, Create Meetup, Explore and Search (\"ride SFO\", \"ride\") and found nothing; he concluded the app does not do rides. Commit 06863a6 removed the rides screens and /rides now redirects to Home. On 2026-11-04/05 the same scenario succeeded and was praised.",
+      "rootCauseHypothesis": "Product decision in the Harness A redesign; the server API still exists but nothing in the UI reaches it.",
+      "severity": 3,
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "step": 14,
+          "quote": "Search doesn't know rides exist. Does this app even do rides?"
+        },
+        {
+          "runId": "sched-20261108-1915-diego-ride-sfo-thanksgiving",
+          "step": 4,
+          "quote": "Coffee, study, workout... no 'ride'. Locations are Doe and Sproul, not SFO."
+        }
+      ],
+      "suggestedFix": "Owner decision: bring Rides back (it was the best-rated flow on 11-04/05), or add a \"Ride / airport\" meetup type; otherwise retire the ride scenario.",
+      "file": false,
+      "fingerprints": [
+        "dc8ff16e3045",
+        "35e0a7871c95",
+        "9ddf54c59b26",
+        "7d5aa37f0937",
+        "8318302be3f9"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "internship-details-missing-pay-and-role",
+      "title": "Internship pages for Bay Area listings never say if it is paid or when it closes",
+      "summary": "Both internship personas reached a verified listing but had to guess pay and deadline; federal listings do show \"Paid · $…\". No \"Paid only\" or field filter.",
+      "rootCauseHypothesis": "Imported Bay Area listings lack pay/deadline fields; filters only cover type/location/deadline.",
+      "severity": 2,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261108-1915-diego-internship-near-berkeley",
+          "step": 13,
+          "quote": "OK, it's real and checked today, and I know how to apply. But is it paid? When does it cl"
+        },
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "step": 28,
+          "quote": "Software engineer, software engineer, software engineer... I'm a History major."
+        }
+      ],
+      "suggestedFix": "Show \"Pay: unknown — see posting\" explicitly; add Paid-only and Field filters.",
+      "file": true,
+      "fingerprints": [
+        "6d922472ea26",
+        "df7b2a2fea8f",
+        "abddf69cb236",
+        "aa40a423e598"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "search-silently-narrows-filters",
+      "title": "A leftover search word silently empties the filter results (\"No results\" for Bay Area internships)",
+      "summary": "Marcus typed \"Berkeley\", then picked Internships + Bay Area: \"No results\", disabled button, nothing showing the search was still applied; closing the sheet discarded the picks.",
+      "rootCauseHypothesis": "Filter sheet counts results with the hidden search query; sheet state is not kept on close.",
+      "severity": 3,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "step": 9,
+          "quote": "No internships in the Bay Area? At Berkeley? That can't be right. Maybe it's because I ty"
+        },
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "step": 4,
+          "quote": "It just found anything with 'Berkeley' in it. Tokyo isn't near Berkeley."
+        }
+      ],
+      "suggestedFix": "Show the active search as a chip inside the filter sheet with \"clear\"; keep picks when the sheet closes.",
+      "file": true,
+      "fingerprints": [
+        "b2a4b9339dd4",
+        "bc3cb011854f",
+        "6d9bc9a532c9"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "internship-list-labels-unclear",
+      "title": "Internship cards: \"D-4\" is not explained",
+      "summary": "Second time for Marcus (11-04).",
+      "rootCauseHypothesis": "D-day shorthand.",
+      "severity": 1,
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261108-1915-marcus-internship-near-berkeley",
+          "step": 2,
+          "quote": "OK, these are internships."
+        }
+      ],
+      "suggestedFix": "\"Due in 4 days\".",
+      "file": false,
+      "fingerprints": [
+        "604f559f1bdb"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "4807d3262467"
+      ],
+      "reason": "Single sev-1 copy nit on lunch details (\"Full → Join Waitlist\" arrow); lunch flow otherwise succeeded smoothly — the \"Going\" problem from 11-04/05 looks fixed (\"Join Meetup\")."
+    },
+    {
+      "fingerprints": [
+        "80df1efc7c08"
+      ],
+      "reason": "Single sev-1: no sent/seen marker in chat; persona was not blocked."
+    }
+  ],
+  "harnessIssues": [
+    {
+      "title": "ride-sfo-thanksgiving now tests a removed feature",
+      "detail": "Rides UI was removed on live 2026-11-06 (06863a6). Keep or retire the scenario after the owner decides; until then its failures are expected.",
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ]
+    },
+    {
+      "title": "persona overrode patience by one action",
+      "detail": "diego-ride sent \"back\" in the same command as the patience-ending note (overrodePatience true). Outcome unaffected.",
+      "runs": [
+        "sched-20261108-1915-diego-ride-sfo-thanksgiving"
+      ]
+    }
+  ]
+}
