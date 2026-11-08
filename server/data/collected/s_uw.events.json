@@ -1,31 +1,69 @@
 {
- "collectedAt": "2026-11-08T03:42:25.773Z",
+ "collectedAt": "2026-11-08T21:36:41.993Z",
  "sources": [
-  "campusgroups https://huskylink.washington.edu 37"
+  "campusgroups https://huskylink.washington.edu 36",
+  "trumba sea_campus 87"
  ],
  "events": [
   {
-   "description": "Students from UW and PNW area are welcome to join this annual sports day event! Students will be able to make new friends, learn more about Thai culture, and get a chance to chat with ThaiSA officers! Please choose to wear either: WHITE, BLACK, PURPLE, OR NAVY (teams will be sort",
-   "eligibility": "Open to students",
+   "description": "Phèdre is a queen and a mother who has been cursed by the Gods. She receives news that the king, Theseus, is dead. Encouraged by her lady-in-waiting, Oenone, and fueled by her own feelings Phèdre confesses to the King’s son and heir, Hippolytus that she is in love with him. Soon ",
+   "eligibility": "Open to the campus community",
    "tags": [
-    "event"
+    "event",
+    "performances"
    ],
    "interests": [
     "club"
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
-   "id": "op_uw_cg_375488",
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209155954",
    "type": "event",
-   "title": "ThaiSAxATSA Sports Day",
-   "host": "Thai Student Association at University of Washington",
+   "title": "Phèdre",
+   "host": "University of Washington",
    "schoolId": "s_uw",
-   "date": "2026-11-08T21:00:00.000Z",
-   "startTime": "13:00",
-   "sourceUrl": "https://huskylink.washington.edu/thaisa/rsvp?id=375488",
-   "sourceLabel": "Student org events"
+   "date": "2026-11-08T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Studio Theatre",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209155954",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "After serving 40+ players in our inaugural Intramurals league last spring, we are expanding to add a travel team that will play against other schools in the NWBA. We've got former Team USA coaches on staff who are ready to support any interested athletes! We are currently recruit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "athletics",
+    "diversity equity inclusion",
+    "student activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210832578",
+   "type": "event",
+   "title": "Wheelchair Basketball Open Practices",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-09T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Intramural Activities Building (IMA)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210832578",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Welcome our new officers and kick off the new academic year. Afghan food will be provided.",
@@ -39,8 +77,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375483",
    "type": "event",
    "title": "The Link- Up",
@@ -63,8 +101,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375142",
    "type": "event",
    "title": "Beginner Workshops (CAD)",
@@ -74,6 +112,145 @@
    "startTime": "17:30",
    "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375142",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Seattle Modern Orchestra’s (SMO's) University of Washington residency celebrates the legacies of longtime former School of Music professors and West Coast luminaries Stuart Dempster (b. 1936) and William O. Smith (1926-2020) with \"90/100, Celebrating Stuart Dempster, William O. S",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207734996",
+   "type": "event",
+   "title": "Guest Artist Concert: Seattle Modern Orchestra, \"90/100,\" Tribute to Stuart Dempster and William O. Smith",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207734996",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "At the inaugural Powering Progress, Changing the Climate Symposium , hosted by the UW Clean Energy Institute (CEI), join leaders and innovators in academia, business, government, and philanthropy to explore how to: Accelerate deployment of transformative clean energy technologies",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211426635",
+   "type": "event",
+   "title": "Powering Progress, Changing the Climate Symposium — Clean Energy Institute",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Student Union Building (HUB), HUB South Ballroom",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211426635",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Between 9:00 a.m. and 5:00 p.m. on the second Tuesday of every month the following Hyak systems will be offline for up to eight hours monthly for scheduled maintenance if the work requires it (e.g., security updates, system upgrades): Hyak Klone Tillicum GPU Cluster Kopah S3-Comp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "not specified"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210180041",
+   "type": "event",
+   "title": "Hyak Klone, Tillicum, and Kopah Monthly Maintenance",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210180041",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "This webinar shares findings from \"The Story Project,\" a strengths-based, community-driven research project co-developed and led through a partnership of Indigenous and settler researchers and community leaders. Four interwoven talks will explore: Strategies to support Indigen",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211689104",
+   "type": "event",
+   "title": "From Stories to Practice: Centering Indigenous Knowledge for Culturally Safe Abortion and Contraception Care",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T18:00:00.000Z",
+   "startTime": "10:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211689104",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The UW Surplus store is open to everyone on Tuesdays from 10 a.m. to 4 p.m. We receive new items every day, so inventory is always changing. If you'd like to get a preview of new items, you can sign up for our newsletter . Come by to see what bargains are in stock this week! Abou",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_178707203",
+   "type": "event",
+   "title": "UW Surplus Public Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D178707203",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Get your game on with the CTC! Mario Kart Super Smash Bros Just Dance And free popcorn! We play every Tuesday from 2-4PM!",
@@ -86,8 +263,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375404",
    "type": "event",
    "title": "Video Game Party",
@@ -109,8 +286,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375101",
    "type": "event",
    "title": "General Meeting",
@@ -132,8 +309,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375486",
    "type": "event",
    "title": "DEI: First-Generation Speaker Event",
@@ -160,8 +337,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375455",
    "type": "event",
    "title": "Open Gym",
@@ -171,6 +348,112 @@
    "startTime": "18:30",
    "sourceUrl": "https://huskylink.washington.edu/mensclubbasketball/rsvp?id=375455",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Phèdre is a queen and a mother who has been cursed by the Gods. She receives news that the king, Theseus, is dead. Encouraged by her lady-in-waiting, Oenone, and fueled by her own feelings Phèdre confesses to the King’s son and heir, Hippolytus that she is in love with him. Soon ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209155957",
+   "type": "event",
+   "title": "Phèdre",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Studio Theatre",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209155957",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "No classes. Most University offices and buildings are closed. Check with specific offices to confirm. Year : 2026 Quarter : Autumn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_191299758",
+   "type": "event",
+   "title": "Veterans Day",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T08:00:00.000Z",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D191299758",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "If you can't make it for the Tuesday Public Store , UW Surplus has you covered! Our online storefront features selected items added at 10:00 a.m. every Wednesday. Simply purchase online and pick up within a week - it couldn't be easier! While the best selection will remain availa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_178714371",
+   "type": "event",
+   "title": "UW Surplus Online Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D178714371",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and have your questions about the University of Washington's Supercomputer Hyak and GPU system Tillicum answered by an HPC expert. Attendees need only register once and can attend any of the ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_181783507",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D181783507",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Come join us for a worship night gathering at the Red Square! Check our Instagram @uwaacf for details!",
@@ -183,8 +466,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375371",
    "type": "event",
    "title": "Worship Night",
@@ -194,6 +477,101 @@
    "startTime": "15:30",
    "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375371",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The UW Retirement Association invites UW faculty, staff and retirees to a weekly opportunity for coffee, conversation, and community at the UW Club . Join us every Thursday from 8:30-10:30 am for complimentary drip coffee and tea in this iconic space. No registration necessary, a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "not specified"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_192349301",
+   "type": "event",
+   "title": "Coffee & Community at the UW Club",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-12T16:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "University of Washington Club (Faculty Center) (FAC)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D192349301",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join us for two complementary symposia exploring advances in the 3Rs and new approach methodologies (NAMs). Both events will be held in the same location on the University of Washington’s main campus in Seattle. The University of Washington’s annual 3Rs Symposium will take place ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210707748",
+   "type": "event",
+   "title": "2026 3Rs Symposium + NAMs Symposium",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-12T16:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "South Campus Center (SOCC), Room 316",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210707748",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Your Way to AI AI is reshaping industries, unlocking unparalleled potential for innovation and efficiency. But how do you cut through the noise and deploy a strategy that drives tangible value, fast? ​ Dell Technologies and NVIDIA invite you to join us for Accelerating Research D",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "information sessions",
+    "lectures/seminars",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210688436",
+   "type": "event",
+   "title": "Accelerating Research Day",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-12T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Student Union Building (HUB), 214",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210688436",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
@@ -206,8 +584,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375338",
    "type": "event",
    "title": "RSO Drop-In Advising",
@@ -217,6 +595,67 @@
    "startTime": "13:00",
    "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375338",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and get your questions about the University of Washington’s supercomputer Hyak Klone and GPU system Tillicum answered by an HPC expert. On Thursdays at 2pm, join us in person or virtually —dr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_189395500",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual + In-person",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-12T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Physics-Astronomy Tower (PAT), eScience Institute, WRF Data Science Studio, University of Washington, UW Physics/Astronomy Tower, 6th Floor, 3910 15th Ave NE, Seattle, WA 98195",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D189395500",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join the UW Department of Human Centered Design & Engineering for a research talk with Professor Cindy Atman as part of the HCDE Research Speaker Series. Towards Design Agency Are you an agent of your own design process? If you could see your design process, would that help you s",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_208353579",
+   "type": "event",
+   "title": "HCDE Research Speaker Series: Cindy Atman, \"Towards Design Agency\"",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-13T00:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Sieg Building (SIG), 134 Sieg Building",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D208353579",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "During this event, we will be recognizing the higher rates of violence and inequality that trans-folk face; sharing information about your rights, advocacy and access to resources on UW campus and within Seattle. The event will also include an open Q&A portion. Panelist from: Q C",
@@ -229,8 +668,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375477",
    "type": "event",
    "title": "Trans Day of Remembrance Panel",
@@ -240,6 +679,70 @@
    "startTime": "18:00",
    "sourceUrl": "https://huskylink.washington.edu/GEC/rsvp?id=375477",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Phèdre is a queen and a mother who has been cursed by the Gods. She receives news that the king, Theseus, is dead. Encouraged by her lady-in-waiting, Oenone, and fueled by her own feelings Phèdre confesses to the King’s son and heir, Hippolytus that she is in love with him. Soon ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209155968",
+   "type": "event",
+   "title": "Phèdre",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-13T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Studio Theatre",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209155968",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join us for our inaugural Research Computing Symposium, an event bringing together the UW research community to showcase current work, explore emerging capabilities, and connect around the future of research computing. The event will feature a research showcase with lightning tal",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "conferences",
+    "exhibits",
+    "information sessions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_208855324",
+   "type": "event",
+   "title": "Research Computing Symposium",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Student Union Building (HUB), HUB 334",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D208855324",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
@@ -252,8 +755,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375434",
    "type": "event",
    "title": "Chinese Translation Club Meeting",
@@ -275,8 +778,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375487",
    "type": "event",
    "title": "Let's Talk: Mandarin",
@@ -293,6 +796,94 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "You are invited to an advance screening of Being Heumann , an Apple Original Film! The film follows disability rights activist Judy Heumann, played by Ruth Madeley, as she leads a historic 28-day occupation of San Francisco's Federal Building, uniting protesters in a fight for ac",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "diversity equity inclusion",
+    "performances",
+    "screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212973491",
+   "type": "event",
+   "title": "Being Heumann: Movie Screening",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Alder Hall (ALD), Auditorium",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212973491",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "REGISTER ONLINE You asked, and we answered…We’re excited to offer Park in the Dark (for grown-ups!)! Park in the Dark (for grown-ups!) is based on our Park in the Dark program developed for children ages 6-12 and their caregivers. Park in the Dark (for grown-ups!) will have the s",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212740339",
+   "type": "event",
+   "title": "Park in the Dark (for grown-ups!)",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Washington Park Arboretum (LNDMK-8)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212740339",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Phèdre is a queen and a mother who has been cursed by the Gods. She receives news that the king, Theseus, is dead. Encouraged by her lady-in-waiting, Oenone, and fueled by her own feelings Phèdre confesses to the King’s son and heir, Hippolytus that she is in love with him. Soon ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209155970",
+   "type": "event",
+   "title": "Phèdre",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Studio Theatre",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209155970",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
    "description": "Watch real Japanese Grand Sumo with us in the HUB!",
    "eligibility": "Open to students",
    "tags": [
@@ -303,8 +894,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375474",
    "type": "event",
    "title": "Sumo Usual Match Observation",
@@ -314,6 +905,36 @@
    "startTime": "20:00",
    "sourceUrl": "https://huskylink.washington.edu/sumounionmembershiporganization/rsvp?id=375474",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Russell Investments International Case Competition (RIICC) 2026 Join the Foster School of Business Global Business Center's annual Russell Investments International Case Competition (RIICC) on November 14, 2026! RIICC brings together UW students to tackle a global business challe",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "conferences"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209767310",
+   "type": "event",
+   "title": "RIICC 2026 | Russell Investments International Case Competition [Open to UW undergraduates]",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Founders Hall (FNDR)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209767310",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Join the Washington Gaming Association’s annual Trading Card Game event at the University of Washington featuring the MTG Club and Pokémon Trainers club. Featuring vendors, artists, give aways, and open play, this event brings together students, collectors, and TCG enthusiasts fo",
@@ -326,8 +947,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375343",
    "type": "event",
    "title": "TCG Event",
@@ -337,6 +958,96 @@
    "startTime": "12:30",
    "sourceUrl": "https://huskylink.washington.edu/wgauw/rsvp?id=375343",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "RIICC 2026 Competition Day - Final Round Saturday, November 14 marks the main event of the Russell Investment International Case Competition (RIICC) 2026! Teams will present their case analyses to judges from Russell Investments and the Seattle corporate community. The RIICC 2026",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "conferences"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207180435",
+   "type": "event",
+   "title": "RIICC 2026 | Russell Investments International Case Competition - Final Round [Open to the public]",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T21:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Founders Hall (FNDR), 170",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207180435",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Phèdre is a queen and a mother who has been cursed by the Gods. She receives news that the king, Theseus, is dead. Encouraged by her lady-in-waiting, Oenone, and fueled by her own feelings Phèdre confesses to the King’s son and heir, Hippolytus that she is in love with him. Soon ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209155979",
+   "type": "event",
+   "title": "Phèdre",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-15T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Studio Theatre",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209155979",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "After serving 40+ players in our inaugural Intramurals league last spring, we are expanding to add a travel team that will play against other schools in the NWBA. We've got former Team USA coaches on staff who are ready to support any interested athletes! We are currently recruit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "athletics",
+    "diversity equity inclusion",
+    "student activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210832579",
+   "type": "event",
+   "title": "Wheelchair Basketball Open Practices",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-16T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Intramural Activities Building (IMA)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210832579",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "The purpose of this workshop is to guide UW students through all academic matters and to provide an opportunity to hear directly from current seniors about their experiences at UW.",
@@ -349,8 +1060,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375484",
    "type": "event",
    "title": "Academic Workshop For Freshmen",
@@ -372,8 +1083,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375143",
    "type": "event",
    "title": "Beginner Workshops (CAD)",
@@ -396,8 +1107,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375385",
    "type": "event",
    "title": "Sentient Film Screening with Animal Advocacy at UW",
@@ -425,8 +1136,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375475",
    "type": "event",
    "title": "Sumo Usual Match Observation",
@@ -436,6 +1147,121 @@
    "startTime": "20:00",
    "sourceUrl": "https://huskylink.washington.edu/sumounionmembershiporganization/rsvp?id=375475",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Tuesday, November 17 for the inaugural UW Shared Research Facilities & Resources Fair , an opportunity to discover the people, services, technology, and expertise that support research across the University of Washington. Faculty, researchers, trainees, facility staff,",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "exhibits",
+    "information sessions",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212736698",
+   "type": "event",
+   "title": "Shared Research Facilities & Resources Fair",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Student Union Building (HUB), HUB 332 & 334",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212736698",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The UW Surplus store is open to everyone on Tuesdays from 10 a.m. to 4 p.m. We receive new items every day, so inventory is always changing. If you'd like to get a preview of new items, you can sign up for our newsletter . Come by to see what bargains are in stock this week! Abou",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_178707204",
+   "type": "event",
+   "title": "UW Surplus Public Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D178707204",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Peer coaching groups among the ADVANCE faculty are a great source of support, feedback, and advice. Groups typically include 6-8 faculty at a similar career stage (e.g., pre-tenure or post-tenure), each of whom are from a different department here at UW. The groups use a peer coa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209050608",
+   "type": "event",
+   "title": "Peer Coaching Kick Off 2026",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T19:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "Electrical and Computer Engineering Building (ECE), ECE 403",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209050608",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join the UW Combined Fund Drive for the final lunch and learn in our fall series spotlighting local human service nonprofits dedicated to strengthening families, meeting essential needs, and building thriving communities. Building a resilient community requires a strong network o",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211897052",
+   "type": "event",
+   "title": "UWCFD Lunch & Learn: It Takes a Village",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T20:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211897052",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Get your game on with the CTC! Mario Kart Super Smash Bros Just Dance And free popcorn! We play every Tuesday from 2-4PM!",
@@ -448,8 +1274,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375405",
    "type": "event",
    "title": "Video Game Party",
@@ -459,6 +1285,71 @@
    "startTime": "14:00",
    "sourceUrl": "https://huskylink.washington.edu/NSTP/rsvp?id=375405",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Please join the UW Law Interdisciplinary Health Law & Policy Program and the UW Center for an Informed Public for a presentation by Claudia Haupt of Northeastern School of Law, Pseudoprofessional Advice: Misinformation, Professional Regulation, and the First Amendment. Why are li",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conferences",
+    "lectures/seminars",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212262609",
+   "type": "event",
+   "title": "Pseudoprofessional Advice: Misinformation, Professional Regulation, and the First Amendment",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "William H. Gates Hall (LAW), Room 138",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212262609",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Growing concerns about the health of America’s 250-year experiment in representative democracy should prompt us to think deeply about how civic belonging has been defined in U.S. society since the nation’s founding and what current efforts to restrict access and opportunities for",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210782385",
+   "type": "event",
+   "title": "Civic Belonging in an Anti-Democratic Age",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Student Union Building (HUB), Lyceum",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210782385",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Pull up to Gym A to meet each other and play casual pickup basketball",
@@ -471,8 +1362,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375456",
    "type": "event",
    "title": "Open Gym",
@@ -482,6 +1373,332 @@
    "startTime": "18:30",
    "sourceUrl": "https://huskylink.washington.edu/mensclubbasketball/rsvp?id=375456",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Pre-Modern World History Lecture Dr. Noreña sketches the contours of the “new” global antiquity and argues that this rapidly emerging field can and should be fully global in its coverage and institutional organization. In this lecture, he explores how we might bring both Afri",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211880115",
+   "type": "event",
+   "title": "In Search of a Global Antiquity with Dr. Carlos Noreña",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Union Building (HUB), 106",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211880115",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Renowned medieval manuscript scholar Dr. Lisa Fagin Davis, Executive Director of the Medieval Academy of America and adjunct faculty at Simmons University's School of Library and Information Science, will lead a workshop on medieval manuscripts and manuscript fragments held by UW",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210673465",
+   "type": "event",
+   "title": "Workshop: Medieval Manuscripts at UW",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Allen Library (ALB), Special Collections Classroom, B069, Allen Library South, Basement",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210673465",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "If you can't make it for the Tuesday Public Store , UW Surplus has you covered! Our online storefront features selected items added at 10:00 a.m. every Wednesday. Simply purchase online and pick up within a week - it couldn't be easier! While the best selection will remain availa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_178992866",
+   "type": "event",
+   "title": "UW Surplus Online Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D178992866",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Interested in learning more about the Master of Science in Human Centered Design & Engineering ? This session will provide an overview of the degree program, including curriculum, admissions requirements, and application, with time to meet with current students at the end. RSVP h",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211234108",
+   "type": "event",
+   "title": "Master of Science in HCDE: Information Session",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211234108",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "November 18, 2026 12 pm – 1 pm UW Medicine South Lake Union Orin Smith Auditorium & Streamed on Zoom Webinar 850 Republican St, Seattle, WA “Gut-microbiota mediated protection from cholera” Biography Dr. Ana Weil is a physician-scientist infectious diseases physician in the Cente",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210680701",
+   "type": "event",
+   "title": "Science in Medicine Lecture: Ana Weil, MD, MPH",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "South Lake Union C Building (Admin) (SLC), Orin Smith Auditorium",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210680701",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Foster Undergraduate Study Abroad Fair Don’t miss this annual drop-in event to explore all the ways you can study abroad through Foster! Meet students who’ve participated in programs across the globe, compare options, and find the best fit for your goals. Anthony’s Forum (Demp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_205889770",
+   "type": "event",
+   "title": "Fair | Foster Undergraduate Study Abroad Fair",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Dempsey Hall (DEM), Anthony's Forum (3rd Floor)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D205889770",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "You are invited to the 2nd Annual ORC Flea Market We'll have Vinyl LPs, CDs, DVDs, books, puzzles, accessories, stationary, framed posters, stocking stuffers and much more. All at flea-sized prices!!! BRING CASH! ( no other payment types are available). All proceeds benefit the U",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_206825184",
+   "type": "event",
+   "title": "The 2nd Annual ORC Flea Market in Gerberding Hall",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Gerberding Hall (GRB), Gerberding Hall, Room 142",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D206825184",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and have your questions about the University of Washington's Supercomputer Hyak and GPU system Tillicum answered by an HPC expert. Attendees need only register once and can attend any of the ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_181783508",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D181783508",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join us for a panel discussion reflecting on the 2026 National Women's Studies Association (NWSA) Annual Conference in Atlanta, Georgia. GWSS faculty and graduate students will share their experiences, insights, and reflections from the conference, exploring emerging conversation",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212431134",
+   "type": "event",
+   "title": "GWSS & the State of the Field: Reporting Back from the National Women’s Studies Association (NWSA) Conference",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T23:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Padelford Hall (PDL), PDL B110 G",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212431134",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Drawing on Eric Hobsbawm's claim that “the imagined community of millions seems more real as a team of eleven named people,” this talk explores the power of sports teams. Using examples from post-apartheid South Africa and elsewhere, Jacobs asks: Can sports teams expand the bound",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211770108",
+   "type": "event",
+   "title": "Sean Jacobs | Eleven Named People: Global Sport and Society",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Communications Building (CMU), CMU 120",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211770108",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "RESERVE YOUR SEAT Discover the University of Washington's Communication Leadership Master's Program! Join us in person, if you're in Seattle or via Zoom from anywhere in the world, for an immersive Open House experience and explore how UW's award-winning Communication Leadership ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "academics",
+    "information sessions",
+    "student activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210759916",
+   "type": "event",
+   "title": "UW Communication Leadership: Admissions 2027 Open House (Hybrid)",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Communications Building (CMU), CMU 126",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210759916",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Weekly gathering that brings together the entire community of AACF for worship, teaching, and community-building activities. Check our Instagram @uwaacf for details! Locations may be subject to change each week.",
@@ -494,8 +1711,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375372",
    "type": "event",
    "title": "Large Group",
@@ -505,6 +1722,64 @@
    "startTime": "19:00",
    "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375372",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "UW Jazz Studies students perform in small combos over two consecutive nights of original tunes, homage to the greats of jazz, and experiments in composing and arranging. FREE admission Event sponsors : UW Music; www.music.washington.edu Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207734942",
+   "type": "event",
+   "title": "Jazz Innovations, Part I",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Floyd and Delores Jones Playhouse (PHT)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207734942",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The UW Retirement Association invites UW faculty, staff and retirees to a weekly opportunity for coffee, conversation, and community at the UW Club . Join us every Thursday from 8:30-10:30 am for complimentary drip coffee and tea in this iconic space. No registration necessary, a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "not specified"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_192349302",
+   "type": "event",
+   "title": "Coffee & Community at the UW Club",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T16:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "University of Washington Club (Faculty Center) (FAC)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D192349302",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
@@ -517,8 +1792,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375339",
    "type": "event",
    "title": "RSO Drop-In Advising",
@@ -528,6 +1803,191 @@
    "startTime": "13:00",
    "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375339",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and get your questions about the University of Washington’s supercomputer Hyak Klone and GPU system Tillicum answered by an HPC expert. On Thursdays at 2pm, join us in person or virtually —dr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_189395501",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual + In-person",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Physics-Astronomy Tower (PAT), eScience Institute, WRF Data Science Studio, University of Washington, UW Physics/Astronomy Tower, 6th Floor, 3910 15th Ave NE, Seattle, WA 98195",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D189395501",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Celebrated Russian pianist Mikhail Voskresensky leads a master class with UW piano students. FREE admission Event sponsors : UW Music; www.music.washington.edu Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207734989",
+   "type": "event",
+   "title": "Guest Pianist Master Class:Mikhail Voskresensky",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Floyd and Delores Jones Playhouse (PHT)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207734989",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join the UW Department of Human Centered Design & Engineering for a research talk with Dr. Jin Yu, Postdoctoral Fellow at Simon Fraser University, as part of the HCDE Research Speaker Series. Thinking Through Making: Tangible Tools for Youth Building Interactive Devices Youth bri",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_208353580",
+   "type": "event",
+   "title": "HCDE Research Speaker Series: Jin Yu, \"Thinking Through Making: Tangible Tools for Youth Building Interactive Devices\"",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-20T00:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Sieg Building (SIG), 134 Sieg Building",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D208353580",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "RSVP Now! Thursday, November 19th, 5:00-7:30pm at wǝɫǝbʔaltxʷ Intellectual House The Department of American Indian Studies at the University of Washington hosts an annual literary and storytelling series. Sacred Breath features Indigenous writers and storytellers sharing their cr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures/seminars",
+    "performances",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211816117",
+   "type": "event",
+   "title": "Sacred Breath: Indigenous Writing and Storytelling Series",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Intellectual House (INT), Gathering Hall",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211816117",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "UW Jazz Studies students perform in small combos over two consecutive nights of original tunes, homage to the greats of jazz, and experiments in composing and arranging. FREE admission Event sponsors : UW Music; www.music.washington.edu Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207734952",
+   "type": "event",
+   "title": "Jazz Innovations, Part II",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-20T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Floyd and Delores Jones Playhouse (PHT)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207734952",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Considering an Executive MBA? Let’s Help You Explore It Thoughtfully Registration is REQUIRED Balancing a demanding career, family commitments, and personal goals makes the decision to pursue an MBA a significant one. That’s why we invite you to visit a class designed to give you",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210331246",
+   "type": "event",
+   "title": "Class Visit: General Mgmt & Strategy or Financial Management",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-20T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "EMBA class room",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210331246",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
@@ -540,8 +2000,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375435",
    "type": "event",
    "title": "Chinese Translation Club Meeting",
@@ -551,6 +2011,37 @@
    "startTime": "15:00",
    "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375435",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "You're invited to attend a presentation by renowned environmental activist and economist Winona LaDuke, followed by a light reception in the Fisheries lobby. Her presentation will focus on sustainable agriculture, the importance of Indigenous leadership, and her institute - Anish",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212972388",
+   "type": "event",
+   "title": "Planting Seeds in Times of Darkness with Winona LaDuke",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-21T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Fishery Sciences (FSH)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212972388",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Join us as we honor the lives of Transgender and gender-diverse people who have been lost to anti-trans violence during Trans Day of Remembrance. We will be walking to Drumheller Fountain with your choosing of real/battery powered tea-lights.",
@@ -563,8 +2054,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375478",
    "type": "event",
    "title": "Trans Day of Remembrance Vigil",
@@ -581,6 +2072,65 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Experience Foster's EMBA Program Registration is REQUIRED Considering an Executive MBA? Let’s Help You Explore It Thoughtfully Balancing a demanding career, family commitments, and personal goals makes the decision to pursue an MBA a significant one. That’s why we invite you to o",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211336197",
+   "type": "event",
+   "title": "Class Visit - General Management & Strategy",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-21T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "EMBA class room",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211336197",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Advance registration required. financial aid slots available on a first-come, first-served basis REGISTER ONLINE Join the Seattle Botanic Gardens and Cascadia Forest Therapy for a unique forest bathing opportunity in the Washington Park Arboretum. Forest bathing (or shinrin-yoku)",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209059783",
+   "type": "event",
+   "title": "Forest Bathing (in-person)",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-21T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Washington Park Arboretum (LNDMK-8)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209059783",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
    "description": "Cultural Fest Collaboration with MSA. We will have a table at the cultural fest representing Afghanistan.",
    "eligibility": "Open to students",
    "tags": [
@@ -591,8 +2141,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375485",
    "type": "event",
    "title": "Cultural Fest Collaboration with MSA",
@@ -602,6 +2152,66 @@
    "startTime": "16:30",
    "sourceUrl": "https://huskylink.washington.edu/asuatuwseattle/rsvp?id=375485",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "UW music students perform music of the Baroque era under the direction of Tekla Cunningham. FREE admission Event sponsors : UW Music; www.music.washington.edu Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207735006",
+   "type": "event",
+   "title": "Baroque Ensemble",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-22T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Floyd and Delores Jones Playhouse (PHT)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207735006",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "After serving 40+ players in our inaugural Intramurals league last spring, we are expanding to add a travel team that will play against other schools in the NWBA. We've got former Team USA coaches on staff who are ready to support any interested athletes! We are currently recruit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "athletics",
+    "diversity equity inclusion",
+    "student activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210832580",
+   "type": "event",
+   "title": "Wheelchair Basketball Open Practices",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-23T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Intramural Activities Building (IMA)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210832580",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Intro to CAD (OnShape) and 3D printing",
@@ -614,8 +2224,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375144",
    "type": "event",
    "title": "Beginner Workshops (CAD)",
@@ -637,8 +2247,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375476",
    "type": "event",
    "title": "Sumo Usual Match Observation",
@@ -648,6 +2258,64 @@
    "startTime": "20:00",
    "sourceUrl": "https://huskylink.washington.edu/sumounionmembershiporganization/rsvp?id=375476",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The UW Surplus store is open to everyone on Tuesdays from 10 a.m. to 4 p.m. We receive new items every day, so inventory is always changing. If you'd like to get a preview of new items, you can sign up for our newsletter . Come by to see what bargains are in stock this week! Abou",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_179103642",
+   "type": "event",
+   "title": "UW Surplus Public Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-24T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D179103642",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "UW voice students of Thomas Harper and Carrie Shaw perform art songs and arias from the vocal repertoire. FREE admission Event sponsors : UW Music; www.music.washington.edu Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207735207",
+   "type": "event",
+   "title": "Voice Division Recital",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-25T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Music Building (MUS), Room 213",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207735207",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "General club meeting discussing upcoming club events, icebreakers, and training for new volunteers. Snacks will be provided!",
@@ -660,8 +2328,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375103",
    "type": "event",
    "title": "General Meeting (Tentative)",
@@ -671,6 +2339,60 @@
    "startTime": "18:00",
    "sourceUrl": "https://huskylink.washington.edu/btmuw/rsvp?id=375103",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "If you can't make it for the Tuesday Public Store , UW Surplus has you covered! Our online storefront features selected items added at 10:00 a.m. every Wednesday. Simply purchase online and pick up within a week - it couldn't be easier! While the best selection will remain availa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_178992867",
+   "type": "event",
+   "title": "UW Surplus Online Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-25T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D178992867",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and have your questions about the University of Washington's Supercomputer Hyak and GPU system Tillicum answered by an HPC expert. Attendees need only register once and can attend any of the ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_181783509",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-25T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D181783509",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Weekly gathering that brings together the entire community of AACF for worship, teaching, and community-building activities. Check our Instagram @uwaacf for details! Locations may be subject to change each week.",
@@ -683,8 +2405,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375373",
    "type": "event",
    "title": "Large Group",
@@ -694,6 +2416,82 @@
    "startTime": "19:00",
    "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375373",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "No classes. Most University offices and buildings are closed. Check with specific offices to confirm. Year : 2026 Quarter : Autumn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_191299759",
+   "type": "event",
+   "title": "Thanksgiving Day",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-26T08:00:00.000Z",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D191299759",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and get your questions about the University of Washington’s supercomputer Hyak Klone and GPU system Tillicum answered by an HPC expert. On Thursdays at 2pm, join us in person or virtually —dr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_189395502",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual + In-person",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-26T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Physics-Astronomy Tower (PAT), eScience Institute, WRF Data Science Studio, University of Washington, UW Physics/Astronomy Tower, 6th Floor, 3910 15th Ave NE, Seattle, WA 98195",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D189395502",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "No classes. Most University offices and buildings are closed. Check with specific offices to confirm. Year : 2026 Quarter : Autumn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_191299760",
+   "type": "event",
+   "title": "Native American Heritage Day",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-27T08:00:00.000Z",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D191299760",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
@@ -706,8 +2504,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375436",
    "type": "event",
    "title": "Chinese Translation Club Meeting",
@@ -717,6 +2515,37 @@
    "startTime": "15:00",
    "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375436",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "After serving 40+ players in our inaugural Intramurals league last spring, we are expanding to add a travel team that will play against other schools in the NWBA. We've got former Team USA coaches on staff who are ready to support any interested athletes! We are currently recruit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "athletics",
+    "diversity equity inclusion",
+    "student activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210832581",
+   "type": "event",
+   "title": "Wheelchair Basketball Open Practices",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-11-30T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Intramural Activities Building (IMA)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210832581",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Intro to CAD (OnShape) and 3D printing",
@@ -729,8 +2558,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375145",
    "type": "event",
    "title": "Beginner Workshops (CAD)",
@@ -740,6 +2569,35 @@
    "startTime": "17:30",
    "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375145",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The UW Surplus store is open to everyone on Tuesdays from 10 a.m. to 4 p.m. We receive new items every day, so inventory is always changing. If you'd like to get a preview of new items, you can sign up for our newsletter . Come by to see what bargains are in stock this week! Abou",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_179103643",
+   "type": "event",
+   "title": "UW Surplus Public Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-01T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D179103643",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Get your game on with the CTC! Mario Kart Super Smash Bros Just Dance And free popcorn! We play every Tuesday from 2-4PM!",
@@ -752,8 +2610,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375406",
    "type": "event",
    "title": "Video Game Party",
@@ -763,6 +2621,174 @@
    "startTime": "14:00",
    "sourceUrl": "https://huskylink.washington.edu/NSTP/rsvp?id=375406",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "On the first Tuesday of each month of the academic year, UW Global hosts a gathering for faculty who are engaged or interested in global work: Community Conversations. This is not a lecture series. It is a welcoming and conversational space to meet colleagues, share food and drin",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "information sessions",
+    "meetings"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_206816389",
+   "type": "event",
+   "title": "UW Global \"Community Conversations\"",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-01T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "University of Washington Club (Faculty Center) (FAC), UW Club, 4020 E Stevens Way NE, Seattle, WA 98195",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D206816389",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The UW Percussion Ensemble (Bonnie Whiting, director) performs contemporary music arranged for percussion ensembles. ----------- Event sponsors : UW School of Music; www.music.washington.edu; ArtsUW Ticket Office: 206.543.4880. Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207735620",
+   "type": "event",
+   "title": "Percussion Ensemble",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-02T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Gerlich Theater",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207735620",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "If you can't make it for the Tuesday Public Store , UW Surplus has you covered! Our online storefront features selected items added at 10:00 a.m. every Wednesday. Simply purchase online and pick up within a week - it couldn't be easier! While the best selection will remain availa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_179232716",
+   "type": "event",
+   "title": "UW Surplus Online Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-02T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D179232716",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Interested in learning more about the Master of Science in Human Centered Design & Engineering ? This session will provide an overview of the degree program, including curriculum, admissions requirements, and application, with time to meet with current students at the end. RSVP h",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_211234109",
+   "type": "event",
+   "title": "Master of Science in HCDE: Information Session",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-02T20:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D211234109",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "UW Libraries and the UW School of Music collaborate to bring the free First Wednesday Concert Series to the public each month. The series features School of Music students in approximately hour-long sets, strategically occurring during lunchtime in hopes of audience members atten",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_162928995",
+   "type": "event",
+   "title": "First Wednesday Concert",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-02T20:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Allen Library (ALB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D162928995",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and have your questions about the University of Washington's Supercomputer Hyak and GPU system Tillicum answered by an HPC expert. Attendees need only register once and can attend any of the ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_181783510",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-02T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D181783510",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Weekly gathering that brings together the entire community of AACF for worship, teaching, and community-building activities. Check our Instagram @uwaacf for details! Locations may be subject to change each week.",
@@ -775,8 +2801,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375374",
    "type": "event",
    "title": "Large Group",
@@ -786,6 +2812,89 @@
    "startTime": "19:00",
    "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375374",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Studio Jazz Ensemble performs big band arrangements and repertory selections. The Modern Band performs innovative arrangements of jazz standards, selections from the outer limits of the genre, and new original compositions. $10 all tickets. Event sponsors : UW School of Music",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207734931",
+   "type": "event",
+   "title": "Studio Jazz Ensemble, Modern Band",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Studio Theater",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207734931",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The UW Retirement Association invites UW faculty, staff and retirees to a weekly opportunity for coffee, conversation, and community at the UW Club . Join us every Thursday from 8:30-10:30 am for complimentary drip coffee and tea in this iconic space. No registration necessary, a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "not specified"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_192349304",
+   "type": "event",
+   "title": "Coffee & Community at the UW Club",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T16:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "University of Washington Club (Faculty Center) (FAC)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D192349304",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "RESERVE YOUR SPOT Open to Public | Online Thinking about graduate school in communication, content strategy, digital media, or marketing? Join us for an upcoming Communication Leadership Program Info Session from the University of Washington to explore how our degrees can help yo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210760347",
+   "type": "event",
+   "title": "UW Communication Leadership Program Info Session",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T20:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210760347",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
@@ -798,8 +2907,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375340",
    "type": "event",
    "title": "RSO Drop-In Advising",
@@ -809,6 +2918,156 @@
    "startTime": "13:00",
    "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375340",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Need support with your High Performance Computing (HPC) project? Attend HPC office hours and get your questions about the University of Washington’s supercomputer Hyak Klone and GPU system Tillicum answered by an HPC expert. On Thursdays at 2pm, join us in person or virtually —dr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academics",
+    "information sessions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_189395503",
+   "type": "event",
+   "title": "HPC Office Hours - Virtual + In-person",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Physics-Astronomy Tower (PAT), eScience Institute, WRF Data Science Studio, University of Washington, UW Physics/Astronomy Tower, 6th Floor, 3910 15th Ave NE, Seattle, WA 98195",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D189395503",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "As a UW postdoc, you’re part of a community doing extraordinary work. Come meet the wider postdoc community and learn how the UW supports you at the UW Postdoctoral Orientation. If you were appointed after 6/30/2025, please join us for this event on the Seattle campus. Hosted by ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "meetings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_208876552",
+   "type": "event",
+   "title": "UW Postdoctoral Orientation",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Kane Hall (KNE), Walker Ames Room",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D208876552",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Join the UW Department of Human Centered Design & Engineering for a research talk with Professor Sean Munson as part of the HCDE Research Speaker Series. Additional details about the talk will be added as they become available. Event sponsors : Human Centered Design & Engineering",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_208353610",
+   "type": "event",
+   "title": "HCDE Research Speaker Series: Sean Munson",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-04T00:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Sieg Building (SIG), 134 Sieg Building",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D208353610",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "UW keyboard students perform music from the piano repertoire. FREE admission Event sponsors : UW Music; www.music.washington.edu Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207742827",
+   "type": "event",
+   "title": "Brechemin Piano Series",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-04T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Floyd and Delores Jones Playhouse (PHT)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207742827",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The Campus Band (Joshua Michael Smith, conductor) and Concert Band (Yuman Wu, conductor) present \"Song and Dance,\" performing music by Leonard Bernstein, James Barnes, Frank Ticheli and others. $10 all tickets Event sponsors : UW Music; www.music.washington.edu; ArtsUW Ticket Off",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207742817",
+   "type": "event",
+   "title": "Campus and Concert Bands",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-04T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Theater",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207742817",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
@@ -821,8 +3080,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375437",
    "type": "event",
    "title": "Chinese Translation Club Meeting",
@@ -832,6 +3091,66 @@
    "startTime": "15:00",
    "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375437",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The UW’s top auditioned choirs present modern vocal works, music from around the globe, and great works from the choral repertoire in shared quarterly concerts showcasing each group’s most recent work. $10 all tickets. Event sponsors : UW School of Music; www.music.washington.edu",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207742839",
+   "type": "event",
+   "title": "Chamber Singers and University Chorale",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-05T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Gerlich Theater",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207742839",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Considering an Executive MBA? Let’s Help You Explore It Thoughtfully Registration is REQUIRED Balancing a demanding career, family commitments, and personal goals makes the decision to pursue an MBA a significant one. That’s why we invite you to visit a class designed to give you",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210331496",
+   "type": "event",
+   "title": "Class Visit: General Management & Strategy",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-05T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "EMBA class room",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210331496",
+   "sourceLabel": "University of Washington Events"
   },
   {
    "description": "Emerald City Card Show – UW Seattle presented by the Washington Gaming Association at UW is bringing the ultimate collector experience to the heart of campus! Join us at the UW Husky Union Building (HUB) Ballrooms (2nd Floor) for a full day of buying, selling, trading, and connec",
@@ -844,8 +3163,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375468",
    "type": "event",
    "title": "Emerald City Card Show by WGA - UW Seattle",
@@ -862,6 +3181,125 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Limited financial aid slots offered on a first-come, first-serve basis. REGISTER ONLINE Come make your own unique holiday cards and gift tags through an exploration of mixed media printmaking! Explore the patterns and textures of plants through print-making processes. This class ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_209059796",
+   "type": "event",
+   "title": "Botanical Print-Making Holiday Card Workshop",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-05T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Douglas Research Conservatory (DRC)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209059796",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The Modern Music Ensemble (Cristina Valdés, director) presents works of our time in several concerts each year. Including repertoire from the early to mid-20th century and beyond, the group focuses on small ensemble and chamber orchestra works, performed by both undergraduate and",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207742844",
+   "type": "event",
+   "title": "Modern Music Ensemble",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-06T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Floyd and Delores Jones Playhouse (PHT)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207742844",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "After serving 40+ players in our inaugural Intramurals league last spring, we are expanding to add a travel team that will play against other schools in the NWBA. We've got former Team USA coaches on staff who are ready to support any interested athletes! We are currently recruit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "athletics",
+    "diversity equity inclusion",
+    "student activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210832582",
+   "type": "event",
+   "title": "Wheelchair Basketball Open Practices",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-07T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Intramural Activities Building (IMA)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210832582",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "December 7, 2026 1 pm - 2 pm Foege South Auditorium (Genome Sciences 060) & Streamed on Zoom Webinar “Rapid Enzyme Activity Tests for Monitoring Infectious Disease Treatment and Prevention” For many infectious and chronic diseases, effective medications already exist, and prevent",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures/seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_212816573",
+   "type": "event",
+   "title": "Science in Medicine Lecture: Ayokunle Olanrewaju, PhD",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-07T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "William H. Foege Genome Sciences (GNOM), Auditorium (060)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D212816573",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
    "description": "Intro to CAD (OnShape) and 3D printing",
    "eligibility": "Open to students",
    "tags": [
@@ -872,8 +3310,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:30.359Z",
-   "createdAt": "2026-11-08T03:42:30.359Z",
+   "lastVerified": "2026-11-08T21:36:47.734Z",
+   "createdAt": "2026-11-08T21:36:47.734Z",
    "id": "op_uw_cg_375146",
    "type": "event",
    "title": "Beginner Workshops (CAD)",
@@ -883,6 +3321,88 @@
    "startTime": "17:30",
    "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375146",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Phyllis Byrdwell leads the UW gospel choir in songs of praise, jubilation, and other expressions of the Gospel tradition. Event sponsors : UW School of Music; www.music.washington.edu; ArtsUW Ticket Office: 206.543.4880. Facebook : facebook.com…",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_207742861",
+   "type": "event",
+   "title": "UW Gospel Choir",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-08T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Meany Hall (MNY), Meany Theater",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D207742861",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "Between 9:00 a.m. and 5:00 p.m. on the second Tuesday of every month the following Hyak systems will be offline for up to eight hours monthly for scheduled maintenance if the work requires it (e.g., security updates, system upgrades): Hyak Klone Tillicum GPU Cluster Kopah S3-Comp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "not specified"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_210180042",
+   "type": "event",
+   "title": "Hyak Klone, Tillicum, and Kopah Monthly Maintenance",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-08T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210180042",
+   "sourceLabel": "University of Washington Events"
+  },
+  {
+   "description": "The UW Surplus store is open to everyone on Tuesdays from 10 a.m. to 4 p.m. We receive new items every day, so inventory is always changing. If you'd like to get a preview of new items, you can sign up for our newsletter . Come by to see what bargains are in stock this week! Abou",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:36:48.433Z",
+   "createdAt": "2026-11-08T21:36:48.433Z",
+   "id": "op_uw_trumba_179103644",
+   "type": "event",
+   "title": "UW Surplus Public Store",
+   "host": "University of Washington",
+   "schoolId": "s_uw",
+   "date": "2026-12-08T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Plant Services Building (PSB)",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D179103644",
+   "sourceLabel": "University of Washington Events"
   }
  ]
 }

@@ -124,3 +124,21 @@ test('placeless: TBD / TBA / N/A are not places; real rooms are', async () => {
   for (const n of ['TBD', ' TBA ', 'Location TBD', 'N/A', 'To be determined']) assert.equal(placeless(n), true, n);
   for (const n of ['Online', 'Wells', 'TBD Theatre Lounge', 'Stimson Hall G25']) assert.equal(placeless(n), false, n);
 });
+
+test('Trumba feed without pubDate (UW): start read from the first description line in the school time zone; place from Campus location', async () => {
+  const { trumbaStartFromLine, parseTrumbaRss } = await import('./sources/opportunities');
+  const tz = 'America/Los_Angeles';
+  assert.equal(trumbaStartFromLine('Sunday, Nov 8, 2026, 2 – 4 p.m. PST', tz)?.start.toISOString(), '2026-11-08T22:00:00.000Z');
+  assert.equal(trumbaStartFromLine('Tuesday, Nov 10, 2026, 11 – 1 p.m.', tz)?.start.toISOString(), '2026-11-10T19:00:00.000Z');
+  assert.equal(trumbaStartFromLine('Tuesday, Nov 10, 2026, 9:30 a.m.', tz)?.start.toISOString(), '2026-11-10T17:30:00.000Z');
+  assert.equal(trumbaStartFromLine('Monday, Nov 9, 2026', tz)?.allDay, true);
+  const enc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const item = (title: string, line: string, extra = '') => `<item><title>${title}</title><description>${enc(`${line} <br/><br/>About it.<br/><br/><b>Event interval</b>:&nbsp;Single day event <br/><b>Campus location</b>:&nbsp;<a href="https://maps.google.com/x">Meany Hall (MNY)</a> <br/><b>Campus room</b>:&nbsp;Studio Theatre <br/><b>Event Types</b>:&nbsp;Performances${extra}`)}</description><link>https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D209155954</link></item>`;
+  const xml = `<rss><channel>${item('Ph&#232;dre', 'Tuesday, Nov 10, 2026, 2&nbsp;&ndash;&nbsp;4&nbsp;p.m.&nbsp;PST')}${item('Gallery Show', 'Tuesday, Nov 10, 2026', '').replace('Single day event', 'Multi-day event')}</channel></rss>`;
+  const out = parseTrumbaRss(xml, { id: 's_uw', name: 'University of Washington', center: { lat: 47.6, lng: -122.3 }, tz }, new Date('2026-11-08T12:00:00Z'), 30);
+  assert.equal(out.length, 1);
+  assert.equal(out[0].date, '2026-11-10T22:00:00.000Z');
+  assert.equal(out[0].startTime, '14:00');
+  assert.equal(out[0].place?.name, 'Meany Hall (MNY), Studio Theatre');
+  assert.equal(out[0].description, 'About it.');
+});

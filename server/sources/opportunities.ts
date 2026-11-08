@@ -9,6 +9,7 @@
  * 본문을 옮기지 않고 제목·주최·한 줄 요약·원문 링크만 넣는다.
  */
 import { decodeNumericEntities } from './entities';
+import { zonedToUtc } from './academic-calendar';
 import type { Opportunity, School } from '@core/types';
 
 const UA = { 'user-agent': 'Mozilla/5.0 AroundU-importer' };
@@ -254,6 +255,20 @@ export async function fetchUclaCommunity(origin: string, school: EventSchool, ho
   return out;
 }
 
+/** Trumba 설명 첫 줄 "Sunday, Nov 8, 2026, 2 – 4 p.m. PST" → 시작(UTC). pubDate 가 없는 피드(UW sea_campus, 2026-11-08). 시각이 없으면 그날 0시(하루 종일) */
+export function trumbaStartFromLine(line: string, tz: string): { start: Date; allDay: boolean } | null {
+  const t = line.replace(/&nbsp;|&#160;/g, ' ').replace(/&ndash;|&mdash;|&#821[12];/g, '\u2013').replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
+  const m = /^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*,? (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w* (\d{1,2}),? (\d{4})(?:,? (noon|\d{1,2})(?::(\d\d))?\s*(a\.m\.|p\.m\.)?(?:\s*[\u2013-]\s*(?:noon|\d{1,2})(?::\d\d)?\s*(a\.m\.|p\.m\.)?)?)?/i.exec(t);
+  if (!m) return null;
+  const mo = 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(m[1].slice(0, 3).toLowerCase()) / 3 + 1;
+  if (!m[4]) return { start: new Date(zonedToUtc(Number(m[3]), mo, Number(m[2]), 0, 0, 0, tz)), allDay: true };
+  let h = m[4].toLowerCase() === 'noon' ? 12 : Number(m[4]); const ap = (m[6] ?? m[7] ?? '').toLowerCase();
+  if (m[4].toLowerCase() !== 'noon') { if (ap === 'p.m.' && h < 12) h += 12; if (ap === 'a.m.' && h === 12) h = 0; }
+  // "11 – 1 p.m." 처럼 끝에만 p.m. 이 있고 시작이 끝보다 크면 시작은 오전
+  if (!m[6] && m[7] && /p\.m\./i.test(m[7]) && h >= 12 && Number(m[4]) > 7 && Number(m[4]) < 12) h -= 12;
+  return { start: new Date(zonedToUtc(Number(m[3]), mo, Number(m[2]), h, Number(m[5] ?? 0), 0, tz)), allDay: false };
+}
+
 /** Trumba 공개 RSS (trumba.com/calendars/<webName>.rss) — Harvard Gazette 캘린더. pubDate = 시작(GMT). 설명 첫 줄들 = 장소, 다음 = 날짜·시간 줄.
  *  "Harvard Key Required: Yes"(학교 로그인) 행사, 여러 날 이어지는 "Ongoing through" 전시는 뺀다 */
 export function parseTrumbaRss(xml: string, school: EventSchool, now = new Date(), horizonDays = 30, label = 'Events'): Opportunity[] {
@@ -261,19 +276,26 @@ export function parseTrumbaRss(xml: string, school: EventSchool, now = new Date(
   const out: Opportunity[] = []; const seen = new Set<string>();
   const raw = (it: string, t: string) => (new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '');
   for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
-    const title = text(text(raw(it, 'title'))); const link = text(raw(it, 'link')); const start = new Date(raw(it, 'pubDate'));
+    const title = text(text(raw(it, 'title'))); const link = text(raw(it, 'link'));
+    const desc0 = raw(it, 'description').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+    // pubDate 가 없는 피드는 설명 첫 줄의 날짜·시각을 학교 시간대로 읽는다 (UW)
+    const fromLine = raw(it, 'pubDate') ? null : trumbaStartFromLine(text(desc0.split(/<br\s*\/?>/i)[0] ?? ''), school.tz ?? 'UTC');
+    if (fromLine === null && !raw(it, 'pubDate')) continue;
+    if (/Event interval<\/b>:(?:&nbsp;|\s)*(Multi|Ongoing)/i.test(desc0)) continue; // 여러 날 이어지는 것은 '그 시간에 가는 행사'가 아니다
+    const start = fromLine ? fromLine.start : new Date(raw(it, 'pubDate'));
     if (!title || !link || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title) || /\bexhibit(ion)?\b/i.test(title)) continue;
     const desc = raw(it, 'description').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
     if (/Key Required<\/b>:(?:&nbsp;|\s)*Yes/i.test(desc) || /\bOngoing through\b/i.test(desc)) continue;
     const parts = desc.split(/<br\s*\/?>/i).map((x) => text(x));
     const dateIdx = parts.findIndex((x) => /^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\.?,? /.test(x));
-    const place = dateIdx > 0 ? parts.slice(0, dateIdx).filter(Boolean).join(', ') : '';
+    const campusLoc = text(/Campus location<\/b>:(?:&nbsp;|\s)*(?:<a[^>]*>)?([^<]+)/i.exec(desc)?.[1] ?? ''); const campusRoom = text(/Campus room<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
+    const place = dateIdx > 0 ? parts.slice(0, dateIdx).filter(Boolean).join(', ') : [campusLoc, campusRoom].filter(Boolean).join(', ');
     if (/zoom|on-?line|virtual|webinar/i.test(place)) continue;
-    const allDay = dateIdx >= 0 && !/\d(:\d\d)?\s*(a\.m\.|p\.m\.|noon)/i.test(parts[dateIdx]);
-    const body = parts.slice(dateIdx + 1).filter((x) => x && !/^(Gazette Classification|Organization\/Sponsor|Cost|Harvard Key Required|More info|Contact|Ticket)/i.test(x)).join(' ');
+    const allDay = fromLine ? fromLine.allDay : dateIdx >= 0 && !/\d(:\d\d)?\s*(a\.m\.|p\.m\.|noon)/i.test(parts[dateIdx]);
+    const body = parts.slice(dateIdx + 1).filter((x) => x && !/^(Gazette Classification|Organization\/Sponsor|Cost|Harvard Key Required|More info|Contact|Ticket|Event interval|Campus location|Campus room|Accessibility Contact|Event Types|Sponsor|Admission)/i.test(x)).join(' ');
     const sponsor = text(/Organization\/Sponsor<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
     const cost = text(/<b>Cost<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
-    const cats = text(/Classification<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '').split(/,\s*/).filter(Boolean);
+    const cats = text(/(?:Classification|Event Types)<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '').split(/,\s*/).filter(Boolean);
     if (cats.some((c) => /^exhibition/i.test(c))) continue; // 박물관 전시는 매일 따로 올라온다 — '그 시간에 가는 행사'가 아니다
     const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
     const food = hasFreeFood(title, body); const talk = TALK_RE.test(title) || cats.some((c) => /lecture|seminar|panel|talk/i.test(c));
