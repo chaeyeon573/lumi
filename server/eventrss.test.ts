@@ -118,3 +118,9 @@ test('dedupeEvents: same title and start once; another start time stays', async 
   assert.deepEqual(out.map((o) => o.id), ['a', 'c']);
   assert.equal(out[0].host, 'Dance Club · Hip Hop Club');
 });
+
+test('placeless: TBD / TBA / N/A are not places; real rooms are', async () => {
+  const { placeless } = await import('./sources/opportunities');
+  for (const n of ['TBD', ' TBA ', 'Location TBD', 'N/A', 'To be determined']) assert.equal(placeless(n), true, n);
+  for (const n of ['Online', 'Wells', 'TBD Theatre Lounge', 'Stimson Hall G25']) assert.equal(placeless(n), false, n);
+});

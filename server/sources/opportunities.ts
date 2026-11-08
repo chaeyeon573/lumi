@@ -496,6 +496,9 @@ export function dedupeEvents<T extends { title: string; date?: string; startTime
   return out;
 }
 
+/** 장소가 정해지지 않은 표시(TBD, TBA, N/A …)는 장소가 아니다 — 지도에 학교 한가운데로 찍히지 않게 장소 없이 (2026-11-08 44건) */
+export const placeless = (n: string) => /^\W*(tbd|tba|to be (determined|announced|confirmed)|location (tbd|tba)|n\/a|none)\W*$/i.test(n.trim());
+
 export function isExhibitEvent(o: { title: string; tags?: string[]; startTime?: string }): boolean {
   if (/\bexhibit(ion)?s?\b/i.test(o.title) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(o.title)) return true;
   return !o.startTime && (o.tags ?? []).some((t) => /^\s*exhibit/i.test(t));
