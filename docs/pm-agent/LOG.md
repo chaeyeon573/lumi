@@ -2662,3 +2662,9 @@
 - Caltech (queue item): per-club search, keeping only the club's own site that opens and names the club: Robotics Team (+ Instagram from its sponsor guide), Hacktech, Alpine Club, Racing, OASIS, PARSEC, SWE (on caltech.edu, does not open here; Caltech's EAS page links it), SPIn - 9 links in new org-links-caltech.csv (applied on every collect). iGEM (no current page), EWB and Ultimate (no club site) skipped.
 - Spot check clubs: PSU INMM, GT 3484 Magazine, Tulane Adoption Club, UChicago Blacklight, IU Physics Club - all fine.
 - Spot check courses: 5 random Maryland Fall 2026 classes match.
+
+## 2026-11-08 11:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Caltech club links (continued): own sites for Student Investment Fund (sif.caltech.edu), Christian Fellowship (ccf.caltech.edu, posts through 2026), MSA (msa.clubs.caltech.edu), CHLA (chla.caltech.edu); Caltech's Center for Inclusion and Diversity has a public page per affinity club (no outside links) - used for APIDA+, BLAC, BSEC, BSU, Club Latino, PRISM. 10 links; Caltech now 20 of 125 clubs with a public link. Not found: Model UN, Quiz Bowl, Amateur Astronomy, COCO (no current page); Chinese Association's site stopped in 2013 (skipped). clubs.caltech.edu is a club-finance page, not a directory.
+- Spot check clubs: UGA Dogs for the Paws, Michigan Noir Runway, NYU Schack REC fine; UMD Buddhist Philosophy for Peace links the national SGI-USA site (club's choice, left); UChicago LMSA "website" was a Pritzker news article about one conference → deadlinks.
+- Spot check courses: 5 random UW Fall 2026 classes match.
