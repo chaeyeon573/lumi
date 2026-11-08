@@ -1,7 +1,7 @@
 {
- "collectedAt": "2026-11-07T03:42:11.274Z",
+ "collectedAt": "2026-11-08T03:42:23.520Z",
  "sources": [
-  "jsonld https://www.usfca.edu/life-at-usf/events 4"
+  "jsonld https://www.usfca.edu/life-at-usf/events 3"
  ],
  "events": [
   {
@@ -15,36 +15,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-07T03:42:16.220Z",
-   "createdAt": "2026-11-07T03:42:16.220Z",
-   "id": "op_usf_ld_13570341",
-   "type": "event",
-   "title": "PASJ Presents: The Lost Ballad of our Mechanical Ancestor",
-   "host": "University of San Francisco",
-   "schoolId": "s_usf",
-   "date": "2026-11-07T04:00:00.000Z",
-   "startTime": "20:00",
-   "place": {
-    "name": "Lone Mountain Main 148 - Studio Theatre",
-    "lat": 37.7766,
-    "lng": -122.4506
-   },
-   "sourceUrl": "https://www.usfca.edu/event/pasj-presents-lost-ballad-our-mechanical-ancestor/13570341",
-   "sourceLabel": "University of San Francisco Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:16.971Z",
-   "createdAt": "2026-11-07T03:42:16.971Z",
+   "lastVerified": "2026-11-08T03:42:36.965Z",
+   "createdAt": "2026-11-08T03:42:36.965Z",
    "id": "op_usf_ld_13610969",
    "type": "event",
    "title": "Pack the Pantry: A Department Giving Challenge",
@@ -71,8 +43,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-07T03:42:17.714Z",
-   "createdAt": "2026-11-07T03:42:17.714Z",
+   "lastVerified": "2026-11-08T03:42:37.732Z",
+   "createdAt": "2026-11-08T03:42:37.732Z",
    "id": "op_usf_ld_13579744",
    "type": "event",
    "title": "Lab Dog: A Beagle and His Human Investigate the Surprising World of Animal Research",
@@ -99,8 +71,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-07T03:42:18.447Z",
-   "createdAt": "2026-11-07T03:42:18.447Z",
+   "lastVerified": "2026-11-08T03:42:38.895Z",
+   "createdAt": "2026-11-08T03:42:38.895Z",
    "id": "op_usf_ld_13437600",
    "type": "event",
    "title": "USFVotes Resource Pop-Up",
