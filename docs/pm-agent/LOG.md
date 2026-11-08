@@ -2630,3 +2630,12 @@
   - No duplicate ids, empty titles, start >= end or bad days.
 - Spot check clubs: UNC Nurses Christian Fellowship, Michigan Interactive Investments fine; W&M Alexander Hamilton Society page 404 → deadlinks; UConn "First Year Experience Mentor" is a university program → department (override); UMD LACS and UConn FYE hosts do not answer from here.
 - Spot check courses: 5 random Duke Spring 2027 classes match.
+
+## 2026-11-08 07:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits. bulletins.psu.edu still resets the connection (2 PSU titles wait).
+- Club text sweep (names and descriptions, all schools):
+  - 188 descriptions carried literal "\n" text; named entities (&mdash; &rsquo; &nbsp;) were left because the cleanup only knew a few; 13 had garbled letters from double encoding ("EspaÃƒÂ±ol", "â€œ").
+  - Fixed in cleanCollectedOrgs (runs on every collect): `fixMojibake` (entities.ts) repairs double-encoded runs only when they decode to valid UTF-8 - correct text ("Café Société") untouched, lost "�" left as is; literal "\n" → space; named quotes/dashes decoded (shared event decoder learns them too). Test added. Applied to 32 files (mostly the above plus trailing-space trims).
+  - 2 UT staff groups (Hispanic Faculty Staff Association, University Police Organization) → department; ALL-CAPS club names left as the clubs wrote them.
+- Spot check clubs: Columbia Synapse, Michigan CARE, Wisconsin Bucky Noh Dhol, NC State Transfer Pack fine; UNC NCPIRG answered 202 (bot check), not judged.
+- Spot check courses: 5 random BU Spring 2027 classes match.
