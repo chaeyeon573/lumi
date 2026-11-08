@@ -139,3 +139,9 @@ test('domainGone: only a DNS "no such name" answer counts; lookup failure or a l
   assert.equal(await domainGone('https://cuair.org/', async () => { throw new Error('offline'); }), false);
   assert.equal(await domainGone('not a url', async () => ({ Status: 3 })), false);
 });
+
+test('isHijackedPage: a plain-looking title with a gambling page body (Indonesian slot words) is caught; one word alone is not', async () => {
+  const { isHijackedPage } = await import('./sources/sitesocial');
+  assert.equal(isHijackedPage('<html><head><title>MATA365 | Dimanapun Kamu, Tetap Bisa Gas Main</title></head><body>Slot gacor hari ini, maxwin tiap hari</body></html>'), true);
+  assert.equal(isHijackedPage('<html><head><title>Engineers Without Borders SCU</title></head><body>Our maxwin project in Peru</body></html>'), false);
+});
