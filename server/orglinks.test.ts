@@ -292,3 +292,11 @@ test('isPlaceholderOrg: directory test, sandbox, template and inactive entries; 
   for (const n of ['Engage Test Org', 'RSO Test Group', 'DOSO - TEST', 'Sandbox GT', 'Sandbox RSO', 'Peabody Institute: RSO Template', 'Test-stit', 'Test Org Three', 'The Murray Group: GRAD TEST ORG', 'Pretty Educated Young Thriving Womyn (Inactive)', 'To Be Archived', 'SPS TEST']) assert.equal(isPlaceholderOrg(n), true, n);
   for (const n of ['Sandbox Improvisation', 'Singh Sandbox Makerspace', 'The Archive', 'Yale Film Archive', 'Test Kitchen', 'Princeton Review Test Prep', 'Testudo Times', 'Flight Test Engineering Society']) assert.equal(isPlaceholderOrg(n), false, n);
 });
+
+test('cleanCollectedOrgs: a university home page or Instagram login screen is not the club link', async () => {
+  const { cleanCollectedOrgs } = await import('./sources/orglinks');
+  const base = { schoolId: 's_nyu', verified: false, gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], logo: { emoji: 'X', hue: 1 }, type: 'club', description: '' };
+  const { orgs, badLinks } = cleanCollectedOrgs([{ ...base, id: 'a', name: 'A', links: [{ label: 'Website', url: 'https://www.nyu.edu/' }, { label: 'Instagram', url: 'https://www.instagram.com/accounts/onetap/?next=%2F' }, { label: 'Website', url: 'https://www.nyu.edu/clubs/a' }] }] as never, '2026-11-08');
+  assert.deepEqual(orgs[0].links, [{ label: 'Website', url: 'https://www.nyu.edu/clubs/a' }]);
+  assert.equal(badLinks.length, 2);
+});

@@ -319,6 +319,8 @@ export const isPlaceholderOrg = (name: string) => {
 const LOGIN_ONLY_RE = /^https?:\/\/raiderlink\.newark\.rutgers\.edu\//i;
 // 없어진 옛 단체 주소 — 모두 일반 안내 페이지로 넘어간다 (Penn State clubs.psu.edu → 학생단체 안내, Michigan ross.campusgroups.com → 업체 소개, 2026-11-07)
 const RETIRED_RE = /^https?:\/\/(www\.)?clubs\.psu\.edu\/|^https?:\/\/ross\.campusgroups\.com\//i;
+// 단체 링크가 아닌 것: 대학 홈 첫 화면(https://www.nyu.edu/), 인스타 로그인 화면(/accounts/onetap/?next=%2F — 꺼낼 원래 주소가 없다) (2026-11-08 점검 4개)
+const NOT_CLUB_RE = /^https?:\/\/(www\.)?[a-z0-9-]+\.edu\/?$|^https?:\/\/(www\.)?instagram\.com\/accounts\//i;
 const ADMIN_RE = /^https?:\/\/(manage|editor)\.wix\.com\/|^https?:\/\/[a-z0-9]+\.admin\.mailchimp\.com\/|^https?:\/\/sites\.google\.com\/d\/[A-Za-z0-9_-]{20,}/i;
 /** 로그인 화면 주소 안에 든 원래 주소를 꺼낸다 (instagram ?next=, linkedin ?session_redirect=, twitter ?redirect_after_login=) */
 export function publicFix(url: string): string {
@@ -368,9 +370,9 @@ export function cleanCollectedOrgs(list: Organization[], today: string): { orgs:
   const orgs = list.map((o0) => {
     // 로그인 화면으로 저장된 SNS 주소 → 원래 프로필(주소 안 next/redirect 값). 관리자 주소 꼬리(/wp-admin, Squarespace /config) → 공개 사이트
     // 공개가 아닌 관리·편집 주소(Wix 대시보드, Mailchimp 관리, Google Sites 편집 링크)는 badLinks 로 (2026-11-05 점검 30여 개)
-    if ((o0.links ?? []).some((l) => publicFix(l.url) !== l.url || ADMIN_RE.test(l.url) || LOGIN_ONLY_RE.test(l.url) || RETIRED_RE.test(l.url))) {
+    if ((o0.links ?? []).some((l) => publicFix(l.url) !== l.url || ADMIN_RE.test(l.url) || LOGIN_ONLY_RE.test(l.url) || RETIRED_RE.test(l.url) || (NOT_CLUB_RE.test(publicFix(l.url)) && l.label !== 'Directory'))) {
       const links: typeof o0.links = [];
-      for (const l of o0.links ?? []) { if (ADMIN_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'admin / editor address, not a public page' }); continue; } if (LOGIN_ONLY_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'school login portal, not a public page' }); continue; } if (RETIRED_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'retired directory address, redirects to a generic page' }); continue; } links.push({ ...l, url: publicFix(l.url) }); }
+      for (const l of o0.links ?? []) { if (ADMIN_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'admin / editor address, not a public page' }); continue; } if (LOGIN_ONLY_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'school login portal, not a public page' }); continue; } if (RETIRED_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'retired directory address, redirects to a generic page' }); continue; } if (NOT_CLUB_RE.test(publicFix(l.url)) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'school home page or login screen, not the club\'s own page' }); continue; } links.push({ ...l, url: publicFix(l.url) }); }
       o0 = { ...o0, links };
     }
     let o = has(o0.name) || has(o0.description) ? { ...o0, name: has(o0.name) ? stripEmoji(o0.name) || o0.name : o0.name, ...(has(o0.description) ? { description: stripEmoji(o0.description!) } : {}) } : o0;
