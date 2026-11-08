@@ -1,9 +1,413 @@
 {
- "collectedAt": "2026-11-08T03:41:24.124Z",
+ "collectedAt": "2026-11-08T21:34:31.622Z",
  "sources": [
-  "engage https://ncsu.campuslabs.com/engage 10"
+  "engage https://ncsu.campuslabs.com/engage 10",
+  "localist https://calendar.ncsu.edu 51"
  ],
  "events": [
+  {
+   "description": "The Raleigh Civic Chamber Orchestra will present music inspired by fairy tales, legends and folk traditions, featuring works by Mozart, Mendelssohn, Fauré, Jerod Impichchaachaaha’ Tate and Ernesto Ferreri. This program is funded in part by the city of Raleigh based on recommendat",
+   "eligibility": "Cost: Up to $12",
+   "tags": [
+    "event",
+    "performances",
+    "student life"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53736276915092",
+   "type": "event",
+   "title": "Raleigh Civic Chamber Orchestra: Folk Songs and Fairy Tales",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-08T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Talley Student Union, Stewart Theatre",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/raleigh-civic-chamber-orchestra-folk-songs-and-fairy-tales",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join the Society for Politics, Economics and the Law as Peyman Asadzade, a professor in the Department of Government and Legal Studies at Bowdoin College, presents \"The Resilient Republic: Why Iran Keeps Surviving.\"",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54373396057483",
+   "type": "event",
+   "title": "SPEL Talk: The Resilient Republic: Why Iran Keeps Surviving",
+   "host": "College of Humanities and Social Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-09T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Park Shops, 201",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/spel-talk-8440",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join NC State University Libraries and Wake County Public Libraries for a discussion of John Green’s nonfiction book Everything is Tuberculosis. Kaori Sakamoto, department head and professor in the College of Veterinary Medicine's Department of Population Health and Pathobiology,",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54290432917343",
+   "type": "event",
+   "title": "Read Smart Book Discussion: Everything is Tuberculosis by John Green",
+   "host": "NC State University Libraries",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-09T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Oberlin Regional Library",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/read-smart-book-discussion-everything-is-tuberculosis-by-john-green",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join NC State's Climate and Sustainability Academy (CaSA) for CaSA Conversations on Nov. 10 from 8:45 to 10 a.m. We will hear from experts in state infrastructure, global tech innovation, and public health research who will explore the challenges and innovative solutions for coas",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures and talks",
+    "interdisciplinary"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54240622595739",
+   "type": "event",
+   "title": "Rethinking the Flush: Innovations for Coastal NC Septic",
+   "host": "Office of the Provost",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-10T13:45:00.000Z",
+   "startTime": "08:45",
+   "place": {
+    "name": "Partners I – NC State University",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/rethinking-the-flush-innovations-for-coastal-nc-septic",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Please join us on a monthly basis for a 1.5-mile walk through the Lake Raleigh Woods, one of NC State's hidden gems and Hallowed Spaces. Below are a few things to remember for the hike: Arrive at the Park Alumni Center, 2450 Alumni Drive, before 9 a.m. for a safety briefing. Park",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "community events",
+    "student life"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_46482793031883",
+   "type": "event",
+   "title": "Lake Raleigh Woods Hike",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-10T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Lake Raleigh",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/lake-raleigh-woods-hike",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Preservation staff at the NC State University Libraries will lead a creative, hands-on experience teaching families how to make a “ThanksJournal” to document family memories and traditions. This activity is for children 8 years and older. Participants will paste, cut and hand-sew",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53865698564688",
+   "type": "event",
+   "title": "Make a Family 'ThanksJournal'",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "D.H. Hill Jr. Library, Fishbowl Forum",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/make-a-family-thanksjournal",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "The Jeffrey Wright Military and Veteran Services office and NC State's ROTC units will host the annual Veterans Day Honor Run and Ceremony at the Memorial Belltower on Wednesday, Nov. 11, starting at 6 a.m. The early morning run is a great way to jumpstart your Veterans Day obser",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "community events",
+    "performances",
+    "student life"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53859360714736",
+   "type": "event",
+   "title": "NC State Annual Veterans Day Honor Run and Ceremony",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T11:00:00.000Z",
+   "startTime": "06:00",
+   "place": {
+    "name": "Memorial Belltower",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/nc-state-annual-veterans-day-honor-run-and-ceremony-7242",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Start your morning off with a little coffee and connection. Centennial Coffee Hour at 321 Coffee's Centennial shop features complimentary 321 coffee and networking with friends, co-workers and local community members. All are welcome to attend from 8:30-9:30 a.m. on the second We",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_47109566422738",
+   "type": "event",
+   "title": "Morning Coffee Hour With 321 Coffee",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Venture Place, 321 Coffee Shop",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/centennial-coffee-hour-with-321-coffee",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Please join the Data Science and AI Academy for the AI Hot Topic series, an opportunity for people curious about AI to network with experts, scholars and practitioners. Each month, a small group from industry and academia will explore a new topic in AI research, ethics, and pract",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54225860490594",
+   "type": "event",
+   "title": "AI Hot Topics: AI, Ethics, and Bias: Human Factors or Machine Learning?",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T13:45:00.000Z",
+   "startTime": "08:45",
+   "place": {
+    "name": "Partners I – NC State University, Raleigh Founded",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/ai-hot-topics-ai-ethics-and-bias-human-factors-or-machine-learning",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "A decade of providing campus and community support services to NC State's military-connected students, staff, faculty and alumni is no small feat. That's the milestone Jeffrey Wright Military and Veteran Services (MVS) will reach in November and celebrate on Veterans Day. Join us",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "community events",
+    "student life",
+    "tours and open houses"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54181237246089",
+   "type": "event",
+   "title": "Veterans Day Social and 10th Anniversary Celebration",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T14:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "Witherspoon Student Center, 201",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/drop-and-give-mvs-10-veterans-day-social-and-10th-anniversary-celebration",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Multicultural Student Affairs and the Career Development Center will host a workshop to help students identify and analyze job listings for interviewing excellence. Cultivating professional interviewing skills, in which students will be able to present their authentic selves whil",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "workshops and training"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53763378261195",
+   "type": "event",
+   "title": "Professional Development Series: Interviewing Authentically",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Talley Student Union, Multicultural Student Affairs (4261)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/pro-devo-series-interviewing-authentically",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join the Gregg Museum of Art & Design for an evening that will begin with an intimate artist talk by ariana Farquharson, offering a behind-the-scenes look at the personal narratives and techniques that shaped the exhibition, You Are Here: Geolocating the Self through the Familiar",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks",
+    "exhibitions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53195950028329",
+   "type": "event",
+   "title": "An Evening With ariana Farquharson",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Witherspoon Student Center, African American Cultural Center (201)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/an-evening-with-ariana-farquharson",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Please join the College of Design for the fall 2026 landscape architecture lecture series. James Rojas Please join NC State Landscape Architecture and Environmental Planning in welcoming James Rojas, founder of Placeit and Founder fo the Latino Urban Forum. James Rojas is an urba",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54223462260730",
+   "type": "event",
+   "title": "Landscape Architecture Lecture: James Rojas",
+   "host": "College of Design",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-11T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Kamphoefner Hall, Burns Auditorium",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/landscape-architecture-lecture-james-rojas",
+   "sourceLabel": "NC State University Events"
+  },
   {
    "description": "Come join us every Wednesday for some musical and mantra meditation, group discussions on practically applying spirituality, and a FREE VEGAN FEAST No experience or commitment needed, everyone is welcome! Every Wednesday, starting 08/26 6:30-8 pm (drop in whenever) Lam",
    "eligibility": "Open to students",
@@ -18,8 +422,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12629196",
    "type": "event",
    "title": "Bhakti Yoga Club Weekly Meetings",
@@ -48,8 +452,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12564581",
    "type": "event",
    "title": "YWAM Weekly Meetings",
@@ -66,6 +470,197 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Your style tells a story before you say a word. In this interactive workshop, we'll explore how fashion can be a powerful form of self-expression and a reflection of who you are. Whether you're figuring out your signature look, building a wardrobe on a budget or getting ready for",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "workshops and training",
+    "student life"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53419087954566",
+   "type": "event",
+   "title": "Learning Lab: Authentically You: Personal Style as a Branding Tool",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-12T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Witherspoon Student Center, African American Cultural Center (Second-Floor Library and Gallery)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/learning-lab-fashion-lab-and-clothing-swap",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join the Department of World Languages and Cultures for a bate-papo, which means informal conversation, and a social hour to practice your Portuguese. All students — no matter their skill level — are welcome to attend. Refreshments will be provided.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "community events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53817794831369",
+   "type": "event",
+   "title": "Bate-Papo: Portuguese Conversation Hour",
+   "host": "College of Humanities and Social Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-12T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Withers Hall, Main Lobby",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/bate-papo-portuguese-conversation-hour-7584",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join the College of Humanities and Social Sciences as NC State alumni Ari Chambers, Lyndsay Signor, Jason Spells and John Ward share their journeys and insights through the world of sports broadcasting, production and marketing. Tickets on sale soon! Funds supporting the Human Fa",
+   "eligibility": "Cost: $10",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54046523674768",
+   "type": "event",
+   "title": "The Human Factor: Sports Storytellers",
+   "host": "College of Humanities and Social Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-12T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Dorothy and Roy Park Alumni Center",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/the-human-factor-sports-story",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join Quail Ridge Books and the NC State University Libraries for an evening with Pulitzer Prize-winning author Barbara Kingsolver. The evening will include musical accompaniment by NC State student Timothy Vo. A limited number of free tickets is available for NC State students on",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53511731640272",
+   "type": "event",
+   "title": "Author Event: Barbara Kingsolver",
+   "host": "NC State University Libraries",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Duke Energy Hall, James B. Hunt Jr. Library,",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/author-event-barbara-kingsolver-partita",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join Jeffrey Wright Military and Veteran Services and the NC State Veterans Alumni Network for their 6th annual Veterans Golf Classic at the Lonnie Poole Golf Course, the only collegiate course designed by golfer Arnold Palmer. This event is an opportunity for fellow military-con",
+   "eligibility": "Cost: Starting at $90",
+   "tags": [
+    "event",
+    "community events",
+    "student life",
+    "wellness day"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54186431761077",
+   "type": "event",
+   "title": "NC State 2026 Veterans Golf Classic",
+   "host": "Alumni Engagement and Annual Giving",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-13T13:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Lonnie Poole Golf Course",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/nc-state-2026-veterans-golf-classic",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "NC State's Film Studies program invites all students to attend an hour-long informational event featuring three film studies alumni who will discuss their career paths and answer your questions. The three alumni are Kieran Moriera, associate creative director at Red Hat; Mariana ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks",
+    "student life",
+    "tours and open houses"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54348377992063",
+   "type": "event",
+   "title": "What To Do With a Degree in Film Studies?",
+   "host": "College of Humanities and Social Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Winston Hall, 029",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/film-studies-informational-event",
+   "sourceLabel": "NC State University Events"
+  },
+  {
    "description": "Operation Christmas Child Packing Party Join the Operation Christmas Child Club at NC State for our annual Packing Party! Come spend an evening packing shoeboxes filled with small gifts and essential items that will be delivered to children around the world. What is Operatio",
    "eligibility": "Open to students",
    "tags": [
@@ -77,8 +672,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12665160",
    "type": "event",
    "title": "Operation Christmas Child Club Packing Party",
@@ -95,7 +690,31 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Growing kids outgrow clothes fast, and buying new ones adds up. Join the Student Parent Association at NC State to swap kids&rsquo; clothing, winter coats, toys, and more with fellow student parents, no cost to you. Sunday, November 15, 2026 | 3:30-5:30 PM Witherspoon Student Cen",
+   "description": "Join the award-winning Black Girls Do Bike Raleigh-Durham chapter and NC State Transportation's WolfTrails on a fun, sustainable bike ride. Black Girls Do Bike will lead the bike ride, which will include a tour of the downtown murals. Faculty, staff and students are invited to pa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54310611490788",
+   "type": "event",
+   "title": "WolfPack on 2 Wheels",
+   "host": "NC State Transportation",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-15T19:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://calendar.ncsu.edu/event/wolfpack-on-2-wheels-7110",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Growing kids outgrow clothes fast, and buying new ones adds up. Join the Student Parent Association at NC State to swap kids’ clothing, winter coats, toys, and more with fellow student parents, no cost to you. Sunday, November 15, 2026 | 3:30-5:30 PM Witherspoon Student Cen",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -107,8 +726,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12919436",
    "type": "event",
    "title": "Fall Kids’ Clothing Swap & Crafts",
@@ -126,6 +745,69 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "GIS Week 2026 events at NC State explore the future of GIS and AI. Come to the Nov. 16 event to hear geospatial analytics Ph.D. students present lightning talks on their current research. We hope to see you in person, but you may join virtually.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54383431286888",
+   "type": "event",
+   "title": "GIS Week: Ph.D. Student Lightning Talks",
+   "host": "College of Natural Resources",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-16T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Jordan Hall, 5103",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/gis-week-at-nc-state-phd-student-lightning-talks",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Where does the money behind political campaigns come from, and how does it influence elections? Follow the money to learn how candidates raise and spend funds, who contributes to their campaigns, and how to research campaign finance records. Discover how money shapes the politica",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks",
+    "workshops and training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54348430784247",
+   "type": "event",
+   "title": "Follow the Money: Campaign Finance and How It Works",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-17T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Talley Student Union, James H. Woodward Student Involvement Center (Suite 4210)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/acs-follow-the-money",
+   "sourceLabel": "NC State University Events"
+  },
+  {
    "description": "Gain hands-on experience in guide dog training and meet the puppy raisers for future sitting opportunities!",
    "eligibility": "Open to students",
    "tags": [
@@ -137,8 +819,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12804881",
    "type": "event",
    "title": "Guiding Eyes for the Blind Club Training Class",
@@ -167,8 +849,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12865486",
    "type": "event",
    "title": "Stem Cell Donor Drive for Delete Blood Cancer",
@@ -186,6 +868,225 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The Office of Equal Opportunity will host its annual Equal Opportunity Forum on Tuesday, Nov. 17. The forum will feature a combination of presentations, interactive workshops and panel discussions to highlight applicable skills, provide on-site professional development and create",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "workshops and training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54170553854743",
+   "type": "event",
+   "title": "2026 Equal Opportunity Forum",
+   "host": "Office Equal Opportunity",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-17T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Talley Student Union",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/2026-equal-opportunity-forum",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join campus dietitian Soo Uhm and embedded counselor Jorie Doster for an honest discussion on managing holiday stress, navigating food anxiety and setting healthy boundaries during family gatherings. Learn practical coping tools to protect your peace and enjoy the season with con",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53754901156408",
+   "type": "event",
+   "title": "Home for the Holidays: Food and Mental Health",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Talley Student Union, LGBTQ Pride Center (5230)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/home-for-the-holidays-food-and-mental-health",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "The College of Design welcomes Sara Hendren, a designer, writer, and artist who makes work about disability, ranging from experimental works like a dramatic stage set for a wheelchair dance company to the \"updated\" version of the Accessible Icon. A student-focused discussion of S",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54382955582558",
+   "type": "event",
+   "title": "Sara Hendren Book Discussion",
+   "host": "College of Design",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-17T18:45:00.000Z",
+   "startTime": "13:45",
+   "place": {
+    "name": "Brooks Hall, Third Floor Rotunda",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/sara-hendren-book-discussion",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join NC State alum Jayden Sansom ‘24 as she talks about her path to becoming an aspiring game developer and the mentors, experiences and opportunities that helped turn a childhood passion into a career. Sansom's talk is part of the NC State University Libraries' Making Space seri",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54016267664017",
+   "type": "event",
+   "title": "Making Space: Jayden Sansom ‘24, Video Game Developer",
+   "host": "NC State University Libraries",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-17T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "D.H. Hill Jr. Library, Fishbowl Forum",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/making-space-jayden-sansom-24-video-game-developer",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "North Carolina Sea Grant’s biennial conference serves as a platform for engaging with like-minded participants and potential collaborators dedicated to the prosperity of our state’s coastal communities, environments and economies. Join us for stimulating presentations and discuss",
+   "eligibility": "Cost: $100-350",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks",
+    "meetings and conferences",
+    "workshops and training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53735017865783",
+   "type": "event",
+   "title": "NC Coastal Conference Hosted by the NC Sea Grant College Program",
+   "host": "NC State University",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-18T13:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Friday Conference Center",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/2026-nc-coastal-conference",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "GIS Week 2026 events at NC State explore the future of GIS and AI. Join this event to hear Center for Geospatial Analytics faculty and staff panelists discuss the role and use of AI in geospatial research, teaching and professional practice. We hope to see you in person, but you ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "meetings and conferences"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54383630086937",
+   "type": "event",
+   "title": "GIS Week: CGA Faculty and Staff AI Panel Discussion",
+   "host": "College of Natural Resources",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Jordan Hall Addition, 1214",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/gis-week-center-for-geospatial-analytics-faculty-and-staff-discussion-panel",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join the Italian Club and the Italian honor society in the Department of World Languages and Cultures for our end-of-semester potluck dinner. Come celebrate the end of the semester with good food, friends and the Italian student community at NC State. Bring a dish to share — Ital",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53879612915866",
+   "type": "event",
+   "title": "Italian Club End-of-the-Semester Potluck-Dinner",
+   "host": "College of Humanities and Social Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-18T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Caldwell Hall, Lounge",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/italian-club-end-of-the-semester-potluck-dinner-7470",
+   "sourceLabel": "NC State University Events"
+  },
+  {
    "description": "Come join us every Wednesday for some musical and mantra meditation, group discussions on practically applying spirituality, and a FREE VEGAN FEAST No experience or commitment needed, everyone is welcome! Every Wednesday, starting 08/26 6:30-8 pm (drop in whenever) Lam",
    "eligibility": "Open to students",
    "tags": [
@@ -199,8 +1100,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12629197",
    "type": "event",
    "title": "Bhakti Yoga Club Weekly Meetings",
@@ -229,8 +1130,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12564582",
    "type": "event",
    "title": "YWAM Weekly Meetings",
@@ -247,6 +1148,159 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "NC State's new Nature & Health Collaborative will host two opportunities to convene and converse this fall through its Conversations on Nature and Health initiative. Each date will feature university and community experts who will offer initial comments before a broader dialogue.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53666956038790",
+   "type": "event",
+   "title": "Growing Healthier Communities With Trees",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-19T13:45:00.000Z",
+   "startTime": "08:45",
+   "place": {
+    "name": "Plant Sciences Building, Lobby",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/conversations-on-nature-and-health-trees",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Bring your lunch, some teammates (or opponents) and your collective brainpower to 321 Coffee twice a month to compete in team trivia. Solo participants are also encouraged to compete. Whether you're a casual quizzer or a seasoned trivia champ, this lunchtime series is the perfect",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_52739240316853",
+   "type": "event",
+   "title": "A Series of Questions",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-19T17:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Venture Place, 321 Coffee Shop",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/a-series-of-questions",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "GIS Week 2026 events at NC State explore the future of GIS and AI. At this Geospatial Forum, Raju Vatsavai will share his research and discuss insights on current topics in GeoAI. We hope to see you in person, but you may join virtually.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54383587713492",
+   "type": "event",
+   "title": "GIS Week: Geospatial Forum With Raju Vatsavai",
+   "host": "College of Natural Resources",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-19T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Jordan Hall, 5103",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/gis-week-geospatial-forum-with-raju-vatsavai",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join the Department of Media Arts, Design & Technology and Design Studies for its annual lecture series. The full list of lectures can be found here: 2026-2027 Lecture Series. Jeff Merkel, exhibition designer at Meow Wolf. Jeff Merkel is an exhibition designer at Meow Wolf, an im",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53877521652153",
+   "type": "event",
+   "title": "MADTech/DS Lecture Series: Jeff Merkel",
+   "host": "College of Design",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Kamphoefner Hall, Burns Auditorium",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/madtechds-lecture-series-jeff-merkel",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Jeff Sebo will be the guest speaker for the annual World Philosophy Day Lecture presented by the Department of Philosophy and Religious Studies.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54055331895235",
+   "type": "event",
+   "title": "Building a Better Future for Animals",
+   "host": "College of Humanities and Social Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Withers Hall, 232A",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/building-a-better-future-for-animals",
+   "sourceLabel": "NC State University Events"
+  },
+  {
    "description": "Looking for a fun, zero-pressure way to hang out, hear great music, and meet new people? Come join the Contra Club at NC State for a night of live music and dancing! If you have absolutely zero dance experience , you are our favorite kind of guest. Contra dancing is all about hav",
    "eligibility": "Open to students",
    "tags": [
@@ -259,8 +1313,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:24.640Z",
-   "createdAt": "2026-11-08T03:41:24.640Z",
+   "lastVerified": "2026-11-08T21:34:32.036Z",
+   "createdAt": "2026-11-08T21:34:32.036Z",
    "id": "op_ncsu_eg_12501507",
    "type": "event",
    "title": "Contra Dance",
@@ -276,6 +1330,331 @@
    "benefit": "Free stuff",
    "sourceUrl": "https://ncsu.campuslabs.com/engage/event/12501507",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The NC State Crafts Center will host its annual Holiday Crafts Fair on Saturday, Nov. 21, from 10 a.m. to 5 p.m. You’ll find handmade pottery, glass, jewelry, wood, mixed media and fiber arts items, all made by local craftspeople (students, studio members and instructors) affilia",
+   "eligibility": "Cost: Up to $3",
+   "tags": [
+    "event",
+    "community events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54233251621097",
+   "type": "event",
+   "title": "Annual Holiday Crafts Fair",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-21T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Frank Thompson Hall - Crafts Center",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/annual-holiday-crafts-fair",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Moonlight in the Garden is your only opportunity to experience the JC Raulston Arboretum after dark. Wander through the internationally acclaimed plant collection transformed by artful lighting, listen to live music, grab a bite from a food truck, gather around the fire pits and ",
+   "eligibility": "Cost: $20 for JCRA Members and college students, $30 for general admission and $5 for children 12 and under",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54133923443815",
+   "type": "event",
+   "title": "Moonlight in the Garden",
+   "host": "College of Agriculture and Life Sciences",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-21T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "JC Raulston Arboretum",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/moonlight-in-the-garden-6379",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "What is graduate school like? Join the Office of Undergraduate Research for an interactive and engaging panel discussion with students in different graduate programs at NC State.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "workshops and training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53993383276580",
+   "type": "event",
+   "title": "Graduate Student Panel",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-30T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "D.H. Hill Jr. Library, East Learning Lab B",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/graduate-student-panel-3748",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join Wellness and Recreation for Whine and Design, a signature De-Stress Fest event. Come paint your stress away while enjoying snacks and light refreshments. Whine and Design will be a fun time for students of any skill level to relax and recharge. You can take home your custom-",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "student life"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54417622893972",
+   "type": "event",
+   "title": "Howl and Chill: Whine and Design",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-11-30T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Witherspoon Student Center, Room 126",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.ncsu.edu/event/howl-and-chill-whine-and-design-3909",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "From the policies that shape your daily life to the rights you exercise, courts make decisions that affect you in ways you might not expect. But not all courts get the same attention. Explore the lesser-known courts and judicial systems that influence everything from your communi",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks",
+    "workshops and training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54348484984023",
+   "type": "event",
+   "title": "Courts You’ve Never Heard Of Deciding Things You Care About",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-01T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Talley Student Union, James H. Woodward Student Involvement Center (Suite 4210)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/acs-courts-youve-never-heard-of",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Come enjoy food, warm drinks, trivia, gingerbread decorating competitions, community connection and more at the LGBTQ Pride Center's Holiday Send-Off event on Dec. 1 from 4 to 6 p.m.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53754806662955",
+   "type": "event",
+   "title": "Holiday Send-Off",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-01T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Talley Student Union, Student Leadership and Engagement Suite (Room 4210)",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/holiday-send-off-6663",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Join NC State University Libraries for a fun afternoon of board games. Take a break from your studies to play classics, such as Uno and Yahtzee, or newer shelf staples, such as Wingspan and Betrayal at House on the Hill. Meet new friends, your librarians and representatives from ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54370011641638",
+   "type": "event",
+   "title": "Book Break With Board Games",
+   "host": "NC State University Libraries",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-02T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "D.H. Hill Jr. Library, Fishbowl Forum",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/book-break-with-board-games-2278",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Please join the Data Science and AI Academy for the AI Hot Topic series, an opportunity for people curious about AI to network with experts, scholars and practitioners. Each month, a small group from industry and academia will explore a new topic in AI research, ethics, and pract",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54225897626166",
+   "type": "event",
+   "title": "AI Hot Topics: The Data Behind AI: From Enterprise Data to Ground Truth",
+   "host": "Centennial Campus",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-03T13:45:00.000Z",
+   "startTime": "08:45",
+   "place": {
+    "name": "Partners I – NC State University, Raleigh Founded",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/ai-hot-topics-the-data-behind-ai-from-enterprise-data-to-ground-truth",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Stop by Hunt Library for an exam essentials kit and to spin the Academic Success Center Wheel of Success for a prize. The kits will include squishies, highlighters, note cards, sticky notes and more.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "de-stress fest"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_53892240527249",
+   "type": "event",
+   "title": "De-Stress Fest: Exam Essentials Kits Giveaway at Hunt Library",
+   "host": "NC State University Libraries",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-03T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "James B. Hunt Jr. Library, Ask Us",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/de-stress-fest-exam-essentials-kits-giveaway-academic-success-center-wheel-of-success-9762",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "Get into the festive spirit with hands-on creative fun, cozy hot chocolate and cutting-edge tech at the NC State University Libraries. Hosted by the Friends of the Libraries, this drop-in holiday Makerspace Experience invites makers of all ages to drop by anytime during the two-h",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54290433238896",
+   "type": "event",
+   "title": "Family Holiday Makerspace Experience",
+   "host": "NC State University",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-05T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "D.H. Hill Jr. Library, Fishbowl Forum",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/family-holiday-makerspace-experience-9046",
+   "sourceLabel": "NC State University Events"
+  },
+  {
+   "description": "NC State LIVE and the Gregg Museum of Art & Design have partnered to present Well-Being Concerts, featuring a family with rich connections to the university and the museum. The late architect Phil Freelon, an NC State College of Design alumnus, led the team that designed the Greg",
+   "eligibility": "Cost: $25 for the general public and NC State faculty and staff, $10 for NC State students",
+   "tags": [
+    "event",
+    "performances",
+    "de-stress fest"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T21:34:39.635Z",
+   "createdAt": "2026-11-08T21:34:39.635Z",
+   "id": "op_ncsu_lc_54117636088772",
+   "type": "event",
+   "title": "NC State LIVE Well-Being Concerts With Nnenna and Pierce Freelon",
+   "host": "Division of Academic and Student Affairs",
+   "schoolId": "s_ncsu",
+   "date": "2026-12-05T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Gregg Museum of Art & Design, Galleries and Main Lobby",
+    "lat": 35.7847,
+    "lng": -78.6821
+   },
+   "sourceUrl": "https://calendar.ncsu.edu/event/nc-state-live-well-being-concerts-with-nnenna-and-pierce-freelon",
+   "sourceLabel": "NC State University Events"
   }
  ]
 }
