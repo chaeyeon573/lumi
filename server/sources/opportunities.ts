@@ -121,7 +121,8 @@ export async function fetchEngageEvents(host: string, school: EventSchool, horiz
  */
 export function parseCampusGroupsRss(xml: string, host: string, school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
   const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
-  const tag = (it: string, t: string) => text((new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '').replace(/^<!\[CDATA\[|\]\]>$/g, '')).trim();
+  // <group> 을 찾을 때 <groupId> 까지 잡지 않게 태그 이름 뒤는 공백이나 > 만 (2026-11-08: 주최가 "28730 Residence Life" 로 6천여 건)
+  const tag = (it: string, t: string) => text((new RegExp(`<${t}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '').replace(/^<!\[CDATA\[|\]\]>$/g, '')).trim();
   const out: Opportunity[] = []; const seen = new Set<string>();
   for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
     // 공개 = privacyLevel 0 (모든 학교 같은 칸). 분류는 학교마다 다르다(Cornell "Open/Private …", Yale "Group Meeting") — "Private …" 는 빼고
@@ -479,6 +480,22 @@ export async function fetchLocalist(base_: string, school: EventSchool, horizonD
  *  - 제목에 exhibit/exhibition 이 있으면 뺀다 — 운동 경기의 exhibition game 은 남긴다
  *  - 캘린더가 "exhibits" 로 분류했고 시작 시각이 없는(종일) 것도 뺀다 (SCU "Parallel Visions", 9/21~11/20 전시, 2026-11-06).
  *    시각이 있는 작가 강연·리셉션은 같은 분류여도 남긴다 */
+/**
+ * 같은 학교에서 제목·시작 시각이 같은 행사는 하나만 (공동 주최 행사가 주최 단체마다 한 번씩, 또는 학교 달력과 동아리 목록에 함께 올라온다 — 2026-11-08 123건).
+ * 먼저 온 것(출처 순서)을 남기고 다른 주최 이름은 ' · ' 로 붙인다. 시작 시각이 다르면 다른 회차라 둔다.
+ */
+export function dedupeEvents<T extends { title: string; date?: string; startTime?: string; host?: string }>(list: T[]): T[] {
+  const seen = new Map<string, T>(); const out: T[] = [];
+  for (const o of list) {
+    const k = `${o.title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()}|${o.date ?? ''}|${o.startTime ?? ''}`;
+    const first = seen.get(k);
+    if (!first) { const c = { ...o }; seen.set(k, c); out.push(c); continue; }
+    // 공동 주최: 다른 주최 이름은 버리지 않고 붙인다
+    if (o.host && first.host && !first.host.split(' · ').includes(o.host)) first.host = `${first.host} · ${o.host}`;
+  }
+  return out;
+}
+
 export function isExhibitEvent(o: { title: string; tags?: string[]; startTime?: string }): boolean {
   if (/\bexhibit(ion)?s?\b/i.test(o.title) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(o.title)) return true;
   return !o.startTime && (o.tags ?? []).some((t) => /^\s*exhibit/i.test(t));

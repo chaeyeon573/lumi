@@ -21,3 +21,10 @@ test('CampusGroups rss_events: public = privacyLevel 0 whatever the school calls
   const out = parseCampusGroupsRss(`<rss>${item('Group Meeting', '0')}${item('Rehearsal', '13')}${item('Private Meeting', '0')}</rss>`, 'https://x', school, new Date('2026-11-03T12:00:00Z'));
   assert.deepEqual(out.map((o) => o.title), ['Meet Group Meeting']);
 });
+
+test('CampusGroups rss_events: host is the <group> name, not the <groupId> number in front of it', () => {
+  const school = { id: 's_duke', center: { lat: 36, lng: -79 }, tz: 'America/New_York' };
+  const xml = '<rss><item><eventId>2286726</eventId><title>Bagels at Lancaster</title><groupId>28730</groupId><group>Residence Life</group><privacyLevel>0</privacyLevel><eventStartDateTime>2026-11-12T08:00:00.0000000-05:00</eventStartDateTime></item></rss>';
+  const out = parseCampusGroupsRss(xml, 'https://duke.campusgroups.com', school, new Date('2026-11-03T12:00:00Z'));
+  assert.equal(out[0].host, 'Residence Life');
+});

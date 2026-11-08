@@ -929,7 +929,7 @@
    "id": "op_utexas_eg_12534484",
    "type": "event",
    "title": "General Meeting",
-   "host": "Texas Arts for Aid",
+   "host": "Texas Arts for Aid · Partners in Health Engage at UT Austin",
    "schoolId": "s_utexas",
    "date": "2026-11-09T23:30:00.000Z",
    "startTime": "17:30",
@@ -968,35 +968,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12942288",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Recurring GM for Fall 2026",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12530002",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Partners in Health Engage at UT Austin",
-   "schoolId": "s_utexas",
-   "date": "2026-11-09T23:30:00.000Z",
-   "startTime": "17:30",
-   "place": {
-    "name": "UTC 1.116",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530002",
    "sourceLabel": "Student org events"
   },
   {
@@ -1279,7 +1250,7 @@
    "id": "op_utexas_eg_12708296",
    "type": "event",
    "title": "General Meeting",
-   "host": "Students Fighting Climate Change",
+   "host": "Students Fighting Climate Change · Seva Charities",
    "schoolId": "s_utexas",
    "date": "2026-11-10T00:00:00.000Z",
    "startTime": "18:00",
@@ -1465,35 +1436,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12528922",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "We have bi-weekly monthly general meetings at the UTC where we present our upcoming volunteering opportunities and events to members.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12529843",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Seva Charities",
-   "schoolId": "s_utexas",
-   "date": "2026-11-10T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 4.102",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12529843",
    "sourceLabel": "Student org events"
   },
   {
@@ -1850,35 +1792,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "General Meeting for members of Texas Undergraduate Consulting Group",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12818404",
-   "type": "event",
-   "title": "TUCG GM",
-   "host": "Texas Undergraduate Consulting Group",
-   "schoolId": "s_utexas",
-   "date": "2026-11-10T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "BUR 208",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12818404",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "The UT Water Ski team will have its weekly meetings to give updates on all events going on in the club!",
    "eligibility": "Open to students",
    "tags": [
@@ -2070,7 +1983,7 @@
    "id": "op_utexas_eg_12828245",
    "type": "event",
    "title": "General Meetings",
-   "host": "The Alzheimer's and Dementia Organization at The University of Texas at Austin",
+   "host": "The Alzheimer's and Dementia Organization at The University of Texas at Austin · Swear2Care at UT",
    "schoolId": "s_utexas",
    "date": "2026-11-10T23:00:00.000Z",
    "startTime": "17:00",
@@ -2274,7 +2187,7 @@
    "id": "op_utexas_eg_12530247",
    "type": "event",
    "title": "General Meeting",
-   "host": "Actuarial Science Club",
+   "host": "Actuarial Science Club · Freshman Launch",
    "schoolId": "s_utexas",
    "date": "2026-11-10T23:00:00.000Z",
    "startTime": "17:00",
@@ -2284,64 +2197,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530247",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Freshman Launch General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535762",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Freshman Launch",
-   "schoolId": "s_utexas",
-   "date": "2026-11-10T23:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "UTC 4.132",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535762",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "During our general meetings, members engage in our signature service events aimed at combatting loneliness on campus.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12660525",
-   "type": "event",
-   "title": "General Meetings",
-   "host": "Swear2Care at UT",
-   "schoolId": "s_utexas",
-   "date": "2026-11-10T23:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "PAR 204",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12660525",
    "sourceLabel": "Student org events"
   },
   {
@@ -2827,7 +2682,7 @@
    "id": "op_utexas_eg_12521181",
    "type": "event",
    "title": "General Meeting",
-   "host": "Management Information Systems Association",
+   "host": "Management Information Systems Association · Pre-Physician Assistant Society",
    "schoolId": "s_utexas",
    "date": "2026-11-11T00:00:00.000Z",
    "startTime": "18:00",
@@ -3013,35 +2868,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12678426",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12709455",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Pre-Physician Assistant Society",
-   "schoolId": "s_utexas",
-   "date": "2026-11-11T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "WEL 3.502",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12709455",
    "sourceLabel": "Student org events"
   },
   {
@@ -3383,7 +3209,7 @@
    "id": "op_utexas_eg_12534573",
    "type": "event",
    "title": "General Meeting",
-   "host": "Alpha Phi Sigma - Pre Health Honors Society",
+   "host": "Alpha Phi Sigma - Pre Health Honors Society · Drift Magazine ATX",
    "schoolId": "s_utexas",
    "date": "2026-11-11T00:30:00.000Z",
    "startTime": "18:30",
@@ -3393,35 +3219,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12534573",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Weekly general member meetings.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12754852",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Drift Magazine ATX",
-   "schoolId": "s_utexas",
-   "date": "2026-11-11T00:30:00.000Z",
-   "startTime": "18:30",
-   "place": {
-    "name": "BEN 1.122",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12754852",
    "sourceLabel": "Student org events"
   },
   {
@@ -4608,7 +4405,7 @@
    "id": "op_utexas_eg_12534510",
    "type": "event",
    "title": "General Meeting",
-   "host": "Texas Women in Investing",
+   "host": "Texas Women in Investing · Latin Economics and Business Association · Social Anime Club",
    "schoolId": "s_utexas",
    "date": "2026-11-12T00:00:00.000Z",
    "startTime": "18:00",
@@ -4679,37 +4476,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535129",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Latin Economics and Business Association",
-   "schoolId": "s_utexas",
-   "date": "2026-11-12T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 1.104",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535129",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "These general meetings will serve as training sessions for our members to help prepare them to host and manage committees of a model UN conference that we host every semester.",
    "eligibility": "Open to students",
    "tags": [
@@ -4765,35 +4531,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530533",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General meeting of the club where we talk about anime and do ice breakers with new and old members!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12661853",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Social Anime Club",
-   "schoolId": "s_utexas",
-   "date": "2026-11-12T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "BUR 136",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12661853",
    "sourceLabel": "Student org events"
   },
   {
@@ -5107,7 +4844,7 @@
    "id": "op_utexas_eg_12661835",
    "type": "event",
    "title": "General Meeting",
-   "host": "Bright Stars of Texas",
+   "host": "Bright Stars of Texas · The Texas Orator · Texas Writing Society",
    "schoolId": "s_utexas",
    "date": "2026-11-12T01:00:00.000Z",
    "startTime": "19:00",
@@ -5209,35 +4946,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "General meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12523482",
-   "type": "event",
-   "title": "General meeting",
-   "host": "The Texas Orator",
-   "schoolId": "s_utexas",
-   "date": "2026-11-12T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "Garrison Hall 0.128",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12523482",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "Texas Lassos General Meeting",
    "eligibility": "Open to students",
    "tags": [
@@ -5293,35 +5001,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12834229",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General meetings can be anything from a talk with a local Austin author to writing and performing original screenplays. If you are interested in creative writing, come join us!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12673339",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Texas Writing Society",
-   "schoolId": "s_utexas",
-   "date": "2026-11-12T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "SZB 4.508",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12673339",
    "sourceLabel": "Student org events"
   },
   {
@@ -6107,7 +5786,7 @@
    "id": "op_utexas_eg_12529769",
    "type": "event",
    "title": "General Meeting",
-   "host": "Alpha Lambda Delta Phi Eta Sigma - Freshmen",
+   "host": "Alpha Lambda Delta Phi Eta Sigma - Freshmen · Project Yellow at the University of Texas at Austin · Education for All · Youth Justice Alliance · Hispanic Public Relations Student Association · Animators Club · Vietnamese Students Association",
    "schoolId": "s_utexas",
    "date": "2026-11-13T00:00:00.000Z",
    "startTime": "18:00",
@@ -6118,37 +5797,6 @@
    },
    "benefit": "Free food",
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12529769",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "A Project Yellow general meeting is a space where members come together to hear updates about upcoming events and volunteer opportunities. Each meeting also consists of either an external volunteering event or a fun social activity. This is a great way for members or anyone inter",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12547164",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Project Yellow at the University of Texas at Austin",
-   "schoolId": "s_utexas",
-   "date": "2026-11-13T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "RLP 1.102",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12547164",
    "sourceLabel": "Student org events"
   },
   {
@@ -6210,35 +5858,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "General meeting for Education for All",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12601422",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Education for All",
-   "schoolId": "s_utexas",
-   "date": "2026-11-13T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "SZB 5.414",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12601422",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "General meetings for writers, editors, and designers in Texas Triple Helix",
    "eligibility": "Open to students",
    "tags": [
@@ -6265,35 +5884,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12730488",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "TYJA General Meeting #1",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12536616",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Youth Justice Alliance",
-   "schoolId": "s_utexas",
-   "date": "2026-11-13T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "BUR 108",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12536616",
    "sourceLabel": "Student org events"
   },
   {
@@ -6381,35 +5971,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12730605",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Join us for our general meeting!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12528843",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Hispanic Public Relations Student Association",
-   "schoolId": "s_utexas",
-   "date": "2026-11-13T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "CMA 3.114",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12528843",
    "sourceLabel": "Student org events"
   },
   {
@@ -6558,35 +6119,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Attend the Animators Club to meet other artists, animators, and creatives alike to share tips, recommendations, and generally to meet other animation fans!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12758919",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Animators Club",
-   "schoolId": "s_utexas",
-   "date": "2026-11-13T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "SZB 2.802",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12758919",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "Play rehearsal",
    "eligibility": "Open to students",
    "tags": [
@@ -6613,35 +6145,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12921489",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "cultural"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12529512",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Vietnamese Students Association",
-   "schoolId": "s_utexas",
-   "date": "2026-11-13T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "WEL 3.502",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12529512",
    "sourceLabel": "Student org events"
   },
   {
@@ -8035,7 +7538,7 @@
    "id": "op_utexas_eg_12534485",
    "type": "event",
    "title": "General Meeting",
-   "host": "Texas Arts for Aid",
+   "host": "Texas Arts for Aid · Partners in Health Engage at UT Austin",
    "schoolId": "s_utexas",
    "date": "2026-11-16T23:30:00.000Z",
    "startTime": "17:30",
@@ -8045,35 +7548,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12534485",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Recurring GM for Fall 2026",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12530003",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Partners in Health Engage at UT Austin",
-   "schoolId": "s_utexas",
-   "date": "2026-11-16T23:30:00.000Z",
-   "startTime": "17:30",
-   "place": {
-    "name": "UTC 1.116",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530003",
    "sourceLabel": "Student org events"
   },
   {
@@ -8780,35 +8254,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "General Meeting for members of Texas Undergraduate Consulting Group",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12818405",
-   "type": "event",
-   "title": "TUCG GM",
-   "host": "Texas Undergraduate Consulting Group",
-   "schoolId": "s_utexas",
-   "date": "2026-11-17T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "BUR 208",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12818405",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "The UT Water Ski team will have its weekly meetings to give updates on all events going on in the club!",
    "eligibility": "Open to students",
    "tags": [
@@ -9264,7 +8709,7 @@
    "id": "op_utexas_eg_12530248",
    "type": "event",
    "title": "General Meeting",
-   "host": "Actuarial Science Club",
+   "host": "Actuarial Science Club · Freshman Launch",
    "schoolId": "s_utexas",
    "date": "2026-11-17T23:00:00.000Z",
    "startTime": "17:00",
@@ -9274,35 +8719,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530248",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Freshman Launch General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535763",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Freshman Launch",
-   "schoolId": "s_utexas",
-   "date": "2026-11-17T23:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "UTC 4.132",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535763",
    "sourceLabel": "Student org events"
   },
   {
@@ -11254,7 +10670,7 @@
    "id": "op_utexas_eg_12534511",
    "type": "event",
    "title": "General Meeting",
-   "host": "Texas Women in Investing",
+   "host": "Texas Women in Investing · Latin Economics and Business Association · American Medical Student Association - Pre-med · Social Anime Club",
    "schoolId": "s_utexas",
    "date": "2026-11-19T00:00:00.000Z",
    "startTime": "18:00",
@@ -11264,37 +10680,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12534511",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535130",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Latin Economics and Business Association",
-   "schoolId": "s_utexas",
-   "date": "2026-11-19T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 1.104",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535130",
    "sourceLabel": "Student org events"
   },
   {
@@ -11324,35 +10709,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12550624",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "A space for the entire organization to gather together to highlight past events, advertise upcoming events, and listen to a guest speaker present about their unique journey in medicine.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12538425",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "American Medical Student Association - Pre-med",
-   "schoolId": "s_utexas",
-   "date": "2026-11-19T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "WEL 3.502",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12538425",
    "sourceLabel": "Student org events"
   },
   {
@@ -11411,35 +10767,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12633396",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General meeting of the club where we talk about anime and do ice breakers with new and old members!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12661854",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Social Anime Club",
-   "schoolId": "s_utexas",
-   "date": "2026-11-19T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "BUR 136",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12661854",
    "sourceLabel": "Student org events"
   },
   {
@@ -12639,7 +11966,7 @@
    "id": "op_utexas_eg_12536617",
    "type": "event",
    "title": "General Meeting",
-   "host": "Youth Justice Alliance",
+   "host": "Youth Justice Alliance · Hispanic Public Relations Student Association · Animators Club",
    "schoolId": "s_utexas",
    "date": "2026-11-20T00:00:00.000Z",
    "startTime": "18:00",
@@ -12855,35 +12182,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for our general meeting!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12528844",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Hispanic Public Relations Student Association",
-   "schoolId": "s_utexas",
-   "date": "2026-11-20T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "CMA 3.114",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12528844",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "General meeting for students to learn about the pre-law track, law school, and careers in business law.",
    "eligibility": "Open to students",
    "tags": [
@@ -13026,35 +12324,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12523817",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Attend the Animators Club to meet other artists, animators, and creatives alike to share tips, recommendations, and generally to meet other animation fans!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12758920",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Animators Club",
-   "schoolId": "s_utexas",
-   "date": "2026-11-20T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "SZB 2.802",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12758920",
    "sourceLabel": "Student org events"
   },
   {
@@ -13221,7 +12490,7 @@
    "id": "op_utexas_eg_12718300",
    "type": "event",
    "title": "General Meeting",
-   "host": "Design in Health",
+   "host": "Design in Health · Longhorn Urbanists",
    "schoolId": "s_utexas",
    "date": "2026-11-20T01:00:00.000Z",
    "startTime": "19:00",
@@ -13262,35 +12531,6 @@
    },
    "benefit": "Free food",
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12520299",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting for Longhorn Urbanists. This may include presentations, discussions, speakers, and many other topics related to Urbanism.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12521069",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Longhorn Urbanists",
-   "schoolId": "s_utexas",
-   "date": "2026-11-20T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "RLP 1.104",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12521069",
    "sourceLabel": "Student org events"
   },
   {
@@ -13658,7 +12898,7 @@
    "id": "op_utexas_eg_12732063",
    "type": "event",
    "title": "General Meeting",
-   "host": "UTea",
+   "host": "UTea · Tzu Chi Collegiate Association Austin Chapter",
    "schoolId": "s_utexas",
    "date": "2026-11-21T00:00:00.000Z",
    "startTime": "18:00",
@@ -13668,35 +12908,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12732063",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Members have the opportunity to gain knowledge about the organization and upcoming events through the general meeting.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535624",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Tzu Chi Collegiate Association Austin Chapter",
-   "schoolId": "s_utexas",
-   "date": "2026-11-21T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 3.110",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535624",
    "sourceLabel": "Student org events"
   },
   {
@@ -14445,7 +13656,7 @@
    "id": "op_utexas_eg_12534486",
    "type": "event",
    "title": "General Meeting",
-   "host": "Texas Arts for Aid",
+   "host": "Texas Arts for Aid · Partners in Health Engage at UT Austin",
    "schoolId": "s_utexas",
    "date": "2026-11-30T23:30:00.000Z",
    "startTime": "17:30",
@@ -14455,35 +13666,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12534486",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Recurring GM for Fall 2026",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12530004",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Partners in Health Engage at UT Austin",
-   "schoolId": "s_utexas",
-   "date": "2026-11-30T23:30:00.000Z",
-   "startTime": "17:30",
-   "place": {
-    "name": "UTC 1.116",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530004",
    "sourceLabel": "Student org events"
   },
   {
@@ -14793,7 +13975,7 @@
    "id": "op_utexas_eg_12708286",
    "type": "event",
    "title": "General Meeting",
-   "host": "Students Fighting Climate Change",
+   "host": "Students Fighting Climate Change · Seva Charities",
    "schoolId": "s_utexas",
    "date": "2026-12-01T00:00:00.000Z",
    "startTime": "18:00",
@@ -14803,35 +13985,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12708286",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "We have bi-weekly monthly general meetings at the UTC where we present our upcoming volunteering opportunities and events to members.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12529844",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Seva Charities",
-   "schoolId": "s_utexas",
-   "date": "2026-12-01T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 4.102",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12529844",
    "sourceLabel": "Student org events"
   },
   {
@@ -15217,35 +14370,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "General Meeting for members of Texas Undergraduate Consulting Group",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12818406",
-   "type": "event",
-   "title": "TUCG GM",
-   "host": "Texas Undergraduate Consulting Group",
-   "schoolId": "s_utexas",
-   "date": "2026-12-01T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "BUR 208",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12818406",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "We will be having our first general meeting where we have information session and prayer time.",
    "eligibility": "Open to students",
    "tags": [
@@ -15379,7 +14503,7 @@
    "id": "op_utexas_eg_12828246",
    "type": "event",
    "title": "General Meetings",
-   "host": "The Alzheimer's and Dementia Organization at The University of Texas at Austin",
+   "host": "The Alzheimer's and Dementia Organization at The University of Texas at Austin · Swear2Care at UT",
    "schoolId": "s_utexas",
    "date": "2026-12-01T23:00:00.000Z",
    "startTime": "17:00",
@@ -15554,7 +14678,7 @@
    "id": "op_utexas_eg_12530249",
    "type": "event",
    "title": "General Meeting",
-   "host": "Actuarial Science Club",
+   "host": "Actuarial Science Club · Freshman Launch",
    "schoolId": "s_utexas",
    "date": "2026-12-01T23:00:00.000Z",
    "startTime": "17:00",
@@ -15564,64 +14688,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530249",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "During our general meetings, members engage in our signature service events aimed at combatting loneliness on campus.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12660526",
-   "type": "event",
-   "title": "General Meetings",
-   "host": "Swear2Care at UT",
-   "schoolId": "s_utexas",
-   "date": "2026-12-01T23:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "PAR 204",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12660526",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Freshman Launch General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535764",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Freshman Launch",
-   "schoolId": "s_utexas",
-   "date": "2026-12-01T23:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "UTC 4.132",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535764",
    "sourceLabel": "Student org events"
   },
   {
@@ -15789,7 +14855,7 @@
    "id": "op_utexas_eg_12535138",
    "type": "event",
    "title": "General Meeting",
-   "host": "Texas Engineering World Health",
+   "host": "Texas Engineering World Health · Management Information Systems Association",
    "schoolId": "s_utexas",
    "date": "2026-12-02T00:00:00.000Z",
    "startTime": "18:00",
@@ -15975,35 +15041,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12526793",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Weekly general meetings for academic, social, and professional development events",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12521183",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Management Information Systems Association",
-   "schoolId": "s_utexas",
-   "date": "2026-12-02T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "CBA 4.348",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12521183",
    "sourceLabel": "Student org events"
   },
   {
@@ -16375,7 +15412,7 @@
    "id": "op_utexas_eg_12754854",
    "type": "event",
    "title": "General Meeting",
-   "host": "Drift Magazine ATX",
+   "host": "Drift Magazine ATX · Alpha Phi Sigma - Pre Health Honors Society",
    "schoolId": "s_utexas",
    "date": "2026-12-02T00:30:00.000Z",
    "startTime": "18:30",
@@ -16414,35 +15451,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12753066",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Meeting with all APS members. We will be discussing organization updates, future events, and service opportunities.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12534574",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Alpha Phi Sigma - Pre Health Honors Society",
-   "schoolId": "s_utexas",
-   "date": "2026-12-02T00:30:00.000Z",
-   "startTime": "18:30",
-   "place": {
-    "name": "MEZ 1.306",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12534574",
    "sourceLabel": "Student org events"
   },
   {
@@ -17392,7 +16400,7 @@
    "id": "op_utexas_eg_12549894",
    "type": "event",
    "title": "General meeting",
-   "host": "Fynix",
+   "host": "Fynix · Texas Women in Investing · Latin Economics and Business Association · American Medical Student Association - Pre-med · Social Anime Club",
    "schoolId": "s_utexas",
    "date": "2026-12-03T00:00:00.000Z",
    "startTime": "18:00",
@@ -17787,35 +16795,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "New Member Meeting 6 pm to 7 pm General Meeting 7 pm to 8 pm",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12534512",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Texas Women in Investing",
-   "schoolId": "s_utexas",
-   "date": "2026-12-03T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 1.102",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12534512",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "At our general meeting, members come together each week to discuss important market events, pitch stocks, present case studies, or engage with guest speakers.",
    "eligibility": "Open to students",
    "tags": [
@@ -17842,37 +16821,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12550778",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12535131",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Latin Economics and Business Association",
-   "schoolId": "s_utexas",
-   "date": "2026-12-03T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "UTC 1.104",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12535131",
    "sourceLabel": "Student org events"
   },
   {
@@ -17905,35 +16853,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "A space for the entire organization to gather together to highlight past events, advertise upcoming events, and listen to a guest speaker present about their unique journey in medicine.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12538426",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "American Medical Student Association - Pre-med",
-   "schoolId": "s_utexas",
-   "date": "2026-12-03T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "WEL 3.502",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12538426",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "These general meetings will serve as training sessions for our members to help prepare them to host and manage committees of a model UN conference that we host every semester.",
    "eligibility": "Open to students",
    "tags": [
@@ -17960,35 +16879,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530559",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General meeting of the club where we talk about anime and do ice breakers with new and old members!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12661855",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Social Anime Club",
-   "schoolId": "s_utexas",
-   "date": "2026-12-03T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "BUR 136",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12661855",
    "sourceLabel": "Student org events"
   },
   {
@@ -18304,7 +17194,7 @@
    "id": "op_utexas_eg_12661837",
    "type": "event",
    "title": "General Meeting",
-   "host": "Bright Stars of Texas",
+   "host": "Bright Stars of Texas · The Texas Orator",
    "schoolId": "s_utexas",
    "date": "2026-12-03T01:00:00.000Z",
    "startTime": "19:00",
@@ -18343,35 +17233,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12526685",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General meeting",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12523483",
-   "type": "event",
-   "title": "General meeting",
-   "host": "The Texas Orator",
-   "schoolId": "s_utexas",
-   "date": "2026-12-03T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "Garrison Hall 0.128",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12523483",
    "sourceLabel": "Student org events"
   },
   {
@@ -19067,7 +17928,7 @@
    "id": "op_utexas_eg_12536618",
    "type": "event",
    "title": "General Meeting",
-   "host": "Youth Justice Alliance",
+   "host": "Youth Justice Alliance · Project Yellow at the University of Texas at Austin · Education for All · Hispanic Public Relations Student Association · Animators Club · Vietnamese Students Association",
    "schoolId": "s_utexas",
    "date": "2026-12-04T00:00:00.000Z",
    "startTime": "18:00",
@@ -19106,37 +17967,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12524236",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "A Project Yellow general meeting is a space where members come together to hear updates about upcoming events and volunteer opportunities. Each meeting also consists of either an external volunteering event or a fun social activity. This is a great way for members or anyone inter",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12547165",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Project Yellow at the University of Texas at Austin",
-   "schoolId": "s_utexas",
-   "date": "2026-12-04T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "RLP 1.102",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12547165",
    "sourceLabel": "Student org events"
   },
   {
@@ -19195,35 +18025,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12530336",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General meeting for Education for All",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12601423",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Education for All",
-   "schoolId": "s_utexas",
-   "date": "2026-12-04T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "SZB 5.414",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12601423",
    "sourceLabel": "Student org events"
   },
   {
@@ -19343,35 +18144,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for our general meeting!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12528845",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Hispanic Public Relations Student Association",
-   "schoolId": "s_utexas",
-   "date": "2026-12-04T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "CMA 3.114",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12528845",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "General meeting for students to learn about the pre-law track, law school, and careers in business law.",
    "eligibility": "Open to students",
    "tags": [
@@ -19459,35 +18231,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Attend the Animators Club to meet other artists, animators, and creatives alike to share tips, recommendations, and generally to meet other animation fans!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12758921",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Animators Club",
-   "schoolId": "s_utexas",
-   "date": "2026-12-04T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "SZB 2.802",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12758921",
-   "sourceLabel": "Student org events"
-  },
-  {
    "description": "ATX Science Olympiad is a student organization that is committed to STEM outreach and plans two annual tournaments, where over 70 middle school and high school teams from across the country attend to compete in a variety of STEM-related events.",
    "eligibility": "Open to students",
    "tags": [
@@ -19543,35 +18286,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12523818",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "cultural"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12529513",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Vietnamese Students Association",
-   "schoolId": "s_utexas",
-   "date": "2026-12-04T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "WEL 3.502",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12529513",
    "sourceLabel": "Student org events"
   },
   {
@@ -19651,7 +18365,7 @@
    "id": "op_utexas_eg_12718301",
    "type": "event",
    "title": "General Meeting",
-   "host": "Design in Health",
+   "host": "Design in Health · Longhorn Urbanists",
    "schoolId": "s_utexas",
    "date": "2026-12-04T01:00:00.000Z",
    "startTime": "19:00",
@@ -19750,35 +18464,6 @@
     "lng": -97.7341
    },
    "sourceUrl": "https://utexas.campuslabs.com/engage/event/12683523",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "General Meeting for Longhorn Urbanists. This may include presentations, discussions, speakers, and many other topics related to Urbanism.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:42:50.370Z",
-   "createdAt": "2026-11-07T03:42:50.370Z",
-   "id": "op_utexas_eg_12521070",
-   "type": "event",
-   "title": "General Meeting",
-   "host": "Longhorn Urbanists",
-   "schoolId": "s_utexas",
-   "date": "2026-12-04T01:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "RLP 1.104",
-    "lat": 30.2849,
-    "lng": -97.7341
-   },
-   "sourceUrl": "https://utexas.campuslabs.com/engage/event/12521070",
    "sourceLabel": "Student org events"
   },
   {

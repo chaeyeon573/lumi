@@ -106,3 +106,15 @@ test('decodeHtmlText: named, numeric and double-encoded entities in event text a
   assert.equal(decodeHtmlText('Q&amp;A &#8211; Panel'), 'Q&A – Panel');
   assert.equal(decodeHtmlText('Plain title'), 'Plain title');
 });
+
+test('dedupeEvents: same title and start once; another start time stays', async () => {
+  const { dedupeEvents } = await import('./sources/opportunities');
+  const out = dedupeEvents([
+    { id: 'a', title: 'B-Town Beatdown Fall 2026', date: '2026-11-07T17:00:00.000Z', startTime: '12:00', host: 'Dance Club' },
+    { id: 'b', title: 'B-Town  Beatdown Fall 2026!', date: '2026-11-07T17:00:00.000Z', startTime: '12:00', host: 'Hip Hop Club' },
+    { id: 'd', title: 'B-Town Beatdown Fall 2026', date: '2026-11-07T17:00:00.000Z', startTime: '12:00', host: 'Dance Club' },
+    { id: 'c', title: 'B-Town Beatdown Fall 2026', date: '2026-11-07T19:00:00.000Z', startTime: '14:00', host: 'Dance Club' },
+  ]);
+  assert.deepEqual(out.map((o) => o.id), ['a', 'c']);
+  assert.equal(out[0].host, 'Dance Club · Hip Hop Club');
+});

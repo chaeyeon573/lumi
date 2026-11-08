@@ -4799,34 +4799,6 @@
    "sourceLabel": "Presence"
   },
   {
-   "description": "Men’s Club Squash Practice. All skill groups encouraged ; no racquet required . Schedule: Tuesday 6-7:30 Wednesday: 5:3 0 -7 Thursday: 4:30-6:00 Practices meet at the Roland Grimm Squash Courts.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_tuesday_11_10_squash_practice_2",
-   "type": "event",
-   "title": "Tuesday 11/10 Squash Practice",
-   "host": "Sports Club - Men's Club Squash",
-   "schoolId": "s_wustl",
-   "date": "2026-11-11T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "Roland Grimm Squash Courts",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/tuesday-11-10-squash-practice-2",
-   "sourceLabel": "Presence"
-  },
-  {
    "description": "Auditions for our spring production, Little Women, along with auditions for Cast n' Crew's show. Our show is being directed by Julianna Cool. All are welcome to audition. The link to sign up can be found here: https://www.signupgenius.com/go/20F044BACA62FAAF58-67188143-astcast#/",
    "eligibility": "Open to students",
    "tags": [
@@ -4992,34 +4964,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/red-flags-green-flags",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Join us for our red flags and green flags event where we will analyze relationship scenes from Black pop culture and discuss healthy relationships.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_red_flags_green_flags_2",
-   "type": "event",
-   "title": "Red Flags & Green Flags",
-   "host": "The Alpha Eta Chapter of Alpha Phi Alpha Fraternity, Incorporated",
-   "schoolId": "s_wustl",
-   "date": "2026-11-11T00:30:00.000Z",
-   "startTime": "18:30",
-   "place": {
-    "name": "Simon 18",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/red-flags-green-flags-2",
    "sourceLabel": "Presence"
   },
   {
@@ -5490,7 +5434,7 @@
    "id": "op_wustl_ev_practice_3507",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Swim",
    "schoolId": "s_wustl",
    "date": "2026-11-11T02:30:00.000Z",
    "startTime": "20:30",
@@ -5500,34 +5444,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3507",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly Club Swim practice, open to all.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3564",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Swim",
-   "schoolId": "s_wustl",
-   "date": "2026-11-11T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "Millstone Pool",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3564",
    "sourceLabel": "Presence"
   },
   {
@@ -5948,34 +5864,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/joint-wednesday-11-11-squash-practice",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Men’s Club Squash Practice. All skill groups encouraged ; no racquet required . Schedule: Tuesday 6-7:30 Wednesday: 5:3 0 -7 Thursday: 4:30-6:00 Practices meet at the Roland Grimm Squash Courts.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_joint_wednesday_11_11_squash_practice_2",
-   "type": "event",
-   "title": "Joint Wednesday 11/11 Squash Practice",
-   "host": "Sports Club - Men's Club Squash",
-   "schoolId": "s_wustl",
-   "date": "2026-11-11T23:30:00.000Z",
-   "startTime": "17:30",
-   "place": {
-    "name": "Roland Grimm Squash Courts",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/joint-wednesday-11-11-squash-practice-2",
    "sourceLabel": "Presence"
   },
   {
@@ -7764,7 +7652,7 @@
    "id": "op_wustl_ev_practice_3508",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Swim · Sports Club - Men's Volleyball",
    "schoolId": "s_wustl",
    "date": "2026-11-13T02:30:00.000Z",
    "startTime": "20:30",
@@ -7774,34 +7662,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3508",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly Club Swim practice, open to all.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3561",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Swim",
-   "schoolId": "s_wustl",
-   "date": "2026-11-13T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "Millstone Pool",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3561",
    "sourceLabel": "Presence"
   },
   {
@@ -7830,34 +7690,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/piker-rehearsal-6",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Practice is at South Campus Gym.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3625",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Men's Volleyball",
-   "schoolId": "s_wustl",
-   "date": "2026-11-13T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "South Campus Gym",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3625",
    "sourceLabel": "Presence"
   },
   {
@@ -8110,34 +7942,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/team-practice-58",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly team practice open to all members. Ice and transportation are covered by the club. You only need your own skates to attend!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_team_practice_70",
-   "type": "event",
-   "title": "Team practice",
-   "host": "Sports Club - Figure Skating",
-   "schoolId": "s_wustl",
-   "date": "2026-11-13T21:00:00.000Z",
-   "startTime": "15:00",
-   "place": {
-    "name": "Kirkwood Ice Arena",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/team-practice-70",
    "sourceLabel": "Presence"
   },
   {
@@ -11645,34 +11449,6 @@
    "sourceLabel": "Presence"
   },
   {
-   "description": "WashU Archery Club Practice",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3612",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Archery",
-   "schoolId": "s_wustl",
-   "date": "2026-11-15T22:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "South Campus",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3612",
-   "sourceLabel": "Presence"
-  },
-  {
    "description": "Sunday western group lesson at 5pm at Royale Ranch. Lessons are set up directly with the ranch.",
    "eligibility": "Open to students",
    "tags": [
@@ -12594,34 +12370,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3626",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Practice is at South Campus Gym.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3627",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Men's Volleyball",
-   "schoolId": "s_wustl",
-   "date": "2026-11-17T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "South Campus Gym",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3627",
    "sourceLabel": "Presence"
   },
   {
@@ -13551,34 +13299,6 @@
    "sourceLabel": "Presence"
   },
   {
-   "description": "Men’s Club Squash Practice. All skill groups encouraged ; no racquet required . Schedule: Tuesday 6-7:30 Wednesday: 5:3 0 -7 Thursday: 4:30-6:00 Practices meet at the Roland Grimm Squash Courts.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_tuesday_11_17_squash_practice_2",
-   "type": "event",
-   "title": "Tuesday 11/17 Squash Practice",
-   "host": "Sports Club - Men's Club Squash",
-   "schoolId": "s_wustl",
-   "date": "2026-11-18T00:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "Roland Grimm Squash Courts",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/tuesday-11-17-squash-practice-2",
-   "sourceLabel": "Presence"
-  },
-  {
    "description": "research, discussion, and networking around environmental activism.",
    "eligibility": "Open to students",
    "tags": [
@@ -14100,7 +13820,7 @@
    "id": "op_wustl_ev_practice_3509",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Swim",
    "schoolId": "s_wustl",
    "date": "2026-11-18T02:30:00.000Z",
    "startTime": "20:30",
@@ -14110,34 +13830,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3509",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly Club Swim practice, open to all.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3560",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Swim",
-   "schoolId": "s_wustl",
-   "date": "2026-11-18T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "Millstone Pool",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3560",
    "sourceLabel": "Presence"
   },
   {
@@ -14588,34 +14280,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/joint-wednesday-11-18-squash-practice",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Men’s Club Squash Practice. All skill groups encouraged ; no racquet required . Schedule: Tuesday 6-7:30 Wednesday: 5:3 0 -7 Thursday: 4:30-6:00 Practices meet at the Roland Grimm Squash Courts.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_joint_wednesday_11_18_squash_practice_2",
-   "type": "event",
-   "title": "Joint Wednesday 11/18 Squash Practice",
-   "host": "Sports Club - Men's Club Squash",
-   "schoolId": "s_wustl",
-   "date": "2026-11-18T23:30:00.000Z",
-   "startTime": "17:30",
-   "place": {
-    "name": "Roland Grimm Squash Courts",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/joint-wednesday-11-18-squash-practice-2",
    "sourceLabel": "Presence"
   },
   {
@@ -15405,34 +15069,6 @@
    "sourceLabel": "Presence"
   },
   {
-   "description": "This is our annual Showcase that is held in Graham Chapel, where we watch a variety of performances put together by PL4Y dancers! We expect over 700 people to come and watch over 100 students perform on stage. We will allow students and non-students to attend, but all people must",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_pl4y_showcase_6",
-   "type": "event",
-   "title": "PL4Y Showcase",
-   "host": "PL4Y",
-   "schoolId": "s_wustl",
-   "date": "2026-11-19T13:00:00.000Z",
-   "startTime": "07:00",
-   "place": {
-    "name": "Graham Memorial Chapel",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/pl4y-showcase-6",
-   "sourceLabel": "Presence"
-  },
-  {
    "description": "Early morning small group prayer!",
    "eligibility": "Open to students",
    "tags": [
@@ -15766,34 +15402,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/thursday-11-19-squash-practice",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Men’s Club Squash Practice. All skill groups encouraged ; no racquet required . Schedule: Tuesday 6-7:30 Wednesday: 5:3 0 -7 Thursday: 4:30-6:00 Practices meet at the Roland Grimm Squash Courts.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_thursday_11_19_squash_practice_2",
-   "type": "event",
-   "title": "Thursday 11/19 Squash Practice",
-   "host": "Sports Club - Men's Club Squash",
-   "schoolId": "s_wustl",
-   "date": "2026-11-19T22:30:00.000Z",
-   "startTime": "16:30",
-   "place": {
-    "name": "Roland Grimm Squash Courts",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/thursday-11-19-squash-practice-2",
    "sourceLabel": "Presence"
   },
   {
@@ -16680,7 +16288,7 @@
    "id": "op_wustl_ev_practice_3510",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Swim · Sports Club - Men's Volleyball",
    "schoolId": "s_wustl",
    "date": "2026-11-20T02:30:00.000Z",
    "startTime": "20:30",
@@ -16690,62 +16298,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3510",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly Club Swim practice, open to all.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3554",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Swim",
-   "schoolId": "s_wustl",
-   "date": "2026-11-20T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "Millstone Pool",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3554",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Practice is at South Campus Gym.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3628",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Men's Volleyball",
-   "schoolId": "s_wustl",
-   "date": "2026-11-20T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "South Campus Gym",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3628",
    "sourceLabel": "Presence"
   },
   {
@@ -20324,7 +19876,7 @@
    "id": "op_wustl_ev_practice_3512",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Swim",
    "schoolId": "s_wustl",
    "date": "2026-11-25T02:30:00.000Z",
    "startTime": "20:30",
@@ -20334,34 +19886,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3512",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly Club Swim practice, open to all.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3550",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Swim",
-   "schoolId": "s_wustl",
-   "date": "2026-11-25T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "Millstone Pool",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3550",
    "sourceLabel": "Presence"
   },
   {
@@ -22510,7 +22034,7 @@
    "id": "op_wustl_ev_practice_3513",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Swim",
    "schoolId": "s_wustl",
    "date": "2026-12-02T02:30:00.000Z",
    "startTime": "20:30",
@@ -22520,34 +22044,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3513",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Weekly Club Swim practice, open to all.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3549",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Swim",
-   "schoolId": "s_wustl",
-   "date": "2026-12-02T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "Millstone Pool",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3549",
    "sourceLabel": "Presence"
   },
   {
@@ -23714,7 +23210,7 @@
    "id": "op_wustl_ev_practice_3514",
    "type": "event",
    "title": "Practice",
-   "host": "Sports Club - Men's Ultimate",
+   "host": "Sports Club - Men's Ultimate · Sports Club - Men's Volleyball",
    "schoolId": "s_wustl",
    "date": "2026-12-04T02:30:00.000Z",
    "startTime": "20:30",
@@ -23724,34 +23220,6 @@
     "lng": -90.3108
    },
    "sourceUrl": "https://wustl.presence.io/event/practice-3514",
-   "sourceLabel": "Presence"
-  },
-  {
-   "description": "Practice is at South Campus Gym.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-07T03:43:12.907Z",
-   "createdAt": "2026-11-07T03:43:12.907Z",
-   "id": "op_wustl_ev_practice_3631",
-   "type": "event",
-   "title": "Practice",
-   "host": "Sports Club - Men's Volleyball",
-   "schoolId": "s_wustl",
-   "date": "2026-12-04T02:30:00.000Z",
-   "startTime": "20:30",
-   "place": {
-    "name": "South Campus Gym",
-    "lat": 38.6488,
-    "lng": -90.3108
-   },
-   "sourceUrl": "https://wustl.presence.io/event/practice-3631",
    "sourceLabel": "Presence"
   },
   {

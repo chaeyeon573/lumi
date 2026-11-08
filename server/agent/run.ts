@@ -46,7 +46,7 @@ import { sendMail } from '../mail';
 import { MAIL_LOG, logEntries, pickToMail, type MailLogDoc } from './notify-throttle';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
-import { isExhibitEvent, fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents, fetchEventRss, fetchTribeEvents, fetchUclaCommunity, fetchTrumba, fetchJsonLdEvents, fetchPennToday } from '../sources/opportunities';
+import { isExhibitEvent, dedupeEvents, fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents, fetchEventRss, fetchTribeEvents, fetchUclaCommunity, fetchTrumba, fetchJsonLdEvents, fetchPennToday } from '../sources/opportunities';
 import { decodeHtmlText } from '../sources/entities';
 import { dropDuplicateTitles, fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
@@ -319,8 +319,8 @@ async function collectEvents(row: SchoolRow): Promise<AgentRun> {
   const today = new Date().toISOString().slice(0, 10);
   // 전시(며칠씩 열려 있는 것)는 '그 시간에 가는 행사'가 아니다 — isExhibitEvent (server/sources/opportunities.ts)
   // 이모지는 데이터에도 남기지 않는다 — 제목·주최만이 아니라 설명·장소까지 (서버 응답과 같은 규칙, server/noemoji.ts)
-  const events = [...new Map(got.filter((o) => (!o.date || o.date >= today) && !isExhibitEvent(o)).map((o) => [o.id, o])).values()]
-    .map(({ cover: _c, qna: _q, reviews: _r, ...o }) => noEmojiView({ ...o, title: stripEmoji(decodeHtmlText(o.title)), host: stripEmoji(decodeHtmlText(o.host)), description: decodeHtmlText(o.description ?? ''), ...(o.place ? { place: { ...o.place, name: decodeHtmlText(o.place.name) } } : {}) }))
+  const events = dedupeEvents([...new Map(got.filter((o) => (!o.date || o.date >= today) && !isExhibitEvent(o)).map((o) => [o.id, o])).values()]
+    .map(({ cover: _c, qna: _q, reviews: _r, ...o }) => noEmojiView({ ...o, title: stripEmoji(decodeHtmlText(o.title)), host: stripEmoji(decodeHtmlText(o.host)), description: decodeHtmlText(o.description ?? ''), ...(o.place ? { place: { ...o.place, name: decodeHtmlText(o.place.name) } } : {}) })))
     .sort((a, b) => `${a.date ?? ''} ${a.startTime ?? ''}`.localeCompare(`${b.date ?? ''} ${b.startTime ?? ''}`));
   mkdirSync(COLLECTED_DIR, { recursive: true });
   if (events.length) writeFileSync(path.join(COLLECTED_DIR, `${row.id}.events.json`), `${JSON.stringify({ collectedAt: startedAt, sources, events }, null, 1)}\n`);
