@@ -2754,3 +2754,9 @@
 - Events: UCR's public Localist calendar (events.ucr.edu) added next to Engage - 18 → 86 upcoming; one event (ECE Seminar, Nov 9 11:00, Winston Chung Hall 205/206) matches the calendar API. SF State, UChicago, Penn, UVA, Caltech, USF calendar hosts have no Localist API or fail here.
 - Spot check clubs: USC GEN-ZiNE, Stanford Applied Cybersecurity, UCR Competitive Pickleball fine; Michigan Sirens (replit app 404) → deadlinks; UF orgs.studentinvolvement.ufl.edu addresses now redirect to the GatorConnect list front page → added to the retired-address rule (test), 2 links set aside.
 - Spot check courses: 5 random USC Spring 2027 classes match.
+
+## 2026-11-08 23:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events: probed the Localist API (calendar.<domain>/api/2, events.<domain>/api/2 - one request per host) for all 51 collected schools without a school-wide calendar. 8 answer with their own official calendar and were added next to the club feeds: Yale 432→521, UT Austin 674→700, BC 345→426, Wake Forest 104→108, Rochester 216→269, UGA 157→251, Miami 84→120, UMass 233→259 (+410). One event per school checked against its API for Yale, UGA, Miami, UT - start times match.
+- Spot check clubs: Purdue PM at Purdue (title "PM at Purdue"), UW VSA, UCI GABES, MIT Korean Karate fine; UVA "Information Technology Services" is a university office → department (override).
+- Spot check courses: 5 random Georgia Tech Spring 2027 classes match.
