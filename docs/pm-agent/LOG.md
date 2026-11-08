@@ -2682,3 +2682,9 @@
 - isHijackedPage only read the title; ewbscu.com has a plain title over a slot-gambling body. Now also counts body words used only by those pages (gacor, togel, maxwin, situs slot, judi online; 2+), test added. Queued a one-time re-scan of all club websites with it.
 - Spot check clubs: CMU 180DC, Miami Sailing, UT Responsible Intelligence Network fine; MSU Pre-Vet (wix page 404) and UCSB YEP (bit.ly to an application form) → deadlinks. Queued a check of the ~25 short links.
 - Spot check courses: 5 random USC Fall 2026 classes match.
+
+## 2026-11-08 14:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Full club-website re-scan with the body-text gambling check (queue item): previous progress kept as site-scan-progress-1.json, fresh pass over all 14,814 Website links, 6 at a time, 15 s limit, ~30 min in 6 parts. 15 set aside to deadlinks (kept): gambling/lottery pages behind the clubs' old domains (BU Finance and Investment Club, Indiana Hispanic Finance Association, Miami Club Baseball, UCI Jodaiko, UConn Holy Family, UGA Economics Society, UMass Thats Life SCI - the last kept its title over injected slot text), suspended hosting (Duke Poker, PSU New Life, SJSU Hockey, UGA College Republicans, Michigan Sigma Nu), domains gone (Indiana Bloomingtones, UW CKI, UW InterVarsity). Two that looked like possible false positives were opened by hand - both are gambling pages.
+- Spot check clubs: UCR EEOB GSA (department site), NC State Animal Science Club, MSU SAFE (national site), PSU Men's Water Polo, Syracuse Alpha Omega Epsilon - fine.
+- Spot check courses: 5 random Georgia Tech Fall 2026 classes match.
