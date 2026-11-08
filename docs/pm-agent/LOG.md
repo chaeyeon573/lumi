@@ -2688,3 +2688,13 @@
 - Full club-website re-scan with the body-text gambling check (queue item): previous progress kept as site-scan-progress-1.json, fresh pass over all 14,814 Website links, 6 at a time, 15 s limit, ~30 min in 6 parts. 15 set aside to deadlinks (kept): gambling/lottery pages behind the clubs' old domains (BU Finance and Investment Club, Indiana Hispanic Finance Association, Miami Club Baseball, UCI Jodaiko, UConn Holy Family, UGA Economics Society, UMass Thats Life SCI - the last kept its title over injected slot text), suspended hosting (Duke Poker, PSU New Life, SJSU Hockey, UGA College Republicans, Michigan Sigma Nu), domains gone (Indiana Bloomingtones, UW CKI, UW InterVarsity). Two that looked like possible false positives were opened by hand - both are gambling pages.
 - Spot check clubs: UCR EEOB GSA (department site), NC State Animal Science Club, MSU SAFE (national site), PSU Men's Water Polo, Syracuse Alpha Omega Epsilon - fine.
 - Spot check courses: 5 random Georgia Tech Fall 2026 classes match.
+
+## 2026-11-08 15:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Short links in club data (queue item): 32 bit.ly/tinyurl/tiny.cc/t.co/shorturl links followed once.
+  - 13 land on the club's own page (Google Sites, Wix, Notion, Linktree, netlify, square.site, InterVarsity chapter page) → now point to that page; kept in new server/data/link-redirects.csv and applied by cleanCollectedOrgs on every collect, since directories keep giving the short link (test).
+  - 16 set aside to deadlinks: Zoom meeting, Discord (2), GroupMe, WhatsApp, mailing-list and national membership sign-ups, ballot and interest forms, internal officer documents (2), login-only Google Sites (3), a medical-school curriculum page, one 404.
+  - 3 left as they are: Penn shorturl.at (bot check), Clemson Notion (untitled), GW bit.ly landing page.
+- Santa Clara: the Leavey School of Business student-organizations page links clubs directly - 10 links (AKPsi, Delta Sigma Pi, Phi Chi Theta sites; Santa Clara Consulting; Finance Association; Women in Investment; LinkedIn for FinTech SA, INFORMS, Women's Network, Women in Business). scuwib.org no longer exists (left out); forms, mailing lists, a personal LinkedIn and an institute page skipped. SCU now 30 clubs with a public link.
+- Spot check clubs: Rice Ballroom, UF IEEE EMBS, UCI Christian Students, Clemson SHPE, PSU Deep-Tech Syndicate - fine.
+- Spot check courses: 5 random BU Fall 2026 classes match.
