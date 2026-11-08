@@ -286,7 +286,9 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   // 이모지는 파일에도 남기지 않는다(동아리 이름·설명, 2026-11-05 점검에서 약 160개) — 서버 응답에서도 지우지만 데이터 자체를 깨끗하게
   if (existsSync(file)) {
     const raw = readFileSync(file, 'utf8'); const list = JSON.parse(raw) as Organization[];
-    const { orgs: clean, badLinks } = cleanCollectedOrgs(list, new Date().toISOString().slice(0, 10));
+    const redirFile = path.join(DATA_DIR, 'link-redirects.csv');
+    const redirects = existsSync(redirFile) ? Object.fromEntries(readFileSync(redirFile, 'utf8').trim().split('\n').slice(1).map((l) => l.split(',')).filter((c) => c[0] && c[1]).map((c) => [c[0], c[1]])) : {};
+    const { orgs: clean, badLinks } = cleanCollectedOrgs(list, new Date().toISOString().slice(0, 10), redirects);
     if (badLinks.length) { const df = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`); const old = existsSync(df) ? JSON.parse(readFileSync(df, 'utf8')) as unknown[] : []; writeFileSync(df, `${JSON.stringify([...old, ...badLinks], null, 1)}\n`); }
     const next = `${JSON.stringify(clean, null, 1)}\n`; if (next !== raw) writeFileSync(file, next);
   }

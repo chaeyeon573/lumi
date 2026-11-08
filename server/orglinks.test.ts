@@ -313,3 +313,10 @@ test('cleanCollectedOrgs: named entities, double-encoded letters and literal "\\
   assert.equal(orgs[1].name, 'Café Société');
   assert.equal(orgs[1].description, 'We rock � here');
 });
+
+test('cleanCollectedOrgs: a short link with a checked destination is replaced by that page', async () => {
+  const { cleanCollectedOrgs } = await import('./sources/orglinks');
+  const base = { schoolId: 's_x', verified: false, gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], logo: { emoji: 'X', hue: 1 }, type: 'club', description: '' };
+  const { orgs } = cleanCollectedOrgs([{ ...base, id: 'a', name: 'A', links: [{ label: 'Website', url: 'http://tinyurl.com/gt-mbsa' }, { label: 'Instagram', url: 'https://www.instagram.com/a/' }] }] as never, '2026-11-08', { 'http://tinyurl.com/gt-mbsa': 'https://mbsagt.netlify.app/' });
+  assert.deepEqual(orgs[0].links, [{ label: 'Website', url: 'https://mbsagt.netlify.app/' }, { label: 'Instagram', url: 'https://www.instagram.com/a/' }]);
+});

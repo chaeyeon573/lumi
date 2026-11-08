@@ -358,7 +358,7 @@ export function descriptionInstagram(text?: string): string | undefined {
 /** UMN GopherLink 은 단체 이름 끝에 등록 번호를 붙인다("GopherHack #4489", 1,222개 중 1,214개) — 이름이 아니라 번호라 뗀다. UCLA "USAC General Representative #1" 같은 자리 이름은 그대로 (UMN 만) */
 export const stripRegNumber = (schoolId: string | undefined, name: string) => (schoolId === 's_umn' ? name.replace(/\s*#\d{2,5}$/, '') : name);
 
-export function cleanCollectedOrgs(list: Organization[], today: string): { orgs: Organization[]; badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] } {
+export function cleanCollectedOrgs(list: Organization[], today: string, redirects: Record<string, string> = {}): { orgs: Organization[]; badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] } {
   const has = (t?: string) => !!t && /[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]/u.test(t);
   const ent = (t?: string) => (t && /&(amp|quot|lt|gt|apos|#\d+|#x[0-9a-f]+);/i.test(t) ? decodeNumericEntities(t.replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')).replace(/&amp;/g, '&') : t);
   const badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] = [];
@@ -367,6 +367,8 @@ export function cleanCollectedOrgs(list: Organization[], today: string): { orgs:
   const uses = new Map<string, number>(); for (const o of list) for (const u of new Set((o.links ?? []).filter((l) => !DIR.test(l.label)).map((l) => l.url.trim()))) uses.set(u, (uses.get(u) ?? 0) + 1);
   const shared = new Set([...uses].filter(([, n]) => n >= 50).map(([u]) => u));
   const tags = (t?: string) => (t && /<\/?(p|b|strong|i|em|br|div|span|ul|li|a)\b[^>]*>/i.test(t) ? t.replace(/<br\s*\/?>|<\/p>|<\/li>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/[ \t]{2,}/g, ' ').trim() : t);
+  // 줄인 주소(bit.ly, tinyurl …)는 손으로 따라가 본 실제 동아리 페이지로 (server/data/link-redirects.csv, 2026-11-08) — 디렉터리가 매주 줄인 주소를 다시 줘도
+  if (Object.keys(redirects).length) list = list.map((o) => ((o.links ?? []).some((l) => redirects[l.url]) ? { ...o, links: (o.links ?? []).map((l) => (redirects[l.url] ? { ...l, url: redirects[l.url] } : l)) } : o));
   const orgs = list.map((o0) => {
     // 로그인 화면으로 저장된 SNS 주소 → 원래 프로필(주소 안 next/redirect 값). 관리자 주소 꼬리(/wp-admin, Squarespace /config) → 공개 사이트
     // 공개가 아닌 관리·편집 주소(Wix 대시보드, Mailchimp 관리, Google Sites 편집 링크)는 badLinks 로 (2026-11-05 점검 30여 개)

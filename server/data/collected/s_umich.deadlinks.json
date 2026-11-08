@@ -516,5 +516,17 @@
   "url": "https://www.michigansigmanu.com/",
   "checkedAt": "2026-11-08",
   "note": "domain now shows an unrelated site: \"Account Suspended\""
+ },
+ {
+  "orgId": "oc_umich_chemistry_graduate_student_council",
+  "url": "http://bit.ly/UMichCGSC",
+  "checkedAt": "2026-11-08",
+  "note": "short link to a login-only Google site"
+ },
+ {
+  "orgId": "oc_umich_tcca",
+  "url": "http://tinyurl.com/TCCAatUM",
+  "checkedAt": "2026-11-08",
+  "note": "short link to a login-only Google site"
  }
 ]
