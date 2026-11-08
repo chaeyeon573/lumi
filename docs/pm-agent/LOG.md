@@ -2698,3 +2698,14 @@
 - Santa Clara: the Leavey School of Business student-organizations page links clubs directly - 10 links (AKPsi, Delta Sigma Pi, Phi Chi Theta sites; Santa Clara Consulting; Finance Association; Women in Investment; LinkedIn for FinTech SA, INFORMS, Women's Network, Women in Business). scuwib.org no longer exists (left out); forms, mailing lists, a personal LinkedIn and an institute page skipped. SCU now 30 clubs with a public link.
 - Spot check clubs: Rice Ballroom, UF IEEE EMBS, UCI Christian Students, Clemson SHPE, PSU Deep-Tech Syndicate - fine.
 - Spot check courses: 5 random BU Fall 2026 classes match.
+
+## 2026-11-08 16:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Few-links schools (CampusGroups club pages are login-only, so official school pages are the only bulk source). Each candidate matched by name to a club without a site, opened, and checked (not dead, not 5xx, not a login/SSO redirect, not parked or taken over); national-body sites, directories, Discord and department home pages left out. Rows in org-links-<school>.csv, re-applied on every collect.
+  - Northwestern (McCormick undergraduate/graduate, ECE, BME, MSE pages): 17 links. Women in Computing's site redirects to Northwestern SSO - removed after a hand check; NU Robotics and GLAC sites 404.
+  - Georgetown (Sustainability, SFS pages): 3 links; Lecture Fund (503), Farmers' Market (origin DNS error), Outdoor Education (domain gone) left out.
+  - UCSB (College of Engineering + Engineering Student Council club lists): 36 links; NSBE (Google sign-in), Phi Sigma Rho (dead), GDG page (dead) left out.
+  - Tufts (School of Engineering student-life, ME, ChBE pages): 16 links.
+  - Emory: official pages list no club links. Columbia engineering pages: 403 to automated requests.
+- Spot check clubs: GT LOGRAS, UC Davis CodeLab, BC Phaymus fine; UNC OutLaw links the law school's student-org list (503 here), UVA BRASA the national site (503 here) - left.
+- Spot check courses: 5 random Cornell Spring 2027 classes match.
