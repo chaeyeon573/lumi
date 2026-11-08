@@ -2675,3 +2675,10 @@
 - CMU: 63 class titles repeated around " : " ("Machine Learning in Practice : Machine Learning in Practice") - reader now shows it once (test; real "Production Prep: Julius Caesar : Directing" titles untouched), file repaired.
 - Spot check clubs: UChicago Ankara Magic, Penn MERT, GW Compass, Cornell Global Health SAB fine; UMass Society of American Foresters links the national eforester.org history page (club's choice) - left.
 - Spot check courses: 5 random CMU Spring 2027 classes match (Vanderbilt has no live lookup in the reader).
+
+## 2026-11-08 13:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Santa Clara club links (queue item; had 1 of 163): the SCU School of Engineering has a public page per engineering club (25 read, 1 s apart). For 19 clubs: the club's own site when it opens and names the club (BMES, Formula SAE, Theta Tau, SWE) plus Instagram/Facebook listed there (AI Collaborate, NSBE, Formula SAE, Theta Tau, Queer & Qualified); otherwise the SCU club page. Own sites not used: ACM-W (Google sign-in), ASME (401), ACM ("Old Page"), AIAA (empty), AI club domain (DNS failure), EWB ewbscu.com (now an Indonesian slot site). 26 links in new org-links-scu.csv. National-body sites (IEEE, ASCE, SHPE, TBP …) not used.
+- isHijackedPage only read the title; ewbscu.com has a plain title over a slot-gambling body. Now also counts body words used only by those pages (gacor, togel, maxwin, situs slot, judi online; 2+), test added. Queued a one-time re-scan of all club websites with it.
+- Spot check clubs: CMU 180DC, Miami Sailing, UT Responsible Intelligence Network fine; MSU Pre-Vet (wix page 404) and UCSB YEP (bit.ly to an application form) → deadlinks. Queued a check of the ~25 short links.
+- Spot check courses: 5 random USC Fall 2026 classes match.
