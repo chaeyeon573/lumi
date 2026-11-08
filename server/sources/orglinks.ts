@@ -334,6 +334,18 @@ export function publicFix(url: string): string {
  *  - 이모지가 있는 이름·설명만 이모지를 뺀다(다른 띄어쓰기는 그대로)
  *  - 디렉터리가 두 번 감싼 HTML 문자(&amp; &#39;)를 푼다 (UW·Lehigh)
  *  - 링크 앞뒤 빈칸은 지우고, 가운데 빈칸이 있어 열리지 않는 주소("facebook.com/Alpha Omicron Pi - SJSU")는 badLinks 로 돌려준다(호출하는 쪽이 deadlinks 에 남긴다) */
+/**
+ * 소개 글에 "Instagram: @handle" 처럼 서비스 이름과 함께 적은 계정 → 인스타 주소 (동아리가 직접 적은 것. 2026-11-08 54곳).
+ * 서비스 이름 없이 "@handle" 만 있으면 어느 서비스인지 몰라 쓰지 않는다(descriptionLinks 와 같다). 메일 주소(@gmail.com)는 아니다.
+ */
+export function descriptionInstagram(text?: string): string | undefined {
+  const m = /\b(?:instagram|insta|ig)\b\s*(?:handle|account|page)?\s*(?:is|at)?\s*[:\-\u2013]?\s*@([A-Za-z0-9._]{2,30})/i.exec(text ?? '');
+  if (!m) return undefined;
+  const h = m[1].replace(/\.+$/, '');
+  if (h.length < 2 || /\.(com|edu|org|net)$/i.test(h) || /@/.test((text ?? '').slice(m.index + m[0].length, m.index + m[0].length + 1))) return undefined;
+  return `https://www.instagram.com/${h.toLowerCase()}/`;
+}
+
 export function cleanCollectedOrgs(list: Organization[], today: string): { orgs: Organization[]; badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] } {
   const has = (t?: string) => !!t && /[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]/u.test(t);
   const ent = (t?: string) => (t && /&(amp|quot|lt|gt|apos|#\d+|#x[0-9a-f]+);/i.test(t) ? decodeNumericEntities(t.replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')).replace(/&amp;/g, '&') : t);
@@ -363,6 +375,9 @@ export function cleanCollectedOrgs(list: Organization[], today: string): { orgs:
       for (const l of links.filter((l) => /\s/.test(l.url))) badLinks.push({ orgId: o.id, url: l.url, checkedAt: today, note: `${l.label} address has spaces - does not open` });
       o = { ...o, links: links.filter((l) => !/\s/.test(l.url)) };
     }
+    // 인스타 링크가 없는데 소개에 "Instagram: @handle" 이 있으면 붙인다
+    const ig = (o.type === 'club' || o.type === 'greek') && !(o.links ?? []).some((l) => l.label === 'Instagram') ? descriptionInstagram(o.description) : undefined;
+    if (ig) o = { ...o, links: [...(o.links ?? []), { label: 'Instagram', url: ig }] };
     return o;
   });
   return { orgs, badLinks };

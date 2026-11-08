@@ -259,3 +259,21 @@ test('cleanCollectedOrgs: retired directory addresses that redirect to a generic
   assert.deepEqual(r.orgs[1].links, []);
   assert.equal(r.badLinks.length, 2);
 });
+
+test('descriptionInstagram: handle named with Instagram/IG becomes a link; bare @handle and mail addresses do not', async () => {
+  const { descriptionInstagram, cleanCollectedOrgs } = await import('./sources/orglinks');
+  assert.equal(descriptionInstagram('Follow us! INSTAGRAM: @cmuclubswimming'), 'https://www.instagram.com/cmuclubswimming/');
+  assert.equal(descriptionInstagram('IG: @crucleveland.'), 'https://www.instagram.com/crucleveland/');
+  assert.equal(descriptionInstagram('Instagram - @RocTheMats'), 'https://www.instagram.com/rocthemats/');
+  assert.equal(descriptionInstagram('Find us @ability_washu'), undefined);
+  assert.equal(descriptionInstagram('Email ig @club@gmail.com'), undefined);
+  const base = { schoolId: 's_x', verified: false, gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], logo: { emoji: 'X', hue: 1 } };
+  const { orgs } = cleanCollectedOrgs([
+    { ...base, id: 'a', name: 'A', type: 'club', description: 'Insta: @ccotaf', links: [] },
+    { ...base, id: 'b', name: 'B', type: 'club', description: 'Insta: @other', links: [{ label: 'Instagram', url: 'https://www.instagram.com/b/' }] },
+    { ...base, id: 'c', name: 'C', type: 'department', description: 'IG: @office', links: [] },
+  ] as never, '2026-11-08');
+  assert.deepEqual(orgs[0].links, [{ label: 'Instagram', url: 'https://www.instagram.com/ccotaf/' }]);
+  assert.equal(orgs[1].links?.length, 1);
+  assert.equal(orgs[2].links?.length, 0);
+});
