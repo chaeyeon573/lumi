@@ -235,6 +235,7 @@ test('publicFix / cleanCollectedOrgs: login-redirect social links point at the r
 test('publicFix: tracking tails (fbclid, utm_*, igshid) are removed, other query parts stay', async () => {
   const { publicFix } = await import('./sources/orglinks');
   assert.equal(publicFix('https://linktr.ee/SylvanSnackBar?fbclid=PAZXh0bgNhZW0CMTEAAaa'), 'https://linktr.ee/SylvanSnackBar');
+  assert.equal(publicFix('https://linktr.ee/aspiringeducatorsatpenn?ltsid=fe85284f-4f54-457a-910b-a9b6af0af32b'), 'https://linktr.ee/aspiringeducatorsatpenn');
   assert.equal(publicFix('https://www.instagram.com/umass_club/?igshid=abc&utm_source=qr'), 'https://www.instagram.com/umass_club/');
   assert.equal(publicFix('https://example.org/page?id=7&utm_campaign=x'), 'https://example.org/page?id=7');
   assert.equal(publicFix('https://example.org/page?id=7'), 'https://example.org/page?id=7');

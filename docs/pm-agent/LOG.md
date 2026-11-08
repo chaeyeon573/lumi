@@ -2606,3 +2606,10 @@
 - Daily refresh: events for all 65 schools (16,163 upcoming, no errors) - first run with the CampusGroups host fix and event de-dup: 0 group-id prefixes, 0 repeats, 0 UMN registration numbers. Jobs: 1,236 postings from 183/183 boards (internships 835, PhD 172, master's 80, new grad 349, postdoc 13); 18 same-role repeats set aside in jobs-us.dropped.json.
 - Spot check clubs: IU Museum of Archaeology and Anthropology was listed as a club → museum/center sweep: 48 university museums, galleries, gardens, writing/tutoring/health centers and official resource/cultural centers set to department (org-type-overrides.csv). Student-run ones kept as clubs (UMN student cultural centers, UMass cultural centers, student galleries, student-run clinics, peer counseling). Others fine: UChicago Midway Ventures, UMN Phi Lambda Sigma, Yale SAFE (national site), UCSB Black Book (503, named).
 - Spot check courses: 5 random Lehigh Spring 2027 classes match.
+
+## 2026-11-08 04:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Placeholder sweep: directory test/sandbox/template/inactive entries ("Engage Test Org", "RSO Test Group", "Sandbox GT", "Peabody Institute: RSO Template", "DOSO - TEST", "… (Inactive)", "To Be Archived" …) were showing as clubs - the filter only knew names starting with "Test …". `isPlaceholderOrg` widened (test incl. look-alikes kept: Sandbox Improvisation, Singh Sandbox Makerspace, Test Kitchen, Yale Film Archive): 37 entries in 24 schools now hidden from preview lists; files keep them.
+- Linktree `ltsid` tracking tail removed from links (publicFix, test): 109 links in 27 files.
+- Spot check clubs: MIT Spinning Arts, Vanderbilt Commodore Capital, Penn Aspiring Educators (led to the ltsid fix), IU Funding Board fine; SF State Black Unity Center is a university equity office → department (override added).
+- Spot check courses: 5 random CMU Fall 2026 classes match.
