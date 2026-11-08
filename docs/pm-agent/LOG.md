@@ -2719,3 +2719,12 @@
   - Found and fixed in my own run: club names shared across schools made two rows pick another school's id; the add step skipped them (no wrong data written), redone with the Illinois ids. Checked every org-links-<school>.csv: no rows with another school's ids.
 - Spot check clubs: UCR Autistic Women's Society, UVA KSA, BU FinTech Group, UT Baptist Student Ministry fine; Notre Dame Expanding Your Horizons (sites.nd.edu) answers 403 to automated requests - not judged.
 - Spot check courses: 5 random Maryland Spring 2027 classes match.
+
+## 2026-11-08 18:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Few-links schools, non-engineering official pages:
+  - Georgetown Department of Performing Arts group pages give each group's link as plain text after "Learn more at" (the matcher only reads anchor names) - parsed by hand: Black Theatre Ensemble, Mask and Bauble, Pep Band, GraceNotes (4 links); Superfood's site is dead; Nomadic Theatre is not in the CampusGroups list.
+  - Emory Spiritual and Religious Life undergraduate page: Chabad at Emory (FCA links the national body - skipped).
+  - Northwestern Fraternity and Sorority Life council pages answer 503 here.
+- Spot check clubs: CMU Business Association, Lehigh LSA, UChicago Phoenix Sustainability, CWRU Ice Hockey, USC Film and TV Writers - fine.
+- Spot check courses: 5 random Lehigh Fall 2026 classes match.
