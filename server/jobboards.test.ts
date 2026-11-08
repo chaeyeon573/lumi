@@ -68,3 +68,12 @@ test('classify: hourly trade and shift jobs are not college new-grad roles; stud
   assert.equal(classify('Scientist I, Computational Protein Design')?.audience.includes('newgrad'), true);
   assert.equal(classify('Software Engineer, New Grad 2027')?.audience.includes('newgrad'), true);
 });
+
+test('splitRepeatJobs: same company, title and location kept once; the rest set aside with the kept id', async () => {
+  const { splitRepeatJobs } = await import('./sources/jobboards');
+  const j = (id: string, location: string) => ({ id, company: 'Intel', sector: 'Semis', title: 'Module Engineering PhD Intern', location, url: `https://x/${id}`, kind: 'internship' as const, audience: ['phd' as const], source: 'workday' as const });
+  const { keep, repeats } = splitRepeatJobs([j('a', 'US, Oregon, Hillsboro'), j('b', 'US, Oregon,  Hillsboro'), j('c', 'US, Arizona, Chandler')]);
+  assert.deepEqual(keep.map((x) => x.id), ['a', 'c']);
+  assert.equal(repeats[0].id, 'b');
+  assert.match(repeats[0].reason, /as a$/);
+});

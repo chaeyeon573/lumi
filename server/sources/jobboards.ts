@@ -82,6 +82,20 @@ export function toStudentJobs(raw: RawJob[], b: { platform: JobPlatform; token: 
   return out;
 }
 
+/**
+ * 회사·제목·장소가 모두 같은 공고는 학생에게 한 개로 보인다(채용 번호만 다른 같은 자리 — 2026-11-08 19건: Intel PhD 인턴, Boeing …).
+ * 처음 것을 남기고 나머지는 repeats 로 돌려준다(부르는 쪽이 jobs-us.dropped.json 에 남긴다 — 지우지 않는다).
+ */
+export function splitRepeatJobs(list: StudentJob[]): { keep: StudentJob[]; repeats: (StudentJob & { reason: string })[] } {
+  const first = new Map<string, string>(); const keep: StudentJob[] = []; const repeats: (StudentJob & { reason: string })[] = [];
+  for (const j of list) {
+    const k = `${j.company}|${j.title}|${j.location}`.toLowerCase().replace(/\s+/g, ' ').trim();
+    const f = first.get(k);
+    if (f) repeats.push({ ...j, reason: `same company, title and location as ${f}` }); else { first.set(k, j.id); keep.push(j); }
+  }
+  return { keep, repeats };
+}
+
 export const boardUrl = (platform: Exclude<JobPlatform, 'workday'> | JobPlatform, token: string) =>
   platform === 'greenhouse' ? `https://boards-api.greenhouse.io/v1/boards/${encodeURIComponent(token)}/jobs`
     : platform === 'lever' ? `https://api.lever.co/v0/postings/${encodeURIComponent(token)}?mode=json`
