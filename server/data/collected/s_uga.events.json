@@ -1,7 +1,8 @@
 {
- "collectedAt": "2026-11-08T03:42:17.241Z",
+ "collectedAt": "2026-11-08T23:37:57.802Z",
  "sources": [
-  "engage https://uga.campuslabs.com/engage 157"
+  "engage https://uga.campuslabs.com/engage 160",
+  "localist https://calendar.uga.edu 144"
  ],
  "events": [
   {
@@ -17,8 +18,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12925933",
    "type": "event",
    "title": "November Double Feature Weekend Featuring Minions and Monsters",
@@ -48,8 +49,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12926017",
    "type": "event",
    "title": "November Double Feature Weekend Featuring Sonic 3",
@@ -67,6 +68,94 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "CTEGD Research in Progress (RiP) meetings are weekly, interactive, student-facilitated presentations. They will be held at 8:30 a.m. on Mondays in room 175, Coverdell Center, during the academic calendar year. Advanced students, postdocs, technicians, and PIs from CTEGD labs pres",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53637758292224",
+   "type": "event",
+   "title": "Rosenberg Lab - CTEGD Research in Progress",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-09T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Paul D. Coverdell Center for Biomedical and Health Sciences, 175",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/rosenberg-lab-ctegd-research-in-progress",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Casey Stewart; \"Expanding the Toolkit for Satellite Glial Cell and Peripheral Nervous System Biology: Single-Cell Resources for the Dorsal Root Ganglion, Enhancer-Based Access, and Conserved Regulatory Logic\"",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "classes and workshops",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54346640708576",
+   "type": "event",
+   "title": "Dissertation Defense (Public Presentation)",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-09T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Zell B. Miller Learning Center, 148",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/dissertation-defense-public-presentation-7839",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join the MFECOE Student Ambassadors for Student Appreciation Day on Monday, November 9th from 9 a.m.- 1 p.m. in Aderhold Hall Lobby and 10 a.m.- 2 p.m. in the Ramsey Center Atrium. Enjoy donuts, music, activities, and grab the new Mary Frances Early College of Education t-shirt! ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54232307409808",
+   "type": "event",
+   "title": "Student Appreciation Day",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-09T14:00:00.000Z",
+   "startTime": "09:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/student-appreciation-day",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "In honor of First-Generation Celebration Week, Franklin is hosting a drop-in event for all of our first-gen students! We welcome you to come by Tate 479 for breakfast treats and a special button and stay for as long as you'd like to chat with our ambassadors and each other! No RS",
    "eligibility": "Open to students",
    "tags": [
@@ -80,8 +169,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12816071",
    "type": "event",
    "title": "First-Gen Check In",
@@ -110,8 +199,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12882507",
    "type": "event",
    "title": "RA & RBA Information Session",
@@ -139,8 +228,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645488",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -168,8 +257,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12733502",
    "type": "event",
    "title": "Sports Staff Meeting",
@@ -186,7 +275,38 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Come find out about Franklin CREATE! Study Away: Boston Biotech & Medtech , a UGA Study Away program running in Maymester 2027. You&rsquo;ll spend a week of online gene-technology lectures from campus, then twelve days in Boston and New England. There you&rsquo;ll go behind the s",
+   "description": "The Willson Center for Humanities and Arts and the Georgia Museum of Art present a reception at 5 p.m. and visiting lecture by artist Joseph Walsh at 5:30 p.m. The event is part of the university's annual Spotlight on the Arts festival and part of the University’s 2026 Fall Signa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53620605699279",
+   "type": "event",
+   "title": "Artist Talk: Joseph Walsh",
+   "host": "Lamar Dodd School of Art",
+   "schoolId": "s_uga",
+   "date": "2026-11-09T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Georgia Museum of Art, Auditorium",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/artist-talk-joseph-walsh",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Come find out about Franklin CREATE! Study Away: Boston Biotech & Medtech , a UGA Study Away program running in Maymester 2027. You’ll spend a week of online gene-technology lectures from campus, then twelve days in Boston and New England. There you’ll go behind the s",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -197,8 +317,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12911705",
    "type": "event",
    "title": "Study Away info session: Boston Biotech & Medtech",
@@ -226,8 +346,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645076",
    "type": "event",
    "title": "Local Music Staff",
@@ -256,8 +376,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12748602",
    "type": "event",
    "title": "RBA Community Hours - Brumby Hall",
@@ -286,8 +406,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12638937",
    "type": "event",
    "title": "Coping Not Carrying- Friends and Family Meeting",
@@ -315,8 +435,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645014",
    "type": "event",
    "title": "Angels In Tibet Weekly Dance Practice - Kylah",
@@ -344,8 +464,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12853099",
    "type": "event",
    "title": "DevDogs Merge Monday",
@@ -374,8 +494,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12519683",
    "type": "event",
    "title": "MGC Potluck",
@@ -393,6 +513,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "First-year students of the UGA Horn Studio present a free recital.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859120917384",
+   "type": "event",
+   "title": "UGA Horn Studio First Year Recital",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/uga-horn-studio-first-year-recital",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Weekly Dance Practice",
    "eligibility": "Open to students",
    "tags": [
@@ -404,8 +553,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644990",
    "type": "event",
    "title": "The Cure Weekly Dance Practice - Kaelyn",
@@ -434,8 +583,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956105",
    "type": "event",
    "title": "Buckets & Bites: Basketball Watch Party w/ RA Dante",
@@ -453,6 +602,130 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Enjoy looking at art and storytime together in the galleries, then complete an art activity just for little ones. This free program is designed for families with children ages 18 months to 3+ years. Seats are limited; email gmoa-tours@uga.edu to reserve a spot.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53301989276855",
+   "type": "event",
+   "title": "Toddler Tuesday: Art in Nature",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/toddler-tuesday-art-in-nature",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Please join us for the dissertation prospectus defense by Dominique Valentine, PhD Student in Anthropology and Integrative Conservation. Her prospectus titled \"The Ecology of Segregation: Race, Biodiversity, and Lived Experience in Atlanta Parks\" will be held on Tuesday, November",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54369945264470",
+   "type": "event",
+   "title": "The Ecology of Segregation: Race, Biodiversity, and Lived Experience in Atlanta Parks",
+   "host": "Department of Anthropology",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Journalism Building, 0510",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/the-ecology-of-segregation-race-biodiversity-and-lived-experience-in-atlanta-parks",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join us this week as Susan Mattern asks, \"Who is Odysseus?\" Pizza will be served. This is an FYO event. Since our first Lunchtime Time Machine in 2016, our history faculty has brought history to light for our students and community at our popular Lunchtime Time Machine talks. Fac",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53744571710025",
+   "type": "event",
+   "title": "Susan Mattern asks, \"Who is Odysseus?\"",
+   "host": "Department of History",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T18:15:00.000Z",
+   "startTime": "13:15",
+   "place": {
+    "name": "Park Hall, 265",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/susan-mattern-asks-who-is-odysseus",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join Ivester Institute for Business Analytics and Insights Director and Assistant Director Chris Cornwell and Katie Ireland for this student workshop on the current state of play of AI and on agentic AI workflows. Please register at this link. Refreshments will be served.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54160388427937",
+   "type": "event",
+   "title": "AI State of Play and Agentic AI Student Workshop",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Sanford and Barbara Orkin Hall, D207",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/ai-state-of-play-and-agentic-ai-student-workshop",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Do you love music history? Listening to music? Even the alphabet? Come to WUOG's archiving staff to learn more about local music, organize records and CDs, and meet new people!! Every Tuesday at 5pm in the WUOG lobby (next to the Starbucks).",
    "eligibility": "Open to students",
    "tags": [
@@ -464,8 +737,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12605798",
    "type": "event",
    "title": "Archiving Staff",
@@ -494,8 +767,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12531532",
    "type": "event",
    "title": "Pivot Your PhD: Career Opportunities in Innovation and Entrepreneurship",
@@ -524,8 +797,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12886146",
    "type": "event",
    "title": "Rook & Pawn Percentage Event",
@@ -542,6 +815,70 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This Art History Faculty Lecture features Professor Nell Andrew, who will present “The Puppet in the Avant-Garde Imagination.” Lecture details forthcoming. Andrew (PhD, University of Chicago) teaches courses in European and Latin American Modern Art, modernism and the historical ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53825064834842",
+   "type": "event",
+   "title": "Art History Faculty Lecture with Nell Andrew | The Puppet in the Avant-Garde Imagination",
+   "host": "Lamar Dodd School of Art",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Lamar Dodd School of Art, N100",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/art-history-faculty-lecture-with-nell-andrew-the-puppet-in-the-avant-garde-imagination",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join The Backpack Project of Athens for their annual Perspectives on Homelessness event. This event begins with a screening on No Place to Grow Old at Ciné followed by a panel discussion with local homeless service providers.",
+   "eligibility": "Cost: $8",
+   "tags": [
+    "event",
+    "talk",
+    "entertainment",
+    "fundraisers",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54372045117882",
+   "type": "event",
+   "title": "Perspectives on Homelessness with The Backpack Project of Athens",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Ciné",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/perspectives-on-homelessness-with-the-backpack-project-of-athens",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Weekly Dance Practice",
    "eligibility": "Open to students",
    "tags": [
@@ -553,8 +890,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644978",
    "type": "event",
    "title": "Sleepless Weekly Dance Practice - Lily",
@@ -582,8 +919,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12470682",
    "type": "event",
    "title": "UMatter",
@@ -613,8 +950,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12816068",
    "type": "event",
    "title": "Rural Connections Networking Dinner",
@@ -632,7 +969,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "MTC workshops are hands-on learning sessions designed to help students and professionals build practical skills in technology, business, and career development. Each workshop focuses on a specific topic&mdash;from technical skills and emerging technologies to entrepreneurship, pr",
+   "description": "MTC workshops are hands-on learning sessions designed to help students and professionals build practical skills in technology, business, and career development. Each workshop focuses on a specific topic—from technical skills and emerging technologies to entrepreneurship, pr",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -643,8 +980,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12825122",
    "type": "event",
    "title": "MTC Workshop",
@@ -672,8 +1009,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12605783",
    "type": "event",
    "title": "Operations Staff",
@@ -690,6 +1027,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join the Georgia Writers Hall of Fame and the University of Georgia Press or a talk with Jon Boorstin, author of The American: The Hidden History of Daniel J. Boorstin and His Twentieth Century. What does it mean to be an American? Historian Daniel J. Boorstin spent a lifetime po",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53998380577415",
+   "type": "event",
+   "title": "Jon Boorstin to Discuss The American: The Hidden History of Daniel J. Boorstin and His Twentieth Century",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Richard B. Russell Special Collections Libraries, 285",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/jon-boorstin-to-discuss-the-american-the-hidden-history-of-daniel-j-boorstin-and-his-twentieth-century",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join us for a Winter-themed social mixer with NGSA and Nu Rho Psi for an opportunity to have some holiday fun and network with grad students and fellow peers !! MLC 268",
    "eligibility": "Open to students",
    "tags": [
@@ -702,8 +1070,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951392",
    "type": "event",
    "title": "General Body Meeting #4",
@@ -733,8 +1101,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12803636",
    "type": "event",
    "title": "Grant Thornton Speaker Event",
@@ -763,8 +1131,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951389",
    "type": "event",
    "title": "Dark Moon Group Meditation",
@@ -792,8 +1160,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12929562",
    "type": "event",
    "title": "Velada de Otoño",
@@ -810,7 +1178,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Come down to the lobby every Tuesday to watch and discuss a short film, set up for our weekly &ldquo;Live in the Lobby&rdquo; shows that start at 8:00, and make new friends! Our main responsibility is taking/editing photos and videos during the shows - no camera or experience nee",
+   "description": "Come down to the lobby every Tuesday to watch and discuss a short film, set up for our weekly “Live in the Lobby” shows that start at 8:00, and make new friends! Our main responsibility is taking/editing photos and videos during the shows - no camera or experience nee",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -821,8 +1189,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645024",
    "type": "event",
    "title": "Digital Media Staff",
@@ -850,8 +1218,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644965",
    "type": "event",
    "title": "Afterbody Weekly Dance Practice - Skylar",
@@ -879,8 +1247,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645293",
    "type": "event",
    "title": "Bible Study",
@@ -897,6 +1265,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "University of Georgia Wind Ensemble: Chamber Winds present a free concert.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859131483331",
+   "type": "event",
+   "title": "University of Georgia Wind Ensemble: Chamber Winds",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/university-of-georgia-wind-ensemble-chamber-winds",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Free live music from a local band every Tuesday night.",
    "eligibility": "Open to students",
    "tags": [
@@ -908,8 +1305,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645090",
    "type": "event",
    "title": "Live in the Lobby",
@@ -926,6 +1323,99 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This program focuses on the processes and principles that characterize excellence in leadership and how to successfully transition from individual contributor to leader. The program consists of self-assessments, case studies, peer-to-peer learning, and action plans to improve ind",
+   "eligibility": "Cost: $3,450",
+   "tags": [
+    "event",
+    "talk",
+    "classes and workshops",
+    "lectures and discussions",
+    "networking"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53478622658405",
+   "type": "event",
+   "title": "UGA Executive Education Leaders Academy",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Terry Executive Education Center, Suite 300",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/uga-executive-education-leaders-academy",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The UGA Redcoat Band will perform a few of their famous pep tunes.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54284987017612",
+   "type": "event",
+   "title": "Student Spotlight Redcoat Band Pop-Up",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Tate Student Center, Tate Plaza",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-spotlight-redcoat-band-pop-up",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "\"Something has to give: Why efforts to restore rivers and reduce groundwater depletion struggle to scale (and what might help),\" Dustin Garrick, Professor, University of Waterloo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54185876160036",
+   "type": "event",
+   "title": "Ecology Seminar Series: Dustin Garrick",
+   "host": "School of Ecology",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T15:15:00.000Z",
+   "startTime": "10:15",
+   "place": {
+    "name": "Ecology Building, 201",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/ecology-seminar-series-dustin-garrick-9120",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Come enjoy community and make connections at Tate Time! Hosted by different student organizations, we provide space for fun, community, and an opportunity to interact with different people. We provide games, music, and pizza, but You choose how to enjoy the experience your way!",
    "eligibility": "Open to students",
    "tags": [
@@ -938,8 +1428,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645459",
    "type": "event",
    "title": "Tate Time w/ CSE",
@@ -957,6 +1447,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Artful Conversation programs are 30 minutes long, focus on just one work of art and provide opportunities for close looking, open-ended dialogue and discovery. Join Callan Steinmann, director of learning and engagement, for a conversation on Edmonia Lewis’ small sculpture “Minneh",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions",
+    "tours"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302053293212",
+   "type": "event",
+   "title": "Artful Conversation: “Minnehaha”",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/artful-conversation-minnehaha",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Art Therapy Open Studio is a welcoming drop-in space where students can explore art materials, express themselves creatively, and experience the therapeutic benefits of art making while connecting with peers. Each session also offers optional art therapy activities designed to be",
    "eligibility": "Open to students",
    "tags": [
@@ -969,8 +1491,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12740233",
    "type": "event",
    "title": "Healing Through Art | Art Therapy: Open Studio",
@@ -999,8 +1521,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12686163",
    "type": "event",
    "title": "Ideation Sessions",
@@ -1029,8 +1551,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956203",
    "type": "event",
    "title": "Chill at the Hill: Art Social Hour",
@@ -1061,8 +1583,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12936161",
    "type": "event",
    "title": "Mini Lecture Series: Professor Bankert",
@@ -1080,6 +1602,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join the Department of Anthropology in welcoming Dr. Sabina Cveček, Postdoctoral Researcher at the Field Museum of Natural History in her talk titled \"Kinship Trouble\". This talk explores what anthropology can contribute to the growing dialogue between archaeology and archaeogene",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54369945415014",
+   "type": "event",
+   "title": "Kinship Trouble: Anthropological Perspectives on the Ancient DNA Revolution",
+   "host": "Department of Anthropology",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Baldwin Hall, 264",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/kinship-trouble-anthropological-perspectives-on-the-ancient-dna-revolution",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "FYOS Approved Join this workshop to better understand what stress looks like, learn practical strategies for managing it, explore mindfulness tools, & more!",
    "eligibility": "Open to students",
    "tags": [
@@ -1091,8 +1644,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12503438",
    "type": "event",
    "title": "Stress Management Workshop",
@@ -1109,7 +1662,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "If sleeping is on your list of things you&rsquo;ll finally do after graduation, this session is for you. Join B.A.L.A.N.C.E. for a practical virtual workshop focused on sleep hygiene and strategies graduate students can use to get more restful and consistent sleep now. Participan",
+   "description": "If sleeping is on your list of things you’ll finally do after graduation, this session is for you. Join B.A.L.A.N.C.E. for a practical virtual workshop focused on sleep hygiene and strategies graduate students can use to get more restful and consistent sleep now. Participan",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1120,8 +1673,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644751",
    "type": "event",
    "title": "B.A.L.A.N.C.E. | Sleep Hygiene",
@@ -1138,7 +1691,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for our 60&ndash;90-minute interactive seminar, as we plunge into topics related to navigating relationships online. Through this program, students will learn how to identify and act in sensitive online situations to support themselves and their peers. Don't just drift, d",
+   "description": "Join us for our 60–90-minute interactive seminar, as we plunge into topics related to navigating relationships online. Through this program, students will learn how to identify and act in sensitive online situations to support themselves and their peers. Don't just drift, d",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1149,8 +1702,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12486781",
    "type": "event",
    "title": "Digital Interpersonal Violence Education (DIVE)",
@@ -1178,8 +1731,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645478",
    "type": "event",
    "title": "All Recovery Meeting",
@@ -1207,8 +1760,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12664192",
    "type": "event",
    "title": "DevDogs Bug Bash",
@@ -1236,8 +1789,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644937",
    "type": "event",
    "title": "She Did It Again Weekly Dance Practice - Sara",
@@ -1266,8 +1819,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12901801",
    "type": "event",
    "title": "Bridge the Gap: From Campus to Social Work Career",
@@ -1285,7 +1838,70 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for an evening with Ryan Specialty featuring panel discussions, live Q&A, professional networking, and complimentary food. We can&rsquo;t wait to see you there!",
+   "description": "Join filmmaker Sam Ghioto, researchers, and conservation experts in Mahler Hall at the Georgia Center for a screening of A Thousand Rivulets Run, a documentary exploring the people, places, and conservation efforts that helped shape Georgia’s coastline. The film follows Sam Ghiot",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "performances and screenings"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54426332678965",
+   "type": "event",
+   "title": "A Thousand Rivulets Run: Film Screening & Panel Discussion",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Georgia Center for Continuing Education & Hotel, Mahler Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/a-thousand-rivulets-run-film-screening-panel-discussion",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Joins Women in Economics as we invite a speaker from the Health Economics Field. This is a great opportunity to gain exposure to a unique branch of the Economics field and network with industry professionals! Attire is business casual.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions",
+    "networking"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54419663037400",
+   "type": "event",
+   "title": "Health Economics",
+   "host": "John Munro Godfrey, Sr. Department of Economics",
+   "schoolId": "s_uga",
+   "date": "2026-11-11T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Benson Hall, C014",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/health-economics",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join us for an evening with Ryan Specialty featuring panel discussions, live Q&A, professional networking, and complimentary food. We can’t wait to see you there!",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1297,8 +1913,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956215",
    "type": "event",
    "title": "Ryan Specialty x ALPFA: Industry Insights & Networking",
@@ -1327,8 +1943,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12705188",
    "type": "event",
    "title": "Music Staff",
@@ -1357,8 +1973,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12816062",
    "type": "event",
    "title": "ASL Dawgs Deaf Panel",
@@ -1386,8 +2002,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644925",
    "type": "event",
    "title": "Headlock Weekly Dance Practice - Nylah",
@@ -1404,6 +2020,69 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "As part of the 2026 Spotlight on the Arts Festival, the UGA Department of Dance presents Throughline, the annual student choreography concert. The performance features original works choreographed and produced by students highlighting a variety of genres including ballet, contemp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54437542203200",
+   "type": "event",
+   "title": "Student Choreography Concert \"Throughline\"",
+   "host": "Department of Dance",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Dance Building, Dance Theatre 276",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-choreography-concert-throughline",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "This free community screening of the Peabody Award-nominated PBS American Masters documentary Art Spiegelman: Disaster Is My Muse is presented by the Willson Center for Humanities and Arts, the Program in Jewish Studies, the department of history, and the department of Germanic a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "entertainment",
+    "lectures and discussions",
+    "performances and screenings"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54054400636436",
+   "type": "event",
+   "title": "Screening & Conversation - \"Art Spiegelman: Disaster Is My Muse\"",
+   "host": "Department of Germanic and Slavic Studies",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T00:45:00.000Z",
+   "startTime": "19:45",
+   "place": {
+    "name": "Ciné",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/screening-conversation-art-spiegelman-disaster-is-my-muse",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Weekly Dance Practice",
    "eligibility": "Open to students",
    "tags": [
@@ -1415,8 +2094,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644901",
    "type": "event",
    "title": "Frenzy Weekly Dance Practice - Caleb",
@@ -1433,6 +2112,157 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join Brandon Quarles, Assistant Professor of Saxophone and Franklin CREATE! Faculty Ambassador, for a conversation about arts and entreprenuership. Franklin CREATE! empowers students in the arts and sciences with entrepreneurial confidence and startup-building skills while provid",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54293954773042",
+   "type": "event",
+   "title": "Arts Collaborative Conversation: CREATE!",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Lamar Dodd School of Art, S360",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/arts-collaborative-conversation-create",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Three Ph.D. students from UGA’s Creative Writing Program will read their poems and talk about the creative writing process.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54284298703975",
+   "type": "event",
+   "title": "Student Spotlight Literary Pop-Up",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Zell B. Miller Learning Center, Across from Jittery Joe's on the second floor",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-spotlight-literary-pop-up",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join one of the museum's student guides for a conversational tour of the permanent collection. Experience the galleries through the eyes of UGA undergraduates as they explore objects from a variety of disciplinary perspectives.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302085581065",
+   "type": "event",
+   "title": "Student Perspectives",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T16:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-perspectives-4080",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The History at Work Speaker Series invites former UGA majors, minors, and advocates to discuss how they can transform historical thinking into post-college careers, and to show current majors how to think about the strengths and possibilities of their own training. What can I do ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "networking"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54436651437369",
+   "type": "event",
+   "title": "History at Work: A Career talk with alum Mike Irby",
+   "host": "Department of History",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T18:15:00.000Z",
+   "startTime": "13:15",
+   "place": {
+    "name": "LeConte Hall, 201",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/history-at-work-mike-irby",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Interested in business leadership or entrepreneurship? Join Andrew Wexler, CEO of Herschend as he shares insights from his career and experience leading a global attractions company. Since joining Herschend in 2007, Andrew has helped drive company growth, expand its portfolio of ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "classes and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54418368278095",
+   "type": "event",
+   "title": "Terry Talks with Andrew Wexler, CEO, Herschend",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T19:45:00.000Z",
+   "startTime": "14:45",
+   "place": {
+    "name": "Correll Hall, Glover Boardroom, 402",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/terry-talks-with-andrew-wexler-ceo-herschend",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "RBA ZONE 3 Community Hour: Paint a paper bag for your door! Then write notes for your hallmates and drop them off at their door!",
    "eligibility": "Open to students",
    "tags": [
@@ -1446,8 +2276,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12670553",
    "type": "event",
    "title": "Bags of Thanks - Zone 3 Community Hour",
@@ -1476,8 +2306,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645489",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -1494,6 +2324,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "“If Those Things Could Talk: Indigenous Material Culture and the Languages of Diplomacy in Early America” Dr. Céline Carayon is Professor of History at Salisbury University and the author of Eloquence Embodied: Nonverbal Communication among French and Indigenous Peoples in the Am",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54436742891219",
+   "type": "event",
+   "title": "Atlantic Studies Speaker Series: Céline Carayon (Salisbury University)",
+   "host": "Department of History",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "LeConte Hall, 101",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/atlantic-studies-speaker-series-celine-carayon-salisbury-university",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Well-Being Resources and Campus Supports is a 90 minute training that focuses on informing students and staff about noticing the early signs for that someone is struggling and sharing the supports and resources available on campus.",
    "eligibility": "Open to students",
    "tags": [
@@ -1505,8 +2366,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951375",
    "type": "event",
    "title": "Support Dawgs - Well-Being Resources and Campus Supports",
@@ -1523,6 +2384,66 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Dance the night away during Village Summit’s totally tubular throwback night, featuring some of the raddest dishes from the neon decade. Menu Highlights: Zucchini Panzanella Salad, Swiss Steak, Vegan Chili Mac Casserole, Pepperoni Pizza Bake, Herbed Rice Pilaf, Monkey Bread",
+   "eligibility": "Cost: Included with All Access Meal Plan | 1 Swipe for Block Plan | $17.25 for Guests",
+   "tags": [
+    "event",
+    "free food",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54418128484684",
+   "type": "event",
+   "title": "80s Dance Party",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Village Summit Dining Commons",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/80s-dance-party",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join the Hargrett Rare Book and Manuscript Library and the Walter J. Brown Media Archives and Peabody Awards Collection for a free screening of the newly restored Athens, GA: Inside/Out. The 1986 documentary features interviews and concert footage of notable Athens bands, includi",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54237265262113",
+   "type": "event",
+   "title": "Film Screening: Athens, GA: Inside/Out 40th Anniversary Restoration",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Richard B. Russell Special Collections Libraries, 271",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/athens-ga-insideout-40th-anniversary-restoration-free-screening",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join members of your Residential Programs & Services team to learn more about the Resident Assistant (RA) and Residential Belonging Assistant (RBA) positions. These sessions are mandatory for anyone applying for either or both of these positions. Applications are open now until N",
    "eligibility": "Open to students",
    "tags": [
@@ -1534,8 +2455,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12882500",
    "type": "event",
    "title": "RA & RBA Information Session",
@@ -1563,8 +2484,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12557223",
    "type": "event",
    "title": "Volunteer with Serve UGA at The UGA Student Food Pantry",
@@ -1581,6 +2502,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join the Georgia Museum of Art Student Association and the Art Library (Lamar Dodd School of Art) at the museum to make a zine. Don’t know where to start? Not sure what a zine is? Looking for a creative outlet? The musuem has attendees covered. Instructors will introduce how to m",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302113255451",
+   "type": "event",
+   "title": "Student Zine-Making Night",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-zine-making-night",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join AAPS and the Pre-Pharmacy Society for a fun and interactive Jeopardy Night! Test your pharmacy knowledge, enjoy some friendly competition, connect with fellow students, and learn more about both organizations. All students are welcome, and free Olive Garden is included!",
    "eligibility": "Open to students",
    "tags": [
@@ -1592,8 +2542,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951435",
    "type": "event",
    "title": "AAPS x Pre-Pharmacy Society Jeopardy Night",
@@ -1621,8 +2571,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645037",
    "type": "event",
    "title": "PUBs and Events Staff",
@@ -1650,8 +2600,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644889",
    "type": "event",
    "title": "Dračica Weekly Dance Practice - Dominique",
@@ -1680,8 +2630,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12936063",
    "type": "event",
    "title": "Topic of the Table",
@@ -1711,8 +2661,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12803659",
    "type": "event",
    "title": "EY Speaker Meeting - Collab w/ WiB",
@@ -1737,8 +2687,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961790",
    "type": "event",
    "title": "Friendsgiving 2026",
@@ -1756,6 +2706,41 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join the English Department and the Creative Writing Program as we congratulate and celebrate Aruni Kashyap and his latest novel, How to Date a Fanatic. Propulsive, tense, and charged with humor and tenderness, How to Date a Fanatic is an exploration of identity, connectio",
+   "eligibility": "Cost: 0",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures and discussions",
+    "official university events",
+    "receptions and recognitions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54355392345392",
+   "type": "event",
+   "title": "Book Launch & Reception for Aruni Kashyap: HOW TO DATE A FANATIC",
+   "host": "Department of English",
+   "schoolId": "s_uga",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Founders Memorial House",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/book-launch-reception-for-aruni-kashyap-how-to-date-a-fanatic",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Weekly Dance Practice",
    "eligibility": "Open to students",
    "tags": [
@@ -1767,8 +2752,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12644875",
    "type": "event",
    "title": "Donk Weekly Dance Practice - Hannah",
@@ -1796,8 +2781,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538767",
    "type": "event",
    "title": "Movies at Tate Presents: The Secret Agent",
@@ -1827,8 +2812,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951430",
    "type": "event",
    "title": "Sense and Soul",
@@ -1846,7 +2831,97 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for the 2026 Ramsey Lecture, entitled &ldquo;Health as a Human Right: The Carter Center&rsquo;s Long Road to Creating Change&rdquo; presented by Paige Carmichael, Chief Executive Office, The Carter Center. A lunch reception will immediately follow. --- Paige Alexander ser",
+   "description": "With five Grammys, fourteen Blues Foundation Awards, and a career spanning nearly five decades, Keb’ Mo’ remains a driving force in modern roots music. He spent years honing his craft behind the scenes before his acclaimed 1994 debut introduced his genre-bending sound to the worl",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53808510258763",
+   "type": "event",
+   "title": "Performance: Keb’ Mo’",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/keb-mo",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "As part of the 2026 Spotlight on the Arts Festival, the UGA Department of Dance presents Throughline, the annual student choreography concert. The performance features original works choreographed and produced by students highlighting a variety of genres including ballet, contemp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54437746643380",
+   "type": "event",
+   "title": "Student Choreography Concert \"Throughline\"",
+   "host": "Department of Dance",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Dance Building, Dance Theatre 276",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-choreography-concert-throughline-6366",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The J. M. Tull School of Accounting will host Dr. Jessica Watkins, Associate Professor Accountancy and Deloitte Faculty Fellow of the Mendoza College of Business at the University of Notre Dame on Friday, November 13, 2026. Dr. Watkins will present The Benefits of Busy Earnings A",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54443252321666",
+   "type": "event",
+   "title": "Terry Research Series - Jessica Watkins",
+   "host": "J.M. Tull School of Accounting",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T15:15:00.000Z",
+   "startTime": "10:15",
+   "place": {
+    "name": "Amos Hall, B002",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/terry-research-series-jessica-watkins",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join us for the 2026 Ramsey Lecture, entitled “Health as a Human Right: The Carter Center’s Long Road to Creating Change” presented by Paige Carmichael, Chief Executive Office, The Carter Center. A lunch reception will immediately follow. --- Paige Alexander ser",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1859,8 +2934,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12727770",
    "type": "event",
    "title": "2026 Ramsey Lecture",
@@ -1891,8 +2966,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12503443",
    "type": "event",
    "title": "Snack Stop",
@@ -1910,6 +2985,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The College of Public Health and the School of Public and International Affairs co-host the 2026 Bernard B. Ramsey Lecture with Paige Alexander as part of the University's Fall 2026 Signature Lecture Series. This lecture will be held at the Richard B. Russell Special Collections ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53498025648066",
+   "type": "event",
+   "title": "2026 Bernard B. Ramsey Lecture with Paige Alexander",
+   "host": "College of Public Health",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Richard B. Russell Special Collections Libraries, Auditorium - Room 271",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/2026-ramsey-lecture-with-paige-alexander",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "International Coffee Hour is a weekly gathering bringing UGA students, faculty, staff, and community members together over coffee, international cuisine, and conversation. Enjoy free food and meet someone new every Friday from 11:30 am until 1:00 pm in the Victor K. Wilson Ballro",
    "eligibility": "Open to students",
    "tags": [
@@ -1922,8 +3028,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12582409",
    "type": "event",
    "title": "International Coffee Hour: Turkish Student Association",
@@ -1941,6 +3047,99 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "IOB Seminar: Dr. Avi Ma'ayan",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53974071168762",
+   "type": "event",
+   "title": "IOB Seminar: Dr. Avi Ma'ayan",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T16:35:00.000Z",
+   "startTime": "11:35",
+   "place": {
+    "name": "Fred C. Davison Life Sciences Complex, B118",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/iob-seminar-dr-avi-maayan",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join us in conversation with Dr. Meseret Hailu, who will be giving a talk titled \"Educational Equity and Ethnic Community-based Organizations (ECBOs): Connections for Postsecondary Access.\" Hailu is an assistant professor of higher education at the Louise McBee Institute of Highe",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53798602062297",
+   "type": "event",
+   "title": "Friday Speaker Series: Meseret Hailu",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Zell B. Miller Learning Center, 213",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/friday-speaker-series-meseret-hailu",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "International Coffee Hour is a weekly gathering bringing UGA students, faculty, staff, and community members together over coffee, international cuisine, and conversation. Enjoy free food and meet someone new every Friday from 11:30 a.m. until 1 p.m. in the Victor K. Wilson Ballr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "networking"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54002459026158",
+   "type": "event",
+   "title": "International Coffee Hour: Turkish Student Association",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Memorial Hall, Victor K. Wilson Ballroom",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/international-coffee-hour-turkish-student-association",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join Serve UGA this semester for volunteering opportunities with UGArden! UGArden promotes sustainable and healthy food systems through teaching students how to grow food with organic practices and sharing the harvests with members of the local community in need. We volunteer on ",
    "eligibility": "Open to students",
    "tags": [
@@ -1952,8 +3151,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12531527",
    "type": "event",
    "title": "Volunteer with Serve UGA at UGArden",
@@ -1970,6 +3169,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join the Department of Anthropology on Friday, November 13th at 3:30 PM in Baldwin Hall, 202 for the dissertation prospectus defense of Anthropology and Integrative Conservation student, Hannah Boone, titled \"Living With the River: Ideas of the Future, Sense of Place, and ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54378794663704",
+   "type": "event",
+   "title": "Living With the River: Ideas of the Future, Sense of Place, and Co-Creation of Risk Communication in the River Arts District Post-Helene",
+   "host": "Department of Anthropology",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Baldwin Hall, 202",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/living-with-the-river-ideas-of-the-future-sense-of-place-and-co-creation-of-risk-communication-in-the-river-arts-district-post-helene",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Come learn more about the Guide Dog Foundation, watch a demo with a service dog in training, and learn how to get involved!",
    "eligibility": "Open to students",
    "tags": [
@@ -1981,8 +3211,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12886155",
    "type": "event",
    "title": "Athens Area Puppy Raisers Interest Meeting",
@@ -1999,6 +3229,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join RA Dalton on Myers Quad to play some volleyball as a send off for the semester! All levels welcome!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
+   "id": "op_uga_eg_12962478",
+   "type": "event",
+   "title": "Volleyball Final Set",
+   "host": "Myers Quad (Myers, Mary Lyndon, Rutherford, Soule)",
+   "schoolId": "s_uga",
+   "date": "2026-11-13T22:15:00.000Z",
+   "startTime": "17:15",
+   "place": {
+    "name": "Myers Quad",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://uga.campuslabs.com/engage/event/12962478",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Join the GSA Council for updates on committees and the work we do to improve the graduate student experience at UGA!",
    "eligibility": "Open to students",
    "tags": [
@@ -2010,8 +3271,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12783456",
    "type": "event",
    "title": "GSA Council Meeting",
@@ -2039,8 +3300,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538769",
    "type": "event",
    "title": "Movies at Tate Presents: Hunger Games Movie Marathon",
@@ -2057,6 +3318,65 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "As part of the 2026 Spotlight on the Arts Festival, the UGA Department of Dance presents Throughline, the annual student choreography concert. The performance features original works choreographed and produced by students highlighting a variety of genres including ballet, contemp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54437774468804",
+   "type": "event",
+   "title": "Student Choreography Concert \"Throughline\"",
+   "host": "Department of Dance",
+   "schoolId": "s_uga",
+   "date": "2026-11-14T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Dance Building, Dance Theatre 276",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-choreography-concert-throughline-2540",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The University of Georgia Chinese Music Ensemble presents a free concert.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859143005593",
+   "type": "event",
+   "title": "University of Georgia Chinese Music Ensemble",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-14T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/university-of-georgia-chinese-music-ensemble",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Strike Up New Friendships at Bowling & Bonds! Looking to unwind, meet new people, and enjoy a fun evening with fellow graduate students? Join us for GSA &times; GSA: Bowling & Bonds , a night dedicated to building friendships, strengthening connections, and bringing our gra",
    "eligibility": "Open to students",
    "tags": [
@@ -2068,8 +3388,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961799",
    "type": "event",
    "title": "GSA × GSA: Bowling & Bonds",
@@ -2097,8 +3417,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951460",
    "type": "event",
    "title": "oSTEM Drag Night",
@@ -2126,8 +3446,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538770",
    "type": "event",
    "title": "Movies at Tate Presents: Hunger Games Movie Marathon",
@@ -2144,6 +3464,39 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Are you ready to learn more about the Executive, Professional, and Online MBA Programs? This event is designed to answer as many of your questions as possible and to confirm that the University of Georgia Executive or Professional MBA program is the right fit for you. Join us to ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions",
+    "meetings",
+    "information sessions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53567254208594",
+   "type": "event",
+   "title": "Atlanta Campus Preview Day - Executive, Professional, and Online MBA Programs",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-14T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Terry Executive Education Center",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/atlanta-campus-preview-day-executive-professional-and-online-mba-programs-9610",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join Serve UGA this semester for volunteering opportunities with Primarily ' Possum s! The overall mission of Primarily ' Possum s is to provide rescue and rehabilitation for the native wildlife of Georgia, with a focus on possums, bats, and oddballs. We will be working around th",
    "eligibility": "Open to students",
    "tags": [
@@ -2155,8 +3508,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12531517",
    "type": "event",
    "title": "Volunteer with Serve UGA at Primarily 'Possums",
@@ -2184,8 +3537,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12901825",
    "type": "event",
    "title": "Volunteer with Serve UGA at Friends of Brooklyn Cemetery",
@@ -2202,7 +3555,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join Serve UGA this semester for volunteering opportunities with Vincent&rsquo;s Place! Vincent&rsquo;s Place aims to create a safe, forever home for goats and other farm animals rescued from neglect, abuse, abandonment and slaughter and to provide interaction between the rescued",
+   "description": "Join Serve UGA this semester for volunteering opportunities with Vincent’s Place! Vincent’s Place aims to create a safe, forever home for goats and other farm animals rescued from neglect, abuse, abandonment and slaughter and to provide interaction between the rescued",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2213,8 +3566,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12581029",
    "type": "event",
    "title": "Volunteer with Serve UGA at Vincent's Place",
@@ -2242,8 +3595,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12960688",
    "type": "event",
    "title": "Community Gathering Floor 4 West",
@@ -2260,6 +3613,36 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Guys and Dolls is a dazzling celebration of Broadway at its most iconic — a bold, joyful musical spectacle filled with high-stakes gamblers, glamorous nightlife, and unforgettable romance. Set against the vibrant backdrop of mid-century New York City, the story follows suave bett",
+   "eligibility": "Cost: $20, $7 for Students",
+   "tags": [
+    "event",
+    "entertainment",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53612057026129",
+   "type": "event",
+   "title": "UGA Theatre: Guys & Dolls",
+   "host": "Department of Theatre and Film",
+   "schoolId": "s_uga",
+   "date": "2026-11-15T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Fine Arts Building, Fine Arts Theatre",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/uga-theatre-guys-dolls",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join RA Paris for community updates! This event will take place in the 7th floor TV Lounge at 3pm on November 15th.",
    "eligibility": "Open to students",
    "tags": [
@@ -2271,8 +3654,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12929072",
    "type": "event",
    "title": "7th floor North Community Gathering with RA Paris",
@@ -2300,8 +3683,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951396",
    "type": "event",
    "title": "Volunteer with Serve UGA at School Gardens",
@@ -2318,6 +3701,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join one of the museum's student guides for a conversational tour of the permanent collection. Experience the galleries through the eyes of UGA undergraduates as they explore objects from a variety of disciplinary perspectives.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302132568984",
+   "type": "event",
+   "title": "Student Perspectives",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-15T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-perspectives-2205",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join us for the movie screening of Hunger Games Mockingjay part 1 ! Sunday, November 15th Tate Theatre 6 PM",
    "eligibility": "Open to students",
    "tags": [
@@ -2329,8 +3741,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538772",
    "type": "event",
    "title": "Movies at Tate Presents: Hunger Games Movie Marathon",
@@ -2347,7 +3759,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "BPC&rsquo;s taste of The Nutcracker will take the audience through Clara's adventure. After her family's holiday party, Clara is gifted a nutcracker doll from her mysterious uncle, Drosselmeyer. Tired from the evening festivities, Clara falls into a deep sleep. She dreams of her ",
+   "description": "BPC’s taste of The Nutcracker will take the audience through Clara's adventure. After her family's holiday party, Clara is gifted a nutcracker doll from her mysterious uncle, Drosselmeyer. Tired from the evening festivities, Clara falls into a deep sleep. She dreams of her ",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2358,8 +3770,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961814",
    "type": "event",
    "title": "The Nutcracker",
@@ -2387,8 +3799,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956108",
    "type": "event",
    "title": "RA Jacob's Closing Community Gathering",
@@ -2416,8 +3828,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956212",
    "type": "event",
    "title": "WSEM Out of the Blue A Capella Concert",
@@ -2445,8 +3857,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12942774",
    "type": "event",
    "title": "7 East Floor Community Gathering with RA Destinee",
@@ -2474,8 +3886,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538773",
    "type": "event",
    "title": "Movies at Tate Presents: Hunger Games Movie Marathon",
@@ -2492,6 +3904,68 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "CTEGD Research in Progress (RiP) meetings are weekly, interactive, student-facilitated presentations. They will be held at 8:30 a.m. on Mondays in room 175, Coverdell Center, during the academic calendar year. Advanced students, postdocs, technicians, and PIs from CTEGD labs pres",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53637778756937",
+   "type": "event",
+   "title": "Huet Lab - CTEGD Research in Progress",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-16T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Paul D. Coverdell Center for Biomedical and Health Sciences, 175",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/huet-lab-ctegd-research-in-progress",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "An homage to John Cage’s landmark composition of the same name, the live 4 Minutes, 33 Seconds Contest highlights UGA student research in the arts. The event offers an opportunity for students to win prizes and to share their creative inquiry with peers, faculty, administrators a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54284938567504",
+   "type": "event",
+   "title": "4'33\" Contest",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-16T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Athenaeum",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/433-contest-3368",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "SMART Recovery is a mutual support group that uses evidence-based tools and strategies to help individuals make positive behavioral changes. The program is designed for anyone who is considering changing their substance use, whether that means reducing use or pursuing abstinence.",
    "eligibility": "Open to students",
    "tags": [
@@ -2503,8 +3977,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645490",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -2532,8 +4006,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12733503",
    "type": "event",
    "title": "Sports Staff Meeting",
@@ -2561,8 +4035,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645077",
    "type": "event",
    "title": "Local Music Staff",
@@ -2590,8 +4064,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12638938",
    "type": "event",
    "title": "Coping Not Carrying- Friends and Family Meeting",
@@ -2619,8 +4093,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12853101",
    "type": "event",
    "title": "DevDogs Demo Day",
@@ -2637,6 +4111,64 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "French pianist Hélène Grimaud is a fiercely expressive and deeply committed artist, renowned for her poetic intensity and commanding technical control. In recognition of her extraordinary impact on classical music, the French government named her a Chevalier of the Legion of Hono",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53814799250760",
+   "type": "event",
+   "title": "Performance: Hélène Grimaud, piano",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/helene-grimaud-piano",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The UGA Trumpet Studio presents a free studio recital.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859154019234",
+   "type": "event",
+   "title": "Trumpet Studio Recital",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/trumpet-studio-recital",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Community Gathering before we head out for thanksgiving and winter break",
    "eligibility": "Open to students",
    "tags": [
@@ -2648,8 +4180,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12944818",
    "type": "event",
    "title": "Floor 7 West Winter Community Gathering",
@@ -2666,6 +4198,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Lifelong learning through the arts offers opportunities to practice creativity and create community. Join teaching artist Toni Carlucci in the galleries to look at and talk about art in the permanent collection, then come to the studio classroom to make art and new friends. All l",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302168262043",
+   "type": "event",
+   "title": "Creative Aging Art Workshop",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/creative-aging-art-workshop-6878",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join AccessPoint UGA this semester to volunteer with the Athens Community Council on Aging! The ACCA strives to help adults and families age and live well in northeast and east Georgia. This event will take place on Tuesday, November 17, from 1 PM to 4 PM. You can sign up for a s",
    "eligibility": "Open to students",
    "tags": [
@@ -2677,8 +4238,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951395",
    "type": "event",
    "title": "Volunteer with AccessPoint UGA at the ACCA",
@@ -2695,6 +4256,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join one of the museum's student guides for a conversational tour of the permanent collection. Experience the galleries through the eyes of UGA undergraduates as they explore objects from a variety of disciplinary perspectives.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302186449757",
+   "type": "event",
+   "title": "Student Perspectives",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T18:15:00.000Z",
+   "startTime": "13:15",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-perspectives-7159",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Come to Happy Lemon on 11/17 from 3-9pm to help support Esports at UGA! A portion of the funds Happy Lemon makes goes straight to Esports at UGA.",
    "eligibility": "Open to students",
    "tags": [
@@ -2706,8 +4296,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961808",
    "type": "event",
    "title": "UGA Esports Percentage Night (Happy Lemon) 11/17",
@@ -2724,6 +4314,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "UGA Guitar Studio Ensembles present a free concert.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859164303806",
+   "type": "event",
+   "title": "Guitar Studio Ensembles Concert",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/guitar-studio-ensembles-concert",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Are you wanting to study abroad in a particular area, but not sure how long or how? Plan to attend one or more of our regional info sessions, which highlights study abroad opportunities in different regions around the world. See below for our schedule: - Latin America: September ",
    "eligibility": "Open to students",
    "tags": [
@@ -2735,8 +4354,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12581131",
    "type": "event",
    "title": "Regional Study Abroad Info Sessions",
@@ -2764,8 +4383,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12857584",
    "type": "event",
    "title": "Support Dawgs: QPR (Question, Persuade, Refer)",
@@ -2782,6 +4401,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join UGA's Institute of Native American Studies for a talk on the Doctrine of Discovery and its lasting implications for Native Americans, tribal sovereignty, \"in trust\" reserve land, and land title in the United States by Passamaquoddy language keeper Dwayne Tomah. Tomah is a st",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54009446976952",
+   "type": "event",
+   "title": "Lecture: Dwayne Tomah - \"The Doctrine of Discovery\"",
+   "host": "Department of History",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Georgia Museum of Art, Auditorium",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/lecture-dwayne-tomah-the-doctrine-of-discovery",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join Global Student Engagement for a four-part financial literacy series designed to support students build confidence in managing their finances while studying and living in the United States. These interactive 30 to 45-minute sessions will provide practical strategies, essentia",
    "eligibility": "Open to students",
    "tags": [
@@ -2793,8 +4443,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12653712",
    "type": "event",
    "title": "Financial Wellbeing: Guide to Managing Money, Financial Independence",
@@ -2822,8 +4472,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12605799",
    "type": "event",
    "title": "Archiving Staff",
@@ -2853,8 +4503,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961675",
    "type": "event",
    "title": "Slides that Speak: How to Create Engaging Presentation Visuals",
@@ -2884,8 +4534,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951308",
    "type": "event",
    "title": "Generative AI Competition: Jump Start Event",
@@ -2914,8 +4564,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12605784",
    "type": "event",
    "title": "Operations Staff",
@@ -2932,7 +4582,38 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Come down to the lobby every Tuesday to watch and discuss a short film, set up for our weekly &ldquo;Live in the Lobby&rdquo; shows that start at 8:00, and make new friends! Our main responsibility is taking/editing photos and videos during the shows - no camera or experience nee",
+   "description": "Death by PowerPoint? Not on our watch! Join TEDxUGA organizers for an interactive workshop on creating visuals that grab attention, communicate clearly, and make that message stick. Put real slide examples to the test, discover how to choose the right visuals for specific content",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54434845939490",
+   "type": "event",
+   "title": "Workshop: Slides that Speak: How to Create Engaging Presentation Visuals",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Memorial Hall, Adinkra Hall (Room 407)",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/slides-that-speak-how-to-create-engaging-presentation-visuals",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Come down to the lobby every Tuesday to watch and discuss a short film, set up for our weekly “Live in the Lobby” shows that start at 8:00, and make new friends! Our main responsibility is taking/editing photos and videos during the shows - no camera or experience nee",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2943,8 +4624,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645025",
    "type": "event",
    "title": "Digital Media Staff",
@@ -2972,8 +4653,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645294",
    "type": "event",
    "title": "Bible Study",
@@ -2990,6 +4671,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "A free concert featuring works for the horn by Paul Basler and James Naigus.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859177449966",
+   "type": "event",
+   "title": "Performance: The Horn Music of Paul Basler and James Naigus",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-18T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/the-horn-music-of-paul-basler-and-james-naigus",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Free live music from a local band every Tuesday night.",
    "eligibility": "Open to students",
    "tags": [
@@ -3001,8 +4711,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645091",
    "type": "event",
    "title": "Live in the Lobby",
@@ -3030,8 +4740,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12531582",
    "type": "event",
    "title": "Narcan Training",
@@ -3060,8 +4770,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645460",
    "type": "event",
    "title": "Tate Time w/ CSE",
@@ -3079,7 +4789,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us as we honor and remember transgender lives lost to anti-trans violence. Featuring speakers Ben Greene and Gabe Tan , with discussions on Choosing Joy, Rresource Mapping, and Resilience Building. November 18, 2026 Discussion: 1&ndash;2:30 PM | Meet & Greet: 2:30&ndash",
+   "description": "Join us as we honor and remember transgender lives lost to anti-trans violence. Featuring speakers Ben Greene and Gabe Tan , with discussions on Choosing Joy, Rresource Mapping, and Resilience Building. November 18, 2026 Discussion: 1–2:30 PM | Meet & Greet: 2:30&ndash",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -3091,8 +4801,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12951377",
    "type": "event",
    "title": "Trans Day of Remembrance - Candle Light Vigil",
@@ -3110,6 +4820,66 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join Shawnya Harris, Larry D. and Brenda A. Thompson Curator of African American and African Diasporic Art, for a tour of the exhibition. *We expect a higher turnout for this drop-in tour. The tour is capped at 20 participants; please plan to arrive early to guarantee a spot.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "tours"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302210948220",
+   "type": "event",
+   "title": "Curator Talk: “Edmonia Lewis: Said in Stone”",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-18T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/tour-at-two-5746",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The UGA Guitar Studio presents a concert of solos.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859187871492",
+   "type": "event",
+   "title": "Guitar Studio Solos Concert",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-18T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/guitar-studio-solos-concert",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Building an app, SaaS product, or AI-powered solution? Join this recurring ideation session in to explore ideas, get feedback, and connect with fellow builders. Mike Lui, Program Director of Franklin CREATE!, and Dr. Lakshmish Ramaswamy, Associate Director of the UGA School of Co",
    "eligibility": "Open to students",
    "tags": [
@@ -3121,8 +4891,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12686164",
    "type": "event",
    "title": "Ideation Sessions",
@@ -3151,8 +4921,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956204",
    "type": "event",
    "title": "Chill at the Hill: Art Social Hour",
@@ -3181,8 +4951,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12575441",
    "type": "event",
    "title": "Exchange Group Advising",
@@ -3210,8 +4980,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12835055",
    "type": "event",
    "title": "Order of Omega Initiation",
@@ -3239,8 +5009,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645479",
    "type": "event",
    "title": "All Recovery Meeting",
@@ -3257,6 +5027,65 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The UGA Trombone Choir presents a free concert.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859197711194",
+   "type": "event",
+   "title": "Performance: UGA Trombone Choir",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-18T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/uga-trombone-choir",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The Willson Center and the UGA Arts Council have heard your demands, and obliged: audiences may now block off calendars for this latest evening of arts-based trivia, fun, prizes, and \"stress relief\" with your smartest friends... and most cunning rivals. A new age of madness dawns",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment",
+    "sports and recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54162207569729",
+   "type": "event",
+   "title": "Spotlight on the Arts Trivia Night",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-18T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Ciné",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/spotlight-on-the-arts-trivia-night-7075",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Dress business casual Food will be provided",
    "eligibility": "Open to students",
    "tags": [
@@ -3269,8 +5098,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12803661",
    "type": "event",
    "title": "BDO Speaker Meeting - Collab w/ Accounting Society",
@@ -3299,8 +5128,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12929521",
    "type": "event",
    "title": "November Knockout",
@@ -3328,8 +5157,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12938544",
    "type": "event",
    "title": "Rooker Hall Closing Community Gathering",
@@ -3357,8 +5186,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12853102",
    "type": "event",
    "title": "DevDogs Touch Grass #2",
@@ -3370,7 +5199,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Lights, camera, communication! Step into the work of cinema with &ldquo;Cinema Signals&rdquo;, an interactive program that explores the world of communication through the magic of movies and TV. We&rsquo;ll dive into captivating clips, decode dynamics, and unravel the complexitie",
+   "description": "Lights, camera, communication! Step into the work of cinema with “Cinema Signals”, an interactive program that explores the world of communication through the magic of movies and TV. We’ll dive into captivating clips, decode dynamics, and unravel the complexitie",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -3381,8 +5210,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12472482",
    "type": "event",
    "title": "Cinema Signals: Bring It On",
@@ -3411,8 +5240,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12825145",
    "type": "event",
    "title": "BAPS Campus Diwali 2026",
@@ -3441,8 +5270,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12705189",
    "type": "event",
    "title": "Music Staff",
@@ -3459,6 +5288,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Terry Third Thursday is a breakfast speaker series for the Atlanta business community featuring influential speakers and special guests from the University of Georgia who bring local and global perspectives on business and innovation.",
+   "eligibility": "Cost: 35",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions",
+    "networking"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53294544838972",
+   "type": "event",
+   "title": "Terry Third Thursday - Jamie Shepherd, President & Chief Executive Officer, Shepherd Center",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T12:00:00.000Z",
+   "startTime": "07:00",
+   "place": {
+    "name": "Terry Executive Education Center, Terry Executive Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/terry-third-thursday-jamie-shepherd-president-chief-executive-officer-shepherd-center",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join the Office of Cultural Student Engagement in celebrating our annual Friendsgiving event! Held in the Tate Intersection, come try different cultural food from local Athens restaurants! We will also have numerous arts and crafts, a photobooth, and it is a great opportunity to ",
    "eligibility": "Open to students",
    "tags": [
@@ -3470,8 +5331,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12740235",
    "type": "event",
    "title": "CSE Friendsgiving",
@@ -3488,6 +5349,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "join the audience for a panel discussion on the results of the 2026 election cycle. Speakers will unpack the election outcomes and analyze potential implications for Georgia and the nation. Panelists include: Maya Prabhu from PeachPol, Trey Hood from the University of Georgia, Ka",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53812532506379",
+   "type": "event",
+   "title": "Panel Discussion: 2026 Election Recap",
+   "host": "Department of Political Science",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T16:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "Richard B. Russell Special Collections Libraries, Auditorium (271)",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/2026-election-recap",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "SMART Recovery is a mutual support group that uses evidence-based tools and strategies to help individuals make positive behavioral changes. The program is designed for anyone who is considering changing their substance use, whether that means reducing use or pursuing abstinence.",
    "eligibility": "Open to students",
    "tags": [
@@ -3499,8 +5391,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645491",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -3517,6 +5409,97 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The D.W. Brooks Lecture is an event named for a Georgian whose contributions to agriculture are respected worldwide. An alumnus of the University of Georgia College of Agricultural and Environmental Sciences, D.W. Brooks (BSA—Agronomy, 1922, MSA—Agronomy, 1924) devoted his career",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53613558519412",
+   "type": "event",
+   "title": "D.W. Brooks Lecture",
+   "host": "College of Agricultural and Environmental Sciences",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Georgia Center for Continuing Education & Hotel, Masters Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/dw-brooks-lecture",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The UGA Hodgson String Quartet presents a free chamber recital.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859214901512",
+   "type": "event",
+   "title": "Chamber Recital: Hodgson String Quartet",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/chamber-recital-hodgson-string-quartet",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "\"Emotional Literacy: A Framework for Feeling Better,\" Charlie Kurth, Clemson University",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54125043047536",
+   "type": "event",
+   "title": "Philosophy Department Colloquium: Charlie Kurth",
+   "host": "Department of Philosophy",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Peabody Hall, 115",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/philosophy-department-colloquium-charlie-kurth",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Step into our 60-90 minute interactive upstander intervention program, where college students will be given knowledge and skills to take action when they see someone in need. Change the narrative and become an upstander. Support Dawgs and FYOS approved. For more information on UM",
    "eligibility": "Open to students",
    "tags": [
@@ -3528,8 +5511,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12470683",
    "type": "event",
    "title": "UMatter",
@@ -3558,8 +5541,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961812",
    "type": "event",
    "title": "Walking in Wonderland",
@@ -3589,8 +5572,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12959263",
    "type": "event",
    "title": "Growing Gratitude",
@@ -3619,8 +5602,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645038",
    "type": "event",
    "title": "PUBs and Events Staff",
@@ -3637,6 +5620,94 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join Luke Graves for a one-day figure drawing workshop inspired by the sculpture of Edmonia Lewis. Participants will draw from sculptural references while focusing on proportion, gesture and the translation of three-dimensional form using line and value. Emphasis will be placed o",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302238268672",
+   "type": "event",
+   "title": "Drawing in the Galleries: Edmonia Lewis",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/drawing-in-the-galleries-edmonia-lewis",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Athens’ established venues for visual art hold Third Thursday, an event devoted to art in the evening hours, on the third Thursday of every month from 6-9 p.m. to showcase their visual-arts programming. Full schedules and participants are posted at 3Thurs.org.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_51579168946937",
+   "type": "event",
+   "title": "Third Thursday",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/third-thursday-3568",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join a free yoga class surrounded by works of art in the galleries. Led by instructors from Yoga and Pilates for the People, this program is free and open to both beginner and experienced yogis. Sanitized mats are provided. Space is limited and spots are available on a first-come",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "sports and recreation",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_51579185573634",
+   "type": "event",
+   "title": "Yoga in the Galleries",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/yoga-in-the-galleries-2177",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join us for a casual evening of arts and crafts with members of the Pagan Student Association and other Pagan and Pagan-curious students. You can bring your own craft project (please nothing too messy!) and/or use the materials provided. No ritual this time, just fun community bu",
    "eligibility": "Open to students",
    "tags": [
@@ -3648,8 +5719,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956218",
    "type": "event",
    "title": "PSA Craft Night",
@@ -3666,7 +5737,36 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join the Brazilian Student Association for a warm and festive Friendsgiving celebration at Adinkra Hall on November 19 at 7:30PM! Enjoy an evening of friendship, gratitude, and cultural exchange as we bring a Brazilian twist to one of America&rsquo;s most cherished holidays. Brin",
+   "description": "Join a guided tour of the Georgia Music Collections at the Akins Ford Arena. Attendees will explore iconic memorabilia and historic artifacts while interacting with displays that celebrate Georgia's rich music history. Please arrive by 6:30 p.m. for the tour to promptly begin at ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54299216205340",
+   "type": "event",
+   "title": "Third Thursday Georgia Music Hall of Fame Tour",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-19T23:45:00.000Z",
+   "startTime": "18:45",
+   "place": {
+    "name": "Akins Ford Arena",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/third-thursday-georgia-music-hall-of-fame-tour",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join the Brazilian Student Association for a warm and festive Friendsgiving celebration at Adinkra Hall on November 19 at 7:30PM! Enjoy an evening of friendship, gratitude, and cultural exchange as we bring a Brazilian twist to one of America’s most cherished holidays. Brin",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -3677,8 +5777,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12901792",
    "type": "event",
    "title": "Brazilian Friendsgiving",
@@ -3707,8 +5807,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12582408",
    "type": "event",
    "title": "International Coffee Hour: Education Abroad Ambassadors",
@@ -3726,6 +5826,68 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "IOB Seminar: Dr. Lelslea Hlusko",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53974086140794",
+   "type": "event",
+   "title": "IOB Seminar: Dr. Lelslea Hlusko",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-20T16:35:00.000Z",
+   "startTime": "11:35",
+   "place": {
+    "name": "Fred C. Davison Life Sciences Complex, B118",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/iob-seminar-dr-lelslea-hlusko",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "International Coffee Hour is a weekly gathering bringing UGA students, faculty, staff, and community members together over coffee, international cuisine, and conversation. Enjoy free food and meet someone new every Friday from 11:30 a.m. until 1 p.m. in the Victor K. Wilson Ballr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "networking"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54002475189132",
+   "type": "event",
+   "title": "International Coffee Hour: Education Abroad Ambassadors",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-20T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Memorial Hall, Victor K. Wilson Ballroom",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/international-coffee-hour-education-abroad-ambassadors",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join Serve UGA this semester for volunteering opportunities with UGArden! UGArden promotes sustainable and healthy food systems through teaching students how to grow food with organic practices and sharing the harvests with members of the local community in need. We volunteer on ",
    "eligibility": "Open to students",
    "tags": [
@@ -3737,8 +5899,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12531528",
    "type": "event",
    "title": "Volunteer with Serve UGA at UGArden",
@@ -3766,8 +5928,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12945028",
    "type": "event",
    "title": "RA Carter's Final Community Gathering of the Semester",
@@ -3795,8 +5957,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538775",
    "type": "event",
    "title": "Movies at Tate Presents: Spider-Man: Brand New Day",
@@ -3813,6 +5975,64 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This Athens tradition is the best way to start the holiday season. Before tuning into the Macy’s Thanksgiving Day Parade, join the audience for a cornucopia of seasonal joy through music presented by a wide variety of our student and faculty ensembles.",
+   "eligibility": "Cost: $25 Adult; $10 Student",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53797956608812",
+   "type": "event",
+   "title": "Hodsgon Scholarship Series: Annual Holiday Concert",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-21T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/hodsgon-scholarship-series-annual-holiday-concert",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Guest Artist Rene Izquierdo presents a free guitar recital.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859236481201",
+   "type": "event",
+   "title": "Guest Artist Recital: Rene Izquierdo, guitar",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-21T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/guest-artist-recital-rene-izquierdo-guitar",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Halls remaining open during break: Brown, ECV, Payne, Reed, UV East and UV",
    "eligibility": "Open to students",
    "tags": [
@@ -3824,8 +6044,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12501212",
    "type": "event",
    "title": "Halls Close - Thanksgiving Break",
@@ -3842,6 +6062,64 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join one of the museum's student guides for a conversational tour of the permanent collection. Experience the galleries through the eyes of UGA undergraduates as they explore objects from a variety of disciplinary perspectives.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302257229808",
+   "type": "event",
+   "title": "Student Perspectives",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-21T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/student-perspectives-4035",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Stop by for a Sunday afternoon tour featuring highlights of the permanent collection and current special exhibitions led by museum docents.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302282399561",
+   "type": "event",
+   "title": "Sunday Afternoon Tour",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-22T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/sunday-afternoon-tour-2234",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Join us for the movie screening of Spider-Man: Brand New Day! Sunday, November 22th Tate Theatre 7 PM",
    "eligibility": "Open to students",
    "tags": [
@@ -3853,8 +6131,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12538776",
    "type": "event",
    "title": "Movies at Tate Presents: Spider-Man: Brand New Day",
@@ -3883,8 +6161,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961667",
    "type": "event",
    "title": "Learning to Meditate Together",
@@ -3913,8 +6191,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645492",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -3942,8 +6220,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12638939",
    "type": "event",
    "title": "Coping Not Carrying- Friends and Family Meeting",
@@ -3960,6 +6238,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "These drop-in public tours feature highlights of the permanent collection and are led by museum docents.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302295416218",
+   "type": "event",
+   "title": "Tour at Two",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-11-25T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/tour-at-two-4003",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "An all recovery meeting is an open, inclusive group welcoming individuals in any pathway of recovery. These meetings focus on shared connection, mutual support, and community. Meetings are facilitated by Fontaine center staff, who are confidential support resources, and open to a",
    "eligibility": "Open to students",
    "tags": [
@@ -3971,8 +6278,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645480",
    "type": "event",
    "title": "All Recovery Meeting",
@@ -4000,8 +6307,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645493",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -4029,8 +6336,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12501213",
    "type": "event",
    "title": "Halls Open - Thanksgiving Break",
@@ -4058,8 +6365,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12853050",
    "type": "event",
    "title": "UGA Miracle Tour of Homes",
@@ -4087,8 +6394,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12539629",
    "type": "event",
    "title": "Warm Up & Wind Down",
@@ -4117,8 +6424,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961668",
    "type": "event",
    "title": "Learning to Meditate Together",
@@ -4147,8 +6454,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645494",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -4176,8 +6483,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12733504",
    "type": "event",
    "title": "Sports Staff Meeting",
@@ -4206,8 +6513,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12936064",
    "type": "event",
    "title": "Housekeeping",
@@ -4236,8 +6543,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12638940",
    "type": "event",
    "title": "Coping Not Carrying- Friends and Family Meeting",
@@ -4254,6 +6561,93 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The UGA Trombone Studio presents a free chamber recital.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859245836499",
+   "type": "event",
+   "title": "Trombone Studio Chamber Recital",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-11-30T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/trombone-studio-chamber-recital",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "UGA piano faculty Emely Phelps presents a free recital.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859268127998",
+   "type": "event",
+   "title": "Faculty Recital: Emely Phelps, piano",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-12-01T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/faculty-recital-emely-phelps-piano",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Enjoy looking at art and storytime together in the galleries, then complete an art activity just for little ones. This free program is designed for families with children ages 18 months to 3+ years. Seats are limited; email gmoa-tours@uga.edu to reserve a spot.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "classes and workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302535954220",
+   "type": "event",
+   "title": "Toddler Tuesday: Morning to Moon",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-01T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/toddler-tuesday-morning-to-moon",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Celebrate your accomplishments this semester. Each student will receive a free small bell to commemorate an accomplishment from this semester while supplies last. Let us know what you accomplished this year!",
    "eligibility": "Open to students",
    "tags": [
@@ -4267,8 +6661,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961673",
    "type": "event",
    "title": "Ring the Bell",
@@ -4286,6 +6680,64 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "UGA Repertory Singers present a free concert.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859282893302",
+   "type": "event",
+   "title": "Performance: University of Georgia Repertory Singers",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-12-01T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Performing Arts Center, Ramsey Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/university-of-georgia-repertory-singers-9794",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The UGA String Area presents free chamber ensemble recitals.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859294318125",
+   "type": "event",
+   "title": "String Area Chamber Ensemble Recitals",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-12-01T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/string-area-chamber-ensemble-recitals",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Do you love music history? Listening to music? Even the alphabet? Come to WUOG's archiving staff to learn more about local music, organize records and CDs, and meet new people!! Every Tuesday at 5pm in the WUOG lobby (next to the Starbucks).",
    "eligibility": "Open to students",
    "tags": [
@@ -4297,8 +6749,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12605800",
    "type": "event",
    "title": "Archiving Staff",
@@ -4315,6 +6767,93 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The UGA Trombone Studio presents a free recital.",
+   "eligibility": "Cost: https://music.uga.edu/events/content/2026/trombone-studio-solo-recital",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859306183906",
+   "type": "event",
+   "title": "Trombone Studio Solo Recital",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-12-01T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/trombone-studio-solo-recital",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The UGA String Areas presents chamber ensemble recitals.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859332889014",
+   "type": "event",
+   "title": "String Area Chamber Recitals",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-12-02T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Hugh Hodgson School of Music, Edge Recital Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/string-area-chamber-recitals",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "The University of Georgia African American Choral Ensemble presents a free concert.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53859345382842",
+   "type": "event",
+   "title": "University of Georgia African American Choral Ensemble",
+   "host": "Hugh Hodgson School of Music",
+   "schoolId": "s_uga",
+   "date": "2026-12-02T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/university-of-georgia-african-american-choral-ensemble-4101",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Take a break from studying to rest your mind and body with guided breathing and meditation. No meditation experience required!",
    "eligibility": "Open to students",
    "tags": [
@@ -4326,8 +6865,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12956206",
    "type": "event",
    "title": "Virtual Meditation Pop-Up",
@@ -4355,8 +6894,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12886153",
    "type": "event",
    "title": "Farmer's Market Friends",
@@ -4373,6 +6912,68 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Need a break from studying for final exams? Students are invited to stop by the museum on Reading Day to participate in art and wellness programs or take a pause and enjoy some art in the galleries at their own pace. Snacks, coffee and refreshments provided. This program is prese",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302591953107",
+   "type": "event",
+   "title": "Study Break",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-02T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/study-break-3222",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Artful Conversation programs are 30 minutes long, focus on just one work of art and provide opportunities for close looking, open-ended dialogue and discovery. Join Mallory Lind, associate curator of community engagement and outreach, for a conversation on Rashid Johnson’s multim",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions",
+    "tours"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53302626432898",
+   "type": "event",
+   "title": "Artful Conversation: “Untitled (Escape Collage)”",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-02T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Georgia Museum of Art",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/artful-conversation-untitled-escape-collage",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Art Therapy Open Studio is a welcoming drop-in space where students can explore art materials, express themselves creatively, and experience the therapeutic benefits of art making while connecting with peers. Each session also offers optional art therapy activities designed to be",
    "eligibility": "Open to students",
    "tags": [
@@ -4385,8 +6986,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12740234",
    "type": "event",
    "title": "Healing Through Art | Art Therapy: Open Studio",
@@ -4417,8 +7018,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12816072",
    "type": "event",
    "title": "Final Pop-Up",
@@ -4447,8 +7048,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645481",
    "type": "event",
    "title": "All Recovery Meeting",
@@ -4476,8 +7077,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12929523",
    "type": "event",
    "title": "Jingle Jam",
@@ -4494,6 +7095,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Celebrating UGA student initiatives that advance sustainability and wellbeing on campus and in the community. Presentations, posters, artworks, light refreshments, and an opportunity to connect with others. Opening remarks will be provided by UGA Provost Ron R. Walcott.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "receptions and recognitions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54347495303664",
+   "type": "event",
+   "title": "Sustainable UGA Semester in Review",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-03T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Richard B. Russell Special Collections Libraries, Auditorium",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://calendar.uga.edu/event/sustainable-uga-semester-in-review",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "SMART Recovery is a mutual support group that uses evidence-based tools and strategies to help individuals make positive behavioral changes. The program is designed for anyone who is considering changing their substance use, whether that means reducing use or pursuing abstinence.",
    "eligibility": "Open to students",
    "tags": [
@@ -4505,8 +7137,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645495",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -4534,8 +7166,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645039",
    "type": "event",
    "title": "PUBs and Events Staff",
@@ -4552,6 +7184,155 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Class visits provide the perfect opportunity to gain first-hand campus and classroom experience. You will have the chance to speak directly with the professor, get feedback from current students, and observe class discussions. Susan Brown is the Director of the Executive, Profess",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures and discussions",
+    "meetings",
+    "information sessions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54187932508051",
+   "type": "event",
+   "title": "Executive MBA Class Visit - Human Resource Management with Susan Brown",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-04T13:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Terry Executive Education Center",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/executive-mba-class-visit-human-resource-management-with-susan-brown-4147",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "As musical genres blend more than ever, it’s worth remembering that New Orleans has always been where global sounds and cultures meet—reshaped by the city’s unmistakable spirit and joie de vivre. No group embodies that legacy more than the Preservation Hall Jazz Band. For more th",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53814847169633",
+   "type": "event",
+   "title": "Preservation Hall Jazz Band: Creole Christmas",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-05T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/preservation-hall-jazz-band-creole-christmas",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Join guests at 12 p.m. every Sunday for an in-depth, one-hour tour of the State Botanical Garden’s Porcelain and Decorative Arts Museum. These tours are led by docents, museum assistants or the curator. Tours are $5 per person, payable at the Garden Gift Shop upon arrival.",
+   "eligibility": "Cost: $5",
+   "tags": [
+    "event",
+    "tours"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53737222756755",
+   "type": "event",
+   "title": "Museum Tour",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-06T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "State Botanical Garden of Georgia, Porcelain and Decorative Arts Museum",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/museum-tour",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "Grammy Award-winning pianist Daniil Trifonov is renowned for his breathtaking virtuosity, poetic sensitivity, and extraordinary range. A commanding soloist, concerto powerhouse, chamber musician, and composer, he appears regularly on the world’s most prestigious stages with leadi",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "performances and screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_53814867526923",
+   "type": "event",
+   "title": "Performance: Daniil Trifonov, piano",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-06T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Performing Arts Center, Hodgson Concert Hall",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/daniil-trifonov-piano",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
+   "description": "This winter, visitors can experience the State Botanical Garden of Georgia at the University of Georgia as it transforms into a wonderland of lights for the sixth year of Winter WonderLights. Winter WonderLights, presented by the UGA Office of the President, has become a beloved ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "entertainment"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:38:19.697Z",
+   "createdAt": "2026-11-08T23:38:19.697Z",
+   "id": "op_uga_lc_54047181984501",
+   "type": "event",
+   "title": "Winter WonderLights",
+   "host": "University of Georgia",
+   "schoolId": "s_uga",
+   "date": "2026-12-06T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "State Botanical Garden of Georgia",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://calendar.uga.edu/event/winter-wonderlights-4249",
+   "sourceLabel": "University of Georgia Events"
+  },
+  {
    "description": "Are you in Athens over Thanksgiving and Winter breaks? Are you looking for community during those quiet times? Are you wondering about how to get started with mindfulness and meditation? Join us for a 4-week series on building a meditation practice, where you will build skills to",
    "eligibility": "Open to students",
    "tags": [
@@ -4564,8 +7345,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12961669",
    "type": "event",
    "title": "Learning to Meditate Together",
@@ -4594,8 +7375,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12645496",
    "type": "event",
    "title": "SMART Recovery Meeting",
@@ -4623,8 +7404,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:17.788Z",
-   "createdAt": "2026-11-08T03:42:17.788Z",
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
    "id": "op_uga_eg_12638941",
    "type": "event",
    "title": "Coping Not Carrying- Friends and Family Meeting",
@@ -4638,6 +7419,64 @@
     "lng": -83.3773
    },
    "sourceUrl": "https://uga.campuslabs.com/engage/event/12638941",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Take a break from studying to rest your mind and body with guided breathing and meditation. No meditation experience required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
+   "id": "op_uga_eg_12956205",
+   "type": "event",
+   "title": "Virtual Meditation Pop-Up",
+   "host": "University Health Center",
+   "schoolId": "s_uga",
+   "date": "2026-12-08T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Online",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://uga.campuslabs.com/engage/event/12956205",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Global Student Engagement for a four-part financial literacy series designed to support students build confidence in managing their finances while studying and living in the United States. These interactive 30 to 45-minute sessions will provide practical strategies, essentia",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T23:37:58.231Z",
+   "createdAt": "2026-11-08T23:37:58.231Z",
+   "id": "op_uga_eg_12653681",
+   "type": "event",
+   "title": "Financial Wellbeing: Guide to Managing Money, Financial Safety",
+   "host": "Global Student Engagement",
+   "schoolId": "s_uga",
+   "date": "2026-12-08T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Global Student Engagement Conference Room",
+    "lat": 33.948,
+    "lng": -83.3773
+   },
+   "sourceUrl": "https://uga.campuslabs.com/engage/event/12653681",
    "sourceLabel": "Student org events"
   }
  ]
