@@ -128,3 +128,11 @@ test('isHijackedPage: an expired club domain now showing a gambling spam page is
   assert.equal(isHijackedPage('<html><head><title>TieuLamTV - Trực tiếp Ngoại Hạng Anh 2026 miễn phí full HD</title></head></html>'), true);
   assert.equal(isHijackedPage('<html><head><title>Vietnamese Student Association - Hội Sinh Viên Việt Nam</title></head></html>'), false);
 });
+
+test('domainGone: only a DNS "no such name" answer counts; lookup failure or a live name does not', async () => {
+  const { domainGone } = await import('./sources/sitesocial');
+  assert.equal(await domainGone('http://www.uscecofin.org/', async () => ({ Status: 3 })), true);
+  assert.equal(await domainGone('https://cuair.org/', async () => ({ Status: 0, Answer: [{ data: '1.2.3.4' }] })), false);
+  assert.equal(await domainGone('https://cuair.org/', async () => { throw new Error('offline'); }), false);
+  assert.equal(await domainGone('not a url', async () => ({ Status: 3 })), false);
+});

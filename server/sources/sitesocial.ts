@@ -79,6 +79,16 @@ const hostOf = (u: string) => { try { return new URL(u).hostname; } catch { retu
 
 /** 사이트가 없어졌다고 확실한 응답(404·410, Wix 의 “404 Error: Page Not Found”) — 이런 Website 링크는 뺀다. 연결 실패·타임아웃은 모르는 것으로 보고 둔다 */
 export const DEAD = '__dead__';
+/**
+ * 사이트가 안 열릴 때만: 도메인 자체가 없어졌나(DNS NXDOMAIN) — 공개 DNS(dns.google JSON)로 한 번 묻는다.
+ * 프록시 뒤에서는 '이름 없음'과 '잠깐 안 됨'이 똑같이 실패로 보여서, 없어진 도메인(USC EcoFin, Rice matchbox, USC Couture — 2026-11-07·08 검사)이 매주 검사를 빠져나갔다.
+ * DNS 가 '없다'(Status 3)고 할 때만 true. 묻기가 실패하면 false(지우지 않는다).
+ */
+export async function domainGone(url: string, fetchJson: (u: string) => Promise<unknown> = async (u) => (await fetch(u, { signal: AbortSignal.timeout(8000) })).json()): Promise<boolean> {
+  let host = ''; try { host = new URL(url).hostname; } catch { return false; }
+  if (!host || /^[\d.]+$/.test(host)) return false;
+  try { const j = (await fetchJson(`https://dns.google/resolve?name=${encodeURIComponent(host)}&type=A`)) as { Status?: number }; return j?.Status === 3; } catch { return false; }
+}
 export function isDeadPage(status: number, html: string): boolean { return status === 404 || status === 410 || /<title[^>]*>\s*404 Error: Page Not Found/i.test(html); }
 
 /** 동아리가 '웹사이트 없음' 대신 적은 가짜 주소 (Cornell 16곳 idonothaveawebsite.com, 2026-11-04) — 응답 없는 주소처럼 화면에서 빼고 deadlinks 에 남긴다 */

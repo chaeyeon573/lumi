@@ -2576,3 +2576,11 @@
 - Borderline schools: Utah (Engage 503) and Baylor (Engage 380) also open publicly - added to the existing QUESTIONS item.
 - Spot check clubs: CMU Treblemakers, NC State Pi Alpha Xi (503 then 302 - up), Indiana NODE Policy Lab (site now forwards to Instagram) fine; Illinois CLAID claiduiuc.com gives 502 at the proxy (left to the weekly dead-link check); UVA "Pre-Health Advising" is a Career Center office listed as a club - it and 3 more UVA offices/centers (McIntire Admission, Galant Center, Center for Politics) set to department and added to org-type-overrides.csv.
 - Spot check courses: 5 random USC Spring 2027 classes match.
+
+## 2026-11-08 00:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- School offices labeled as clubs: name sweep across all schools (advising, admissions, career center, libraries, student affairs, residence life, departments, alumni association, rec sports …), each hand-checked: 160 official units set to department in 33 schools and added to org-type-overrides.csv. Student groups with similar names kept as clubs (Student Alumni Associations, ALA student chapters, ambassadors, peer advising, department grad student associations).
+- Club Instagram written in descriptions ("Instagram: @handle", service named) now becomes the Instagram link on every collect (`descriptionInstagram` in cleanCollectedOrgs, test added): 54 clubs in 19 schools.
+- Dead domains: the weekly site check could not tell "domain no longer exists" from "slow" behind the proxy, so gone domains stayed (spot checks found 3 this week). Added `domainGone` (asks public DNS only when a site fails to open; NXDOMAIN = gone) to collect-social and scan-club-sites, with a test. One-time check of all 11,881 website hosts: 783 no longer exist (each confirmed twice; a sample also confirmed by Cloudflare DNS) → 827 Website links moved to deadlinks (kept, not deleted).
+- Spot check clubs: UMich BSU, Tulane Bands, UMass Women's Network, Indiana WIG fine; USC EcoFin uscecofin.org NXDOMAIN (led to the fix above).
+- Spot check courses: 5 random UW Winter 2027 classes match.

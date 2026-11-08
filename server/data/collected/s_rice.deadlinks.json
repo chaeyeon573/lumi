@@ -40,5 +40,23 @@
   "url": "http://matchbox.rice.edu/",
   "checkedAt": "2026-11-07",
   "note": "host name no longer resolves"
+ },
+ {
+  "orgId": "oc_rice_ricemedicaldesign",
+  "url": "https://ricemedicaldevices.com/",
+  "checkedAt": "2026-11-08",
+  "note": "domain no longer exists (DNS)"
+ },
+ {
+  "orgId": "oc_rice_ricemedicalhumanities",
+  "url": "http://medhumclub.rice.edu/",
+  "checkedAt": "2026-11-08",
+  "note": "domain no longer exists (DNS)"
+ },
+ {
+  "orgId": "oc_rice_wiessschoolofnaturalsciences",
+  "url": "http://www.naturalsciences.rice.edu/",
+  "checkedAt": "2026-11-08",
+  "note": "domain no longer exists (DNS)"
  }
 ]

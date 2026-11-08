@@ -9,7 +9,7 @@
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
-import { isHijackedPage, isParkedPage } from '../sources/sitesocial';
+import { isHijackedPage, isParkedPage, domainGone } from '../sources/sitesocial';
 import type { Organization } from '@core/types';
 
 const DIR = path.join(import.meta.dirname, '..', 'data', 'collected');
@@ -39,7 +39,7 @@ await Promise.all(Array.from({ length: 6 }, async () => {
   while (i < batch.length) {
     const { url } = batch[i++];
     const html = await title(url); prog[url] = today;
-    if (html === null) continue; opened++;
+    if (html === null) { if (await domainGone(url)) hits.set(url, '(domain no longer exists)'); continue; } opened++;
     if (isHijackedPage(html) || isParkedPage(html)) hits.set(url, (/<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? '').trim().slice(0, 120));
   }
 }));
@@ -47,7 +47,7 @@ await Promise.all(Array.from({ length: 6 }, async () => {
 for (const f of files) {
   const file = path.join(DIR, f); const orgs = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
   const moved: { orgId: string; url: string; checkedAt: string; note: string }[] = [];
-  for (const o of orgs) for (const l of o.links ?? []) if (l.label === 'Website' && hits.has(l.url)) moved.push({ orgId: o.id, url: l.url, checkedAt: today, note: `domain now shows an unrelated site: "${hits.get(l.url)}"` });
+  for (const o of orgs) for (const l of o.links ?? []) if (l.label === 'Website' && hits.has(l.url)) moved.push({ orgId: o.id, url: l.url, checkedAt: today, note: hits.get(l.url) === '(domain no longer exists)' ? 'domain no longer exists (DNS)' : `domain now shows an unrelated site: "${hits.get(l.url)}"` });
   if (!moved.length) continue;
   for (const o of orgs) o.links = (o.links ?? []).filter((l) => !(l.label === 'Website' && hits.has(l.url)));
   writeFileSync(file, `${JSON.stringify(orgs, null, 1)}\n`);

@@ -28,7 +28,7 @@ import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, isPlaceholderOrg, cleanCollectedOrgs, type StudentGovRow } from '../sources/orglinks';
-import { enrichFromWebsites, isDeadPage, DEAD } from '../sources/sitesocial';
+import { enrichFromWebsites, isDeadPage, DEAD, domainGone } from '../sources/sitesocial';
 import { publicLinks, stripEmoji } from '@core/lib/orglinks';
 import { noEmojiView } from '../noemoji';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -152,7 +152,7 @@ async function fetchPublicPage(url: string): Promise<string> {
     const body = /html/i.test(r.headers.get('content-type') ?? '') ? (await r.text()).slice(0, 500_000) : '';
     if (isDeadPage(r.status, body)) return DEAD;
     return r.ok ? body : '';
-  } catch { return ''; }
+  } catch { return (await domainGone(url)) ? DEAD : ''; } // 도메인이 없어졌으면(NXDOMAIN) 끊긴 링크로
 }
 /** 수업만: 표본 확인 → 맞으면 <id>.courses.json (collect 의 마지막 단계, collect-courses:<id> 로 따로도 돈다 — 동아리를 다시 읽지 않는다) */
 async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
