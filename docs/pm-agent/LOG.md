@@ -2728,3 +2728,10 @@
   - Northwestern Fraternity and Sorority Life council pages answer 503 here.
 - Spot check clubs: CMU Business Association, Lehigh LSA, UChicago Phoenix Sustainability, CWRU Ice Hockey, USC Film and TV Writers - fine.
 - Spot check courses: 5 random Lehigh Fall 2026 classes match.
+
+## 2026-11-08 19:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Re-checked blocked sources: bulletins.psu.edu, guide.wisc.edu, studentorg.ucsd.edu, activities.osu.edu still fail here; getinvolved.tamu.edu 403; no Engage for Princeton/OSU/TAMU/UCSD.
+- Events coverage: every collected school has an events file except BU. BU's public calendar page (phpbin/calendar/rss.php) opens but lists only the next day with events; list/week views are 404 or a 202 bot check - not a usable source, not pushed further.
+- Spot check clubs: Yale Russian Chorus, IU AMA, SJSU Club Swim, Tulane TIERA, UF Project Makeover - fine.
+- Spot check courses: 5 random Rice Fall 2026 classes match.
