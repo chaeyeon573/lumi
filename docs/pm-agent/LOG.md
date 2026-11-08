@@ -2741,3 +2741,10 @@
 - Caltech club links (continued): Physics Club (physics.clubs.caltech.edu) and Book Club (caltech-book-club.pages.dev). Searched rugby, soccer, tennis, squash, dance, ballet, tango, capoeira, a cappella, strings, cinema, puzzle, math, quantum: no current club site found; Ballroom's site uses a different club name; the quantum group (QCSA) does not open here and its name does not clearly match - skipped. Caltech now 27 of 125.
 - Spot check clubs: USC GWIS LA, WFU Awaken, GT Board Game Club, AI at UGA fine; UC Davis Microbiology GSA links its graduate group's site (403 to automated requests) - left.
 - Spot check courses: 5 random USF Fall 2026 classes match.
+
+## 2026-11-08 21:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events for schools with few upcoming events: tried public Localist APIs on school calendar hosts. NC State calendar.ncsu.edu answers → added as a second source: 9 → 54 upcoming (2 events checked against the calendar API: time and place match). MIT (access denied), Michigan, UW, Northwestern, UCR (browser check), UC Davis (403), UChicago/W&M/Clemson (no Localist) - not usable.
+- UW: the official UW Seattle campus calendar is Trumba (trumba.com/calendars/sea_campus.rss, channel "UW Seattle Campus Events", link washington.edu/calendar). Its items have no pubDate, so the Trumba reader read 0. Reader extended: start from the first description line ("Sunday, Nov 8, 2026, 2 – 4 p.m. PST") in the school time zone, place from Campus location + room, multi-day items skipped, UW field lines kept out of the description (test). UW 36 → 123 upcoming. Harvard (same reader, has pubDate) re-run: 147, normal.
+- Spot check clubs: Northwestern Mayfest, UChicago Blue Chips, BU Girls Who Code fine; Vanderbilt Freedom Initiative links IJM's national student page (club's choice) - left; Wisconsin "The Well | Union South | 233" is a Union wellness space, not a club → department (override).
+- Spot check courses: 5 random Duke Fall 2026 classes match.
