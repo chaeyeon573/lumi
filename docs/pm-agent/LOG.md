@@ -2645,3 +2645,12 @@
 - Event places/links sweep: all events have a date, a valid source link and HH:MM start times. 44 places were only "TBD" (43) or "N/A" (1) - they would pin to the campus centre on a map; now dropped on collect (`placeless` in opportunities.ts, test) and in the files. "Online"/"Online Event" (354) left as the place name. Long street-address place names left as the sources wrote them.
 - Spot check clubs: Illinois Astronomical Society, Michigan CSA fine; UMN dental society and UT ABPsi link the national organisation's site (the clubs' own choice) - left; IU Student Foundation's old address forwards to the IU Foundation's student-foundation page (TLS fails here) - left.
 - Spot check courses: 5 random USF Spring 2027 classes match.
+
+## 2026-11-08 09:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits. bulletins.psu.edu and guide.wisc.edu still fail here.
+- Stanford club links (queue item): several *.stanford.edu pages now open from the container (they did not on 11-05). Official sources used:
+  - Department student-organization pages (engineering, CS, explore-energy): 4 club sites (ESW, SPE, KIDA, CS+Social Good). National-body pages (ASCE, SIAM), a center home page (SNAGS→NACC), a GSB generic page and a login-only page (oSTEM on queer.stanford.edu) were not used.
+  - Cardinal Service (Stanford's public-service office) has a public page per student service group (78 read, 1 s apart): 32 links (websites and Instagram) for 27 clubs, each opened and checked to name the club; prelaw.stanford.edu no longer exists (left out); stanfordwomeninpolitics.com resolves but does not open here (kept - listed on the official page). Forms, GroupMe, Airtable, partner nonprofits and Haas resource pages skipped.
+  - All rows in org-links-stanford.csv (re-applied on every collect). Stanford clubs with a public link: 94 → 125 of 733. arts.stanford.edu student-groups answers 403.
+- Spot check clubs: GW Project Sunshine, UT University Finance Association, Dartmouth South House, UF GradCru, PSU Plant Biology GSA - all fine.
+- Spot check courses: 5 random Cornell Fall 2026 classes match.
