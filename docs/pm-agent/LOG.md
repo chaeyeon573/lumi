@@ -2654,3 +2654,11 @@
   - All rows in org-links-stanford.csv (re-applied on every collect). Stanford clubs with a public link: 94 → 125 of 733. arts.stanford.edu student-groups answers 403.
 - Spot check clubs: GW Project Sunshine, UT University Finance Association, Dartmouth South House, UF GradCru, PSU Plant Biology GSA - all fine.
 - Spot check courses: 5 random Cornell Fall 2026 classes match.
+
+## 2026-11-08 10:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Stanford community-center pages: only NACC answers (others 404 or no student-group list); its links are centre/office pages, no club sites - nothing added.
+- Lowest public-link shares: Caltech 1%, Georgetown/Northwestern/SCU 1%, Emory/UCSB 2% (CampusGroups club pages need a school login - checked Northwestern again; not usable).
+- Caltech (queue item): per-club search, keeping only the club's own site that opens and names the club: Robotics Team (+ Instagram from its sponsor guide), Hacktech, Alpine Club, Racing, OASIS, PARSEC, SWE (on caltech.edu, does not open here; Caltech's EAS page links it), SPIn - 9 links in new org-links-caltech.csv (applied on every collect). iGEM (no current page), EWB and Ultimate (no club site) skipped.
+- Spot check clubs: PSU INMM, GT 3484 Magazine, Tulane Adoption Club, UChicago Blacklight, IU Physics Club - all fine.
+- Spot check courses: 5 random Maryland Fall 2026 classes match.
