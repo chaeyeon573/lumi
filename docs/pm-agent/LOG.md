@@ -2613,3 +2613,10 @@
 - Linktree `ltsid` tracking tail removed from links (publicFix, test): 109 links in 27 files.
 - Spot check clubs: MIT Spinning Arts, Vanderbilt Commodore Capital, Penn Aspiring Educators (led to the ltsid fix), IU Funding Board fine; SF State Black Unity Center is a university equity office → department (override added).
 - Spot check courses: 5 random CMU Fall 2026 classes match.
+
+## 2026-11-08 05:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Link sweep (all schools): no bad schemes or spaces; Instagram post links (19) left - they open the club's own post. A university home page saved as a club Website (NYU, Syracuse, UGA) and an Instagram login-screen link are not club links → set aside to deadlinks on every collect (`NOT_CLUB_RE` in cleanCollectedOrgs, test; 5 links now).
+- Recruiting info: every CampusGroups school and Penn already carry open/closed (or cycle/deadline at Penn); Engage schools publish no recruiting field - nothing more to read without guessing.
+- Spot check clubs: Rice CSSA, PSU SWIM, Cornell Lunatic, UT Dragon/Lion Dance fine; MSU COM SOMA links to the college's student-organizations page, which does not name the club (official page, only this club uses it) - left, noted.
+- Spot check courses: 5 random Rice Spring 2027 classes match.
