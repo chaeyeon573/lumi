@@ -1,9 +1,109 @@
 {
- "collectedAt": "2026-11-08T03:42:12.857Z",
+ "collectedAt": "2026-11-08T22:33:25.911Z",
  "sources": [
-  "engage https://ucr.campuslabs.com/engage 18"
+  "engage https://ucr.campuslabs.com/engage 18",
+  "localist https://events.ucr.edu 132"
  ],
  "events": [
+  {
+   "description": "UCR Information Technology Solutions invites university students, faculty, and staff from across the UC system and inland empire to attend a free, full-day seminar to discuss the rapidly evolving landscape of cybersecurity and the diversity of careers available in the cybersecuri",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "meetings & training",
+    "lectures & presentations",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54321011554352",
+   "type": "event",
+   "title": "Red Flags, Real Careers: Cybersecurity Careers and Skill-building Seminar",
+   "host": "Information Technology Solutions (ITS)",
+   "schoolId": "s_ucr",
+   "date": "2026-11-09T16:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "HUB (Highlander Union Building), 302 South",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/red-flags-real-careers-cybersecurity-careers-and-skill-building-seminar",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The 2026 RNA Collaboration Symposium will bring together UCR RNA investigators and members of our research community for a day of engaging presentations, meaningful discussions, and collaboration. Our program is designed to inspire and empower participants while fostering a dynam",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "meetings & training",
+    "conferences",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53798609626915",
+   "type": "event",
+   "title": "2026 RNA Collaboration Symposium",
+   "host": "College of Natural and Agricultural Sciences",
+   "schoolId": "s_ucr",
+   "date": "2026-11-09T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Multidisciplinary Research Building (MRB), Seminar Room, 1110",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/2026-rna-collaboration-symposium",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Flyer: Beyond Large-Scale RGB: Harnessing Priors and Physics Across Data-Scarce Regimes Abstract: The recent revolution in computer vision has largely been propelled by the availability of massive, annotated RGB datasets. However, in domains such as infrared and other wavelengths",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54429030725743",
+   "type": "event",
+   "title": "ECE Seminar Series: Vishwanath Saragadam",
+   "host": "Electrical and Computer Engineering",
+   "schoolId": "s_ucr",
+   "date": "2026-11-09T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Winston Chung Hall, 205/206",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/ece-seminar-series-vishwanath-saragadam",
+   "sourceLabel": "UC Riverside Events"
+  },
   {
    "description": "Join us for games, food, and fun! Learn about furry fandom and what we do! Check out our Discord or Instagram for the latest update on what we'll be doing for each meeting!!",
    "eligibility": "Open to students",
@@ -17,8 +117,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12821368",
    "type": "event",
    "title": "Furries at UC Riverside - General Meeting",
@@ -36,6 +136,68 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Next Stop: Postdoc! | Discover Opportunities, Master the Process & Secure Your Next Role Are you a graduate student planning your next academic move, or a current postdoc looking to land your ideal next fellowship? Navigating the postdoc search can feel like a full-time job—from ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "career"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54169415400106",
+   "type": "event",
+   "title": "Pathways to Postdoctoral Opportunities",
+   "host": "Career Center",
+   "schoolId": "s_ucr",
+   "date": "2026-11-09T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Life Sciences Building, 1425",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/pathways-to-postdoctoral-opportunities",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Panel of med/grad students share their experiences to demystify higher-ed for UCR undergraduates.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54188900838002",
+   "type": "event",
+   "title": "CRF Med/Grad School Experience Panel",
+   "host": "Undergraduate Education",
+   "schoolId": "s_ucr",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Student Services Building, 2nd Floor, the UE",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/crf-medgrad-school-experience-panel",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Come hear from some of our alumni as they share their journeys through industry, the different fields they have worked in, and the experiences that have shaped their careers. Learn about the opportunities they have pursued, the challenges they have overcome, and the valuable insi",
    "eligibility": "Open to students",
    "tags": [
@@ -48,8 +210,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12955139",
    "type": "event",
    "title": "NSBE Alumni Panel",
@@ -66,6 +228,130 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "We’re excited to welcome Madison Brookshire, Lecturer in UCR’s Art History Department, practicing artist, and filmmaker, as AHUA's first Guest Speaker of the quarter! From his creative practice to his experience in higher education, Madison will share his journey, showcase a sele",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54427932200424",
+   "type": "event",
+   "title": "Art History Undergraduate Association Guest Speaker Madison Brookshire",
+   "host": "Art",
+   "schoolId": "s_ucr",
+   "date": "2026-11-10T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "HUB (Highlander Union Building), 260",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/art-history-undergraduate-association-guest-speaker-madison-brookshire",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join us to raise the flag in honor of Veterans Day. It will be at the Campus Flag Pole by Lot 1 at 7:30am.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54409688839364",
+   "type": "event",
+   "title": "Flag Raising Ceremony for Veterans Day",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-11-10T15:30:00.000Z",
+   "startTime": "07:30",
+   "place": {
+    "name": "Flagpole",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/flag-raising-ceremony-for-veterans-day-8525",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Meet new people and learn something new at Creat'R Lab Maker Meetups! Hands-on, creative workshops from industry and business! Learn 3D design, electronics, and digital fabrication! Unwind, experiment, and build! Maker Meetups offer a hands on space to explore creative design, ph",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54012184118753",
+   "type": "event",
+   "title": "Maker Meetup",
+   "host": "UCR Library",
+   "schoolId": "s_ucr",
+   "date": "2026-11-10T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Orbach Library (Science Library), Room 122",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/fall-2026-maker-meetup",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Invited speaker and author will present on their recently published book and related topics on digital activism in migrant communities in Mexico.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54197906773099",
+   "type": "event",
+   "title": "Migrant Nations in Mexico: Digital Strategies among the Haitian and Central American Diasporas in Tijuana",
+   "host": "Hispanic Studies",
+   "schoolId": "s_ucr",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Humanities & Social Sciences Building, 1111",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/migrant-nations-in-mexico-digital-strategies-among-the-haitian-and-central-american-diasporas-in-tijuana",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "ASPB Presents: R'Pico 2026 Get your boots out and join ASPB on Tuesday, November 10th, 2026 , from 5:00-9:00 PM at The Barn! R'Pico is a jaripeo hosted on campus, so bring your friends and dance the night away with live Banda music, plus free food, a mechanical bull, a photo boot",
    "eligibility": "Open to students",
    "tags": [
@@ -78,8 +364,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12905309",
    "type": "event",
    "title": "ASPB Presents: R'Pico 2026",
@@ -97,7 +383,133 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Our event, #hopecore, invites UCR students to celebrate hope, kindness, and connection through a variety of creative and interactive activities hosted by HUB Programs. Attendees will have the opportunity to write their hopes and dreams to display on our &ldquo;Tree of Hope&rdquo;",
+   "description": "UCR School of Business Dean's Speaker Series Hear from extraordinary innovators and visionaries The Dean's Speaker Series, hosted by the UCR School of Business, invites in-demand business leaders who have achieved national and international prominence in their respective fields t",
+   "eligibility": "Cost: $0",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53978892735970",
+   "type": "event",
+   "title": "Dean's Speaker Series UCR Business",
+   "host": "School of Business",
+   "schoolId": "s_ucr",
+   "date": "2026-11-11T02:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "School of Business Building",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/deans-speaker-series-2026-school-of-business",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join us as we kick off the Benefits Open Enrollment Season. Come out to meet the vendors from Blue Shield, Health Net, Kaiser, Delta Dental, VSP Vision, Credit Unions, Fidelity Investments, the UCPath Center and more! View the Benefits Fair Flyer for more information. You may als",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "arts",
+    "exhibitions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53994282483475",
+   "type": "event",
+   "title": "Faculty & Staff Benefits, Health & Wellness Fair",
+   "host": "Human Resources",
+   "schoolId": "s_ucr",
+   "date": "2026-11-12T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "HUB (Highlander Union Building), 302 South",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/uc-riversides-annual-faculty-staff-benefits-health-wellness-fair",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Leveraging Crystalline Oxidizer Microstructure to Advance Multiphase Combustion Systems Abstract: Next generation propulsion systems are needed to improve the range, speed, and safety of rocket motors whereas chemical looping combustion is required to modernize power production a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54438108176012",
+   "type": "event",
+   "title": "ME 250 Seminar Series: Dr. Joseph Kalman",
+   "host": "Marlan and Rosemary Bourns College of Engineering",
+   "schoolId": "s_ucr",
+   "date": "2026-11-12T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Winston Chung Hall, 205/206",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/me-250-seminar-series-dr-joseph-kalman",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join us for a low-stakes, supportive space to support and engage with UCR graduate students’ research progress across the UCR community. This event is hosted by the UCR Library, RAISE@UCR, GradSuccess, and the XCITE Center for Teaching and Learning. This is an informal seminar se",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures & presentations",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54012207005190",
+   "type": "event",
+   "title": "UCR AI Research Brown Bag Presentation Series",
+   "host": "UCR Library",
+   "schoolId": "s_ucr",
+   "date": "2026-11-12T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Orbach Library (Science Library), Room 240",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/fall-2026-ai-graduate-research-brown-bag-series",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Our event, #hopecore, invites UCR students to celebrate hope, kindness, and connection through a variety of creative and interactive activities hosted by HUB Programs. Attendees will have the opportunity to write their hopes and dreams to display on our “Tree of Hope”",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -110,12 +522,12 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12913862",
    "type": "event",
    "title": "#hopecore",
-   "host": "Highlander Union",
+   "host": "Highlander Union · UC Riverside",
    "schoolId": "s_ucr",
    "date": "2026-11-12T21:30:00.000Z",
    "startTime": "13:30",
@@ -129,6 +541,162 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The University of California, Riverside Graduate Student Association, in collaboration with the Neuroscience Graduate Student Association and Genetics, Genomics, and Bioinformatics Graduate Student Association, invites UCR students and faculty to participate in an interdisciplina",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "conferences"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54376114943742",
+   "type": "event",
+   "title": "Methods Mixer",
+   "host": "UC Riverside",
+   "schoolId": "s_ucr",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "HUB (Highlander Union Building), 302",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/methods-mixer",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "UCR Staff Pantry Reminder: Bring your own reusable bags The UCR Staff Pantry provides free groceries to support our campus community. Stop by to pick up fresh produce, pantry staples, and more. Fridays: November 13 -- VolunteerJanuary 22February 19March 5April 9May TBD Event",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "fundraisers"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53809253334221",
+   "type": "event",
+   "title": "UCR Staff Pantry",
+   "host": "UC Riverside",
+   "schoolId": "s_ucr",
+   "date": "2026-11-13T20:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Pentland Hills/RSO Roundabout, (Turn left on Linden Street and right onto Pentland Way, near Lot 21)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/ucr-staff-pantry-3308",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The UCR Retirement Center, Emeriti and Retirees’ Associations cordially invites retirees and emeriti to a reception honoring and celebrating the valuable contributions made to the campus and surrounding community on Friday, November 13, 2026 from 2:30 – 4:00 p.m. at the UCR Alumn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54125768247238",
+   "type": "event",
+   "title": "Reception Honoring Emeriti and Retirees",
+   "host": "Human Resources",
+   "schoolId": "s_ucr",
+   "date": "2026-11-13T22:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Alumni & Visitors Center",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/reception-honoring-emeriti-and-retirees",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join the Women’s Resource Center, GradSuccess, Center for Undergraduate Research & Engaged Learning, The Stable, and After Hours on Friday, November 13th, from 4:00 PM to 6:00 PM at the Stable for Happy Research Hour! This collaboration combines brilliant minds and icebreaking be",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations",
+    "workshops",
+    "academic"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54286516360608",
+   "type": "event",
+   "title": "Happy Research Hour",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-11-14T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "The Stable (at The Barn)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/happy-research-hour-969",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Create your free profile by visiting http://app.campdoc.com/register/ucriverside Youth Archery Academy teaches Archery basics including safety, focus and awareness. Youth progress in various Archery disciplines with the support from UCR Archery Club Instructors who hold US Archer",
+   "eligibility": "Cost: $140",
+   "tags": [
+    "event",
+    "recreation",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39359495120583",
+   "type": "event",
+   "title": "Youth Archery (7-16 year olds)",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-11-14T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), Glen Mor Fields",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/archery",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Worship night at the belltower Starts at 7pm Anyone is welcome to join!",
    "eligibility": "Open to students",
    "tags": [
@@ -140,8 +708,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12912555",
    "type": "event",
    "title": "JESUS NIGHT",
@@ -158,6 +726,68 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Free admission! The screening will be followed by a Q&A with director Shō Miyake! Winner of the top prize at the Locarno Film Festival, Shō Miyake’s Two Seasons, Two Strangers is a meditation on how travel, language, and chance encounters shape the stories we tell. The film follo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "arts",
+    "film & screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54010817372459",
+   "type": "event",
+   "title": "Two Seasons, Two Strangers",
+   "host": "Media and Cultural Studies",
+   "schoolId": "s_ucr",
+   "date": "2026-11-14T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "UCR ARTS",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/two-seasons-two-strangers",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The annual primary care summit allows students who have an interest in primary care medicine to explore the field and learns from faculty and professionals via workshop, speaker, and tabling sessions. To learn more about the primary care summit please connect with UCRSOM's Office",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54355567255666",
+   "type": "event",
+   "title": "Primary Care Summit",
+   "host": "School of Medicine",
+   "schoolId": "s_ucr",
+   "date": "2026-11-14T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "School of Medicine Education Building II, 104/106",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/primary-care-summit",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Join WOOF as we partner with 2nd Street Hooligans Rescue for a hands-on volunteer session! Volunteers will assist shelter staff with animal socialization, kennel cleaning, and store organization. Come out, support shelter animals, and help us make a positive impact!",
    "eligibility": "Open to students",
    "tags": [
@@ -169,8 +799,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12815964",
    "type": "event",
    "title": "WOOF Shelter Volunteer Event",
@@ -198,8 +828,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12545522",
    "type": "event",
    "title": "CMC Street Cleanup",
@@ -216,6 +846,36 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "UCR’s Department of Theatre, Film, and Digital Production presents Twelfth Night By William Shakespeare Director: Melanie Queponds Scenic Designer: Tyler Yaish Costume Designer: Landis Maren York Lighting Designer: Ben Tusher Sound Designer: Jeremiah Turner November 5-14, 2026 AR",
+   "eligibility": "Cost: $0 UCR students, $15 General, $12 students, UCR alumni cardholders, senior citizens, & children.",
+   "tags": [
+    "event",
+    "arts",
+    "theatre & plays"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53949837646291",
+   "type": "event",
+   "title": "Twelfth Night by William Shakespeare",
+   "host": "Theatre, Film, and Digital Production",
+   "schoolId": "s_ucr",
+   "date": "2026-11-14T22:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Arts Building, Studio Theatre (ARTS 113)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/twelfth-night",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Join WOOF as we partner with ARC of the Inland Empire for a hands-on volunteer session! Volunteers will assist shelter staff with animal socialization, kennel cleaning, and store organization. Come out, support shelter animals, and help us make a positive impact! Sign-ups will be",
    "eligibility": "Open to students",
    "tags": [
@@ -227,8 +887,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12939752",
    "type": "event",
    "title": "WOOF Volunter Event",
@@ -245,6 +905,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Know Your Numbers! In partnership with the Faculty and Staff Wellness, the Kaiser Permanente Mobile Health Vehicle will be on campus on Tuesday, November 17, 2026 to provide free biometric health screenings and flu shots for UCR Faculty and Staff. You do not have to be a Kaiser m",
+   "eligibility": "Cost: 0",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54260072253390",
+   "type": "event",
+   "title": "Biometric Screening with Flu Shots",
+   "host": "Human Resources",
+   "schoolId": "s_ucr",
+   "date": "2026-11-17T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Olmstead Plaza",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/biometric-screening-with-flu-shots",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Join us for games, food, and fun! Learn about furry fandom and what we do! Check out our Discord or Instagram for the latest update on what we'll be doing for each meeting!!",
    "eligibility": "Open to students",
    "tags": [
@@ -257,8 +946,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12821373",
    "type": "event",
    "title": "Furries at UC Riverside - General Meeting",
@@ -276,6 +965,381 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join us for the final Lunch & Learn of the quarter. The School of Medicine Admissions team will go over the Early Assurance Program application and requirements. Meet with the team before the application goes live and learn some best practices for preparing your best application.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations",
+    "workshops",
+    "academic"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54445222348342",
+   "type": "event",
+   "title": "Pathway Programs Lunch & Learn: Early Assurance Program (EAP) Informational",
+   "host": "School of Medicine",
+   "schoolId": "s_ucr",
+   "date": "2026-11-17T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "School of Medicine Education Building II, 106",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/pathway-programs-lunch-learn-early-assurance-program-eap-informational",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join us on Tuesday, November 17, 2026 from 1:30 PM to 4:00 PM in HUB 302 North for a roundtable discussion! The Diversity Council will share their experiences and perspectives while discussing concerns impacting their communities. Once folks are done sharing their experiences, th",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "meetings & training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54355759044029",
+   "type": "event",
+   "title": "DEI: Roundtable Talk",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-11-17T21:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "HUB (Highlander Union Building), 302 North",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/dei-roundtable-talk",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Please join us on November 17th for a presentation by Dr. Cassia Roth (SEHE), who will present her research titled “The Market for Milk: A Dataset on Enslaved Wet Nurses in Nineteenth-Century Rio de Janeiro” We hope you can join us for an engaging discussion and a chance to conne",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54311288755737",
+   "type": "event",
+   "title": "Social Sciences Lab Talk: Dr. Cassia Roth (Professor of SEHE)",
+   "host": "UC Riverside",
+   "schoolId": "s_ucr",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "CHASS Interdisciplinary South, 1113",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/social-sciences-lab-talk-dr-cassia-roth-professor-of-sehe",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "UC Riverside Retirees' and Emeriti Associations with additional sponsorship by UCR Osher and UCR's Office of Gift Planning Present The Edward A. Dickson Emeritus/a Professorship Lecture \"Why Tragedy? Two Famous Plays by Shakespeare\" John Briggs, UCR Professor Emeritus of English ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53923303670436",
+   "type": "event",
+   "title": "\"Why Tragedy? Two Famous Plays By Shakespeare\"",
+   "host": "Human Resources",
+   "schoolId": "s_ucr",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "University Extension in University Village, Room 1101",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/why-tragedy-two-famous-plays-by-shakespeare",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Organized by Johanna Nieto-Rojas of UC Riverside's Department of Hispanic Studies as part of the Center for Ideas and Society's Archives of Bodies / Embodied Archives Research Collaborative, this interdisciplinary symposium brings together artists and scholars to explore how memo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "lectures & presentations",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54348084392319",
+   "type": "event",
+   "title": "Embodied Archives of Memory: An Interdisciplinary Symposium on Art, Memory, and Embodied Testimony",
+   "host": "Black Study",
+   "schoolId": "s_ucr",
+   "date": "2026-11-18T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "CHASS Interdisciplinary South, 1128",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/embodied-archives-of-memory-an-interdisciplinary-symposium-on-art-memory-and-embodied-testimony",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Curious to meet other startup founders and science innovators? Join us on the 2nd Wednesday of every month between 9AM - 4PM for a free open workday at the UC Riverside Life Sciences Incubator, open to both community members, faculty and student innovators exploring ideas in life",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "meetings & training",
+    "workshops",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_51933608234778",
+   "type": "event",
+   "title": "Monthly Open Workday at the Life Sciences Incubator",
+   "host": "College of Natural and Agricultural Sciences",
+   "schoolId": "s_ucr",
+   "date": "2026-11-18T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Multidisciplinary Research Building (MRB), Life Sciences Incubator",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/monthly-open-workday-at-the-life-sciences-incubator",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Flyer: Reading Magnets That Hide: Magneto-Optics of Compensated Magnets Abstract: Compensated magnets, whose moments cancel, promise stray-field-free, dense and ultrafast spintronics, but magnetometers barely see them. Polarized light can. The Kerr effect reads the optical Hall c",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54428087034991",
+   "type": "event",
+   "title": "MSE Seminar Series: Dr. Jing Xia (UCI)",
+   "host": "Marlan and Rosemary Bourns College of Engineering",
+   "schoolId": "s_ucr",
+   "date": "2026-11-18T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Winston Chung Hall, 205/206",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/mse-seminar-series-dr-jing-xia-uci",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join the Center for Ideas and Society to celebrate the launch of Dr. Donatella Galella’s new book, Feeling Yellow: Asian Americans and Yellowface in Twenty-First-Century Musical Theatre (University of Michigan Press). Professor Galella (Associate Professor of Theatre, Film, and D",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54302216405735",
+   "type": "event",
+   "title": "Book Launch: \"Feeling Yellow\" with Donatella Galella",
+   "host": "Dance",
+   "schoolId": "s_ucr",
+   "date": "2026-11-18T23:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "CHASS Interdisciplinary South, 1111",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/feeling-yellow",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Create your free profile by visiting http://app.campdoc.com/register/ucriverside Art Enrichment after-school program ignites young minds with a passion for creativity. Youth Art Enrichment 8-week program builds connections with kids and teens through art and craft engagement whil",
+   "eligibility": "Cost: $140",
+   "tags": [
+    "event",
+    "recreation",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39359512646463",
+   "type": "event",
+   "title": "Youth Art Enrichment",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Student Recreation Center (SRC)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/artenrichment",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Visit http://app.campdoc.com/register/ucriverside and create your free profile. Youth Soccer Academy is a skill academy class that builds connections with kids through soccer. Classes are led by UCR Soccer Instructors with US Soccer instructor certification teaching essential ski",
+   "eligibility": "Cost: $140",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_41739001974069",
+   "type": "event",
+   "title": "Youth Soccer (5-6, 7-8 and 9-11 year olds sessions)",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), Glen Mor Fields",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/youth-soccer-academy-ucr",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "How do you build an identity the law refuses to recognize? Using “speculative demography,” a method built from more than 9,000 archival records, Natasha McPherson follows the Creole women of Jim Crow New Orleans who did it in their homes, through kinship, community, labor, and th",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54348313180515",
+   "type": "event",
+   "title": "Sterling Stuckey Lecture Series: Creole Women and the Work of Identity Making in Jim Crow New Orleans",
+   "host": "History",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "CHASS Interdisciplinary South, 1128",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/sterling-stuckey-lecture-series-creole-women-and-the-work-of-identity-making-in-jim-crow-new-orleans",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "​ Build the Commercial Foundation for a Competitive Phase I Proposal Preparing to pursue SBIR/STTR funding? Build the market evidence, commercialization strategy, and project pitch needed to strengthen your Phase I application. This six-week workshop combines hands-on customer di",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "meetings & training",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53995350712145",
+   "type": "event",
+   "title": "Startups: Write a Stronger SBIR Phase I Proposal",
+   "host": "Vice Chancellor for Research and Economic Development",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://events.ucr.edu/event/startups-write-a-stronger-sbir-phase-i-proposal",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Interested in pursuing a future in law? Join us for an evening dedicated to helping you take the next step in your legal career! We'll host rotations where professionals will help students learn what a career in law can mean and what the process of getting into law school is like",
    "eligibility": "Open to students",
    "tags": [
@@ -288,8 +1352,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12951847",
    "type": "event",
    "title": "Your Path to Law",
@@ -307,6 +1371,98 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join us on Thursday, November 19, 2026 for GCAP's quarterly Farmers Market! We'll be bringing together undergraduate students, community members, mom-and-pop shops, and local vendors as a way to help support small businesses in the Inland Empire and give back to our students! Foo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54355537123742",
+   "type": "event",
+   "title": "Fall Farmer's Market",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "UCR Bell Tower",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/fall-farmers-market",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "A talk on her experiences in American Indian law, environmental justice, and natural resources law.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54188909370944",
+   "type": "event",
+   "title": "Chancellor's Research Fellowship PBK Visiting Scholar Law Professor - Sarah Krakoff",
+   "host": "Undergraduate Education",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Student Services Building, 2nd Floor, the UE",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/crf-pbk-visiting-scholar-law-professor-sarah-krakoff",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The Student Innovation Sprint is a hands-on startup challenge where interdisciplinary teams of UCR students partner with California-based companies to solve real-world business problems. Over the course of the challenge, student teams explore business obstacles, conduct research,",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54429005853059",
+   "type": "event",
+   "title": "Student Innovation Sprint",
+   "host": "Vice Chancellor for Research and Economic Development",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Multidisciplinary Research Building (MRB), 1st Floor Seminar Room",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/student-innovation-sprint",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Join The Reach Initiative for a community service opportunity at Senior Sunrise Living! UCR students will have the opportunity to volunteer during a Thanksgiving dinner event, support the staff, and help create a welcoming and enjoyable experience for residents. This event reflec",
    "eligibility": "Open to students",
    "tags": [
@@ -319,8 +1475,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12927064",
    "type": "event",
    "title": "Thanksgiving Dinner Volunteer Opportunity at Senior Sunrise Living",
@@ -338,6 +1494,99 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "BIOS Anna Friz is a radio, sound, and media artist and scholar. Her research often concerns themes of transmission ecologies and the intimacies of signal space; environment, land and infrastructures; time perception and durational performance; and critical fictions. She specializ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54409800423939",
+   "type": "event",
+   "title": "Anna Friz and Jeff Kolar Talk",
+   "host": "UC Riverside",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "CHASS Interdisciplinary North, 3023",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/friz-kolar",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join MESC & the SWANA Faculty and Staff Association (SFASA) for our first Meet & Greet! Grab some refreshments and connect with SWANA staff and faculty across campus! Open to all UCR students, staff and faculty!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54384289347607",
+   "type": "event",
+   "title": "MESC & SFASA Meet & Greet",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Costo Hall, 111",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/mesc-sfasa-meet-greet",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Whether you're newly retired or enjoying your golden years, we invite you to connect with fellow retirees and emeriti for an afternoon of great conversation, laughter and community. This is a wonderful opportunity to relax, socialize and build new friendships. Free light appetize",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54163619650828",
+   "type": "event",
+   "title": "UCR Emeriti and Retiree Happy Hour at the UCR Barn Stable",
+   "host": "Human Resources",
+   "schoolId": "s_ucr",
+   "date": "2026-11-20T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "UCR Barn",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/ucr-emeriti-and-retiree-happy-hour-at-the-ucr-barn-stable",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "This will be beneficial to the student body because students will be able to get creative insights from an influencer/actor or actress. We believe having an actress/influencer on campus to explain what they have overcome and their growth and journey on where they are now could br",
    "eligibility": "Open to students",
    "tags": [
@@ -351,8 +1600,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12935740",
    "type": "event",
    "title": "ASPB Presents: Winter Guest Lecture",
@@ -370,6 +1619,97 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join Us for a Morning of Connection! You’re warmly invited to a delightful morning reception with Chancellor Hu. Come share coffee and pastries, and enjoy great conversation!",
+   "eligibility": "Cost: 0",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54347528390113",
+   "type": "event",
+   "title": "Coffee with Chancellor S. Jack Hu (Faculty & Staff Only)",
+   "host": "Campus Leadership",
+   "schoolId": "s_ucr",
+   "date": "2026-11-20T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Hinderaker Hall, Patio",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/coffee-with-chancellor-s-jack-hu-faculty-staff-only",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Title: Do engineering students read textbooks? Learning analytics when using an interactive textbook Abstract: Current university students are digital natives and have generally grown up in a phone-based world. Thus, we are developing educational strategies at the interface of te",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54381818276062",
+   "type": "event",
+   "title": "CEE Seminar Speaker Dr. Matthew Liberatore",
+   "host": "Chemical and Environmental Engineering",
+   "schoolId": "s_ucr",
+   "date": "2026-11-20T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Winston Chung Hall, 205/206",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/cee-seminar-speaker-dr-matthew-liberatore",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Friday, November 20 1:00 PM - 2:30 PM SRC South Cooking Well Kitchen Did you know there’s a mini market on campus where you can get FREE stuff? Let Basic Needs and Chef Val teach you about what the R’pantry has to offer! Learn how to make some delicious, cost-effective dishes wit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_30468915129573",
+   "type": "event",
+   "title": "Budget Bites",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-11-20T21:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), SRC South Cooking Well Kitchen",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/budget_bites",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Join WOOF as we partner with West End Shelter for Animals for a hands-on volunteer session! Volunteers will assist shelter staff with animal socialization, kennel cleaning, and store organization. Come out, support shelter animals, and help us make a positive impact! Sign-ups wil",
    "eligibility": "Open to students",
    "tags": [
@@ -381,8 +1721,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12939753",
    "type": "event",
    "title": "WOOF Shelter Volunteer Event",
@@ -410,8 +1750,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12939755",
    "type": "event",
    "title": "WOOF Shelter Volunteer Event (Rose Bowl)",
@@ -440,8 +1780,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12821369",
    "type": "event",
    "title": "Furries at UC Riverside - General Meeting",
@@ -459,6 +1799,39 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Planning on applying to medical school, law school, or other graduate/professional programs? Working on your School of Medicine EAP application? The AMCAS application? Law school? If you are planning to submit applications in the coming months (with some deadlines in November thr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "meetings & training",
+    "lectures & presentations",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54179768087668",
+   "type": "event",
+   "title": "Buscadores Program: Graduate, Medical, Law, and Professional School Application Writing Support",
+   "host": "Career Center",
+   "schoolId": "s_ucr",
+   "date": "2026-11-23T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Humanities & Social Sciences Building, 1001H",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/buscadores-program-graduate-medical-law-and-professional-school-application-writing-support-1970",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "General Meeting Activity: TBA",
    "eligibility": "Open to students",
    "tags": [
@@ -470,8 +1843,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12939757",
    "type": "event",
    "title": "WOOF November General Meeting #2",
@@ -481,6 +1854,156 @@
    "startTime": "18:00",
    "sourceUrl": "https://ucr.campuslabs.com/engage/event/12939757",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Taiko Ensemble Recital Outside Barn Stage 12 noon Terry Nguyen, Director Beginning and intermediate-level members of the UCR Taiko Ensemble will present a demonstration of Japanese taiko drumming. 2026-2027 EVENT DATES Tuesday, November 24, 2026 Tuesday, March 2, 2027Tuesday, May",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "arts",
+    "music & concerts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54004051574174",
+   "type": "event",
+   "title": "Taiko Ensemble Recital",
+   "host": "Music",
+   "schoolId": "s_ucr",
+   "date": "2026-11-24T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "The Barn, Outdoor Stage",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/taiko-ensemble-recitals-2026-2027",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Ask questions, share your thoughts, explore ideas, find support and grow. Since 1998, we have hosted Tuesday Talks in our center each Tuesday at 5 p.m. Each week features a unique discussion comprised of UCR students and facilitated by LGBT Resource Center staff. All are welcome!",
+   "eligibility": "Cost: n/a",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54118557167224",
+   "type": "event",
+   "title": "Tuesday Talks",
+   "host": "UC Riverside",
+   "schoolId": "s_ucr",
+   "date": "2026-11-25T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Costo Hall, 245",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/tuesday-talks",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Camp Highlander is where confidence grows, friendships form, and young leaders rise. Hosted at University of California, Riverside, this dynamic youth camp blends fun, challenge, and purpose to help kids discover what it means to lead—and to lead together. Camps at $76 per day Si",
+   "eligibility": "Cost: $76 per day",
+   "tags": [
+    "event",
+    "recreation",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_42331871648907",
+   "type": "event",
+   "title": "Camp Highlander 2026",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-11-25T08:00:00.000Z",
+   "place": {
+    "name": "Student Recreation Center (SRC)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/camp_highlander_summer_day_camps_2022_9101",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Hands-on, creative mini workshops! Learn 3D design, electronics, and digital fabrication through beginner friendly projects. Unwind, experiment, and build! Mini Maker Workshops offer a hands on space to explore creative design, physical computing, and digital fabrication. Whether",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures & presentations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54012027450743",
+   "type": "event",
+   "title": "Mini Maker Workshops",
+   "host": "UCR Library",
+   "schoolId": "s_ucr",
+   "date": "2026-11-25T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Orbach Library (Science Library), Room 140 (Makerspace, Creat'R Lab)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/mini-maker-workshops-fall-2026",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The BlaqOUT Discussion Group is recommended for same-gender-loving, lesbian, gay, bisexual, transgender, queer and/or questioning students who identify as Black/African-American or of African descent. The group offers a space to come together and discuss community and life issues",
+   "eligibility": "Cost: n/a",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54118796523823",
+   "type": "event",
+   "title": "BlaqOUT Discussion Group",
+   "host": "UC Riverside",
+   "schoolId": "s_ucr",
+   "date": "2026-11-26T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Costo Hall, 245",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/blaqout-discussion-group-4061",
+   "sourceLabel": "UC Riverside Events"
   },
   {
    "description": "Our event, Monkey See Monkey Sew, invites UCR students to design and assemble their own sock monkey using socks, thread, and yarn in a relaxed, hands-on crafting session hosted by HUB Programs. Centered on a playful, nostalgic craft theme, the event will provide all materials at ",
@@ -496,8 +2019,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12917950",
    "type": "event",
    "title": "Monkey See, Monkey Sew",
@@ -515,6 +2038,187 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This class is perfect for anyone new to tennis or looking to build a strong foundation. Participants will learn the basic strokes, footwork, scoring, and court etiquette in a supportive and fun environment. No prior experience is needed—just come ready to learn and enjoy the game",
+   "eligibility": "Cost: $140-$148",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39307371572831",
+   "type": "event",
+   "title": "Tennis, Beginning",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-01T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), Tennis Courts 3-5",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/tennis_beginning_1655",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Welcome Week Fall 2026 is where we introduce the Middle Eastern Student Center Vision, Mision, Goals and Values to new and current students, staff, and faculty members. Day 2: Taste of MESCafé, a special welcome MESCafé where we introduce the signature weekly program. You are inv",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53869419094147",
+   "type": "event",
+   "title": "MESC Welcome Week F26 - MESCafé: Taste of MESCafé",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-12-01T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Costo Hall, 111",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/mesc-welcome-week-f26-mescafe-taste-of-mescafe",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "MESCafé, is the one of MESC's signature programs taking place weekly on Tuesdays from 11:00 to 12:00 pm. You are invited to join us every Tuesday for refreshments and conversations centered around culture, current events, and more. All are welcome to join us as we dig deep into t",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54109726424894",
+   "type": "event",
+   "title": "MESCafé",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-12-01T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Costo Hall, 111",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/mescafe-646",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Provost Elizabeth Watkins holds regular office hours to get to know and hear from faculty, staff, and students at UCR. Instead of gathering in a large forum, office hours are opportunities to chat one-on-one or in small groups. Campus members can bring any questions or concerns t",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_38573906013232",
+   "type": "event",
+   "title": "Provost's Office Hours - Faculty",
+   "host": "Office of the Provost",
+   "schoolId": "s_ucr",
+   "date": "2026-12-01T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Hinderaker Hall, 4148",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/provosts_office_hours_-_faculty_1",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The purpose of this program is to provide students with a supportive space to slow down, connect with one another, and prioritize their well-being during the academic term. Through talking circles and guided de-stress activities, students will have opportunities to reflect, share",
+   "eligibility": "Cost: 0.00",
+   "tags": [
+    "event",
+    "talk",
+    "social"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53932239576502",
+   "type": "event",
+   "title": "NASP Talking Circles",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-12-01T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Native American Garden",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/nasp-talking-circles",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Calling all Graduate Students! Come join us for stress-relief activities, massages, and free food. Build connections with other graduate students and access on-campus resources. Time: 11:30 AM- 1:00 PM Dates & Locations: October 13th, 2026 HUB 265 November 10, 2026 HUB 355 Decemb",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54169802071708",
+   "type": "event",
+   "title": "2026 Fall Grad Time",
+   "host": "Graduate Division",
+   "schoolId": "s_ucr",
+   "date": "2026-12-01T19:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "HUB (Highlander Union Building)",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/2026-fall-grad-time",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
    "description": "Join us for games, food, and fun! Learn about furry fandom and what we do! Check out our Discord or Instagram for the latest update on what we'll be doing for each meeting!!",
    "eligibility": "Open to students",
    "tags": [
@@ -527,8 +2231,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:13.373Z",
-   "createdAt": "2026-11-08T03:42:13.373Z",
+   "lastVerified": "2026-11-08T22:33:26.360Z",
+   "createdAt": "2026-11-08T22:33:26.360Z",
    "id": "op_ucr_eg_12821374",
    "type": "event",
    "title": "Furries at UC Riverside - General Meeting",
@@ -544,6 +2248,387 @@
    "benefit": "Free food",
    "sourceUrl": "https://ucr.campuslabs.com/engage/event/12821374",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Latinx & hte Environment seminar provides an opportunity for students to gain new insights into the fight for climate justice. Learn how to get involved in research and action in various fields, and form connections with people who inspire them! Students may choose to enroll ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_54039271901418",
+   "type": "event",
+   "title": "Latinxs & the Environment Seminar Fall 2026",
+   "host": "College of Humanities, Arts, and Social Sciences",
+   "schoolId": "s_ucr",
+   "date": "2026-12-02T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "CHASS Interdisciplinary North, 3023",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/latinxs-the-environment-seminar-fall-2026",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "\"APPROVAL REQUIRED\" This is intermediate and advanced training in Kodokan Judo. Students must have prior instructor approval before being accepted into this class. Judo Gis are required. This class focuses on Tachi Waza (standing techniques) and Ne Waza (ground techniques). Kata ",
+   "eligibility": "Cost: $80-$90",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_40049788649147",
+   "type": "event",
+   "title": "Judo, Advanced",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR D",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/judo_advanced_1290",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "This is an introductory course in Kodokan Judo. Students will learn several basic throws, pins, arm bars and chokes. Students will also learn how to fall properly to protect themselves from injury. Free practice (Randori) will include standing techniques and mat work. Judo etique",
+   "eligibility": "Cost: $50-$60",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_40049747944179",
+   "type": "event",
+   "title": "Judo, Beginning",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR D",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/judo_beginning_7818",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Tai Chi Yang Style, Beginning (Combined w/Advanced class) T'ai Chi Ch'uan is a traditional Chinese Martial Art practiced as a health promotion and wellness exercise. It was proven to be good for coordination, balance and is low intensity Aerobic exercise. It is an Internal Form o",
+   "eligibility": "Cost: $61.00 - $83.00",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39307723151493",
+   "type": "event",
+   "title": "Tai Chi Yang, Beginning",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR C",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/taichi_yang",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "This class is designed for players who already understand the basics and want to improve their consistency, technique, and gameplay. We’ll focus on refining strokes, developing match strategy, and building confidence through drills and rally-based practice. Ideal for those who ha",
+   "eligibility": "Cost: $140-$148",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_38563891239352",
+   "type": "event",
+   "title": "Tennis, Intermediate",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), Tennis Courts 3-5",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/tennis_intermediate",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Aikido training builds strength, endurance and confidence. At UCR Aikido, great emphasis is placed on clean, precise technique, weapons skills (Jo & Bokken) and fluid Ukemi (the art of the fall or getting out of the way). UCR Aikido is a proud affiliate of Birankai North America.",
+   "eligibility": "Cost: $57-$79",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39307501932307",
+   "type": "event",
+   "title": "Aikido, Unlimited",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-04T01:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR D",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/aikido_unlimited2022",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Salsa is a fun, energetic, popular style of latin music and dance created and practiced by people all around the world. In this beginner class, you will learn the fundamentals of salsa dancing, including basic movements, timing, and cultural context. Whether you’re an absolute be",
+   "eligibility": "Cost: $25-$45",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_40043226096365",
+   "type": "event",
+   "title": "Salsa Dance, Beginning",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-04T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR E",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/salsa_dance_open_level",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "In this intermediate level salsa class, we will build upon what we learned in the beginner class. This time there will be more of an emphasis on body movement, partnerwork, and musicality. By the end of this class, you will be able to social dance comfortably. No partner necessar",
+   "eligibility": "Cost: $25-$45",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_40862209386518",
+   "type": "event",
+   "title": "Salsa Dance, Intermediate",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-04T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR E",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/salsa_dance_intermediate",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "This is an introductory course in traditional Shotokan Karate (below Orange Belt). Students will learn basic blocking, punching and kicking techniques. Students will also learn a few self defense techniques. Karate etiquette is emphasized and respectful behavior is required upon ",
+   "eligibility": "Cost: $55-$75",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39307637431540",
+   "type": "event",
+   "title": "Adult Karate, Beginning",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-04T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR B/C",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/karate_beginning",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "\"APPROVAL REQUIRED\" This is intermediate and advanced Shotokan Karate. Students must have prior instructor approval before being accepted into this class. Karate gis and approved sparring equipment are required. This class focuses on more advanced techniques and higher level kata",
+   "eligibility": "Cost: $99-$143",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_39307652205472",
+   "type": "event",
+   "title": "Adult Karate, Intermediate",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-04T03:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR B/C",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/karate_intermediate",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "The purpose of the Pizza & Paint Finals Study Break is to provide students with a relaxing and creative opportunity to recharge during the stress of finals week. Students will be able to enjoy a meal, participate in a casual painting activity, and connect with their peers in a su",
+   "eligibility": "Cost: 0.00",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_53950743181989",
+   "type": "event",
+   "title": "Finals Week Study Break Pizza and Paint",
+   "host": "Vice Chancellor of Student Affairs",
+   "schoolId": "s_ucr",
+   "date": "2026-12-04T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "HUB (Highlander Union Building), 269",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.ucr.edu/event/finals-week-study-break-pizza-and-paint",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Our blended learning Adult and Pediatric First Aid/CPR/AED course consists of an online, self paced and an in-person skill session. The online component is designed to instruct participants in the knowledge-based aspects of the First Aid/CPR/AED course, along with introducing the",
+   "eligibility": "Cost: $50-$90",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_40049709479660",
+   "type": "event",
+   "title": "Standard First Aid with CPR/AED Adult/Pediatric",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-06T17:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "Student Recreation Center (SRC), Conference Room",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/standard_first_aid_with_cpraed_adultpediatric",
+   "sourceLabel": "UC Riverside Events"
+  },
+  {
+   "description": "Join our Tai Chi workshops to explore the ancient art of Tai Chi, a practice renowned for its holistic health benefits. Discover mindfulness in motion as you learn the graceful, flowing movements that enhance balance, reduce stress, and promote well-being. These workshops are sui",
+   "eligibility": "Cost: $37.00",
+   "tags": [
+    "event",
+    "recreation"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-08T22:33:45.488Z",
+   "createdAt": "2026-11-08T22:33:45.488Z",
+   "id": "op_ucr_lc_44331046377436",
+   "type": "event",
+   "title": "Tai Chi Workshops",
+   "host": "UCR Recreation",
+   "schoolId": "s_ucr",
+   "date": "2026-12-06T23:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Student Recreation Center (SRC), MPR C",
+    "lat": 33.9737,
+    "lng": -117.3281
+   },
+   "sourceUrl": "https://events.ucr.edu/event/tai_chi_workshops_2023",
+   "sourceLabel": "UC Riverside Events"
   }
  ]
 }
