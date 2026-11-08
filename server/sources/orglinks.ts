@@ -306,7 +306,14 @@ export function uclaOrgToOrg(o: UclaOrg, schoolId = 's_ucla'): Organization {
 }
 
 /** 디렉터리에 남은 시험용 가짜 단체("Test Club", "Test Org One", "Test CIO"…) — 파일에는 두고 화면·DB 로는 보내지 않는다 (2026-11-05 점검 15개). "Test Prep Club"·"Testing Center" 는 해당 없음 */
-export const isPlaceholderOrg = (name: string) => /^test\s+(club|org(anization)?|group|cio|clp|test)\b/i.test(name.trim()) || /^(asdf|do not use|delete me)\b/i.test(name.trim());
+// 디렉터리 관리자가 만든 시험·견본 단체 (2026-11-08 점검: "Engage Test Org", "RSO Test Group", "Sandbox GT", "Peabody Institute: RSO Template", "DOSO - TEST", "(Inactive)" …).
+// 진짜 단체는 남긴다: "Sandbox Improvisation"(즉흥극), "Singh Sandbox Makerspace", "The Archive", "Yale Film Archive"
+export const isPlaceholderOrg = (name: string) => {
+  const n = name.trim();
+  return /^test\s+(club|org(anization)?|group|cio|clp|test)\b/i.test(n) || /^(asdf|do not use|delete me|to be archived)\b/i.test(n)
+    || /\btest\s*(club|org(anization)?|group)\s*\d*$/i.test(n) || /^test-\w+$/i.test(n) || /[-:]\s*test$|\btest$/i.test(n) && !/\b(prep|kitchen|lab|labs|drive|pilots?|bench|flight|engineering|society)\s+test$/i.test(n)
+    || /^(sandbox( gt| rso)?|.* sandbox)$/i.test(n) || /\brso template$/i.test(n) || /\(inactive\)$/i.test(n) || /\btest sample organization$/i.test(n);
+};
 
 // 학교 로그인 뒤 단체 포털 — 열면 로그인 화면으로 넘어간다 (Rutgers-Newark raiderlink: /webapp/auth/login?msg=LOGIN_REQUIRED, 201개, 2026-11-07)
 const LOGIN_ONLY_RE = /^https?:\/\/raiderlink\.newark\.rutgers\.edu\//i;
