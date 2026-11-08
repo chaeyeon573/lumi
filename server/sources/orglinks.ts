@@ -318,7 +318,7 @@ export const isPlaceholderOrg = (name: string) => {
 // 학교 로그인 뒤 단체 포털 — 열면 로그인 화면으로 넘어간다 (Rutgers-Newark raiderlink: /webapp/auth/login?msg=LOGIN_REQUIRED, 201개, 2026-11-07)
 const LOGIN_ONLY_RE = /^https?:\/\/raiderlink\.newark\.rutgers\.edu\//i;
 // 없어진 옛 단체 주소 — 모두 일반 안내 페이지로 넘어간다 (Penn State clubs.psu.edu → 학생단체 안내, Michigan ross.campusgroups.com → 업체 소개, 2026-11-07)
-const RETIRED_RE = /^https?:\/\/(www\.)?clubs\.psu\.edu\/|^https?:\/\/ross\.campusgroups\.com\//i;
+const RETIRED_RE = /^https?:\/\/(www\.)?clubs\.psu\.edu\/|^https?:\/\/ross\.campusgroups\.com\/|^https?:\/\/orgs\.studentinvolvement\.ufl\.edu\//i; // UF 옛 주소 → GatorConnect 목록 첫 화면 (2026-11-08)
 // 단체 링크가 아닌 것: 대학 홈 첫 화면(https://www.nyu.edu/), 인스타 로그인 화면(/accounts/onetap/?next=%2F — 꺼낼 원래 주소가 없다) (2026-11-08 점검 4개)
 const NOT_CLUB_RE = /^https?:\/\/(www\.)?[a-z0-9-]+\.edu\/?$|^https?:\/\/(www\.)?instagram\.com\/accounts\//i;
 const ADMIN_RE = /^https?:\/\/(manage|editor)\.wix\.com\/|^https?:\/\/[a-z0-9]+\.admin\.mailchimp\.com\/|^https?:\/\/sites\.google\.com\/d\/[A-Za-z0-9_-]{20,}/i;

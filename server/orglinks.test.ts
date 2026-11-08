@@ -254,11 +254,13 @@ test('cleanCollectedOrgs: retired directory addresses that redirect to a generic
   const orgs = [
     { id: 'oc_psu_astro', name: 'Astronomy Club', schoolId: 's_psu', type: 'club', links: [{ label: 'Website', url: 'http://www.clubs.psu.edu/up/astro' }, { label: 'Instagram', url: 'https://www.instagram.com/psuastro/' }] },
     { id: 'oc_umich_aaba', name: 'AABA', schoolId: 's_umich', type: 'club', links: [{ label: 'Website', url: 'https://ross.campusgroups.com/AABA/' }] },
+    { id: 'oc_ufl_jasa', name: 'JASA', schoolId: 's_ufl', type: 'club', links: [{ label: 'Website', url: 'https://orgs.studentinvolvement.ufl.edu/Organization/Jamaican-American-Student-Association' }] },
   ] as never;
   const r = cleanCollectedOrgs(orgs, '2026-11-07');
   assert.deepEqual(r.orgs[0].links!.map((l) => l.label), ['Instagram']);
   assert.deepEqual(r.orgs[1].links, []);
-  assert.equal(r.badLinks.length, 2);
+  assert.deepEqual(r.orgs[2].links, []);
+  assert.equal(r.badLinks.length, 3);
 });
 
 test('descriptionInstagram: handle named with Instagram/IG becomes a link; bare @handle and mail addresses do not', async () => {

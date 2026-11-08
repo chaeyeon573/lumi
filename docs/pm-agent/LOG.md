@@ -2748,3 +2748,9 @@
 - UW: the official UW Seattle campus calendar is Trumba (trumba.com/calendars/sea_campus.rss, channel "UW Seattle Campus Events", link washington.edu/calendar). Its items have no pubDate, so the Trumba reader read 0. Reader extended: start from the first description line ("Sunday, Nov 8, 2026, 2 – 4 p.m. PST") in the school time zone, place from Campus location + room, multi-day items skipped, UW field lines kept out of the description (test). UW 36 → 123 upcoming. Harvard (same reader, has pubDate) re-run: 147, normal.
 - Spot check clubs: Northwestern Mayfest, UChicago Blue Chips, BU Girls Who Code fine; Vanderbilt Freedom Initiative links IJM's national student page (club's choice) - left; Wisconsin "The Well | Union South | 233" is a Union wellness space, not a club → department (override).
 - Spot check courses: 5 random Duke Fall 2026 classes match.
+
+## 2026-11-08 22:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events: UCR's public Localist calendar (events.ucr.edu) added next to Engage - 18 → 86 upcoming; one event (ECE Seminar, Nov 9 11:00, Winston Chung Hall 205/206) matches the calendar API. SF State, UChicago, Penn, UVA, Caltech, USF calendar hosts have no Localist API or fail here.
+- Spot check clubs: USC GEN-ZiNE, Stanford Applied Cybersecurity, UCR Competitive Pickleball fine; Michigan Sirens (replit app 404) → deadlinks; UF orgs.studentinvolvement.ufl.edu addresses now redirect to the GatorConnect list front page → added to the retired-address rule (test), 2 links set aside.
+- Spot check courses: 5 random USC Spring 2027 classes match.
