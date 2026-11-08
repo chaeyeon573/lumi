@@ -1311,7 +1311,7 @@ export function cmuToCourses(html: string, termCode: string, label: string): Cat
   for (const chunk of body.split('</tr>')) {
     const cells = [...chunk.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => m[1]); if (cells.length < 8) continue;
     const num = /courseDetails\?COURSE=(\d{5})/.exec(cells[0])?.[1];
-    if (num) { code = `${num.slice(0, 2)}-${num.slice(2)}`; title = cellText(cells[1]).replace(/\s*This Section Cancelled\s*$/i, ' [cancelled]'); const u = Number(cellText(cells[2])); units = Number.isFinite(u) && u > 0 ? u : undefined; cur = undefined; }
+    if (num) { code = `${num.slice(0, 2)}-${num.slice(2)}`; title = cellText(cells[1]).replace(/\s*This Section Cancelled\s*$/i, ' [cancelled]').replace(/^(.+?)\s+:\s+\1$/, '$1') /* 'X : X' 같은 제목 반복은 한 번만 (63개, 2026-11-08) */; const u = Number(cellText(cells[2])); units = Number.isFinite(u) && u > 0 ? u : undefined; cur = undefined; }
     if (!code) continue;
     const sec = cellText(cells[3]);
     if (sec) { cur = { code, title, sec, units, meetings: [] }; secs.push(cur); }

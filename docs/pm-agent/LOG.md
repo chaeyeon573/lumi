@@ -2668,3 +2668,10 @@
 - Caltech club links (continued): own sites for Student Investment Fund (sif.caltech.edu), Christian Fellowship (ccf.caltech.edu, posts through 2026), MSA (msa.clubs.caltech.edu), CHLA (chla.caltech.edu); Caltech's Center for Inclusion and Diversity has a public page per affinity club (no outside links) - used for APIDA+, BLAC, BSEC, BSU, Club Latino, PRISM. 10 links; Caltech now 20 of 125 clubs with a public link. Not found: Model UN, Quiz Bowl, Amateur Astronomy, COCO (no current page); Chinese Association's site stopped in 2013 (skipped). clubs.caltech.edu is a club-finance page, not a directory.
 - Spot check clubs: UGA Dogs for the Paws, Michigan Noir Runway, NYU Schack REC fine; UMD Buddhist Philosophy for Peace links the national SGI-USA site (club's choice, left); UChicago LMSA "website" was a Pritzker news article about one conference → deadlinks.
 - Spot check courses: 5 random UW Fall 2026 classes match.
+
+## 2026-11-08 12:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Caltech club links (continued): Chess (chess.caltech.edu), Cricket, Optica, Co-Ed Volleyball (*.clubs.caltech.edu), Badminton, Surf and Windsurf - 6 links, each opened and naming the club. Caltech now 26 of 125. caltech.edu answers DNS for any name (wildcard), so guessing subdomains is not a shortcut; probing the web server per guess would flood it - not done. Ballroom: the only page found uses a different club name - skipped. Club directory itself is Caltech-login only.
+- CMU: 63 class titles repeated around " : " ("Machine Learning in Practice : Machine Learning in Practice") - reader now shows it once (test; real "Production Prep: Julius Caesar : Directing" titles untouched), file repaired.
+- Spot check clubs: UChicago Ankara Magic, Penn MERT, GW Compass, Cornell Global Health SAB fine; UMass Society of American Foresters links the national eforester.org history page (club's choice) - left.
+- Spot check courses: 5 random CMU Spring 2027 classes match (Vanderbilt has no live lookup in the reader).

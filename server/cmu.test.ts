@@ -19,3 +19,10 @@ test('CMU: sections marked "This Section Cancelled" are left out', () => {
   assert.equal(cmuToCourses(`<tbody>${row('ETC Interdisciplinary Project II This Section Cancelled')}</tbody>`, 'F26', 'Fall 2026').length, 0);
   assert.equal(cmuToCourses(`<tbody>${row('ETC Interdisciplinary Project II')}</tbody>`, 'F26', 'Fall 2026').length, 1);
 });
+
+test('CMU: a title repeated around " : " is shown once', () => {
+  const td = (x: string) => `<td>${x}</td>`;
+  const row = (t: string) => `<tr>${td('<a onclick="x(\'/SOC/SOCServlet/courseDetails?COURSE=05834&SEMESTER=S27\')">05834</a>')}${td(t)}${td('12')}${td('A')}${td('')}${td('MW')}${td('03:00PM')}${td('04:20PM')}${td('Pittsburgh')}${td('In person')}</tr>`;
+  assert.equal(cmuToCourses(`<tbody>${row('Machine Learning in Practice : Machine Learning in Practice')}</tbody>`, 'S27', 'Spring 2027')[0].title, 'Machine Learning in Practice');
+  assert.equal(cmuToCourses(`<tbody>${row('Production Prep: Julius Caesar : Directing')}</tbody>`, 'S27', 'Spring 2027')[0].title, 'Production Prep: Julius Caesar : Directing');
+});
