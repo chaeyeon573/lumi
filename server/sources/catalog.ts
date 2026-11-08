@@ -62,9 +62,12 @@ export function parseBlock(schoolId: string, block: string, origin?: string): Ca
   let code = '', title = '';
   if (detailCode && detailTitle) { code = strip(detailCode).replace(/\.$/, ''); title = strip(detailTitle).replace(/\.$/, ''); }
   else {
-    const text = strip(strong ?? titleEl ?? block.slice(0, 400));
+    // 앞 400자만 자르면 태그가 반쯤 잘려 제목에 "3 Credits </d" 가 남는다(Penn State 696개, 2026-11-08) — 잘린 태그는 뗀다
+    const text = strip(strong ?? titleEl ?? block.slice(0, 400).replace(/<[^>]*$/, ''));
     const m = TITLE_RE.exec(text); if (!m) return null;
     code = m[1].replace(/\s+/g, ' '); title = m[2].replace(/[.\s]+$/, '');
+    // 교차 개설 번호가 제목 앞에 오는 경우("/ JST 120 / RLST 120 Title") — 번호들을 뗀다
+    if (title.startsWith('/')) title = title.replace(/^(?:\/\s*[A-Z][A-Z&]{1,5}\s?\d{1,4}[A-Z]{0,2}\s*)+\/?\s*/, '');
   }
   // 교차 개설 "NR 421/ NR 521" → 학교 목록 머리처럼 첫 번호만 (NC State). Caltech 의 "ACM/EE 106A" 같은 공동 학과 번호는 그대로
   { const x = /^([A-Z][A-Z&]{1,5} \d{3,4}[A-Z]{0,2})\s*\/\s*[A-Z][A-Z&]{1,5} \d/.exec(code); if (x) code = x[1]; }

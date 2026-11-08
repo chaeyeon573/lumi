@@ -178,8 +178,8 @@ async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
         // 학기 전체를 한 페이지로 받는 출처(Caltech, CMU)는 끊길 일이 없다 → 빈 학과는 정말 없어진 것(취소 등)
         const wholeTerm = /^(caltech|cmu)\b/.test(row.courses_source ?? '');
         if (!wholeTerm) keptCatalog.push(...prev.filter((c) => c.term !== 'catalog' && !freshGroups.has(`${c.term}#${c.department}`) && all.some((x) => x.term === c.term)));
-        // 원본 제목의 겹친 빈칸·앞뒤 빈칸을 정리한다 (USC 'Routines     (Sec 48022)', GT 'Structural  Analysis' — 329개, 2026-11-07)
-        const unique = [...new Map([...all, ...keptCatalog].map((c) => [c.id, /\s{2,}|^\s|\s$/.test(c.title) ? { ...c, title: c.title.replace(/\s+/g, ' ').trim() } : c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
+        // 원본 제목의 겹친 빈칸·앞뒤 빈칸, 풀리지 않은 글자 코드(Brown·UCLA '&quot;American Dream&quot;' 135개, 2026-11-08)를 정리한다 (USC 'Routines     (Sec 48022)', GT 'Structural  Analysis' — 329개, 2026-11-07)
+        const unique = [...new Map([...all, ...keptCatalog].map((c) => [c.id, /\s{2,}|^\s|\s$|&(#\d+|#x[0-9a-f]+|[a-z]+);/i.test(c.title) ? { ...c, title: decodeHtmlText(c.title).replace(/\s+/g, ' ').trim() } : c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
         // 이번에 빠진 수업(취소 등)은 지우지 않고 <id>.courses-dropped.json 에 옮겨 둔다 (화면 데이터에는 안 나감)
         const nowIds = new Set(unique.map((c) => c.id)); const dropped = prev.filter((c) => !nowIds.has(c.id));
         if (dropped.length) {

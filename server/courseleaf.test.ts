@@ -15,3 +15,11 @@ test('CourseLeaf cross-listed code "NR 421/ NR 521" keeps the first code; shared
   assert.equal(parseBlock('s_ncsu', mk('TE&#160;507/ TT&#160;507 / NW&#160;507', 'Nonwoven Characterization Methods'), 'https://catalog.ncsu.edu')?.code, 'TE 507');
   assert.equal(parseBlock('s_x', mk('ACM/EE&#160;106A', 'Introductory Methods'), 'https://x.edu')?.code, 'ACM/EE 106A');
 });
+
+test('CourseLeaf block cut inside a tag (Penn State) gives a clean title without "</d" or credits', () => {
+  // 400 자 경계가 태그 한가운데 오도록 앞을 채운다 — 실제 bulletins.psu.edu 의 두 모양
+  const body = (title: string) => `<div class="course_codetitle">AA&#160;1: ${title}</div><div class="course_credits">3 Credits</div><div class="courseblockdesc">Long description text here.</div>`;
+  const cutAt = (title: string, marker: string) => { const b = body(title); const pos = b.indexOf(marker) + 3; return `<p data-x="${'a'.repeat(400 - pos - 13)}"></p>${b}`; };
+  assert.equal(parseBlock('s_psu', cutAt('First Year Seminar', '</div><div class="courseblockdesc"'), 'https://bulletins.psu.edu')?.title, 'First Year Seminar');
+  assert.equal(parseBlock('s_psu', cutAt('Introduction to Anti-Black racism in the United States', '<div class="course_credits"'), 'https://bulletins.psu.edu')?.title, 'Introduction to Anti-Black racism in the United States');
+});
