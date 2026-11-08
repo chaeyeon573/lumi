@@ -2639,3 +2639,9 @@
   - 2 UT staff groups (Hispanic Faculty Staff Association, University Police Organization) → department; ALL-CAPS club names left as the clubs wrote them.
 - Spot check clubs: Columbia Synapse, Michigan CARE, Wisconsin Bucky Noh Dhol, NC State Transfer Pack fine; UNC NCPIRG answered 202 (bot check), not judged.
 - Spot check courses: 5 random BU Spring 2027 classes match.
+
+## 2026-11-08 08:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits. bulletins.psu.edu still resets the connection.
+- Event places/links sweep: all events have a date, a valid source link and HH:MM start times. 44 places were only "TBD" (43) or "N/A" (1) - they would pin to the campus centre on a map; now dropped on collect (`placeless` in opportunities.ts, test) and in the files. "Online"/"Online Event" (354) left as the place name. Long street-address place names left as the sources wrote them.
+- Spot check clubs: Illinois Astronomical Society, Michigan CSA fine; UMN dental society and UT ABPsi link the national organisation's site (the clubs' own choice) - left; IU Student Foundation's old address forwards to the IU Foundation's student-foundation page (TLS fails here) - left.
+- Spot check courses: 5 random USF Spring 2027 classes match.
