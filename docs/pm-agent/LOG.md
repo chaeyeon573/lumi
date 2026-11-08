@@ -2735,3 +2735,9 @@
 - Events coverage: every collected school has an events file except BU. BU's public calendar page (phpbin/calendar/rss.php) opens but lists only the next day with events; list/week views are 404 or a 202 bot check - not a usable source, not pushed further.
 - Spot check clubs: Yale Russian Chorus, IU AMA, SJSU Club Swim, Tulane TIERA, UF Project Makeover - fine.
 - Spot check courses: 5 random Rice Fall 2026 classes match.
+
+## 2026-11-08 20:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Caltech club links (continued): Physics Club (physics.clubs.caltech.edu) and Book Club (caltech-book-club.pages.dev). Searched rugby, soccer, tennis, squash, dance, ballet, tango, capoeira, a cappella, strings, cinema, puzzle, math, quantum: no current club site found; Ballroom's site uses a different club name; the quantum group (QCSA) does not open here and its name does not clearly match - skipped. Caltech now 27 of 125.
+- Spot check clubs: USC GWIS LA, WFU Awaken, GT Board Game Club, AI at UGA fine; UC Davis Microbiology GSA links its graduate group's site (403 to automated requests) - left.
+- Spot check courses: 5 random USF Fall 2026 classes match.
