@@ -2709,3 +2709,13 @@
   - Emory: official pages list no club links. Columbia engineering pages: 403 to automated requests.
 - Spot check clubs: GT LOGRAS, UC Davis CodeLab, BC Phaymus fine; UNC OutLaw links the law school's student-org list (503 here), UVA BRASA the national site (503 here) - left.
 - Spot check courses: 5 random Cornell Spring 2027 classes match.
+
+## 2026-11-08 17:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Few-links schools (continued, same method: official engineering student-organization pages, each link opened and checked):
+  - Illinois (Grainger, CEE, MechSE, Siebel pages): 10 - ESAA, Illini Solar Car, ASME, Off-Road Illini, EWB, NOBE, SWE, Tau Beta Pi, WCS, Engineering Council Facebook. NSBE's page redirects to a login - left out; CampusGroups (one.illinois.edu) pages are login-only.
+  - Dartmouth: Humanitarian Engineering. CWRU: ASCE Facebook (the matcher had paired it with the wrong club; fixed by hand).
+  - WashU: the McKelvey page links departments only.
+  - Found and fixed in my own run: club names shared across schools made two rows pick another school's id; the add step skipped them (no wrong data written), redone with the Illinois ids. Checked every org-links-<school>.csv: no rows with another school's ids.
+- Spot check clubs: UCR Autistic Women's Society, UVA KSA, BU FinTech Group, UT Baptist Student Ministry fine; Notre Dame Expanding Your Horizons (sites.nd.edu) answers 403 to automated requests - not judged.
+- Spot check courses: 5 random Maryland Spring 2027 classes match.
