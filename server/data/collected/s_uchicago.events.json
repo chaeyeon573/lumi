@@ -1,40 +1,10 @@
 {
- "collectedAt": "2026-11-08T03:42:10.749Z",
+ "collectedAt": "2026-11-09T00:35:23.888Z",
  "sources": [
-  "engage https://uchicago.campuslabs.com/engage 30"
+  "engage https://uchicago.campuslabs.com/engage 31",
+  "livewhale https://events.uchicago.edu 165"
  ],
  "events": [
-  {
-   "description": "Come work with the UCSP PULSE-A engineering department and learn about aerospace engineering as the PULSE-A team prepares for the upcoming Critical Design Review! Pizza will be provided. Get an up-close view of what hands-on aerospace engineering work is like. These work sessions",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
-   "id": "op_uchicago_eg_12952084",
-   "type": "event",
-   "title": "PULSE-A Fall Quarter Engineering Work Sessions",
-   "host": "UChicago Space Program",
-   "schoolId": "s_uchicago",
-   "date": "2026-11-08T19:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "ERC Hubble Lounge (5th floor)",
-    "lat": 41.7886,
-    "lng": -87.5987
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12952084",
-   "sourceLabel": "Student org events"
-  },
   {
    "description": "Diwali is almost here, and Sangam would love for you to celebrate with us! Our annual Diwali celebration is on Sunday, November 8th, at Rockefeller Chapel. That's Diwali itself, so there's no better night to come together. Wear your festive best, bring your friends and roommates,",
    "eligibility": "Open to students",
@@ -48,8 +18,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12944562",
    "type": "event",
    "title": "Diwali Celebration at Rockefeller Chapel",
@@ -67,6 +37,504 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "community events",
+    "concerts"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282129",
+   "type": "event",
+   "title": "America@250 - Now is the Time: Artists Go to Work",
+   "host": "Court Theatre",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T06:00:00.000Z",
+   "sourceUrl": "https://events.uchicago.edu/event/282129-america250-now-is-the-time-artists-go-to-work",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conference-symposium",
+    "international",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_274849",
+   "type": "event",
+   "title": "New Directions in Jewish Intellectual History: Knowledge Production and Modernity - a conference in memory of Paul Mendes-Flohr",
+   "host": "Joyce Z. and Jacob Greenberg Center for Jewish Studies",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T06:00:00.000Z",
+   "place": {
+    "name": "Swift Hall Third Floor Lecture Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/274849-new-directions-in-jewish-intellectual-history-knowled",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "training-workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282403",
+   "type": "event",
+   "title": "Multi-scale Biological Adaptation to Environmental Variability",
+   "host": "Committee on Cancer Biology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T15:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "875 N Michigan Ave, Suite 3500",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/cancerbiology/event/282403-multi-scale-biological-adaptation-to-environmental",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271441",
+   "type": "event",
+   "title": "Noon Conf | Error Discussion Series [HWei]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271441-noon-conf-error-discussion-series-hwei",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283005",
+   "type": "event",
+   "title": "2026 Simon M. Shubitz Cancer Prize & Lectureship",
+   "host": "University of Chicago Comprehensive Cancer Center",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283005-2026-simon-m-shubitz-cancer-prize-lectureship",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281341",
+   "type": "event",
+   "title": "Let’s Talk",
+   "host": "Student Wellness",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Charles M. Harper Center, Room 100-9H",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274858-lets-talk",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281782",
+   "type": "event",
+   "title": "Yaniv Ziv (Weizmann Institute of Science): NITMB Seminar Series",
+   "host": "NSF-Simons National Institute for Theory and Mathematics in Biology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "875 N Michigan Ave, Suite 3500",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281782-yaniv-ziv-weizmann-institute-of-science-nitmb",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "research",
+    "training-workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282147",
+   "type": "event",
+   "title": "CRI Bioinformatics Workshop Series | Beyond the Expression Matrix: Turning RNA-seq Data into Biological Insight",
+   "host": "CRI Event Calendar",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 218",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282147-cri-bioinformatics-workshop-series-beyond-the",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270250",
+   "type": "event",
+   "title": "Bárbara Arroyo",
+   "host": "Department of Anthropology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Haskell Hall, Room 315",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/270250-barbara-arroyo",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281796",
+   "type": "event",
+   "title": "Dynamics seminar: Elena Kim",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "E206",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281796-dynamics-seminar-elena-kim",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283400",
+   "type": "event",
+   "title": "E&E Seminar: Samantha Sambado",
+   "host": "Department of Ecology and Evolution",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283400-eampe-seminar-samantha-sambado",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282404",
+   "type": "event",
+   "title": "Andres Montaya Castillo (Colorado University)",
+   "host": "Committee on Cancer Biology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T21:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "Kent Chemical Laboratory, Room 120",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/cancerbiology/event/282404-andres-montaya-castillo-colorado-university",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281462",
+   "type": "event",
+   "title": "Calderon-Zygmund Seminar: Juhi Jang",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T21:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "Eckhart Hall, Room 202",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281462-calderon-zygmund-seminar-juhi-jang",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277908",
+   "type": "event",
+   "title": "Ask Me Anything: What’s Next for U.S. Politics?",
+   "host": "Chicago Center on Democracy",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Classics Building, Room 110",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/277908-ask-me-anything-whats-next-for-us-politics",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "diversity",
+    "international",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282333",
+   "type": "event",
+   "title": "Agata Zborowska: The Visual History of Polish Chicago",
+   "host": "Department of Slavic Languages and Literatures",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T22:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Social Science Research, Tea Room (SSRB 201)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/282143-agata-zborowska-the-visual-history-of-polish",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278254",
+   "type": "event",
+   "title": "Building Fictions: Art, Cinema, Archives, and Other Ways of Surviving Reality with Rubén Gutiérrez",
+   "host": "Department of Visual Arts",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Logan Center, Performance Penthouse",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/278254-building-fictions-art-cinema-archives-and-other",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
    "eligibility": "Open to students",
    "tags": [
@@ -79,8 +547,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875745",
    "type": "event",
    "title": "Bible Study + Dinner",
@@ -98,6 +566,523 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270435",
+   "type": "event",
+   "title": "AM Conf | PGY2 MR [NGanek & PLysouvakon] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270435-am-conf-pgy2-mr-nganek-plysouvakon-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272116",
+   "type": "event",
+   "title": "Neuroscience Seminar Series: Reza Shadmehr, PhD",
+   "host": "Neuroscience Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272116-neuroscience-seminar-series-reza-shadmehr-phd",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine",
+    "professional development program"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_269176",
+   "type": "event",
+   "title": "Professor Rounds | PMEO Didactics (1 CME) *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/269176-professor-rounds-pmeo-didactics-1-cme-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282153",
+   "type": "event",
+   "title": "BFI x Sadie Collective Student Lunch Series: Race, Labor Market Inequality, and the Future of Work",
+   "host": "Becker Friedman Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T18:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://events.uchicago.edu/event/282153-bfi-x-sadie-collective-student-lunch-series-race",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283069",
+   "type": "event",
+   "title": "Department of Medicine Grand Rounds",
+   "host": "BSD",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Billings Hospital, Room P-117",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283069-department-of-medicine-grand-rounds",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284250",
+   "type": "event",
+   "title": "CHD Colloquium: Kerilyn Schewel, UNC Chapel Hill",
+   "host": "Department of Comparative Human Development",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Rosenwald Hall, Room 329",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/284250-chd-colloquium-kerilyn-schewel-unc-chapel-hill",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "training-workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277434",
+   "type": "event",
+   "title": "Getting Started with Claude Chat for Staff",
+   "host": "Intranet",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T19:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://events.uchicago.edu/event/277434-getting-started-with-claude-chat-for-staff",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275066",
+   "type": "event",
+   "title": "Geometric Analysis Seminar: Talant Talipov (Toronto)",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T21:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://events.uchicago.edu/event/275066-geometric-analysis-seminar-talant-talipov-toronto",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "community events",
+    "discussions-forums"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283646",
+   "type": "event",
+   "title": "In Search of Phillis Wheatley Peters screening and discussion with filmmakers Leslie Askew and Turlough White",
+   "host": "Center for the Study of Gender and Sexuality",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Centers for Gender/Race Studies, Community Room (105)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/283412-in-search-of-phillis-wheatley-peters-screening-and",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "concerts",
+    "discussions-forums"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281283",
+   "type": "event",
+   "title": "Rear View Mirror Sessions: Marvin Gaye",
+   "host": "Logan Center",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Logan Center, Performance Hall",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/261611-rear-view-mirror-sessions-stevie-wonder",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Cost: Registration Required",
+   "tags": [
+    "event",
+    "talk",
+    "conference-symposium"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278227",
+   "type": "event",
+   "title": "Howard T. Ricketts Symposium and Retreat",
+   "host": "Department of Microbiology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T06:00:00.000Z",
+   "place": {
+    "name": "Q Center, 1405 N 5th Ave, St. Charles, IL 60174",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274603-howard-t-ricketts-symposium-and-retreat",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "career development",
+    "discussions-forums",
+    "international"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281706",
+   "type": "event",
+   "title": "Matt Schultz - Language Learning, International Opportunities, and Career Development: What the Peace Corps Can Do for You",
+   "host": "CEERES",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "1155 E. 60th St., Room 319, Chicago, IL 60637",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281706-matt-schultz-language-learning-international",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277912",
+   "type": "event",
+   "title": "Neuroscience Postdoctoral Research Series: Zeeshan Banday, PhD",
+   "host": "Neuroscience Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Surgery Brain Research Institutes, J461",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/277912-neuroscience-postdoctoral-research-series-zeeshan-ban",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271443",
+   "type": "event",
+   "title": "Noon Conf | IBS-Functional Abdominal Pain [ABerkemeyer]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271443-noon-conf-ibs-functional-abdominal-pain-aberkemeyer",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275088",
+   "type": "event",
+   "title": "Committee on Microbiology seminar",
+   "host": "Duchossois Family Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T18:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 115",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/275088-committee-on-microbiology-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278050",
+   "type": "event",
+   "title": "[Pedagogy Seminar] Stephen Yearwood (UChicago)",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T19:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "E207A",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/278050-pedagogy-seminar-stephen-yearwood-uchicago",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272641",
+   "type": "event",
+   "title": "Colloquium",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-11T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Eckhardt Research Center, Auditorium Room 161",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272641-colloquium",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Open to all UChicago students. Join Kappa Theta Pi and OpenAI campus ambassadors Enzo Nakornsri and Antonia Tarfulea for a hands-on workshop on building with AI tools. OpenAI API credits provided. Dinner and dessert included. No experience needed.",
    "eligibility": "Open to students",
    "tags": [
@@ -110,8 +1095,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12959043",
    "type": "event",
    "title": "KTP x OpenAI: AI Literacy Workshop (Part 1)",
@@ -141,8 +1126,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12942627",
    "type": "event",
    "title": "Balkan Movie Night",
@@ -171,8 +1156,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875933",
    "type": "event",
    "title": "Figure Drawing Meeting",
@@ -200,8 +1185,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12940396",
    "type": "event",
    "title": "DGQT Quantitative Finance Education Series",
@@ -218,6 +1203,321 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270436",
+   "type": "event",
+   "title": "AM Conf | PGY2 MR [PBehbahani-Nejad & PLysouvakon] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270436-am-conf-pgy2-mr-pbehbahani-nejad-plysouvakon-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272652",
+   "type": "event",
+   "title": "KICP Seminar",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "William Eckhardt Research Center (ERC), 4th Floor KICP Seminar Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272652-kicp-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conference-symposium",
+    "discussions-forums",
+    "featured"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273308",
+   "type": "event",
+   "title": "“I Don’t Care If They Call Me a Dictator”: Atrocities in the Bukele Model",
+   "host": "Center for Latin American and Caribbean Studies",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Social Science Research, Tea Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/273308-i-dont-care-if-they-call-me-a-dictator-atrocities",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272410",
+   "type": "event",
+   "title": "Board Prep w/ Peds Chief Residents! *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/272410-board-prep-w-peds-chief-residents",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conference-symposium"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271332",
+   "type": "event",
+   "title": "Department of Philosophy Colloquium: Eric Marcus",
+   "host": "Philosophy Department",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Stuart Hall, Room 102",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/271332-department-of-philosophy-colloquium-eric-marcus",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283406",
+   "type": "event",
+   "title": "E&E Seminar: Benjamin Tonelli",
+   "host": "Department of Ecology and Evolution",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283406-eampe-seminar-benjamin-tonelli",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281689",
+   "type": "event",
+   "title": "Logic seminar: No meeting due to AACC",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "E 202",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281689-logic-seminar-no-meeting-due-to-aacc",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282931",
+   "type": "event",
+   "title": "LECTURE “The King Can Do No Wrong”: Daniel Lee, Berkeley",
+   "host": "Law, Letters, and Society",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T22:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Social Sciences Research Building, Tea Room (201)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/282693-lecture-the-king-can-do-no-wrong-daniel-lee-berkeley",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "discussions-forums",
+    "exhibitions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283309",
+   "type": "event",
+   "title": "An Evening with Andrew Norman Wilson",
+   "host": "Film Studies Center",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Logan Center, Screening Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/281901-an-evening-with-andrew-norman-wilson",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271603",
+   "type": "event",
+   "title": "AM Conf | Senior Resident MR [SYmson] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271603-am-conf-senior-resident-mr-symson-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "We are excited to announce our case competition in partnership with Bain & Co.! Register at our website by Wednesday, 11/4.",
    "eligibility": "Open to students",
    "tags": [
@@ -230,8 +1530,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12930407",
    "type": "event",
    "title": "Prism x Bain Case Competition",
@@ -249,6 +1549,351 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271444",
+   "type": "event",
+   "title": "Noon Conf | Physiologic Neonatal Jaundice & Related Unconjugated Conditions [SSakhuja]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271444-noon-conf-physiologic-neonatal-jaundice-related-uncon",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "international",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282689",
+   "type": "event",
+   "title": "East Asia by the Book! CEAS Author Talks ft. Leland Lazarus (Lazarus Consulting LLC)",
+   "host": "Center for East Asian Studies",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "1100 East 57th Street, Chicago, IL 60637 (Franke Institute for the Humanities)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282689-east-asia-by-the-book-ceas-author-talks-ft-leland",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283006",
+   "type": "event",
+   "title": "UCCCC Seminar Series: John Prensner, MD, PhD",
+   "host": "University of Chicago Comprehensive Cancer Center",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283006-ucccc-seminar-series-john-prensner-md-phd",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_276986",
+   "type": "event",
+   "title": "Seminar on Important Things (SOIT)",
+   "host": "Committee on the Conceptual and Historical Studies of Science",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Fishbein Center (SSRB 205-208)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/276986-seminar-on-important-things-soit",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277295",
+   "type": "event",
+   "title": "CEGU Colloquium: Reed McConnell",
+   "host": "Committee on Environment, Geography and Urbanization (CEGU)",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Room 344, 1155 E. 60th St.",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/277119-cegu-colloquium-reed-mcconnell",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273811",
+   "type": "event",
+   "title": "Osvaldo Gutierrez (UCLA)",
+   "host": "Chemistry",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:45:00.000Z",
+   "startTime": "12:45",
+   "place": {
+    "name": "Kent Chemical Laboratory, Room 120",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/chem/event/273811-osvaldo-gutierrez-ucla",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_274665",
+   "type": "event",
+   "title": "Geo. Sci. Seminar: Patrick Rafter, University of South Florida",
+   "host": "Geosci",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Henry Hinds Laboratory, Room 101",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/274665-geo-sci-seminar-patrick-rafter-university-of-south-fl",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284900",
+   "type": "event",
+   "title": "Emily Lynn Osborn (Department of History and the College): The UChicago AI Colloquium",
+   "host": "Data Science Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Regenstein Library, Room 122",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/284894-emily-lynn-osborn-department-of-history-and-the",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community events",
+    "diversity",
+    "international"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284906",
+   "type": "event",
+   "title": "Beyond the Ice: A Conversation with Dominik Hašek on Sports, Ukraine, and Speaking Up",
+   "host": "Department of Slavic Languages and Literatures",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Harper Memorial Library, Room 130",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/284906-beyond-the-ice-a-conversation-with-dominik-hasek",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conference-symposium"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284863",
+   "type": "event",
+   "title": "Colloquium - Lena Borise",
+   "host": "Department of East Asian Languages and Civilizations",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Harper Memorial Library, Room 130",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/284863-colloquium-lena-borise",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273120",
+   "type": "event",
+   "title": "Colloquium: Yonin Malin",
+   "host": "Department of Music",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T22:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Goodspeed Hall, Fulton Recital Hall",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/273120-colloquium-yonin-malin",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "For our quarterly competition this fall, the team will be traveling to compete across different levels and styles at the 2026 Purdue Ballroom Classic and participate in workshops led by professional judges the following day.",
    "eligibility": "Open to students",
    "tags": [
@@ -260,8 +1905,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12962124",
    "type": "event",
    "title": "2026 Purdue Ballroom Classic",
@@ -278,7 +1923,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Come Join Us for Bible Study! \"The joy of the Lord is your strength.\" &mdash; Nehemiah 8:10 (NIV) Come join us as we gather together in faith, fellowship, and the Word of God! Just as Nehemiah encouraged the people to come together, hear God's Word, and find strength in His joy, ",
+   "description": "Come Join Us for Bible Study! \"The joy of the Lord is your strength.\" — Nehemiah 8:10 (NIV) Come join us as we gather together in faith, fellowship, and the Word of God! Just as Nehemiah encouraged the people to come together, hear God's Word, and find strength in His joy, ",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -290,8 +1935,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12955508",
    "type": "event",
    "title": "Week 7 Bible Study",
@@ -320,8 +1965,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12918266",
    "type": "event",
    "title": "SASA Family Game Night",
@@ -333,7 +1978,71 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Welcome Night The Saudi Student Association at UChicago is officially here, and we&rsquo;re kicking things off with our first event! Join us for a night of Saudi coffee, food, and good company as we introduce the new RSO. Come meet the board, connect with the community, and",
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275039",
+   "type": "event",
+   "title": "Compton Lectures: Daniel Holz “A decade of gravitational-wave science”",
+   "host": "Physical Sciences Division",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-14T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Kersten Physics Teaching Center, Room 106",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/275039-compton-lectures-daniel-holz-a-decade-of",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "discussions-forums",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282156",
+   "type": "event",
+   "title": "Open Classroom: Titanic",
+   "host": "Film Studies Center",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-14T17:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "Logan Center, Screening Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/281902-open-classroom-titanic",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "Welcome Night The Saudi Student Association at UChicago is officially here, and we’re kicking things off with our first event! Join us for a night of Saudi coffee, food, and good company as we introduce the new RSO. Come meet the board, connect with the community, and",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -344,8 +2053,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12957964",
    "type": "event",
    "title": "Welcome Night",
@@ -374,8 +2083,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12942752",
    "type": "event",
    "title": "2026 Phoenix Farms Fall Festival",
@@ -393,7 +2102,36 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Coffee Lab is attending the SF Coffee Festival, one of the biggest coffee gatherings in the country, where roasters, farmers, baristas, and brewing innovators from around the world come together to show what&rsquo;s next in coffee. Now we&rsquo;re bringing it all back to campus. ",
+   "description": "Join the Game Music Ensemble for their first concert of the year! Featuring favorites from Kingdom Hearts, Doki Doki Literature Club, Final Fantasy VII: Crisis Core, Pokemon, and more! Anyone is welcome and admission is free.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
+   "id": "op_uchicago_eg_12962579",
+   "type": "event",
+   "title": "Game Music Ensemble Fall Concert",
+   "host": "Game Music Ensemble",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-15T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Mandel Hall",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12962579",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Coffee Lab is attending the SF Coffee Festival, one of the biggest coffee gatherings in the country, where roasters, farmers, baristas, and brewing innovators from around the world come together to show what’s next in coffee. Now we’re bringing it all back to campus. ",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -404,8 +2142,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12942856",
    "type": "event",
    "title": "Coffee Tasting and Workshop",
@@ -422,6 +2160,378 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "featured",
+    "publications",
+    "readings"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281273",
+   "type": "event",
+   "title": "Views from UChicago: Book Talk - Angela S. Garcia",
+   "host": "Center for the Study of Race, Politics & Culture",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Regenstein Library, Room 122",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/281172-views-from-uchicago-book-talk-angela-s-garcia",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283674",
+   "type": "event",
+   "title": "Lunchtime Colloquium: Brian Fabes",
+   "host": "Mansueto Institute for Urban Innovation",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "1155 E. 60th Street, Room 101, Chicago IL",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/282571-lunchtime-colloquium-brian-fabes",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "diversity",
+    "publications"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275406",
+   "type": "event",
+   "title": "Views from UChicago: Book Talk Series, Angela S. Garcia",
+   "host": "Diversity and Inclusion",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Regenstein Library, Room 122A-B",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/275406-views-from-uchicago-book-talk-series-angela-s",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271445",
+   "type": "event",
+   "title": "Noon Conf | Med/Peds Grand Rounds",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271445-noon-conf-medpeds-grand-rounds",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281342",
+   "type": "event",
+   "title": "Let’s Talk",
+   "host": "Student Wellness",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Charles M. Harper Center, Room 100-9H",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274859-lets-talk",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281795",
+   "type": "event",
+   "title": "Dynamics seminar: Spencer Durham",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "E206",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281795-dynamics-seminar-spencer-durham",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283657",
+   "type": "event",
+   "title": "D. Gale Johnson Lecture with Ariel Pakes",
+   "host": "Kenneth C. Griffin Department of Economics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Saieh Hall for Economics, Room 146",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/282141-d-gale-johnson-lecture-with-ariel-pakes",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283407",
+   "type": "event",
+   "title": "E&E Seminar: Zachary Hajian-Forooshani",
+   "host": "Department of Ecology and Evolution",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283407-eampe-seminar-zachary-hajian-forooshani",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "lectures-seminars",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282494",
+   "type": "event",
+   "title": "Departmental Colloquium: Rebecca Saxe, Massachusetts Institute of Technology (MIT)",
+   "host": "Department of Psychology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T21:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://events.uchicago.edu/live/events/282480-departmental-colloquium-rebecca-saxe-massachusetts",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273812",
+   "type": "event",
+   "title": "Itay Budin (University of California, San Diego)",
+   "host": "Chemistry",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T21:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "Kent Chemical Laboratory, Room 120",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/chem/event/273812-itay-budin-university-of-california-san-diego",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281461",
+   "type": "event",
+   "title": "Calderon-Zygmund Seminar: Shuchen Guo",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T21:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "Eckhart Hall, Room 202",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281461-calderon-zygmund-seminar-shuchen-guo",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "publications"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283186",
+   "type": "event",
+   "title": "Samantha Iyer—Agrarian Superpower: Food, Development, and the Global Ascendancy of the United States",
+   "host": "Committee on Environment, Geography and Urbanization (CEGU)",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-16T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Social Science Research Building, John Hope Franklin Room (Room 224)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/283164-samantha-iyeragrarian-superpower-food-development",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
    "eligibility": "Open to students",
    "tags": [
@@ -434,8 +2544,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875746",
    "type": "event",
    "title": "Bible Study + Dinner",
@@ -453,6 +2563,745 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270437",
+   "type": "event",
+   "title": "AM Conf | PGY2 MR [CBaylor & GBrennan] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270437-am-conf-pgy2-mr-cbaylor-gbrennan-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282607",
+   "type": "event",
+   "title": "IBD Seminar| Lessons from single molecule (and single photons)",
+   "host": "Institute for Biophysical Dynamics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Gordon Center for Integrative Science, Room W301",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/ibd/event/282607-ibd-seminar-lessons-from-single-molecule-and",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_279664",
+   "type": "event",
+   "title": "Department of Medicine Grand Rounds",
+   "host": "BSD",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Billings Hospital, Room P-117",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/279664-department-of-medicine-grand-rounds",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271446",
+   "type": "event",
+   "title": "Noon Conf | Primary Care Alumni Career Panel [LAlkureishi] *PrimaryCare",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271446-noon-conf-primary-care-alumni-career-panel-lalkureish",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283185",
+   "type": "event",
+   "title": "Brown Bag Lecture with Dr. Aurore Motte, Université de Liège",
+   "host": "Institute for the Study of Ancient Cultures",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "The Institute for the Study of Ancient Cultures (ISAC), La Salle Banks Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283185-brown-bag-lecture-with-dr-aurore-motte-universite",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "diversity",
+    "international",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277052",
+   "type": "event",
+   "title": "Mexico’s Disappearance Crisis: Crimes Against Humanity and the Politics of Denial",
+   "host": "Center for Latin American and Caribbean Studies",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Social Science Research, Tea Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/273310-mexicos-disappearance-crisis-crimes-against",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "lectures-seminars",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282637",
+   "type": "event",
+   "title": "Social Psychology Talk Series: Joey T. Cheng, York University",
+   "host": "Department of Psychology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Stuart Hall, Room 102",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282637-social-psychology-talk-series-joey-t-cheng-york",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275370",
+   "type": "event",
+   "title": "Geometric Analysis Seminar: Jeremy Wall (Indiana University)",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T21:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://events.uchicago.edu/event/275370-geometric-analysis-seminar-jeremy-wall-indiana",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273917",
+   "type": "event",
+   "title": "Greg Bryan (Columbia): Schmidt AI in Science Speaker Series",
+   "host": "MS in Applied Data Science",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Data Science Institute, Faraco Family Commons 105",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/273917-greg-bryan-columbia-schmidt-ai-in-science-speaker",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282884",
+   "type": "event",
+   "title": "The Algorithmic Past: AI and the New Conditions of Historicity",
+   "host": "Department of Art History",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Cochrane-Woods Art Center 157",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282884-the-algorithmic-past-ai-and-the-new-conditions-of",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "Please join the University of Chicago’s Chicago Women’s Alliance and International House for an engaging conversation with women leaders whose experiences span cultures, industries, and professional worlds. This panel will explore how identity and culture shape the way we lead, i",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281624",
+   "type": "event",
+   "title": "Leading Across Worlds Panel Conversation and Networking",
+   "host": "International House",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T23:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://events.uchicago.edu/event/281624-leading-across-worlds-panel-conversation-and",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281768",
+   "type": "event",
+   "title": "PHS Seminar: “Demographic Anxieties: Bodies, Borders, and Reproductive Injustice in Palestine/Israel” by Gala Rexer, PhD, MPH",
+   "host": "Public Health Sciences",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T15:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Billings Hospital, Room W229",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281768-phs-seminar-demographic-anxieties-bodies-borders",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "Rahul Gandhi joins UChicago’s Robert Pape for critical discussion of Iran war and Indian foreign policy. Registration required.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "international",
+    "politics"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284962",
+   "type": "event",
+   "title": "The Iran War & India’s Role in the World: A Conversation with Rahul Gandhi",
+   "host": "Chicago Project on Security and Threats",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "David Rubenstein Forum Friedman Hall (3rd floor)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/284962-the-iran-war-indias-role-in-the-world-a",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_274638",
+   "type": "event",
+   "title": "Human Genetics Seminar—Hakhamanesh Mostafavi, PhD",
+   "host": "Human Genetics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274578-human-genetics-seminarhakhamanesh-mostafavi-phd",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271447",
+   "type": "event",
+   "title": "Noon Conf | Celiac Disease [JCamachoMojica]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271447-noon-conf-celiac-disease-jcamachomojica",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282365",
+   "type": "event",
+   "title": "Committee on Microbiology seminar",
+   "host": "BSD Office of Graduate and Postdoctoral Affairs",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T18:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 115",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282365-committee-on-microbiology-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_279669",
+   "type": "event",
+   "title": "Committee on Microbiology (COM) Seminar",
+   "host": "Department of Microbiology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T18:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 109",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/279669-committee-on-microbiology-com-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278049",
+   "type": "event",
+   "title": "[Pedagogy Seminar] John Alongi + Sarah Ziesler (UChicago)",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T19:30:00.000Z",
+   "startTime": "13:30",
+   "sourceUrl": "https://events.uchicago.edu/event/278049-pedagogy-seminar-john-alongi-sarah-ziesler",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272642",
+   "type": "event",
+   "title": "Colloquium",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Eckhardt Research Center, Auditorium Room 161",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272642-colloquium",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282867",
+   "type": "event",
+   "title": "Hannah Richter: An Early-Career Guide to Science Journalism",
+   "host": "The Parrhesia Program for Public Discourse",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Swift Hall Third Floor Lecture Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282867-hannah-richter-an-early-career-guide-to-science",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "discussions-forums",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283401",
+   "type": "event",
+   "title": "Transported: The Everyday Magic of Musical Daydreams",
+   "host": "Department of Music",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Seminary Co-op Bookstore",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283401-transported-the-everyday-magic-of-musical",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283009",
+   "type": "event",
+   "title": "ISAC Visiting Scholar Lecture with Prof. Dr. Verena Lepper",
+   "host": "Institute for the Study of Ancient Cultures",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "The Institute for the Study of Ancient Cultures (ISAC)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283009-isac-visiting-scholar-lecture-with-prof-dr-verena",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "lectures-seminars",
+    "performances"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283259",
+   "type": "event",
+   "title": "Open Studio OFF SITE: Germane Barnes Lecture @ UIC School of Architecture",
+   "host": "Architecture",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T22:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "UIC School of Architecture",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283259-open-studio-off-site-germane-barnes-lecture-uic",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "religious and spiritual"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_276796",
+   "type": "event",
+   "title": "Emanuel Fiano - Nāmusā: On Divine Law in Late Antiquity",
+   "host": "Joyce Z. and Jacob Greenberg Center for Jewish Studies",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T22:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Classics Building, Room 110",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/276796-emanuel-fiano-nmus-on-divine-law-in-late",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Open to all UChicago students. Join Kappa Theta Pi and OpenAI campus ambassadors Enzo Nakornsri and Antonia Tarfulea for a hands-on workshop on building with AI tools. OpenAI API credits provided. Dinner and dessert included. No experience needed.",
    "eligibility": "Open to students",
    "tags": [
@@ -465,8 +3314,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12959050",
    "type": "event",
    "title": "KTP x OpenAI: AI Literacy Workshop (Part 2)",
@@ -484,6 +3333,69 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283056",
+   "type": "event",
+   "title": "August H. Nimtz — Revisiting Black Marxism Four Decades Later in the Era of Trump",
+   "host": "The Chicago Center for Contemporary Theory",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Social Science Research, Tea Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/277005-august-h-nimtz-revisiting-black-marxism-four",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283653",
+   "type": "event",
+   "title": "Capitalism’s Legal Regime",
+   "host": "Harris School",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Sky Suite at the Harris School of Public Policy",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/282552-capitalisms-legal-regime",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "An Evening with Venerable Ani Choyang Guided Meditation and Teaching on the 37 Practices of the Bodhisattva Wed. Nov. 18th, 5:30-7pm Bond Chapel The UChicago Buddhist Association presents a special event teaching on the Tibetan Buddhist Lojong Practice and philosophy, accompanied",
    "eligibility": "Open to students",
    "tags": [
@@ -495,8 +3407,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12899102",
    "type": "event",
    "title": "An Evening with Ven. Ani Choyang",
@@ -513,7 +3425,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Celebration of food, culture, and gratitude! Enjoy traditional dishes from across Latin America while connecting with fellow UChicago graduate and undergraduate students. Come share a meal, celebrate our diverse traditions, and give thanks for the community we&rsquo;re building t",
+   "description": "Celebration of food, culture, and gratitude! Enjoy traditional dishes from across Latin America while connecting with fellow UChicago graduate and undergraduate students. Come share a meal, celebrate our diverse traditions, and give thanks for the community we’re building t",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -524,8 +3436,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12930331",
    "type": "event",
    "title": "LAMsgiving",
@@ -553,8 +3465,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875934",
    "type": "event",
    "title": "Figure Drawing Meeting",
@@ -582,8 +3494,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12940397",
    "type": "event",
    "title": "DGQT Quantitative Finance Education Series",
@@ -600,6 +3512,344 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270438",
+   "type": "event",
+   "title": "AM Conf | PGY2 MR [KLipak & PMorocco] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270438-am-conf-pgy2-mr-klipak-pmorocco-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "training-workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277312",
+   "type": "event",
+   "title": "Introduction to Claude Cowork for Staff",
+   "host": "Intranet",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T16:00:00.000Z",
+   "startTime": "10:00",
+   "sourceUrl": "https://events.uchicago.edu/event/277312-introduction-to-claude-cowork-for-staff",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272653",
+   "type": "event",
+   "title": "KICP Seminar",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "William Eckhardt Research Center (ERC), 4th Floor KICP Seminar Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272653-kicp-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "international",
+    "lectures-seminars",
+    "ongoing"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277491",
+   "type": "event",
+   "title": "“El narco es pueblo”: Elite Rhetoric, Partisan Bias, and the Legitimacy of Criminal Assistance in Mexico",
+   "host": "Center for Latin American and Caribbean Studies",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Social Science Research Building, John Hope Franklin Room (Room 224)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/276548-el-narco-es-pueblo-elite-rhetoric-partisan-bias",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281791",
+   "type": "event",
+   "title": "“‘Deformed, unfinished’: Exemplary Bodies, and Informative Innards in Shakespeare’s Richard III”",
+   "host": "Early Modern and Renaissance Studies Workshop",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Pick Hall, Room 105",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281791-deformed-unfinished-exemplary-bodies-and",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272411",
+   "type": "event",
+   "title": "Board Prep w/ Peds Chief Residents! *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/272411-board-prep-w-peds-chief-residents",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283408",
+   "type": "event",
+   "title": "E&E Seminar: Annie Madsen",
+   "host": "Department of Ecology and Evolution",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283408-ee-seminar-annie-madsen",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281698",
+   "type": "event",
+   "title": "MGCB Seminar- “Tardigrades: Emerging Models for Studying How Animal Body Plans Evolve and How Life Can Survive Extremes” by Bob Goldstein, PhD",
+   "host": "Molecular Genetics and Cell Biology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Cummings Life Science Center, Room 101",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281698-mgcb-seminar-tardigrades-emerging-models-for",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282013",
+   "type": "event",
+   "title": "RDI Workshop Series - Sony Coranez Bolton",
+   "host": "Department of Race, Diaspora, and Indigeneity",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Kelly Hall, Room 108",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274568-rdi-workshop-series-sony-coranez-bolton",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "This event is hosted by the Chicago Journal of Foreign Policy, and will be a moderated panel-style discussion with Professor Tom Ginsburg at the University of Chicago and Professor Ashley Moran from the University of Texas. They will discuss their experiences with drafting consti",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
+   "id": "op_uchicago_eg_12962588",
+   "type": "event",
+   "title": "Drafting Democracy: The Art and Politics of Constitution-Making",
+   "host": "Chicago Journal of Foreign Policy",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "McCormick Tribune Lounge",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12962588",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281311",
+   "type": "event",
+   "title": "Anjan Chatterjee & Judith Schaechter on Neuroaesthetics",
+   "host": "Smart Museum",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Smart Museum of Art",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/277953-anjan-chatterjee-judith-schaechter-on",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "International Friendsgiving is a Thanksgiving-style dinner that introduces students to an American tradition while celebrating the food cultures of ISO's members. The evening opens with a short, informal explanation of Thanksgiving's history and customs, followed by a shared meal",
    "eligibility": "Open to students",
    "tags": [
@@ -611,8 +3861,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12949803",
    "type": "event",
    "title": "International Friendsgiving",
@@ -629,6 +3879,530 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271604",
+   "type": "event",
+   "title": "AM Conf | Senior Resident MR [TLivingston] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271604-am-conf-senior-resident-mr-tlivingston-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281778",
+   "type": "event",
+   "title": "Tahra Eissa (University of Colorado Anschutz): NITMB Seminar Series",
+   "host": "NSF-Simons National Institute for Theory and Mathematics in Biology",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T16:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "875 N Michigan Ave, Suite 3500",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281778-tahra-eissa-university-of-colorado-anschutz-nitmb",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "conference-symposium",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284252",
+   "type": "event",
+   "title": "Poetry and the Practice of Healing: A Workshop on Orality and Literacy",
+   "host": "Franke Institute for the Humanities",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T16:30:00.000Z",
+   "startTime": "10:30",
+   "place": {
+    "name": "Franke Institute for the Humanities Regenstein Library, Room S-102",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/284252-poetry-and-the-practice-of-healing-a-workshop-on",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271448",
+   "type": "event",
+   "title": "Noon Conf | PCARES #5 [TTomasek, NPaul] *Research",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271448-noon-conf-pcares-5-ttomasek-npaul-research",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281958",
+   "type": "event",
+   "title": "HHS Workshop - Iris Clever (UIUC) - “Values of Prediction: A History of Statistical Discrimination and Race Identification.”",
+   "host": "Committee on the Conceptual and Historical Studies of Science",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "John Hope Franklin Room (SSRB 224)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274710-hpshhs-workshop-tentative-iris-clever-uiuc-tba",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273813",
+   "type": "event",
+   "title": "Liam Ball (University of Bristol)",
+   "host": "Chemistry",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T18:45:00.000Z",
+   "startTime": "12:45",
+   "place": {
+    "name": "Kent Chemical Laboratory, Room 120",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/chem/event/273813-liam-ball-university-of-bristol",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283180",
+   "type": "event",
+   "title": "Allen Knutson (Cornell): TBA [AG seminar]",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "E206",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283180-allen-knutson-cornell-tba-ag-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273618",
+   "type": "event",
+   "title": "Geo. Sci. Seminar: Bolton Howes, Wheaton College",
+   "host": "Geosci",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Henry Hinds Laboratory, Room 101",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/273618-geo-sci-seminar-bolton-howes-wheaton-college",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "community events",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281279",
+   "type": "event",
+   "title": "Student Research Spotlight: Hawaiian Protest in Print",
+   "host": "Library",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-20T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Newberry Library, 60 W Walton St, Chicago, IL 60610",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/279718-student-research-spotlight-hawaiian-protest-in",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275040",
+   "type": "event",
+   "title": "Compton Lectures: Angela Olinto “Flying High to Catch Neutrinos and Other Extreme Particles”",
+   "host": "Physical Sciences Division",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-21T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Kersten Physics Teaching Center, Room 106",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/275040-compton-lectures-angela-olinto-flying-high-to",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271449",
+   "type": "event",
+   "title": "Noon Conf | Derm Lecture Series [SStein]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-23T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271449-noon-conf-derm-lecture-series-sstein",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270439",
+   "type": "event",
+   "title": "AM Conf | Chief MR *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-24T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270439-am-conf-chief-mr-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine",
+    "professional development program"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_269177",
+   "type": "event",
+   "title": "Professor Rounds | PMEO Didactics (1 CME) *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-24T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/269177-professor-rounds-pmeo-didactics-1-cme-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277339",
+   "type": "event",
+   "title": "No GA Seminar: Thanksgiving",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-24T21:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://events.uchicago.edu/event/277339-no-ga-seminar-thanksgiving",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282366",
+   "type": "event",
+   "title": "Committee on Microbiology seminar",
+   "host": "BSD Office of Graduate and Postdoctoral Affairs",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-25T18:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 115",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282366-committee-on-microbiology-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278048",
+   "type": "event",
+   "title": "[Pedagogy Seminar] No seminar.",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-25T19:30:00.000Z",
+   "startTime": "13:30",
+   "sourceUrl": "https://events.uchicago.edu/event/278048-pedagogy-seminar-no-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272643",
+   "type": "event",
+   "title": "Colloquium",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-25T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Eckhardt Research Center, Auditorium Room 161",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272643-colloquium",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Join The Derivatives Group (DGQT) for our open-access Quantitative Finance Education Series. Explore foundational topics including probability, derivatives, options, market making, and quantitative trading through instruction and discussion. Open to all UChicago undergraduate and",
    "eligibility": "Open to students",
    "tags": [
@@ -640,8 +4414,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12940398",
    "type": "event",
    "title": "DGQT Quantitative Finance Education Series",
@@ -658,6 +4432,36 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272654",
+   "type": "event",
+   "title": "KICP Seminar",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-26T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "William Eckhardt Research Center (ERC), 4th Floor KICP Seminar Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272654-kicp-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "A picnic evening at the point where eevral families will do a potluck and share items at the point. This will allow different families to meet each other and provide furtehr bonding between underclassmen and upperclassmen.",
    "eligibility": "Open to students",
    "tags": [
@@ -669,8 +4473,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12918269",
    "type": "event",
    "title": "SASA Family Picnic Night",
@@ -687,6 +4491,98 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271453",
+   "type": "event",
+   "title": "Noon Conf | AI Lecture Series [JEisenberg]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-30T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271453-noon-conf-ai-lecture-series-jeisenberg",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281344",
+   "type": "event",
+   "title": "Let’s Talk",
+   "host": "Student Wellness",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-30T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Charles M. Harper Center, Room 100-9H",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274861-lets-talk",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281460",
+   "type": "event",
+   "title": "Calderon-Zygmund Seminar: Steve Shkoller",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-30T21:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "Eckhart Hall, Room 202",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281460-calderon-zygmund-seminar-steve-shkoller",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
    "eligibility": "Open to students",
    "tags": [
@@ -699,8 +4595,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875747",
    "type": "event",
    "title": "Bible Study + Dinner",
@@ -718,6 +4614,197 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270441",
+   "type": "event",
+   "title": "AM Conf | PD & Chief Resident MR *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270441-am-conf-pd-chief-resident-mr-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272117",
+   "type": "event",
+   "title": "Neuroscience Seminar Series: Daniel Kronauer, PhD",
+   "host": "Neuroscience Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272117-neuroscience-seminar-series-daniel-kronauer-phd",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "diversity",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_269195",
+   "type": "event",
+   "title": "Health Equity Rounds (HER)/Structural Competency Curriculum (SCC) *Advocacy",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/269195-health-equity-rounds-herstructural-competency-curricu",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "discussions-forums",
+    "lectures-seminars",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282875",
+   "type": "event",
+   "title": "Social Psychology Talk Series: Melissa Ferguson, Yale University",
+   "host": "Department of Psychology",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Stuart Hall, Room 102",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282875-social-psychology-talk-series-melissa-ferguson",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283177",
+   "type": "event",
+   "title": "Guangxu Yang (University of Southern California): Exponential Quantum Advantage in Number-on-Forehead Communication [Combinatorics and TCS seminar]",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Kent 102",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283177-guangxu-yang-university-of-southern-california-tba",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts",
+    "discussions-forums",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281295",
+   "type": "event",
+   "title": "Dipesh Chakrabarty, Christine Laquet, Jennifer Pitts, & Zachary Cahill on the Climate Crisis",
+   "host": "Smart Museum",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Smart Museum of Art",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/277962-dipesh-chakrabarty-christine-laquet-jennifer-pitts",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "A evening at a venue where several families will do karaoke together. This will allow different families to meet each other and provide further bonding between underclassmen and upperclassmen, and put each family's voices to the test!",
    "eligibility": "Open to students",
    "tags": [
@@ -729,8 +4816,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12918272",
    "type": "event",
    "title": "SASA Family Karaoke Night",
@@ -740,6 +4827,154 @@
    "startTime": "20:00",
    "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12918272",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_279673",
+   "type": "event",
+   "title": "Committee on Microbiology (COM) Seminar",
+   "host": "Department of Microbiology",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-02T18:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 109",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/279673-committee-on-microbiology-com-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275091",
+   "type": "event",
+   "title": "Committee on Microbiology seminar",
+   "host": "Duchossois Family Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-02T18:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 115",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/275091-committee-on-microbiology-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282160",
+   "type": "event",
+   "title": "Sociology Colloquium with Sanyu A. Mojola, our Distinguished Alumni Lecture",
+   "host": "Department of Sociology",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-02T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Social Science Research, Room 305 (Albion Small Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/281854-sociology-colloquium-with-sanyu-a-mojola-our-distingu",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278047",
+   "type": "event",
+   "title": "[Pedagogy Seminar] No seminar.",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-02T19:30:00.000Z",
+   "startTime": "13:30",
+   "sourceUrl": "https://events.uchicago.edu/event/278047-pedagogy-seminar-no-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272644",
+   "type": "event",
+   "title": "Colloquium",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-02T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Eckhardt Research Center, Auditorium Room 161",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272644-colloquium",
+   "sourceLabel": "University of Chicago Events"
   },
   {
    "description": "Wednesday from 7:30 to 9:30 p.m. in Midway Studios! Come to the door on the side of the building by the Logan Center. We have a model and drawing materials!",
@@ -753,8 +4988,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875935",
    "type": "event",
    "title": "Figure Drawing Meeting",
@@ -782,8 +5017,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12940399",
    "type": "event",
    "title": "DGQT Quantitative Finance Education Series",
@@ -800,7 +5035,489 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Come Join Us for Bible Study! \"The joy of the Lord is your strength.\" &mdash; Nehemiah 8:10 (NIV) Come join us as we gather together in faith, fellowship, and the Word of God! Just as Nehemiah encouraged the people to come together, hear God's Word, and find strength in His joy, ",
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270442",
+   "type": "event",
+   "title": "AM Conf | PD & Chief Resident MR *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270442-am-conf-pd-chief-resident-mr-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conference-symposium"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_262412",
+   "type": "event",
+   "title": "Neurotechnology Frontier Symposium",
+   "host": "Neuroscience Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T15:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/262412-neurotechnology-frontier-symposium",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "training-workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277436",
+   "type": "event",
+   "title": "Getting Started with Claude Chat for Staff",
+   "host": "Intranet",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T16:00:00.000Z",
+   "startTime": "10:00",
+   "sourceUrl": "https://events.uchicago.edu/event/277436-getting-started-with-claude-chat-for-staff",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272655",
+   "type": "event",
+   "title": "KICP Seminar",
+   "host": "Astronomy and Astrophysics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "William Eckhardt Research Center (ERC), 4th Floor KICP Seminar Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272655-kicp-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273814",
+   "type": "event",
+   "title": "Jeffrey Lipschultz (Stony Brook University)",
+   "host": "Chemistry",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Gordon Center for Integrative Science, Room W301/303",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/chem/event/273814-jeffrey-lipschultz-stony-brook-university",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272413",
+   "type": "event",
+   "title": "Board Prep w/ Peds Chief Residents! *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/272413-board-prep-w-peds-chief-residents",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283043",
+   "type": "event",
+   "title": "Logic seminar: Steffen Lempp",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T22:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://events.uchicago.edu/event/283043-logic-seminar-steffen-lempp",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282014",
+   "type": "event",
+   "title": "RDI Workshop Series - Michelle Nancy Huang",
+   "host": "Department of Race, Diaspora, and Indigeneity",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Kelly Hall, Room 108",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274570-rdi-workshop-series-michelle-nancy-huang",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_278042",
+   "type": "event",
+   "title": "Seminar Paper Prospectus Roundtable",
+   "host": "Latin American History Workshop",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T22:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Pick Hall, Room 118",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/278042-seminar-paper-prospectus-roundtable",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271606",
+   "type": "event",
+   "title": "AM Conf | Senior Resident MR [BPopescu] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271606-am-conf-senior-resident-mr-bpopescu-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282999",
+   "type": "event",
+   "title": "GPMP Seminar Series: Tess Reynolds, PhD (The University of Sydney)",
+   "host": "Committee on Medical Physics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T16:30:00.000Z",
+   "startTime": "10:30",
+   "place": {
+    "name": "Billings Hospital, Room Q207B (AMB)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282999-gpmp-seminar-series-tess-reynolds-phd-the",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271456",
+   "type": "event",
+   "title": "Noon Conf | Approach to Pediatric Anemia [JdeJong]",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271456-noon-conf-approach-to-pediatric-anemia-jdejong",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_274709",
+   "type": "event",
+   "title": "CEGU Colloquium - Hayley Birss (CHSS) - “TBA.”",
+   "host": "Committee on the Conceptual and Historical Studies of Science",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "*Please note the location* Room 344, 1155 E. 60th St.",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/274709-hpshhs-workshop-tba-tba",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277294",
+   "type": "event",
+   "title": "CEGU Colloquium: Hayley Birss",
+   "host": "Committee on Environment, Geography and Urbanization (CEGU)",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T18:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Room 344, 1155 E. 60th St.",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/277120-cegu-colloquium-hayley-birss",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283184",
+   "type": "event",
+   "title": "Colleen Robles (Duke): TBA [AG seminar]",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "E206",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283184-colleen-robles-duke-tba-ag-seminar",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_273127",
+   "type": "event",
+   "title": "Colloquium: Howard Fishman",
+   "host": "Department of Music",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-04T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Goodspeed Hall, Fulton Recital Hall",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/273127-colloquium-howard-fishman",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "Come Join Us for Bible Study! \"The joy of the Lord is your strength.\" — Nehemiah 8:10 (NIV) Come join us as we gather together in faith, fellowship, and the Word of God! Just as Nehemiah encouraged the people to come together, hear God's Word, and find strength in His joy, ",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -811,8 +5528,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12955517",
    "type": "event",
    "title": "Week 8 Bible Study",
@@ -829,6 +5546,321 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "arts",
+    "concerts",
+    "performances"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_277317",
+   "type": "event",
+   "title": "Grossman Ensemble - “Stitched from Silence”",
+   "host": "Intranet",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-05T01:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Logan Center, Performance Hall",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/277317-grossman-ensemble-stitched-from-silence",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_275041",
+   "type": "event",
+   "title": "Compton Lectures: Young-Kee Kim “From Collisions to Precision”",
+   "host": "Physical Sciences Division",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-05T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Kersten Physics Teaching Center, Room 106",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/275041-compton-lectures-young-kee-kim-from-collisions-to",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Cost: $15–$50",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "training-workshops",
+    "writing"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_282423",
+   "type": "event",
+   "title": "Writing the Past: Storytelling Workshop",
+   "host": "Institute for the Study of Ancient Cultures",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-06T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "The Institute for the Study of Ancient Cultures (ISAC), La Salle Banks Room",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/282423-writing-the-past-storytelling-workshop",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_271457",
+   "type": "event",
+   "title": "Noon Conf | PCC: M&M Session #1 [LAlkureishi] *PrimaryCare",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/271457-noon-conf-pcc-mm-session-1-lalkureishi-primarycare",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine",
+    "professional development program"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281899",
+   "type": "event",
+   "title": "AY27 Engage & Advance | Getting Promoted - Assoc Prof to Full Prof",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T18:15:00.000Z",
+   "startTime": "12:15",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K160C",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/281899-ay27-engage-advance-getting-promoted-assoc",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281345",
+   "type": "event",
+   "title": "Let’s Talk",
+   "host": "Student Wellness",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T19:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Charles M. Harper Center, Room 100-9H",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/live/events/274862-lets-talk",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_284972",
+   "type": "event",
+   "title": "PhD Thesis Defense: Carolina Castro-Rivera, CON",
+   "host": "Neuroscience Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 115",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/284972-phd-thesis-defense-carolina-castro-rivera-con",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_281794",
+   "type": "event",
+   "title": "Dynamics seminar: Marco Mazzucchelli",
+   "host": "Department of Mathematics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "E206",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/281794-dynamics-seminar-marco-mazzucchelli",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_283409",
+   "type": "event",
+   "title": "E&E Seminar: Jay Stachowicz",
+   "host": "Department of Ecology and Evolution",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/283409-eampe-seminar-jay-stachowicz",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "featured",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_259149",
+   "type": "event",
+   "title": "The Dean’s Research Forum",
+   "host": "BSD",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-07T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Biological Sciences Learning Center, Room 109",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/259149-the-deans-research-forum",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
    "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
    "eligibility": "Open to students",
    "tags": [
@@ -841,8 +5873,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.255Z",
-   "createdAt": "2026-11-08T03:42:11.255Z",
+   "lastVerified": "2026-11-09T00:35:24.514Z",
+   "createdAt": "2026-11-09T00:35:24.514Z",
    "id": "op_uchicago_eg_12875748",
    "type": "event",
    "title": "Bible Study + Dinner",
@@ -858,6 +5890,102 @@
    "benefit": "Free food",
    "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875748",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_270443",
+   "type": "event",
+   "title": "AM Conf | Teaching Elective MR [SRodriguez] *MedEd",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-08T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/270443-am-conf-teaching-elective-mr-srodriguez-meded",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_272118",
+   "type": "event",
+   "title": "Neuroscience Seminar Series: Tatyana Sharpee, PhD",
+   "host": "Neuroscience Institute",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-08T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Knapp Center for Biomedical Discovery, Room 1103",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/event/272118-neuroscience-seminar-series-tatyana-sharpee-phd",
+   "sourceLabel": "University of Chicago Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures-seminars",
+    "medicine",
+    "professional development program"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:35:24.926Z",
+   "createdAt": "2026-11-09T00:35:24.926Z",
+   "id": "op_uchicago_lw_269178",
+   "type": "event",
+   "title": "Professor Rounds | PMEO Didactics (1 CME)",
+   "host": "Department of Pediatrics",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-08T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Comer Children’s Hospital, Room K145 (PMEO Conference Room)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://events.uchicago.edu/pediatrics/event/269178-professor-rounds-pmeo-didactics-1-cme",
+   "sourceLabel": "University of Chicago Events"
   }
  ]
 }

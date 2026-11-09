@@ -1,116 +1,10 @@
 {
- "collectedAt": "2026-11-08T03:41:12.842Z",
+ "collectedAt": "2026-11-09T00:36:52.409Z",
  "sources": [
-  "campusgroups https://georgetown.campusgroups.com 80"
+  "campusgroups https://georgetown.campusgroups.com 78",
+  "livewhale https://events.georgetown.edu 97"
  ],
  "events": [
-  {
-   "description": "Join Georgetown Women’s Ultimate Frisbee for Squashtown 2026, our annual one-day hat tournament (formerly Book Dive), raising funds to support our team. The event takes place on Sunday, November 8, 2026, from 8:30 AM to 3:30 PM at the JFK Hockey Fields and welcomes players from t",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
-   "id": "op_georgetown_cg_2261000",
-   "type": "event",
-   "title": "Squashtown 2026",
-   "host": "Women's Ultimate Frisbee",
-   "schoolId": "s_georgetown",
-   "date": "2026-11-08T13:30:00.000Z",
-   "startTime": "08:30",
-   "sourceUrl": "https://georgetown.campusgroups.com/foyas/rsvp?id=2261000",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "In the kooky, upside-down world of the Addams Family, to be sad is to be happy, to feel pain is to feel joy, and death and suffering are the stuff of their dreams. Their dark, macabre, beloved daughter Wednesday, however, is now an eighteen year-old young woman who is ready for a",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
-   "id": "op_georgetown_cg_2261520",
-   "type": "event",
-   "title": "The Addams Family - Sunday Matinee 11/8",
-   "host": "nomadictheatre",
-   "schoolId": "s_georgetown",
-   "date": "2026-11-08T19:30:00.000Z",
-   "startTime": "14:30",
-   "place": {
-    "name": "Village C Theater, Georgetown Department of Performing Arts Davis Performing Arts Center Room 108, Washington, DC 20057, United States",
-    "lat": 38.9076,
-    "lng": -77.0723
-   },
-   "sourceUrl": "https://georgetown.campusgroups.com/nomadictheatre/rsvp?id=2261520",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Enjoy our free biweekly yoga class in collaboration with Yates Field House! This class is taught by student instructor Riley Isakson, and you must register through IMLeagues here: https://www.imleagues.com/spa/fitness/0f380a71abe947989e3707f8abaeb597/viewclass?classId=16909",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
-   "id": "op_georgetown_cg_2260046",
-   "type": "event",
-   "title": "Flow & Restore Yoga Class",
-   "host": "Health Education Services",
-   "schoolId": "s_georgetown",
-   "date": "2026-11-09T00:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "The Wellbeing Space (Healy Hall Ground Floor G22) , Ground Floor Byrnes Hall 1595 Tondorf Rd , Washington, DC 20057, United States",
-    "lat": 38.9076,
-    "lng": -77.0723
-   },
-   "sourceUrl": "https://georgetown.campusgroups.com/HES/rsvp?id=2260046",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Join Georgetown University Cybersecurity Society virtually on Friday evenings from 7pm-9pm eastern, for Security+ study sessions lead by our Professional Development Chair. This study group will focus around the current CompTIA Security+ Exam, SY0-701. For any Georgetown students",
-   "eligibility": "Open to students",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
-   "id": "op_georgetown_cg_2260684",
-   "type": "event",
-   "title": "Security Plus Study Group (Virtual)",
-   "host": "Georgetown University Cybersecurity Society",
-   "schoolId": "s_georgetown",
-   "date": "2026-11-09T00:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "Online Event",
-    "lat": 38.9076,
-    "lng": -77.0723
-   },
-   "sourceUrl": "https://georgetown.campusgroups.com/GUCS/rsvp?id=2260684",
-   "sourceLabel": "Student org events"
-  },
   {
    "description": "BRASA will host a Brazilian Movie Night to bring together Georgetown students for a relaxed evening centered around Brazilian film and culture. Students will have the opportunity to watch a Brazilian movie while enjoying snacks and refreshments and connecting with members of BRAS",
    "eligibility": "Open to students",
@@ -123,8 +17,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261585",
    "type": "event",
    "title": "BRASA Movie Night",
@@ -147,8 +41,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261512",
    "type": "event",
    "title": "Queer Legacies Immersion Program APPLICATION DEADLINE",
@@ -170,8 +64,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261093",
    "type": "event",
    "title": "Hill day",
@@ -194,8 +88,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261237",
    "type": "event",
    "title": "GSProud Kickoff",
@@ -208,6 +102,125 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43902",
+   "type": "event",
+   "title": "Arabic Conversation Hour",
+   "host": "Arabic and Islamic Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-09T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://events.georgetown.edu/live/events/43785-arabic-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43975",
+   "type": "event",
+   "title": "Crime and Punishment in America: Exclusive Documentary Prescreening & Panel Discussion at McCourt",
+   "host": "McCourt School of Public Policy",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-09T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "McCourt School of Public Policy",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43854-crime-and-punishment-in-america-exclusive",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Pope Leo, an American-born pope descended from both enslavers and enslaved people, surprised many when, in his encyclical Magnifica Humanitas, he apologized for the Catholic Church’s historic complicity in slavery. He made clear that this apology was only the beginning; “what we ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "racial justice",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44050",
+   "type": "event",
+   "title": "Repentance, Repair, and Prevention: Slavery and Human Dignity in Magnifica Humanitas",
+   "host": "Initiative on Catholic Social Thought and Public Life",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Dahlgren Chapel of the Sacred Heart and Livestreamed",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43861-repentance-repair-and-prevention-slavery-and-human",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "SAVE THE DATE: The 3rd Annual Staff/AAP Learning Symposium is coming this November 10 and 11. Please save this event to your google calendar now so you do not miss it. Registration will be available in late September.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "career",
+    "community",
+    "training"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42149",
+   "type": "event",
+   "title": "Staff Symposium (In-person - Save the Date!)",
+   "host": "Human Resources",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T05:00:00.000Z",
+   "place": {
+    "name": "Capitol Campus (November 10)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/staffsymposium",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "A simple and traditional Marine Corps Birthday Celebration: A reading of General Lejeune's birthday message and the Commandant's message, the cake cutting with the oldest and youngest Marines present, and some time to connect afterward. Open to all Hoya Marines and Frie",
    "eligibility": "Open to students",
    "tags": [
@@ -218,8 +231,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261529",
    "type": "event",
    "title": "Marine Corps Birthday Celebration",
@@ -229,6 +242,229 @@
    "startTime": "12:00",
    "sourceUrl": "https://georgetown.campusgroups.com/MAVRC/rsvp?id=2261529",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Presented by Krystel R. Huxlin, PhD, of University of Rochester Medical Center",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lecture",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44088",
+   "type": "event",
+   "title": "IPN/Neuroscience Seminar: “Restoring Vision After Occipital Stroke: Where Basic Science Meets Translation”",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Pharmacology Library, Med-Dent NE401",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44042-ipnneuroscience-seminar-restoring-vision-after-occipit",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Please join us for this talk by Georgetown’s Maryam Kohram, PhD, part of our Fall 2026 Seminar Series.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "graduate student",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44220",
+   "type": "event",
+   "title": "Department of Microbiology and Immunology Seminar Series: “Stress-Driven Adaptability and Loss of Homeostasis in Biological Systems”",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Med-Dent NE301",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42703-department-of-microbiology-and-immunology-seminar-seri",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42922",
+   "type": "event",
+   "title": "Portuguese Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "LAU 305 (Millennium Room)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42902-portuguese-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join us to officially name our lounge “The Deewan”. Light refreshments will be provided.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44111",
+   "type": "event",
+   "title": "AIS Lounge Naming Ceremony",
+   "host": "Arabic and Islamic Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "AIS Lounge/AIS Deewan",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/arabic/event/44111-ais-lounge-naming-ceremony",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Learn about American Journal of Public Health (AJPH)’s strategies for building public health trustworthiness through scientific integrity, equity and engagement.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44221",
+   "type": "event",
+   "title": "Building Public Health Trustworthiness: AJPH’s Strategies in Scientific Integrity, Equity, and Engagement",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "New Research Building Auditorium",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44031-building-public-health-trustworthiness-ajphs",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Dr. Tristan Deppe, U.S. Naval Research Laboratory Abstract: In this talk I will review my recent work on novel materials that seek to harness the power of infrared light for modern applications. Motivated by the concept of radiative cooling, which can be employed to passively coo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42837",
+   "type": "event",
+   "title": "Physics Colloquium: Infrared Photonic Materials and Systems (Dr. Tristan Deppe, U.S. Naval Research Laboratory)",
+   "host": "Physics",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T20:15:00.000Z",
+   "startTime": "15:15",
+   "place": {
+    "name": "Regents Hall, 109",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/physics/event/42837-physics-colloquium-infrared-photonic-materials-and",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43996",
+   "type": "event",
+   "title": "From Ecuador to Venezuela: The Andean Arc of Crisis",
+   "host": "Georgetown Americas Institute",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Arrupe Hall, Multipurpose Room",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/americas/event/43996-from-ecuador-to-venezuela-the-andean-arc-of-crisis",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "How did early American writers portray the Prophet Muhammad, and what do their accounts reveal about American attitudes toward Islam? Join us for a presentation by Dr. David D. Grafton, Professor of Islamic Studies and Christian-Muslim Relations at Hartford International Universi",
@@ -241,8 +477,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261656",
    "type": "event",
    "title": "A Tale of two Tales: The First American Biographies of The Prophet",
@@ -259,6 +495,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join us for a CSS Speaker Series",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "graduate student"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43610",
+   "type": "event",
+   "title": "The Bitter Struggle: Superintelligence, Superpowers, and the Fate of the World",
+   "host": "Center for Security Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mortara Center for International Studies",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43409-the-bitter-struggle",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "A conversation with creator Walter Masterson about the role of media and comedy in politics, how to reach youth in politics, and the role of protesting and the different forms it can take.",
    "eligibility": "Open to students",
    "tags": [
@@ -269,8 +534,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261483",
    "type": "event",
    "title": "Viral Videos to Political Movements: Comedy and Youth Activism with Walter Masterson",
@@ -279,6 +544,102 @@
    "date": "2026-11-10T22:00:00.000Z",
    "startTime": "17:00",
    "sourceUrl": "https://georgetown.campusgroups.com/GULF/rsvp?id=2261483",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Why History Matters features students and faculty examining the role of history in the present. “Relics in History” will highlight the research of two undergraduate History majors and three faculty members, focusing on the relics of female saints, the theft of relics, the market ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "academic events",
+    "lecture",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44122",
+   "type": "event",
+   "title": "Why History Matters: Relics in History",
+   "host": "History",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "ICC 662",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/history/event/44122-why-history-matters-relics-in-history",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "The Program on Education, Inquiry, and Justice is proud to host Elizabeth Pinede (C’16), EDIJ alumna and an educator, advocate, and school leader, to learn about her work partnering with families in the pursuit of educational justice. All students interested in careers in educati",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "career",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44071",
+   "type": "event",
+   "title": "Careers in Education featuring EDIJ Alumna Spotlight: Principalship, Partnering with Families, and Pursuing Educational Justice",
+   "host": "Education, Inquiry, and Justice Program",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "ICC 204",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44069-careers-in-education-featuring-edij-alumna",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "A small group dinner with a member of the Classics Department faculty. Fr. Norton's work focuses on archaic Greek poetry in its textual, literary, and performative dimensions. His intellectual interests meet at the crossroads of the divine and mortal realms",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
+   "id": "op_georgetown_cg_2261398",
+   "type": "event",
+   "title": "Dinner with a Classics Professor: Fr. Norton",
+   "host": "Classical Studies Club",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-10T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Wolfington Residence Hall, 3700 O Street NW, Center for Student Engagement - Leavey Center 316, Washington, District of Columbia 20057, United States",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://georgetown.campusgroups.com/CSC/rsvp?id=2261398",
    "sourceLabel": "Student org events"
   },
   {
@@ -292,8 +653,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2259954",
    "type": "event",
    "title": "Weekly Observing Night, Fall 2026",
@@ -315,8 +676,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261178",
    "type": "event",
    "title": "General Body Meetings",
@@ -338,8 +699,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261596",
    "type": "event",
    "title": "GREEN x Office of Sustainability Resource Primer",
@@ -356,6 +717,166 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Help shape the future of SFS. Dean Joel Hellman and Vice Dean Carla Koppell will share the draft goals for the next DEI Strategic Plan and ask for your feedback before it is finalized. As the SFS DEI Office marks five years, we want the final plan to be community-driven.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community",
+    "graduate student",
+    "service"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44157",
+   "type": "event",
+   "title": "SFS Community Town Hall: Shaping the Next DEI Strategic Plan",
+   "host": "SFS Diversity, Equity, and Inclusion",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "McGhee Library, ICC 301",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44156-sfs-community-town-hall-shaping-the-next-dei",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join ACMCU as we welcome author and public intellectual Norman Finkelstein , who will examine the relationship between the conflict in Gaza, antisemitism, and free speech on American university campuses.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lecture",
+    "racial justice",
+    "religious &amp; spiritual"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44192",
+   "type": "event",
+   "title": "Gaza, Antisemitism and Free Speech",
+   "host": "Alwaleed Center for Muslim-Christian Understanding",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Lohrfink Auditorium",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43265-gaza-antisemitism-and-free-speech",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42880",
+   "type": "event",
+   "title": "Spanish Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "ICC 450",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/spanport/event/42880-spanish-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "alumni events",
+    "graduate student"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43058",
+   "type": "event",
+   "title": "Russian Conversation Hour",
+   "host": "Slavic Languages",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T19:45:00.000Z",
+   "startTime": "14:45",
+   "place": {
+    "name": "ICC - Galleria - The MUG",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42784-russian-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "The Georgetown University Office of the President, The Georgetown University Student Veterans Association (GUSVA), and the Georgetown University Military and Veterans’ Resource Center (MAVRC) invite you to honor our veteran community by celebrating their stories and diverse persp",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events",
+    "veterans"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43870",
+   "type": "event",
+   "title": "Georgetown University Ceremony Honoring Veterans Day",
+   "host": "Office of the President",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Dahlgren Quad",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/president/event/43870-georgetown-university-ceremony-honoring-veterans",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Join the Office of Global Services for a tour of the Washington Monument. Tickets have been purchased so you can go inside the Monument.",
    "eligibility": "Open to students",
    "tags": [
@@ -366,8 +887,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261742",
    "type": "event",
    "title": "Washington Monument Tour",
@@ -389,8 +910,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261591",
    "type": "event",
    "title": "Found Objects, Found Family",
@@ -412,8 +933,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261565",
    "type": "event",
    "title": "Beyond the Limelight: Fame, Identity, and Mental Health in Hollywood",
@@ -435,8 +956,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261735",
    "type": "event",
    "title": "Queer Bakery: Mini Pies",
@@ -445,6 +966,159 @@
    "date": "2026-11-11T22:00:00.000Z",
    "startTime": "17:00",
    "sourceUrl": "https://georgetown.campusgroups.com/LGBTQGU/rsvp?id=2261735",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lecture",
+    "religious &amp; spiritual",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44153",
+   "type": "event",
+   "title": "The Mass “In Light of Sound Tradition”: Ritual Symbolism and the Ecclesial Body",
+   "host": "Mission & Ministry",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Ecumenical Chapel, just off Dahlgren Quad",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/missionandministry/event/44153-the-mass-in-light-of-sound-tradition-ritual",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "When people consider the international aspects of the American Revolution, they usually think mainly about its effects on the world. This lecture, like the book from which it comes, instead examines how the world—from Native American leaders to South Asian protestors to West Afri",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43970",
+   "type": "event",
+   "title": "America250: Worlds of Revolution | How the World Made the American Revolution",
+   "host": "History",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Mortara Center for International Studies, 3600 N Street NW, Washington, DC",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43749-america250-worlds-of-revolution-how-the-world",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture",
+    "religious &amp; spiritual"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43952",
+   "type": "event",
+   "title": "“Sick and Tired of Being Sick and Tired: How Our Politics - and Our Church - Are Changing”",
+   "host": "Catholic Studies Program",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "McShain Large Lounge, McCarthy Hall",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43692-sick-and-tired-of-being-sick-and-tired-how-our",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43275",
+   "type": "event",
+   "title": "Food and Diplomacy: A Conversation with Chef Roberto Grazioli",
+   "host": "Italian",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-11T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "GHI Conference Room, Old North 205",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42847-food-and-diplomacy-a-conversation-with-chef",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Come join GUSA for holiday cookie decorating, cotton candy, Curry & Pie, and snacks!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
+   "id": "op_georgetown_cg_2261634",
+   "type": "event",
+   "title": "Cookies and Cotton Candy",
+   "host": "GUSA",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://georgetown.campusgroups.com/GUSA/rsvp?id=2261634",
    "sourceLabel": "Student org events"
   },
   {
@@ -458,8 +1132,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261745",
    "type": "event",
    "title": "Graduate Caregivers Opening Event",
@@ -469,6 +1143,132 @@
    "startTime": "12:00",
    "sourceUrl": "https://georgetown.campusgroups.com/GradEnrichment/rsvp?id=2261745",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Host: Tingting Wang",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44222",
+   "type": "event",
+   "title": "Visiting Seminar Speaker: Dr. Kaiwen He",
+   "host": "Pharmacology & Physiology",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Med Dent NE401",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42219-visiting-seminar-speaker-dr-kaiwen-he",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "When: Thursday, November 12, 1:00pm - 2:00pm Where: Copley Formal Lounge",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44198",
+   "type": "event",
+   "title": "Defense-in-Depth Against the Use of AI for Sexual Abuse",
+   "host": "Computer Science",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Copley Formal Lounge",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/defense-against-ai-sexual-abuse-elissa-redmiles",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "The Role of Information Frictions in Study Habit Choice and Academic Performance With Agustina Affonso, Stephanie El Khoury, and Tomas Larroucau",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41803",
+   "type": "event",
+   "title": "gui2de Weekly Development Seminar: Esteban Aucejo (Arizona State University)",
+   "host": "Georgetown University Initiative on Innovation, Development and Evaluation (GUI2DE)",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "MSB - Hariri 160",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gui2de/event/41803-gui2de-weekly-development-seminar-esteban-aucejo-arizo",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Are you interested in studying abroad in Jakarta, Indonesia? Join Dean Hellman and Vice Dean Lewis for an information session on a semester abroad with Georgetown SFS Asia Pacific in Jakarta, Indonesia. The experience offers 15 Georgetown credits , combining coursework in geopoli",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "academic events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44072",
+   "type": "event",
+   "title": "Study Abroad in Jakarta: Undergraduate Info Session",
+   "host": "School of Foreign Service",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "McGhee Library (ICC)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/live/events/44038-study-abroad-in-jakarta-undergraduate-info-session",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "An overview of the Curricular Practical Training (CPT) work authorization, which includes tips on when and how to apply. CPT is used to legally accept and undertake an internship, practicum, or other non-GU work experience during your academic studies.",
@@ -481,8 +1281,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261014",
    "type": "event",
    "title": "Curricular Practical Training (CPT) Workshop",
@@ -510,8 +1310,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261726",
    "type": "event",
    "title": "Thursday Tea Time with Cosy",
@@ -524,6 +1324,135 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Decorate some sun catchers and drink some boba with Cosy the therapy dog and the LRC! Tea Time will be held Thursday, November 12 from 3:30 pm - 5:30 pm in the OSEI Community Room! Come as you are and bring your friends to sip on refreshing boba!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "community",
+    "social",
+    "social justice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44190",
+   "type": "event",
+   "title": "LGBTQ Resource Center Tea Time with Cosy",
+   "host": "LGBTQ Resource Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "OSEI Community Room",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/lgbtq/event/44190-lgbtq-resource-center-tea-time-with-cosy",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43482",
+   "type": "event",
+   "title": "German Department Kaffeestunde - Conversation Hour",
+   "host": "German",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Konrad’s Corner, outside ICC 467",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43459-german-department-kaffeestunde-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lecture",
+    "religious &amp; spiritual"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43976",
+   "type": "event",
+   "title": "Dahlgren Chapel Sacred Lecture with Fr. Chris Steck, S.J.",
+   "host": "Mission & Ministry",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Dahlgren Chapel of the Sacred Heart",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43900-dahlgren-chapel-sacred-lecture-with-fr-chris-steck",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic events",
+    "community",
+    "social justice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44180",
+   "type": "event",
+   "title": "Beyond the Divide: Next-Generation Palestinians and Israelis Shift the Politics of Peace",
+   "host": "Division of Student Affairs",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-12T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "ICC Auditorium",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44178-beyond-the-divide-next-generation-palestinians-and",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Q&A with US Rep. Liccardo",
    "eligibility": "Open to students",
    "tags": [
@@ -534,8 +1463,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261441",
    "type": "event",
    "title": "U.S. Representative Liccardo and AI Policy",
@@ -557,8 +1486,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260062",
    "type": "event",
    "title": "Flow & Restore Yoga Class",
@@ -585,8 +1514,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261521",
    "type": "event",
    "title": "The Addams Family - Thursday 11/12",
@@ -613,8 +1542,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261730",
    "type": "event",
    "title": "Letter Writing to Political Prisoners",
@@ -624,6 +1553,94 @@
    "startTime": "19:00",
    "sourceUrl": "https://georgetown.campusgroups.com/SJPGeorgetownMain/rsvp?id=2261730",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "She Kills Monsters is a thrilling high-fantasy adventure comedy that dives into 90s geek culture. After the death of her sister Tilly, Agnes Evans discovers a Dungeons & Dragons notebook that launches her into an epic quest. Filled with dominatrix warriors, nasty ogres, and 90s f",
+   "eligibility": "Cost: 5",
+   "tags": [
+    "event",
+    "theater"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41059",
+   "type": "event",
+   "title": "“She Kills Monsters”- By Qui Nguyen",
+   "host": "Performing Arts",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Gonda Theatre, Davis Performing Arts Center",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/40835-she-kills-monsters",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join current MSFS students for a student panel to discuss all things MSFS! This is a great session to attend for students to learn more about the student’s perspective. Join us and ask our students any questions you have about living in DC, academics, internships, etc! This event",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "admissions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42467",
+   "type": "event",
+   "title": "MSFS Virtual Student Panel",
+   "host": "Master of Science in Foreign Service",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://events.georgetown.edu/msfs/event/42467-msfs-virtual-student-panel",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "alumni events",
+    "social justice"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43723",
+   "type": "event",
+   "title": "A Conversation with Pulitzer Prize-Winner Mary Jordan (C’83)",
+   "host": "College of Arts & Sciences",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Main Campus, venue TBA (to be confirmed)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/college/event/43723-a-conversation-with-pulitzer-prize-winner-mary",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "Isabel Brown, host of \"The Isabel Brown Show\" at The Daily Wire, will present a discussion of empathy, modern feminism, and the pro-life movement’s responsibility to defend human dignity. The event will examine how appeals to compassion and empathy can shape young people's u",
@@ -636,8 +1653,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260730",
    "type": "event",
    "title": "The Empathy Trap: How Modern Feminism Lost Its Way",
@@ -665,8 +1682,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261690",
    "type": "event",
    "title": "GUFCA Autumn Cafe",
@@ -689,8 +1706,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2259847",
    "type": "event",
    "title": "Friday Grill",
@@ -700,6 +1717,132 @@
    "startTime": "11:00",
    "sourceUrl": "https://georgetown.campusgroups.com/GUGS/rsvp?id=2259847",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Each semester, this series brings together leading researchers, visiting scholars, faculty, and students to examine cutting-edge work in mathematics and statistics. Talks span theory, computation, modeling, data analysis, and applications that address real-world challenges across",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43972",
+   "type": "event",
+   "title": "MATH Colloquium Series - Professor Markus Lange-Heggermann",
+   "host": "Mathematics and Statistics",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "St. Mary’s Hall, Room 107",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43712-math-colloquium-series-professor-markus-lange-heggerma",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "When: Friday, November 13, 11:30am - 12:30pm Where St. Mary’s Hall room 111",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44199",
+   "type": "event",
+   "title": "Beyond Detection: Socially-Grounded NLP for Understanding Persuasive and Harmful Rhetoric",
+   "host": "Computer Science",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T16:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "St. Mary’s Hall 111",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/beyond-detection-socially-grounded-julia-mendelsohn-",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41684",
+   "type": "event",
+   "title": "French Conversation & Coffee",
+   "host": "French and Francophone Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "ICC 425 - McCarthy Space",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/french/event/41684-french-conversation-coffee",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Sequoia “REDWOOD” Snyder is a Washington, D.C.-born musician, producer, composer, and recording artist who blends the contemporary sounds of jazz, R&B, soul, and hip-hop with striking individuality. Mentored by legends like Rodney Whitaker, Dee Dee Bridgewater, and Jason Moran, s",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "music"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41047",
+   "type": "event",
+   "title": "Friday Music series Presents: Sequoia “REDWOOD” Snyder & INNER KNOWING",
+   "host": "Performing Arts",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-13T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Devine Theatre, Davis Performing Arts Center",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/40827-friday-music-series-presents-sequoia-redwood",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "Join us in the Wellbeing Space to connect with licensed practitioners and others who share your experiences. This is a space for you to be seen, heard, and share as much as you would like. Sign up here: https://docs.google.com/forms/d/e/1FAIpQLSfyeMzQ4gNTaUyOP03ncdGZIbeuG0YNjRXPP",
@@ -712,8 +1855,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261750",
    "type": "event",
    "title": "Restorative Circle on Sexual Harm",
@@ -736,8 +1879,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261658",
    "type": "event",
    "title": "Afternoon Coffee + Donuts with RTL",
@@ -760,8 +1903,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261549",
    "type": "event",
    "title": "Georgetown Club Boxing Fall 2026 Sparring Showcase",
@@ -789,8 +1932,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261421",
    "type": "event",
    "title": "Claude Code for Agentic Security Tools Workshop",
@@ -813,8 +1956,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261791",
    "type": "event",
    "title": "General Body Meeting",
@@ -837,8 +1980,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261527",
    "type": "event",
    "title": "GREEN Aquaponics Game Night",
@@ -866,8 +2009,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261648",
    "type": "event",
    "title": "Freshmen Representatives Ramen Mixer",
@@ -894,8 +2037,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261721",
    "type": "event",
    "title": "GPB x Cabaret: The Great Pumpkin Waltz Concert",
@@ -917,8 +2060,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261522",
    "type": "event",
    "title": "The Addams Family - Friday 11/13",
@@ -945,8 +2088,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261715",
    "type": "event",
    "title": "Vibe_ \"Runaway\" Event",
@@ -969,8 +2112,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260115",
    "type": "event",
    "title": "Georgetown Pakistan Forum",
@@ -998,8 +2141,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261006",
    "type": "event",
    "title": "GUCD Trip to NMAI",
@@ -1021,8 +2164,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261672",
    "type": "event",
    "title": "Virtue at the Founding Reading Group",
@@ -1045,8 +2188,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260757",
    "type": "event",
    "title": "Georgetown Gaming Arcade",
@@ -1074,8 +2217,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261523",
    "type": "event",
    "title": "The Addams Family (Understudy Concert) - Saturday 11/14",
@@ -1102,8 +2245,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261584",
    "type": "event",
    "title": "Vibe_ Random Play Dance",
@@ -1125,8 +2268,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261340",
    "type": "event",
    "title": "Asian Food Fair",
@@ -1148,8 +2291,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261319",
    "type": "event",
    "title": "D.C. Acapella Festival (DCAF) 2026 (GraceNotes Night)",
@@ -1176,8 +2319,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261524",
    "type": "event",
    "title": "The Addams Family - Saturday 11/14",
@@ -1204,8 +2347,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261781",
    "type": "event",
    "title": "The Georgetown Improv Association's November Show!",
@@ -1232,8 +2375,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261581",
    "type": "event",
    "title": "Club Filipino Barrio Fiesta 2026",
@@ -1255,8 +2398,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261259",
    "type": "event",
    "title": "Athenaeum",
@@ -1273,6 +2416,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "She Kills Monsters is a thrilling high-fantasy adventure comedy that dives into 90s geek culture. After the death of her sister Tilly, Agnes Evans discovers a Dungeons & Dragons notebook that launches her into an epic quest. Filled with dominatrix warriors, nasty ogres, and 90s f",
+   "eligibility": "Cost: 5",
+   "tags": [
+    "event",
+    "theater"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41062",
+   "type": "event",
+   "title": "“She Kills Monsters”- By Qui Nguyen",
+   "host": "Performing Arts",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-15T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Gonda Theatre, Davis Performing Arts Center",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/40838-she-kills-monsters",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Take some time to make art in the Wellbeing Space! All are welcome, and all materials will be provided (including snacks). Drop in & out whenever you like!",
    "eligibility": "Open to students",
    "tags": [
@@ -1283,8 +2455,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261590",
    "type": "event",
    "title": "Watercolor Painting Break",
@@ -1311,8 +2483,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261447",
    "type": "event",
    "title": "PDC Alumni Networking Dinner",
@@ -1334,8 +2506,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260047",
    "type": "event",
    "title": "Flow & Restore Yoga Class",
@@ -1362,8 +2534,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260685",
    "type": "event",
    "title": "Security Plus Study Group (Virtual)",
@@ -1391,8 +2563,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261709",
    "type": "event",
    "title": "Queer Family System Family Dinner",
@@ -1415,8 +2587,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261741",
    "type": "event",
    "title": "Queer Family System Dinner",
@@ -1426,6 +2598,227 @@
    "startTime": "19:30",
    "sourceUrl": "https://georgetown.campusgroups.com/GuPride/rsvp?id=2261741",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "religious &amp; spiritual"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43978",
+   "type": "event",
+   "title": "Martyrs Mass",
+   "host": "Mission & Ministry",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-16T17:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Dahlgren Chapel of the Sacred Heart",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43896-martyrs-mass",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Please join the Office of the Provost for the first Magis Prize Lecture Series event to hear about the work of the 2024 Magis Prize winners (Diana Kim, Timothy Newfield, and Carlos Simon) on Monday, November 16th at 3pm in Riggs Library. Reception to follow. Please RSVP .",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "academic events",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43984",
+   "type": "event",
+   "title": "Magis Prize Lecture Series",
+   "host": "Office of the Provost",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-16T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Riggs Library",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/live/events/43937-magis-prize-lecture-series",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join us for discussion with Professor Keun Lee on his new book, “Capitalism in South Korea, 1945-2025”.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44114",
+   "type": "event",
+   "title": "A Book Talk by Dr. Keun Lee: Capitalism in South Korea, 1945-2025",
+   "host": "Asian Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-16T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mortara Center for International Studies",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/asianstudies/event/44114-a-book-talk-by-dr-keun-lee-capitalism-in-south-korea-1",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43745",
+   "type": "event",
+   "title": "Seoul- U.S. Graduate Studies in International Affairs: Seminar & Networking Reception",
+   "host": "SFS Graduate Admissions",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T09:00:00.000Z",
+   "startTime": "04:00",
+   "place": {
+    "name": "Fulbright Korea",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/sfs-graduate-admissions/event/43745-seoul-us-graduate-studies-in-international",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44035",
+   "type": "event",
+   "title": "Global Value Chains in the Energy Transition amid a New Geopolitical Landscape",
+   "host": "Georgetown Americas Institute",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T15:30:00.000Z",
+   "startTime": "10:30",
+   "place": {
+    "name": "Copley Formal Lounge",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/americas/event/44035-global-value-chains-in-the-energy-transition-amid",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Please join us for this talk by Nathan Wiederhold, PhD, of the University of Texas, San Antonio, part of our Fall 2026 Seminar Series.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "graduate student",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42704",
+   "type": "event",
+   "title": "Department of Microbiology and Immunology Seminar Series: “Antifungal Resistance in Candida and Aspergillus: Epidemiology, Mechanisms, and Clinical Detection”",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Med-Dent NE301",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gumc/event/42704-department-of-microbiology-and-immunology-seminar-seri",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42923",
+   "type": "event",
+   "title": "Portuguese Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "LAU 305 (Millennium Room)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42903-portuguese-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "An overview of the pre-completion Optional Practical Training (OPT) work authorization rules and the application process. Pre-Completion OPT is one of the work authorization options available for students who are not eligible for Curricular Practical Training or have exhausted th",
@@ -1438,8 +2831,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261015",
    "type": "event",
    "title": "Pre-Completion Optional Practical Training (OPT) Workshop",
@@ -1466,8 +2859,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261779",
    "type": "event",
    "title": "Fireside Chat w/ Suzanne Scholte: North Korea's Future: Human Rights, Freedom, and the Prospects for Change",
@@ -1484,6 +2877,424 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Prof. Cynthia Reinhart-King, Rice University Abstract : Cellular metabolism describes a family of reactions that create the energy and biosynthetic precursors and products that are the building blocks of the cell. It is fundamental to cell function, including cell migration. To m",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42838",
+   "type": "event",
+   "title": "Physics Colloquium: Mechano-metabolic control of cell behavior (Prof. Cynthia Reinhart-King, Rice University)",
+   "host": "Physics",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T20:15:00.000Z",
+   "startTime": "15:15",
+   "place": {
+    "name": "Regents Hall, Room 109",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/physics/event/42838-physics-colloquium-mechano-metabolic-control-of-cell-b",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture",
+    "religious &amp; spiritual"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43999",
+   "type": "event",
+   "title": "Proudly Jesuit, Decidedly American: How Georgetown Shaped Jesuit Higher Education in the United States",
+   "host": "Mission & Ministry",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "HFSC Herman Room",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43994-proudly-jesuit-decidedly-american-how-georgetown",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43941",
+   "type": "event",
+   "title": "Book Talk—Side Effects: How Abortion Bans Impact Everyone’s Health",
+   "host": "Georgetown Law",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Georgetown Law, 500 First Street NW, Room 500",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/law/event/43941-book-talkside-effects-how-abortion-bans-impact",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture",
+    "racial justice"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43466",
+   "type": "event",
+   "title": "Thinking Solidarity: A Talk by Dr. Eric A. Vázquez",
+   "host": "Engaged & Public Humanities Master’s Program",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Old North Room 205",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/publichumanities/event/43466-thinking-solidarity-a-talk-by-dr-eric-a-vazquez",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "racial justice",
+    "social justice"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44208",
+   "type": "event",
+   "title": "A Film Screening and Discussion about Wartime Sexual Violence in Ethiopia",
+   "host": "Georgetown Institute for Women, Peace and Security",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Healey Family Student Center",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44103-a-film-screening-and-discussion-about-wartime",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join us for a reading and conversation with MacArthur Genius, NY Times best-selling poet, and author of TRIAGE. Moderated by Professor and author Mecca Jamilah Sullivan . Accommodation requests related to a disability should be made by November 10th to Patricia Guzman, 202-687-62",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "racial justice",
+    "social justice"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41233",
+   "type": "event",
+   "title": "Readings & Talks Featuring Claudia Rankine",
+   "host": "Lannan Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Copley Formal Lounge",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/41110-readings-talks-featuring-claudia-rankine",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43827",
+   "type": "event",
+   "title": "Market Movers: High-Income Mothers in the Crisis of Care",
+   "host": "Sociology",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Car Barn 427",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/sociology/event/43827-market-movers-high-income-mothers-in-the-crisis-of",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Six years after the publication of Exit from Hegemony: The Unravelling of the American Global Order , that order is coming to an end. In their book, Alexander Cooley and Daniel Nexon noted the emergence of transnational networks emphasizing illiberalism and nationalism, values at",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44124",
+   "type": "event",
+   "title": "After Exit from Hegemony: Ideology and the End of the American Global Order",
+   "host": "Mortara Center for International Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Mortara Center for International Studies",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44121-after-exit-from-hegemony-ideology-and-the-end-of",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Amy Q. Shen, Micro/Bio/Nanofluidics Unit, OIST, Japan Abstract: Soft materials exhibit rich and often unexpected behavior under flow, deformation, and confinement, governed by the interplay of microstructure, elasticity, geometry, and interfaces. I will begin with a brief overvie",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44084",
+   "type": "event",
+   "title": "Soft Matter Seminar: Soft Materials Under Stress: From Coral Mucus Networks to Direct Ink Writing",
+   "host": "Institute for Soft Matter",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Regents Hall, Room 351",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/softmatter/event/44084-soft-matter-seminar-soft-materials-under-stress",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42881",
+   "type": "event",
+   "title": "Spanish Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "ICC 450",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/spanport/event/42881-spanish-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join us for a film screening of Those 4 Years followed by a discussion with filmmaker Joe Thomas Karackattu.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "film",
+    "lecture",
+    "social"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43946",
+   "type": "event",
+   "title": "Those 4 Years Film Screening and Discussion with Filmmaker",
+   "host": "Asian Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "New South Film Screening Room, New South via HFSC",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43938-those-4-years-film-screening-and-discussion-with",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Russian conversation hour for those learning the language.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "alumni events",
+    "graduate student"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43057",
+   "type": "event",
+   "title": "Russian Conversation Hour",
+   "host": "Slavic Languages",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T19:45:00.000Z",
+   "startTime": "14:45",
+   "place": {
+    "name": "ICC - Galleria - The MUG",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42785-russian-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join Georgetown Space Studies for a screening of Astropolitics, followed by a panel discussion with space policy experts and the film’s director.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "film"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44174",
+   "type": "event",
+   "title": "“Astropolitics” Film Screening & Panel",
+   "host": "Space Studies Program",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "ICC Auditorium",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/spacestudies/event/44174-astropolitics-film-screening-panel",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Join us for dinner and discussion with Ambassador Derek Mitchell, Ambassador to Burma, 2012-2016.",
    "eligibility": "Open to students",
    "tags": [
@@ -1494,8 +3305,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261710",
    "type": "event",
    "title": "Roundtable with fmr. Ambassador to Burma Derek Mitchell",
@@ -1505,6 +3316,228 @@
    "startTime": "18:30",
    "sourceUrl": "https://georgetown.campusgroups.com/AHS/rsvp?id=2261710",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42220",
+   "type": "event",
+   "title": "Ph.D. Student Seminar: Kaan Taskintuna",
+   "host": "Pharmacology & Physiology",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "MED DENT NE401",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/pharmacology-and-physiology/event/42220-phd-student-seminar-kaan-taskintuna",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Abstract will be added shortly.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41804",
+   "type": "event",
+   "title": "gui2de Weekly Development Seminar: Gaurav Khanna (UCSD)",
+   "host": "Georgetown University Initiative on Innovation, Development and Evaluation (GUI2DE)",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "MSB - Hariri 160",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gui2de/event/41804-gui2de-weekly-development-seminar-gaurav-khanna-ucsd",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43483",
+   "type": "event",
+   "title": "German Department Kaffeestunde - Conversation Hour",
+   "host": "German",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Konrad’s Corner, outside ICC 467",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43460-german-department-kaffeestunde-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Arabic Conversation Hour- Holidays and Customs - Share your traditions and experiences!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42758",
+   "type": "event",
+   "title": "Arabic Conversation Hour",
+   "host": "Arabic and Islamic Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Poulton 200",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42662-arabic-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "A lecture given by visiting scholar Dr. Anna Akasoy",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43584",
+   "type": "event",
+   "title": "Islamic Studies Lecture Series- Falconry in the Middle East: How to Write a Cultural History",
+   "host": "Arabic and Islamic Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Poulton 230/Linguistics Conference Room",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43530-islamic-studies-lecture-series-falconry-in-the",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join the Center for Jewish Civilization for a conversation with Simon Sebag Montefiore, award-winning author of The Cauldron: The Making of the Modern Middle East . Montefiore will explore how the region’s past continues to shape its present, and what that history can tell us abo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44196",
+   "type": "event",
+   "title": "“The Cauldron” Book Talk with Simon Sebag Montefiore",
+   "host": "Center for Jewish Civilization",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Pierce Reading Room (Lauinger Library)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/live/events/44131-the-cauldron-book-talk-with-simon-sebag-montefiore",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join the faculty directors of the Political Science MA programs at Georgetown University to learn more about the degree programs. Light refreshments will be served.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "admissions",
+    "community",
+    "graduate student"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44204",
+   "type": "event",
+   "title": "Masters in Political Science: In-Person Info Session",
+   "host": "Government",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Georgetown University Capitol Campus, 125 E St. NW, Classroom LL-40, Washington, DC 20001",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.georgetown.edu/live/events/43378-masters-in-political-science-in-person-info",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "An event to introduce people to modeling and get the people excited about auditioning for ABISSA",
@@ -1517,8 +3550,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261738",
    "type": "event",
    "title": "ABISSA Modeling Workshop",
@@ -1528,6 +3561,37 @@
    "startTime": "18:00",
    "sourceUrl": "https://georgetown.campusgroups.com/ASG/rsvp?id=2261738",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "In honor of Transgender Day of Remembrance, join Gender + Justice Initiative, Women’s & Gender Studies, Women’s Center, LGBTQ Resource Center, Film and Media Studies, and Culture and Politics Program for a screening of the 2016 documentary MAJOR! , which chronicles the life and a",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "film"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44107",
+   "type": "event",
+   "title": "Film Screening and Discussion | MAJOR!",
+   "host": "Gender+ Justice Initiative",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Healey Family Student Center, Film Studies Screening Room",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/genderjustice/event/44107-film-screening-and-discussion-major",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "Enjoy our free biweekly yoga class in collaboration with Yates Field House! This class is taught by student instructor Riley Isakson, and you must register through IMLeagues here: https://www.imleagues.com/spa/fitness/0f380a71abe947989e3707f8abaeb597/viewclass?classId=16910",
@@ -1540,8 +3604,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260063",
    "type": "event",
    "title": "Flow & Restore Yoga Class",
@@ -1569,8 +3633,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261267",
    "type": "event",
    "title": "Bossier Magazine's Create Night",
@@ -1583,6 +3647,69 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "religious &amp; spiritual",
+    "social"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44000",
+   "type": "event",
+   "title": "Jesuit Panel: Ask a Jesuit Anything!",
+   "host": "Mission & Ministry",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-20T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Hehir Center for Catholic Life, Healy Hall (The HCCL is located on the ground floor of Healy Hall - take the Gaston Hall elevator or stairs to G.)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43995-jesuit-panel-ask-a-jesuit-anything",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "The Ruesch Symposium provides a unique forum for discussion, networking, and debate on critical issues related to GI cancers. Complimentary registration is available for Georgetown and MedStar Health employees, students and trainees.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43657",
+   "type": "event",
+   "title": "17th Annual Ruesch Center Symposium: Innovations in GI Cancer: Day One",
+   "host": "Lombardi Comprehensive Cancer Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-20T12:30:00.000Z",
+   "startTime": "07:30",
+   "place": {
+    "name": "2115 Wisconsin Ave, NW, 1st Floor Conference Area",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43655-17th-annual-ruesch-center-symposium-innovations-in",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "The Grilling Society's weekly grill featuring burgers, hot dogs, and veggie burgers",
    "eligibility": "Open to students",
    "tags": [
@@ -1593,8 +3720,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2259848",
    "type": "event",
    "title": "Friday Grill",
@@ -1604,6 +3731,100 @@
    "startTime": "11:00",
    "sourceUrl": "https://georgetown.campusgroups.com/GUGS/rsvp?id=2259848",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Each semester, the MATH Colloquium series brings together leading researchers, visiting scholars, faculty, and students to examine cutting-edge work in mathematics and statistics. Talks span theory, computation, modeling, data analysis, and applications that address real-world ch",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43295",
+   "type": "event",
+   "title": "MATH Colloquium Series - Professor Ahmad Mousavi",
+   "host": "Mathematics and Statistics",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-20T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "St. Mary’s Hall, Room 107",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42761-math-colloquium-series-professor-ahmad-mousavi",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41685",
+   "type": "event",
+   "title": "French Conversation & Coffee",
+   "host": "French and Francophone Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-20T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "ICC 425 - McCarthy Space",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/french/event/41685-french-conversation-coffee",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Paul Bratcher , a native of Harrisburg Pennsylvania began playing piano at age 11. He began his study of jazz at Bishop McDevitt High School where he played in the Jazz Band under the direction of David Knott. After high school Paul continued his education at Messiah College wher",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "music"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41048",
+   "type": "event",
+   "title": "Friday Music Series Presents: Paul Bratcher",
+   "host": "Performing Arts",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-20T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Devine Theatre, Davis Performing Arts Center",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/40828-friday-music-series-presents-paul-bratcher",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "Come craft & hang with our resident therapy dog Cosy on Fridays! In the past, we have organized paint by numbers, vision board making, and crochet sessions, but the activity will be different each time! You are also welcome to just come for some cuddles with Cosy of course:)",
@@ -1616,8 +3837,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261333",
    "type": "event",
    "title": "Cosy & Crafts",
@@ -1645,8 +3866,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261659",
    "type": "event",
    "title": "Afternoon Coffee + Donuts with RTL",
@@ -1669,8 +3890,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260540",
    "type": "event",
    "title": "Transgender Day of Remembrance Vigil",
@@ -1680,6 +3901,37 @@
    "startTime": "16:30",
    "sourceUrl": "https://georgetown.campusgroups.com/GuPride/rsvp?id=2260540",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Ruesch Symposium provides a unique forum for discussion, networking, and debate on critical issues related to GI cancers. Complimentary registration is available for Georgetown and MedStar Health employees, students and trainees.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43659",
+   "type": "event",
+   "title": "17th Annual Ruesch Center Symposium: Innovations in GI Cancer: Day Two",
+   "host": "Lombardi Comprehensive Cancer Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-21T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "2115 Wisconsin Ave, NW, 1st Floor Conference Area",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43656-17th-annual-ruesch-center-symposium-innovations-in-gi-",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "This event is hosted for people in the Vibe_\"Get a Guitar\" group to get to know each other and work better together.",
@@ -1692,8 +3944,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261722",
    "type": "event",
    "title": "Vibe_\"Get a Guitar\" Event",
@@ -1715,8 +3967,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260092",
    "type": "event",
    "title": "Flow & Restore Yoga Class",
@@ -1743,8 +3995,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260686",
    "type": "event",
    "title": "Security Plus Study Group (Virtual)",
@@ -1761,6 +4013,32 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join current MSFS students for a student panel to discuss all things MSFS! This is a great session to attend for students to learn more about the student’s perspective. Join us and ask our students any questions you have about living in DC, academics, internships, etc! This event",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "admissions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42468",
+   "type": "event",
+   "title": "MSFS Virtual Student Panel",
+   "host": "Master of Science in Foreign Service",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-23T13:00:00.000Z",
+   "startTime": "08:00",
+   "sourceUrl": "https://events.georgetown.edu/msfs/event/42468-msfs-virtual-student-panel",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Join GU Hawai'i Club and the Women's Center to make lei (flower garlands)!",
    "eligibility": "Open to students",
    "tags": [
@@ -1771,8 +4049,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261670",
    "type": "event",
    "title": "GU Hawai'i Club x Women's Center: Lei-Making",
@@ -1782,6 +4060,164 @@
    "startTime": "14:00",
    "sourceUrl": "https://georgetown.campusgroups.com/guhawaiiclub/rsvp?id=2261670",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Prof. Mingzhong Wu, Northeastern University Abstract : Quantum oscillations in electrical transport have long served as a powerful probe of fundamental Fermi-surface physics. To date, however, such studies have largely been confined to linear electrical transport. In this seminar",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43960",
+   "type": "event",
+   "title": "Physics Seminar: Quantum Oscillations of Nonlinear Electrical Transport in a Topological Dirac Semimetal",
+   "host": "Physics",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-24T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Regents Hall, Room 351",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/physics/event/43960-physics-seminar-quantum-oscillations-of-nonlinear",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Presented by Daphne Maurer, OC, PhD, of McMaster University",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lecture",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44043",
+   "type": "event",
+   "title": "IPN/Neuroscience Seminar: “The World Inside Your Head: How Perceptions Build Society”",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-24T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Pharmacology Library, Med-Dent NE401",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gumc/event/44043-ipnneuroscience-seminar-the-world-inside-your-head-how",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42924",
+   "type": "event",
+   "title": "Portuguese Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-24T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "LAU 305 (Millennium Room)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42904-portuguese-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42882",
+   "type": "event",
+   "title": "Spanish Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-25T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "ICC 450",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/spanport/event/42882-spanish-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41758",
+   "type": "event",
+   "title": "French Conversation & Coffee",
+   "host": "French and Francophone Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-11-27T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "ICC 425 - McCarthy Space",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/33859-french-conversation-coffee",
+   "sourceLabel": "Georgetown University Events"
   },
   {
    "description": "Goergetown Board Games' weekly general board games event.",
@@ -1795,8 +4231,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261204",
    "type": "event",
    "title": "GBG Weekly",
@@ -1819,8 +4255,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260687",
    "type": "event",
    "title": "Security Plus Study Group (Virtual)",
@@ -1837,6 +4273,226 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Artificial intelligence is fundamentally rewiring how tasks in goods, services, and ideas are distributed across firms, borders, and human-machine teams. This conference co-hosted with the World Bank convenes leading minds to examine how AI is shifting trade costs, redefining com",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "career",
+    "instructional continuity"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43115",
+   "type": "event",
+   "title": "Sixth Annual AI in Action Conference: Who Does What? AI, Trade, and Work",
+   "host": "Center for Business & Public Policy",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-01T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Fisher Colloquium",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43110-sixth-annual-ai-in-action-conference-who-does-what",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Please join us for this talk by Jie Cheng, PhD, of AstraZeneca, part of our Fall 2026 Seminar Series.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "graduate student",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42705",
+   "type": "event",
+   "title": "Department of Microbiology and Immunology Seminar Series: “Advancing CAR-T Cell Therapy for Solid Tumors”",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-01T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Med-Dent NE301",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gumc/event/42705-department-of-microbiology-and-immunology-seminar-seri",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42925",
+   "type": "event",
+   "title": "Portuguese Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-01T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "LAU 305 (Millennium Room)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42905-portuguese-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Prof. Nadir Kaplan, Virginia Tech Abstract: TBA",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41194",
+   "type": "event",
+   "title": "Physics Colloquium: Prof. Nadir Kaplan, Virginia Tech",
+   "host": "Physics",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-01T20:15:00.000Z",
+   "startTime": "15:15",
+   "place": {
+    "name": "Regents Hall, Room 109",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/physics/event/41194-physics-colloquium-prof-nadir-kaplan-virginia-tech",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42883",
+   "type": "event",
+   "title": "Spanish Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-02T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "ICC 450",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/spanport/event/42883-spanish-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Russian conversation hour for thoselearning the labguage.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "graduate student",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43056",
+   "type": "event",
+   "title": "Russian Conversation Hour",
+   "host": "Slavic Languages",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-02T19:45:00.000Z",
+   "startTime": "14:45",
+   "place": {
+    "name": "ICC - Galleria - The MUG",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42786-russian-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Interested in majoring or minoring in Psychology? Wondering what is required to be a major/minor? Join Dr. Dick Dubbelde & learn more! RSVP Here",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42604",
+   "type": "event",
+   "title": "Psychology Major/Minor Declaration Session",
+   "host": "Psychology",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-02T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "White-Gravenor Hall, Rm 311-C",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/psychology/event/42604-psychology-majorminor-declaration-session",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Join the Georgetown Global Competition and Innovation Club for a holiday panel and reception at the Capitol Hill campus. Voices from industry, government, and investment will discuss critical minerals, supply chain exposure, and where private capital is moving. Speakers to be ann",
    "eligibility": "Open to students",
    "tags": [
@@ -1848,8 +4504,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261599",
    "type": "event",
    "title": "Critical Minerals and the New Global Competition: Holiday Panel and Reception",
@@ -1867,6 +4523,100 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Abstract will be added shortly.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41805",
+   "type": "event",
+   "title": "gui2de Weekly Development Seminar: Garima Sharma (UC Berkeley)",
+   "host": "Georgetown University Initiative on Innovation, Development and Evaluation (GUI2DE)",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-03T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "MSB - Hariri 160",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gui2de/event/41805-gui2de-weekly-development-seminar-garima-sharma-uc-ber",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43484",
+   "type": "event",
+   "title": "German Department Kaffeestunde - Conversation Hour",
+   "host": "German",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-03T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Konrad’s Corner, outside ICC 467",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/43461-german-department-kaffeestunde-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Arabic Conversation Hour- Arabic Around the World: Fuṣḥā vs. Regional Dialects!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42759",
+   "type": "event",
+   "title": "Arabic Conversation Hour",
+   "host": "Arabic and Islamic Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-03T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Poulton 200",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42663-arabic-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "Fireside chat panel discussion with current students majoring in IPOL and STIA with time for Q&A from students.",
    "eligibility": "Open to students",
    "tags": [
@@ -1878,8 +4628,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261765",
    "type": "event",
    "title": "Mocktails & Majors Session 1",
@@ -1902,8 +4652,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260064",
    "type": "event",
    "title": "Flow & Restore Yoga Class",
@@ -1920,6 +4670,70 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "social",
+    "student events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41687",
+   "type": "event",
+   "title": "French Conversation & Coffee",
+   "host": "French and Francophone Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-04T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "ICC 425 - McCarthy Space",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/french/event/41687-french-conversation-coffee",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Join us for the last fall session of the Psychology Department’s Colloquium lectures, featuring Dr. Julie Cassaniti.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42655",
+   "type": "event",
+   "title": "Psychology Department Colloquium: Dr. Julie Cassaniti",
+   "host": "Psychology",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-04T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "White-Gravenor Hall, Room 208",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/psychology/event/42655-psychology-department-colloquium-dr-julie",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "To support club bonding alongside weekly tabling, we will go to a coffee shop and grab donuts at the end of tabling every Friday at 4pm.",
    "eligibility": "Open to students",
    "tags": [
@@ -1931,8 +4745,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261660",
    "type": "event",
    "title": "Afternoon Coffee + Donuts with RTL",
@@ -1945,6 +4759,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The Office of the President invites you to the Lighting of the Georgetown University Christmas Tree Please join us for hot cocoa and cookies and a full program of holiday favorites, including: holiday music performed by Georgetown musical groups and the lighting of the Georgetown",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "music",
+    "social",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_43871",
+   "type": "event",
+   "title": "Georgetown University Christmas Tree Lighting",
+   "host": "Office of the President",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-04T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Dahlgren Quad",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/president/event/43871-georgetown-university-christmas-tree-lighting",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
    "description": "A prelude to their spring 2027 performance, GUDC presents an informal showing of 8 student choreographed works in progress in styles including contemporary ballet, modern/contemporary, and jazz. The showing will also include an excerpt of work created on GUDC students by professi",
    "eligibility": "Open to students",
    "tags": [
@@ -1955,8 +4800,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261125",
    "type": "event",
    "title": "Fall Works in Progress",
@@ -1984,8 +4829,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2261777",
    "type": "event",
    "title": "End of Semester Hotpot",
@@ -2008,8 +4853,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260093",
    "type": "event",
    "title": "Flow & Restore Yoga Class",
@@ -2036,8 +4881,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:18.387Z",
-   "createdAt": "2026-11-08T03:41:18.387Z",
+   "lastVerified": "2026-11-09T00:36:58.158Z",
+   "createdAt": "2026-11-09T00:36:58.158Z",
    "id": "op_georgetown_cg_2260688",
    "type": "event",
    "title": "Security Plus Study Group (Virtual)",
@@ -2052,6 +4897,133 @@
    },
    "sourceUrl": "https://georgetown.campusgroups.com/GUCS/rsvp?id=2260688",
    "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Please join us for this talk by Jianming Hu, PhD, of Penn State College of Medicine, part of our Fall 2026 Seminar Series.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "graduate student",
+    "research"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42706",
+   "type": "event",
+   "title": "Department of Microbiology and Immunology Seminar Series: “HBV Precore - A Persistent Enigma”",
+   "host": "Georgetown University Medical Center",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-08T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Med-Dent NE301",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/gumc/event/42706-department-of-microbiology-and-immunology-seminar-seri",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Religion has returned to the center of world politics — not as the irrational force that realist analysts have long dismissed, but as a deliberate instrument of statecraft deployed by states across every major world region and faith tradition. In this talk, Peter Mandaville will ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events",
+    "lecture"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_44125",
+   "type": "event",
+   "title": "The New Geopolitics of Religion: Sacred Statecraft and World Orders",
+   "host": "Mortara Center for International Studies",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-08T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Mortara Center for International Studies",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/44123-the-new-geopolitics-of-religion-sacred-statecraft",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_42926",
+   "type": "event",
+   "title": "Portuguese Conversation Hour",
+   "host": "Spanish and Portuguese",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-08T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "LAU 305 (Millennium Room)",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/live/events/42906-portuguese-conversation-hour",
+   "sourceLabel": "Georgetown University Events"
+  },
+  {
+   "description": "Prof. Tyrel McQueen, Johns Hopkins University Abstract: TBA",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "academic events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:36:58.182Z",
+   "createdAt": "2026-11-09T00:36:58.182Z",
+   "id": "op_georgetown_lw_41829",
+   "type": "event",
+   "title": "Physics Colloquium: Prof. Tyrel McQueen, Johns Hopkins University",
+   "host": "Physics",
+   "schoolId": "s_georgetown",
+   "date": "2026-12-08T20:15:00.000Z",
+   "startTime": "15:15",
+   "place": {
+    "name": "Regents Hall, Room 109",
+    "lat": 38.9076,
+    "lng": -77.0723
+   },
+   "sourceUrl": "https://events.georgetown.edu/physics/event/41829-physics-colloquium-prof-tyrel-mcqueen-johns",
+   "sourceLabel": "Georgetown University Events"
   }
  ]
 }

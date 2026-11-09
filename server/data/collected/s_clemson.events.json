@@ -1,98 +1,171 @@
 {
- "collectedAt": "2026-11-08T03:41:01.272Z",
+ "collectedAt": "2026-11-09T00:38:05.093Z",
  "sources": [
-  "engage https://clemson.campuslabs.com/engage 63"
+  "engage https://clemson.campuslabs.com/engage 67",
+  "livewhale https://events.clemson.edu 37"
  ],
  "events": [
   {
-   "description": "Lace up your sneakers and join us for a morning of miles, memories, and miracles! We&rsquo;re so excited to announce the Miles for Miracles 5K, raising money to support Prisma Health Children&rsquo;s Hospital and the incredible work they provide to children and families! Nove",
-   "eligibility": "Open to students",
+   "description": "CSL is a great place to increase your leadership confidence and expand your leadership network! Join the undergraduate cohort (CU1500) Tuesdays 3:30-4:45pm and graduate cohort (GRAD7010) Tuesdays 5-6:15pm: https://clemson.campuslabs.com/engage/submitter/form/start/726169",
+   "eligibility": "Open to the campus community",
    "tags": [
     "event",
-    "communityservice"
+    "talk",
+    "conferences, forums and symposiums",
+    "general",
+    "lectures, seminars and speakers"
    ],
    "interests": [
-    "club"
+    "research",
+    "study"
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
-   "id": "op_clemson_eg_12932457",
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25143",
    "type": "event",
-   "title": "Miles for Miracles 5K",
-   "host": "Clemson Miracle",
+   "title": "Certified Student Leader (CSL)",
+   "host": "Student Affairs",
    "schoolId": "s_clemson",
-   "date": "2026-11-08T13:45:00.000Z",
-   "startTime": "08:45",
+   "date": "2026-11-09T05:00:00.000Z",
    "place": {
-    "name": "South Carolina Botanical Gardens (Back Entrance by Hanover House) ",
+    "name": "Sirrine 302",
     "lat": 34.6834,
     "lng": -82.8374
    },
-   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12932457",
-   "sourceLabel": "Student org events"
+   "sourceUrl": "https://events.clemson.edu/event/25143-certified-student-leader-csl",
+   "sourceLabel": "Clemson University Events"
   },
   {
-   "description": "Come out to the Hunicutt Food Forest Sunday at 1pm for Stewardship Sunday! We will be swale digging, native planting, and mulching!",
-   "eligibility": "Open to students",
+   "description": "Join Clemson Extension Agents at Dorchester County Extension for an educational program series each month covering various topics.",
+   "eligibility": "Open to the campus community",
    "tags": [
     "event",
-    "communityservice"
+    "talk",
+    "lectures, seminars and speakers",
+    " open to the public",
+    "training, development and workshops"
    ],
    "interests": [
-    "club"
+    "research",
+    "study"
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
-   "id": "op_clemson_eg_12959383",
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25186",
    "type": "event",
-   "title": "Stewardship Sunday",
-   "host": "Students for Stewardship",
+   "title": "Coffee with Clemson - Dorchester County Extension",
+   "host": "Cooperative Extension Service",
    "schoolId": "s_clemson",
-   "date": "2026-11-08T18:00:00.000Z",
-   "startTime": "13:00",
+   "date": "2026-11-09T05:00:00.000Z",
    "place": {
-    "name": "Hunnicutt Food Forest",
+    "name": "201 Johnston Street, Saint George, SC 29477",
     "lat": 34.6834,
     "lng": -82.8374
    },
-   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12959383",
-   "sourceLabel": "Student org events"
+   "sourceUrl": "https://events.clemson.edu/event/25186-coffee-with-clemson-dorchester-county-extension",
+   "sourceLabel": "Clemson University Events"
   },
   {
-   "description": "Join the ASL club at Douthit Starbucks!",
-   "eligibility": "Open to students",
+   "description": "Ram Seshadri, Vice President of Operations at Fluor, will present the 6th annual Liles Distinguished Lecture - “ Delivering on Time in an Uncertain World: Semiconductor Scheduling, Risk & Cost” .",
+   "eligibility": "Open to the campus community",
    "tags": [
     "event",
-    "social"
+    "talk",
+    "lectures, seminars and speakers"
    ],
    "interests": [
-    "club"
+    "research",
+    "study"
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
-   "id": "op_clemson_eg_12943746",
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26416",
    "type": "event",
-   "title": "Signing Starbucks!",
-   "host": "American Sign Language Club",
+   "title": "2026 Liles Distinguished Lecture by Ram Seshadri",
+   "host": "College of Engineering, Computing and Applied Sciences",
    "schoolId": "s_clemson",
-   "date": "2026-11-08T23:00:00.000Z",
-   "startTime": "18:00",
+   "date": "2026-11-09T16:15:00.000Z",
+   "startTime": "11:15",
    "place": {
-    "name": "Douthit Starbucks",
+    "name": "Watt Family Innovation Center",
     "lat": 34.6834,
     "lng": -82.8374
    },
-   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12943746",
-   "sourceLabel": "Student org events"
+   "sourceUrl": "https://events.clemson.edu/live/events/26377-2026-liles-distinguished-lecture-by-ram-seshadri",
+   "sourceLabel": "Clemson University Events"
   },
   {
-   "description": "Hello! Looking for an internship where you can gain experience and make a difference in your community? Join us for the Nonprofit Internship and Career Fair , sponsored by Women&rsquo;s Leadership (CAH), CBSHS, and the Graduate School! Students of all majors are welcome and encou",
+   "description": "Topic: “Mucins Matter in Clostridioides difficile Infection”",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26701",
+   "type": "event",
+   "title": "BioSci Seminar - Mindy Engevik, Medical University of South Carolina",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-09T16:15:00.000Z",
+   "startTime": "11:15",
+   "place": {
+    "name": "G33 Jordan Hall",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26701-biosci-seminar-mindy-engevik-medical-university",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Green Zone Training provides faculty, staff, and graduate assistants with an understanding of the military experience of Veterans and military-connected students as they transition from the military to campus life.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community, engagement, belonging and access",
+    "lectures, seminars and speakers",
+    "training, development and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_24913",
+   "type": "event",
+   "title": "Green Zone Training",
+   "host": "General",
+   "schoolId": "s_clemson",
+   "date": "2026-11-09T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "201 Vickery Hall",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/24913-green-zone-training",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Hello! Looking for an internship where you can gain experience and make a difference in your community? Join us for the Nonprofit Internship and Career Fair , sponsored by Women’s Leadership (CAH), CBSHS, and the Graduate School! Students of all majors are welcome and encou",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -103,8 +176,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12936896",
    "type": "event",
    "title": "Nonprofit Internship and Career Fair",
@@ -121,6 +194,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Distinguished Lectures in Human Genetics: Dr. Trudy F. C. Mackay: The Genetic Architecture of Complex Traits",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26827",
+   "type": "event",
+   "title": "Distinguished Lectures in Human Genetics: Dr. Trudy F. C. Mackay",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-09T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "114 Self Regional Hall",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26827-distinguished-lectures-in-human-genetics-dr-trudy",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Join Professor Kaye for a virtual zoom session where we will cover everything law school application! Intended to help those applying in the 2027-2028 cycle, but is open to any and everyone!",
    "eligibility": "Open to students",
    "tags": [
@@ -132,8 +236,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12943105",
    "type": "event",
    "title": "So You Want to Apply to Law School?",
@@ -150,7 +254,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join Clemson SHRM on Monday, November 9, from 6:00&ndash;7:00 pm in Powers 127 as we welcome Dinda de Klerk from BMW Manufacturing! Come learn more about the human resources field, gain insight into working at BMW, and explore career opportunities while connecting with fellow mem",
+   "description": "Join Clemson SHRM on Monday, November 9, from 6:00–7:00 pm in Powers 127 as we welcome Dinda de Klerk from BMW Manufacturing! Come learn more about the human resources field, gain insight into working at BMW, and explore career opportunities while connecting with fellow mem",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -162,8 +266,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12953365",
    "type": "event",
    "title": "Meet the Speaker: Dinda de Klerk | BMW Manufacturing",
@@ -193,8 +297,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12928188",
    "type": "event",
    "title": "Thanksgiving Themed Meeting",
@@ -224,8 +328,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12833691",
    "type": "event",
    "title": "Audience Choice Outdoor Movie Night",
@@ -243,6 +347,33 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The RECESS Symposium is a three-day celebration of innovation and collaboration in sports science, bringing together students, faculty and industry professionals. Featuring expert panels, keynote speakers, networking and recognitions in motorsports and human performance,, RECESS ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "athletics",
+    "awards, receptions and celebrations",
+    "community, engagement, belonging and access"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26153",
+   "type": "event",
+   "title": "2026 RECESS Symposium - Robert H. Brooks Sports Science Institute",
+   "host": "Centers and Institutes",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T05:00:00.000Z",
+   "sourceUrl": "https://events.clemson.edu/event/26153-2026-recess-symposium-robert-h-brooks-sports",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Enjoy some hot chocolate and get a head shot taken with a professional backdrop in the Learning Commons! No photographer will be present, but a background will be set up for you to capture your own professional headshot to use on LinkedIn or other websites. Free hot chocolate ava",
    "eligibility": "Open to students",
    "tags": [
@@ -254,8 +385,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12961714",
    "type": "event",
    "title": "Head Shots and Hot Chocolate",
@@ -272,7 +403,40 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "RECESS is Clemson&rsquo;s annual Research and Creative Endeavors in the Sports Sciences Symposium, bringing together students, faculty, industry professionals, and community partners to showcase innovation across motorsports, human performance, and sports science. AGENDA Tuesday,",
+   "description": "Dr. Jenny Presgraves will guide students in cultivating a goal outline including academic, professional, and personal aspirations. This Grad360 event will leave students ready to create a personalized Individual Development Plan, tailored to one’s lifestyle, ambitions, and skills",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community, engagement, belonging and access",
+    "general",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26843",
+   "type": "event",
+   "title": "How to Create an Individual Development Plan",
+   "host": "General",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "E106 Martin Hall",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26843-how-to-create-an-individual-development-plan",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "RECESS is Clemson’s annual Research and Creative Endeavors in the Sports Sciences Symposium, bringing together students, faculty, industry professionals, and community partners to showcase innovation across motorsports, human performance, and sports science. AGENDA Tuesday,",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -285,8 +449,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12858016",
    "type": "event",
    "title": "RECESS Symposium—Research and Creative Endeavors in the Sports Sciences",
@@ -304,6 +468,156 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Thinking About Taking a Gap Year Before Graduate School? Learn how to make your gap year count! Join us to explore research opportunities, post-baccalaureate programs, industry experiences, fellowships, internships, and other ways to build a stronger graduate school applicatio",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26655",
+   "type": "event",
+   "title": "Making the Most of Your Gap Year: Building Experience for Graduate School and Beyond",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "LSF 142",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26655-making-the-most-of-your-gap-year-building",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Thinking about taking a breather before diving into your master’s or Ph.D., but worried about losing momentum? A gap year isn’t a pause button on your career; it’s a launchpad. Calling all College of Science Students! Join us for an exclusive workshop designed specifically for ST",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    "training, development and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26859",
+   "type": "event",
+   "title": "Maximizing a Gap Year",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Life Sciences Facility",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26859-maximizing-a-gap-year",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Informational meeting with P&G",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962649",
+   "type": "event",
+   "title": "Tuesday 11/10 Meeting with Procter & Gamble (P&G)",
+   "host": "Society of Women Engineers",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Lowry 100",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962649",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We are having our next meeting this Tuesday (11/10) in Powers G026, during which we will be going over memoirs written by students in the English class at Perry Correctional Institution! All are welcome.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962559",
+   "type": "event",
+   "title": "General Body Meeting!",
+   "host": "Common Justice Initiative",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Powers G026",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962559",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Tuesday, November 10th, for an interactive session on discovering and elevating your personal brand! We will have guest speaker Courtney Acker from J.P. Morgan sharing advice and insights from her career experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962502",
+   "type": "event",
+   "title": "Professional Development with J.P. Morgan - Personal Brand",
+   "host": "Association of Latino Professionals for America",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Brackett 212",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962502",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Join us every Tuesday from 6-7 in the parish hall of St.Andrews for food and fellowship!",
    "eligibility": "Open to students",
    "tags": [
@@ -315,8 +629,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12794361",
    "type": "event",
    "title": "Tuesday Night Dinner",
@@ -344,8 +658,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12915021",
    "type": "event",
    "title": "November Meeting",
@@ -362,7 +676,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for a collaborative event between Clemson Boards and the Clemson University Virtual Reality Club! Inside Watt Room 203, the virtual reality club will be showcasing their immersive space and equipment with a demo of a Virtual Reality skateboarding game, while Clemson board",
+   "description": "Clemson Boards and the VR Club are teaming up for one meeting with two ways to ride. We’ll put on the headsets and play skateboarding in VR. Come hang out, meet other students, and try something new. Bring a friend!",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -373,21 +687,21 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
-   "id": "op_clemson_eg_12962436",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962501",
    "type": "event",
-   "title": "Clemson Boards & Virtual Reality Club Collaborative Event",
-   "host": "Clemson Boards",
+   "title": "VR Club x Clemson Boards",
+   "host": "Clemson University Virtual Reality Club",
    "schoolId": "s_clemson",
-   "date": "2026-11-10T23:00:00.000Z",
-   "startTime": "18:00",
+   "date": "2026-11-10T23:30:00.000Z",
+   "startTime": "18:30",
    "place": {
-    "name": "Watt Family Innovation Center in room 203",
+    "name": "Watt 203",
     "lat": 34.6834,
     "lng": -82.8374
    },
-   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962436",
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962501",
    "sourceLabel": "Student org events"
   },
   {
@@ -402,8 +716,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12944442",
    "type": "event",
    "title": "Fact or Cap",
@@ -420,6 +734,67 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join us for a collaborative event between Clemson Boards and the Clemson University Virtual Reality Club! Inside Watt Room 203, the virtual reality club will be showcasing their immersive space and equipment with a demo of a Virtual Reality skateboarding game, while Clemson board",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962436",
+   "type": "event",
+   "title": "Clemson Boards & Virtual Reality Club Collaborative Event",
+   "host": "Clemson Boards",
+   "schoolId": "s_clemson",
+   "date": "2026-11-10T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Watt Family Innovation Center in room 203",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962436",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An Extension-led monthly, under-one-hour lunchtime presentation at the Piedmont Physic Garden; perfect for an informative midday break!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26679",
+   "type": "event",
+   "title": "Lunch and Learn at Piedmont Physic Garden: Winterizing Your Landscape for Spring Success",
+   "host": "Cooperative Extension Service",
+   "schoolId": "s_clemson",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Piedmont Physic Garden",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://www.eventbrite.com/e/lunch-and-learn-at-ppg-winterizing-your-landscape-for-spring-success-registration-2003513940128?aff=oddtdtcreator&amp;keep_tld=true",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Join us on November 11 from 12:30 PM - 2:00 PM for a fun, hands-on sewing and embroidery workshop where you'll create your own custom mug holder! All fabric, sewing supplies, and embroidery materials will be provided. Participants simply need to bring the mug, cup, tumbler, or ot",
    "eligibility": "Open to students",
    "tags": [
@@ -432,8 +807,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12953403",
    "type": "event",
    "title": "Mug Holder Sewing & Embroidery Workshop",
@@ -462,8 +837,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12867218",
    "type": "event",
    "title": "Webinar with Lead Human Factors Engineer Vincent Ybarra, PhD",
@@ -480,7 +855,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "RECESS is Clemson&rsquo;s annual Research and Creative Endeavors in the Sports Sciences Symposium, bringing together students, faculty, industry professionals, and community partners to showcase innovation across motorsports, human performance, and sports science. AGENDA Tuesday,",
+   "description": "RECESS is Clemson’s annual Research and Creative Endeavors in the Sports Sciences Symposium, bringing together students, faculty, industry professionals, and community partners to showcase innovation across motorsports, human performance, and sports science. AGENDA Tuesday,",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -493,8 +868,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12858017",
    "type": "event",
    "title": "RECESS Symposium—Research and Creative Endeavors in the Sports Sciences",
@@ -512,6 +887,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Ever wondered what goes on behind the scenes of major sporting events, sold-out concerts, and VIP experiences? Join us Wednesday, November 11, from 5:30–6:30 PM over zoom as we welcome CEPA founder and Clemson alumna Meaghan DeNino Passanante ’17 current Director of O",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962583",
+   "type": "event",
+   "title": "Guest Speaker: Meaghan Denimo, Bank of America Stadium Director of Operations",
+   "host": "Clemson Event Planners Association",
+   "schoolId": "s_clemson",
+   "date": "2026-11-11T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Online",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962583",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Don't miss out on our Hot Takes Night, this UPCOMING WEDNESDAY in Brackett 213 at 7pm! Join us for some friendly debate and an interactive night of unpopular opinions We hope to see you there Wednesday, November 11th 7:00 PM Brackett 213",
    "eligibility": "Open to students",
    "tags": [
@@ -523,8 +927,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12961272",
    "type": "event",
    "title": "Hot Takes Night",
@@ -541,7 +945,99 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "RECESS is Clemson&rsquo;s annual Research and Creative Endeavors in the Sports Sciences Symposium, bringing together students, faculty, industry professionals, and community partners to showcase innovation across motorsports, human performance, and sports science. AGENDA Tuesday,",
+   "description": "Fatty liver disease is very common, and it can become quite serious.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26147",
+   "type": "event",
+   "title": "AnMed Health Series: Fatty Liver Disease - Prevention, Detection & Management",
+   "host": "General",
+   "schoolId": "s_clemson",
+   "date": "2026-11-12T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Charles K. Cheezem Education Center",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26147-anmed-health-series-fatty-liver-disease-",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Dr. Andrew Youdin, a visiting speaker, will deliver a colloquium titled “The Core Accretion Hypothesis: The Standard Model of Planet Formation and Its Open Questions”.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26593",
+   "type": "event",
+   "title": "Physics Colloquium",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-12T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Kinard G01",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26593-physics-colloquium",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26517",
+   "type": "event",
+   "title": "Chemistry Seminar - TBD",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Hunter Chemistry Laboratory, 100 Auditorium",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26517-chemistry-seminar-tbd",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "RECESS is Clemson’s annual Research and Creative Endeavors in the Sports Sciences Symposium, bringing together students, faculty, industry professionals, and community partners to showcase innovation across motorsports, human performance, and sports science. AGENDA Tuesday,",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -554,8 +1050,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12858018",
    "type": "event",
    "title": "RECESS Symposium—Research and Creative Endeavors in the Sports Sciences",
@@ -584,8 +1080,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12668759",
    "type": "event",
    "title": "11/12 Meeting",
@@ -613,8 +1109,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12947161",
    "type": "event",
    "title": "Signing Starbucks",
@@ -642,8 +1138,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12705478",
    "type": "event",
    "title": "Weekly Recovery Meetings",
@@ -660,7 +1156,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "GAINSGIVING IS HERE We're teaming up with CBB for a Gainsgiving Blind Date Lift! Sign up to be matched with a lifting partner and celebrate Gainsgiving with us! - November 12th | 6&ndash;8 PM - Max Fitness Fill out the Blind Date Lift Google Form in our Linktree to get matched",
+   "description": "GAINSGIVING IS HERE We're teaming up with CBB for a Gainsgiving Blind Date Lift! Sign up to be matched with a lifting partner and celebrate Gainsgiving with us! - November 12th | 6–8 PM - Max Fitness Fill out the Blind Date Lift Google Form in our Linktree to get matched",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -672,8 +1168,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12949307",
    "type": "event",
    "title": "Gainsgiving",
@@ -691,7 +1187,67 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for a special LIVE Coffee with Jason Anderson, founder of PreVeteran, at Room 121, Hendrix Student Center. What Student Veterans Learn: Student veterans don&rsquo;t need more information about college life- they need a structured way to understand how higher education fit",
+   "description": "Going over different nuclear reactor cores, how they are designed to become inherently safe, accounting for all sorts of system failures.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12962590",
+   "type": "event",
+   "title": "Reactor Core & Safety Designs",
+   "host": "NiCE (Nuclear is Clean Energy)",
+   "schoolId": "s_clemson",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Brackett 214",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12962590",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Brook T. Smith Launchpad (Clemson’s Entrepreneurship Hub) is hosting our third Life Science Entrepreneurship Symposium.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_23857",
+   "type": "event",
+   "title": "Life Science Symposium",
+   "host": "Brook T. Smith Launchpad",
+   "schoolId": "s_clemson",
+   "date": "2026-11-13T13:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Brook T. Smith Launchpad",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/live/events/23845-life-science-symposium",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Join us for a special LIVE Coffee with Jason Anderson, founder of PreVeteran, at Room 121, Hendrix Student Center. What Student Veterans Learn: Student veterans don’t need more information about college life- they need a structured way to understand how higher education fit",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -703,8 +1259,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12941962",
    "type": "event",
    "title": "Coffee with PreVeteran",
@@ -722,6 +1278,169 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Learn how to keep carrots fresh so you can enjoy them year-round.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    " open to the public",
+    "training, development and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26680",
+   "type": "event",
+   "title": "First Friday Seminar: Keeping Carrots Fresh Year-Round",
+   "host": "Cooperative Extension Service",
+   "schoolId": "s_clemson",
+   "date": "2026-11-13T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Glencairn Garden Learning Center",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://www.eventbrite.com/e/first-friday-seminar-keeping-carrots-fresh-year-round-registration-2003358966598?aff=oddtdtcreator",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Dr. Melanie Pearson, Associate Professor at Emory University, along with Camilla Warren, M.S Clemson from Kleinfelder, will speak.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25050",
+   "type": "event",
+   "title": "EEES Graduate Seminar",
+   "host": "College of Engineering, Computing and Applied Sciences",
+   "schoolId": "s_clemson",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Rich Lab Auditorium",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/25050-eees-graduate-seminar",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Join the Erwin Center for Brand Communications for the Brand.edu Speaker Session featuring Scott Tannen, Founder & CEO of Boll & Branch . Event Details Friday, November 13 1:00 to 2:00 p.m. Phyfer Auditorium Wilbur O. and Ann Powers College of Business Learn more about Scott Tann",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "general",
+    "lectures, seminars and speakers",
+    "student organizations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26828",
+   "type": "event",
+   "title": "Brand EDU Speaker: Scott Tannen, Founder & CEO, Boll & Branch",
+   "host": "Wilbur O. and Ann Powers College of Business",
+   "schoolId": "s_clemson",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Phyfer Auditorium",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/powersbusiness/event/26828-brand-edu-speaker-scott-tannen-founder-ceo",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Want to learn about the latest innovations among fellow Clemson graduate students? Join The Graduate School and Clemson University’s Graduate Student Government in attending the final round of 3 Minute Thesis (3MT), where 17 semi-finalists will each present their research in 3 mi",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "community, engagement, belonging and access",
+    "conferences, forums and symposiums",
+    "general"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26818",
+   "type": "event",
+   "title": "3MT Finals",
+   "host": "General",
+   "schoolId": "s_clemson",
+   "date": "2026-11-13T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Watt Family Innovation Center",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26818-3mt-finals",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Dr. Molly Hammell Seminar Title: “Tales from the CrypTE - TDP-loss leads to cryptic spliced gene / transposable element (TE) fusion transcripts”",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "general",
+    "lectures, seminars and speakers",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25000",
+   "type": "event",
+   "title": "Genetics and Biochemistry Seminar Series",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-13T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Poole Agricultural Center, Room 174",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/25000-genetics-and-biochemistry-seminar-series",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Join CHANGE and the College of Engineering, Computing and Applied Sciences for a Lego Building Competition! Grab your friends and get ready to have an amazing night and learn about how ethics applies to engineering! Fill out this form to RSVP.",
    "eligibility": "Open to students",
    "tags": [
@@ -733,8 +1452,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12814416",
    "type": "event",
    "title": "Lego Building Competition",
@@ -762,8 +1481,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12909578",
    "type": "event",
    "title": "Transgender Day of Vigilance Candlelight Vigil",
@@ -793,8 +1512,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12954287",
    "type": "event",
    "title": "2nd BioSci GSA Ice Cream Scooping Fundraiser",
@@ -812,6 +1531,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join Doug, our CCIT Support Consultant, as he provides his suggestions and moderates others’ ideas on helpful small, inexpensive, and more expensive tech products to consider this holiday buying season.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "general",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26357",
+   "type": "event",
+   "title": "Holiday Tech Talk with Doug Henry",
+   "host": "Emeritus College",
+   "schoolId": "s_clemson",
+   "date": "2026-11-16T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Clemson University Emeritus College, 511 Westinghouse Rd. Pendleton, SC 29670",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26357-holiday-tech-talk-with-doug-henry",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "If you want to run, reach out!! More info will be sent to candidates shortly, with enough time to prep before the meeting.",
    "eligibility": "Open to students",
    "tags": [
@@ -823,8 +1574,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12916280",
    "type": "event",
    "title": "Officer Elections",
@@ -853,8 +1604,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12833676",
    "type": "event",
    "title": "Pulp Fiction Movie Night",
@@ -884,8 +1635,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12955939",
    "type": "event",
    "title": "Clemson Players Board Game Night",
@@ -903,6 +1654,104 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Learn about fire ant management for residential and commercial landscapes, as well as pastures and properties with livestock.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    " open to the public",
+    "training, development and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26405",
+   "type": "event",
+   "title": "Fire Ant Biology, Impact, and Management in Landscapes and Pastures",
+   "host": "Cooperative Extension Service",
+   "schoolId": "s_clemson",
+   "date": "2026-11-17T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Greenwood County Clemson Extension",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://www.eventbrite.com/e/fire-ant-biology-impact-and-management-in-landscapes-and-pastures-registration-2002461820209?aff=oddtdtcreator&amp;keep_tld=true",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Professor of English Susanna Ashton will speak on the book, “Twenty-Eight Years a Slave, Or, The Story of My Life on Three Continents,” by Thomas Johnson. The book, originally published in 1909, has been published by Clemson University Press with an introduction and annotations b",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26921",
+   "type": "event",
+   "title": "Susanna Ashton: Twenty-Eight Years a Slave, Or, The Story of My Life on Three Continents",
+   "host": "Libraries",
+   "schoolId": "s_clemson",
+   "date": "2026-11-17T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Cooper Library, Byrnes Room",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26921-susanna-ashton-twenty-eight-years-a-slave-or-the",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "For Clemson students who are looking to learn more about the Melvin and Dollie Younts Trading Room or to learn how to get started with a Bloomberg certification.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    "student organizations",
+    "training, development and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25260",
+   "type": "event",
+   "title": "Bloomberg Unlocked: Jump In, Explore, and Build Your Edge",
+   "host": "Wilbur O. and Ann Powers College of Business",
+   "schoolId": "s_clemson",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Wilbur O. and Ann Powers College of Business, Melvin and Dollie Younts Trading Room",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://www.eventbrite.com/e/bloomberg-unlocked-jump-in-explore-and-build-your-edge-tickets-1992950087360?aff=ebdsoporgprofile",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Come grab some sweet treats and coffee the ASL club!",
    "eligibility": "Open to students",
    "tags": [
@@ -914,8 +1763,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12947204",
    "type": "event",
    "title": "Signing Starbucks",
@@ -943,8 +1792,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12794362",
    "type": "event",
    "title": "Tuesday Night Dinner",
@@ -973,8 +1822,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12900383",
    "type": "event",
    "title": "Dessert & Dialogue",
@@ -1003,8 +1852,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12959415",
    "type": "event",
    "title": "Mandatory General Body Meeting",
@@ -1033,8 +1882,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12932330",
    "type": "event",
    "title": "November AHOD Meeting",
@@ -1063,8 +1912,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12897970",
    "type": "event",
    "title": "SLED Headquarters Tour",
@@ -1094,8 +1943,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12952950",
    "type": "event",
    "title": "Seminar: Human Factors in Healthcare with Steven Foster",
@@ -1124,8 +1973,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12862205",
    "type": "event",
    "title": "Open shack",
@@ -1153,8 +2002,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12959288",
    "type": "event",
    "title": "Graduate Student Social Study",
@@ -1182,8 +2031,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12912209",
    "type": "event",
    "title": "Stripes of Sucess Workshop: Funding 101",
@@ -1211,8 +2060,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12943773",
    "type": "event",
    "title": "D.O.T.S Smoking Pig",
@@ -1229,6 +2078,98 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Hilton Head Island’s beautiful salt marshes depend on clean water, but did you know that stormwater is the leading threat to water quality?",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26729",
+   "type": "event",
+   "title": "Everyday Actions to Keep Tidal Creeks Healthy",
+   "host": "Cooperative Extension Service",
+   "schoolId": "s_clemson",
+   "date": "2026-11-19T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Hilton Head Island Branch Library 11 Beach City Rd Hilton Head Island, SC 29926",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26729-everyday-actions-to-keep-tidal-creeks-healthy",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Dr. Christopher Kerr, a visiting speaker, will deliver a colloquium titled “Severe thunderstorm dynamics and prediction: From physical processes to operational forecasts”.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26592",
+   "type": "event",
+   "title": "Physics Colloquium",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-19T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Kinard G01",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26592-physics-colloquium",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26518",
+   "type": "event",
+   "title": "Chemistry Seminar - Dr. Mark Antonio",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-19T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Hunter Chemistry Laboratory, 100 Auditorium",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26518-chemistry-seminar-dr-mark-antonio",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Howell x KAPi x Public Policy Club Members from across all three clubs are partnering to write appreciation cards to local victim advocates and victim service workers throughout the Clemson, Pendleton, and Pickens communities.",
    "eligibility": "Open to students",
    "tags": [
@@ -1241,8 +2182,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12950103",
    "type": "event",
    "title": "Pizza with a Purpose",
@@ -1271,8 +2212,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12863240",
    "type": "event",
    "title": "GSG Senate Fall 2026 Session #7",
@@ -1300,8 +2241,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12581883",
    "type": "event",
    "title": "French Karaoke",
@@ -1329,8 +2270,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12705483",
    "type": "event",
    "title": "Weekly Recovery Meetings",
@@ -1359,8 +2300,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12954317",
    "type": "event",
    "title": "WinGS Friendsgiving!",
@@ -1378,7 +2319,104 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Please join us for our Winter Gala on Friday, November 20th from 7:00&ndash;10:30 PM at 356 Sushi in Downtown Clemson! All Clemson graduate students are welcome. Guests are also welcome to attend with the purchase of a $5 ticket via CU Marketplace at the following link: https://s",
+   "description": "Dr. Karl G. Linden will present his SCEEES Distinguished Lecture at the Watt Family Innovation Center auditorium.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26376",
+   "type": "event",
+   "title": "Dr. Karl G. Linden - SCEEES Distinguished Lecture",
+   "host": "College of Engineering, Computing and Applied Sciences",
+   "schoolId": "s_clemson",
+   "date": "2026-11-20T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Watt Family Innovation Center",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26376-dr-karl-g-linden-sceees-distinguished-lecture",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Dr. Sarah Beattie Seminar Title: “A mold-active antifungal impairs membrane function of Aspergillus fumigatus”",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "general",
+    "lectures, seminars and speakers",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25082",
+   "type": "event",
+   "title": "Genetics and Biochemistry Seminar Series",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-20T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Poole Agricultural Center, Room 174",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/25082-genetics-and-biochemistry-seminar-series",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts and entertainment",
+    "lectures, seminars and speakers",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26743",
+   "type": "event",
+   "title": "Black Will vs. ACME: Arden of Faversham and Being Comically Bad at Killing",
+   "host": "College of Arts and Humanities",
+   "schoolId": "s_clemson",
+   "date": "2026-11-20T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Daniel Hall Extension 260",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26743-black-will-vs-acme-arden-of-faversham-and-being",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Please join us for our Winter Gala on Friday, November 20th from 7:00–10:30 PM at 356 Sushi in Downtown Clemson! All Clemson graduate students are welcome. Guests are also welcome to attend with the purchase of a $5 ticket via CU Marketplace at the following link: https://s",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1390,8 +2428,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12944098",
    "type": "event",
    "title": "GSG Winter GALA",
@@ -1420,8 +2458,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12961209",
    "type": "event",
    "title": "Night at the Rodeo",
@@ -1438,6 +2476,39 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "An a-peel-ing citrus conference featuring tours, speakers, fruit tasting and judging, vendors, and networking with other Southeast growers!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers",
+    " open to the public",
+    "training, development and workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26406",
+   "type": "event",
+   "title": "2026 Southeast Citrus Expo",
+   "host": "Cooperative Extension Service",
+   "schoolId": "s_clemson",
+   "date": "2026-11-21T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Wake Technical Community College - RTP Campus",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://www.eventbrite.com/e/2026-southeast-citrus-expo-tickets-1997794016683?aff=oddtdtcreator",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Join us for a vibrant celebration of Diwali, the Festival of Lights! Come together to celebrate the spirit of Diwali, a festival that symbolizes the triumph of light over darkness, good over evil, and hope over negativity. Experience the beauty of Indian culture through festive t",
    "eligibility": "Open to students",
    "tags": [
@@ -1450,8 +2521,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12947213",
    "type": "event",
    "title": "Diwali",
@@ -1480,8 +2551,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12961210",
    "type": "event",
    "title": "Night at the Rodeo",
@@ -1498,6 +2569,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Topic TBA",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25151",
+   "type": "event",
+   "title": "BioSci Seminar - Tad Dallas, University of South Carolina",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-11-30T16:15:00.000Z",
+   "startTime": "11:15",
+   "place": {
+    "name": "G33 Jordan Hall",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/25151-biosci-seminar-tad-dallas-university-of-south",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Come make cards for elderly people!! 4 cards=1 service hour!",
    "eligibility": "Open to students",
    "tags": [
@@ -1509,8 +2611,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12930115",
    "type": "event",
    "title": "Christmas Meeting!",
@@ -1539,8 +2641,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12920182",
    "type": "event",
    "title": "DIY Ornament Making",
@@ -1558,6 +2660,39 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Architecture and Performing Arts double major Braden Sembower will perform trumpet in an orchestral performance of the Frank Lloyd Wright Suite in the Brooks Center for the Performing Arts beginning at 7:30 p.m. Architecture Faculty Andreea Mihalache will provide visuals to go al",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "arts and entertainment",
+    "lectures, seminars and speakers",
+    "music"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26651",
+   "type": "event",
+   "title": "Frank Lloyd Wright Lecture and Concert",
+   "host": "College of Architecture, Art and Construction",
+   "schoolId": "s_clemson",
+   "date": "2026-12-01T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Brooks Center for the Performing Arts",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26651-frank-lloyd-wright-lecture-and-concert",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Hello everyone, I hope you are all having a great Fall semester! Join us for FREE LUNCH and see how you can help advance bioengineering at Clemson! We would like to invite you to our CBO meetings in AMIC 1205. CBO is the Clemson University undergraduate and graduate chapter of th",
    "eligibility": "Open to students",
    "tags": [
@@ -1570,8 +2705,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12821090",
    "type": "event",
    "title": "General Body Meeting",
@@ -1601,8 +2736,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12798052",
    "type": "event",
    "title": "Self-Care Tabling @ The Orange Hour",
@@ -1620,7 +2755,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Our team would also love to have your organization&rsquo;s help at our annual Wrapping Day! This year, Wrapping Day will take place on Wednesday, December 2nd from 5-8pm at Clemson United Methodist Church (300 Frontage Road, Clemson, SC 29631) and is open for anyone to volunteer.",
+   "description": "Our team would also love to have your organization’s help at our annual Wrapping Day! This year, Wrapping Day will take place on Wednesday, December 2nd from 5-8pm at Clemson United Methodist Church (300 Frontage Road, Clemson, SC 29631) and is open for anyone to volunteer.",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1631,8 +2766,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12767714",
    "type": "event",
    "title": "Adopt a Classroom Wrapping Day",
@@ -1660,8 +2795,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12959289",
    "type": "event",
    "title": "Graduate Student Social Study",
@@ -1690,8 +2825,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12602746",
    "type": "event",
    "title": "Study Meeting",
@@ -1720,8 +2855,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12649054",
    "type": "event",
    "title": "NPHC GBM 12/2",
@@ -1750,8 +2885,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12958654",
    "type": "event",
    "title": "HFES Holiday Cookie Decorating Party",
@@ -1780,8 +2915,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12668834",
    "type": "event",
    "title": "12/3 Meeting: Rest & Relax",
@@ -1809,8 +2944,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12705522",
    "type": "event",
    "title": "Weekly Recovery Meetings",
@@ -1827,6 +2962,103 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Dr. Nancy Parr and Dr. Jeremy Grant from Westinghouse/AECOM will speak",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25051",
+   "type": "event",
+   "title": "EEES Graduate Seminar",
+   "host": "College of Engineering, Computing and Applied Sciences",
+   "schoolId": "s_clemson",
+   "date": "2026-12-04T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Rich Lab Auditorium",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/25051-eees-graduate-seminar",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Departmental Honots students giving oral presentations on their thesis",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conferences, forums and symposiums",
+    "general",
+    "lectures, seminars and speakers"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_26715",
+   "type": "event",
+   "title": "Genetics and Biochemistry Departmental Honors Presentations Fall 2026",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-12-04T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Life Sciences Facility, Room 142",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/26715-genetics-and-biochemistry-departmental-honors",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
+   "description": "Dr. Leigh Anne Clark Seminar Title: “Dog erythrocyte antigen-1 arose from an ancient carnivore retrocopy”",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "general",
+    "lectures, seminars and speakers",
+    " open to the public"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.959Z",
+   "createdAt": "2026-11-09T00:38:05.959Z",
+   "id": "op_clemson_lw_25420",
+   "type": "event",
+   "title": "Genetics and Biochemistry Seminar Series",
+   "host": "College of Science",
+   "schoolId": "s_clemson",
+   "date": "2026-12-04T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Poole Agricultural Center, Room 174",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://events.clemson.edu/event/25420-genetics-and-biochemistry-seminar-series",
+   "sourceLabel": "Clemson University Events"
+  },
+  {
    "description": "Join us for the December 1st Friday Social Hour!",
    "eligibility": "Open to students",
    "tags": [
@@ -1839,8 +3071,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12954241",
    "type": "event",
    "title": "1st Fridays Social-Hour",
@@ -1869,8 +3101,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:41:01.883Z",
-   "createdAt": "2026-11-08T03:41:01.883Z",
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
    "id": "op_clemson_eg_12833773",
    "type": "event",
    "title": "Moonlight Breakfast",
@@ -1884,6 +3116,35 @@
     "lng": -82.8374
    },
    "sourceUrl": "https://clemson.campuslabs.com/engage/event/12833773",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Delores St. Clair Wright Christmas Show The Doo Wop Project will get everyone into the holiday spirit with old school classics like The Drifters’ “White Christmas,” The Temptations’ “Rudolph the Red-Nosed Reindeer,” Frankie Valli and The Four S",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T00:38:05.511Z",
+   "createdAt": "2026-11-09T00:38:05.511Z",
+   "id": "op_clemson_eg_12779077",
+   "type": "event",
+   "title": "The Doo Wop Project: A Doo Wop Christmas",
+   "host": "Brooks Center",
+   "schoolId": "s_clemson",
+   "date": "2026-12-09T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Brooks Center for the Performing Arts",
+    "lat": 34.6834,
+    "lng": -82.8374
+   },
+   "sourceUrl": "https://clemson.campuslabs.com/engage/event/12779077",
    "sourceLabel": "Student org events"
   }
  ]
