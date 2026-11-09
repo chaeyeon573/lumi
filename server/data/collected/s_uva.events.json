@@ -1,7 +1,7 @@
 {
- "collectedAt": "2026-11-08T03:42:25.475Z",
+ "collectedAt": "2026-11-09T03:43:13.234Z",
  "sources": [
-  "engage https://virginia.campuslabs.com/engage 49"
+  "engage https://virginia.campuslabs.com/engage 59"
  ],
  "events": [
   {
@@ -18,8 +18,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12873065",
    "type": "event",
    "title": "HFCW: Kickoff Celebration",
@@ -37,6 +37,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "On south lawn, an SPCA dog will be hanging out and available for hugs. Simultaneously, a foam board will be available with a prompt asking students healthy habits they use to cope with stress during busy times as a college student. This event will be a low-stakes opportunity for ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962575",
+   "type": "event",
+   "title": "Healthy Habits and Hugs!",
+   "host": "Second Year Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-09T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "South Lawn",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962575",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Interested in studying abroad? Learning a language crucial to US national security? Come learn about the Boren Awards, which fund the study of less commonly taught languages in world regions critical to U.S. interests, and underrepresented in study abroad, including Africa, Asia,",
    "eligibility": "Open to students",
    "tags": [
@@ -48,8 +77,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12659340",
    "type": "event",
    "title": "Boren Awards Information Session",
@@ -66,7 +95,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Diwali on the Lawn is here! Join BSO, HSC, SASA, SYC, and TYC for an evening celebrating the Festival of Lights with puja, snacks, and fun activities! Monday, November 9 5:00 PM The Lawn",
+   "description": "Diwali on the Lawn is here! Join BSO, HSC, SASA, SYC, and TYC for an evening celebrating the Festival of Lights with puja, snacks, and fun activities! Monday, November 9 5:00 PM The Lawn Activities you can pull from: Diya Painting, Rangoli Coloring, Henna Tattoos, Photobo",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -79,8 +108,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12962371",
    "type": "event",
    "title": "Diwali on the Lawn",
@@ -98,6 +127,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Learn the basics of personal finance before your graduate from UVA! This event will help students effectively budget.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962522",
+   "type": "event",
+   "title": "Personal Finance Night",
+   "host": "Fourth Year Trustees",
+   "schoolId": "s_uva",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Rouss-Robertson 125",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962522",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Make origami pokemon with us in the MOL!",
    "eligibility": "Open to students",
    "tags": [
@@ -110,8 +170,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12942667",
    "type": "event",
    "title": "Pokemon Origami Night!",
@@ -141,8 +201,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12951573",
    "type": "event",
    "title": "Portfolios with Cvent: Cvent Portfolio Guest Lecture",
@@ -170,8 +230,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12598579",
    "type": "event",
    "title": "Resident Advisor Selections: Acing the Individual Interview",
@@ -188,6 +248,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This event will bring together members of the Class of 2029 to assemble Thanksgiving meal bags for women staying at a local shelter. We will fill bags with easy-to-prepare Thanksgiving meal ingredients and essentials so recipients can enjoy a simple holiday meal with minimal prep",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962578",
+   "type": "event",
+   "title": "Stuffed with Thanks (Community Service)",
+   "host": "Second Year Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "1515",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962578",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Our virtual housing office hours are a great way to get the information you need about the upperclass housing application! We encourage you to join us and bring your questions about roommate matching, room selection in January, or any other aspect of the 2027-2028 upperclass hous",
    "eligibility": "Open to students",
    "tags": [
@@ -199,8 +288,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12957973",
    "type": "event",
    "title": "Upperclass Housing Virtual Office Hours",
@@ -228,8 +317,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12956805",
    "type": "event",
    "title": "Taking Back AI Governance",
@@ -246,7 +335,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "As the saying goes, &ldquo;Bloom where you are planted.&rdquo; Visit the Hoos First Student Center&mdash;a space thoughtfully created to foster community among first-generation and limited-income students, faculty, and staff&mdash;to enjoy a cup of warm cider while c raft ing you",
+   "description": "As the saying goes, “Bloom where you are planted.” Visit the Hoos First Student Center—a space thoughtfully created to foster community among first-generation and limited-income students, faculty, and staff—to enjoy a cup of warm cider while c raft ing you",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -258,8 +347,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12873121",
    "type": "event",
    "title": "HFCW: Give Yourself Flowers",
@@ -289,8 +378,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12942990",
    "type": "event",
    "title": "Collective Liberation",
@@ -319,8 +408,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12960331",
    "type": "event",
    "title": "CIO Connect: Finance Webinar",
@@ -337,6 +426,68 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "SIGN UP REQUIRED (SIGN UPS CLOSED) \"What sound came after the Big Bang? Join us for an evening under the stars with Professor Mark Whittle of UVA’s Department of Astronomy to find out. Professor Whittle has been teaching at UVA since 1986, from the solar system to cosmology",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962572",
+   "type": "event",
+   "title": "Sounds of Space w/ Prof. Mark Whittle",
+   "host": "University Programs Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-11T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Leander McCormick Observatory",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962572",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Social gathering in collaboration with Hoos First! Connect with fellow students, meet new people, and enjoy pizza + soda and more",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962582",
+   "type": "event",
+   "title": "Hoos first Pizza Social (Merch)",
+   "host": "Second Year Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Newcomb Hall Basement",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962582",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "An upbeat, heart-centered class with an energizing flow that builds a feeling of vitality and community. Come to studio 3C to create space for authentic connection with yourself and others.",
    "eligibility": "Open to students",
    "tags": [
@@ -348,8 +499,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12907411",
    "type": "event",
    "title": "Yoga for Connection",
@@ -378,8 +529,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12961043",
    "type": "event",
    "title": "Presentation Night w/ Indieheads",
@@ -397,7 +548,36 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join Hoos First for our annual night of B INGO - multiple rounds with multipl e wi nners ! Don&rsquo;t miss out on this opportunity to connect with other Hoos First students while competing to win some amazing prizes !",
+   "description": "Writing short notes of Encouragement for seniors at Charlottesville High School Who are in the middle of college applications and big decisions",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962585",
+   "type": "event",
+   "title": "Notes from Grounds (ACD and Community Service)",
+   "host": "Second Year Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-12T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Eway & South Lawn",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962585",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Hoos First for our annual night of B INGO - multiple rounds with multipl e wi nners ! Don’t miss out on this opportunity to connect with other Hoos First students while competing to win some amazing prizes !",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -409,8 +589,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12874588",
    "type": "event",
    "title": "HFCW: Bingo",
@@ -428,7 +608,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Calling all students, faculty, and staff: w ear your \"I AM FIRST\" or &ldquo;I WAS FIRST&rdquo; t-shirts with pride today! Gather at the Rotunda steps for a university-wide photo. A limited number of shirts will be available prior to the photo.",
+   "description": "Calling all students, faculty, and staff: w ear your \"I AM FIRST\" or “I WAS FIRST” t-shirts with pride today! Gather at the Rotunda steps for a university-wide photo. A limited number of shirts will be available prior to the photo.",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -439,8 +619,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12874788",
    "type": "event",
    "title": "HFCW: Community Picture",
@@ -457,7 +637,39 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join Hoos First over at OAAA for Bridge Friday &ndash; a cherished weekly tradition where students gather for food, fellowship, and fun while building community and unwinding after a busy week. Lunch will be provided.",
+   "description": "The First-Generation and Limited Income Partnership (FLIP) is hosting a Pre-Health Panel. The event is open to all students. Bring your questions, connect with advisors and admitted students, and get the advice you need to navigate your healthcare journey! Please fill out this RS",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962561",
+   "type": "event",
+   "title": "FLIP Pre-Health Panel",
+   "host": "First-Generation and Limited Income Partnership",
+   "schoolId": "s_uva",
+   "date": "2026-11-13T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Hoos First Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962561",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Hoos First over at OAAA for Bridge Friday – a cherished weekly tradition where students gather for food, fellowship, and fun while building community and unwinding after a busy week. Lunch will be provided.",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -470,8 +682,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12874796",
    "type": "event",
    "title": "HFCW: Bridge Friday w/OAAA",
@@ -500,8 +712,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12861872",
    "type": "event",
    "title": "Why Jefferson Matters in Our Information Age",
@@ -530,8 +742,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12952728",
    "type": "event",
    "title": "HFCW: Night In",
@@ -549,6 +761,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Watch party gathering at Boylan!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962586",
+   "type": "event",
+   "title": "Basketball Watch Party @ Boylan",
+   "host": "Second Year Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-14T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Boylan Heights",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962586",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Join the Hoos First staff for a classic pre-game tailgate before the Hoos take on Duke University! We will be set up at the field and grill areas between Shannon Dorm & Tuttle-Dunnington House with lawn games, music and grilled eats. Limited to 150 Hoos First students.",
    "eligibility": "Open to students",
    "tags": [
@@ -562,8 +803,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12961075",
    "type": "event",
    "title": "HFCW Finale: Pre-Game Tailgate w/ Hoos First!",
@@ -592,8 +833,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12952195",
    "type": "event",
    "title": "The AcHOOstics Concert",
@@ -610,7 +851,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join Block the Burn for our kickoff pickleball tournament filled with friendly competition, good food, and fun! Enjoy FREE Bodo&rsquo;s Bagels and compete for exciting prizes while celebrating the launch of our sunscreen dispensers at Lady Astor Pavilion, adjacent to the Snyder T",
+   "description": "Join Block the Burn for our kickoff pickleball tournament filled with friendly competition, good food, and fun! Enjoy FREE Bodo’s Bagels and compete for exciting prizes while celebrating the launch of our sunscreen dispensers at Lady Astor Pavilion, adjacent to the Snyder T",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -623,8 +864,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12959585",
    "type": "event",
    "title": "Block the Burn Pickleball Tournament: Serve Up Some Sun Safety!",
@@ -654,8 +895,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12962405",
    "type": "event",
    "title": "Axiom Thanksgiving Sunday",
@@ -685,8 +926,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12937326",
    "type": "event",
    "title": "OAAA PA Info Session",
@@ -716,8 +957,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12921651",
    "type": "event",
    "title": "Chompline",
@@ -746,8 +987,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12957986",
    "type": "event",
    "title": "Upperclass Housing Virtual Office Hours",
@@ -775,8 +1016,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12659494",
    "type": "event",
    "title": "Projects for Peace Information Session",
@@ -805,8 +1046,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12917225",
    "type": "event",
    "title": "UVA Batten Application Workshop",
@@ -836,8 +1077,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12843200",
    "type": "event",
    "title": "Are You Research Ready?",
@@ -866,8 +1107,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12942931",
    "type": "event",
    "title": "DEAFSgiving",
@@ -896,8 +1137,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12911823",
    "type": "event",
    "title": "Tasty Tuesday @ 1515",
@@ -927,8 +1168,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12843201",
    "type": "event",
    "title": "OAAA/GradSTAR Lunch with Dean Boone",
@@ -957,8 +1198,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12961357",
    "type": "event",
    "title": "Self Defense Training",
@@ -975,7 +1216,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "November Bingo Night &ndash; Tuesday, November 17 in Newcomb Ballroom Join us for the spookiest Bingo Night of the year in Newcomb Ballroom on Tuesday, October 27 from 7 to 9 p.m. for lots of fun, snacks, and a chance to win prizes from local Charlottesville businesses such as gi",
+   "description": "November Bingo Night – Tuesday, November 17 in Newcomb Ballroom Join us for the spookiest Bingo Night of the year in Newcomb Ballroom on Tuesday, October 27 from 7 to 9 p.m. for lots of fun, snacks, and a chance to win prizes from local Charlottesville businesses such as gi",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -988,8 +1229,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12801196",
    "type": "event",
    "title": "November Bingo Night",
@@ -1018,8 +1259,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12907879",
    "type": "event",
    "title": "AI Anxiety + Human Flourishing Image",
@@ -1048,8 +1289,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12958996",
    "type": "event",
    "title": "Faith at the Crossroads: Religion & Colonialsm",
@@ -1078,8 +1319,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12939986",
    "type": "event",
    "title": "Co-Opting AI: Film",
@@ -1107,8 +1348,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12889710",
    "type": "event",
    "title": "OAAA Mid-Week Raising-the-Bar Sessions - Fall 2026",
@@ -1136,8 +1377,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12907412",
    "type": "event",
    "title": "Yoga for Connection",
@@ -1165,8 +1406,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12907880",
    "type": "event",
    "title": "AI Anxiety + Human Flourishing Image",
@@ -1183,6 +1424,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This event is in collaboration with several cultural orgs on grounds. Each org will bring food with an emphasis to exchange several cultures and build community. Often times a lot of culutral orgs host their friendsgiving separately so this creates a space for a large collaborati",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962587",
+   "type": "event",
+   "title": "SYC x BlackOrgs Friendsgiving (Culture & Community)",
+   "host": "Second Year Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-20T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "1515",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962587",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Futures in Fashion Association has held a semesterly thrift shop since 2013, where students can buy and sell clothing at their set price. The CIO helps collect, tag, and hang up clothes, usually within a barricade set up on South Lawn. In recent years, the CIO has expanded to inc",
    "eligibility": "Open to students",
    "tags": [
@@ -1194,8 +1464,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12949980",
    "type": "event",
    "title": "FFA's Thrift on the Lawn",
@@ -1224,8 +1494,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12521928",
    "type": "event",
    "title": "OAAA Bridge Friday",
@@ -1255,8 +1525,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12659538",
    "type": "event",
    "title": "Intro to the Office of Citizen Scholar Development and Q&A",
@@ -1284,8 +1554,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12659557",
    "type": "event",
    "title": "Hardy Fellows Information Session",
@@ -1314,8 +1584,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12911824",
    "type": "event",
    "title": "Tasty Tuesday @ 1515",
@@ -1344,8 +1614,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12907413",
    "type": "event",
    "title": "Yoga for Connection",
@@ -1373,8 +1643,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12958014",
    "type": "event",
    "title": "Upperclass Housing Virtual Office Hours",
@@ -1404,8 +1674,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12956791",
    "type": "event",
    "title": "OAAA Bridge Friday/Hoo-liday Event",
@@ -1423,6 +1693,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The Virginia Women’s Chorus will host their 43rd annual Candlelight Concerts at University Baptist Church on Friday December 4th at 5:30 PM, and Saturday December 5th at 3:30 PM. The concert will feature a variety of holiday music, including a set of works by renowned compo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
+   "id": "op_uva_eg_12962676",
+   "type": "event",
+   "title": "Virginia Women's Chorus Candlelight Concerts",
+   "host": "Virginia Women's Chorus",
+   "schoolId": "s_uva",
+   "date": "2026-12-04T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "University Baptist Church",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12962676",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Are you working toward solutions to environmental challenges? Or to issues impacting Indian country? Are you a dynamic leader? Are you committed to civility and consensus building? Come learn about the Udall Scholarship and the process for nomination by the University of Virginia",
    "eligibility": "Open to students",
    "tags": [
@@ -1434,8 +1733,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:26.155Z",
-   "createdAt": "2026-11-08T03:42:26.155Z",
+   "lastVerified": "2026-11-09T03:43:13.700Z",
+   "createdAt": "2026-11-09T03:43:13.700Z",
    "id": "op_uva_eg_12659580",
    "type": "event",
    "title": "Udall Scholarship Information Session",
