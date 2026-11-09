@@ -142,3 +142,10 @@ test('Trumba feed without pubDate (UW): start read from the first description li
   assert.equal(out[0].place?.name, 'Meany Hall (MNY), Studio Theatre');
   assert.equal(out[0].description, 'About it.');
 });
+
+test('isOffCampusExtension: statewide Cooperative Extension events are not campus events', async () => {
+  const { isOffCampusExtension } = await import('./sources/opportunities');
+  assert.equal(isOffCampusExtension({ host: 'Cooperative Extension Service' }), true);
+  assert.equal(isOffCampusExtension({ host: 'UF IFAS' }), false);
+  assert.equal(isOffCampusExtension({ host: 'University Extension' }), false);
+});

@@ -521,6 +521,9 @@ export function dedupeEvents<T extends { title: string; date?: string; startTime
 /** 장소가 정해지지 않은 표시(TBD, TBA, N/A …)는 장소가 아니다 — 지도에 학교 한가운데로 찍히지 않게 장소 없이 (2026-11-08 44건) */
 export const placeless = (n: string) => /^\W*(tbd|tba|to be (determined|announced|confirmed)|location (tbd|tba)|n\/a|none)\W*$/i.test(n.trim());
 
+/** 주립대 협동 확장(Cooperative Extension) 행사는 주 곳곳의 군(county) 사무실에서 열린다 — 캠퍼스 행사가 아니다 (Clemson 36개 중 7개, 2026-11-09) */
+export const isOffCampusExtension = (o: { host?: string }) => /\bcooperative extension\b/i.test(o.host ?? '');
+
 export function isExhibitEvent(o: { title: string; tags?: string[]; startTime?: string }): boolean {
   if (/\bexhibit(ion)?s?\b/i.test(o.title) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(o.title)) return true;
   return !o.startTime && (o.tags ?? []).some((t) => /^\s*exhibit/i.test(t));
