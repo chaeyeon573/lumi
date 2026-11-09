@@ -2781,3 +2781,9 @@
 - Checked the newly added state-university calendars for off-campus items: Clemson's calendar carries statewide Cooperative Extension events at county offices (7 of 36: Saint George, Greenwood County …). New rule `isOffCampusExtension` (host "Cooperative Extension"; test) drops them on collect; Clemson re-collected. UF IFAS (on campus), UCR University Extension (campus) unaffected; UGA, NC State, UMass, UChicago none.
 - Spot check clubs: UF Lambda Theta Alpha, Cornell 180DC, Purdue Boiler Robotics, SJSU MSA, UMN Cycling - fine.
 - Spot check courses: 5 random USC Fall 2026 classes match.
+
+## 2026-11-09 03:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Daily refresh: jobs 1,233 postings from 183/183 boards (internships 830, PhD 171, master's 79, new grad 351, postdoc 13; 18 repeats set aside). Events for all 65 schools: 17,377 upcoming, no errors; all 29 school calendars (Localist/LiveWhale/Trumba) returned events.
+- Spot check clubs: UMass Latinos Unidos (beacons.ai, 403 to bots, named), UMD Data Justice Club, UGA Women in Finance fine; UVA Mulholland Society (students.med.virginia.edu) does not answer here; USC College Republicans uscgop.com is now a parked "This domain may be for sale" page whose title is only the domain name - isParkedPage now also catches that (title = bare domain + for-sale text; test), link set aside. The weekly re-collect will apply it to all clubs.
+- Spot check courses: 5 random CMU Fall 2026 classes match.
