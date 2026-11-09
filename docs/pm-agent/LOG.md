@@ -2766,3 +2766,12 @@
 - Events (continued): probed LiveWhale (/live/json/events) on calendar./events./www.<domain> for the 43 schools still without a school calendar. 9 answer with their own official calendar and were added: UChicago 29→195, NYU 767→850, Rice 103→212, Vanderbilt 641→711, Georgetown 80→174, CMU 225→291, UF 259→321, Clemson 63→103, UConn 203→285 (+~890). Three events checked by id against the LiveWhale API (UChicago, Georgetown, Rice): start times match. Together with yesterday's Localist/Trumba additions, 20 schools now carry an official school calendar next to the club feeds.
 - Spot check clubs: UF Personal Finance Club, USC Chabad, UT Best Buddies (national join page, club's choice), Tulane Phi Sigma Tau (national site), Michigan Advanced Robotics Competition (app page, see title) - fine.
 - Spot check courses: 5 random Maryland Fall 2026 classes match.
+
+## 2026-11-09 01:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events: probed Localist/LiveWhale on alternate calendar domains for the 34 schools still without a school calendar (iu.edu, syracuse.edu, tc.umn.edu, duke, columbia, jhu, emory, gatech, umd, wustl, unc, nd, dartmouth, tulane, wisc, psu, msu, purdue, illinois, uci, ucsb, ucdavis …).
+  - Added: Syracuse events.syracuse.edu (Localist) 198→243 (one event checked against the API, page 2); UMN events.tc.umn.edu (LiveWhale) 86→106, all on the Twin Cities campus.
+  - Not added: Indiana events.iu.edu (LiveWhale) mixes all IU campuses (Indianapolis 46202, School of Medicine, IU East) with no campus field or coordinates - would put other campuses' events on Bloomington. UConn events.uconn.edu (added 00:33) removed again for the same reason: 23 of 76 at Stamford, Hartford, UConn Health.
+  - Checked the other 18 calendars added since yesterday for other-campus events: only NYU Shanghai's New York events and Miami's medical campus (same city) - fine.
+- Spot check clubs: UConn Quantum Computing, UNC Sports Administration (Linktree), Syracuse TKE (national site), Cornell CURB, Yale Mixed Company - fine.
+- Spot check courses: 5 random Cornell Fall 2026 classes match.
