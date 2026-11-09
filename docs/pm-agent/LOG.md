@@ -2775,3 +2775,9 @@
   - Checked the other 18 calendars added since yesterday for other-campus events: only NYU Shanghai's New York events and Miami's medical campus (same city) - fine.
 - Spot check clubs: UConn Quantum Computing, UNC Sports Administration (Linktree), Syracuse TKE (national site), Cornell CURB, Yale Mixed Company - fine.
 - Spot check courses: 5 random Cornell Fall 2026 classes match.
+
+## 2026-11-09 02:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits. Daily events/jobs refresh is the 03:33 run.
+- Checked the newly added state-university calendars for off-campus items: Clemson's calendar carries statewide Cooperative Extension events at county offices (7 of 36: Saint George, Greenwood County …). New rule `isOffCampusExtension` (host "Cooperative Extension"; test) drops them on collect; Clemson re-collected. UF IFAS (on campus), UCR University Extension (campus) unaffected; UGA, NC State, UMass, UChicago none.
+- Spot check clubs: UF Lambda Theta Alpha, Cornell 180DC, Purdue Boiler Robotics, SJSU MSA, UMN Cycling - fine.
+- Spot check courses: 5 random USC Fall 2026 classes match.
