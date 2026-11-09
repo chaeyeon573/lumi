@@ -310,8 +310,8 @@ export function uclaOrgToOrg(o: UclaOrg, schoolId = 's_ucla'): Organization {
 // 진짜 단체는 남긴다: "Sandbox Improvisation"(즉흥극), "Singh Sandbox Makerspace", "The Archive", "Yale Film Archive"
 export const isPlaceholderOrg = (name: string) => {
   const n = name.trim();
-  return /^test\s+(club|org(anization)?|group|cio|clp|test)\b/i.test(n) || /^(asdf|do not use|delete me|to be archived)\b/i.test(n)
-    || /\btest\s*(club|org(anization)?|group)\s*\d*$/i.test(n) || /^test-\w+$/i.test(n) || /[-:]\s*test$|\btest$/i.test(n) && !/\b(prep|kitchen|lab|labs|drive|pilots?|bench|flight|engineering|society)\s+test$/i.test(n)
+  return /^test[\s_]+(club|org(anization)?|group|cio|clp|test)\b/i.test(n) || /^(asdf|do not use|delete me|to be archived)\b/i.test(n)
+    || /\btest[\s_]*(club|org(anization)?|group)[\s_]*\d*$/i.test(n) || /^test-\w+$/i.test(n) || /[-:]\s*test$|\btest$/i.test(n) && !/\b(prep|kitchen|lab|labs|drive|pilots?|bench|flight|engineering|society)\s+test$/i.test(n)
     || /^(sandbox( gt| rso)?|.* sandbox)$/i.test(n) || /\brso template$/i.test(n) || /\(inactive\)$/i.test(n) || /\btest sample organization$/i.test(n);
 };
 

@@ -291,7 +291,7 @@ test('stripRegNumber: UMN registration number after the name is dropped; other s
 
 test('isPlaceholderOrg: directory test, sandbox, template and inactive entries; real groups with similar words kept', async () => {
   const { isPlaceholderOrg } = await import('./sources/orglinks');
-  for (const n of ['Engage Test Org', 'RSO Test Group', 'DOSO - TEST', 'Sandbox GT', 'Sandbox RSO', 'Peabody Institute: RSO Template', 'Test-stit', 'Test Org Three', 'The Murray Group: GRAD TEST ORG', 'Pretty Educated Young Thriving Womyn (Inactive)', 'To Be Archived', 'SPS TEST']) assert.equal(isPlaceholderOrg(n), true, n);
+  for (const n of ['Engage Test Org', 'RSO Test Group', 'DOSO - TEST', 'Sandbox GT', 'Sandbox RSO', 'Peabody Institute: RSO Template', 'Test-stit', 'Test Org Three', 'The Murray Group: GRAD TEST ORG', 'Pretty Educated Young Thriving Womyn (Inactive)', 'To Be Archived', 'SPS TEST', 'TEST_ORGANIZATION']) assert.equal(isPlaceholderOrg(n), true, n);
   for (const n of ['Sandbox Improvisation', 'Singh Sandbox Makerspace', 'The Archive', 'Yale Film Archive', 'Test Kitchen', 'Princeton Review Test Prep', 'Testudo Times', 'Flight Test Engineering Society']) assert.equal(isPlaceholderOrg(n), false, n);
 });
 

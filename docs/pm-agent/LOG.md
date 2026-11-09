@@ -2787,3 +2787,9 @@
 - Daily refresh: jobs 1,233 postings from 183/183 boards (internships 830, PhD 171, master's 79, new grad 351, postdoc 13; 18 repeats set aside). Events for all 65 schools: 17,377 upcoming, no errors; all 29 school calendars (Localist/LiveWhale/Trumba) returned events.
 - Spot check clubs: UMass Latinos Unidos (beacons.ai, 403 to bots, named), UMD Data Justice Club, UGA Women in Finance fine; UVA Mulholland Society (students.med.virginia.edu) does not answer here; USC College Republicans uscgop.com is now a parked "This domain may be for sale" page whose title is only the domain name - isParkedPage now also catches that (title = bare domain + for-sale text; test), link set aside. The weekly re-collect will apply it to all clubs.
 - Spot check courses: 5 random CMU Fall 2026 classes match.
+
+## 2026-11-09 04:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Club links, Rochester (46 -> 73 clubs with a site): the Wilson Commons Student Activities club sports page and the Undergraduate Admissions student-groups page link each club to its own public club page on ccc.rochester.edu (opens without a login: mission, officers, events) or its own site. 27 added after opening each one (title names the club); new `server/data/org-links-rochester.csv`, re-applied on every collect. Squash left out (its page falls back to the generic "Campus Home - CCC").
+- Spot check clubs: UNC Kids in Nutrition, MSU Spartan Speech, MIT Video Game Orchestra fine. UMass Dressage Team teamdressage.com is now 404 - moved to s_umass.deadlinks.json. UGA "TEST_ORGANIZATION" was still listed: isPlaceholderOrg now also reads underscores as spaces (test); it stays in the file and is hidden on screen.
+- Spot check courses: 5 random Duke Spring 2027 classes match DukeHub (titles and times).
