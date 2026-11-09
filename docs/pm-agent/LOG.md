@@ -2760,3 +2760,9 @@
 - Events: probed the Localist API (calendar.<domain>/api/2, events.<domain>/api/2 - one request per host) for all 51 collected schools without a school-wide calendar. 8 answer with their own official calendar and were added next to the club feeds: Yale 432→521, UT Austin 674→700, BC 345→426, Wake Forest 104→108, Rochester 216→269, UGA 157→251, Miami 84→120, UMass 233→259 (+410). One event per school checked against its API for Yale, UGA, Miami, UT - start times match.
 - Spot check clubs: Purdue PM at Purdue (title "PM at Purdue"), UW VSA, UCI GABES, MIT Korean Karate fine; UVA "Information Technology Services" is a university office → department (override).
 - Spot check courses: 5 random Georgia Tech Spring 2027 classes match.
+
+## 2026-11-09 00:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Events (continued): probed LiveWhale (/live/json/events) on calendar./events./www.<domain> for the 43 schools still without a school calendar. 9 answer with their own official calendar and were added: UChicago 29→195, NYU 767→850, Rice 103→212, Vanderbilt 641→711, Georgetown 80→174, CMU 225→291, UF 259→321, Clemson 63→103, UConn 203→285 (+~890). Three events checked by id against the LiveWhale API (UChicago, Georgetown, Rice): start times match. Together with yesterday's Localist/Trumba additions, 20 schools now carry an official school calendar next to the club feeds.
+- Spot check clubs: UF Personal Finance Club, USC Chabad, UT Best Buddies (national join page, club's choice), Tulane Phi Sigma Tau (national site), Michigan Advanced Robotics Competition (app page, see title) - fine.
+- Spot check courses: 5 random Maryland Fall 2026 classes match.
