@@ -2793,3 +2793,10 @@
 - Club links, Rochester (46 -> 73 clubs with a site): the Wilson Commons Student Activities club sports page and the Undergraduate Admissions student-groups page link each club to its own public club page on ccc.rochester.edu (opens without a login: mission, officers, events) or its own site. 27 added after opening each one (title names the club); new `server/data/org-links-rochester.csv`, re-applied on every collect. Squash left out (its page falls back to the generic "Campus Home - CCC").
 - Spot check clubs: UNC Kids in Nutrition, MSU Spartan Speech, MIT Video Game Orchestra fine. UMass Dressage Team teamdressage.com is now 404 - moved to s_umass.deadlinks.json. UGA "TEST_ORGANIZATION" was still listed: isPlaceholderOrg now also reads underscores as spaces (test); it stays in the file and is hidden on screen.
 - Spot check courses: 5 random Duke Spring 2027 classes match DukeHub (titles and times).
+
+## 2026-11-09 05:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Club links, UCSB: the Recreation sport-clubs pages (men's, women's, co-ed, non-competitive) put each team's Instagram/Facebook under its name - 27 links for 25 clubs (both "Ice Hockey Team" records describe the same team and got the same two links). Tracking parts of the addresses removed. Rows in org-links-ucsb.csv.
+- Tried and blocked: JHU studentaffairs.jhu.edu and apply.jhu.edu answer 403 (bot check, not bypassed); JHU club home pages on jhu.campusgroups.com are mixed (some public, some redirect to login) and the shared `isLoginOnlyLink` hides all *.campusgroups.com links, so none added. Dartmouth recreation and outdoors pages answered 503.
+- Spot check clubs: BC Graduate Student Association, UF Tau Beta Sigma, MSU For Michigan, Cornell Nexus, Clemson IISE - all open and name the club.
+- Spot check courses: 5 random BU Spring 2027 classes match the BU class search (titles and times).
