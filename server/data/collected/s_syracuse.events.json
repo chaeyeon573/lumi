@@ -1,336 +1,10 @@
 {
- "collectedAt": "2026-11-08T03:42:10.640Z",
+ "collectedAt": "2026-11-09T01:35:13.409Z",
  "sources": [
-  "engage https://syracuse.campuslabs.com/engage 202"
+  "engage https://syracuse.campuslabs.com/engage 195",
+  "localist https://events.syracuse.edu 95"
  ],
  "events": [
-  {
-   "description": "The OttoTHON Alumni Event is an opportunity for new and old OttoTHON members to join forces to reconnect with the cause. This is a social event, a brunch hosted by SU catering. There will be opportunities for members to share their \"why\" the reasoning behind why they joined the o",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12949235",
-   "type": "event",
-   "title": "OttoTHON - Alumni Event",
-   "host": "OttoTHON at Syracuse University",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T15:00:00.000Z",
-   "startTime": "10:00",
-   "place": {
-    "name": "HALL OF LANGUAGES 500",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12949235",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Come join our inclusive club to have fun and gain some skills in basketball, cornhole, and more!!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free stuff",
-    "athletics"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12676603",
-   "type": "event",
-   "title": "Special Olympics x Cuse Cheer Scrimmage",
-   "host": "Special Olympics College Club at Syracuse University",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T16:30:00.000Z",
-   "startTime": "11:30",
-   "place": {
-    "name": "Women’s Building Gym B",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "benefit": "Free stuff",
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12676603",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "During Chapter all brothers come together to discuss and plans upcoming events for the chapter, vote on important changes to the chapter, and plan to welcome new members every semster!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12535071",
-   "type": "event",
-   "title": "Phi Sigma Pi Chapter",
-   "host": "Phi Sigma Pi",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T16:45:00.000Z",
-   "startTime": "11:45",
-   "place": {
-    "name": "NEWHOUSE COMM CENTER 1 102",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12535071",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "We are hosting our second Cuse Cyber Games! Join us on November 8th from 12:30-4:30 for an individual Capture the Flag (CTF) challenge. All skill levels are welcome, and food will be provided! There will also be prizes for the winners. A Capture the Flag (CTF) is a cybersecurity ",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "thoughtfullearning"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12937016",
-   "type": "event",
-   "title": "Cuse Cyber Games",
-   "host": "Information Security Club",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T17:00:00.000Z",
-   "startTime": "12:00",
-   "place": {
-    "name": "Hinds Hall 023",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12937016",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "This event is our weekly chapter meeting.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12888100",
-   "type": "event",
-   "title": "Alpha Omega Epsilon Chapter Meeting",
-   "host": "Alpha Omega Epsilon",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T17:00:00.000Z",
-   "startTime": "12:00",
-   "place": {
-    "name": "HOL 500",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12888100",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Join Pace Run Club for a fun community run at Syracuse University! We&rsquo;ll run together, play games, meet new runners, and build connections in a welcoming environment. All experience levels are invited come move, connect, and have a great time with us!",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12631263",
-   "type": "event",
-   "title": "Community Run",
-   "host": "Pace Run Club",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Barner McDuffies House ",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12631263",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Weekly meeting for members of Tender Magazine",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12949264",
-   "type": "event",
-   "title": "Tender Magazine General Body Meeting",
-   "host": "Tender Magazine",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T18:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "SHAFFER ART BLDG 203",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12949264",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "The Sport & Community club is bringing kids from the Tillie's Touch organization to campus to learn from nutrition, exercise science, and sport management students about health and wellness. They will receive presentations showing them how they can take care of their bodies. They",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "communityservice"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12950750",
-   "type": "event",
-   "title": "Sport & Community Club x Tillie's Touch Wellness Event",
-   "host": "Sport & Community",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T18:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "CARNEGIE (MATH) 100",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12950750",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "OttoTHON's Executive Board meets biweekly to discuss organization events, planning, and upcoming fundraisers.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "groupbusiness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12771647",
-   "type": "event",
-   "title": "OttoTHON Executive Board Meeting",
-   "host": "OttoTHON at Syracuse University",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "HALL OF LANGUAGES 111",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12771647",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Weekly OttoTHON Leadership Program meetings.",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "fundraising"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12887348",
-   "type": "event",
-   "title": "OLP Meetings",
-   "host": "OttoTHON at Syracuse University",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T22:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "HALL OF LANGUAGES 105",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12887348",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "The Distinguished Delta Zeta Chapter of Alpha Phi Alpha Fraternity, Inc. proudly presents its signature Miss Black & Gold Scholarship Pageant, celebrating the success, talent, and elegance of women on campus. Rooted in the fraternity&rsquo;s mission of scholarship, leadership, an",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "free food",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
-   "id": "op_syracuse_eg_12796346",
-   "type": "event",
-   "title": "Miss Black and Gold Pageant",
-   "host": "Alpha Phi Alpha",
-   "schoolId": "s_syracuse",
-   "date": "2026-11-08T23:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "SKY BARN",
-    "lat": 43.0392,
-    "lng": -76.1351
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12796346",
-   "sourceLabel": "Student org events"
-  },
   {
    "description": "Need a space to take a break between classes? Want a private space to rest after your workout? Want to try new tools to take care of your headspace? Visit the MindSpa at the Barnes Center at the Arch! Offering a relaxing space for you to de-stress. In a quiet, low-light space; ac",
    "eligibility": "Open to students",
@@ -343,8 +17,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12610219",
    "type": "event",
    "title": "MindSpa Hours of Operation",
@@ -372,8 +46,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949428",
    "type": "event",
    "title": "Bible Is...",
@@ -401,8 +75,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12958815",
    "type": "event",
    "title": "JUMP Schine Tabling",
@@ -430,8 +104,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949433",
    "type": "event",
    "title": "Advertising for our upcoming programs",
@@ -459,8 +133,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12944604",
    "type": "event",
    "title": "2027 Orientation Leader Info Sessions",
@@ -488,8 +162,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12903557",
    "type": "event",
    "title": "Greek Life Vaccine Clinic",
@@ -518,8 +192,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12952865",
    "type": "event",
    "title": "Native Student Program: Haudenosaunee Social",
@@ -548,8 +222,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12923394",
    "type": "event",
    "title": "Mindfull Heart's",
@@ -577,8 +251,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12495034",
    "type": "event",
    "title": "Community Group",
@@ -606,8 +280,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937118",
    "type": "event",
    "title": "WINS Guest Speaker Series",
@@ -635,8 +309,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949400",
    "type": "event",
    "title": "Polaroids + Felt Frames",
@@ -664,8 +338,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12797347",
    "type": "event",
    "title": "Orange Pulse Dance Troupe: Advanced Commercial Hip Hop",
@@ -693,8 +367,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12959101",
    "type": "event",
    "title": "Negotiation & Bargaining Workshop",
@@ -724,8 +398,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12923389",
    "type": "event",
    "title": "Latine Karaoke Night",
@@ -754,8 +428,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12958790",
    "type": "event",
    "title": "Oy Cappella Fall Invitational 2026",
@@ -783,8 +457,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489132",
    "type": "event",
    "title": "Student Government Association Assembly",
@@ -812,8 +486,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12676270",
    "type": "event",
    "title": "The Impact Movement General Body Meeting",
@@ -841,8 +515,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949397",
    "type": "event",
    "title": "Tabling for events",
@@ -859,6 +533,99 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Explore our personal resilience stories, discover practical tools to strengthen our resilience and empower ourselves to better handle what comes our way. Part of Thrive! series with Jaime Weisberg. Lunch provided. Registration recommended.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54285238188944",
+   "type": "event",
+   "title": "Combating Stress as It Arises",
+   "host": "Human Resources",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Schine Student Center, 228",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/combating-stress-as-it-arises",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Join us for an in-depth dive into the influence of Indigenous democracy on American democracy, its effects, what they got right and what they got wrong, and the lasting impact of Indigenous sovereignty. All are welcome.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54321070290497",
+   "type": "event",
+   "title": "American and Indigenous Democracy",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-10T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Hall of Languages, 500",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/american-and-indigenous-democracy",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "The Department of Chemistry in the College of Arts and Sciences is pleased to welcome John Matson, professor of chemistry at Virginia Polytechnic Institute. Title: Making Medicines and Materials from H2S and SO2 Abstract: Hydrogen sulfide (H2S) and sulfur dioxide (SO2) are both w",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54409339271018",
+   "type": "event",
+   "title": "Chemistry Colloquium: John Matson",
+   "host": "College of Arts and Sciences",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-10T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Center for Science and Technology (CST), 1-132",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/chemistry-colloquium-dr-john-matson",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join us on Tuesday November 10th at 5:30PM for the annual Diwali Illumination installation in the Orange Grove! Come celebrate and see the beautiful lights and Rangoli designs! Food will be served.",
    "eligibility": "Open to students",
    "tags": [
@@ -871,8 +638,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949422",
    "type": "event",
    "title": "Diwali Rangoli at the Grove",
@@ -901,8 +668,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12675765",
    "type": "event",
    "title": "Model UN Club General Meeting",
@@ -930,8 +697,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928510",
    "type": "event",
    "title": "Weekly Meetings",
@@ -959,8 +726,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12495046",
    "type": "event",
    "title": "Horchata Making with MEXSA",
@@ -988,8 +755,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937095",
    "type": "event",
    "title": "BMES GoMed Event",
@@ -1019,8 +786,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12900979",
    "type": "event",
    "title": "BMES/EWB GOMED Talk with Dr. Courtney Maxey-Jones",
@@ -1049,8 +816,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12546187",
    "type": "event",
    "title": "Crocheting for the Cuse Community Weekly Meeting",
@@ -1078,8 +845,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949395",
    "type": "event",
    "title": "The Scent of Success",
@@ -1096,6 +863,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Even when using the same spaces and learning metalsmithing side-by-side, each of these artists find their own voice through the craft, each having a particular curiosity and method of making that is uniquely theirs and reflected in the contrasting presentation. Two settings, crea",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "exhibitions",
+    "open houses and receptions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54380805176501",
+   "type": "event",
+   "title": "Two Settings: Metalsmithing Displayed in Contrast",
+   "host": "College of Visual and Performing Arts (VPA)",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-10T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Comstock Art Facility, Room 022",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/two-settings-metalsmithing-displayed-in-contrast",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Criminal Defense Attorney Melissa Swartz will share details of her career and cases. TAP is the non-competitive side of Mock Trial at Syracuse University, the perfect place to dive into the world of trial advocacy without the pressure of competition. Whether you're a total newbie",
    "eligibility": "Open to students",
    "tags": [
@@ -1107,8 +906,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12955337",
    "type": "event",
    "title": "Trial Advocacy Program Guest Speaker Event",
@@ -1125,7 +924,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for a Project Panel featuring professionals working on major projects in the Syracuse area, including the I-81 Project and the Micron Project with Langan Engineering, where you&rsquo;ll get an inside look at the projects, the engineering work involved, and career opportun",
+   "description": "Join us for a Project Panel featuring professionals working on major projects in the Syracuse area, including the I-81 Project and the Micron Project with Langan Engineering, where you’ll get an inside look at the projects, the engineering work involved, and career opportun",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1137,8 +936,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937066",
    "type": "event",
    "title": "ASCE Fall General Body Meeting #3",
@@ -1167,8 +966,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949231",
    "type": "event",
    "title": "Verbal Blend Poetry Collective Weekly Meeting!",
@@ -1198,8 +997,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12530830",
    "type": "event",
    "title": "United AI General Meeting",
@@ -1228,8 +1027,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928488",
    "type": "event",
    "title": "Cuse Krew Weekly Meeting",
@@ -1257,8 +1056,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12959127",
    "type": "event",
    "title": "Democracy Matters Tabling",
@@ -1275,6 +1074,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us this semester forthe Italian language table series. These monthly events are a great opportunityto practice your conversation skills and learn more about the Italian culture. This first table will be focused on Italian cinema. All are welcome to attend, from beginn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078685605",
+   "type": "event",
+   "title": "Italian Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-11T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/italian-culture-and-conversation-table-4573",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join us for an in depth dive into the influence of Ingienous Democracy on American Democracy. It's effects, what they got right, what they got wrong. And the lasting impact of Ingienous Soveriegnty.",
    "eligibility": "Open to students",
    "tags": [
@@ -1286,8 +1117,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12952938",
    "type": "event",
    "title": "Native Student Program: American and Indigenous Democracy",
@@ -1304,6 +1135,70 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us the final table of the semester for the Bangla language table series. These events are a great opportunity to practice your conversation skills and learn more about Bangla culture. All are welcome to attend, from beginners to native speakers. Pizza and drinks will ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078668187",
+   "type": "event",
+   "title": "Bangla Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-11T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/bangla-culture-and-conversation-table-6556",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "These tables aregreat opportunity to practice your German conversation skills. All arewelcome to attend, from beginners to native speakers. Come to the German Table! All levels welcome! Pizza and drinks provided. Co-sponsored by the German Culture Society and the German Language ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078651796",
+   "type": "event",
+   "title": "German Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-11T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Eggers Hall, 209",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/german-culture-and-conversation-table-4675",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "The Psychology Graduate Students Committee for Diversity and Inclusion (CDI) will host an undergraduate mentoring event on Wednesday, 11/11/2026 at 5pm to provide support editing application materials for graduate school and post-baccalaureate jobs (e.g., CVs, personal statements",
    "eligibility": "Open to students",
    "tags": [
@@ -1315,8 +1210,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12926907",
    "type": "event",
    "title": "Psychology Undergraduate Mentoring Event",
@@ -1345,8 +1240,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12950719",
    "type": "event",
    "title": "Bag Decorating for Rescue Mission",
@@ -1375,8 +1270,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12957830",
    "type": "event",
    "title": "Master Dance Class - DSA event",
@@ -1404,8 +1299,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12903560",
    "type": "event",
    "title": "PSP Resume Building Workshop",
@@ -1434,8 +1329,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12901592",
    "type": "event",
    "title": "SALSA Week- Movie Night!!",
@@ -1465,8 +1360,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869104",
    "type": "event",
    "title": "Bridge: International Christian Gathering",
@@ -1484,7 +1379,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Welcome to SU&rsquo;s Symposium! We will meet on Wednesday @ 6:45 pm in Eggers 018 to discuss interesting/controversial topics! We welcome those with daring and bold ideas, those who enjoy discourse, and those who want to widen their perspectives on several issues while bonding w",
+   "description": "Welcome to SU’s Symposium! We will meet on Wednesday @ 6:45 pm in Eggers 018 to discuss interesting/controversial topics! We welcome those with daring and bold ideas, those who enjoy discourse, and those who want to widen their perspectives on several issues while bonding w",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -1496,8 +1391,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12762129",
    "type": "event",
    "title": "The Symposium's Weekly Meeting",
@@ -1525,8 +1420,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12903562",
    "type": "event",
    "title": "AOE Recruitment Event",
@@ -1554,8 +1449,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12961859",
    "type": "event",
    "title": "Informational",
@@ -1583,8 +1478,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12892205",
    "type": "event",
    "title": "P.A.W.S. Weekly Meeting",
@@ -1613,8 +1508,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869117",
    "type": "event",
    "title": "!!!!FREE INDIAN FOOOD!!! by Bridge",
@@ -1643,8 +1538,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949398",
    "type": "event",
    "title": "Tabling for events",
@@ -1672,8 +1567,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12952928",
    "type": "event",
    "title": "Native Student Program: Haudenosaunee Creation Story",
@@ -1690,6 +1585,100 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join us for an in-depth telling of the Haudenosaunee Creation Story and learn how it has shaped Haudenosaunee values and culture. The story will be told by Haudenosaunee elder Clint Schenandoah. All are welcome.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions",
+    "concerts, films and performances"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54160102529248",
+   "type": "event",
+   "title": "Haudenosaunee Creation Story",
+   "host": "Intercultural Collective",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-12T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Bird Library, 114 (Peter Graham Scholarly Commons)",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/haudenosaunee-creation-story",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Please join the Department of Physics in welcoming Arnold Mathijssen, assistant professor at the University of Pennsylvania, for his talk titled, \"Biomedical Active Matter.\" BIO: Arnold Mathijssen is an assistant professor at the University of Pennsylvania and associate editor at",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54258108613084",
+   "type": "event",
+   "title": "Physics Colloquium: \"Biomedical Active Matter\"",
+   "host": "College of Arts and Sciences",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-12T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Physics Building, 202/204",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/colloquium-biomedical-active-matter",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Join the Libraries' Dean Seaman at Bird Library for donuts, coffee and to share your thoughts.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53310632341864",
+   "type": "event",
+   "title": "Libraries' Donuts with the Dean",
+   "host": "Syracuse University Libraries",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Bird Library, 1st Floor",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/libraries-donuts-with-the-dean",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join BiotechGO for a Research Spotlight featuring Dr. Era Jain, Assistant Professor of Biomedical and Chemical Engineering at Syracuse University! Dr. Jain leads the Jain Lab at Syracuse University, where her research focuses on engineering biomaterials and drug delivery systems ",
    "eligibility": "Open to students",
    "tags": [
@@ -1702,8 +1691,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12773167",
    "type": "event",
    "title": "BiotechGo Research Spotlight: Era Jain",
@@ -1721,6 +1710,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This session will provide an overview of Research Data Management and how you can comply with funder’s mandates to publish your data. Beginning with a brief overview of NIH and NSF data sharing requirements, we will discuss FAIR (Findable, Accessible, Interoperable, Repeatable) p",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53682330494283",
+   "type": "event",
+   "title": "Research Roundtable Workshop: Research Data Management and SURFACE",
+   "host": "Syracuse University Libraries",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-12T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Bird Library, Peter Graham Scholarly Commons (Room 114)",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/research-roundtable-workshop-open-access-institutional-repository-and-research-data-management",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join ASA and SASA during diwali for a Henna night. Create your own henna designs for yourself and friends! Open to all Syracuse University students, Henna Night promotes cultural exchange and inclusivity through a hands-on celebration of one of the region's most cherished traditi",
    "eligibility": "Open to students",
    "tags": [
@@ -1733,8 +1753,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12881934",
    "type": "event",
    "title": "ASA x SASA Henna Night",
@@ -1763,8 +1783,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928498",
    "type": "event",
    "title": "Nollywood Mafia Night: General Board Meeting",
@@ -1792,8 +1812,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12923455",
    "type": "event",
    "title": "XCUSE Dance Team Fall 26 Showcase",
@@ -1821,8 +1841,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12903548",
    "type": "event",
    "title": "Hot TopicZ",
@@ -1839,6 +1859,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Dustin Smith turned to “making” as a way to control something in life. Smith grew up in central Kansas and at university was fortunate to have great art and design instructors. Design took Smith into the agency world in Chicago in 1994, San Francisco in 2004 and simultaneously ar",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53814893177104",
+   "type": "event",
+   "title": "Dustin Smith | Visiting Artist Lecture Series",
+   "host": "College of Visual and Performing Arts (VPA)",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Shaffer Art Building, Shemin Auditorium",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/dustin-smith-visiting-artist-lecture-series",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "This is a professional networking event hosted by Kappa Theta Pi, Society of Hispanic Professionals Engineers and Black and Latinx Information Science and Technology Society. Members will be able to network, share experiences, and form relationships across majors and class years ",
    "eligibility": "Open to students",
    "tags": [
@@ -1851,8 +1902,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12920279",
    "type": "event",
    "title": "Professional Networking Mixer with Kappa Theta Pi, Society of Professional Hispanic Engineers and Black and Latinx Information Science and Technology Society",
@@ -1881,8 +1932,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12920241",
    "type": "event",
    "title": "Team Captains Meeting",
@@ -1911,8 +1962,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12923391",
    "type": "event",
    "title": "A Taste in Latin America: Arepa Making",
@@ -1941,8 +1992,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12945281",
    "type": "event",
    "title": "Kappa Alpha Pi Meeting",
@@ -1970,8 +2021,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489116",
    "type": "event",
    "title": "Cru Real Life Weekly Meeting",
@@ -1999,8 +2050,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937064",
    "type": "event",
    "title": "The Mandarins Fall 2026 Invitational",
@@ -2017,6 +2068,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Presented by the A&S Dean's Office: Humanities Crossroads: Dialogues for the Future Time: Nov. 13, 2026, 8:30 a.m. - 6:15 p.m. Location: Strasser Legacy Room, 220 Eggers We are living through profound change, as social, political, cultural, ecological, and technological forces co",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54124578527336",
+   "type": "event",
+   "title": "Humanities Crossroads: Dialogues for the Future",
+   "host": "College of Arts and Sciences",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Eggers Hall, Strasser Legacy Room (220) and Strasser Commons",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/humanities-crossroads-dialogues-for-the-future",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Students will come together to offer prayer and words of encouragement to students and staff on campus.",
    "eligibility": "Open to students",
    "tags": [
@@ -2028,8 +2110,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12716641",
    "type": "event",
    "title": "Prayer Tent",
@@ -2046,6 +2128,99 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join the Office of Faculty Affairs for an information session and talkback focused on promotion for teaching professors. Learn more about approaching the promotion process, the kinds of evidence that can help demonstrate sustained accomplishment and impact, and where to turn with",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53869748964984",
+   "type": "event",
+   "title": "Teaching Professors | Promotion Info Session Talkback",
+   "host": "Faculty Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Schine Student Center, Room 228",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/teaching-professors-promotion-info-session-talkback",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Concrete is the most used building material in the world, and thus a widespread habitat. Although it is an extremely harsh environment – dry, hard, salty, and very alkaline – it hosts a small and diverse community of extremely stresstolerant microbes that changes over time. At fi",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54435510655420",
+   "type": "event",
+   "title": "Civil and Environmental Engineering Seminar: From Salt to Sidewalk - Microbial communities in and on concrete (Dr. Julia Maresca)",
+   "host": "College of Engineering and Computer Science (ECS)",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T17:45:00.000Z",
+   "startTime": "12:45",
+   "place": {
+    "name": "Link Hall, 369",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/civil-and-environmental-engineering-seminar-from-salt-to-sidewalk-microbial-communities-in-and-on-concrete-dr-julia-maresca",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Speaker: Dr. Cosan Daskiran, Assistant Professor at Binghamton University Title: Computational and Hydrodynamic Analysis of an Intergrated Tidal Desalination System Abstract Summary: This talk presents an integrated tidal desalination (ITD) system that couples a tidal turbine wit",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54363853028963",
+   "type": "event",
+   "title": "Mechanical and Aerospace Engineering Graduate Seminar: Computational and Hydrodynamic Analysis of an Intergrated Tidal Desalination System",
+   "host": "Department of Mechanical and Aerospace Engineering",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T17:45:00.000Z",
+   "startTime": "12:45",
+   "place": {
+    "name": "Hall of Languages, 207",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/mae-graduate-seminar-3120",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "General meeting for all NALFO members",
    "eligibility": "Open to students",
    "tags": [
@@ -2057,8 +2232,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887991",
    "type": "event",
    "title": "General Council Meeting",
@@ -2087,8 +2262,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937182",
    "type": "event",
    "title": "Multicultural Leadership Council",
@@ -2106,6 +2281,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us for a great opportunity to practice your French conversation skills! All are welcome to attend, from beginners to native speakers! Food and refreshments provided. Come, chat, laugh! Co-sponsored by the Department of Languages, Literatures, and Linguistics.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078637452",
+   "type": "event",
+   "title": "French Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Maxwell Hall, 111",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/french-culture-and-conversation-table-8207",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Students will learn to understand their financial aid packages. Required for first year Kessler Scholars.",
    "eligibility": "Open to students",
    "tags": [
@@ -2118,8 +2325,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12677548",
    "type": "event",
    "title": "Kessler Scholars First Year Seminar: Financial Aid Package",
@@ -2136,6 +2343,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us for a great opportunity to practice your Spanish conversation skills! All are welcome to attend, from beginners to native speakers! Pizza and drinks will be provided. Co-sponsored by the Department of Languages, Literatures, and Linguistics",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078622086",
+   "type": "event",
+   "title": "Spanish Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T19:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/spanish-culture-and-conversation-table-7503",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Students will explore and consider potential High Impact Practices, such as Study Abroad, Research, and Internships. Required for second year Kessler Scholars.",
    "eligibility": "Open to students",
    "tags": [
@@ -2148,8 +2387,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12677631",
    "type": "event",
    "title": "Kessler Scholars Second Year Seminar: HIPs Opportunities",
@@ -2177,8 +2416,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12570374",
    "type": "event",
    "title": "NSO Orientation",
@@ -2195,7 +2434,38 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for a compelling afternoon with V&iacute;ctor Mar&iacute;a Cham&aacute;n, the Writer-in-Residence at the Workers' Center of Central New York, as we explore the intersections of storytelling, ethics, and advocacy. When: Friday, November 13th, 3:30 p.m. &ndash; 4:30 p.m. Wh",
+   "description": "Professor Daniel Muñoz (Australian National University) will deliver a colloquium talk to the Department of Philosophy. Title: Whence Prerogatives? Abstract: A prerogative permits actions that would otherwise be wrong, such as a refusal to donate blood. Prerogatives are nice to h",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54391758422891",
+   "type": "event",
+   "title": "Philosophy Colloquium: Daniel Muñoz",
+   "host": "Department of Philosophy",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Hall of Languages, 500",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/colloquium-daniel-munoz",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Join us for a compelling afternoon with V&iacute;ctor Mar&iacute;a Cham&aacute;n, the Writer-in-Residence at the Workers' Center of Central New York, as we explore the intersections of storytelling, ethics, and advocacy. When: Friday, November 13th, 3:30 p.m. – 4:30 p.m. Wh",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2208,8 +2478,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12768014",
    "type": "event",
    "title": "Democracy Matters at Syracuse University Presents: A Conversation with Víctor María Chamán",
@@ -2238,8 +2508,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12852700",
    "type": "event",
    "title": "Crossroads General Body Meeting",
@@ -2256,6 +2526,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us for the Tamil table! South Asia Center culture events are a great opportunity to practice your Tamil conversation skills! All are welcome to attend, from beginners to native speakers. Pizza and hot chai will be served. Co-sponsored by the Department of Languages, L",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078599548",
+   "type": "event",
+   "title": "Tamil Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T20:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/tamil-culture-and-conversation-table-8492",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Weekly meeting with PFC E-Board, PFC Advisor, and PFC Chapter Presidents, consisting of weekly updates and information, event planning and anything else relevant to the PFC and or the chapters.",
    "eligibility": "Open to students",
    "tags": [
@@ -2267,8 +2569,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12846942",
    "type": "event",
    "title": "PFC BOP Meetings",
@@ -2296,8 +2598,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12627791",
    "type": "event",
    "title": "Freshman Women's Bibly Study",
@@ -2325,8 +2627,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12601068",
    "type": "event",
    "title": "Men's Freshmen Bible Study",
@@ -2354,8 +2656,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12774763",
    "type": "event",
    "title": "Panhellenic Council Sorority Life 101",
@@ -2372,6 +2674,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "NEW DATE - NOW NOVEMBER 13 Please join us for a great opportunity to practice your Persian conversation skills! All are welcome to attend, from beginners to native speakers! Pizza and drinks provided. The event will be hosted by Haleh Tabesh, Persian language instructor. Co-spons",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078572916",
+   "type": "event",
+   "title": "Persian Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-13T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Maxwell Hall, 303",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/persian-culture-and-conversation-table-2954",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "This event will be in collaboration with ISAS. The event will center on Indigenous folklore, storytelling, poetry, and the celebration of Indigenous peoples and culture. The event will include food, an open mic for storytelling, and poetry. Crafts for attendees to complete will a",
    "eligibility": "Open to students",
    "tags": [
@@ -2384,8 +2718,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12471033",
    "type": "event",
    "title": "Tales of the Land: Folklore (reading) and Celebration",
@@ -2414,8 +2748,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12953882",
    "type": "event",
    "title": "Native Student Program: Tales of the Land: Folklore and Celebration",
@@ -2432,7 +2766,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "An elegant evening celebrating OttoTHON&rsquo;s Miracle Kids at Upstate Golisano Children&rsquo;s Hospital, their individuality, their dreams, and the community that supports them.",
+   "description": "An elegant evening celebrating OttoTHON’s Miracle Kids at Upstate Golisano Children’s Hospital, their individuality, their dreams, and the community that supports them.",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2444,8 +2778,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937104",
    "type": "event",
    "title": "The Miracle Runway: An Evening of Dreams",
@@ -2474,8 +2808,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937141",
    "type": "event",
    "title": "Zamboni Revolution Improv Team Family & Friends Workshop",
@@ -2503,8 +2837,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12950764",
    "type": "event",
    "title": "Culture Clash",
@@ -2532,8 +2866,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12771610",
    "type": "event",
    "title": "11.13.26 Games Club",
@@ -2562,8 +2896,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12888898",
    "type": "event",
    "title": "Cockappella! - Otto Tunes' 14th Annual Testicular Cancer Benefit Concert",
@@ -2581,7 +2915,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Dave & Buster&rsquo;s is BACK! Come hang out with Student Events and Activities at Dave & Buster's. Tickets required. Tickets cover activity, food, and transportation. Buses will leave College Place promptly at 9:45 pm and depart from the farm promptly at 12:00pm to return to cam",
+   "description": "Dave & Buster’s is BACK! Come hang out with Student Events and Activities at Dave & Buster's. Tickets required. Tickets cover activity, food, and transportation. Buses will leave College Place promptly at 9:45 pm and depart from the farm promptly at 12:00pm to return to cam",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2592,8 +2926,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12565766",
    "type": "event",
    "title": "Dave & Busters",
@@ -2622,8 +2956,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937070",
    "type": "event",
    "title": "Model UN Club Conference",
@@ -2641,6 +2975,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This is a two-day symposium centered on the theme of dreams, music, and sound, in co-collaboration with the American Musicological Society's Music and Philosophy Study Group. This symposium is a localized, in-person event held in conjunction with the American Musicological Societ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_52489710509042",
+   "type": "event",
+   "title": "Beyond Interpretation: Theorizing Music, Sound, and Dreams",
+   "host": "Syracuse University Libraries",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-14T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Bird Library, Peter Graham Scholarly Commons (Room 114)",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/beyond-interpretation-theorizing-music-sound-and-dreams",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join us at Sandwich Saturday if you want to serve the community and are looking for volunteer hours! We can provide transportation if needed, so please be sure to fill out our google form so that we can plan accordingly.",
    "eligibility": "Open to students",
    "tags": [
@@ -2652,8 +3017,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937083",
    "type": "event",
    "title": "BMES Sandwich Saturday",
@@ -2681,8 +3046,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12920272",
    "type": "event",
    "title": "PFC/SGA Networking Mixer",
@@ -2710,8 +3075,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937098",
    "type": "event",
    "title": "Poster Making",
@@ -2739,8 +3104,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12950707",
    "type": "event",
    "title": "Orange Pulse Dance Troupe: Day of Dance 2026",
@@ -2768,8 +3133,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887344",
    "type": "event",
    "title": "Weekly Eboard Meeting",
@@ -2798,8 +3163,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12931638",
    "type": "event",
    "title": "Lettuce Club main event",
@@ -2828,8 +3193,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12923399",
    "type": "event",
    "title": "Haiti Unveiled",
@@ -2857,8 +3222,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937062",
    "type": "event",
    "title": "Groovestands Fall 2026 Invitational",
@@ -2887,8 +3252,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12676604",
    "type": "event",
    "title": "Special Olympic Unified Practice",
@@ -2917,8 +3282,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12535072",
    "type": "event",
    "title": "Phi Sigma Pi Chapter",
@@ -2946,8 +3311,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12888101",
    "type": "event",
    "title": "Alpha Omega Epsilon Chapter Meeting",
@@ -2964,7 +3329,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join Pace Run Club for a fun community run at Syracuse University! We&rsquo;ll run together, play games, meet new runners, and build connections in a welcoming environment. All experience levels are invited come move, connect, and have a great time with us!",
+   "description": "Join Pace Run Club for a fun community run at Syracuse University! We’ll run together, play games, meet new runners, and build connections in a welcoming environment. All experience levels are invited come move, connect, and have a great time with us!",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -2976,8 +3341,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12631264",
    "type": "event",
    "title": "Community Run",
@@ -3006,8 +3371,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937085",
    "type": "event",
    "title": "DEI Movie Night",
@@ -3035,8 +3400,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12761101",
    "type": "event",
    "title": "OttoTHON Full-Team Meeting",
@@ -3064,8 +3429,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12648718",
    "type": "event",
    "title": "Global Medical Brigades General Body Meeting #1",
@@ -3082,7 +3447,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join the sisters of Omega Phi Beta Sorority, Incorperated, Xi Chapter, for our New Member Presentation as we celebrate the culmination of our new members&rsquo; journey and welcome them into our sisterhood.",
+   "description": "Join the sisters of Omega Phi Beta Sorority, Incorperated, Xi Chapter, for our New Member Presentation as we celebrate the culmination of our new members’ journey and welcome them into our sisterhood.",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -3093,8 +3458,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12945261",
    "type": "event",
    "title": "Omega Phi Beta Sorority, Inc. — New Member Presentation",
@@ -3122,8 +3487,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887349",
    "type": "event",
    "title": "OLP Meetings",
@@ -3151,8 +3516,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12955414",
    "type": "event",
    "title": "Info Session & Networking Event",
@@ -3180,8 +3545,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12937063",
    "type": "event",
    "title": "Main Squeeze A Cappella Fall 2026 Invitational",
@@ -3209,8 +3574,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12610220",
    "type": "event",
    "title": "MindSpa Hours of Operation",
@@ -3227,6 +3592,127 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Title: AeroPathway Seminar 7: Shaping Airflow with CFD Dr. Yiyang Sun presents her research on computational fluid dynamics and flow control, followed by a CFSA session on nationally competitive fellowships and scholarships for undergraduates.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53800469132458",
+   "type": "event",
+   "title": "AeroPathway Undergraduate Seminar",
+   "host": "Department of Mechanical and Aerospace Engineering",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-16T16:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "Link Hall, 369",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/aeropathway-undergraduate-seminar-2435",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "The Office of People and Culture invites faculty and staff to join us for Food for Thought: Say \"Goodbye!\" to Silos: Building Connections Across SU. Kim Infanti, Executive Director at Alumni & Constituent Engagement, and Jessica Pitcher, Associate Director at Alumni and Career Se",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53940620055096",
+   "type": "event",
+   "title": "Food for Thought: Say \"Goodbye!\" to Silos: Building Connections Across SU",
+   "host": "Office of People and Culture",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-16T16:45:00.000Z",
+   "startTime": "11:45",
+   "place": {
+    "name": "Bird Library, 114",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/food-for-thought-say-goodbye-to-silos-building-connections-across-su",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Total Body Strength uses resistance and light to heavy weights to help build and tone muscles, increase flexibility and boost muscular endurance. This class will give you an overall “head-to-toe” workout! Register and view more details in the Wellness Portal today! Registration o",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "workouts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_50542220050741",
+   "type": "event",
+   "title": "Total Body Strength",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-16T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Barnes Center at The Arch, Studio 2",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/total-body-strength-7691",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "These events are a great opportunity to practice your Filipino/Tagalog conversation skills and learn more about the culture of the Philippines. All are welcome to attend, from beginners to native speakers! Food and drinks will be served. This year’s new table series is organized ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54184496927304",
+   "type": "event",
+   "title": "*NEW* Filipino Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-16T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/new-filipino-culture-and-conversation-table",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Bible study",
    "eligibility": "Open to students",
    "tags": [
@@ -3238,8 +3724,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12495035",
    "type": "event",
    "title": "Community Group",
@@ -3256,6 +3742,70 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Get ready to turn your ideas into lyrics with Erika Turner in this fun, two-part workshop series. Have you ever wanted to write a song but didn't know where to start? Does writer's block halt your creativity? If so, join this fun, creative, hands-on songwriting workshop where you",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions",
+    "social activities",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54099760651343",
+   "type": "event",
+   "title": "Finding Your Voice: From Ideas to Lyrics Workshop Series with Erika Turner",
+   "host": "Community Folk Art Center",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-16T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Community Folk Art Center, Gallery",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/finding-your-voice-from-ideas-to-lyrics-workshop-series-with-erika-turner",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Spring 2027 abroad students: Join us for an evening of advice, fun and food! Global Ambassadors will be present to answer questions and give their advice about studying abroad. Plus, meet the students you'll be abroad with in the spring! Interested students are also welcome to jo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "open houses and receptions"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54355897092604",
+   "type": "event",
+   "title": "Bites & Insights with Global Ambassadors",
+   "host": "Syracuse Abroad",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-16T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Bird Library, 114",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/bites-insights-with-global-ambassadors-2177",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join us for a general body meeting!",
    "eligibility": "Open to students",
    "tags": [
@@ -3267,8 +3817,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12857848",
    "type": "event",
    "title": "Kesem Member Meeting",
@@ -3296,8 +3846,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12797348",
    "type": "event",
    "title": "Orange Pulse Dance Troupe: Advanced Commercial Hip Hop",
@@ -3325,8 +3875,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489133",
    "type": "event",
    "title": "Student Government Association Assembly",
@@ -3354,8 +3904,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12676271",
    "type": "event",
    "title": "The Impact Movement General Body Meeting",
@@ -3383,8 +3933,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12944605",
    "type": "event",
    "title": "2027 Orientation Leader Info Sessions",
@@ -3412,8 +3962,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949429",
    "type": "event",
    "title": "Bible Is...",
@@ -3430,6 +3980,36 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "These events are a great opportunity to learn more about the culture of Afghanistan and to practice its languages, such as Dari and Pashto. All are welcome to attend, from beginners to native speakers! Food and drinks will be served. This year’s new table series is organized by A",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54184496885311",
+   "type": "event",
+   "title": "*NEW* Afghan Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-17T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/new-afghan-culture-and-conversation-table",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join us for a student-led discussion about the experiences of being a first-gen indigenous student in higher education. The students will share their experiences and their perspectives on College. There will also be an elder from an indigenous community to share their wisdom and ",
    "eligibility": "Open to students",
    "tags": [
@@ -3442,8 +4022,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12953867",
    "type": "event",
    "title": "Mix Tapes: First-Generation Indigenous Students",
@@ -3472,8 +4052,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12625072",
    "type": "event",
    "title": "Mixed Tapes - Indigenous & First-Gen",
@@ -3490,6 +4070,71 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Welcome back! Please join us for a great opportunity to practice your Arabic conversation skills! All are welcome to attend, from beginners to native speakers! Pizza and drinks will be provided. Co-sponsored by the Department of Languages, Literatures, and Linguistics. All events",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078548330",
+   "type": "event",
+   "title": "Arabic Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Eggers Hall, 209",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/arabic-culture-and-conversation-table-1113",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Join us for a student-led discussion about being a first-generation Indigenous student in higher education. Students will share their experiences and perspectives on college. There will also be an elder from an Indigenous community in attendance to share their wisdom and knowledg",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_51100126931686",
+   "type": "event",
+   "title": "First-Generation Mixed Tapes: First-Generation and Indigenous",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "113 Euclid, Social Lounge",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/first-generation-mixed-tapes-first-generation-and-indigenous",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "The Model United Nations Club meets weekly to discuss varied topics of international importance as well as fun fantasy themes from the perspective of diverse countries and parties. We practice a mix of both General Assembly and crisis style committees. Through this club, you will",
    "eligibility": "Open to students",
    "tags": [
@@ -3501,8 +4146,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12675766",
    "type": "event",
    "title": "Model UN Club General Meeting",
@@ -3530,8 +4175,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928511",
    "type": "event",
    "title": "Weekly Meetings",
@@ -3559,8 +4204,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12847080",
    "type": "event",
    "title": "Get A's with LTA",
@@ -3588,8 +4233,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12546184",
    "type": "event",
    "title": "Crocheting for the Cuse Community Weekly Meeting",
@@ -3617,8 +4262,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12950742",
    "type": "event",
    "title": "Remedios y Remediales: Herbalism & Ancestral Healing Workshop",
@@ -3635,6 +4280,70 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Syracuse Onondaga County NAACP presents a screening of Pre-School to Prison demonstrates the impact that school suspensions have on our young learners.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "information sessions",
+    "lectures, seminars and discussions",
+    "social activities"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54294443409162",
+   "type": "event",
+   "title": "Screening and Panel Discussion : PreSchool to Prison",
+   "host": "Community Folk Art Center",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-17T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Community Folk Art Center, Blackbox Theatre",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/screening-and-panel-discussion-pre-school-to-prison",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "When does accountability become harassment, retaliation or another form of harm? In an age of social media and public call-outs, harmful behavior can quickly become a public conversation. This workshop explores what accountability looks like in the real world, on college campuses",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54053302197713",
+   "type": "event",
+   "title": "Tough Topic Tuesday: Public Enemy #1 - When Does Accountability Go Too Far?",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-17T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Barner-McDuffie House, 204 (Delta Sigma Theta Large Meeting Room)",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/tough-topic-tuesday-public-enemy-1-when-does-accountability-go-too-far",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "General meeting for United AI, weekly.",
    "eligibility": "Open to students",
    "tags": [
@@ -3648,8 +4357,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12530831",
    "type": "event",
    "title": "United AI General Meeting",
@@ -3678,8 +4387,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928489",
    "type": "event",
    "title": "Cuse Krew Weekly Meeting",
@@ -3707,8 +4416,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12916702",
    "type": "event",
    "title": "Chabad Info Table",
@@ -3725,6 +4434,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us for a great opportunity to practice your Hebrew conversation skills. All are welcome to attend, from beginners to native speakers! Pizza and drinks will be provided. The event will be hosted by Michal Downie, Instructor, Languages, Literatures, and Linguistics. Co-",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078527841",
+   "type": "event",
+   "title": "Hebrew Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-18T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/hebrew-culture-and-conversation-table-7850",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join us for a workshop on Indigenous history and survival.",
    "eligibility": "Open to students",
    "tags": [
@@ -3736,8 +4477,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12953855",
    "type": "event",
    "title": "Native Student Program: Witness to Injustice",
@@ -3754,6 +4495,70 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Please join us this semester for our *new* Gujarati language table series. These events are a great opportunity to practice your conversation skills and learn more about Gujarati culture. All are welcome to attend, from beginners to native speakers. Specialty pizza and chai tea w",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54379078509399",
+   "type": "event",
+   "title": "Gujarati Culture and Conversation Table",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-18T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Eggers Hall, 341",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/gujarati-culture-and-conversation-table-5150",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Witness to Injustice is a unique 2.5-hour interactive group teaching tool that uses participatory education to share the disturbing history of what Indigenous Peoples have experienced through colonization. The program seeks to foster truth, understanding and respect between Indig",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "workshops",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54321078309470",
+   "type": "event",
+   "title": "Witness to Injustice",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-18T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Schine Student Center, 132 (Intercultural Collective Lounge)",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/witness-to-injustice",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "This event will give brothers a space to complete work and catch up with one another in a studious space! I will play music and hopefully have snacks to create a welcoming environment to get work done and catch up with peers!",
    "eligibility": "Open to students",
    "tags": [
@@ -3765,8 +4570,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12903129",
    "type": "event",
    "title": "PSP Study Hours",
@@ -3783,6 +4588,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Merges the practice of yoga with the core-stabilizing, posture-enhancing dynamics of Pilates. Includes poses (asana) to cultivate strength, stamina, stability and flexibility. Register and view more details in the Wellness Portal today! Registration opens 24 hours prior to the cl",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "workouts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_50542380043567",
+   "type": "event",
+   "title": "Yoga'lates",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Barnes Center at The Arch, Studio 3",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/yogalates-5442",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Attend an information session to learn more about New Student Programs (NSP), what it means to be an Orientation Leader, the required dates associated with the summer internship, position compensation and benefits, and both the application and interview timeline. Register For The",
    "eligibility": "Open to students",
    "tags": [
@@ -3794,8 +4628,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12944606",
    "type": "event",
    "title": "2027 Orientation Leader Info Sessions",
@@ -3824,8 +4658,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869105",
    "type": "event",
    "title": "Bridge: International Christian Gathering",
@@ -3843,7 +4677,38 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Welcome to SU&rsquo;s Symposium! We will meet on Wednesday @ 6:45 pm in Eggers 018 to discuss interesting/controversial topics! We welcome those with daring and bold ideas, those who enjoy discourse, and those who want to widen their perspectives on several issues while bonding w",
+   "description": "Salaam Shalom: Learning Hebrew and Arabic as an Interfaith Practice Introduces students to elementary Modern Hebrew and Classical Arabic, building foundational reading, writing, listening, and speaking skills while exploring the linguistic relationship between these two Semitic l",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53712277210142",
+   "type": "event",
+   "title": "Salaam Shalom: Learning Hebrew and Arabic as an Interfaith Practice",
+   "host": "Hendricks Chapel",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-18T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Hendricks Chapel, Chaplain's Suite",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/salaam-shalom-learning-hebrew-and-arabic-as-an-interfaith-practice",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Welcome to SU’s Symposium! We will meet on Wednesday @ 6:45 pm in Eggers 018 to discuss interesting/controversial topics! We welcome those with daring and bold ideas, those who enjoy discourse, and those who want to widen their perspectives on several issues while bonding w",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -3855,8 +4720,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12762130",
    "type": "event",
    "title": "The Symposium's Weekly Meeting",
@@ -3884,8 +4749,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12859319",
    "type": "event",
    "title": "Letters of Love Meeting",
@@ -3913,8 +4778,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12945318",
    "type": "event",
    "title": "New Member Presentation",
@@ -3931,6 +4796,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "As a program that has been running for more than 60 years, Thursday Morning Roundtable has been one of Syracuse's most enduring civic traditions. Each month during the academic year, TMR convenes a broad cross-section of voices to share information, exchange perspectives, and spa",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53932327424342",
+   "type": "event",
+   "title": "Thursday Morning Roundtable (TMR)",
+   "host": "Community Engagement",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-19T13:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Central New York Community Foundation, Ballroom",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/thursday-morning-roundtable-tmr-2616",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Students will gather together for a time of Q&A to talk about Christianity and how to read the bible.",
    "eligibility": "Open to students",
    "tags": [
@@ -3942,8 +4838,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12949430",
    "type": "event",
    "title": "Bible Is...",
@@ -3972,8 +4868,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869118",
    "type": "event",
    "title": "!!!!FREE INDIAN FOOOD!!! by Bridge",
@@ -3991,6 +4887,98 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Friendship Luncheons Sponsored by Bridge Thursdays, 12 PM to 1:30 PM Noble Room at Hendricks Chapel Enjoy a free lunch and conversation. Bridge is a Christian ministry that forms friendships through lunches and conversation. For more information, please check Hendricks Chapel's C",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "spiritual service"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54125386821646",
+   "type": "event",
+   "title": "\"Bridge\" Friendship Luncheon",
+   "host": "Hendricks Chapel",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Hendricks Chapel, Noble Room",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/bridge-friendship-luncheon-8443",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Despite sitting within the world’s largest river delta, Dhaka, the capital of Bangladesh, has become increasingly dependent on groundwater as rapid urbanization and severe surface-water pollution have transformed the city’s waterscape. While policy seeks to reduce this dependence",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54414462268062",
+   "type": "event",
+   "title": "Conversations in Conflict Studies: Deferred Water Injustice (DWI)",
+   "host": "Maxwell School of Citizenship and Public Affairs",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-19T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Eggers Hall, 400A",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/conversations-in-conflict-studies-deferred-water-injustice-dwi",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Please join the Department of Physics in welcoming Aaron Titus, Teaching Professor in the Department of Physics at North Carolina State University, for his talk titled, \"Teaching Students How to Learn in an AI World.\" Aaron Titus is a Teaching Professor in the Department of Physi",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54115204993231",
+   "type": "event",
+   "title": "Physics Colloquium: \"Teaching Students How to Learn in an AI World\"",
+   "host": "College of Arts and Sciences",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-19T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Physics Building, 202/204",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/colloquium-teaching-students-how-to-learn-in-an-ai-world",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join BiotechGO for an Industry Speaker Series featuring Dr. Scott Tenenbaum, Co-Founder and CEO of sxRNA Technologies! With decades of experience in RNA biology and biotechnology, Dr. Tenenbaum has built a career spanning scientific research, innovation, intellectual property, an",
    "eligibility": "Open to students",
    "tags": [
@@ -4003,8 +4991,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12773306",
    "type": "event",
    "title": "BiotechGo Industry Speaker Series: Scott Tenenbaum",
@@ -4033,8 +5021,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12495045",
    "type": "event",
    "title": "Bracelet Making with Mexsa",
@@ -4051,6 +5039,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Yifan Luo is a Baltimore-based illustrator, visual storyteller and educator. Luo specializes in editorial narratives, comics and slices of life that explore current events, personal stories and sustainability. Her illustrations, reportage and comics have appeared in The Washingto",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53973901466640",
+   "type": "event",
+   "title": "Yifan Luo | Visiting Artist Lecture Series",
+   "host": "College of Visual and Performing Arts (VPA)",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Shaffer Art Building, Shemin Auditorium",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/yifan-luo-visiting-artist-lecture-series",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "OttoTHON's General Body is a group of students dedicated to serving the children and families at Upstate Golisano Children's Hospital year-round through event planning, fundraising, and outreach efforts. The biweekly General Body Meetings will be used for team bonding, planning, ",
    "eligibility": "Open to students",
    "tags": [
@@ -4062,8 +5081,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12716917",
    "type": "event",
    "title": "OttoTHON General Body Meeting",
@@ -4091,8 +5110,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489117",
    "type": "event",
    "title": "Cru Real Life Weekly Meeting",
@@ -4120,8 +5139,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12677835",
    "type": "event",
    "title": "DE-STRESS BEFORE BREAK: Lock In, Chill, and Connect!",
@@ -4138,6 +5157,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Speaker: Dr. Kunihiko (Sam) Taira, Professor at University of California, Los Angeles Title: Extreme Aerodynamics: Beyond the Envelope Abstract Summary: This talk examines flight in extreme aerodynamic conditions—such as the turbulent wakes of urban canyons, mountainous terrain, ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54382805777818",
+   "type": "event",
+   "title": "Mechanical and Aerospace Engineering Graduate Seminar: Extreme Aerodynamics: Beyond the Envelope",
+   "host": "Department of Mechanical and Aerospace Engineering",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-20T17:45:00.000Z",
+   "startTime": "12:45",
+   "place": {
+    "name": "Hall of Languages, 207",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/mae-graduate-seminar-3246",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Attend an information session to learn more about New Student Programs (NSP), what it means to be an Orientation Leader, the required dates associated with the summer internship, position compensation and benefits, and both the application and interview timeline. Register For The",
    "eligibility": "Open to students",
    "tags": [
@@ -4149,8 +5199,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12944607",
    "type": "event",
    "title": "2027 Orientation Leader Info Sessions",
@@ -4178,8 +5228,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887992",
    "type": "event",
    "title": "General Council Meeting",
@@ -4208,8 +5258,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12768015",
    "type": "event",
    "title": "Weekly Interest Meeting",
@@ -4238,8 +5288,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12852701",
    "type": "event",
    "title": "Crossroads General Body Meeting",
@@ -4267,8 +5317,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12846943",
    "type": "event",
    "title": "PFC BOP Meetings",
@@ -4296,8 +5346,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12601069",
    "type": "event",
    "title": "Men's Freshmen Bible Study",
@@ -4314,6 +5364,71 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Join the Syracuse University Art Museum at our NYC venue, The Louise and Bernard Palitz Gallery, for a reception and gallery talk on the newly installed exhibition “And she had a pose that was fascinating”: Harriet Whitney Frishmuth’s Models and Sculptures,” curated by Em Spencer",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions",
+    "social activities"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54411108392297",
+   "type": "event",
+   "title": "Reception & Gallery Talk: Harriet Whitney Frishmuth’s Models and Sculptures",
+   "host": "Arts @ SU",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-20T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Lubin House, Louise and Bernard Palitz Gallery",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/reception-gallery-talk-harriet-whitney-frishmuths-models-and-sculptures-6515",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
+   "description": "Join Syracuse Onondaga County NAACP for a documentary and panel discussion on the impact of tobacco in the Black community.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "concerts, films and performances",
+    "lectures, seminars and discussions",
+    "social activities"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54294885301482",
+   "type": "event",
+   "title": "Documentary Screening : Black Lives, Black Lungs",
+   "host": "Community Folk Art Center",
+   "schoolId": "s_syracuse",
+   "date": "2026-11-20T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Community Folk Art Center, Blackbox Theatre",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/documentary-screening-black-lives-black-lungs",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "GCSU weekly club meeting.",
    "eligibility": "Open to students",
    "tags": [
@@ -4325,8 +5440,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12771612",
    "type": "event",
    "title": "11.20.26 Games Club",
@@ -4354,8 +5469,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887350",
    "type": "event",
    "title": "OLP Meetings",
@@ -4385,8 +5500,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12530832",
    "type": "event",
    "title": "United AI General Meeting",
@@ -4416,8 +5531,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869106",
    "type": "event",
    "title": "Bridge: International Christian Gathering",
@@ -4447,8 +5562,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869119",
    "type": "event",
    "title": "!!!!FREE INDIAN FOOOD!!! by Bridge",
@@ -4478,8 +5593,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12773464",
    "type": "event",
    "title": "Social Hours #3",
@@ -4508,8 +5623,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12846944",
    "type": "event",
    "title": "PFC BOP Meetings",
@@ -4537,8 +5652,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12771649",
    "type": "event",
    "title": "OttoTHON Executive Board Meeting",
@@ -4566,8 +5681,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887351",
    "type": "event",
    "title": "OLP Meetings",
@@ -4595,8 +5710,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12610221",
    "type": "event",
    "title": "MindSpa Hours of Operation",
@@ -4624,8 +5739,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12495036",
    "type": "event",
    "title": "Community Group",
@@ -4653,8 +5768,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12797349",
    "type": "event",
    "title": "Orange Pulse Dance Troupe: Advanced Commercial Hip Hop",
@@ -4682,8 +5797,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489134",
    "type": "event",
    "title": "Student Government Association Assembly",
@@ -4711,8 +5826,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12676272",
    "type": "event",
    "title": "The Impact Movement General Body Meeting",
@@ -4740,8 +5855,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12675767",
    "type": "event",
    "title": "Model UN Club General Meeting",
@@ -4769,8 +5884,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928512",
    "type": "event",
    "title": "Weekly Meetings",
@@ -4798,8 +5913,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12546182",
    "type": "event",
    "title": "Crocheting for the Cuse Community Weekly Meeting",
@@ -4829,8 +5944,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12471045",
    "type": "event",
    "title": "Calma y Comunidad",
@@ -4861,8 +5976,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12530833",
    "type": "event",
    "title": "United AI General Meeting",
@@ -4891,8 +6006,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12928490",
    "type": "event",
    "title": "Cuse Krew Weekly Meeting",
@@ -4920,8 +6035,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12916641",
    "type": "event",
    "title": "Chabad Info Table",
@@ -4950,8 +6065,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869107",
    "type": "event",
    "title": "Bridge: International Christian Gathering",
@@ -4980,8 +6095,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12842958",
    "type": "event",
    "title": "Letters of Love Meeting",
@@ -4998,7 +6113,7 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Welcome to SU&rsquo;s Symposium! We will meet on Wednesday @ 6:45 pm in Eggers 018 to discuss interesting/controversial topics! We welcome those with daring and bold ideas, those who enjoy discourse, and those who want to widen their perspectives on several issues while bonding w",
+   "description": "Welcome to SU’s Symposium! We will meet on Wednesday @ 6:45 pm in Eggers 018 to discuss interesting/controversial topics! We welcome those with daring and bold ideas, those who enjoy discourse, and those who want to widen their perspectives on several issues while bonding w",
    "eligibility": "Open to students",
    "tags": [
     "event",
@@ -5010,8 +6125,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12762122",
    "type": "event",
    "title": "The Symposium's Weekly Meeting",
@@ -5028,6 +6143,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Communications Design 351 — Problem Solving Strategies Student Presentations in Collaboration with the Office of Community Engagement This semester, Communications Design 351 students partnered with Syracuse University’s Office of Community Engagement as a real client with real s",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_54445668783857",
+   "type": "event",
+   "title": "FHEI (Future of Higher Education Initiative) CMD 351 Community Engagement Office Collaboration - Final Presentations",
+   "host": "Syracuse University Libraries",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-03T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Bird Library, Peter Graham Scholarly Commons (Room 114)",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/fhei-future-of-higher-education-initiative-cmd-351-community-engagement-office-collaboration-final-presentations",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Free Indian Lunch with Bridge Ministry! Looking for a great meal between classes? Come join us every Thursday for FREE Indian food and great company! From 12:00 PM - 1:00 PM , we gather to enjoy authentic Indian cuisine, connect with new people, and take a break from the bu",
    "eligibility": "Open to students",
    "tags": [
@@ -5040,8 +6186,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12869120",
    "type": "event",
    "title": "!!!!FREE INDIAN FOOOD!!! by Bridge",
@@ -5059,6 +6205,38 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "The TA Coffee Hour, a great place to talk teaching, troubleshoot challenges, and connect across campus, is back! This informal session, held twice per week on a biweekly schedule, is a chance to take a break, grab a snack, and talk about all things Teaching Assistant with other T",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social activities",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53851371565050",
+   "type": "event",
+   "title": "Teaching Assistant Coffee Hour",
+   "host": "Graduate School",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-03T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Lyman Hall, 303",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/teaching-assistant-coffee-hour-6490",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Join the Kessler Scholars Program for its 2nd annual trivia night! Open to all Kessler Scholars cohorts. Kessler student staff required to attend.",
    "eligibility": "Open to students",
    "tags": [
@@ -5070,8 +6248,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12677658",
    "type": "event",
    "title": "Kessler Scholars 2nd Annual Trivia",
@@ -5088,6 +6266,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Tom Hart is a cartoonist and the executive director of The Sequential Artists Workshop, a school and arts organization in Gainesville, Florida. He taught at the School of Visual Arts for 10 years. His 2016 memoir “Rosalie Lightning” debuted at number one on The New York Times bes",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "lectures, seminars and discussions"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53814978232024",
+   "type": "event",
+   "title": "Tom Hart | Visiting Artist Lecture Series",
+   "host": "College of Visual and Performing Arts (VPA)",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-03T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Shaffer Art Building, Shemin Auditorium",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/tom-hart-visiting-artist-lecture-series",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "OttoTHON's General Body is a group of students dedicated to serving the children and families at Upstate Golisano Children's Hospital year-round through event planning, fundraising, and outreach efforts. The biweekly General Body Meetings will be used for team bonding, planning, ",
    "eligibility": "Open to students",
    "tags": [
@@ -5099,8 +6308,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12716918",
    "type": "event",
    "title": "OttoTHON General Body Meeting",
@@ -5128,8 +6337,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12920242",
    "type": "event",
    "title": "Team Captains Meeting",
@@ -5157,8 +6366,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12950749",
    "type": "event",
    "title": "Winter Celebration",
@@ -5186,8 +6395,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12903585",
    "type": "event",
    "title": "A Five-Star Etiquette Dinner",
@@ -5215,8 +6424,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489118",
    "type": "event",
    "title": "Cru Real Life Weekly Meeting",
@@ -5233,6 +6442,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Get your skate on at the Tennity Ice Skating Pavilion! Admission and skate rental is free for Syracuse University and SUNY ESF students. Syracuse University/SUNY ESF I.D. card is required for entry. Explore the Campus Shuttle Schedules webpage to help plan your visit. If this is ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "social activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_50604903844885",
+   "type": "event",
+   "title": "Late Night Ice",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-04T02:00:00.000Z",
+   "startTime": "21:00",
+   "place": {
+    "name": "Tennity Ice Skating Pavilion",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://events.syracuse.edu/event/late-night-ice",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "General meeting for all NALFO members",
    "eligibility": "Open to students",
    "tags": [
@@ -5244,8 +6482,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887993",
    "type": "event",
    "title": "General Council Meeting",
@@ -5273,8 +6511,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12936895",
    "type": "event",
    "title": "fetch editorial meeting",
@@ -5303,8 +6541,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12920239",
    "type": "event",
    "title": "Multicultural Leadership Council Meeting",
@@ -5334,8 +6572,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12677673",
    "type": "event",
    "title": "Kessler Scholars First Year Seminar: Semester Recap and White Elephant",
@@ -5364,8 +6602,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12677743",
    "type": "event",
    "title": "Kessler Scholars Second Year Seminar: Revisit Bucket Lists",
@@ -5394,8 +6632,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12768016",
    "type": "event",
    "title": "Shape the Future of Student Activism with Democracy Matters SU!",
@@ -5424,8 +6662,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12846945",
    "type": "event",
    "title": "PFC BOP Meetings",
@@ -5453,8 +6691,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12627792",
    "type": "event",
    "title": "Freshman Women's Bibly Study",
@@ -5482,8 +6720,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12601070",
    "type": "event",
    "title": "Men's Freshmen Bible Study",
@@ -5511,8 +6749,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12950739",
    "type": "event",
    "title": "Zamboni Revolution Improv Team Fall Show #3",
@@ -5540,8 +6778,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12771613",
    "type": "event",
    "title": "12.04.26 Games Club",
@@ -5569,8 +6807,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12535069",
    "type": "event",
    "title": "Phi Sigma Pi Chapter",
@@ -5598,8 +6836,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12888102",
    "type": "event",
    "title": "Alpha Omega Epsilon Chapter Meeting",
@@ -5616,6 +6854,37 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Need a quiet spot to focus? Need to finish some last-minute assignments you procrastinated on? Just want to be in an intellectually motivating setting? Come to the Barner-McDuffie House on Sundays for Sunday Study Hall, where we lock in and make sure we get our scholarly work don",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "study session"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_53488965037320",
+   "type": "event",
+   "title": "Sunday Study Hall",
+   "host": "Barner-McDuffie House",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-06T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Barner-McDuffie House",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/study-hall-sundays",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Cuse Krew's mission to provide a safe space for those who enjoy K-Pop. One of the ways, we do this is having an end of semester showcase to highlight the talents of our members. Come support the Cuse Krew Fall Showcase featuring 50+ dancers who have worked hard throughout the sem",
    "eligibility": "Open to students",
    "tags": [
@@ -5627,8 +6896,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12923443",
    "type": "event",
    "title": "CuseKrew Fall 2026 Showcase",
@@ -5656,8 +6925,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12761102",
    "type": "event",
    "title": "OttoTHON Full-Team Meeting",
@@ -5685,8 +6954,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12648719",
    "type": "event",
    "title": "Global Medical Brigades General Body Meeting #1",
@@ -5714,8 +6983,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12887352",
    "type": "event",
    "title": "OLP Meetings",
@@ -5732,6 +7001,31 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "This is your chance to snag a selfie with the Dean of Students, show off your Orange spirit and win prizes along the way! Your task is simple: spot Dean Dixon at events around campus and grab a quick selfie! Then email your picture with the subject line #CUSEDOS to dos@syr.edu. E",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social activities"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:51.116Z",
+   "createdAt": "2026-11-09T01:35:51.116Z",
+   "id": "op_syracuse_lc_51930796536798",
+   "type": "event",
+   "title": "Dean Dixon Selfie Challenge",
+   "host": "Student Experience",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-07T05:00:00.000Z",
+   "benefit": "Free food",
+   "sourceUrl": "https://events.syracuse.edu/event/dean-dixon-selfie-challenge",
+   "sourceLabel": "Syracuse University Events"
+  },
+  {
    "description": "Need a space to take a break between classes? Want a private space to rest after your workout? Want to try new tools to take care of your headspace? Visit the MindSpa at the Barnes Center at the Arch! Offering a relaxing space for you to de-stress. In a quiet, low-light space; ac",
    "eligibility": "Open to students",
    "tags": [
@@ -5743,8 +7037,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12610222",
    "type": "event",
    "title": "MindSpa Hours of Operation",
@@ -5772,8 +7066,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12495037",
    "type": "event",
    "title": "Community Group",
@@ -5801,8 +7095,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12489135",
    "type": "event",
    "title": "Student Government Association Assembly",
@@ -5830,8 +7124,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-08T03:42:11.166Z",
-   "createdAt": "2026-11-08T03:42:11.166Z",
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
    "id": "op_syracuse_eg_12736314",
    "type": "event",
    "title": "The Impact Movement General Body Meeting",
@@ -5845,6 +7139,125 @@
     "lng": -76.1351
    },
    "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12736314",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Model United Nations Club meets weekly to discuss varied topics of international importance as well as fun fantasy themes from the perspective of diverse countries and parties. We practice a mix of both General Assembly and crisis style committees. Through this club, you will",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
+   "id": "op_syracuse_eg_12675768",
+   "type": "event",
+   "title": "Model UN Club General Meeting",
+   "host": "Model United Nations Club",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-08T22:45:00.000Z",
+   "startTime": "17:45",
+   "place": {
+    "name": "LYMAN HALL 126",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12675768",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Crocheting for the Cuse Community (CCC) aims to create a safe space where students can learn crochet techniques regardless of any prior experience they may or may not have. CCC will collectively learn to create garments that will be donated to several community organizations in t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
+   "id": "op_syracuse_eg_12546181",
+   "type": "event",
+   "title": "Crocheting for the Cuse Community Weekly Meeting",
+   "host": "Crocheting for the 'Cuse Community",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-08T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "HALL OF LANGUAGES 211",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12546181",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General meeting for United AI, weekly.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
+   "id": "op_syracuse_eg_12530834",
+   "type": "event",
+   "title": "United AI General Meeting",
+   "host": "United AI",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-09T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "NEWHOUSE COMM CENTER 1 102",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12530834",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We are the only fully Kpop clubs on campus! We meet once a week to have fun discussions about anything and everything Kpop! All students are welcome at any time!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-09T01:35:13.832Z",
+   "createdAt": "2026-11-09T01:35:13.832Z",
+   "id": "op_syracuse_eg_12928491",
+   "type": "event",
+   "title": "Cuse Krew Weekly Meeting",
+   "host": "Cuse Krew",
+   "schoolId": "s_syracuse",
+   "date": "2026-12-09T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "HALL OF LANGUAGES 115",
+    "lat": 43.0392,
+    "lng": -76.1351
+   },
+   "sourceUrl": "https://syracuse.campuslabs.com/engage/event/12928491",
    "sourceLabel": "Student org events"
   }
  ]
