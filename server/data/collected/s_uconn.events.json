@@ -1,8 +1,7 @@
 {
- "collectedAt": "2026-11-09T00:38:23.182Z",
+ "collectedAt": "2026-11-09T01:37:28.945Z",
  "sources": [
-  "engage https://uconntact.uconn.edu 211",
-  "livewhale https://events.uconn.edu 99"
+  "engage https://uconntact.uconn.edu 211"
  ],
  "events": [
   {
@@ -17,8 +16,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754605",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -35,37 +34,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2331596",
-   "type": "event",
-   "title": "Let’s Talk with Amy at CAPS",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-09T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "Rowe Center",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2304818-lets-talk-with-amy-at-caps",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Every Monday you can stop by the Schreiber Reading Room (R. 253) anytime from 11:30 AM - 2:30 PM to play a round, or more, of Badminton! All supplies provided! Day: Mondays Time: 11:30 AM - 2:30 PM Location: RM 253, Schreiber Reading Room If you require an accommodation to partic",
    "eligibility": "Open to students",
    "tags": [
@@ -77,8 +45,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697592",
    "type": "event",
    "title": "Weekly Free-Play Badminton",
@@ -95,39 +63,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join the Office for Inclusion and Civil Rights Title IX Team for a community conversation about findings from UConn’s 2026 Student Campus Climate Survey.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2533438",
-   "type": "event",
-   "title": "Student Campus Climate Survey Data to Action: Community Conversation with UConn Storrs Faculty/Staff",
-   "host": "Office for Inclusion and Civil Rights",
-   "schoolId": "s_uconn",
-   "date": "2026-11-09T16:30:00.000Z",
-   "startTime": "11:30",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2499965-student-campus-climate-survey-data-to-action",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW . The service is free of charge and offered on a first come, first served basis for all NCAA Student Ath let es only and are about 15-20 minutes. More i",
    "eligibility": "Open to students",
    "tags": [
@@ -140,8 +75,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12670904",
    "type": "event",
    "title": "Let’s Talk with Sam for NCAA Student Athletes",
@@ -169,8 +104,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_11916154",
    "type": "event",
    "title": "Finance Committee Meeting",
@@ -187,37 +122,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Confused about finding a job? Wondering how to stand out? Come join the Family Law Association for a casual chat about cold emailing and writing cover letters, two skills that can really set you apart in the job search. Pizza will be provided! When: Monday, November 9th at 12:",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "career &amp; professional development"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2629195",
-   "type": "event",
-   "title": "Cold Emailing & Cover Letter Lunch & Learn w/ FLA",
-   "host": "Law School",
-   "schoolId": "s_uconn",
-   "date": "2026-11-09T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Hosmer Hall, Janet M. Blumberg Hall",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/law-school/event/2629195-cold-emailing-cover-letter-lunch-learn-w",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Schedule your appointment by going to myhealth.uconn.edu Please note: online scheduling will open one week before each date. HAVE YOU GOTTEN YOUR FLU SHOT? Vaccination is one of the best ways to protect against influenza. CDC’s Advisory Committee on Immunization Practices r",
    "eligibility": "Open to students",
    "tags": [
@@ -229,8 +133,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12715981",
    "type": "event",
    "title": "Free Flu Shots",
@@ -247,70 +151,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join the Office for Inclusion and Civil Rights Title IX Team for a community conversation about findings from UConn’s 2026 Student Campus Climate Survey.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2598253",
-   "type": "event",
-   "title": "Student Campus Climate Survey Data to Action: Community Conversation with UConn Storrs Graduate Students",
-   "host": "Title IX",
-   "schoolId": "s_uconn",
-   "date": "2026-11-09T18:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2576884-student-campus-climate-survey-data-to-action",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304845",
-   "type": "event",
-   "title": "Let’s Talk with Fumi",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-09T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Hilda May Williams Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/student-health-and-wellness/event/2304845-lets-talk-with-fumi",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Help clean up the area around North Eagleville Brook for healthier waterways! Meet us in front of Science 1 Research Center at 2:15pm to head over together. We have trash bags and extra gloves, but you are welcome to bring your own. Remember to dress for the weather as it may be ",
    "eligibility": "Open to students",
    "tags": [
@@ -322,8 +162,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12956030",
    "type": "event",
    "title": "River Cleanup - North Eagleville Brook",
@@ -351,8 +191,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703795",
    "type": "event",
    "title": "Barbershop Group",
@@ -380,8 +220,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710657",
    "type": "event",
    "title": "Huskies on Track: Navigating ADHD at UConn",
@@ -398,39 +238,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join the Office for Inclusion and Civil Rights Title IX Team for a community conversation about findings from UConn’s 2026 Student Campus Climate Survey.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2500240",
-   "type": "event",
-   "title": "Student Campus Climate Survey Data to Action: Community Conversation with UConn Storrs Undergraduate Students",
-   "host": "Office for Inclusion and Civil Rights",
-   "schoolId": "s_uconn",
-   "date": "2026-11-09T20:00:00.000Z",
-   "startTime": "15:00",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2500120-student-campus-climate-survey-data-to-action",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Get ready for a night filled with Caribbean vibes, laughter, and unforgettable memories! Join us for exciting trivia, fun games, karaoke, delicious Caribbean food, and great music. Come connect with new people, celebrate Caribbean culture, and enjoy a fun-filled evening with the ",
    "eligibility": "Open to students",
    "tags": [
@@ -443,8 +250,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12949205",
    "type": "event",
    "title": "Caribbean Trivia: Meet the E-Board",
@@ -473,8 +280,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710680",
    "type": "event",
    "title": "Growth Through Grief: Drop-in Support Group",
@@ -502,8 +309,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12748094",
    "type": "event",
    "title": "Community-Based 12 Step Recovery Meetings",
@@ -531,8 +338,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12962535",
    "type": "event",
    "title": "Clinical Minds Biweekly Case Study Meeting",
@@ -560,8 +367,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12850213",
    "type": "event",
    "title": "“Bobcat – Connecticut’s Secretive Wild Cat” with Paul Colburn!",
@@ -589,8 +396,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12962430",
    "type": "event",
    "title": "Engineers Without Borders UConn - General Body Meeting",
@@ -618,8 +425,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12943987",
    "type": "event",
    "title": "November GBM",
@@ -647,8 +454,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12562659",
    "type": "event",
    "title": "Large Group Fellowship",
@@ -676,8 +483,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754606",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -694,70 +501,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us from 9 -10:30 AM on the Concourse for breakfast! Each week a different department will host a bagel breakfast where you can stop by and learn about the services offered by that department while grabbing a bagel for breakfast! Condiments will be provided as well. Stop by t",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2250901",
-   "type": "event",
-   "title": "Bagels & Beyond",
-   "host": "UConn Stamford",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T14:00:00.000Z",
-   "startTime": "09:00",
-   "place": {
-    "name": "UConn Stamford",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/uconn-stamford/event/2250901-bagels-beyond",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Interested in learning more about your sexual health? Learn more about STI’s and how to stay protected. Join SHaW and Gilead Sciences as they present their Healthy Sexual Program about STI’s. Free lunch provided for the first 30 students.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "health &amp; wellness",
-    "student activities"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2629729",
-   "type": "event",
-   "title": "Sexual Health Education",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T15:00:00.000Z",
-   "startTime": "10:00",
-   "place": {
-    "name": "Hartford Times Building (Hartford)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/live/events/2618178-sexual-health-education",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "TEDxUConn is hosting its semi-annual Cake Pop Fundraiser! Stop by the Student Union on Tuesday, November 10, starting at 11 AM to grab a delicious cake pop while supplies last or until 5pm. Come satisfy your sweet tooth and support TEDxUConn!",
    "eligibility": "Open to students",
    "tags": [
@@ -769,8 +512,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12958692",
    "type": "event",
    "title": "TEDxUConn Cake Pop Fundraiser",
@@ -787,99 +530,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join the Office for Inclusion and Civil Rights Title IX Team for a community conversation about findings from UConn’s 2026 Student Campus Climate Survey.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2500243",
-   "type": "event",
-   "title": "Student Campus Climate Survey Data to Action: Community Conversation with UConn Health Students",
-   "host": "Office for Inclusion and Civil Rights",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "UConn Health",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2500239-student-campus-climate-survey-data-to-action",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Join the Office for Inclusion and Civil Rights Title IX Team for a community conversation about findings from UConn’s 2026 Student Campus Climate Survey.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2533439",
-   "type": "event",
-   "title": "Student Campus Climate Survey Data to Action: Community Conversation with UConn Health Faculty/Staff",
-   "host": "Office for Inclusion and Civil Rights",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "UConn Health",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2500246-student-campus-climate-survey-data-to-action",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "We are pleased to invite you to the November SLHS Colloquium, featuring Dr. Zhenghan Qi, Assistant Professor in the Departments of Communication Sciences and Disorders and Psychology at Northeastern University. Title: I remember what you meant: how mentalizing shapes word learnin",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2589575",
-   "type": "event",
-   "title": "November SLHS Colloquium Dr. Zhenghan Qi",
-   "host": "Speech, Language, and Hearing Sciences",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T18:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "Human Development Center",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/speech-language-and-hearing-sciences/event/2589575-november-slhs-colloquium-dr-zhenghan-qi",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here. Student",
    "eligibility": "Open to students",
    "tags": [
@@ -892,8 +542,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710733",
    "type": "event",
    "title": "Let’s Talk with Jessica",
@@ -910,36 +560,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2308256",
-   "type": "event",
-   "title": "Chemistry Colloquium: Jacob Olshanksky, Amherst College",
-   "host": "Chemistry Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Chemistry Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/chemistry-department/event/2308256-chemistry-colloquium-jacob-olshanksky-amherst",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Join us for Boba and Barakah! Enjoy some delicious boba while spending time with the community and participating in a halaqa on Reflecting on Intentions. Take this opportunity to connect and learn Boba will be available in Oreo, brown sugar, and mango flavors on a first",
    "eligibility": "Open to students",
    "tags": [
@@ -952,8 +572,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12956211",
    "type": "event",
    "title": "Boba and Barakah",
@@ -982,8 +602,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710768",
    "type": "event",
    "title": "Interpersonal Group for Undergraduate Students",
@@ -1000,36 +620,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2274920",
-   "type": "event",
-   "title": "MCB Seminar Series: Michael Ward",
-   "host": "Molecular and Cell Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/molecular-and-cell-biology/event/2274920-mcb-seminar-series-michael-ward",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Take a break from your schoolwork and come spend a little time with one of the therapy dogs from Tails of Joy. Pet Therapy is known to reduce stress, anxiety and to build empathy. Please note that Pet Therapy is provided on a volunteer basis. We cannot guarantee that dogs will be",
    "eligibility": "Open to students",
    "tags": [
@@ -1041,8 +631,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12737837",
    "type": "event",
    "title": "Pet Therapy",
@@ -1059,38 +649,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "cultural centers &amp; programs",
-    "student activities"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2602672",
-   "type": "event",
-   "title": "French Conversation Opportunity: Conversations Françaises",
-   "host": "Literatures, Cultures and Languages",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "Susan V. Herbst Hall (Formerly Oak Hall)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/literatures-cultures-and-languages/event/2602672-french-conversation-opportunity-conversations-franai",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Join us on Tuesday, November 10, 2026, from 5:00 PM – 6:30 PM in the Schreiber Reading Room is Room 253 for an exciting guest speaker event featuring Gaetano Ciambriello, an experienced professional in lending, sales, residential and commercial real estate. Gaetano will sha",
    "eligibility": "Open to students",
    "tags": [
@@ -1103,8 +661,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12880303",
    "type": "event",
    "title": "RES Guest Speaker - Gaetano Ciambriello",
@@ -1133,8 +691,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12827681",
    "type": "event",
    "title": "University of Bridgeport PA Program Tour",
@@ -1151,39 +709,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Smash, serve, and swish your way to victory in the Gamehub and Ping Pong clubs’ multi-game tournament event in the medical/dental student lounge! We have ping-pong, Mario Kart, and Smash Bros brackets with pizza and snacks for all attendees.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "athletics &amp; recreation",
-    "health &amp; wellness",
-    "student activities"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2556844",
-   "type": "event",
-   "title": "Game Hub x Ping Pong: Battle for the Lounge",
-   "host": "UConn Health Medical Dental Student Government",
-   "schoolId": "s_uconn",
-   "date": "2026-11-10T22:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "UConn Health",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/uconn-health-medical-dental-student-government/event/2556844-game-hub-x-ping-pong-battle-for-the-lounge",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Thinking about a career in industry after graduate school? Join UConn Grad SWE for a conversation with three women engineers about their career paths, the transition into the workforce, and how they use their graduate degrees in their work. Our panelists: &bull; Dr. Adanma Akoma,",
    "eligibility": "Open to students",
    "tags": [
@@ -1197,8 +722,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12938683",
    "type": "event",
    "title": "Grad SWE: Industry Careers Panel",
@@ -1227,8 +752,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12843391",
    "type": "event",
    "title": "Tatreez Night",
@@ -1256,8 +781,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12940834",
    "type": "event",
    "title": "Pool Tournament",
@@ -1286,8 +811,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12906086",
    "type": "event",
    "title": "UConn iGEM Murder Mystery Night",
@@ -1316,8 +841,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754607",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -1345,8 +870,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12745629",
    "type": "event",
    "title": "Midweek Coffee Break",
@@ -1363,68 +888,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "On Wednesday, November 11, 2026, Dr. Abha Rajbhandari will be here at UConn Physiology and Neurobiology from Icahn School of Medicine at Mount Sinai, hosted by Dr. Natale Sciolino Their seminar talk title will be announced shortly.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2223903",
-   "type": "event",
-   "title": "PNB Seminar Series: Dr. Abha Rajbhandari",
-   "host": "Physiology & Neurobiology",
-   "schoolId": "s_uconn",
-   "date": "2026-11-11T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "Torrey Life Sciences Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/physiology-neurobiology/event/2223903-pnb-seminar-series-dr-abha-rajbhandari",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2639343",
-   "type": "event",
-   "title": "Algebra Seminar - Ups and downs in the Weyl algebra - Tom Roby (UConn)",
-   "host": "Mathematics Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-11T16:15:00.000Z",
-   "startTime": "11:15",
-   "place": {
-    "name": "Monteith Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/mathematics-department/event/2639343-algebra-seminar-ups-and-downs-in-the-weyl",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Huskies, your voice matters! Join the Senate meetings every Wednesday! In room 134 from 12:15pm to 1:15pm. Become a senator after attending TWO consecutive meetings. Be part of the decisions that shape our campus. SGA is governed by students and by the General Senate. The Ge",
    "eligibility": "Open to students",
    "tags": [
@@ -1436,8 +899,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12715995",
    "type": "event",
    "title": "General Senate Meeting",
@@ -1466,8 +929,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710807",
    "type": "event",
    "title": "Let’s Talk Online with Graciela",
@@ -1495,8 +958,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710832",
    "type": "event",
    "title": "Interpersonal Group for Graduate Students",
@@ -1513,32 +976,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Center for Academic Success and Engagement (CASE) is hosting a fun pop-up event at UConn Stamford. Students can participate in academic trivia, spin the prize wheel, enjoy free snacks, and win exciting prizes and CASE merchandise. This event is a great opportunity for student",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "academic support"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2590044",
-   "type": "event",
-   "title": "CASE POP-UP IN CONCOURSE",
-   "host": "UConn Stamford",
-   "schoolId": "s_uconn",
-   "date": "2026-11-11T19:30:00.000Z",
-   "startTime": "14:30",
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/uconn-stamford/event/2590044-case-pop-up-in-concourse",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Office of Student Activities is hosting a Ping Pong Tournament. Come by the Concourse to compete. Winner gets a $25.00 Amazon Gift Card. Only active undergraduate students eligible to compete. Date: Wednesday, 11/11 Time: Starts at 3:30 PM Location: Concourse If you need an a",
    "eligibility": "Open to students",
    "tags": [
@@ -1550,8 +987,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12940846",
    "type": "event",
    "title": "Ping Pong Tournament",
@@ -1579,8 +1016,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12762943",
    "type": "event",
    "title": "SMART Recovery Meetings",
@@ -1609,8 +1046,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12962331",
    "type": "event",
    "title": "Talk and Learn from Northwestern Mutual - Meet Sydney Dzurka",
@@ -1638,8 +1075,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12931149",
    "type": "event",
    "title": "S'mores Night!",
@@ -1668,8 +1105,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12961927",
    "type": "event",
    "title": "Talk with Dr. Micah Heumann",
@@ -1698,8 +1135,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12809741",
    "type": "event",
    "title": "Deepavali Celebration",
@@ -1717,37 +1154,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Northeast Power Electronics Symposium (NEPES) brings together regional, national, and international leaders in power electronics from industry, academia, and government. It serves as a hub to discuss present future power electronics technology and innovation from materials to",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2488564",
-   "type": "event",
-   "title": "2026 Northeast Power Electronics Symposium (NEPES)",
-   "host": "College of Engineering",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T12:30:00.000Z",
-   "startTime": "07:30",
-   "place": {
-    "name": "IPB",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/engineering/event/2488564-2026-northeast-power-electronics-symposium-nepes",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here. Student",
    "eligibility": "Open to students",
    "tags": [
@@ -1760,8 +1166,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697084",
    "type": "event",
    "title": "Let’s Talk with Fumi",
@@ -1789,8 +1195,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754608",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -1807,68 +1213,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2223232",
-   "type": "event",
-   "title": "Neuroscience Seminar Series - Kandel",
-   "host": "Neuroscience Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "Low Learning Center (UConn Health)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/neuroscience/event/2223232-neuroscience-seminar-series-kandel",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Director of Functional Neurosurgery Asst. Prof, Dept Neurosurgery University of Connecticut Health Chief Medical Officer, CF Neuromedics",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2618177",
-   "type": "event",
-   "title": "BME Seminar Series : Christopher Conner, MD/PhD",
-   "host": "College of Engineering",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "Austin Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/engineering/event/2618177-bme-seminar-series-christopher-conner-mdphd",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW . The service is free of charge and offered on a first come, first served basis for all NCAA Student Ath let es only and are about 15-20 minutes. More i",
    "eligibility": "Open to students",
    "tags": [
@@ -1881,8 +1225,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697342",
    "type": "event",
    "title": "Let’s Talk with Kiara for NCAA Student Athletes",
@@ -1910,8 +1254,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12953271",
    "type": "event",
    "title": "Utility Tunnels Tour",
@@ -1928,100 +1272,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us in the Academic Achievement Center for a workshop on how talking to your professors leads to academic success.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "training &amp; workshops"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2359009",
-   "type": "event",
-   "title": "Talking to Professors - Workshop",
-   "host": "UConn Waterbury",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Rectory Building (Waterbury)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/uconn-waterbury/event/2359009-talking-to-professors-workshop",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Do you know how to effectively communicate with your professor? This workshop will provide strategies to improve your communication skills during office hours, sending emails, and what are the “right” questions that will prepare you for your test.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2373978",
-   "type": "event",
-   "title": "AAC Waterbury Workshop: Talking to Professors",
-   "host": "Academic Achievement Center",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Rectory Building (Waterbury)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/academic-achievement-center/event/2373978-aac-waterbury-workshop-talking-to-professors",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Prof. Kevin Feeney (History) will give a talk on “Abusing Your Rulers: Protest and Performance in East Rome.”",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2389205",
-   "type": "event",
-   "title": "Faculty Talk: Kevin Feeney on Protest and Performance in East Rome",
-   "host": "Humanities Institute",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Homer Babbidge Library",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2389204-faculty-talk-kevin-feeney",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here. Student",
    "eligibility": "Open to students",
    "tags": [
@@ -2034,8 +1284,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697620",
    "type": "event",
    "title": "Let’s Talk with Daveon",
@@ -2063,8 +1313,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710636",
    "type": "event",
    "title": "“The Round Table” Mandarin Speaking Group for Graduate Students",
@@ -2092,8 +1342,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12926262",
    "type": "event",
    "title": "SOLID: Mission, Values, & Culture Workshop",
@@ -2121,8 +1371,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12940862",
    "type": "event",
    "title": "Chess Tournament",
@@ -2150,8 +1400,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12926275",
    "type": "event",
    "title": "SOLID: Executive Leadership Workshop",
@@ -2168,36 +1418,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "This talk will appeal to music lovers, anthropologists, and those curious about contemporary Egyptian culture.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2557530",
-   "type": "event",
-   "title": "Mahraganat Music in Egypt: Talk with Dalia Ibraheem",
-   "host": "Literatures, Cultures and Languages",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Susan V. Herbst Hall (Formerly Oak Hall)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/literatures-cultures-and-languages/event/2557530-mahraganat-music-in-egypt-talk-with-dalia-ibraheem",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -2209,8 +1429,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710861",
    "type": "event",
    "title": "BLOOM: Black, Indigenous, and People of Color (BIPOC)",
@@ -2227,67 +1447,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2401526",
-   "type": "event",
-   "title": "CCAM Seminar Series - Dr. Coralie Dessauges",
-   "host": "Center for Cell Analysis and Modeling",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "CGSB, 400 Farmington Ave",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/center-for-cell-analysis-and-modeling/event/2401526-ccam-seminar-series-dr-coralie-dessauges",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Speaker: Molly Burhans , Cartographer, Data Scientist, and Environmental Activist",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2308835",
-   "type": "event",
-   "title": "Teale Lecture: Molly Burhans, “The Geography of Hope: Unlocking Property for Planetary Stewardship”",
-   "host": "Institute of the Environment and Energy",
-   "schoolId": "s_uconn",
-   "date": "2026-11-12T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "The Dodd Center for Human Rights",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/teale-lecture-11-12-26-molly-burhans",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "What drives mate selection across social hierarchies? How do sociologists and evolutionary theorists think about status, dating markets, and strategic pairing? Join us for an exploration of hypergamy, aka the practice of marrying or partnering up within or across social strata. W",
    "eligibility": "Open to students",
    "tags": [
@@ -2299,8 +1458,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12961996",
    "type": "event",
    "title": "Hypergamy",
@@ -2329,8 +1488,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12939693",
    "type": "event",
    "title": "Gingerbread Around the World: Building Traditions & Celebrating Cultures",
@@ -2360,8 +1519,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12952270",
    "type": "event",
    "title": "From Reading to Publishing: A Practical Guide to Research Papers",
@@ -2390,8 +1549,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12834241",
    "type": "event",
    "title": "Bookmark Making",
@@ -2420,8 +1579,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12960623",
    "type": "event",
    "title": "Open Mic PULSCE X Humnanities Institute",
@@ -2450,8 +1609,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12821399",
    "type": "event",
    "title": "Movie Night",
@@ -2479,8 +1638,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12780350",
    "type": "event",
    "title": "Sexperts Kinky Craft Night",
@@ -2508,8 +1667,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12785455",
    "type": "event",
    "title": "MACC",
@@ -2537,8 +1696,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12785480",
    "type": "event",
    "title": "Click",
@@ -2566,8 +1725,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754609",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -2584,37 +1743,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2299694",
-   "type": "event",
-   "title": "Marketing Seminar Series: Christophe Van den Bulte",
-   "host": "Marketing Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-13T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "School of Business",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/marketing-department/event/2299694-marketing-seminar-series-christophe-van-den-bulte",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here. Student",
    "eligibility": "Open to students",
    "tags": [
@@ -2627,8 +1755,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702752",
    "type": "event",
    "title": "Let’s Talk with SHaW",
@@ -2645,69 +1773,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Ocean Color and Plankton Distributions",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers",
-    "student activities"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2464415",
-   "type": "event",
-   "title": "Marine Sciences Seminar: Sasha Kramer",
-   "host": "Marine Sciences Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-13T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "Lowell P. Weicker Jr. Building (Avery Point)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2359020",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "On Friday, November 13, 2026, Jorge Villalobos Santeli will be presenting his Research in Progress (RIP) Talk. Jorge is a Ph.D. student in the LoTurco Lab.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2430204",
-   "type": "event",
-   "title": "Research in Progress (RIP) Talk: Jorge Villalobos Santeli",
-   "host": "Physiology & Neurobiology",
-   "schoolId": "s_uconn",
-   "date": "2026-11-13T17:20:00.000Z",
-   "startTime": "12:20",
-   "place": {
-    "name": "Torrey Life Sciences Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/physiology-neurobiology/event/2430204-research-in-progress-rip-talk-jorge-villalobos",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -2719,8 +1784,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702822",
    "type": "event",
    "title": "Families with Addiction",
@@ -2749,8 +1814,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703346",
    "type": "event",
    "title": "Let’s Talk with Michelle",
@@ -2778,8 +1843,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12826991",
    "type": "event",
    "title": "Ramen Cultural Showcase & Culinary History Workshop",
@@ -2796,36 +1861,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us for the Annual Logic Lecture, delivered by Kai von Fintel ! Details t.b.a.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2212298",
-   "type": "event",
-   "title": "Annual Logic Lecture: Kai von Fintel",
-   "host": "UConn Logic Group Colloquium",
-   "schoolId": "s_uconn",
-   "date": "2026-11-13T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Homer Babbidge Library",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2202632-annual-logic-lecture-kai-von-fintel",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SHaW’s All Recovery Meetings are available for UConn students. The meetings are a gathering for all who struggle with substance use and/or other mental and behavioral health disorders. (no pre-registration needed - just show up) An All Recovery meeting is ‘non-denomin",
    "eligibility": "Open to students",
    "tags": [
@@ -2837,8 +1872,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12763157",
    "type": "event",
    "title": "All Recovery Meetings",
@@ -2867,8 +1902,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12905908",
    "type": "event",
    "title": "Wii Sports Tournament",
@@ -2898,8 +1933,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12960133",
    "type": "event",
    "title": "UConn Sikh Student Association Keertan Night",
@@ -2928,8 +1963,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12873505",
    "type": "event",
    "title": "Game vs. Wentworth",
@@ -2958,8 +1993,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12787028",
    "type": "event",
    "title": "U-Condom-a-Thon at Late Night",
@@ -2988,8 +2023,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12770362",
    "type": "event",
    "title": "CUSA New York Trip to China Institute",
@@ -3017,8 +2052,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12785487",
    "type": "event",
    "title": "WAIM (Reserved)",
@@ -3046,8 +2081,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12785499",
    "type": "event",
    "title": "Holy Family",
@@ -3075,8 +2110,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12951431",
    "type": "event",
    "title": "Volunteering at the Covenant Soup Kitchen",
@@ -3104,8 +2139,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12866350",
    "type": "event",
    "title": "Don't Mess with Mansfield - Fall Cleanup 2026",
@@ -3133,8 +2168,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12821409",
    "type": "event",
    "title": "Page to Stage MainStage Musical : \"Be More Chill\"",
@@ -3162,8 +2197,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12821410",
    "type": "event",
    "title": "Page to Stage MainStage Musical : \"Be More Chill\"",
@@ -3191,8 +2226,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12874133",
    "type": "event",
    "title": "Game vs. Western Connecticut",
@@ -3220,8 +2255,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12785507",
    "type": "event",
    "title": "MACC (Reserved)",
@@ -3249,8 +2284,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12948495",
    "type": "event",
    "title": "Kesem Together Day",
@@ -3279,8 +2314,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12727027",
    "type": "event",
    "title": "Diwali Culture Show",
@@ -3309,8 +2344,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12821411",
    "type": "event",
    "title": "Page to Stage MainStage Musical : \"Be More Chill\"",
@@ -3338,8 +2373,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754610",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -3356,37 +2391,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304828",
-   "type": "event",
-   "title": "Let’s Talk with Amy at Student Activities",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-16T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/student-health-and-wellness/event/2304828-lets-talk-with-amy-at-student-activities",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Every Monday you can stop by the Schreiber Reading Room (R. 253) anytime from 11:30 AM - 2:30 PM to play a round, or more, of Badminton! All supplies provided! Day: Mondays Time: 11:30 AM - 2:30 PM Location: RM 253, Schreiber Reading Room If you require an accommodation to partic",
    "eligibility": "Open to students",
    "tags": [
@@ -3398,8 +2402,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697593",
    "type": "event",
    "title": "Weekly Free-Play Badminton",
@@ -3428,8 +2432,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12670905",
    "type": "event",
    "title": "Let’s Talk with Sam for NCAA Student Athletes",
@@ -3458,8 +2462,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12722235",
    "type": "event",
    "title": "American Red Cross Blood Drive",
@@ -3477,66 +2481,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2280843",
-   "type": "event",
-   "title": "Molecular Biology and Biochemistry Work in Progress Talk: Wen Liu (Dr. Steven Chou’s Lab)",
-   "host": "UConn Health Molecular Biology and Biophysics",
-   "schoolId": "s_uconn",
-   "date": "2026-11-16T17:00:00.000Z",
-   "startTime": "12:00",
-   "place": {
-    "name": "Room E2036 and Webex",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2280839-molecular-biology-and-biochemistry-work-in",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2330551",
-   "type": "event",
-   "title": "PDE & Differential Geometry Seminar: Liam Mazurowski (Southern Connecticut State)",
-   "host": "Mathematics Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-16T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Monteith Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/mathematics-department/event/2330551-pde-differential-geometry-seminar-liam",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -3548,8 +2492,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703796",
    "type": "event",
    "title": "Barbershop Group",
@@ -3577,8 +2521,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710658",
    "type": "event",
    "title": "Huskies on Track: Navigating ADHD at UConn",
@@ -3606,8 +2550,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710681",
    "type": "event",
    "title": "Growth Through Grief: Drop-in Support Group",
@@ -3635,8 +2579,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12748087",
    "type": "event",
    "title": "URC 12 Step Recovery Meetings",
@@ -3653,68 +2597,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2406254",
-   "type": "event",
-   "title": "Let’s Talk with Greg at Rec Center",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-16T22:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "Student Recreation Center",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/student-health-and-wellness/event/2406254-lets-talk-with-greg-at-rec-center",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "This is designed for leaders in VII student organizations. Anyone is welcome to attend. This workshop moves beyond the traditional focus on “imposter syndrome” to explore how both personal narratives and organizational culture shape confidence and belonging. Food will be provided",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "training &amp; workshops"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2256634",
-   "type": "event",
-   "title": "Engineering for Impact Workshop: Empowering Confidence in STEM - Beyond Imposter Syndrome",
-   "host": "College of Engineering",
-   "schoolId": "s_uconn",
-   "date": "2026-11-16T22:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "Castleman Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/engineering/event/2256634-engineering-for-impact-workshop-empowering",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Ready to meet someone new? Come join the African Student Association for a fun, interactive social event where you can meet new people, make connections, and maybe even find a spark! Inspired by the popular Pop the Balloon challenge, participants will get the chance to answer fun",
    "eligibility": "Open to students",
    "tags": [
@@ -3727,8 +2609,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12961671",
    "type": "event",
    "title": "ASA Presents: POP The Balloon",
@@ -3758,8 +2640,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12851104",
    "type": "event",
    "title": "Diwali Lakshmi Pooja",
@@ -3788,8 +2670,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12780302",
    "type": "event",
    "title": "Good Vibrations: A Pleasure Pop-Up Workshop",
@@ -3806,37 +2688,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "career &amp; professional development"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2575502",
-   "type": "event",
-   "title": "Communication Alumni Career Panel",
-   "host": "Center for Career Development",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T00:00:00.000Z",
-   "startTime": "19:00",
-   "place": {
-    "name": "UConn Stamford",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/center-for-career-development/event/2575502-communication-alumni-career-panel",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "A weekly Co-ed large group conversational-based bible study filled with games, worship (led by our student worship team), and conversation-based bible study (led by our current staff, Brad Hackett and Gil Banton). Large group fellowship is a welcoming space intended for anyone in",
    "eligibility": "Open to students",
    "tags": [
@@ -3848,8 +2699,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12562660",
    "type": "event",
    "title": "Large Group Fellowship",
@@ -3877,8 +2728,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754611",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -3895,100 +2746,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us from 9 -10:30 AM on the Concourse for breakfast! Each week a different department will host a bagel breakfast where you can stop by and learn about the services offered by that department while grabbing a bagel for breakfast! Condiments will be provided as well. Stop by t",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2250902",
-   "type": "event",
-   "title": "Bagels & Beyond",
-   "host": "UConn Stamford",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T14:00:00.000Z",
-   "startTime": "09:00",
-   "place": {
-    "name": "UConn Stamford",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/uconn-stamford/event/2250902-bagels-beyond",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "UConn Center on Aging invites you to attend our next seminar on aging research: “Motivation for Movement in Aging and in Parkinson’s Disease”",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2602669",
-   "type": "event",
-   "title": "Aging Research SPARK Seminar Series Presentation",
-   "host": "UConn Health",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T17:00:00.000Z",
-   "startTime": "12:00",
-   "place": {
-    "name": "UConn Health",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/uconn-health/event/2602669-aging-research-spark-seminar-series-presentation",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Test your international trivia skills while enjoying a light lunch!",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "student activities"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2629312",
-   "type": "event",
-   "title": "International Jeopardy (International Education Week)",
-   "host": "Law School",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Thomas J. Meskill Law Library",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/law-school/event/2629312-international-jeopardy-international-education",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SHaW is hosting free STI testing and treatment for gonorrhea and chlamydia. It’s quick, easy, and judgment-free! Schedule your appointment: myhealth.uconn.edu ( Online scheduling will open one week prior to the events.) Online scheduling opens one week before the date. We&r",
    "eligibility": "Open to students",
    "tags": [
@@ -4000,8 +2757,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12716155",
    "type": "event",
    "title": "Free STI Testing",
@@ -4030,8 +2787,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710734",
    "type": "event",
    "title": "Let’s Talk with Jessica",
@@ -4048,67 +2805,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304919",
-   "type": "event",
-   "title": "Let’s Talk with Michelle",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T18:30:00.000Z",
-   "startTime": "13:30",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2304874-lets-talk-with-michelle",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2308263",
-   "type": "event",
-   "title": "Chemistry Colloquium: Raj Krishanswamy, CJ Biomaterials",
-   "host": "Chemistry Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Chemistry Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/chemistry-department/event/2308263-chemistry-colloquium-raj-krishanswamy-cj",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -4120,8 +2816,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710769",
    "type": "event",
    "title": "Interpersonal Group for Undergraduate Students",
@@ -4138,36 +2834,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2274921",
-   "type": "event",
-   "title": "MCB Seminar Series: Gregory Fournier",
-   "host": "Molecular and Cell Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-11-17T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/molecular-and-cell-biology/event/2274921-mcb-seminar-series-gregory-fournier",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SHaW is hosting free STI testing and treatment for gonorrhea and chlamydia. It’s quick, easy, and judgment-free! Schedule your appointment: myhealth.uconn.edu ( Online scheduling will open one week prior to the events.) Online scheduling opens one week before the date. We&r",
    "eligibility": "Open to students",
    "tags": [
@@ -4179,8 +2845,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12716156",
    "type": "event",
    "title": "Free STI Testing",
@@ -4208,8 +2874,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12737838",
    "type": "event",
    "title": "Pet Therapy",
@@ -4237,8 +2903,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12802811",
    "type": "event",
    "title": "Bedazzling by NISA",
@@ -4267,8 +2933,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12884167",
    "type": "event",
    "title": "BAPS CAMPUS DIWALI",
@@ -4297,8 +2963,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12786762",
    "type": "event",
    "title": "Sexual Health Tabling",
@@ -4327,8 +2993,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12701254",
    "type": "event",
    "title": "Kamayan Night",
@@ -4357,8 +3023,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12909641",
    "type": "event",
    "title": "Super Beaver Moon Celebration (feat. Live Band!)",
@@ -4386,8 +3052,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754612",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -4415,8 +3081,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12745630",
    "type": "event",
    "title": "Midweek Coffee Break",
@@ -4444,8 +3110,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12715982",
    "type": "event",
    "title": "Free Flu Shots",
@@ -4474,8 +3140,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710808",
    "type": "event",
    "title": "Let’s Talk Online with Graciela",
@@ -4503,8 +3169,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710833",
    "type": "event",
    "title": "Interpersonal Group for Graduate Students",
@@ -4533,8 +3199,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12929899",
    "type": "event",
    "title": "The Feast of Christ The King",
@@ -4565,8 +3231,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12960096",
    "type": "event",
    "title": "Roblox and Carding Making Night",
@@ -4584,37 +3250,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Do you know how to effectively communicate with your professor? This workshop will provide strategies to improve your communication skills during office hours, sending emails, and what are the “right” questions that will prepare you for your test.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2371961",
-   "type": "event",
-   "title": "AAC Storrs Workshop: Talking to Professors",
-   "host": "Academic Achievement Center",
-   "schoolId": "s_uconn",
-   "date": "2026-11-18T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "Rowe Center",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/academic-achievement-center/event/2371961-aac-storrs-workshop-talking-to-professors",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SMART (Self-Management and Recovery Training) Recovery is an evidence-informed recovery method that supports people with substance dependencies and other addictive or problem behaviors to build and maintain motivation; cope with urges and cravings; manage thoughts, feelings and b",
    "eligibility": "Open to students",
    "tags": [
@@ -4626,8 +3261,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12762944",
    "type": "event",
    "title": "SMART Recovery Meetings",
@@ -4644,39 +3279,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "UConn School of Law’s Annual Jurist-in-Residence Program Preserving Human Judgment: Artificial Intelligence, Public Trust, and the Independence of the Courts The Honorable J. Michelle Childs, U.S. Court of Appeals for the D.C. Circuit Time: Lecture begins at 5:30 PM 5:00 PM - Rec",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2558468",
-   "type": "event",
-   "title": "Jurist-in-Residence lecture: Preserving Human Judgment",
-   "host": "Law School",
-   "schoolId": "s_uconn",
-   "date": "2026-11-18T22:00:00.000Z",
-   "startTime": "17:00",
-   "place": {
-    "name": "Stuart F. Smith Reading Room",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/law-school/event/2558468-jurist-in-residence-lecture-preserving-human-judgmen",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Celebrate La Befana with the Italian-American Society! After going over the traditional importance of La Befana and the ritual of having sugar cookies, students will put their skills and knowledge to the test and design their best perception of the holiday. Come enjoy a friendly ",
    "eligibility": "Open to students",
    "tags": [
@@ -4689,8 +3291,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12778271",
    "type": "event",
    "title": "La Befana Cookie Decorating",
@@ -4719,8 +3321,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12867179",
    "type": "event",
    "title": "Albanian Independence Day & Flag Day: Spirit Rock Painting",
@@ -4750,8 +3352,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12845325",
    "type": "event",
    "title": "Honors Alumni Panel for Young Professionals",
@@ -4781,8 +3383,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697085",
    "type": "event",
    "title": "Let’s Talk with Fumi",
@@ -4810,8 +3412,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754613",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -4840,8 +3442,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697343",
    "type": "event",
    "title": "Let’s Talk with Kiara for NCAA Student Athletes",
@@ -4870,8 +3472,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697621",
    "type": "event",
    "title": "Let’s Talk with Daveon",
@@ -4899,8 +3501,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710637",
    "type": "event",
    "title": "“The Round Table” Mandarin Speaking Group for Graduate Students",
@@ -4917,37 +3519,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Title: “A year in the life of a Mansfield red fox”",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2397911",
-   "type": "event",
-   "title": "EEB Seminar: Kurt Schwenk (EEB UConn)",
-   "host": "Ecology and Evolutionary Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-11-19T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "BPB",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/ecology-and-evolutionary-biology/event/2397911-eeb-seminar-kurt-schwenk-eeb-uconn",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -4959,8 +3530,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710862",
    "type": "event",
    "title": "BLOOM: Black, Indigenous, and People of Color (BIPOC)",
@@ -4989,8 +3560,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12926980",
    "type": "event",
    "title": "Free AMC Movie Tickets Giveaway",
@@ -5019,8 +3590,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12857497",
    "type": "event",
    "title": "BYO Bake Potato x Guest Speaker",
@@ -5048,8 +3619,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12821405",
    "type": "event",
    "title": "Presentation Night",
@@ -5077,8 +3648,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754614",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -5107,8 +3678,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702753",
    "type": "event",
    "title": "Let’s Talk with SHaW",
@@ -5125,98 +3696,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Social-Ecological Interactions",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers",
-    "student activities"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2464416",
-   "type": "event",
-   "title": "Marine Sciences Seminar: Heather Leslie",
-   "host": "Marine Sciences Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-20T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "Lowell P. Weicker Jr. Building (Avery Point)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2359021",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2393528",
-   "type": "event",
-   "title": "PSLA Seminar Series: James Liu",
-   "host": "Plant Science and Landscape Architecture",
-   "schoolId": "s_uconn",
-   "date": "2026-11-20T17:15:00.000Z",
-   "startTime": "12:15",
-   "place": {
-    "name": "Young Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2389199-psla-seminar-series-alex-canto-pastor",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Earth Sciences Fall 2026 Seminar Series Dana Royer - Wesleyan University High long-term climate sensitivity over the past 66 Myrs",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2402278",
-   "type": "event",
-   "title": "Earth Sciences Seminar Series - Dana Royer",
-   "host": "Earth Sciences",
-   "schoolId": "s_uconn",
-   "date": "2026-11-20T17:30:00.000Z",
-   "startTime": "12:30",
-   "place": {
-    "name": "Arjona Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2393982-earth-sciences-seminar-series-dana-royer",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -5228,8 +3707,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702823",
    "type": "event",
    "title": "Families with Addiction",
@@ -5258,8 +3737,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703347",
    "type": "event",
    "title": "Let’s Talk with Michelle",
@@ -5287,8 +3766,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12763158",
    "type": "event",
    "title": "All Recovery Meetings",
@@ -5316,8 +3795,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12758962",
    "type": "event",
    "title": "New England Aquarium Fall 2026!",
@@ -5345,8 +3824,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754615",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -5374,8 +3853,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703797",
    "type": "event",
    "title": "Barbershop Group",
@@ -5403,8 +3882,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710659",
    "type": "event",
    "title": "Huskies on Track: Navigating ADHD at UConn",
@@ -5432,8 +3911,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710682",
    "type": "event",
    "title": "Growth Through Grief: Drop-in Support Group",
@@ -5461,8 +3940,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12562661",
    "type": "event",
    "title": "Large Group Fellowship",
@@ -5490,8 +3969,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754616",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -5520,8 +3999,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710735",
    "type": "event",
    "title": "Let’s Talk with Jessica",
@@ -5549,8 +4028,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710770",
    "type": "event",
    "title": "Interpersonal Group for Undergraduate Students",
@@ -5578,8 +4057,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754617",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -5608,8 +4087,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710809",
    "type": "event",
    "title": "Let’s Talk Online with Graciela",
@@ -5637,8 +4116,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710834",
    "type": "event",
    "title": "Interpersonal Group for Graduate Students",
@@ -5666,8 +4145,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12762945",
    "type": "event",
    "title": "SMART Recovery Meetings",
@@ -5696,8 +4175,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697086",
    "type": "event",
    "title": "Let’s Talk with Fumi",
@@ -5725,8 +4204,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754618",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -5755,8 +4234,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697344",
    "type": "event",
    "title": "Let’s Talk with Kiara for NCAA Student Athletes",
@@ -5785,8 +4264,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697622",
    "type": "event",
    "title": "Let’s Talk with Daveon",
@@ -5814,8 +4293,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710638",
    "type": "event",
    "title": "“The Round Table” Mandarin Speaking Group for Graduate Students",
@@ -5843,8 +4322,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710863",
    "type": "event",
    "title": "BLOOM: Black, Indigenous, and People of Color (BIPOC)",
@@ -5872,8 +4351,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754619",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -5902,8 +4381,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702754",
    "type": "event",
    "title": "Let’s Talk with SHaW",
@@ -5931,8 +4410,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702824",
    "type": "event",
    "title": "Families with Addiction",
@@ -5961,8 +4440,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703348",
    "type": "event",
    "title": "Let’s Talk with Michelle",
@@ -5990,8 +4469,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12763159",
    "type": "event",
    "title": "All Recovery Meetings",
@@ -6019,8 +4498,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754620",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -6037,37 +4516,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304829",
-   "type": "event",
-   "title": "Let’s Talk with Amy at Student Activities",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-30T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/student-health-and-wellness/event/2304829-lets-talk-with-amy-at-student-activities",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Every Monday you can stop by the Schreiber Reading Room (R. 253) anytime from 11:30 AM - 2:30 PM to play a round, or more, of Badminton! All supplies provided! Day: Mondays Time: 11:30 AM - 2:30 PM Location: RM 253, Schreiber Reading Room If you require an accommodation to partic",
    "eligibility": "Open to students",
    "tags": [
@@ -6079,8 +4527,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697594",
    "type": "event",
    "title": "Weekly Free-Play Badminton",
@@ -6109,8 +4557,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12722254",
    "type": "event",
    "title": "American Red Cross Blood Drive",
@@ -6140,8 +4588,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12670906",
    "type": "event",
    "title": "Let’s Talk with Sam for NCAA Student Athletes",
@@ -6158,98 +4606,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Do you know how to effectively communicate with your professor? This workshop will provide strategies to improve your communication skills during office hours, sending emails, and what are the “right” questions that will prepare you for your test.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2373577",
-   "type": "event",
-   "title": "AAC Hartford Workshop: Talking To Professors",
-   "host": "Academic Achievement Center",
-   "schoolId": "s_uconn",
-   "date": "2026-11-30T18:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "HTB 202",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/academic-achievement-center/event/2373577-aac-hartford-workshop-talking-to-professors",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304848",
-   "type": "event",
-   "title": "Let’s Talk with Fumi",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-11-30T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Hilda May Williams Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/student-health-and-wellness/event/2304848-lets-talk-with-fumi",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Title: Positive Einstein metrics on infinitely many 4-manifolds",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2533535",
-   "type": "event",
-   "title": "PDE & Differential Geometry Seminar: Tristan Ozuch (MIT)",
-   "host": "Mathematics Department",
-   "schoolId": "s_uconn",
-   "date": "2026-11-30T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Monteith Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/mathematics-department/event/2533535-pde-differential-geometry-seminar-tristan",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -6261,8 +4617,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703798",
    "type": "event",
    "title": "Barbershop Group",
@@ -6290,8 +4646,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710660",
    "type": "event",
    "title": "Huskies on Track: Navigating ADHD at UConn",
@@ -6319,8 +4675,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710683",
    "type": "event",
    "title": "Growth Through Grief: Drop-in Support Group",
@@ -6348,8 +4704,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12748088",
    "type": "event",
    "title": "URC 12 Step Recovery Meetings",
@@ -6377,8 +4733,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12882734",
    "type": "event",
    "title": "Albanian Student Association Sip & Paint",
@@ -6406,8 +4762,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12562662",
    "type": "event",
    "title": "Large Group Fellowship",
@@ -6435,8 +4791,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754705",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -6453,38 +4809,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us from 9 -10:30 AM on the Concourse for breakfast! Each week a different department will host a bagel breakfast where you can stop by and learn about the services offered by that department while grabbing a bagel for breakfast! Condiments will be provided as well. Stop by t",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2250904",
-   "type": "event",
-   "title": "Bagels & Beyond",
-   "host": "UConn Stamford",
-   "schoolId": "s_uconn",
-   "date": "2026-12-01T14:00:00.000Z",
-   "startTime": "09:00",
-   "place": {
-    "name": "UConn Stamford",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/uconn-stamford/event/2250904-bagels-beyond",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SHaW is hosting free STI testing and treatment for gonorrhea and chlamydia. It’s quick, easy, and judgment-free! Schedule your appointment: myhealth.uconn.edu ( Online scheduling will open one week prior to the events.) Online scheduling opens one week before the date. We&r",
    "eligibility": "Open to students",
    "tags": [
@@ -6496,8 +4820,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12716157",
    "type": "event",
    "title": "Free STI Testing",
@@ -6526,8 +4850,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710736",
    "type": "event",
    "title": "Let’s Talk with Jessica",
@@ -6544,67 +4868,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304921",
-   "type": "event",
-   "title": "Let’s Talk with Michelle",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-12-01T18:30:00.000Z",
-   "startTime": "13:30",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2304876-lets-talk-with-michelle",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2308264",
-   "type": "event",
-   "title": "Chemistry Colloquium: Dmitri Kharzeev, UConn",
-   "host": "Chemistry Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-01T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Chemistry Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/chemistry-department/event/2308264-chemistry-colloquium-dmitri-kharzeev-uconn",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -6616,8 +4879,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710771",
    "type": "event",
    "title": "Interpersonal Group for Undergraduate Students",
@@ -6634,36 +4897,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2330820",
-   "type": "event",
-   "title": "MCB Seminar Series: Kristen Parent",
-   "host": "Molecular and Cell Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-12-01T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/molecular-and-cell-biology/event/2330820-mcb-seminar-series-kristen-parent",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SHaW is hosting free STI testing and treatment for gonorrhea and chlamydia. It’s quick, easy, and judgment-free! Schedule your appointment: myhealth.uconn.edu ( Online scheduling will open one week prior to the events.) Online scheduling opens one week before the date. We&r",
    "eligibility": "Open to students",
    "tags": [
@@ -6675,8 +4908,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12716158",
    "type": "event",
    "title": "Free STI Testing",
@@ -6704,8 +4937,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12737839",
    "type": "event",
    "title": "Pet Therapy",
@@ -6734,8 +4967,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12907105",
    "type": "event",
    "title": "UConn iGEM Lab Techniques Night",
@@ -6764,8 +4997,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754706",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -6793,8 +5026,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12745631",
    "type": "event",
    "title": "Midweek Coffee Break",
@@ -6811,68 +5044,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "On Wednesday, December 2, 2026, Dr. Helen Barbas will be here at UConn Physiology and Neurobiology from Boston University, hosted by Dr. Linnaea Ostroff. Their seminar talk title will be announced shortly.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2223904",
-   "type": "event",
-   "title": "PNB Seminar Series: Dr. Helen Barbas",
-   "host": "Physiology & Neurobiology",
-   "schoolId": "s_uconn",
-   "date": "2026-12-02T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "Torrey Life Sciences Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/physiology-neurobiology/event/2223904-pnb-seminar-series-dr-helen-barbas",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2639344",
-   "type": "event",
-   "title": "Algebra Seminar - On loci in hyperelliptic Jacobians supporting solutions to integrable equations - Julia Bernatska (UConn)",
-   "host": "Mathematics Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-02T16:15:00.000Z",
-   "startTime": "11:15",
-   "place": {
-    "name": "Monteith Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/mathematics-department/event/2639344-algebra-seminar-on-loci-in-hyperelliptic",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Coming soon! Details will reveal later.",
    "eligibility": "Open to students",
    "tags": [
@@ -6884,8 +5055,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12947634",
    "type": "event",
    "title": "Collab Event with First Gen",
@@ -6909,8 +5080,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710810",
    "type": "event",
    "title": "Let’s Talk Online with Graciela",
@@ -6927,36 +5098,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2589889",
-   "type": "event",
-   "title": "9th Annual Microbiology Symposium",
-   "host": "Molecular and Cell Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-12-02T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/molecular-and-cell-biology/event/2589889-9th-annual-microbiology-symposium",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -6968,8 +5109,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710835",
    "type": "event",
    "title": "Interpersonal Group for Graduate Students",
@@ -6986,68 +5127,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "A talk by UCHI Faculty Fellow Eleni Coundouriotis on “Mirroring, Recalibrating, Reimagining Stories of the Past: Twenty-First Century African Historical Fiction” with a response by Surya Parekh.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2251772",
-   "type": "event",
-   "title": "Fellow’s Talk: Eleni Coundouriotis on 21st Cent. African Historical Fiction",
-   "host": "Humanities Institute",
-   "schoolId": "s_uconn",
-   "date": "2026-12-02T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Homer Babbidge Library",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2251676-fellows-talk-eleni-coundouriotis",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_1857118",
-   "type": "event",
-   "title": "GSCU Colloquium - Dr. Julia Smachylo",
-   "host": "Department of Geography, Sustainability, Community, and Urban Studies",
-   "schoolId": "s_uconn",
-   "date": "2026-12-02T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "Austin Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/gscus/event/gscu-colloquium-smachylo",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SMART (Self-Management and Recovery Training) Recovery is an evidence-informed recovery method that supports people with substance dependencies and other addictive or problem behaviors to build and maintain motivation; cope with urges and cravings; manage thoughts, feelings and b",
    "eligibility": "Open to students",
    "tags": [
@@ -7059,8 +5138,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12762946",
    "type": "event",
    "title": "SMART Recovery Meetings",
@@ -7089,8 +5168,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12938416",
    "type": "event",
    "title": "ASA Dinner: Chick Fil A!",
@@ -7120,8 +5199,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12935763",
    "type": "event",
    "title": "Karthigai Deepam",
@@ -7151,8 +5230,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697087",
    "type": "event",
    "title": "Let’s Talk with Fumi",
@@ -7180,8 +5259,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754707",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -7198,37 +5277,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2223233",
-   "type": "event",
-   "title": "Neuroscience Seminar Series - Milicevic",
-   "host": "Neuroscience Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-03T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "Low Learning Center (UConn Health)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/neuroscience/event/2223233-neuroscience-seminar-series-milicevic",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW . The service is free of charge and offered on a first come, first served basis for all NCAA Student Ath let es only and are about 15-20 minutes. More i",
    "eligibility": "Open to students",
    "tags": [
@@ -7241,8 +5289,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697345",
    "type": "event",
    "title": "Let’s Talk with Kiara for NCAA Student Athletes",
@@ -7271,8 +5319,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697623",
    "type": "event",
    "title": "Let’s Talk with Daveon",
@@ -7300,8 +5348,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710639",
    "type": "event",
    "title": "“The Round Table” Mandarin Speaking Group for Graduate Students",
@@ -7318,127 +5366,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2308297",
-   "type": "event",
-   "title": "Chemistry Colloquium: Xin Zhang, PNNL",
-   "host": "Chemistry Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-03T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Chemistry Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/chemistry-department/event/2308297-chemistry-colloquium-xin-zhang-pnnl",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Students in Allied Health Sciences Research Methods courses will present their innovative health-related research proposals in a professional poster symposium. UConn faculty, staff, and students; as well as community members are welcome to attend.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_1948692",
-   "type": "event",
-   "title": "3rd Annual Health Innovations Research Proposal Symposium",
-   "host": "UConn Waterbury",
-   "schoolId": "s_uconn",
-   "date": "2026-12-03T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "UConn Waterbury",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/uconn-waterbury/event/1948692-3rd-annual-health-innovations-research-proposal",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "Title: TBA",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2308691",
-   "type": "event",
-   "title": "EEB Seminar: Victor Hugo Gonzalez (Univ. Kansas)",
-   "host": "Ecology and Evolutionary Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-12-03T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/ecology-and-evolutionary-biology/event/2308691-eeb-seminar-victor-hugo-gonzalez-univ-kansas",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2402076",
-   "type": "event",
-   "title": "Mathematics Colloquium by Mary Lou Zeeman (Bowdoin)",
-   "host": "Mathematics Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-03T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Monteith Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/mathematics-department/event/2402076-mathematics-colloquium-by-mary-lou-zeeman-bowdoin",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -7450,8 +5377,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710864",
    "type": "event",
    "title": "BLOOM: Black, Indigenous, and People of Color (BIPOC)",
@@ -7468,37 +5395,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2401640",
-   "type": "event",
-   "title": "CCAM Seminar Series - Dr. Aidan Riley",
-   "host": "Center for Cell Analysis and Modeling",
-   "schoolId": "s_uconn",
-   "date": "2026-12-03T21:00:00.000Z",
-   "startTime": "16:00",
-   "place": {
-    "name": "CGSB, 400 Farmington Ave.",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/center-for-cell-analysis-and-modeling/event/2401640-ccam-seminar-series-dr-aidan-riley",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Our weekly meeting where we play theatre and non-theatre games alike!",
    "eligibility": "Open to students",
    "tags": [
@@ -7510,8 +5406,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12821400",
    "type": "event",
    "title": "Weekly Meeting",
@@ -7539,8 +5435,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12754708",
    "type": "event",
    "title": "Sexpert Peer Health Educator Drop In Hours",
@@ -7557,39 +5453,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Celebration of Dorit Bar-On’s new book Expression, Communication and the Origins of Meaning!",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "academic support",
-    "awards, receptions &amp; celebrations",
-    "conferences &amp; speakers"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2358429",
-   "type": "event",
-   "title": "Expression, Communication and the Origins of Meaning Book Launch",
-   "host": "Expression, Communication, and the Origins of Meaning Research Group",
-   "schoolId": "s_uconn",
-   "date": "2026-12-04T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "McHugh Hall",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2341965-expression-communication-and-the-origins-of",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here. Student",
    "eligibility": "Open to students",
    "tags": [
@@ -7602,8 +5465,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702755",
    "type": "event",
    "title": "Let’s Talk with SHaW",
@@ -7620,38 +5483,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Fish Response to Ocean Stressors",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "conferences &amp; speakers",
-    "student activities"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2464417",
-   "type": "event",
-   "title": "Marine Sciences Seminar: Chris Murray",
-   "host": "Marine Sciences Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-04T16:00:00.000Z",
-   "startTime": "11:00",
-   "place": {
-    "name": "Lowell P. Weicker Jr. Building (Avery Point)",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2359023",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -7663,8 +5494,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12702825",
    "type": "event",
    "title": "Families with Addiction",
@@ -7693,8 +5524,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12703349",
    "type": "event",
    "title": "Let’s Talk with Michelle",
@@ -7711,36 +5542,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2219229",
-   "type": "event",
-   "title": "UConn Physics Colloquium",
-   "host": "Physics Department",
-   "schoolId": "s_uconn",
-   "date": "2026-12-04T19:30:00.000Z",
-   "startTime": "14:30",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/physics-department/event/2219229-uconn-physics-colloquium",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "SHaW’s All Recovery Meetings are available for UConn students. The meetings are a gathering for all who struggle with substance use and/or other mental and behavioral health disorders. (no pre-registration needed - just show up) An All Recovery meeting is ‘non-denomin",
    "eligibility": "Open to students",
    "tags": [
@@ -7752,8 +5553,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12763160",
    "type": "event",
    "title": "All Recovery Meetings",
@@ -7783,8 +5584,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12757987",
    "type": "event",
    "title": "Hanukkah Shabbat",
@@ -7814,8 +5615,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12854288",
    "type": "event",
    "title": "Gaming Club Fall 2026 Meetings",
@@ -7844,8 +5645,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12918901",
    "type": "event",
    "title": "UConn Calisthenics Club Open Gym Event",
@@ -7874,8 +5675,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12775018",
    "type": "event",
    "title": "Business Golf / Financial Technology Networking Event",
@@ -7904,8 +5705,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12869812",
    "type": "event",
    "title": "Utsav 4.0",
@@ -7934,8 +5735,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12898258",
    "type": "event",
    "title": "Yalda Formal",
@@ -7964,8 +5765,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12874160",
    "type": "event",
    "title": "Game vs. Worcester Polytechnic Institute",
@@ -7993,8 +5794,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12914220",
    "type": "event",
    "title": "UConn Pickleball Holiday Fundraiser Tournament",
@@ -8011,37 +5812,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2331598",
-   "type": "event",
-   "title": "Let’s Talk with Amy at CAPS",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-12-07T15:30:00.000Z",
-   "startTime": "10:30",
-   "place": {
-    "name": "Rowe Center",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2304820-lets-talk-with-amy-at-caps",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Every Monday you can stop by the Schreiber Reading Room (R. 253) anytime from 11:30 AM - 2:30 PM to play a round, or more, of Badminton! All supplies provided! Day: Mondays Time: 11:30 AM - 2:30 PM Location: RM 253, Schreiber Reading Room If you require an accommodation to partic",
    "eligibility": "Open to students",
    "tags": [
@@ -8053,8 +5823,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12697595",
    "type": "event",
    "title": "Weekly Free-Play Badminton",
@@ -8083,8 +5853,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12670907",
    "type": "event",
    "title": "Let’s Talk with Sam for NCAA Student Athletes",
@@ -8101,37 +5871,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304849",
-   "type": "event",
-   "title": "Let’s Talk with Fumi",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-12-07T19:00:00.000Z",
-   "startTime": "14:00",
-   "place": {
-    "name": "Hilda May Williams Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/student-health-and-wellness/event/2304849-lets-talk-with-fumi",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -8143,8 +5882,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710698",
    "type": "event",
    "title": "Barbershop Group",
@@ -8172,8 +5911,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710661",
    "type": "event",
    "title": "Huskies on Track: Navigating ADHD at UConn",
@@ -8201,8 +5940,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710684",
    "type": "event",
    "title": "Growth Through Grief: Drop-in Support Group",
@@ -8230,8 +5969,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12748095",
    "type": "event",
    "title": "Community-Based 12 Step Recovery Meetings",
@@ -8259,8 +5998,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12947748",
    "type": "event",
    "title": "Aarthi General Body Meeting",
@@ -8288,8 +6027,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12562663",
    "type": "event",
    "title": "Large Group Fellowship",
@@ -8306,38 +6045,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "Join us from 9 -10:30 AM on the Concourse for breakfast! Each week a different department will host a bagel breakfast where you can stop by and learn about the services offered by that department while grabbing a bagel for breakfast! Condiments will be provided as well. Stop by t",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "free food",
-    "community outreach",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2250905",
-   "type": "event",
-   "title": "Bagels & Beyond",
-   "host": "UConn Stamford",
-   "schoolId": "s_uconn",
-   "date": "2026-12-08T14:00:00.000Z",
-   "startTime": "09:00",
-   "place": {
-    "name": "UConn Stamford",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "benefit": "Free food",
-   "sourceUrl": "https://events.uconn.edu/uconn-stamford/event/2250905-bagels-beyond",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here. Student",
    "eligibility": "Open to students",
    "tags": [
@@ -8350,8 +6057,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710737",
    "type": "event",
    "title": "Let’s Talk with Jessica",
@@ -8368,37 +6075,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "The Let’s Talk: Mental Health Office Hours program provides informal, confidential consultation with therapists from SHaW. The service is free of charge and offered on a first come, first served basis. More info like other dates, time and location can be found here.",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk",
-    "health &amp; wellness"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2304922",
-   "type": "event",
-   "title": "Let’s Talk with Michelle",
-   "host": "Student Health and Wellness",
-   "schoolId": "s_uconn",
-   "date": "2026-12-08T18:30:00.000Z",
-   "startTime": "13:30",
-   "place": {
-    "name": "Student Union",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/live/events/2304877-lets-talk-with-michelle",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Group therapy provides clinical support to foster healing for students managing mental health concerns while supporting their academic success. Facilitated by Mental Health providers, groups are designed to promote emotional well-being and increase connection and belonging. To jo",
    "eligibility": "Open to students",
    "tags": [
@@ -8410,8 +6086,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12710772",
    "type": "event",
    "title": "Interpersonal Group for Undergraduate Students",
@@ -8428,36 +6104,6 @@
    "sourceLabel": "Student org events"
   },
   {
-   "description": "",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event",
-    "talk"
-   ],
-   "interests": [
-    "research",
-    "study"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-09T00:38:24.950Z",
-   "createdAt": "2026-11-09T00:38:24.950Z",
-   "id": "op_uconn_lw_2274923",
-   "type": "event",
-   "title": "MCB Seminar Series: James Rice",
-   "host": "Molecular and Cell Biology",
-   "schoolId": "s_uconn",
-   "date": "2026-12-08T20:30:00.000Z",
-   "startTime": "15:30",
-   "place": {
-    "name": "Biology/Physics Building",
-    "lat": 41.8077,
-    "lng": -72.254
-   },
-   "sourceUrl": "https://events.uconn.edu/molecular-and-cell-biology/event/2274923-mcb-seminar-series-james-rice",
-   "sourceLabel": "University of Connecticut Events"
-  },
-  {
    "description": "Join UConn iGEM for a fun, hands-on introduction to molecular biology! Build your own DNA model using candy and explore how CRISPR gene editing works through an interactive twist on Jenga. Whether you're a science enthusiast or just curious about biology, come enjoy some creative",
    "eligibility": "Open to students",
    "tags": [
@@ -8469,8 +6115,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12935795",
    "type": "event",
    "title": "Sweet Genes: Candy DNA and CRISPR Jenga!",
@@ -8500,8 +6146,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-09T00:38:23.849Z",
-   "createdAt": "2026-11-09T00:38:23.849Z",
+   "lastVerified": "2026-11-09T01:37:29.547Z",
+   "createdAt": "2026-11-09T01:37:29.547Z",
    "id": "op_uconn_eg_12917071",
    "type": "event",
    "title": "A City of Stars",
