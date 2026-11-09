@@ -1,5 +1,5 @@
 {
- "collectedAt": "2026-11-08T03:40:53.744Z",
+ "collectedAt": "2026-11-09T03:41:03.688Z",
  "boards": 183,
  "boardsOk": 183,
  "jobs": [
@@ -3482,19 +3482,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_workday_ghr_wd1_myworkdayjobs_com_ghr_lateral_us_26041413",
-   "company": "Bank of America",
-   "sector": "Finance/Banking",
-   "title": "Merrill Advisor Development Program - Financial Advisor: Princeton Bucks County Market",
-   "location": "Princeton",
-   "url": "https://ghr.wd1.myworkdayjobs.com/en-US/lateral-us/job/Princeton/Merrill-Advisor-Development-Program---Financial-Advisor--Princeton-Bucks-County-Market_26041413-1",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_ghr_wd1_myworkdayjobs_com_ghr_lateral_us_26041602",
    "company": "Bank of America",
    "sector": "Finance/Banking",
@@ -4823,20 +4810,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-10-22T15:57:19-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_databricks_7011263002",
-   "company": "Databricks",
-   "sector": "AI/Big Tech",
-   "title": "PhD GenAI Research Scientist Intern",
-   "location": "San Francisco, California",
-   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=7011263002",
-   "kind": "internship",
-   "audience": [
-    "phd"
-   ],
-   "updatedAt": "2026-10-27T12:20:36-04:00",
    "source": "greenhouse"
   },
   {
@@ -7862,19 +7835,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10257908",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Associate Software Engineer - Boulder CO",
-   "location": "United States-Colorado-Boulder",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Boulder/XMLNAME-2027-Associate-Software-Engineer---Boulder-CO_R10257908",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259296",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
@@ -7903,17 +7863,6 @@
    "title": "2027 Electrical Engineering Intern - Colorado Springs",
    "location": "United States-Colorado-Colorado Springs",
    "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Colorado-Springs/XMLNAME-2027-Electrical-Engineering-Intern---Colorado-Springs_R10259022",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259306",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Electrical Engineering Intern- Huntsville AL",
-   "location": "United States-Alabama-Huntsville",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Alabama-Huntsville/XMLNAME-2027-Electrical-Engineering-Intern--Huntsville-AL_R10259306-1",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -7952,34 +7901,12 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259102",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Program Management Intern - Northridge CA",
-   "location": "United States-California-Northridge",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Northridge/XMLNAME-2027-Program-Management-Intern---Northridge-CA_R10259102",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10256259",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
    "title": "2027 Software Engineering Intern - Colorado Springs",
    "location": "United States-Colorado-Colorado Springs",
    "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Colorado-Springs/XMLNAME-2027-Software-Engineering-Intern---Colorado-Springs_R10256259",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10251849",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Systems Engineer Intern - Cape Canaveral FL",
-   "location": "United States-Florida-Cape Canaveral",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Florida-Cape-Canaveral/XMLNAME-2027-Systems-Engineer-Intern---Cape-Canaveral-FL_R10251849",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -10978,7 +10905,7 @@
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-11-07T14:37:57-05:00",
+   "updatedAt": "2026-11-08T14:38:19-05:00",
    "source": "greenhouse"
   },
   {
@@ -10992,7 +10919,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-07T14:41:13-05:00",
+   "updatedAt": "2026-11-08T14:41:28-05:00",
    "source": "greenhouse"
   },
   {
@@ -11006,7 +10933,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-07T14:41:04-05:00",
+   "updatedAt": "2026-11-08T14:41:20-05:00",
    "source": "greenhouse"
   },
   {
@@ -11020,7 +10947,7 @@
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-11-07T14:37:54-05:00",
+   "updatedAt": "2026-11-08T14:38:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -11046,7 +10973,7 @@
    "url": "https://careers.roblox.com/jobs/8072713?gh_jid=8072713",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-07T14:43:11-05:00",
+   "updatedAt": "2026-11-08T14:43:22-05:00",
    "source": "greenhouse"
   },
   {
@@ -12052,7 +11979,7 @@
    "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8003533003",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-07T22:32:24-05:00",
+   "updatedAt": "2026-11-08T22:31:57-05:00",
    "source": "greenhouse"
   },
   {
@@ -12835,6 +12762,34 @@
    "source": "lever"
   },
   {
+   "id": "job_lever_shieldai_af183d8c_51d0_40df_9c04_fbddae0d83aa",
+   "company": "Shield AI",
+   "sector": "Aerospace/Energy",
+   "title": "Engineer I, Software - Autonomous Pilot Integration - New Grad - 6125",
+   "location": "Washington, D.C.",
+   "url": "https://jobs.lever.co/shieldai/af183d8c-51d0-40df-9c04-fbddae0d83aa",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-27T20:43:16.503Z",
+   "source": "lever"
+  },
+  {
+   "id": "job_lever_shieldai_f8e0f87f_0e12_4e05_a491_4e8272494896",
+   "company": "Shield AI",
+   "sector": "Aerospace/Energy",
+   "title": "Engineer I, Software - Autonomy Capabilities - New Grad - 6129",
+   "location": "United States",
+   "url": "https://jobs.lever.co/shieldai/f8e0f87f-0e12-4e05-a491-4e8272494896",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-27T21:55:40.627Z",
+   "source": "lever"
+  },
+  {
    "id": "job_lever_shieldai_59e0cf9b_04d7_43c0_8a65_9d411fe56c68",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
@@ -12846,6 +12801,20 @@
     "newgrad"
    ],
    "updatedAt": "2026-10-10T01:56:35.608Z",
+   "source": "lever"
+  },
+  {
+   "id": "job_lever_shieldai_cd641bcb_f613_44dd_b66d_2df360067319",
+   "company": "Shield AI",
+   "sector": "Aerospace/Energy",
+   "title": "Engineer I, Software - Perception - New Grad - 6135",
+   "location": "Washington, D.C.",
+   "url": "https://jobs.lever.co/shieldai/cd641bcb-f613-44dd-b66d-2df360067319",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-27T22:03:17.567Z",
    "source": "lever"
   },
   {
@@ -12916,6 +12885,20 @@
     "newgrad"
    ],
    "updatedAt": "2026-10-10T00:52:54.993Z",
+   "source": "lever"
+  },
+  {
+   "id": "job_lever_shieldai_88f7b66e_3412_40c8_b74d_aafc462405ff",
+   "company": "Shield AI",
+   "sector": "Aerospace/Energy",
+   "title": "Engineer II, Software - Ground Control Station - Full Stack - New Grad - 6140",
+   "location": "Washington, D.C.",
+   "url": "https://jobs.lever.co/shieldai/88f7b66e-3412-40c8-b74d-aafc462405ff",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-27T22:14:38.663Z",
    "source": "lever"
   },
   {
@@ -14730,20 +14713,6 @@
     "masters"
    ],
    "updatedAt": "2026-11-06T15:50:56-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_waymo_8165014",
-   "company": "Waymo",
-   "sector": "AI/Autonomy",
-   "title": "2027 Summer Intern, MBA, Operations Planning",
-   "location": "San Francisco, California, United States",
-   "url": "https://careers.withwaymo.com/jobs?gh_jid=8165014",
-   "kind": "internship",
-   "audience": [
-    "masters"
-   ],
-   "updatedAt": "2026-10-22T13:40:32-04:00",
    "source": "greenhouse"
   },
   {
